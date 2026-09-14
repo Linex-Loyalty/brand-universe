@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>07 · Accesibilidad · Manual de Marca Linex Trip</title>
+<meta name="description" content="Que cualquier viajero pueda usarnos.">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body style="background:var(--paper);">
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<div class="topbar">
+  <span class="topbar-brand">Linex Trip <small>MANUAL DE MARCA</small></span>
+  <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="sidebar">
+    <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
+    Menú
+  </button>
+</div>
+<div class="nav-scrim" data-nav-scrim></div>
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <a class="sidebar-brand" href="index.html">
+      <span class="name">Linex Trip</span>
+      <span class="tag">Manual de Marca &middot; v1.0</span>
+    </a>
+
+    <nav class="nav-group" aria-label="Portada">
+        <ul class="nav-list">
+          <li><a href="index.html"><span class="n">00</span><span>Resumen ejecutivo</span></a></li>
+        </ul>
+    </nav>
+    <nav class="nav-group" aria-label="A · Identidad visual">
+        <span class="nav-group-title">A · Identidad visual</span>
+        <ul class="nav-list">
+          <li><a href="01-logotipo.html"><span class="n">01</span><span>Logotipo</span></a></li>
+          <li><a href="03-paleta-color.html"><span class="n">03</span><span>Paleta de color</span></a></li>
+          <li><a href="04-tipografia.html"><span class="n">04</span><span>Tipografía</span></a></li>
+          <li><a href="05-iconografia-canal.html"><span class="n">05</span><span>Iconografía y diseño por canal</span></a></li>
+          <li><a href="06-sistema-fotografia.html"><span class="n">06</span><span>Sistema gráfico y fotografía</span></a></li>
+          <li><a href="07-accesibilidad.html" class="active" aria-current="page"><span class="n">07</span><span>Accesibilidad</span></a></li>
+        </ul>
+    </nav>
+    <nav class="nav-group" aria-label="B · Quién es y cómo habla">
+        <span class="nav-group-title">B · Quién es y cómo habla</span>
+        <ul class="nav-list">
+          <li><a href="08-arquitectura.html"><span class="n">08</span><span>Arquitectura y nombre</span></a></li>
+          <li><a href="09-audiencias.html"><span class="n">09</span><span>Audiencias</span></a></li>
+          <li><a href="10-propuesta-valor.html"><span class="n">10</span><span>Propuesta de valor y claims</span></a></li>
+          <li><a href="11-voz-tono.html"><span class="n">11</span><span>Voz y tono</span></a></li>
+          <li><a href="12-vocabulario.html"><span class="n">12</span><span>Vocabulario</span></a></li>
+        </ul>
+    </nav>
+    <nav class="nav-group" aria-label="C · Cómo se aplica">
+        <span class="nav-group-title">C · Cómo se aplica</span>
+        <ul class="nav-list">
+          <li><a href="13-promociones-cta.html"><span class="n">13</span><span>Promociones y CTA</span></a></li>
+          <li><a href="14-entregables.html"><span class="n">14</span><span>Entregables y aplicaciones</span></a></li>
+          <li><a href="15-redes-sociales.html"><span class="n">15</span><span>Redes sociales</span></a></li>
+        </ul>
+    </nav>
+
+  </aside>
+  <main class="main" id="contenido">
+    <div class="main-inner">
+
+<p class="page-index"><span class="page-index-n">07</span><span class="eyebrow">Accesibilidad</span></p>
+<h1 class="page-title">Que cualquier viajero pueda usarnos</h1>
+<p class="lede">La accesibilidad no es opcional: reservar un viaje es una tarea crítica y debe funcionar para todos. Regla base de accesibilidad heredada del sistema del grupo; aquí, las combinaciones propias de la paleta de Linex Trip.</p>
+
+<div class="field-list" style="margin-bottom:36px;">
+  <div class="field"><span class="k">Contraste</span><span class="v">WCAG 2.1 define dos niveles &mdash; <strong style="color:var(--navy);">AA</strong> (mínimo no negociable, estándar de la industria): 4.5:1 en texto corrido, 3:1 en texto grande (&ge;24px regular o &ge;18.66px bold). <strong style="color:var(--navy);">AAA</strong> (reforzado, no obligatorio pero preferido cuando el combo ya lo alcanza sin costo): 7:1 en texto corrido, 4.5:1 en texto grande. Azul Trip sobre Celeste solo en botones/bloques grandes, nunca en texto corrido.</span></div>
+  <div class="field"><span class="k">Áreas táctiles</span><span class="v">Mínimo 44 &times; 44px en cualquier botón o control interactivo, en app y web.</span></div>
+  <div class="field"><span class="k">Texto alternativo</span><span class="v">Toda imagen funcional lleva alt-text descriptivo; los decorativos se marcan como tal.</span></div>
+  <div class="field"><span class="k">No solo color</span><span class="v">Un estado (error, éxito, promoción) nunca se comunica solo con color; siempre lleva ícono o texto.</span></div>
+</div>
+
+<section class="section-block" style="border-top:1px solid rgba(0,20,90,0.1); padding-top:22px;">
+  <h2 class="section-title">Combinaciones propias de la paleta de Linex Trip</h2>
+  <div class="grid-4">
+    <div class="card tint">
+      <div style="background:var(--navy); border-radius:8px; padding:12px; text-align:center; margin-bottom:8px;"><span style="font-size:13px; font-weight:800; color:#FFFFFF;">Aa Texto</span></div>
+      <span style="font-size:11.5px; font-weight:800; color:var(--navy);">Navy / Blanco</span>
+      <p class="small-note" style="margin-top:2px; font-weight:600; font-size:10.5px;">#00145A &middot; texto #FFFFFF &middot; 17.85:1</p>
+      <div style="margin-top:6px;"><span style="display:inline-block; font-size:9.5px; font-weight:800; padding:2px 7px; border-radius:5px; background:rgba(28,138,90,0.14); color:#1C8A5A; margin-right:4px;">AA &#10003;</span><span style="display:inline-block; font-size:9.5px; font-weight:800; padding:2px 7px; border-radius:5px; background:rgba(28,138,90,0.14); color:#1C8A5A;">AAA &#10003;</span></div>
+      <p class="small-note" style="color:#1C8A5A; margin-top:6px; font-weight:700;">Permitido &middot; texto principal, cualquier tamaño</p>
+    </div>
+    <div class="card tint">
+      <div style="background:var(--navy); border-radius:8px; padding:12px; text-align:center; margin-bottom:8px;"><span style="font-size:13px; font-weight:800; color:#00B5F5;">Aa Texto</span></div>
+      <span style="font-size:11.5px; font-weight:800; color:var(--navy);">Navy / Celeste</span>
+      <p class="small-note" style="margin-top:2px; font-weight:600; font-size:10.5px;">#00145A &middot; texto #00B5F5 &middot; 7.59:1</p>
+      <div style="margin-top:6px;"><span style="display:inline-block; font-size:9.5px; font-weight:800; padding:2px 7px; border-radius:5px; background:rgba(28,138,90,0.14); color:#1C8A5A; margin-right:4px;">AA &#10003;</span><span style="display:inline-block; font-size:9.5px; font-weight:800; padding:2px 7px; border-radius:5px; background:rgba(28,138,90,0.14); color:#1C8A5A;">AAA &#10003; por poco</span></div>
+      <p class="small-note" style="color:#1C8A5A; margin-top:6px; font-weight:700;">Permitido &middot; texto corrido incluido, no solo bloques grandes</p>
+    </div>
+    <div class="card" style="background:var(--coral-tint); border:1px solid rgba(255,114,94,0.25);">
+      <div style="background:#FFFFFF; border:1px solid rgba(0,20,90,0.1); border-radius:8px; padding:12px; text-align:center; margin-bottom:8px;"><span style="font-size:13px; font-weight:800; color:#00B5F5;">Aa Texto</span></div>
+      <span style="font-size:11.5px; font-weight:800; color:var(--coral);">Celeste / Blanco</span>
+      <p class="small-note" style="margin-top:2px; font-weight:600; font-size:10.5px;">#FFFFFF &middot; texto #00B5F5 &middot; 2.35:1</p>
+      <div style="margin-top:6px;"><span style="display:inline-block; font-size:9.5px; font-weight:800; padding:2px 7px; border-radius:5px; background:rgba(255,114,94,0.16); color:var(--coral); margin-right:4px;">AA &#10007;</span><span style="display:inline-block; font-size:9.5px; font-weight:800; padding:2px 7px; border-radius:5px; background:rgba(255,114,94,0.16); color:var(--coral);">AAA &#10007;</span></div>
+      <p class="small-note" style="color:var(--coral); margin-top:6px; font-weight:700;">No permitido &middot; falla incluso el mínimo AA de texto grande (3:1)</p>
+    </div>
+    <div class="card" style="background:var(--coral-tint); border:1px solid rgba(255,114,94,0.25);">
+      <div style="background:#FFFFFF; border:1px solid rgba(0,20,90,0.1); border-radius:8px; padding:12px; text-align:center; margin-bottom:8px;"><span style="font-size:13px; font-weight:800; color:var(--lavender);">Aa Texto</span></div>
+      <span style="font-size:11.5px; font-weight:800; color:var(--coral);">Lavanda / Blanco</span>
+      <p class="small-note" style="margin-top:2px; font-weight:600; font-size:10.5px;">#FFFFFF &middot; texto #DDE1FF &middot; &asymp;1.3:1 (calculado)</p>
+      <div style="margin-top:6px;"><span style="display:inline-block; font-size:9.5px; font-weight:800; padding:2px 7px; border-radius:5px; background:rgba(255,114,94,0.16); color:var(--coral); margin-right:4px;">AA &#10007;</span><span style="display:inline-block; font-size:9.5px; font-weight:800; padding:2px 7px; border-radius:5px; background:rgba(255,114,94,0.16); color:var(--coral);">AAA &#10007;</span></div>
+      <p class="small-note" style="color:var(--coral); margin-top:6px; font-weight:700;">No permitido &middot; peor que Celeste/Blanco, texto casi invisible</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-block" style="border-top:1px solid rgba(0,20,90,0.1); padding-top:22px; margin-top:28px;">
+  <h2 class="section-title" style="margin-bottom:8px;">Legibilidad medida de Celeste <span class="status ok" style="margin-left:6px; vertical-align:1px;">Validado &middot; decisi&oacute;n de color 2026</span></h2>
+  <p class="small-note" style="margin-bottom:16px; max-width:70ch;">Contraste real, medido, al confirmar Celeste como color de acento de Trip (se evaluó frente a una propuesta en verde menta, descartada).</p>
+  <div class="grid-3" style="gap:14px;">
+    <div class="card tint">
+      <span class="small-note" style="font-weight:700;">Sobre blanco &middot; sitio, correos, cotizaciones impresas</span>
+      <p style="margin:10px 0 0; font-size:15px; font-weight:800; color:#00B5F5; background:#fff; border:1px solid rgba(0,20,90,0.08); border-radius:8px; padding:10px 12px;">$112 USD &middot; $450.000 COP</p>
+      <div style="margin-top:8px;"><span style="display:inline-block; font-size:9.5px; font-weight:800; padding:2px 7px; border-radius:5px; background:rgba(255,114,94,0.16); color:var(--coral); margin-right:4px;">AA &#10007;</span><span style="display:inline-block; font-size:9.5px; font-weight:800; padding:2px 7px; border-radius:5px; background:rgba(255,114,94,0.16); color:var(--coral);">AAA &#10007;</span></div>
+      <p class="small-note" style="color:var(--coral); margin-top:6px; font-weight:700;">Cuesta leerlo &mdash; contraste 2.35:1 (AA pide 4.5:1 en texto corrido, 3:1 en grande &mdash; no alcanza ni eso)</p>
+    </div>
+    <div class="card tint">
+      <span class="small-note" style="font-weight:700;">Sobre navy &middot; tapas, redes, fondos oscuros</span>
+      <p style="margin:10px 0 0; font-size:15px; font-weight:800; color:#00B5F5; background:var(--navy); border-radius:8px; padding:10px 12px;">$112 USD &middot; $450.000 COP</p>
+      <div style="margin-top:8px;"><span style="display:inline-block; font-size:9.5px; font-weight:800; padding:2px 7px; border-radius:5px; background:rgba(28,138,90,0.14); color:#1C8A5A; margin-right:4px;">AA &#10003;</span><span style="display:inline-block; font-size:9.5px; font-weight:800; padding:2px 7px; border-radius:5px; background:rgba(28,138,90,0.14); color:#1C8A5A;">AAA &#10003; por poco</span></div>
+      <p class="small-note" style="color:#1C8A5A; margin-top:6px; font-weight:700;">Se lee perfecto &mdash; contraste 7.59:1, supera incluso el umbral AAA de texto corrido (7:1)</p>
+    </div>
+    <div class="card tint">
+      <span class="small-note" style="font-weight:700;">Solución para blanco &middot; texto/precio</span>
+      <p style="margin:10px 0 0; font-size:15px; font-weight:800; color:var(--navy); background:#fff; border:1px solid rgba(0,20,90,0.08); border-radius:8px; padding:10px 12px;">$112 USD &middot; $450.000 COP</p>
+      <div style="margin-top:8px;"><span style="display:inline-block; font-size:9.5px; font-weight:800; padding:2px 7px; border-radius:5px; background:rgba(28,138,90,0.14); color:#1C8A5A; margin-right:4px;">AA &#10003;</span><span style="display:inline-block; font-size:9.5px; font-weight:800; padding:2px 7px; border-radius:5px; background:rgba(28,138,90,0.14); color:#1C8A5A;">AAA &#10003;</span></div>
+      <p class="small-note" style="color:#1C8A5A; margin-top:6px; font-weight:700;">Azul Trip #00145A (ya existe) &mdash; contraste 17.85:1, muy por encima de ambos umbrales</p>
+    </div>
+  </div>
+  <p class="small-note" style="margin-top:14px; max-width:70ch;"><strong style="color:var(--navy);">Regla:</strong> Celeste nunca se usa como texto o precio sobre blanco &mdash; se reserva para acento, botón o fondo. Para texto sobre blanco, usar Azul Trip.</p>
+</section>
+
+<section class="section-block" style="border-top:1px solid rgba(0,20,90,0.1); padding-top:22px; margin-top:28px;">
+  <h2 class="section-title" style="margin-bottom:8px;">Legibilidad medida de Amarillo <span class="status ok" style="margin-left:6px; vertical-align:1px;">Validado &middot; decisi&oacute;n de color 2026</span></h2>
+  <p class="small-note" style="margin-bottom:16px; max-width:70ch;">El Amarillo entr&oacute; como tercer color de la paleta para dar detalle sin competir con la acci&oacute;n. Su restricci&oacute;n no es de criterio: es la diferencia entre 12.38:1 y 1.36:1.</p>
+  <div class="grid-2" style="gap:14px;">
+    <div class="card tint">
+      <span class="small-note" style="font-weight:700;">Sobre Azul Trip &middot; hero, bloques oscuros, cara de la tarjeta</span>
+      <p style="margin:10px 0 0; font-size:13px; font-weight:800; color:#ECE200; background:#00145A; border-radius:8px; padding:12px 14px;">ESCAPADA DE FIN DE SEMANA</p>
+      <div style="margin-top:8px;"><span style="display:inline-block; font-size:9.5px; font-weight:800; padding:2px 7px; border-radius:5px; background:rgba(60,206,171,0.2); color:var(--green-ink); margin-right:4px;">AA &#10003;</span><span style="display:inline-block; font-size:9.5px; font-weight:800; padding:2px 7px; border-radius:5px; background:rgba(60,206,171,0.2); color:var(--green-ink);">AAA &#10003;</span></div>
+      <p class="small-note" style="color:var(--green-ink); margin-top:6px; font-weight:700;">12.38:1 &mdash; pasa de sobra, incluso en texto peque&ntilde;o</p>
+    </div>
+    <div class="card tint">
+      <span class="small-note" style="font-weight:700;">Sobre blanco &middot; sitio, correos, dorso de la tarjeta</span>
+      <p style="margin:10px 0 0; font-size:13px; font-weight:800; color:#ECE200; background:#fff; border:1px solid rgba(0,20,90,0.08); border-radius:8px; padding:12px 14px;">ESCAPADA DE FIN DE SEMANA</p>
+      <div style="margin-top:8px;"><span style="display:inline-block; font-size:9.5px; font-weight:800; padding:2px 7px; border-radius:5px; background:rgba(255,114,94,0.16); color:var(--coral); margin-right:4px;">AA &#10007;</span><span style="display:inline-block; font-size:9.5px; font-weight:800; padding:2px 7px; border-radius:5px; background:rgba(255,114,94,0.16); color:var(--coral);">AAA &#10007;</span></div>
+      <p class="small-note" style="color:var(--coral); margin-top:6px; font-weight:700;">1.36:1 &mdash; no es que se lea mal: es que no se lee</p>
+    </div>
+  </div>
+
+  <div class="callout" style="background:var(--coral-tint); border:1px solid rgba(var(--coral-rgb),0.3); margin-top:18px;">
+    <span class="tag" style="color:var(--coral);">LA REGLA QUE SE ROMPE SOLA</span>
+    <p><strong>El Amarillo vive &uacute;nicamente sobre el Azul Trip.</strong> Es el color m&aacute;s llamativo de la paleta y por eso el primer impulso es ponerlo sobre blanco &mdash; donde desaparece. No hay excepci&oacute;n por tama&ntilde;o, por grosor ni por tratarse de un &iacute;cono: sobre fondo claro no se usa.</p>
+  </div>
+
+  <div class="grid-2" style="gap:20px; margin-top:20px; align-items:start;">
+    <div>
+      <h3 class="section-title muted">D&oacute;nde s&iacute;</h3>
+      <div class="stack" style="gap:8px;">
+        <div class="dont-row" style="background:var(--paper);"><span style="font-size:12.5px;">Antet&iacute;tulos y etiquetas cortas sobre el azul</span><span class="no-tag" style="background:var(--green-ink);">S&Iacute;</span></div>
+        <div class="dont-row" style="background:var(--paper);"><span style="font-size:12.5px;">Letra chica: condiciones, vigencias, notas al pie</span><span class="no-tag" style="background:var(--green-ink);">S&Iacute;</span></div>
+        <div class="dont-row" style="background:var(--paper);"><span style="font-size:12.5px;">Detalles menores: separadores, vi&ntilde;etas, filetes finos</span><span class="no-tag" style="background:var(--green-ink);">S&Iacute;</span></div>
+      </div>
+    </div>
+    <div>
+      <h3 class="section-title muted">D&oacute;nde no</h3>
+      <div class="stack" style="gap:8px;">
+        <div class="dont-row flag"><span style="font-size:12.5px;">T&iacute;tulos &mdash; el titular es blanco, siempre</span><span class="no-tag">NO</span></div>
+        <div class="dont-row flag"><span style="font-size:12.5px;">Botones &mdash; la acci&oacute;n es Celeste, siempre</span><span class="no-tag">NO</span></div>
+        <div class="dont-row flag"><span style="font-size:12.5px;">Cualquier cosa sobre fondo claro</span><span class="no-tag">NO</span></div>
+      </div>
+    </div>
+  </div>
+  <p class="small-note" style="margin-top:14px; max-width:74ch;">El Amarillo aplica igual en web y en redes. Su valor est&aacute; en aparecer poco: la proporci&oacute;n de uso propuesta es <strong>4%</strong> de la pieza (ver <a href="03-paleta-color.html">03 &middot; Paleta de color</a>), el &uacute;nico color de la paleta por debajo del piso del 8%, y es deliberado.</p>
+</section>
+
+      <div class="pager"><a class="prev" href="06-sistema-fotografia.html"><span class="dir">&larr; Anterior</span><span class="lbl">06 &middot; Sistema gráfico y fotografía</span></a><a class="next" href="08-arquitectura.html"><span class="dir">Siguiente &rarr;</span><span class="lbl">08 &middot; Arquitectura y nombre</span></a></div>
+    </div>
+  </main>
+</div>
+<script src="assets/nav.js"></script>
+</body>
+</html>
