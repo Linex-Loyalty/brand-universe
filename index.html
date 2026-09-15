@@ -4,190 +4,290 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Grupo Linex — Universo de marca</title>
-<meta name="description" content="Los manuales de marca del Grupo Linex en un solo sitio: el sistema del grupo y el de cada estrella, con el estado real de cada una.">
+<meta name="description" content="Los manuales de marca del Grupo Linex en un solo sitio: logotipo, colores, tipografía, tono y las piezas de cada canal.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  /* El hub habla por el grupo, no por una estrella. Por eso usa el navy y el
-     violeta del sistema central y no el acento de ninguna marca: si adoptara el
-     celeste de Trip parecería que el universo es de Trip. */
+  /* El hub habla por el grupo, no por una estrella: usa el navy y el violeta del
+     sistema central y nunca el acento de una marca — si adoptara el celeste de
+     Trip parecería que el universo es de Trip.
+
+     Pero el navy es FIRMA, no superficie de lectura. Antes toda la portada era
+     navy con texto blanco translúcido encima: cinco estilos quedaban por debajo
+     de 4.5:1 (el peor, 2.70, era justo la línea de estado) y además chocaba con
+     los manuales, que son claros. Ahora el navy vive en una sola franja arriba y
+     todo lo que hay que leer está sobre papel. Los tonos de aquí abajo están
+     medidos: ninguno baja de 4.5:1. */
   :root {
     --navy: #17153B; --navy-rgb: 23, 21, 59;
-    --violet: #5B5CFF; --violet-light: #8B8CFF;
-    --paper: #F6F8FF; --linea: rgba(255,255,255,0.12);
+    --paper: #F6F8FF; --white: #fff;
+    --violet: #5B5CFF;          /* 4.48:1 sobre papel — solo UI y bordes, nunca texto */
+    --violet-deep: #6D28D9;     /* 6.70:1 — este es el de los enlaces */
+    --violet-light: #A9AAFF;    /* 8.19:1 sobre navy — para la franja */
+    --green-ink: #0D3B34;       /* 11.69:1 — estado "listo" */
+    --ink-72: rgba(23,21,59,0.72);   /* 6.76:1 */
+    --ink-62: rgba(23,21,59,0.62);   /* 4.85:1 — el más claro que se permite */
+    --linea: rgba(23,21,59,0.13);
+    --radius: 14px;
   }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--navy); color: #fff;
-         font: 16px/1.6 Geist, system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }
-  .marco { max-width: 1120px; margin: 0 auto; padding: 72px 26px 96px; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--navy);
+         font: 16px/1.6 Geist, system-ui, -apple-system, "Segoe UI", sans-serif;
+         -webkit-font-smoothing: antialiased; }
+  .marco { max-width: 1060px; margin: 0 auto; padding: 0 26px; }
+  h2 { font-size: 13px; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase;
+       color: var(--ink-62); margin: 0 0 4px; }
+  .seccion { padding: 46px 0; border-top: 1px solid var(--linea); }
+  .seccion:first-of-type { border-top: 0; }
+  .seccion > .intro { margin: 0 0 22px; font-size: 14.5px; color: var(--ink-72); max-width: 62ch; }
 
-  header { margin-bottom: 58px; }
-  .kick { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--violet-light); margin: 0 0 14px; font-weight: 700; }
-  h1 { font-size: clamp(34px, 6vw, 60px); line-height: 1.04; font-weight: 900; letter-spacing: -0.03em; margin: 0 0 18px; max-width: 16ch; }
-  .lede { font-size: 17.5px; line-height: 1.6; color: rgba(255,255,255,0.72); max-width: 60ch; margin: 0 0 26px; }
-  .contador { display: flex; flex-wrap: wrap; gap: 26px; padding-top: 22px; border-top: 1px solid var(--linea); }
-  .contador div { }
-  .contador b { display: block; font-size: 30px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
-  .contador span { font-size: 12.5px; color: rgba(255,255,255,0.55); }
+  /* ---- la franja ---- */
+  .franja { background: var(--navy); color: #fff; padding: 62px 0 34px; }
+  .kick { font-size: 12px; letter-spacing: 0.13em; text-transform: uppercase;
+          color: var(--violet-light); margin: 0 0 14px; font-weight: 700; }
+  h1 { font-size: clamp(32px, 5.6vw, 54px); line-height: 1.05; font-weight: 900;
+       letter-spacing: -0.03em; margin: 0 0 16px; max-width: 17ch; }
+  .lede { font-size: 17px; line-height: 1.6; color: rgba(255,255,255,0.82); max-width: 56ch; margin: 0; }
+  .cuenta { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 30px; padding-top: 22px;
+            border-top: 1px solid rgba(255,255,255,0.16); }
+  .cuenta b { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; margin-right: 7px; }
+  .cuenta span { font-size: 13px; color: rgba(255,255,255,0.72); }
 
-  .atajo { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 52px;
-           background: rgba(255,255,255,0.06); border: 1px solid var(--linea); border-radius: 12px;
-           padding: 16px 22px; color: #fff; text-decoration: none; }
-  .atajo:hover { background: rgba(255,255,255,0.1); border-color: var(--violet-light); }
-  .atajo b { font-size: 15.5px; font-weight: 800; display: block; }
-  .atajo span { font-size: 13px; color: rgba(255,255,255,0.6); }
+  /* ---- los manuales: lo único que abre, primero y grande ---- */
+  .manuales { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+  .manual { display: flex; flex-direction: column; gap: 12px; text-decoration: none; color: inherit;
+            background: var(--white); border: 1px solid var(--linea); border-radius: var(--radius);
+            padding: 24px 24px 20px; transition: border-color .15s, box-shadow .15s, transform .15s; }
+  .manual:hover { border-color: var(--violet); box-shadow: 0 8px 26px rgba(var(--navy-rgb), 0.11); transform: translateY(-2px); }
+  .manual-cab { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .manual-titulo { font-size: 21px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
+  .manual-para { font-size: 14.5px; color: var(--ink-72); }
+  .temas { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
+  .temas span { font-size: 12px; font-weight: 600; color: var(--ink-72);
+                background: var(--paper); border: 1px solid var(--linea);
+                border-radius: 999px; padding: 4px 10px; }
+  .manual-pie { display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+                margin-top: 6px; padding-top: 14px; border-top: 1px solid var(--linea);
+                font-size: 12.5px; color: var(--ink-62); }
+  .manual-cta { font-size: 13.5px; font-weight: 800; color: var(--violet-deep); }
 
-  .tier { margin-bottom: 52px; }
-  .tier-cab { margin-bottom: 20px; }
-  .tier-cab h2 { font-size: 13px; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: var(--violet-light); margin: 0 0 5px; }
-  .tier-cab p { font-size: 14px; color: rgba(255,255,255,0.5); margin: 0; }
+  /* ---- atajos: el HEX a un clic, no a cuatro ---- */
+  .atajos { list-style: none; margin: 0; padding: 0; border: 1px solid var(--linea);
+            border-radius: var(--radius); overflow: hidden; background: var(--white); }
+  .atajo { display: flex; align-items: center; justify-content: space-between; gap: 16px;
+           flex-wrap: wrap; padding: 15px 20px; border-top: 1px solid var(--linea); }
+  .atajo:first-child { border-top: 0; }
+  .atajo-txt b { display: block; font-size: 15.5px; font-weight: 800; letter-spacing: -0.01em; }
+  .atajo-txt span { font-size: 13px; color: var(--ink-62); }
+  .atajo-ir { display: flex; gap: 8px; flex: none; }
+  .atajo-ir a { font-size: 13px; font-weight: 700; text-decoration: none; color: var(--violet-deep);
+                border: 1px solid rgba(var(--navy-rgb), 0.16); border-radius: 8px; padding: 7px 13px;
+                white-space: nowrap; transition: background .13s, border-color .13s; }
+  .atajo-ir a:hover { background: var(--paper); border-color: var(--violet); }
 
-  .rejilla { display: grid; grid-template-columns: repeat(auto-fill, minmax(268px, 1fr)); gap: 16px; }
+  /* ---- la constelación: tablero honesto, no navegación falsa ----
+     Siete de estas marcas no tienen a dónde llevar. Antes eran tarjetas idénticas
+     a las que sí abrían, así que la portada parecía nueve puertas de las que ocho
+     no cedían. Como filas de un tablero dicen lo mismo sin prometer nada. */
+  .tier { margin-bottom: 26px; }
+  .tier:last-child { margin-bottom: 0; }
+  .tier h3 { font-size: 14px; font-weight: 800; margin: 0 0 9px; letter-spacing: -0.01em; }
+  .tier h3 small { font-weight: 500; font-size: 13px; color: var(--ink-62); margin-left: 8px; }
+  .filas { list-style: none; margin: 0; padding: 0; border: 1px solid var(--linea);
+           border-radius: var(--radius); overflow: hidden; background: var(--white); }
+  .fila { display: grid; grid-template-columns: 30px minmax(150px, 1.3fr) 110px 1fr;
+          align-items: center; gap: 12px; padding: 13px 18px; border-top: 1px solid var(--linea); }
+  .fila:first-child { border-top: 0; }
+  .fila-nombre { font-size: 15px; font-weight: 700; letter-spacing: -0.01em; }
+  .fila-nombre a { color: var(--violet-deep); text-decoration: none; }
+  .fila-nombre a:hover { text-decoration: underline; }
+  .fila-nombre small { display: block; font-size: 12px; font-weight: 500; color: var(--ink-62); }
+  .fila-hex code { font-size: 12.5px; font-family: ui-monospace, Consolas, monospace; color: var(--ink-72); }
+  .fila-hex i { font-size: 12.5px; color: var(--ink-62); }
+  .fila-estado { font-size: 12.5px; font-weight: 700; color: var(--ink-62); text-align: right; }
+  .fila.listo .fila-estado { color: var(--green-ink); }
+  .fila.parcial .fila-estado { color: var(--violet-deep); }
 
-  /* El estado de cada marca no se disimula: se dice. Una tarjeta apagada informa
-     de que ahí falta una decisión, y de quién la debe tomar. */
-  .marca { display: block; text-decoration: none; color: inherit;
-           background: rgba(255,255,255,0.05); border: 1px solid var(--linea);
-           border-radius: 14px; padding: 20px 22px 22px; }
-  a.marca:hover { background: rgba(255,255,255,0.1); border-color: var(--violet-light); transform: translateY(-2px); }
-  a.marca { transition: background 0.15s, border-color 0.15s, transform 0.15s; }
-  .marca h3 { font-size: 18.5px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 8px;
-              display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
-  .ir { font-size: 12.5px; font-weight: 700; color: var(--violet-light); white-space: nowrap; }
-  .rol { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.82); margin: 0 0 6px; }
-  .fn { font-size: 13px; line-height: 1.5; color: rgba(255,255,255,0.5); margin: 0 0 14px; }
-  .acento { display: flex; align-items: center; gap: 9px; margin-bottom: 12px; }
-  .sw { width: 22px; height: 22px; border-radius: 6px; flex: none; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.18); }
-  .sw.vacio { background: repeating-linear-gradient(45deg, rgba(255,255,255,0.1) 0 5px, transparent 5px 10px); }
-  .acento code { font-size: 12.5px; font-family: ui-monospace, Consolas, monospace; color: rgba(255,255,255,0.75); }
-  .pend { font-size: 12.5px; color: rgba(255,255,255,0.4); font-style: italic; }
-  .estado { font-size: 11.5px; font-weight: 700; margin: 0; padding-top: 11px; border-top: 1px solid var(--linea); }
-  .estado.listo { color: #7BE5C0; }
-  .estado.parcial { color: var(--violet-light); }
-  .estado.vacia, .estado.reservada { color: rgba(255,255,255,0.42); }
-  .marca.vacia, .marca.reservada { opacity: 0.72; }
+  /* El swatch lleva borde propio: el celeste (2.22:1) y el coral (2.53:1) no
+     alcanzan 3:1 contra el papel, así que el contorno es lo que delimita la
+     forma. El HEX se lee en texto navy, nunca en su propio color. */
+  .sw { display: block; width: 20px; height: 20px; border-radius: 6px; flex: none;
+        box-shadow: inset 0 0 0 1px rgba(var(--navy-rgb), 0.28); }
+  .sw-grupo { background: linear-gradient(135deg, var(--navy) 50%, var(--violet) 50%); }
+  .sw-vacio { background: repeating-linear-gradient(45deg, rgba(var(--navy-rgb),0.13) 0 4px, transparent 4px 8px); }
 
-  footer { margin-top: 30px; padding-top: 22px; border-top: 1px solid var(--linea);
-           font-size: 12.5px; line-height: 1.7; color: rgba(255,255,255,0.45); max-width: 74ch; }
-  footer a { color: rgba(255,255,255,0.7); }
+  footer { padding: 30px 0 64px; border-top: 1px solid var(--linea); font-size: 12.5px;
+           line-height: 1.7; color: var(--ink-62); max-width: 76ch; }
+  footer strong { color: var(--ink-72); }
 
-  a:focus-visible, .marca:focus-visible { outline: 3px solid var(--violet-light); outline-offset: 3px; border-radius: 12px; }
-  @media (prefers-reduced-motion: reduce) { a.marca { transition: none; } a.marca:hover { transform: none; } }
-  @media (max-width: 560px) { .marco { padding: 48px 18px 64px; } .contador { gap: 18px; } }
+  a:focus-visible, .manual:focus-visible { outline: 3px solid var(--violet-deep); outline-offset: 3px; border-radius: 10px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .manual { transition: none; } .manual:hover { transform: none; } }
+  @media (max-width: 720px) {
+    .fila { grid-template-columns: 26px 1fr; row-gap: 4px; }
+    .fila-hex, .fila-estado { grid-column: 2; text-align: left; }
+    .atajo-ir { width: 100%; }
+  }
+  @media (max-width: 560px) {
+    .marco { padding: 0 18px; }
+    .franja { padding: 44px 0 28px; }
+    .cuenta { gap: 14px; }
+    .cuenta div { width: 100%; }
+  }
 </style>
 </head>
 <body>
-<div class="marco">
 
-  <header>
+<div class="franja">
+  <div class="marco">
     <p class="kick">Grupo Linex</p>
     <h1>El universo de marca</h1>
-    <p class="lede">Todos los manuales del grupo en un sitio. Entra, busca tu marca y toma lo que necesites: logotipo, colores, tipografía, tono y las reglas de cada pieza. Sin pedir acceso a nadie.</p>
-    <div class="contador">
+    <p class="lede">Todos los manuales del grupo en un sitio. Entra, busca lo que necesitas y tómalo: logotipo, colores, tipografía, tono y las reglas de cada pieza. Sin pedirle acceso a nadie.</p>
+    <div class="cuenta">
       <div><b>9</b><span>marcas en la constelación</span></div>
       <div><b>3</b><span>con color de acento definido</span></div>
-      <div><b>1</b><span>con manual publicado</span></div>
+      <div><b>2</b><span>manuales publicados</span></div>
     </div>
-  </header>
+  </div>
+</div>
 
-  <a class="atajo" href="grupo/index.html">
-    <span><b>Manual del Grupo Linex</b><span>El sistema común: arquitectura, Group Bar, paleta fundacional, tipografía y gobernanza. Lo que heredan todas las estrellas.</span></span>
-  </a>
+<div class="marco">
 
-  <section class="tier">
-    <div class="tier-cab">
-      <h2>Tier 1 · El fondo</h2>
-      <p>Capital atrae inversionistas y empresas a la constelación.</p>
-    </div>
-    <div class="rejilla">
-    <div class="marca vacia">
-      <h3>Linex Capital</h3>
-      <p class="rol">El Fondo</p>
-      <p class="fn">Fondo de private equity.</p>
-      <div class="acento"><span class="sw vacio"></span><span class="pend">acento pendiente</span></div>
-      <p class="estado vacia">Sin definir</p>
-    </div>
+  <section class="seccion">
+    <h2>Los manuales</h2>
+    <p class="intro">Cada uno se lee solo, con su propio menú y buscador.</p>
+    <div class="manuales">
+      <a class="manual" href="grupo/index.html">
+        <span class="manual-cab">
+          <span class="manual-titulo">Manual del Grupo Linex</span>
+          <span class="sw sw-grupo"></span>
+        </span>
+        <span class="manual-para">El sistema que heredan todas las marcas.</span>
+        <span class="temas"><span>Arquitectura de la constelación</span><span>Logo y Group Bar</span><span>Paleta fundacional</span><span>Tipografía</span><span>Voz y tono</span><span>Accesibilidad</span><span>Una ficha por marca</span></span>
+        <span class="manual-pie">22 secciones<span class="manual-cta">Abrir el manual</span></span>
+      </a>
+      <a class="manual" href="trip/index.html">
+        <span class="manual-cab">
+          <span class="manual-titulo">Manual de Linex Trip</span>
+          <span class="sw" style="background:#00B5F5;"></span>
+        </span>
+        <span class="manual-para">La primera marca con su manual completo.</span>
+        <span class="temas"><span>Logotipo</span><span>Paleta de color</span><span>Tipografía</span><span>Iconografía</span><span>Fotografía</span><span>Audiencias</span><span>Voz y tono</span><span>Piezas por canal</span></span>
+        <span class="manual-pie">14 secciones<span class="manual-cta">Abrir el manual</span></span>
+      </a>
     </div>
   </section>
-  <section class="tier">
-    <div class="tier-cab">
-      <h2>Tier 2 · La marca ancla</h2>
-      <p>Loyalty es la sombrilla que presenta a todas las demás.</p>
-    </div>
-    <div class="rejilla">
-    <div class="marca vacia">
-      <h3>Linex Loyalty</h3>
-      <p class="rol">Masterbrand — el Space Port</p>
-      <p class="fn">Plataforma de loyalty white-label; la sombrilla que presenta toda la constelación (Earn &amp; Burn).</p>
-      <div class="acento"><span class="sw vacio"></span><span class="pend">acento pendiente</span></div>
-      <p class="estado vacia">Sin definir</p>
-    </div>
-    </div>
+
+  <section class="seccion">
+    <h2>¿Qué necesitas?</h2>
+    <p class="intro">Los atajos llevan directo a la página, sin pasar por el índice.</p>
+    <ul class="atajos">
+      <li class="atajo">
+        <span class="atajo-txt"><b>El logotipo</b><span>Versiones, área de respeto y lo que no se puede hacer</span></span>
+        <span class="atajo-ir"><a href="grupo/08-logo-groupbar.html">Grupo</a><a href="trip/01-logotipo.html">Linex Trip</a></span>
+      </li>
+      <li class="atajo">
+        <span class="atajo-txt"><b>Los colores</b><span>Los HEX exactos, dónde va cada uno y el contraste mínimo</span></span>
+        <span class="atajo-ir"><a href="grupo/09-paleta-fundacional.html">Grupo</a><a href="trip/03-paleta-color.html">Linex Trip</a></span>
+      </li>
+      <li class="atajo">
+        <span class="atajo-txt"><b>La tipografía</b><span>Familias, pesos y escala de tamaños</span></span>
+        <span class="atajo-ir"><a href="grupo/11-tipografia.html">Grupo</a><a href="trip/04-tipografia.html">Linex Trip</a></span>
+      </li>
+      <li class="atajo">
+        <span class="atajo-txt"><b>Cómo escribimos</b><span>Voz, tono y las palabras que usamos y evitamos</span></span>
+        <span class="atajo-ir"><a href="grupo/06-voz-tono.html">Grupo</a><a href="trip/11-voz-tono.html">Linex Trip</a></span>
+      </li>
+      <li class="atajo">
+        <span class="atajo-txt"><b>Las piezas por canal</b><span>Web, WhatsApp, correo, papelería y redes</span></span>
+        <span class="atajo-ir"><a href="grupo/17-aplicaciones.html">Grupo</a><a href="trip/14-entregables.html">Linex Trip</a></span>
+      </li>
+      <li class="atajo">
+        <span class="atajo-txt"><b>Accesibilidad</b><span>Contraste mínimo, tamaños y qué color no va como texto</span></span>
+        <span class="atajo-ir"><a href="grupo/14-accesibilidad.html">Grupo</a><a href="trip/07-accesibilidad.html">Linex Trip</a></span>
+      </li>
+    </ul>
   </section>
-  <section class="tier">
-    <div class="tier-cab">
-      <h2>Tier 3 · Las estrellas</h2>
-      <p>Cada una opera su vertical con su propio acento.</p>
-    </div>
-    <div class="rejilla">
-    <div class="marca parcial">
-      <h3>Linex Travel</h3>
-      <p class="rol">Estrella de referencia</p>
-      <p class="fn">Comercio de viajes: plataforma de reserva y redención para programas de loyalty.</p>
-      <div class="acento"><span class="sw" style="background:#5B5CFF;"></span><code>#5B5CFF</code></div>
-      <p class="estado parcial">Tokens definidos · manual pendiente</p>
-    </div>
-    <div class="marca parcial">
-      <h3>Linex Go</h3>
-      <p class="rol">Sub-marca dentro de Linex Travel</p>
-      <p class="fn">Plataforma de viajes B2B para agencias y operadores.</p>
-      <div class="acento"><span class="sw" style="background:#FF725E;"></span><code>#FF725E</code></div>
-      <p class="estado parcial">Tokens definidos · manual pendiente</p>
-    </div>
-    <a class="marca listo" href="trip/index.html">
-      <h3>Linex Trip<span class="ir">Abrir &rarr;</span></h3>
-      <p class="rol">Sub-marca dentro de Linex Travel</p>
-      <p class="fn">Marca de reserva de viajes B2C.</p>
-      <div class="acento"><span class="sw" style="background:#00B5F5;"></span><code>#00B5F5</code></div>
-      <p class="estado listo">Manual completo</p>
-    </a>
-    <div class="marca reservada">
-      <h3>Linex Destination</h3>
-      <p class="rol">Línea dentro de Linex Travel (candidata a estrella propia)</p>
-      <p class="fn">Servicios de publicidad para destinos turísticos / mercado CVB.</p>
-      <div class="acento"><span class="sw vacio"></span><span class="pend">acento pendiente</span></div>
-      <p class="estado reservada">Nombre reservado · no construir sobre él</p>
-    </div>
-    <div class="marca vacia">
-      <h3>Linex Marketplace</h3>
-      <p class="rol">Estrella — sombrilla de redención</p>
-      <p class="fn">El 'supermercado de redención': bienes físicos, juegos, streaming y más bajo una sola sombrilla — no una estrella por nicho.</p>
-      <div class="acento"><span class="sw vacio"></span><span class="pend">acento pendiente</span></div>
-      <p class="estado vacia">Sin definir</p>
-    </div>
-    <div class="marca vacia">
-      <h3>Linex Rewards</h3>
-      <p class="rol">Estrella — el motor de EARN</p>
-      <p class="fn">Motor de acumulación de puntos, wallet y checkout para cualquier programa de loyalty.</p>
-      <div class="acento"><span class="sw vacio"></span><span class="pend">acento pendiente</span></div>
-      <p class="estado vacia">Sin definir</p>
-    </div>
-    <div class="marca reservada">
-      <h3>Linex School</h3>
-      <p class="rol">Estrella en expansión (ilustrativa)</p>
-      <p class="fn">Educación / entrenamiento.</p>
-      <div class="acento"><span class="sw vacio"></span><span class="pend">acento pendiente</span></div>
-      <p class="estado reservada">Nombre reservado · no construir sobre él</p>
-    </div>
-    </div>
+
+  <section class="seccion">
+    <h2>Estado de la constelación</h2>
+    <p class="intro">Qué tiene resuelto cada marca hoy. Se genera desde los tokens del grupo, así que refleja lo que está decidido de verdad: la que no tiene color, aparece sin color.</p>
+      <div class="tier">
+        <h3>La marca ancla <small>Presenta a todas las demás.</small></h3>
+        <ul class="filas">
+        <li class="fila vacia">
+          <span class="fila-sw"><span class="sw sw-vacio"></span></span>
+          <span class="fila-nombre">Linex Loyalty<small>Masterbrand — el Space Port</small></span>
+          <span class="fila-hex"><i aria-hidden="true">&mdash;</i></span>
+          <span class="fila-estado">Color y manual pendientes</span>
+        </li>
+        </ul>
+      </div>
+      <div class="tier">
+        <h3>Las estrellas <small>Cada una opera su vertical con su propio acento.</small></h3>
+        <ul class="filas">
+        <li class="fila parcial">
+          <span class="fila-sw"><span class="sw" style="background:#5B5CFF;"></span></span>
+          <span class="fila-nombre">Linex Travel<small>Estrella de referencia</small></span>
+          <span class="fila-hex"><code>#5B5CFF</code></span>
+          <span class="fila-estado">Color definido &middot; manual pendiente</span>
+        </li>
+        <li class="fila parcial">
+          <span class="fila-sw"><span class="sw" style="background:#FF725E;"></span></span>
+          <span class="fila-nombre">Linex Go<small>Sub-marca dentro de Linex Travel</small></span>
+          <span class="fila-hex"><code>#FF725E</code></span>
+          <span class="fila-estado">Color definido &middot; manual pendiente</span>
+        </li>
+        <li class="fila listo">
+          <span class="fila-sw"><span class="sw" style="background:#00B5F5;"></span></span>
+          <span class="fila-nombre"><a href="trip/index.html">Linex Trip</a><small>Sub-marca dentro de Linex Travel</small></span>
+          <span class="fila-hex"><code>#00B5F5</code></span>
+          <span class="fila-estado">Manual publicado</span>
+        </li>
+        <li class="fila reservada">
+          <span class="fila-sw"><span class="sw sw-vacio"></span></span>
+          <span class="fila-nombre">Linex Destination<small>Línea dentro de Linex Travel (candidata a estrella propia)</small></span>
+          <span class="fila-hex"><i aria-hidden="true">&mdash;</i></span>
+          <span class="fila-estado">Nombre reservado &middot; no construir sobre él</span>
+        </li>
+        <li class="fila vacia">
+          <span class="fila-sw"><span class="sw sw-vacio"></span></span>
+          <span class="fila-nombre">Linex Marketplace<small>Estrella — sombrilla de redención</small></span>
+          <span class="fila-hex"><i aria-hidden="true">&mdash;</i></span>
+          <span class="fila-estado">Color y manual pendientes</span>
+        </li>
+        <li class="fila vacia">
+          <span class="fila-sw"><span class="sw sw-vacio"></span></span>
+          <span class="fila-nombre">Linex Rewards<small>Estrella — el motor de EARN</small></span>
+          <span class="fila-hex"><i aria-hidden="true">&mdash;</i></span>
+          <span class="fila-estado">Color y manual pendientes</span>
+        </li>
+        <li class="fila reservada">
+          <span class="fila-sw"><span class="sw sw-vacio"></span></span>
+          <span class="fila-nombre">Linex School<small>Estrella en expansión (ilustrativa)</small></span>
+          <span class="fila-hex"><i aria-hidden="true">&mdash;</i></span>
+          <span class="fila-estado">Nombre reservado &middot; no construir sobre él</span>
+        </li>
+        </ul>
+      </div>
+      <div class="tier">
+        <h3>El fondo <small>Atrae inversionistas y empresas a la constelación.</small></h3>
+        <ul class="filas">
+        <li class="fila vacia">
+          <span class="fila-sw"><span class="sw sw-vacio"></span></span>
+          <span class="fila-nombre">Linex Capital<small>El Fondo</small></span>
+          <span class="fila-hex"><i aria-hidden="true">&mdash;</i></span>
+          <span class="fila-estado">Color y manual pendientes</span>
+        </li>
+        </ul>
+      </div>
   </section>
 
   <footer>
     Este sitio es un <strong>export</strong>: la fuente editable vive en el proyecto interno del sistema de marca.
-    El estado de cada tarjeta se genera desde los tokens del grupo, así que refleja lo que está decidido de verdad &mdash; una marca sin acento aparece sin acento.
     Los documentos de estrategia y los artefactos internos no se publican aquí.
-    ¿Falta algo de tu marca o ves un dato viejo? Escríbele al administrador de marca.
+    ¿Falta algo de tu marca, ves un dato viejo o necesitas una pieza que no está resuelta? Escríbele al administrador de marca.
   </footer>
 
 </div>

@@ -3,15 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>19 · Delta — Linex Travel · Manual de Marca Grupo Linex</title>
+<title>Delta — Linex Travel · Manual de Marca Grupo Linex</title>
 <meta name="description" content="Qué cambia sobre lo fundacional para Linex Travel.">
 <link rel="stylesheet" href="assets/style.css">
 <style>
-.volver-hub { display:flex; align-items:center; gap:7px; margin:0 0 18px; padding:9px 12px;
-  border-radius:8px; background:rgba(255,255,255,0.07); color:rgba(255,255,255,0.72);
-  font-size:12px; font-weight:700; text-decoration:none; }
-.volver-hub:hover { background:rgba(255,255,255,0.13); color:#fff; }
-.volver-hub:focus-visible { outline:2px solid #fff; outline-offset:2px; }
+.hub-bar { display:flex; flex-direction:column; gap:6px; margin:0 0 16px; }
+.hub-bar a { display:block; padding:9px 12px; border-radius:8px; font-size:12px;
+  font-weight:700; text-decoration:none; background:rgba(255,255,255,0.07);
+  color:rgba(255,255,255,0.86); }
+.hub-bar a:hover { background:rgba(255,255,255,0.15); color:#fff; }
+.hub-bar a:focus-visible { outline:2px solid #fff; outline-offset:2px; }
+.buscar { margin:0 0 14px; }
+.buscar input { width:100%; padding:9px 12px; border-radius:8px; font:inherit; font-size:13px;
+  color:#fff; background:rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.22);
+  -webkit-appearance:none; appearance:none; }
+.buscar input::placeholder { color:rgba(255,255,255,0.62); }
+.buscar input:focus { outline:2px solid var(--violet-light); outline-offset:1px;
+  background:rgba(255,255,255,0.14); }
+.buscar-nada { margin:9px 2px 0; font-size:12px; color:rgba(255,255,255,0.72); }
+/* El manual declara display en estos elementos, así que [hidden] por sí solo no
+   los oculta: el buscador no filtraría nada. */
+.nav-group[hidden], .nav-list li[hidden], .buscar-nada[hidden] { display:none !important; }
 </style>
 </head>
 <body style="background:var(--paper);">
@@ -25,82 +37,81 @@
 <div class="nav-scrim" data-nav-scrim></div>
 <div class="shell">
   <aside class="sidebar" id="sidebar">
-    <a class="volver-hub" href="../index.html">&larr; Universo de marca</a>
+    <div class="hub-bar">
+      <a href="../index.html">&larr; Universo de marca</a>
+      <a href="../trip/index.html">Ir al manual de Linex Trip &rarr;</a>
+    </div>
     <a class="sidebar-brand" href="index.html">
       <span class="name">Grupo Linex</span>
       <span class="tag">Manual de Marca &middot; v1.1</span>
     </a>
     
-      <div class="nav-group">
+      <div class="buscar">
+      <input type="search" data-buscar placeholder="Buscar sección…" aria-label="Buscar una sección de este manual" autocomplete="off">
+      <p class="buscar-nada" data-buscar-nada hidden>Ninguna sección coincide.</p>
+    </div>
+    <div class="nav-group">
         <span class="nav-group-title">Quiénes somos</span>
         <ul class="nav-list">
-          <li><a href="01-fundamento.html"><span class="n">01</span><span>Fundamento del grupo</span></a></li>
-          <li><a href="02-arquitectura.html"><span class="n">02</span><span>Arquitectura de marca</span></a></li>
-          <li><a href="03-marcas.html"><span class="n">03</span><span>Las marcas de la constelación</span></a></li>
-          <li><a href="04-personalidad.html"><span class="n">04</span><span>Personalidad y valores</span></a></li>
-          <li><a href="05-audiencias.html"><span class="n">05</span><span>Audiencias</span></a></li>
+          <li><a href="01-fundamento.html"><span>Fundamento del grupo</span></a></li>
+          <li><a href="02-arquitectura.html"><span>Arquitectura de marca</span></a></li>
+          <li><a href="03-marcas.html"><span>Las marcas de la constelación</span></a></li>
+          <li><a href="04-personalidad.html"><span>Personalidad y valores</span></a></li>
+          <li><a href="05-audiencias.html"><span>Audiencias</span></a></li>
         </ul>
       </div>
 
       <div class="nav-group">
         <span class="nav-group-title">Cómo hablamos</span>
         <ul class="nav-list">
-          <li><a href="06-voz-tono.html"><span class="n">06</span><span>Voz y tono</span></a></li>
-          <li><a href="07-vocabulario.html"><span class="n">07</span><span>Vocabulario</span></a></li>
+          <li><a href="06-voz-tono.html"><span>Voz y tono</span></a></li>
+          <li><a href="07-vocabulario.html"><span>Vocabulario</span></a></li>
         </ul>
       </div>
 
       <div class="nav-group">
         <span class="nav-group-title">Cómo nos vemos</span>
         <ul class="nav-list">
-          <li><a href="08-logo-groupbar.html"><span class="n">08</span><span>Logo y Group Bar</span></a></li>
-          <li><a href="09-paleta-fundacional.html"><span class="n">09</span><span>Paleta fundacional</span></a></li>
-          <li><a href="10-color-por-estrella.html"><span class="n">10</span><span>Color de acción por estrella</span></a></li>
-          <li><a href="11-tipografia.html"><span class="n">11</span><span>Tipografía</span></a></li>
-          <li><a href="12-sistema-grafico.html"><span class="n">12</span><span>Sistema gráfico</span></a></li>
-          <li><a href="13-fotografia.html"><span class="n">13</span><span>Fotografía</span></a></li>
-          <li><a href="14-accesibilidad.html"><span class="n">14</span><span>Accesibilidad</span></a></li>
+          <li><a href="08-logo-groupbar.html"><span>Logo y Group Bar</span></a></li>
+          <li><a href="09-paleta-fundacional.html"><span>Paleta fundacional</span></a></li>
+          <li><a href="10-color-por-estrella.html"><span>Color de acción por estrella</span></a></li>
+          <li><a href="11-tipografia.html"><span>Tipografía</span></a></li>
+          <li><a href="12-sistema-grafico.html"><span>Sistema gráfico</span></a></li>
+          <li><a href="13-fotografia.html"><span>Fotografía</span></a></li>
+          <li><a href="14-accesibilidad.html"><span>Accesibilidad</span></a></li>
         </ul>
       </div>
 
       <div class="nav-group">
         <span class="nav-group-title">Cómo se opera</span>
         <ul class="nav-list">
-          <li><a href="15-agentes-ia.html"><span class="n">15</span><span>Reglas para agentes de IA</span></a></li>
+          <li><a href="15-agentes-ia.html"><span>Reglas para agentes de IA</span></a></li>
         </ul>
       </div>
 
       <div class="nav-group">
         <span class="nav-group-title">Cómo se aplica</span>
         <ul class="nav-list">
-          <li><a href="17-aplicaciones.html"><span class="n">17</span><span>Aplicaciones compartidas</span></a></li>
+          <li><a href="17-aplicaciones.html"><span>Aplicaciones compartidas</span></a></li>
         </ul>
       </div>
 
       <div class="nav-group">
-        <span class="nav-group-title">Delta por marca</span>
+        <span class="nav-group-title">Cada marca en detalle</span>
         <ul class="nav-list">
-          <li><a href="delta-loyalty.html"><span class="n">18</span><span>Linex Loyalty</span></a></li>
-          <li><a href="delta-travel.html" class="active" aria-current="page"><span class="n">19</span><span>Linex Travel</span></a></li>
-          <li><a href="delta-go.html"><span class="n">20</span><span>LinexGo</span></a></li>
-          <li><a href="delta-trip.html"><span class="n">21</span><span>LinexTrip</span></a></li>
-          <li><a href="delta-marketplace.html"><span class="n">22</span><span>Linex Marketplace</span></a></li>
-          <li><a href="delta-rewards.html"><span class="n">23</span><span>Linex Rewards</span></a></li>
-        </ul>
-      </div>
-
-
-
-      <div class="nav-group">
-        <span class="nav-group-title">Cierre</span>
-        <ul class="nav-list">
+          <li><a href="delta-loyalty.html"><span>Linex Loyalty</span></a></li>
+          <li><a href="delta-travel.html" class="active" aria-current="page"><span>Linex Travel</span></a></li>
+          <li><a href="delta-go.html"><span>Linex Go</span></a></li>
+          <li><a href="delta-trip.html"><span>Linex Trip</span></a></li>
+          <li><a href="delta-marketplace.html"><span>Linex Marketplace</span></a></li>
+          <li><a href="delta-rewards.html"><span>Linex Rewards</span></a></li>
         </ul>
       </div>
   </aside>
   <main class="main">
     <div class="main-inner wide">
       
-<div class="eyebrow-row"><span class="eyebrow">19 &middot; Delta &middot; Linex Travel</span><span class="crumb">Tier 3 &middot; Estrella de referencia &middot; Prioridad 1</span></div>
+<div class="eyebrow-row"><span class="eyebrow">Delta &middot; Linex Travel</span><span class="crumb">Tier 3 &middot; Estrella de referencia &middot; Prioridad 1</span></div>
 <h1 class="page-title">Linex <span style="color:var(--violet);">Travel</span></h1>
 <p class="lede">Comercio de viajes: reserva y redención para programas de fidelización, agencias y revendedores de servicios con IA. La plantilla que copia toda futura estrella.</p>
 
@@ -108,7 +119,7 @@
   <div class="field-list">
     <div class="field"><span class="k">Color de acento</span><span class="v">Azul-violeta #5B5CFF (acento) &middot; Violeta #6D28D9 (profundo). Lavanda #DDE1FF y Lila claro #E0B3FF como apoyo.</span></div>
     <div class="field"><span class="k">Genio</span><span class="v">En proceso de nombramiento. Construye soluciones de viaje a la medida: sitio de redención, API de agencia, UX de viaje.</span></div>
-    <div class="field"><span class="k">Sub-marcas dentro de la estrella</span><span class="v"><strong>LinexGo</strong> (B2B, agencias) y <strong>LinexTrip</strong> (B2C, viajero final) &mdash; nunca estrellas propias. <strong>Linex Destination</strong> (nombre tentativo, publicidad para destinos/CVB) es candidata a volverse estrella propia si crece.</span></div>
+    <div class="field"><span class="k">Sub-marcas dentro de la estrella</span><span class="v"><strong>Linex Go</strong> (B2B, agencias) y <strong>Linex Trip</strong> (B2C, viajero final) &mdash; nunca estrellas propias. <strong>Linex Destination</strong> (nombre tentativo, publicidad para destinos/CVB) es candidata a volverse estrella propia si crece.</span></div>
     <div class="field"><span class="k">Matiz de tono</span><span class="v">Suma &ldquo;tecnología inteligente&rdquo; y &ldquo;multilenguaje&rdquo; (español/inglés) a la personalidad compartida.</span></div>
   </div>
 
@@ -125,10 +136,39 @@
 
 <div class="footer-meta"><span>Grupo Linex</span><span>Manual de Marca del Grupo &middot; 2026 &middot; 19/24</span></div>
 
-      <div class="pager"><a class="prev" href="delta-loyalty.html"><span class="dir">&larr; Anterior</span><span class="lbl">18 · Linex Loyalty</span></a><a class="next" href="delta-go.html"><span class="dir">Siguiente &rarr;</span><span class="lbl">20 · LinexGo</span></a></div>
+      <div class="pager"><a class="prev" href="delta-loyalty.html"><span class="dir">&larr; Anterior</span><span class="lbl">Linex Loyalty</span></a><a class="next" href="delta-go.html"><span class="dir">Siguiente &rarr;</span><span class="lbl">Linex Go</span></a></div>
     </div>
   </main>
 </div>
 <script src="assets/nav.js"></script>
+<script>
+(function () {
+  var caja = document.querySelector("[data-buscar]");
+  if (!caja) return;
+  var nada = document.querySelector("[data-buscar-nada]");
+  var items = [].slice.call(document.querySelectorAll(".nav-list li"));
+  var grupos = [].slice.call(document.querySelectorAll(".nav-group"));
+  var pelar = function (s) { return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase(); };
+  items.forEach(function (li) { li.dataset.txt = pelar(li.textContent); });
+
+  caja.addEventListener("input", function () {
+    var q = pelar(caja.value.trim());
+    var vistos = 0;
+    items.forEach(function (li) {
+      var ok = !q || li.dataset.txt.indexOf(q) !== -1;
+      li.hidden = !ok;
+      if (ok) vistos++;
+    });
+    grupos.forEach(function (g) {
+      g.hidden = !g.querySelector(".nav-list li:not([hidden])");
+    });
+    if (nada) nada.hidden = !q || vistos > 0;
+  });
+
+  caja.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { caja.value = ""; caja.dispatchEvent(new Event("input")); }
+  });
+})();
+</script>
 </body>
 </html>

@@ -11,10 +11,12 @@ The site itself is in Spanish, the working language of the brand.
 
 ## What you'll find
 
-**The hub.** The landing page shows the nine brands of the constellation grouped by
-tier, and tells the truth about each one: which has an accent color defined, which has
-a published manual, and which is still undecided. A card that looks dimmed means that
-brand is missing a decision — not that the page is missing.
+**The hub.** The landing page leads with the two manuals that exist, followed by
+shortcuts — the logo, the colors, the typography, how we write, the pieces by channel,
+accessibility — that jump straight to the page you need instead of making you walk the
+index. Below that, a status board for all nine brands of the constellation tells the
+truth about each one: which has an accent color defined, which has a published manual,
+and which is still undecided.
 
 **Grupo Linex manual.** The shared system every brand inherits: constellation
 architecture, Group Bar, foundational palette, typography, accessibility, and the
@@ -24,8 +26,11 @@ profile of each star.
 typography, iconography, photography, audiences, voice and tone, vocabulary, and the
 pieces resolved channel by channel — web, WhatsApp, email, stationery, and social.
 
-Each brand is a folder. When another one closes its manual, we add it and its hub card
-turns into a link on its own.
+Each manual has its own menu with a search box that filters as you type, and you can
+jump between manuals without going back to the hub.
+
+Each brand is a folder. When another one closes its manual, it gets added and its row on
+the status board turns into a link on its own.
 
 ## How to use it
 
@@ -58,6 +63,14 @@ The script copies by **allowlist**: only what is named in it goes out. If someon
 a confidential PDF into an already-published folder tomorrow, it doesn't leak, because
 it isn't on the list. It also aborts if it detects a forbidden path, and verifies there
 are no broken links before finishing.
+
+The script also adapts the manuals for an open URL without touching the internal
+source: it drops the section numbers (excluding a page would otherwise leave visible
+gaps), removes empty menu groups, replaces internal jargon, writes the brand names the
+way their owner decided them, raises every text color that fell below the 4.5:1 the
+manual itself requires, and adds the search box and the jump between manuals. Each of
+those is re-applied on every publish, and the script fails if any of them is left
+undone.
 
 Anything written for this repository — README, commit messages, issues — is in English.
 The brand content itself stays in Spanish.
