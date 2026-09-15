@@ -89,7 +89,7 @@
 
 <p class="page-index"><span class="eyebrow" style="color:var(--cyan-dark);">Iconografía y diseño por canal</span></p>
 <h1 class="page-title">Una sola librería de íconos, aplicada igual en redes, web e impresos</h1>
-<p class="lede">Los íconos salen de <strong>Font Awesome Pro</strong>, familia <strong>Classic</strong>, estilo <strong>Regular</strong> &mdash; el filtro exacto de la librería es <code>classic &amp; s=regular &amp; ic=pro-collection</code>. Nunca se dibujan a mano ni se mezclan estilos. El color depende del fondo, no del gusto, y el mismo ícono se produce distinto en cada canal. Los ejemplos de aplicación viven en <a href="14-entregables.html">14 &middot; Entregables y aplicaciones</a>.</p>
+<p class="lede">Los íconos salen de <strong>Font Awesome Pro</strong>, familia <strong>Classic</strong>, estilo <strong>Regular</strong> &mdash; el filtro exacto de la librería es <code>classic &amp; s=regular &amp; ic=pro-collection</code>. Nunca se dibujan a mano ni se mezclan estilos. El color depende del fondo, no del gusto, y el mismo ícono se produce distinto en cada canal. Los ejemplos de aplicación viven en <a href="14-entregables.html">Entregables y aplicaciones</a>.</p>
 
 <section class="section-block" style="border-top:1px solid rgba(0,20,90,0.1); padding-top:26px;">
   <h2 class="section-title">Qué ícono usa cada concepto</h2>
@@ -153,7 +153,7 @@
 
 <section class="section-block" style="border-top:1px solid rgba(0,20,90,0.1); padding-top:26px;">
   <h2 class="section-title">Accesibilidad de los íconos, canal por canal</h2>
-  <p class="small-note" style="margin:0 0 16px; max-width:75ch;">Un ícono no es texto, pero cuando comunica algo (un estado, una categoría, una acción) WCAG lo trata como <strong style="color:var(--navy);">objeto gráfico</strong> y le exige <strong style="color:var(--navy);">3:1</strong> de contraste contra su fondo (criterio 1.4.11, nivel AA). Ese número cambia la regla que traía Trip &mdash; &ldquo;íconos siempre en Celeste&rdquo; &mdash; porque Celeste sobre fondo claro no lo alcanza. Medido, con la misma fórmula de <a href="07-accesibilidad.html">07 &middot; Accesibilidad</a>:</p>
+  <p class="small-note" style="margin:0 0 16px; max-width:75ch;">Un ícono no es texto, pero cuando comunica algo (un estado, una categoría, una acción) WCAG lo trata como <strong style="color:var(--navy);">objeto gráfico</strong> y le exige <strong style="color:var(--navy);">3:1</strong> de contraste contra su fondo (criterio 1.4.11, nivel AA). Ese número cambia la regla que traía Trip &mdash; &ldquo;íconos siempre en Celeste&rdquo; &mdash; porque Celeste sobre fondo claro no lo alcanza. Medido, con la misma fórmula de <a href="07-accesibilidad.html">Accesibilidad</a>:</p>
   <div class="table-scroll" style="margin-bottom:10px;">
     <table class="rtable">
       <tr><th>Fondo</th><th>Celeste #00B5F5</th><th>Celeste Oscuro #0090C2</th><th>Azul Trip #00145A</th><th>Blanco</th></tr>
@@ -177,7 +177,7 @@
         <li><strong style="color:var(--navy);">Ícono dentro de un botón sin texto:</strong> la etiqueta va en el botón, no en el ícono &mdash; <code>&lt;button aria-label="Buscar"&gt;</code> con el <code>&lt;i aria-hidden="true"&gt;</code> adentro.</li>
         <li><strong style="color:var(--navy);">Ícono que sí carga significado</strong> en medio de un texto: lleva <code>role="img"</code> y su propio <code>aria-label</code> con la palabra que reemplaza.</li>
         <li>Tamaño mínimo 16px; 20px cuando va solo. Área tocable de 44&times;44px como estándar de plataforma (WCAG 2.2 exige 24&times;24 como piso AA) &mdash; el ícono puede ser chico, el área de toque no.</li>
-        <li>El ícono nunca es el único portador del dato: un estado se dice con ícono <em>y</em> texto <em>y</em> color, no solo con color (ver <a href="07-accesibilidad.html">07 &middot; Accesibilidad</a>).</li>
+        <li>El ícono nunca es el único portador del dato: un estado se dice con ícono <em>y</em> texto <em>y</em> color, no solo con color (ver <a href="07-accesibilidad.html">Accesibilidad</a>).</li>
         <li>El ícono hereda <code>color</code> y <code>font-size</code> del CSS: se pinta con los tokens de la paleta, no con un HEX suelto en el markup.</li>
       </ul>
       <div class="card tint">
@@ -194,7 +194,7 @@
       <ul class="small-note" style="margin:0 0 18px; padding-left:18px; display:flex; flex-direction:column; gap:5px;">
         <li>En una pieza de redes el ícono es parte de la imagen: <strong style="color:var(--navy);">ningún lector de pantalla lo ve</strong>. Todo lo que el ícono comunique tiene que estar también en el copy del post y en el texto alternativo que Instagram y Facebook permiten escribir por publicación.</li>
         <li>Tamaño mínimo 40px sobre lienzo de 1080px (equivale a los 16px de web) &mdash; por debajo de eso el contorno Regular se pierde en el feed comprimido.</li>
-        <li>Contraste 3:1 contra el fondo <em>real</em> de la pieza. Si el ícono va sobre foto, va sobre el degradado de lectura del sistema (ver <a href="06-sistema-fotografia.html">06 &middot; Sistema gráfico</a>), nunca directo sobre la imagen.</li>
+        <li>Contraste 3:1 contra el fondo <em>real</em> de la pieza. Si el ícono va sobre foto, va sobre el degradado de lectura del sistema (ver <a href="06-sistema-fotografia.html">Sistema gráfico</a>), nunca directo sobre la imagen.</li>
         <li>Nunca un ícono como única explicación de una condición comercial (&ldquo;incluye equipaje&rdquo;, &ldquo;cancelación gratis&rdquo;): va con su etiqueta de texto al lado.</li>
         <li>Se exporta SVG desde la librería (o se usa la fuente de escritorio) y se escala <strong style="color:var(--navy);">proporcionalmente</strong>: estirar un ícono cambia el peso del trazo y lo saca del sistema.</li>
       </ul>
@@ -245,7 +245,7 @@
       <tr><td class="name">Gran formato<span class="muted">pendones, ferias</span></td><td>Escala libre, proporcional</td><td>Blanco o Celeste sobre navy</td><td>SVG vectorial, sin rasterizar</td></tr>
     </table>
   </div>
-  <p class="small-note" style="margin-top:10px;">CTA siempre visible sin scroll en post/story &middot; un solo CTA principal en email &middot; CMYK en impresos &middot; los formatos completos por canal y los ejemplos armados están en <a href="14-entregables.html">14 &middot; Entregables y aplicaciones</a>.</p>
+  <p class="small-note" style="margin-top:10px;">CTA siempre visible sin scroll en post/story &middot; un solo CTA principal en email &middot; CMYK en impresos &middot; los formatos completos por canal y los ejemplos armados están en <a href="14-entregables.html">Entregables y aplicaciones</a>.</p>
 </section>
 
 <section class="section-block" style="border-top:1px solid rgba(0,20,90,0.1); padding-top:26px;">
@@ -266,7 +266,7 @@
       <h2 class="section-title">Cifras y datos</h2>
       <div class="card on-navy" style="display:flex; align-items:center; gap:20px;">
         <span style="font-size:28px; font-weight:900; color:var(--cyan); line-height:1;">4.5:1</span>
-        <span style="font-size:11.5px; line-height:1.4; color:rgba(255,255,255,0.68);">Contraste mínimo para presentar cifras y datos &mdash; cifra grande en negrita (900) en Azul Trip o Celeste sobre fondo oscuro; texto de apoyo pequeño debajo, sin decimales innecesarios (ver <a href="07-accesibilidad.html">07 &middot; Accesibilidad</a>).</span>
+        <span style="font-size:11.5px; line-height:1.4; color:rgba(255,255,255,0.68);">Contraste mínimo para presentar cifras y datos &mdash; cifra grande en negrita (900) en Azul Trip o Celeste sobre fondo oscuro; texto de apoyo pequeño debajo, sin decimales innecesarios (ver <a href="07-accesibilidad.html">Accesibilidad</a>).</span>
       </div>
       <p class="small-note" style="margin-top:10px;">Ojo con la diferencia: un <strong style="color:var(--navy);">ícono</strong> necesita 3:1 porque es objeto gráfico; una <strong style="color:var(--navy);">cifra</strong> es texto y necesita 4.5:1. Cuando van juntos en la misma tarjeta, manda el 4.5:1.</p>
     </div>
