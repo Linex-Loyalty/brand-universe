@@ -131,17 +131,17 @@
       <div class="card">
         <span class="small-note" style="display:block; font-weight:700; margin-bottom:8px;">Descubrimiento</span>
         <div class="stack" style="gap:8px;">
-          <div style="background:var(--cyan); border-radius:8px; padding:8px 12px; text-align:center;"><span style="font-size:11.5px; font-weight:700; color:#fff;">Buscar vuelos</span></div>
-          <div style="background:var(--cyan); border-radius:8px; padding:8px 12px; text-align:center;"><span style="font-size:11.5px; font-weight:700; color:#fff;">Ver destinos</span></div>
-          <div style="background:var(--cyan); border-radius:8px; padding:8px 12px; text-align:center;"><span style="font-size:11.5px; font-weight:700; color:#fff;">Cotiza tu viaje</span></div>
+          <div style="background:var(--cyan); border-radius:8px; padding:8px 12px; text-align:center; box-shadow:inset 0 0 0 2px var(--navy);"><span style="font-size:11.5px; font-weight:700; color:var(--navy);">Buscar vuelos</span></div>
+          <div style="background:var(--cyan); border-radius:8px; padding:8px 12px; text-align:center; box-shadow:inset 0 0 0 2px var(--navy);"><span style="font-size:11.5px; font-weight:700; color:var(--navy);">Ver destinos</span></div>
+          <div style="background:var(--cyan); border-radius:8px; padding:8px 12px; text-align:center; box-shadow:inset 0 0 0 2px var(--navy);"><span style="font-size:11.5px; font-weight:700; color:var(--navy);">Cotiza tu viaje</span></div>
         </div>
       </div>
       <div class="card">
         <span class="small-note" style="display:block; font-weight:700; margin-bottom:8px;">Decisión</span>
         <div class="stack" style="gap:8px;">
-          <div style="background:var(--cyan); border-radius:8px; padding:8px 12px; text-align:center;"><span style="font-size:11.5px; font-weight:700; color:var(--navy);">Reserva ahora</span></div>
-          <div style="background:var(--cyan); border-radius:8px; padding:8px 12px; text-align:center;"><span style="font-size:11.5px; font-weight:700; color:var(--navy);">Ver disponibilidad</span></div>
-          <div style="background:var(--cyan); border-radius:8px; padding:8px 12px; text-align:center;"><span style="font-size:11.5px; font-weight:700; color:var(--navy);">Paga en cuotas</span></div>
+          <div style="background:var(--cyan); border-radius:8px; padding:8px 12px; text-align:center; box-shadow:inset 0 0 0 2px var(--navy);"><span style="font-size:11.5px; font-weight:700; color:var(--navy);">Reserva ahora</span></div>
+          <div style="background:var(--cyan); border-radius:8px; padding:8px 12px; text-align:center; box-shadow:inset 0 0 0 2px var(--navy);"><span style="font-size:11.5px; font-weight:700; color:var(--navy);">Ver disponibilidad</span></div>
+          <div style="background:var(--cyan); border-radius:8px; padding:8px 12px; text-align:center; box-shadow:inset 0 0 0 2px var(--navy);"><span style="font-size:11.5px; font-weight:700; color:var(--navy);">Paga en cuotas</span></div>
         </div>
       </div>
       <div class="card">
@@ -162,6 +162,46 @@
 </section>
 
 <section class="section-block" style="border-top:1px solid rgba(0,20,90,0.1); padding-top:26px; margin-top:32px;">
+  <h2 class="section-title">C&oacute;mo se construye un bot&oacute;n</h2>
+  <p class="small-note" style="max-width:76ch; margin-bottom:20px;">El CTA es el <strong style="color:var(--navy);">&uacute;nico elemento que la marca rellena de Celeste</strong>, y por eso su construcci&oacute;n es fija: si algo lleva ese fondo, se toca. Las medidas valen igual para el sitio, el correo, WhatsApp, la papeler&iacute;a y las redes.</p>
+
+  <div style="display:flex; flex-wrap:wrap; gap:26px; align-items:flex-start; margin-bottom:22px;">
+    <div><span class="small-note" style="display:block; font-weight:800; color:var(--cyan-dark); margin-bottom:9px;">Principal</span>
+      <span style="background:var(--cyan); color:var(--navy); box-shadow:inset 0 0 0 2px var(--navy); border-radius:999px; padding:11px 22px; font-size:13px; font-weight:800; display:inline-flex; align-items:center;">Reserva ahora</span>
+      <p class="small-note" style="margin:9px 0 0;">Uno por pieza &middot; 7.16:1</p></div>
+    <div><span class="small-note" style="display:block; font-weight:800; color:var(--cyan-dark); margin-bottom:9px;">Secundario</span>
+      <span style="background:transparent; color:var(--navy); border:2px solid var(--navy); border-radius:999px; padding:9px 20px; font-size:13px; font-weight:800; display:inline-flex; align-items:center;">Habla con un asesor</span>
+      <p class="small-note" style="margin:9px 0 0;">Contorno, nunca relleno &middot; 16.83:1</p></div>
+    <div><span class="small-note" style="display:block; font-weight:800; color:var(--cyan-dark); margin-bottom:9px;">Enlace en texto</span>
+      <span style="font-size:13px; font-weight:700; color:var(--navy); text-decoration:underline; text-decoration-color:var(--cyan); text-decoration-thickness:2px; text-underline-offset:3px;">Ver todos los destinos</span>
+      <p class="small-note" style="margin:9px 0 0;">Subrayado Celeste &middot; 16.83:1</p></div>
+    <div><span class="small-note" style="display:block; font-weight:800; color:var(--cyan-dark); margin-bottom:9px;">Sobre Azul Trip</span>
+      <span style="background:var(--navy); border-radius:12px; padding:15px 18px; display:inline-flex; align-items:center; gap:14px;"><span style="background:var(--cyan); color:var(--navy); box-shadow:inset 0 0 0 2px var(--navy); border-radius:999px; padding:11px 22px; font-size:13px; font-weight:800; display:inline-flex; align-items:center;">Reserva ahora</span><span style="font-size:13px; font-weight:700; color:var(--cyan);">o ver ofertas</span></span>
+      <p class="small-note" style="margin:9px 0 0;">Aqu&iacute; el enlace s&iacute; va Celeste &middot; 7.16:1</p></div>
+  </div>
+
+  <table class="rtable">
+    <tr><td class="name">Relleno<span class="muted">lo que lo convierte en bot&oacute;n</span></td><td><strong>Celeste #00B5F5.</strong> Ning&uacute;n otro elemento de la pieza lleva ese color de fondo, as&iacute; que el Celeste por s&iacute; solo ya anuncia que algo se puede tocar.</td></tr>
+    <tr><td class="name">Texto<span class="muted">nunca blanco</span></td><td><strong>Azul Trip #00145A</strong>, peso 700&ndash;800, may&uacute;scula inicial. Da 7.16:1, nivel AAA. En blanco da 2.35:1 y no se lee.</td></tr>
+    <tr><td class="name">Filete<span class="muted">2px por dentro</span></td><td><strong>Azul Trip, 2px interior.</strong> Sobre fondo blanco el celeste solo no define borde y el bot&oacute;n se lee como una mancha; el filete le cierra la forma. En maquetas reducidas baja a 1px. Sobre Azul Trip queda invisible, y no pasa nada: ah&iacute; el propio celeste ya separa.</td></tr>
+    <tr><td class="name">Forma<span class="muted">dos radios, no m&aacute;s</span></td><td><strong>999px</strong> (c&aacute;psula) en piezas, redes y mensajer&iacute;a. <strong>8px</strong> cuando el bot&oacute;n vive dentro de una tarjeta o un formulario, para acompa&ntilde;ar el radio del contenedor.</td></tr>
+    <tr><td class="name">&Aacute;rea t&aacute;ctil<span class="muted">aunque el texto ocupe menos</span></td><td>M&iacute;nimo <strong>44&times;44 px reales</strong>. Si la etiqueta es corta crece el padding, no se encoge el bot&oacute;n (WCAG 2.5.5).</td></tr>
+    <tr><td class="name">Secundario<span class="muted">cuando hay dos acciones</span></td><td>Sin relleno, <strong>contorno Azul Trip de 2px</strong> y texto Azul Trip. Nunca un segundo bot&oacute;n lleno en la misma pieza: dos rellenos compitiendo dejan al viajero sin saber cu&aacute;l es el camino.</td></tr>
+    <tr><td class="name">Enlace de texto<span class="muted">acci&oacute;n sin superficie</span></td><td>Sobre fondo claro, <strong>Azul Trip con subrayado Celeste</strong>. Sobre Azul Trip, <strong>Celeste liso</strong>. El subrayado cumple adem&aacute;s la regla de no se&ntilde;alar solo con color.</td></tr>
+    <tr><td class="name">Cu&aacute;ntos<span class="muted">jerarqu&iacute;a</span></td><td><strong>Un solo principal</strong> por pieza o por pantalla. Todo lo dem&aacute;s es secundario o enlace.</td></tr>
+    <tr><td class="name">La etiqueta<span class="muted">qu&eacute; dice</span></td><td>Verbo en imperativo + beneficio concreto, en may&uacute;scula inicial: &ldquo;Reserva ahora&rdquo;, &ldquo;Ver disponibilidad&rdquo;. La biblioteca de aqu&iacute; arriba es la lista aprobada.</td></tr>
+  </table>
+
+  <div class="callout" style="background:var(--coral-tint); border:1px solid rgba(var(--coral-rgb),0.3); margin-top:20px;">
+    <span class="tag" style="color:var(--coral);">NUNCA</span>
+    <p>Un bot&oacute;n <strong style="color:var(--navy);">relleno de Azul Trip</strong> &mdash; se lee como un bloque de contenido y le quita a la marca su color de acci&oacute;n.<br>
+    <strong style="color:var(--navy);">Texto blanco sobre el Celeste</strong> (2.35:1), ni aunque el bot&oacute;n sea grande.<br>
+    <strong style="color:var(--navy);">Dos botones llenos</strong> compitiendo en la misma pieza.<br>
+    <strong style="color:var(--navy);">May&uacute;scula sostenida</strong> en la etiqueta, ni signos de exclamaci&oacute;n (ver <a href="04-tipografia.html">Tipograf&iacute;a</a>).</p>
+  </div>
+</section>
+
+<section class="section-block" style="border-top:1px solid rgba(0,20,90,0.1); padding-top:26px; margin-top:32px;">
   <h2 class="section-title" style="margin-bottom:8px;">Celeste en piezas reales <span class="status ok" style="margin-left:6px; vertical-align:1px;">Validado &middot; decisi&oacute;n de color 2026</span></h2>
   <p class="small-note" style="margin-bottom:16px; max-width:70ch;">Mismo logo, mismo botón, misma tarjeta y el mismo chat de WhatsApp &mdash; la evidencia real usada para confirmar Celeste como color de acento de Trip (se evaluó frente a una propuesta en verde menta, descartada).</p>
   <div class="grid-4" style="gap:14px; align-items:stretch;">
@@ -170,7 +210,7 @@
     </div>
     <div class="card" style="display:flex; flex-direction:column; gap:8px; justify-content:center;">
       <span class="small-note" style="font-weight:700;">Botón CTA</span>
-      <div style="background:var(--cyan); border-radius:999px; padding:10px 16px; width:fit-content;"><span style="font-size:12px; font-weight:700; color:#fff;">Reservar ahora</span></div>
+      <div style="background:var(--cyan); border-radius:999px; padding:10px 16px; width:fit-content;"><span style="font-size:12px; font-weight:700; color:var(--navy);">Reservar ahora</span></div>
       <span class="small-note">$112 USD &middot; $450.000 COP</span>
     </div>
     <div class="card tint" style="display:flex; flex-direction:column; justify-content:center;">
