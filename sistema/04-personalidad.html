@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reglas para agentes de IA · Manual de Marca Grupo Linex</title>
-<meta name="description" content="Cómo debe comportarse cualquier agente de cualquier marca Linex.">
+<title>Personalidad y valores · Sistema compartido &middot; Grupo Linex</title>
+<meta name="description" content="Cómo actuamos y cómo se siente hablar con nosotros.">
 <link rel="stylesheet" href="assets/style.css">
 <style>
 .hub-bar { display:flex; flex-direction:column; gap:6px; margin:0 0 16px; }
@@ -26,9 +26,9 @@
 .nav-group[hidden], .nav-list li[hidden], .buscar-nada[hidden] { display:none !important; }
 </style>
 </head>
-<body style="background:var(--navy);">
+<body style="background:var(--paper);">
 <div class="topbar">
-  <span class="topbar-brand">Grupo Linex <small>MANUAL DE MARCA</small></span>
+  <span class="topbar-brand">Universo de marca <small>SISTEMA COMPARTIDO</small></span>
   <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="sidebar">
     <span class="bars"><span></span><span></span><span></span></span>
     Menú
@@ -41,8 +41,8 @@
       <a href="../index.html">&larr; Universo de marca</a>
     </div>
     <a class="sidebar-brand" href="index.html">
-      <span class="name">Grupo Linex</span>
-      <span class="tag">Manual de Marca &middot; v1.1</span>
+      <span class="name">Universo de marca</span>
+      <span class="tag">Sistema compartido &middot; v1.1</span>
     </a>
     
       <div class="buscar">
@@ -55,7 +55,7 @@
           <li><a href="01-fundamento.html"><span>Fundamento del grupo</span></a></li>
           <li><a href="02-arquitectura.html"><span>Arquitectura de marca</span></a></li>
           <li><a href="03-marcas.html"><span>Las marcas de la constelación</span></a></li>
-          <li><a href="04-personalidad.html"><span>Personalidad y valores</span></a></li>
+          <li><a href="04-personalidad.html" class="active" aria-current="page"><span>Personalidad y valores</span></a></li>
           <li><a href="05-audiencias.html"><span>Audiencias</span></a></li>
         </ul>
       </div>
@@ -84,7 +84,7 @@
       <div class="nav-group">
         <span class="nav-group-title">Cómo se opera</span>
         <ul class="nav-list">
-          <li><a href="15-agentes-ia.html" class="active" aria-current="page"><span>Reglas para agentes de IA</span></a></li>
+          <li><a href="15-agentes-ia.html"><span>Reglas para agentes de IA</span></a></li>
         </ul>
       </div>
 
@@ -98,51 +98,49 @@
       <div class="nav-group">
         <span class="nav-group-title">Cada marca en detalle</span>
         <ul class="nav-list">
-          <li><a href="delta-loyalty.html"><span>Linex Loyalty</span></a></li>
-          <li><a href="delta-travel.html"><span>Linex Travel</span></a></li>
-          <li><a href="delta-go.html"><span>Linex Go</span></a></li>
-          <li><a href="delta-trip.html"><span>Linex Trip</span></a></li>
-          <li><a href="delta-marketplace.html"><span>Linex Marketplace</span></a></li>
-          <li><a href="delta-rewards.html"><span>Linex Rewards</span></a></li>
+          <li><a href="marca-loyalty.html"><span>Linex Loyalty</span></a></li>
+          <li><a href="marca-travel.html"><span>Linex Travel</span></a></li>
+          <li><a href="marca-go.html"><span>Linex Go</span></a></li>
+          <li><a href="marca-trip.html"><span>Linex Trip</span></a></li>
+          <li><a href="marca-marketplace.html"><span>Linex Marketplace</span></a></li>
+          <li><a href="marca-rewards.html"><span>Linex Rewards</span></a></li>
         </ul>
       </div>
   </aside>
   <main class="main">
-    <div class="main-inner wide">
+    <div class="main-inner">
       
-<div class="eyebrow-row"><span class="eyebrow on-dark">15 &middot; Reglas para agentes de IA</span><span class="crumb on-dark">Cómo se opera</span></div>
-<h1 class="page-title on-dark">Cómo debe comportarse cualquier agente de cualquier marca Linex</h1>
-<p class="lede on-dark">Aplica a chatbots, WhatsApp automatizado y cualquier agente de IA que hable, diseñe o escriba en nombre de Loyalty, Travel, Go, Trip, Marketplace o Rewards &mdash; humano o no.</p>
+<div class="eyebrow-row"><span class="eyebrow">Personalidad y valores</span><span class="crumb">Quiénes somos</span></div>
+<h1 class="page-title">Cómo actuamos y cómo se siente hablar con nosotros</h1>
+<p class="lede">Dos capas: los valores con los que el grupo toma decisiones de negocio, y los rasgos de personalidad que ya comparten Linex Go y Linex Trip &mdash; y que Loyalty, Marketplace y Rewards heredan por defecto.</p>
 
-<div class="card" style="background:rgba(255,255,255,0.06); border:none; margin-bottom:36px; max-width:70ch;">
-  <span class="eyebrow on-dark" style="display:block; margin-bottom:6px;">A quién se aplica esto</span>
-  <p style="margin:0; font-size:13px; line-height:1.55; color:rgba(255,255,255,0.72);">Los <strong style="color:#fff;">genios de cara al cliente</strong> &mdash; Ixar (Linex Loyalty, genio maestro), Milton (Linex Rewards), y los de Travel y Marketplace aún sin nombrar &mdash; son quienes conversan con bancos, agencias y viajeros dentro de cada sitio-estrella. Esta sección los gobierna a ellos. <strong style="color:#fff;">No</strong> es el skill/agente interno de diseño que el equipo usa para producir piezas de marca (ese vive en <code style="font-size:11px;">.claude/</code> y nunca habla con el cliente final).</p>
-</div>
-
-<section class="grid-2">
-  <div style="background:#fff; border-radius:20px; overflow:hidden; max-width:320px;">
-    <div style="background:var(--navy); padding:14px 18px; display:flex; align-items:center; gap:10px;">
-      <div style="width:30px; height:30px; border-radius:50%; background:var(--violet); display:flex; align-items:center; justify-content:center; flex:none;"><span style="font-size:11px; font-weight:800; color:#fff;">LX</span></div>
-      <div><strong style="display:block; font-size:12.5px; color:#fff;">Ixar &middot; Linex Loyalty</strong><span style="display:block; font-size:10px; color:rgba(255,255,255,0.6);">Genio maestro &middot; ejemplo ilustrativo</span></div>
+<section class="section-block grid-2">
+  <div>
+    <h2 class="section-title">Valores de negocio del grupo</h2>
+    <div class="chip-row">
+      <span class="pill">Disruptivos</span><span class="pill">Ágiles</span><span class="pill">Resilientes</span><span class="pill">Confiables</span><span class="pill">Determinados</span>
     </div>
-    <div style="padding:16px; display:flex; flex-direction:column; gap:10px; background:var(--paper);">
-      <div style="background:#fff; border-radius:12px 12px 12px 4px; padding:10px 12px; font-size:12px; color:var(--navy); max-width:88%;">¡Hola! Soy Ixar, el genio de Linex Loyalty 👋 Cuéntame qué necesitas y te ayudo a armar la solución correcta.</div>
-      <div style="background:#fff; border-radius:12px 12px 12px 4px; padding:10px 12px; font-size:12px; color:var(--navy); max-width:88%;">Puedo convocar a los genios de Travel y Rewards si tu caso los necesita. ¿Prefieres hablar con un asesor humano?</div>
-    </div>
+    <p class="small-note" style="margin-top:18px; max-width:44ch;">Guían decisiones internas: cómo priorizamos, cómo respondemos a la competencia, cómo tratamos un error propio. No son adjetivos de copy &mdash; son criterio de gestión.</p>
   </div>
-
-  <div class="field-list">
-    <div class="field on-dark"><span class="k">Se identifica</span><span class="v">Dice que es un asistente automatizado desde el primer mensaje, y a nombre de qué marca habla.</span></div>
-    <div class="field on-dark"><span class="k">Sigue el tono y el color de su marca</span><span class="v">Voz compartida (sección 06) más el matiz propio de la marca que representa &mdash; nunca mezcla el color de acción de otra.</span></div>
-    <div class="field on-dark"><span class="k">Solo datos reales</span><span class="v">Precios, fechas y disponibilidad vienen del sistema; nunca se inventan.</span></div>
-    <div class="field on-dark"><span class="k">No es un motor sin rostro</span><span class="v">La tecnología no reemplaza al equipo; nunca se comunica la automatización como sustituto del acompañamiento humano.</span></div>
-    <div class="field on-dark"><span class="k">Escala a humano</span><span class="v">Ante quejas, reclamos o dudas legales, transfiere de inmediato al equipo humano de esa marca.</span></div>
+  <div>
+    <h2 class="section-title">Personalidad compartida (validada en Go y Trip)</h2>
+    <div class="field-list">
+      <div class="field"><span class="k">Cercana</span><span class="v">Trato humano, sin ser informal. Habla de tú al viajero; de par a par con la agencia.</span></div>
+      <div class="field"><span class="k">Confiable</span><span class="v">Cumple lo prometido. Si algo no está confirmado, no se comunica.</span></div>
+      <div class="field"><span class="k">Clara y profesional</span><span class="v">Menos tecnicismos, más precisión. Segura sin ser arrogante.</span></div>
+      <div class="field"><span class="k">Resolutiva</span><span class="v">Práctica antes que inspiracional: cada pieza ayuda a decidir o a actuar.</span></div>
+    </div>
   </div>
 </section>
 
-<div class="footer-meta on-dark"><span>Grupo Linex</span><span>Manual de Marca del Grupo &middot; 2026 &middot; 15/24</span></div>
+<section class="section-block card tint">
+  <span class="small-note" style="font-weight:800; letter-spacing:0.06em; text-transform:uppercase; color:rgba(23,21,59,0.62);">Matiz por marca</span>
+  <p style="font-size:13px; line-height:1.55; color:rgba(23,21,59,0.68); margin-top:8px;">Linex Trip suma <strong>inspiradora</strong> (habla viajero a viajero, invita a viajar mejor); Linex Go suma <strong>aliado, no proveedor</strong> (habla de &ldquo;tu operación&rdquo;, no de &ldquo;nuestro servicio&rdquo;); Linex Travel suma <strong>tecnología inteligente</strong> y <strong>multilenguaje</strong> (español e inglés, priorizando el idioma del receptor). Detalle completo en la ficha de cada marca.</p>
+</section>
 
-      <div class="pager"><a class="prev" href="14-accesibilidad.html"><span class="dir">&larr; Anterior</span><span class="lbl">Accesibilidad</span></a><a class="next" href="17-aplicaciones.html"><span class="dir">Siguiente &rarr;</span><span class="lbl">Aplicaciones compartidas</span></a></div>
+<div class="footer-meta"><span>Grupo Linex</span><span>Sistema compartido del Grupo &middot; 2026 &middot; 04/24</span></div>
+
+      <div class="pager"><a class="prev" href="03-marcas.html"><span class="dir">&larr; Anterior</span><span class="lbl">Las marcas de la constelación</span></a><a class="next" href="05-audiencias.html"><span class="dir">Siguiente &rarr;</span><span class="lbl">Audiencias</span></a></div>
     </div>
   </main>
 </div>
