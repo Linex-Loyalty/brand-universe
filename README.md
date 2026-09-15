@@ -1,72 +1,77 @@
-# Universo de marca · Grupo Linex
+# Brand Universe · Grupo Linex
 
-**Entra aquí → https://linex-loyalty.github.io/brand-universe/**
+**Go here → https://linex-loyalty.github.io/brand-universe/**
 
-Este es el lugar donde está la marca del Grupo Linex. Si necesitas el logotipo, los
-colores exactos, la tipografía, el tono con el que hablamos o cómo se arma una pieza
-concreta —un post, un correo, una tarjeta, una página—, entras por esa URL y lo tomas.
-No hay que pedir acceso ni preguntarle a nadie.
+This is where the Grupo Linex brand lives. If you need the logo, the exact colors,
+the typeface, the tone of voice, or how a specific piece is built —a post, an email,
+a business card, a web page— open that URL and take it. No access request, no asking
+anyone first.
 
-## Qué vas a encontrar
+The site itself is in Spanish, the working language of the brand.
 
-**El hub.** La portada muestra las nueve marcas de la constelación agrupadas por tier,
-y de cada una dice la verdad: qué tiene color de acento definido, qué tiene manual
-publicado y qué todavía está sin decidir. Si una tarjeta se ve apagada es porque a esa
-marca le falta una decisión, no porque falte la página.
+## What you'll find
 
-**Manual del Grupo Linex.** El sistema común que heredan todas las marcas: arquitectura
-de la constelación, Group Bar, paleta fundacional, tipografía, accesibilidad y las
-fichas de cada estrella.
+**The hub.** The landing page shows the nine brands of the constellation grouped by
+tier, and tells the truth about each one: which has an accent color defined, which has
+a published manual, and which is still undecided. A card that looks dimmed means that
+brand is missing a decision — not that the page is missing.
 
-**Manual de Linex Trip.** La primera marca con manual completo: logotipo, paleta,
-tipografía, iconografía, fotografía, audiencias, voz y tono, vocabulario, y las piezas
-resueltas por canal —web, WhatsApp, correo, papelería y redes.
+**Grupo Linex manual.** The shared system every brand inherits: constellation
+architecture, Group Bar, foundational palette, typography, accessibility, and the
+profile of each star.
 
-Cada marca es una carpeta. Cuando otra cierre su manual, se agrega la suya y su tarjeta
-en el hub aparece enlazada sola.
+**Linex Trip manual.** The first brand with a complete manual: logo, palette,
+typography, iconography, photography, audiences, voice and tone, vocabulary, and the
+pieces resolved channel by channel — web, WhatsApp, email, stationery, and social.
 
-## Cómo se usa
+Each brand is a folder. When another one closes its manual, we add it and its hub card
+turns into a link on its own.
 
-Abre la URL, busca tu marca, y copia el dato o descarga el archivo que necesites. Los
-valores que aparecen ahí —el HEX, el nombre de la fuente, la regla de uso— son los
-oficiales. Si algo que necesitas no está, es porque está pendiente de decidir: el manual
-lo dice como pendiente en vez de inventarlo, y ahí sabes que hay que escalarlo.
+## How to use it
 
-¿Falta algo de tu marca, ves un dato viejo o necesitas una pieza que no está resuelta?
-Escríbele al administrador de marca.
+Open the URL, find your brand, and copy the value or download the file you need. What
+you see there —the HEX, the font name, the usage rule— is official. If something you
+need isn't there, it's because it hasn't been decided yet: the manual says *pending*
+instead of making it up, which tells you it needs to be escalated.
+
+Missing something for your brand, spotted an outdated value, or need a piece that
+hasn't been resolved? Write to the brand administrator.
 
 ---
 
-## Para quien mantiene el sitio
+## For whoever maintains the site
 
-Este repositorio es un **export**, no la fuente. La fuente editable vive en el proyecto
-interno del sistema de marca. **No edites nada aquí a mano:** el siguiente despliegue lo
-sobrescribe.
+This repository is an **export**, not the source. The editable source lives in the
+internal brand-system project. **Don't edit anything here by hand:** the next deploy
+overwrites it.
 
-Para publicar una actualización, desde el proyecto interno:
+To publish an update, from the internal project:
 
 ```
-node tools/publicar-universo.js     # copia lo publicable y cose la navegación
-node tools/generar-hub.js           # regenera el hub desde brand-tokens.json
+node tools/publicar-universo.js     # copies what's publishable and stitches the nav
+node tools/generar-hub.js           # regenerates the hub from brand-tokens.json
 cd brand-universe-publish
 git add -A && git commit -m "..." && git push
 ```
 
-El script copia **por lista blanca**: solo sale lo que está nombrado en él. Si mañana
-alguien deja un PDF confidencial dentro de una carpeta ya publicada, no se filtra, porque
-no está en la lista. Además aborta si detecta una ruta prohibida y verifica que no queden
-enlaces rotos antes de terminar.
+The script copies by **allowlist**: only what is named in it goes out. If someone drops
+a confidential PDF into an already-published folder tomorrow, it doesn't leak, because
+it isn't on the list. It also aborts if it detects a forbidden path, and verifies there
+are no broken links before finishing.
 
-### Qué no está aquí, a propósito
+Anything written for this repository — README, commit messages, issues — is in English.
+The brand content itself stays in Spanish.
 
-- Los PDFs de estrategia de marca marcados CONFIDENTIAL.
-- `brand-tokens.json` — artefacto interno del skill y del agente de marca.
-- Los estudios de color abiertos, que comparan unas estrellas contra otras.
-- Los briefs y paquetes con destinatario concreto.
-- **Las propuestas de logo de Linex Trip.** Son siete opciones sin decidir; en una URL
-  abierta alguien tomaría una creyéndola aprobada. Se publicará cuando haya una elegida.
-- **Gobernanza y pendientes del manual de grupo.** Quién controla qué y qué decisiones
-  siguen abiertas es material de trabajo del equipo de marca, no manual de consulta.
+### What's deliberately not here
 
-La regla es: no se publica lo que no está decidido. Agregar algo después es un comando;
-sacarlo de un sitio ya indexado, no.
+- The brand strategy PDFs marked CONFIDENTIAL.
+- `brand-tokens.json` — an internal artifact of the brand skill and agent.
+- The open color studies, which compare one star against another.
+- Briefs and packages addressed to a specific recipient.
+- **The Linex Trip logo proposals.** Seven undecided options; on an open URL someone
+  would take one believing it was approved. It ships once one is chosen.
+- **Governance and open decisions from the group manual.** Who controls what, and which
+  calls are still open, is working material for the brand team — not a reference manual.
+
+The rule is: nothing undecided gets published. Adding something later is one command;
+pulling it off an already-indexed site is not.
