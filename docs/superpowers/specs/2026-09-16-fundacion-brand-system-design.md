@@ -36,7 +36,7 @@ brand-tokens.json                      fuente única de verdad
 
 ### Por qué un skill con references y no tres skills
 
-Las reglas duras (contraste, el coral solo para acción, el amarillo solo sobre Azul Trip, Geist como tipografía bloqueada) aplican a los tres trabajos. Con tres skills separados esas reglas se duplican en tres archivos y el próximo cambio de color solo se aplica en los que alguien recuerde. Con un skill y references, cada regla se escribe una vez.
+Las reglas duras (contraste, el coral solo para acción, el amarillo solo sobre Azul Trip, la pareja de registros tipográficos, la escala de radios) aplican a los tres trabajos. Con tres skills separados esas reglas se duplican en tres archivos y el próximo cambio de color solo se aplica en los que alguien recuerde. Con un skill y references, cada regla se escribe una vez.
 
 El `SKILL.md` se mantiene corto a propósito: dice qué es la constelación, qué trabajos existen y a qué reference ir. Solo se carga el reference del trabajo que toca.
 
@@ -84,17 +84,17 @@ id, nombre, tier, dominio, genio, estado, padre
 atrae / filtra        el posicionamiento del PDF: a quién habla, a quién saca
 color[]               cada color con hex, rgb, cmyk, rol, proporción y reglas duras
 tipografia{}          los dos registros: operativo y digital (ver abajo)
-iconografia{}         librería y estilo — difiere por marca, no es de grupo
-radios[]              escala de esquinas — difiere por marca, no es de grupo
+iconografia{}         librería y estilo — de grupo desde el 16-sep (ver §9)
+radios[]              escala de esquinas — de grupo desde el 16-sep (ver §9)
 logos{}               solo archivos que existen; lo ausente es null
 voz{}                 principios, claim, vocabulario sí/no
 legal{}               operador, RNT, y si admite ™/®
 manual                ruta, o null
 ```
 
-**`estado` toma cuatro valores**, no tres. A los ya previstos se suma el que los dos contextos usan de verdad: `confirmed_pending_trademark` — la marca está confirmada pero el registro sigue pendiente. Trip y Go están ahí, y eso arrastra una regla dura: **sin ™ ni ® mientras el registro esté pendiente**, porque hoy sería falso.
+**`estado` toma cuatro valores:** `vigente` · `confirmed_pending_trademark` · `en-construccion` · `pendiente`.
 
-`estado` toma estos valores: `vigente` · `confirmed_pending_trademark` · `en-construccion` · `pendiente`.
+El segundo es el que los dos contextos usan de verdad — la marca está confirmada pero el registro sigue pendiente. Trip y Go están ahí, y eso arrastra una regla dura: **sin ™ ni ® mientras el registro esté pendiente**, porque hoy sería falso.
 
 ### Tipografía — corrección al diseño original
 
@@ -285,15 +285,64 @@ El JSON lo registra como riesgo abierto. Resolverlo —o decidir que no importa,
 
 **El logotipo de Linex Go es un bloqueo de producción, no un pendiente más.** De las **quince piezas** que su propio manual define, existe **una** — y no es vectorial: es un PNG de 2645×462 px dentro de un `.svg`. Falta la versión negativa, sin la cual el logo no puede ir sobre petróleo, que es uno de los tres fondos permitidos. **Eso bloquea toda la papelería.** El JSON lo registra como `bloqueante`, no como `pendiente`.
 
-**Íconos y radios divergen entre Trip y Go, en dimensiones que el modelo declara `locked`.**
-
-| Dimensión | Linex Trip | Linex Go |
-|---|---|---|
-| Librería de íconos | Font Awesome Pro · Classic Regular | Set propio cerrado, dos estilos |
-| Escala de radios | `6 / 12 / 16 / 24 / pill` | `12 / 20 / 28` |
-
-El Star Launch Kit dice que la grilla es `locked · central`, y dos manuales vigentes no coinciden. Puede ser una decisión que nunca se escribió o puede ser deriva; el spec no lo resuelve. **El agente audita cada marca contra su propio manual** y registra la divergencia como riesgo abierto, en vez de elegir un ganador por su cuenta.
+~~**Íconos y radios divergen entre Trip y Go.**~~ **Resuelto el 16 de septiembre de 2026** — ver §9.
 
 **Los aliados de Go están a medias.** 3 de 5 recibidos (Hertz, Dollar, Thrifty), y los tres son PNG monocromos de 31 px de alto: sirven para pantalla, no para impresión ni gran formato. Faltan Disney y Assistviaje.
 
 **Los contextos de marca quedan desactualizados en un punto.** Ambos se compilaron el 16 de septiembre y el contexto de Trip todavía registra el Dorado `#C99A3B` como candidato de Loyalty. La decisión del Verde `#C5F04A` es posterior. Al reconstruir el JSON se corrige esa línea en el contexto.
+
+---
+
+## 9 · Unificación de íconos y radios
+
+**Decisión del dueño de marca, 16 de septiembre de 2026.** Trip y Go pasan a compartir el mismo sistema de iconografía y la misma escala de radios. Gana el de Trip en las dos.
+
+### Por qué gana Trip, y por qué cuesta poco
+
+La revisión de los archivos reales lo respalda más de lo que el spec anterior suponía:
+
+| | `manual-linex-trip/05` | `manual-linex-go/05` |
+|---|---|---|
+| Librería nombrada | Font Awesome Pro · Classic Regular, con filtro de búsqueda exacto | **Ninguna.** Dice "librería oficial" sin decir cuál |
+| SVG embebidos | **36** | **0** |
+| Glifos `fa-*` declarados | Sí, ~40 en diccionario concepto → ícono | Ninguno |
+
+**El set de íconos de Go no existe como archivos.** Su manual describe un estilo (sólidos blancos dentro de un círculo petróleo) y prohíbe mezclar librerías, pero nunca nombra una ni entrega assets — y su propia tabla de entregables marca el grupo "A · Marca" como incompleto. Adoptar Font Awesome no reemplaza un sistema que funciona: llena un hueco.
+
+### Iconografía unificada
+
+- **Librería:** Font Awesome Pro · familia Classic. Filtro exacto `classic & s=regular & ic=pro-collection`.
+- **Estilo por defecto:** Regular.
+- **Estilo Solid**, en tres casos y solo esos: cuando el glifo va **dentro de un contenedor relleno** (el círculo de Go), cuando mide **menos de 4 mm en impreso** (la excepción que Trip ya tenía), y en la familia **Brands** para redes, que tiene estilo único.
+- **El círculo de Go sobrevive.** No era una librería: era un tratamiento de contenedor, y es compatible con cualquier glifo. Los dos estilos de Go (con círculo y sin círculo) pasan a ser variantes de composición, no sets distintos.
+- **El diccionario concepto → ícono de Trip se extiende**, no se duplica: Go agrega los conceptos B2B que le faltan a Trip (comisión, portafolio, cupo, condiciones) y el resto es común.
+- El color del ícono lo sigue fijando la tabla de contraste **de cada marca**, contra su propio fondo. La librería es común; el color no.
+
+### Escala de radios unificada
+
+La de Trip, cinco valores con rol:
+
+| Radio | Elemento | Reemplaza en Go a |
+|---|---|---|
+| `6px` | Chips de categoría | parte de los 12 px |
+| `12px` | Botones primario y secundario | parte de los 12 px |
+| `16px` | Tarjetas | 20 px |
+| `24px` | Contenedores y banners | 28 px |
+| `pill` | Pills, badges y estados | — (Go no lo tenía) |
+
+**Lo que Go gana es una distinción que su escala de tres pasos no podía expresar:** *radio total = dato, no acción*. Hoy Go pinta con 12 px tanto un botón como un chip como una etiqueta, así que la forma no dice si algo se toca. Con la escala de cinco, sí.
+
+**La regla de Go se conserva, reinterpretada.** Su manual dice "nunca radios mixtos en la misma pieza". Con una escala por rol, una pieza legítimamente tiene un botón de 12 dentro de una tarjeta de 16 dentro de un contenedor de 24. La regla pasa a ser: **no hay radios fuera de la escala** — que es lo que Go realmente quería impedir.
+
+### El costo, dicho de frente
+
+Las piezas de Go ya producidas usan 20 y 28 px. Al adoptar la escala nueva quedan fuera de norma y hay que rehacerlas. Es un costo real y es decisión del dueño de marca, que ya la tomó. No afecta a nada que esté impreso, porque **la papelería de Go está bloqueada** por la falta del logo negativo.
+
+### Impacto en el alcance
+
+Esto **modifica `manual-linex-go/`**, que §7 declaraba fuera de alcance. El cambio entra al alcance por decisión explícita del dueño de marca, acotado a dos archivos:
+
+- `05-iconografia-canal.html` — librería, estilos y diccionario
+- `08-arquitectura.html` y el `:root` de `assets/style.css` — la escala de radios
+
+`manual-linex-trip/` no se toca: su sistema es el que gana. Lo único que cambia para Trip es que su diccionario de íconos crece con los conceptos B2B de Go.
