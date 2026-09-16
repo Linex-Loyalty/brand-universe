@@ -80,16 +80,38 @@ Del PDF del Modelo de Constelación, con el `id` que ya usan las carpetas de `Lo
 ### Forma de cada entrada
 
 ```
-id, nombre, tier, dominio, genio, estado
+id, nombre, tier, dominio, genio, estado, padre
 atrae / filtra        el posicionamiento del PDF: a quién habla, a quién saca
-color[]               cada color con hex, rgb, rol, proporción y reglas duras
-tipografia            Geist — locked · central, igual para todas
+color[]               cada color con hex, rgb, cmyk, rol, proporción y reglas duras
+tipografia{}          los dos registros: operativo y digital (ver abajo)
+iconografia{}         librería y estilo — difiere por marca, no es de grupo
+radios[]              escala de esquinas — difiere por marca, no es de grupo
 logos{}               solo archivos que existen; lo ausente es null
 voz{}                 principios, claim, vocabulario sí/no
+legal{}               operador, RNT, y si admite ™/®
 manual                ruta, o null
 ```
 
-`estado` toma tres valores: `vigente` · `en-construccion` · `pendiente`.
+**`estado` toma cuatro valores**, no tres. A los ya previstos se suma el que los dos contextos usan de verdad: `confirmed_pending_trademark` — la marca está confirmada pero el registro sigue pendiente. Trip y Go están ahí, y eso arrastra una regla dura: **sin ™ ni ® mientras el registro esté pendiente**, porque hoy sería falso.
+
+`estado` toma estos valores: `vigente` · `confirmed_pending_trademark` · `en-construccion` · `pendiente`.
+
+### Tipografía — corrección al diseño original
+
+La primera versión de este spec decía *"Geist — locked · central, igual para todas"*. **Era falso**, y los dos contextos de marca lo desmienten. La regla real, confirmada por el dueño de marca el 16 de septiembre de 2026:
+
+| Registro | Fuentes | Dónde manda |
+|---|---|---|
+| **Operativo** | Segoe UI (títulos) + Calibri (cuerpo) | Cotizaciones, correo, Contact Center, Office |
+| **Digital** | Geist | Sitios web y producto |
+
+Respaldo: Arial o Helvetica. Nunca se sustituye por una tipografía con personalidad distinta.
+
+**Lo `locked` es la pareja de registros, no una sola fuente.** La restricción que eligió Segoe UI y Calibri es concreta: las agencias producen cotizaciones todos los días y la marca tiene que verse consistente en sus manos **sin que instalen nada**.
+
+Esto resuelve además el pendiente que el contexto de Go tenía abierto: Geist sí aplica a Go, en web y producto, aunque su manual v1.0 no la mencione.
+
+**Regla de oro, común a las dos marcas:** Segoe UI manda en lo que se ve, Calibri sostiene lo que se lee, Geist viste el sitio y el producto. Nunca al revés.
 
 ### Las dos reglas que el JSON hace cumplir
 
@@ -99,7 +121,11 @@ manual                ruta, o null
 
 ### De dónde sale el dato
 
-Trip y Go salen **1:1 de sus manuales y su CSS** — los siete colores de cada uno, las proporciones de uso, y las reglas duras ya redactadas. Dos contrastes documentados se verificaron contra el cálculo WCAG antes de aceptar esa fuente:
+**Este JSON es una reconstrucción, no un archivo nuevo.** Existió un `brand-system/brand-tokens.json` —los dos contextos de marca dicen en su primera línea que se compilaron desde él— pero se perdió. La fuente primaria para rehacerlo son esos dos contextos, que traen prácticamente todo: los siete colores de cada marca con HEX, RGB, CMYK y proporción, las reglas duras redactadas, los estados legales, la voz y el vocabulario.
+
+Los manuales HTML y su CSS quedan como fuente de contraste: si un dato difiere, **manda el manual**, que es lo que los propios contextos establecen sobre sí mismos.
+
+Dos contrastes documentados se verificaron contra el cálculo WCAG antes de aceptar la fuente:
 
 - Blanco sobre Coral `#FF725E` → 2.69:1, coincide con el README de Go
 - Petróleo `#012D33` sobre Coral → 5.49:1, coincide con el comentario del CSS
@@ -171,7 +197,7 @@ Entrada: un HTML, una imagen, un HEX o un texto. Salida: veredicto regla por reg
 | Contraste | **Calculado**, no estimado. WCAG AA/AAA con el ratio escrito |
 | Reglas duras de color | Coral solo acción · Amarillo solo sobre Azul Trip · Arena solo sobre Petróleo |
 | Logos | Que el archivo exista en `logos-oficiales/`. Zona de seguridad. Aliados en su zona y **menores que Linex Go**, jamás recoloreados ni reproporcionados |
-| Tipografía | Geist — `locked · central`, no negociable por estrella |
+| Tipografía | El registro correcto para el canal: Segoe UI + Calibri en Office, Geist en web y producto |
 | Nombre | "Linex Trip" con espacio. El "LinexTrip" compacto de las piezas viejas está superado |
 | Vocabulario | La tabla sí decir / no decir de la sección 12 de esa marca |
 
@@ -200,7 +226,16 @@ Separadas en dos archivos, para que la de abajo sirva fuera de Linex:
 
 **`constelacion.md` — capa 2, Linex.** Los 3 tiers y su lógica, el Star Launch Kit con su división `locked · central` vs `free · per star`, los genios y qué construye cada uno, el posicionamiento atrae/filtra por sitio, y la gobernanza: qué decide el centro y qué decide cada estrella.
 
-De lo `locked` del Star Launch Kit sale la parte no negociable del sistema: naming, tipografía compartida, un color de acento por estrella, Group Bar, esqueleto de navegación y patrón de leads. De lo `free` sale lo que el agente **no** debe imponer: presupuesto, profundidad del sitio, contenido, campañas y SEO.
+De lo `locked` del Star Launch Kit sale la parte no negociable del sistema: naming (incluidas sub-marcas), la pareja de registros tipográficos, la grilla, el Group Bar con su copy fijo `Part of Linex Loyalty` y el patrón de leads/CRM. De lo `free` sale lo que el agente **no** debe imponer: el color de acento, el matiz de tono, el presupuesto, la profundidad del sitio, el contenido, las campañas y el SEO.
+
+### Las cuatro reglas que dos manuales independientes confirman
+
+Trip y Go llegaron a lo mismo por separado, así que el agente las trata como regla de grupo con confianza:
+
+1. **Regla de acción** — el acento solo pinta lo que se toca; nunca destaca un dato, y el color oscuro nunca rellena un botón.
+2. **Filete de 1 px** — decidido el 2026-09-15 en ambas. El acento contra el papel no llega a los 3:1 de WCAG 1.4.11; el oscuro sí.
+3. **Sin mayúscula sostenida** — en ningún canal. Se enfatiza con peso o tamaño.
+4. **Frontera Trip / Go** — no se comparan, no se mezclan sus sistemas y nunca compiten por la misma palabra clave.
 
 ---
 
@@ -248,4 +283,17 @@ Deliberadamente, en esta fase no se hace:
 
 El JSON lo registra como riesgo abierto. Resolverlo —o decidir que no importa, porque Trip y Loyalty rara vez aparecen juntos— es decisión del dueño de marca, no del sistema.
 
-**El logotipo de Linex Go no es vectorial.** Es un PNG de 2645×462 px dentro de un `.svg`, y falta su versión negativa — sin la cual el logo no puede ir sobre navy, que es fondo permitido. El JSON lo registra como `pendiente` en vez de tratarlo como un SVG bueno.
+**El logotipo de Linex Go es un bloqueo de producción, no un pendiente más.** De las **quince piezas** que su propio manual define, existe **una** — y no es vectorial: es un PNG de 2645×462 px dentro de un `.svg`. Falta la versión negativa, sin la cual el logo no puede ir sobre petróleo, que es uno de los tres fondos permitidos. **Eso bloquea toda la papelería.** El JSON lo registra como `bloqueante`, no como `pendiente`.
+
+**Íconos y radios divergen entre Trip y Go, en dimensiones que el modelo declara `locked`.**
+
+| Dimensión | Linex Trip | Linex Go |
+|---|---|---|
+| Librería de íconos | Font Awesome Pro · Classic Regular | Set propio cerrado, dos estilos |
+| Escala de radios | `6 / 12 / 16 / 24 / pill` | `12 / 20 / 28` |
+
+El Star Launch Kit dice que la grilla es `locked · central`, y dos manuales vigentes no coinciden. Puede ser una decisión que nunca se escribió o puede ser deriva; el spec no lo resuelve. **El agente audita cada marca contra su propio manual** y registra la divergencia como riesgo abierto, en vez de elegir un ganador por su cuenta.
+
+**Los aliados de Go están a medias.** 3 de 5 recibidos (Hertz, Dollar, Thrifty), y los tres son PNG monocromos de 31 px de alto: sirven para pantalla, no para impresión ni gran formato. Faltan Disney y Assistviaje.
+
+**Los contextos de marca quedan desactualizados en un punto.** Ambos se compilaron el 16 de septiembre y el contexto de Trip todavía registra el Dorado `#C99A3B` como candidato de Loyalty. La decisión del Verde `#C5F04A` es posterior. Al reconstruir el JSON se corrige esa línea en el contexto.
