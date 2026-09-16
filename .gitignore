@@ -1,0 +1,23 @@
+# OneDrive / Windows
+Thumbs.db
+desktop.ini
+ehthumbs.db
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*~
+
+# Node (los manuales no tienen build, pero tools/ usa node)
+node_modules/
+npm-debug.log*
+
+# Temporales de autoría
+*.tmp
+*.bak

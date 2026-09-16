@@ -1,0 +1,17 @@
+# Normaliza finales de línea: LF en el repositorio, nativo en la copia de trabajo.
+# Importa porque los manuales se regeneran con tools/sync-nav (Node en Go,
+# PowerShell en Trip) y sin esto un mismo archivo sale con diff fantasma
+# según quién lo escribió.
+* text=auto
+
+# Activos de marca: binarios, nunca se tocan
+*.png  binary
+*.jpg  binary
+*.webp binary
+*.pdf  binary
+*.ai   binary
+*.woff  binary
+*.woff2 binary
+
+# SVG es texto (diffea bien y son logos que se revisan)
+*.svg text
