@@ -384,3 +384,43 @@ Esto **modifica `manual-linex-go/`**, que §7 declaraba fuera de alcance. El cam
 - `08-arquitectura.html` y el `:root` de `assets/style.css` — la escala de radios
 
 `manual-linex-trip/` no se toca: su sistema es el que gana. Lo único que cambia para Trip es que su diccionario de íconos crece con los conceptos B2B de Go.
+
+---
+
+## 10 · Fase 2 · El sitio Constelación
+
+**Decisión del 16 de septiembre de 2026:** las fases 1 y 2 se ejecutan de corrido. La fase 1 no deja nada visible para la compañía, y el sitio es lo que se pidió originalmente.
+
+### Qué es
+
+La puerta de entrada para que cualquiera en la compañía vea la constelación completa y entre al manual que necesite. Un `index.html` en la raíz del proyecto, con su `assets/`. Al subir la carpeta a un hosting estático, ese archivo es la portada y los manuales cuelgan como subcarpetas. Doble clic también funciona.
+
+### Cómo se mantiene
+
+`tools/sync-constelacion.js` lo genera desde `brand-tokens.json`. **Ese es el pago de la fase 1:** cuando cambie un color o llegue un logo, se actualiza el JSON y el sitio se redibuja. No se edita a mano — el mismo criterio que el menú de los manuales, y por la misma razón.
+
+### Qué muestra
+
+Los tres tiers, las ocho marcas, y por cada una: enlace al manual si existe, o qué le falta si no. **El mapa es el análisis de brechas**, no un directorio de cosas que no están. El prototipo validado es el artefacto de revisión que se construyó durante este diseño.
+
+### Identidad visual: cromo neutro
+
+El sitio es del grupo, y el grupo no tiene identidad propia: Linex Loyalty es la marca ancla y su único token es el Verde `#C5F04A`, sin base oscura ni paleta.
+
+**El cromo del sitio es neutro y los colores de marca aparecen solo como dato.** Cada estrella aporta su acento dentro de su tarjeta; el sitio en sí no se pinta de ningún color que nadie aprobó. Vestirlo con la identidad de Loyalty exigiría inventarle una base oscura al verde — exactamente lo que este sistema existe para impedir. Cuando Loyalty fije su base, el sitio la adopta sin rehacerse.
+
+Los neutros llevan un sesgo leve hacia el azul, que es la familia donde ya viven las dos marcas documentadas. Un gris puro se leería como falta de decisión.
+
+### Tecnología
+
+Idéntica a los manuales: HTML/CSS/JS plano, sin build, sin dependencias, sin runtime. Hereda los 82 componentes que Trip y Go ya comparten. Tema claro y oscuro, y funciona a ancho de teléfono.
+
+### Criterio de aceptación de la fase 2
+
+| # | Se verifica | Tiene que pasar |
+|---|---|---|
+| 7 | Abrir `index.html` con doble clic | Renderiza completo en `file://`, sin servidor |
+| 8 | Los enlaces a Trip y Go | Abren el manual correcto |
+| 9 | Las seis marcas sin manual | No tienen enlace muerto; dicen qué les falta |
+| 10 | Cambiar un HEX en `brand-tokens.json` y correr `sync-constelacion.js` | El sitio refleja el cambio sin tocar el HTML a mano |
+| 11 | El sitio a 400 px de ancho | Sin scroll horizontal |
