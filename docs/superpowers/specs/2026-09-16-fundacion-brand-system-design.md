@@ -186,7 +186,43 @@ Contrato que hereda toda estrella nueva:
 - **Numeración corrida 00–15**, igual al nombre del archivo. Si hay que intercalar, se renumera de verdad; nada de sufijos `06b`.
 - **Lo que falta se rotula.** Go marca sus pendientes en coral dentro de la sección que les toca. Mismo comportamiento: si el JSON dice `null`, la página dice "pendiente". No se salta la sección ni se rellena.
 
-**Divergencia resuelta.** Trip sincroniza con `sync-nav.ps1` (PowerShell), Go con `sync-nav.js` + `plantilla.js` + `sync-aliados.js` (Node). Los manuales nuevos usan **la de Go**: es la más completa y Node corre igual en Windows, Mac y CI. Trip conserva su `.ps1` sin cambios — no se toca en esta fase.
+### El contrato real, leído del código (no del README)
+
+**`sync-nav.js` funciona por marcadores, no por plantilla.** Reemplaza lo que hay entre `<!--nav-->…<!--/nav-->`, `<!--indice-->…<!--/indice-->` y `<!--pager-->…<!--/pager-->`. Nada más de la página se toca.
+
+Eso tiene una consecuencia que vale la pena nombrar: **es idempotente por construcción**. La prueba de aceptación #6 no verifica una casualidad, verifica el diseño.
+
+**La herramienta ya encarna el principio del sistema.** Sin que nadie se lo pidiera, hace exactamente lo que el JSON exige para los tokens:
+
+- Una sección que aún no existe sale **en gris y sin enlace** en el menú, no da 404 — *"quien entra ve el mapa completo y sabe qué falta"*.
+- En el índice de la portada sale marcada **"en curso"** en el color de acento.
+- El paginador **la salta**: nunca lleva a una página que no está.
+
+Es el mismo criterio que la regla 1 de `brand-tokens.json`. El manual nuevo no tiene que inventar ese comportamiento: lo hereda.
+
+**Divergencia resuelta, y ahora con la razón técnica.** Trip usa `sync-nav.ps1` (PowerShell) y Go `sync-nav.js` (Node). No son dos implementaciones de lo mismo: **Trip no tiene ni un solo marcador** en sus 16 páginas; Go los tiene en las 16. Son mecanismos distintos y no intercambiables.
+
+Los manuales nuevos usan **el de Go**, que era la elección correcta por otras razones y ahora además es la única compatible con el esqueleto de página. Trip conserva su `.ps1` sin cambios.
+
+**`plantilla.js` no lo usa nadie.** No hay un solo `require` en el proyecto. Documenta el esqueleto de página —doctype, `<head>`, skip-link, topbar, shell, sidebar, `main-inner`, `footer-meta`, marcadores— pero no lo genera. Vale como **referencia canónica del esqueleto**, no como herramienta activa. Su comentario de cabecera además quedó viejo: dice "las 23 secciones" cuando hoy son 15.
+
+### Las dos hojas de estilo son la misma
+
+| | |
+|---|---|
+| Clases compartidas | **82** |
+| Solo en Trip | **0** |
+| Solo en Go | **1** (`.parte`) |
+
+Trip y Go no son dos sistemas de diseño parecidos: **son el mismo sistema con distinto `:root`**. Eso simplifica el Trabajo 1 mucho más de lo que este spec suponía — un manual nuevo no diseña componentes, hereda los 82 y define sus tokens.
+
+Es también la mejor prueba de que la unificación de radios de §9 es viable: el CSS que los aplica ya es común.
+
+### El índice de 15 secciones es decisión escrita, no inferencia
+
+El comentario de `sync-nav.js` lo deja explícito: *"El índice es el mismo del manual de Linex Trip, por decisión del administrador de marca (2026-09-15): las mismas quince secciones, en los mismos tres bloques y en el mismo orden, para que quien conoce un manual del grupo sepa moverse en el otro sin volver a aprenderlo."*
+
+Y confirma la ranura libre: *"La única que no calca a Trip es la 02"*. Go venía de 23 secciones — seis se fusionaron por parejas y cinco se retiraron; quedan en el historial de git.
 
 ### Trabajo 2 · Auditar piezas
 
@@ -288,6 +324,8 @@ El JSON lo registra como riesgo abierto. Resolverlo —o decidir que no importa,
 ~~**Íconos y radios divergen entre Trip y Go.**~~ **Resuelto el 16 de septiembre de 2026** — ver §9.
 
 **Los aliados de Go están a medias.** 3 de 5 recibidos (Hertz, Dollar, Thrifty), y los tres son PNG monocromos de 31 px de alto: sirven para pantalla, no para impresión ni gran formato. Faltan Disney y Assistviaje.
+
+**Las diez rutas `brand-system/` que citan los contextos están rotas.** Todas. Los archivos existen, pero en otro sitio: los logos están en `Logos/logos-oficiales/`, no en `brand-system/assets/logos-oficiales/`; los propios contextos se citan en `brand-system/deliverables/…` y viven en la raíz. Importa porque el agente lee esos contextos y mandaría a la gente a rutas inexistentes. Al reconstruir el JSON se remapean, y el JSON pasa a ser la única fuente de rutas.
 
 **Los contextos de marca quedan desactualizados en un punto.** Ambos se compilaron el 16 de septiembre y el contexto de Trip todavía registra el Dorado `#C99A3B` como candidato de Loyalty. La decisión del Verde `#C5F04A` es posterior. Al reconstruir el JSON se corrige esa línea en el contexto.
 
