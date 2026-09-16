@@ -104,7 +104,19 @@ Trip y Go salen **1:1 de sus manuales y su CSS** — los siete colores de cada u
 - Blanco sobre Coral `#FF725E` → 2.69:1, coincide con el README de Go
 - Petróleo `#012D33` sobre Coral → 5.49:1, coincide con el comentario del CSS
 
-Las otras seis marcas entran en `pendiente`, con `null` en todo lo no decidido. Incluido el Dorado `#C99A3B` de Linex Loyalty, que el README de Trip describe como **candidato de acento**, no como token fijado.
+Las otras seis marcas entran en `pendiente`, con `null` en todo lo no decidido.
+
+**Excepción, fijada el 16 de septiembre de 2026 por el dueño de marca:** el acento de Linex Loyalty es el **Verde `#C5F04A`**. Sustituye al Dorado `#C99A3B` que el README de Trip registraba como *candidato*; ese dorado queda superado y no entra al JSON. Loyalty sigue `pendiente` en todo lo demás — no tiene base oscura, paleta completa, nombre de color, logo, voz ni manual.
+
+El token nace con su regla dura, como exige la regla 2:
+
+| Fondo | Contraste con `#C5F04A` |
+|---|---|
+| Blanco | **1.32:1** — desaparece |
+| Negro | 15.20:1 |
+| Navy tipo `#00145A` | 12.91:1 |
+
+Necesita fondo oscuro, y Loyalty todavía no tiene uno definido. Fijar esa base es el siguiente dato que le falta a la marca.
 
 ---
 
@@ -227,6 +239,13 @@ Deliberadamente, en esta fase no se hace:
 
 **El JSON puede desincronizarse del CSS.** `brand-tokens.json` nace como fuente de verdad, pero los `:root` de Trip y Go siguen siendo copias independientes — nada las genera desde el JSON. Mitigación en esta fase: el Trabajo 2 incluye un chequeo de que los HEX del JSON y los del CSS coincidan, para que la deriva se detecte en vez de acumularse. Generar el CSS desde el JSON es una decisión posterior, y toca archivos que aquí están fuera de alcance.
 
-**El Amarillo de Trip está a 22 ΔE del Dorado candidato de Loyalty.** El README de Trip lo deja anotado como pendiente de coordinación. El JSON lo registra como riesgo abierto; resolverlo es decisión del dueño de marca, no del sistema.
+**El Amarillo de Trip y el Verde de Loyalty comparten luminosidad.** El README de Trip dejó anotado que el Amarillo `#ECE200` quedaba a 22 ΔE del Dorado candidato. Con el Verde `#C5F04A` ya fijado, la distancia sube a **ΔE 26 (CIE76)** — mejora, pero el número de arriba no es el problema:
+
+- `#ECE200` → L\* 88.1
+- `#C5F04A` → L\* 89.2
+
+**Prácticamente la misma luminosidad.** Se comportan idéntico frente al contraste (los dos mueren sobre blanco, los dos brillan sobre oscuro) y a tamaño pequeño son fáciles de confundir. Dos estrellas vecinas con acentos que se distinguen solo por el tono, no por el valor.
+
+El JSON lo registra como riesgo abierto. Resolverlo —o decidir que no importa, porque Trip y Loyalty rara vez aparecen juntos— es decisión del dueño de marca, no del sistema.
 
 **El logotipo de Linex Go no es vectorial.** Es un PNG de 2645×462 px dentro de un `.svg`, y falta su versión negativa — sin la cual el logo no puede ir sobre navy, que es fondo permitido. El JSON lo registra como `pendiente` en vez de tratarlo como un SVG bueno.
