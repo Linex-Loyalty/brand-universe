@@ -2,7 +2,7 @@
 
 **Fecha:** 16 de septiembre de 2026
 **Estado:** aprobado, listo para plan de implementación
-**Fase:** 1 de 3 (Fundación → Sitio Constelación → Manuales faltantes)
+**Alcance:** fases 1 y 2, de corrido (Fundación + Sitio Constelación). La fase 3 —los cuatro manuales faltantes— queda fuera: está bloqueada por decisiones de marca, no por código.
 
 ---
 
@@ -372,16 +372,27 @@ La de Trip, cinco valores con rol:
 
 **La regla de Go se conserva, reinterpretada.** Su manual dice "nunca radios mixtos en la misma pieza". Con una escala por rol, una pieza legítimamente tiene un botón de 12 dentro de una tarjeta de 16 dentro de un contenedor de 24. La regla pasa a ser: **no hay radios fuera de la escala** — que es lo que Go realmente quería impedir.
 
-### El costo, dicho de frente
+### El costo real es menor de lo que este spec decía
 
-Las piezas de Go ya producidas usan 20 y 28 px. Al adoptar la escala nueva quedan fuera de norma y hay que rehacerlas. Es un costo real y es decisión del dueño de marca, que ya la tomó. No afecta a nada que esté impreso, porque **la papelería de Go está bloqueada** por la falta del logo negativo.
+Verificado en los archivos antes de planear: **el `:root` de `manual-linex-go/assets/style.css` ya tiene la escala de Trip**, idéntica y completa:
+
+```css
+--radius-s: 6px;  --radius-btn: 12px;  --radius-m: 16px;
+--radius-l: 24px; --radius-pill: 999px;
+```
+
+El `12 / 20 / 28` **solo existe en la prosa del manual**, en `06-sistema-fotografia.html` líneas 101-102. El CSS que se aplica de verdad nunca divergió.
+
+Eso cambia el trabajo: **no hay cambio de CSS**, es una corrección de documentación. Y cambia el costo: las piezas producidas siguiendo la prosa (20 y 28 px) quedan fuera de norma y hay que rehacerlas, pero cualquier pieza construida con los tokens del CSS **ya cumple**. No afecta nada impreso — la papelería de Go está bloqueada por la falta del logo negativo.
 
 ### Impacto en el alcance
 
-Esto **modifica `manual-linex-go/`**, que §7 declaraba fuera de alcance. El cambio entra al alcance por decisión explícita del dueño de marca, acotado a dos archivos:
+Esto **modifica `manual-linex-go/`**, que §7 declaraba fuera de alcance. Entra por decisión explícita del dueño de marca, acotado a dos archivos:
 
+- `06-sistema-fotografia.html` — la tabla de radios pasa de tres valores a cinco
 - `05-iconografia-canal.html` — librería, estilos y diccionario
-- `08-arquitectura.html` y el `:root` de `assets/style.css` — la escala de radios
+
+**Ninguna hoja de estilo se toca.** Una versión anterior de este spec decía `08-arquitectura.html` y el `:root` de `style.css`: las dos referencias eran incorrectas.
 
 `manual-linex-trip/` no se toca: su sistema es el que gana. Lo único que cambia para Trip es que su diccionario de íconos crece con los conceptos B2B de Go.
 
