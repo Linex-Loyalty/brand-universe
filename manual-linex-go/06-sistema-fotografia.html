@@ -91,16 +91,20 @@
     </div>
     <div>
       <h3 class="section-title">Contenedores</h3>
-      <div style="display:flex; gap:12px; align-items:flex-end; margin-bottom:14px;">
-        <div style="flex:none; width:72px; height:46px; background:var(--base); border-radius:12px;"></div>
-        <div style="flex:none; width:96px; height:66px; background:var(--base); border-radius:20px;"></div>
-        <div style="flex:1; height:86px; background:var(--base); border-radius:28px;"></div>
+      <div style="display:flex; gap:10px; align-items:flex-end; margin-bottom:14px;">
+        <div style="flex:none; width:44px; height:34px; background:var(--base); border-radius:var(--radius-s);"></div>
+        <div style="flex:none; width:60px; height:44px; background:var(--base); border-radius:var(--radius-btn);"></div>
+        <div style="flex:none; width:78px; height:58px; background:var(--base); border-radius:var(--radius-m);"></div>
+        <div style="flex:1; min-width:90px; height:74px; background:var(--base); border-radius:var(--radius-l);"></div>
+        <div style="flex:none; width:64px; height:26px; background:var(--base); border-radius:var(--radius-pill);"></div>
       </div>
       <table class="rtable">
-        <tr><td class="name">12 px</td><td>Elementos pequeños: chips, botones, etiquetas.</td></tr>
-        <tr><td class="name">20 px</td><td>Tarjetas.</td></tr>
-        <tr><td class="name">28 px</td><td>Bloques grandes y contenedores de pieza.</td></tr>
-        <tr><td class="name">La regla</td><td><strong>Nunca radios mixtos en la misma pieza.</strong> Se elige la escala y se respeta de arriba abajo.</td></tr>
+        <tr><td class="name">6 px</td><td>Chips de categoría. Casi cuadrado: se lee como control, no como pieza.</td></tr>
+        <tr><td class="name">12 px</td><td>Botones primario y secundario. Redondo para invitar al clic, recto para seguir siendo acción.</td></tr>
+        <tr><td class="name">16 px</td><td>Tarjetas. Contenedor con contenido propio.</td></tr>
+        <tr><td class="name">24 px</td><td>Contenedores y banners. Pieza completa que se lee entera.</td></tr>
+        <tr><td class="name">Total</td><td>Pills, badges y estados. <strong style="color:var(--base);">Radio total = dato, no acción:</strong> nunca se confunde con un botón.</td></tr>
+        <tr><td class="name">La regla</td><td><strong>No hay radios fuera de la escala.</strong> Una pieza sí combina varios &mdash; un botón de 12 px dentro de una tarjeta de 16 px dentro de un contenedor de 24 px &mdash; porque cada valor tiene un rol. Lo que no existe es un radio inventado.</td></tr>
       </table>
     </div>
   </div>
@@ -123,7 +127,7 @@
     </div>
     <div>
       <span class="small-note" style="display:block; font-weight:800; color:var(--apoyo); margin-bottom:9px;">Sobre petróleo</span>
-      <span style="display:inline-flex; align-items:center; gap:14px; background:var(--base); border-radius:20px; padding:15px 18px;"><span style="display:inline-flex; align-items:center; gap:10px; background:var(--coral); color:var(--base); box-shadow:inset 0 0 0 1px var(--base); border-radius:12px; padding:11px 20px; font-size:13.5px; font-weight:800;">Cotiza ahora <span aria-hidden="true">&rarr;</span></span><span style="font-size:13px; font-weight:700; color:var(--coral-claro);">o habla con un asesor</span></span>
+      <span style="display:inline-flex; align-items:center; gap:14px; background:var(--base); border-radius:var(--radius-m); padding:15px 18px;"><span style="display:inline-flex; align-items:center; gap:10px; background:var(--coral); color:var(--base); box-shadow:inset 0 0 0 1px var(--base); border-radius:12px; padding:11px 20px; font-size:13.5px; font-weight:800;">Cotiza ahora <span aria-hidden="true">&rarr;</span></span><span style="font-size:13px; font-weight:700; color:var(--coral-claro);">o habla con un asesor</span></span>
       <p class="small-note" style="margin:9px 0 0;">El coral sigue siendo la acción</p>
     </div>
   </div>
@@ -160,7 +164,7 @@
       <tr><td class="name">5 · Franja de respaldo</td><td>Abajo: los sellos que sostienen la promesa (pago seguro, soporte, expertos).</td></tr>
     </table>
     <div style="background:var(--calido); border-radius:var(--radius-m); padding:18px;">
-      <div style="background:var(--base); border-radius:20px; padding:16px; color:#fff;">
+      <div style="background:var(--base); border-radius:var(--radius-m); padding:16px; color:#fff;">
         <div style="font-size:12px; font-weight:800; margin-bottom:12px;">Linex <span style="color:var(--coral);">Go</span></div>
         <div style="font-size:19px; font-weight:800; line-height:1.15;">Escápate a<br><span style="color:var(--coral);">Cartagena</span></div>
         <div style="font-size:10px; color:var(--coral-claro); margin:6px 0 12px;">Paquete 4 días / 3 noches</div>

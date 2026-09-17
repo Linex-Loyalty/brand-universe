@@ -31,7 +31,46 @@
         "Familia Brands para íconos de redes, sin recolorear"
       ],
       "nunca": ["dibujar un ícono a mano", "mezclar librerías"],
-      "decidido": "2026-09-16"
+      "decidido": "2026-09-16",
+      "diccionario": {
+        "nota": "Un concepto, un ícono, siempre el mismo. Común a todo el grupo: vive aquí y no en un manual, porque ninguna marca es dueña de la lista. Cada manual muestra los conceptos que usa.",
+        "producto": {
+          "vuelos": "fa-plane-up", "salida": "fa-plane-departure",
+          "hoteles": "fa-hotel", "habitacion": "fa-bed",
+          "autos": "fa-car-side", "traslados": "fa-van-shuttle",
+          "paquetes": "fa-suitcase", "equipaje": "fa-suitcase-rolling"
+        },
+        "busqueda": {
+          "destino": "fa-location-dot", "internacional": "fa-earth-americas",
+          "experiencias": "fa-umbrella-beach", "fechas": "fa-calendar-days",
+          "duracion": "fa-clock", "buscar": "fa-magnifying-glass",
+          "viajeros": "fa-user-group", "documentos": "fa-passport"
+        },
+        "precio": {
+          "pago": "fa-credit-card", "cotizacion": "fa-receipt",
+          "oferta": "fa-tag", "descuento": "fa-percent", "cupon": "fa-ticket"
+        },
+        "confianza": {
+          "confirmado": "fa-circle-check", "asistencia": "fa-shield-halved",
+          "pago_seguro": "fa-lock", "calificacion": "fa-star",
+          "aviso": "fa-triangle-exclamation", "informacion": "fa-circle-info"
+        },
+        "contacto": {
+          "soporte": "fa-headset", "chat": "fa-comment-dots",
+          "comidas": "fa-utensils", "wifi": "fa-wifi", "siguiente": "fa-arrow-right"
+        },
+        "b2b": {
+          "nota": "Los conceptos que Linex Go necesita y Trip no tenía.",
+          "comision": "fa-hand-holding-dollar", "portafolio": "fa-layer-group",
+          "cupo": "fa-list-check", "condiciones": "fa-file-contract",
+          "agencia": "fa-building", "demo": "fa-desktop"
+        },
+        "redes": {
+          "familia": "Brands — estilo único, no se recolorean ni se encierran en formas propias",
+          "whatsapp": "fa-whatsapp", "instagram": "fa-instagram",
+          "facebook": "fa-facebook", "tiktok": "fa-tiktok"
+        }
+      }
     },
     "radios": { "s": 6, "btn": 12, "m": 16, "l": 24, "pill": 999 },
     "radios_roles": {
