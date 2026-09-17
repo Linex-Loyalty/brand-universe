@@ -307,19 +307,26 @@
         "avatar": null,
         "con_eslogan": null
       },
-      "logo_nota": "El bloqueo de vectorización se resolvió el 17 de septiembre de 2026: llegaron cuatro archivos SVG reales (7 formas cada uno), no el PNG dentro de .svg que había antes. Ya existe la versión negativa, así que la papelería se desbloquea. QUEDAN DOS COSAS POR CORREGIR EN LOS ARCHIVOS: (1) el 'Linex' está pintado con #1A0E3E, que es el Índigo anterior de Linex Trip, no el Petróleo #012D33 que manda este manual — están a ΔE 39.3, uno es morado oscuro y el otro petróleo; (2) tres de los cuatro archivos se llaman 'LinexTrip' estando en la carpeta de Linex Go. El coral #FF725E sí es el correcto.",
+      "logo_nota": "Desbloqueado el 17 de septiembre de 2026. Llegaron cuatro SVG reales (7 formas cada uno), no el PNG dentro de .svg que había antes, y ya existe la versión negativa: la papelería deja de estar bloqueada. El 'Linex' va en Índigo #1A0E3E — NO en el Petróleo #012D33 de la paleta — por decisión del dueño de marca del 17 de septiembre. Es la única excepción del sistema: afecta solo al logotipo, la paleta de la marca no cambia. Ver logo_color_propio.",
+      "logo_color_propio": {
+        "decidido": "2026-09-17",
+        "hex": "#1A0E3E",
+        "alcance": "Solo el logotipo. El Petróleo #012D33 sigue siendo el color principal de la marca, el que sostiene el texto y el que va encima del coral.",
+        "no_cambia": "Ningún contraste de la paleta, ninguna regla de acción, ningún token del CSS.",
+        "contrastes_del_logo": { "#F8F9FC": 16.96, "#F3F0E9": 15.69, "#012D33": 1.21 },
+        "consecuencia_dura": "Sobre Petróleo el logotipo a color da 1.21:1 y desaparece. Sobre ese fondo va SIEMPRE la versión negativa, sin excepción.",
+        "convivencia": "En una pieza con fondo o tipografía en Petróleo, el logotipo queda en otro oscuro. Están a ΔE 39.3: la diferencia se ve, y es intencional.",
+        "contexto": "#1A0E3E era el Índigo de Linex Trip hasta el 14 de septiembre de 2026, cuando Trip lo cambió por el Azul Trip #00145A. El oscuro del logotipo de Go y el de Trip quedan a ΔE 15.5 y a 7° de tono: conviene tenerlo en cuenta al poner las dos marcas en una misma pieza."
+      },
       "logo_revision": {
         "fecha": "2026-09-17",
         "vectorial": true,
-        "oscuro_en_archivo": "#1A0E3E",
-        "oscuro_correcto": "#012D33",
-        "delta_e": 39.3,
         "nombres_incorrectos": [
           "LinexTrip-logo-monocromo 1.svg",
           "LinexTrip-logo-negativo 1.svg",
           "LinexTrip-logo-negro 1.svg"
         ],
-        "duda_abierta": "El archivo 'negro' usa fill=\"black\", y la regla 4 de los usos incorrectos dice que el 'Linex' nunca va en negro. El manual define una sola versión monocromática, no dos. Falta decidir si 'monocromo' y 'negro' son la misma pieza o dos distintas."
+        "duda_abierta": "El archivo 'negro' usa fill=\"black\", y la regla 04 dice que el 'Linex' nunca va en negro. El manual define una sola versión monocromática, no dos. Falta decidir si 'monocromo' y 'negro' son la misma pieza o dos distintas."
       },
       "logo_fondos": {
         "permitidos": ["#F8F9FC", "#F3F0E9", "#012D33"],
@@ -363,7 +370,6 @@
       "manual": "manual-linex-go/",
       "contexto": "contexto-linex-go.md",
       "pendientes": [
-        "El Linex de los cuatro SVG está en #1A0E3E (Índigo viejo de Trip) y debe ir en Petróleo #012D33",
         "Tres de los cuatro archivos se llaman LinexTrip estando en la carpeta de Go",
         "Faltan las versiones vertical, avatar de redes y con eslogan",
         "Faltan los logos de Disney y Assistviaje",
