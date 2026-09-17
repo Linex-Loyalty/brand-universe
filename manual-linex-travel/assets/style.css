@@ -912,12 +912,15 @@ code {
    ven a la vez (ver el breakpoint de 900px arriba). Los dos apuntan a los
    mismos dos radios por su atributo "for": no hace falta un tercer par.
 
+   El inglés es el idioma por defecto, por decisión del dueño de marca.
+   Cambia a español quien lo necesite, con el mismo selector.
+
    Límite honesto: la elección no se recuerda al navegar a otra página —eso
    exigiría JavaScript o una cookie de servidor, y este manual no tiene
-   ninguno de los dos—. Cada página abre en español y el visitante cambia de
-   nuevo si lo necesita. El <title> de la pestaña y la meta description
-   tampoco cambian, porque no son contenido renderizado y no hay forma de
-   alternarlos sin script. */
+   ninguno de los dos—. Cada página abre en inglés y el visitante cambia a
+   español si lo necesita. El <title> de la pestaña y la meta description
+   están en inglés por la misma razón: no son contenido renderizado y no
+   hay forma de alternarlos sin script. */
 .idioma-radio {
   position: absolute; width: 1px; height: 1px;
   margin: -1px; padding: 0; border: 0; overflow: hidden;

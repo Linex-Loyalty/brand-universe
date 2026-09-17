@@ -202,12 +202,12 @@ ${cuerpo}
   const css = fs.readFileSync(path.join(RAIZ, 'assets', 'constelacion.css'), 'utf8');
 
   return `<!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Constelación Linex · Manuales de marca</title>
-<meta name="description" content="Las ocho marcas del grupo Linex, su lugar en los tres tiers y el manual de cada una.">
+<title>Linex Constellation · Brand manuals</title>
+<meta name="description" content="The Linex group's eight brands, their place in the three tiers, and each one's manual.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap">
@@ -218,8 +218,8 @@ ${css}
 <body>
 <!-- GENERADO POR tools/sync-constelacion.js — NO EDITAR A MANO.
      Cambia brand-tokens.json y corre: node tools/sync-constelacion.js -->
-<input type="radio" name="idioma" id="idioma-es" class="idioma-radio" checked>
-<input type="radio" name="idioma" id="idioma-en" class="idioma-radio">
+<input type="radio" name="idioma" id="idioma-es" class="idioma-radio">
+<input type="radio" name="idioma" id="idioma-en" class="idioma-radio" checked>
 <div class="wrap">
   <div class="idioma-switch"><label for="idioma-es">ES</label><label for="idioma-en">EN</label></div>
   <header>

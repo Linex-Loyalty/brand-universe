@@ -2,14 +2,15 @@
 
 Sitio estático, sin dependencias ni build. Se abre con doble clic en `index.html`.
 
-**Bilingüe, español e inglés.** El selector de arriba a la izquierda cambia el
-idioma sin recargar la página — es solo CSS, no hay JavaScript nuevo. Cada
-página lleva las dos versiones adentro del mismo archivo: no existe una
-carpeta `/en/` en espejo, porque una carpeta espejo exige recordar tocar los
-dos árboles en cada edición futura, y eso es exactamente cómo dos idiomas se
-desincronizan. La elección de idioma no se recuerda al cambiar de página —eso
-exigiría JavaScript o una cookie, y este manual no tiene ninguno de los dos—;
-cada página abre en español.
+**Bilingüe, inglés y español — inglés por defecto.** El selector de arriba a
+la izquierda cambia el idioma sin recargar la página — es solo CSS, no hay
+JavaScript nuevo. Cada página lleva las dos versiones adentro del mismo
+archivo: no existe una carpeta `/en/` en espejo, porque una carpeta espejo
+exige recordar tocar los dos árboles en cada edición futura, y eso es
+exactamente cómo dos idiomas se desincronizan. La elección de idioma no se
+recuerda al cambiar de página —eso exigiría JavaScript o una cookie, y este
+manual no tiene ninguno de los dos—; cada página abre en inglés y quien lo
+necesite cambia a español.
 
 ## Qué es
 
