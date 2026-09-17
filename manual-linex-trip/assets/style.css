@@ -829,3 +829,52 @@ code {
   background: rgba(255,255,255,0.9); border: 1px solid rgba(var(--navy-rgb), 0.16);
   padding: 3px 9px; border-radius: 999px; white-space: nowrap; pointer-events: none;
 }
+
+/* ---------- selector de idioma — español / inglés ----------
+   Solo CSS, sin JavaScript nuevo. Cada bloque de contenido traducido vive
+   dos veces en el mismo archivo, envuelto en <span data-lang="es"> y
+   <span data-lang="en">; dos radios ocultos al inicio del <body> deciden
+   cuál se muestra, con el combinador de hermanos (~). Inglés es el
+   idioma por defecto, por decisión del dueño de marca.
+
+   Trip no usa marcadores <!--nav--> como Go y Travel — su navegación se
+   escribe a mano por página y se sincroniza con tools/sync-nav.ps1, no con
+   Node. El selector no depende de eso: se ancla directo al bloque
+   sidebar-brand, que sí es idéntico en las 16 páginas. */
+.idioma-radio {
+  position: absolute; width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+.idioma-switch { display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: rgba(255,255,255,0.1); }
+.idioma-switch label {
+  padding: 4px 11px; border-radius: 999px; font-size: 11px; font-weight: 800;
+  letter-spacing: 0.03em; cursor: pointer; color: rgba(255,255,255,0.6);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.idioma-switch label:hover { color: #fff; }
+.sidebar-brand + .idioma-switch { margin-bottom: 22px; }
+
+#idioma-es:checked ~ .topbar .idioma-switch label[for="idioma-es"],
+#idioma-es:checked ~ .shell .idioma-switch label[for="idioma-es"] { background: #fff; color: var(--navy); }
+#idioma-en:checked ~ .topbar .idioma-switch label[for="idioma-en"],
+#idioma-en:checked ~ .shell .idioma-switch label[for="idioma-en"] { background: #fff; color: var(--navy); }
+
+span[data-lang] { display: none; }
+#idioma-es:checked ~ .topbar span[data-lang="es"],
+#idioma-es:checked ~ .shell span[data-lang="es"] { display: inline; }
+#idioma-en:checked ~ .topbar span[data-lang="en"],
+#idioma-en:checked ~ .shell span[data-lang="en"] { display: inline; }
+
+tr[data-lang] { display: none; }
+#idioma-es:checked ~ .topbar tr[data-lang="es"],
+#idioma-es:checked ~ .shell tr[data-lang="es"] { display: table-row; }
+#idioma-en:checked ~ .topbar tr[data-lang="en"],
+#idioma-en:checked ~ .shell tr[data-lang="en"] { display: table-row; }
+
+@media print {
+  .idioma-switch { display: none; }
+  span[data-lang="en"] { display: inline !important; }
+  span[data-lang="es"] { display: none !important; }
+}

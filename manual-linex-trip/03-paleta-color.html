@@ -10,11 +10,14 @@
 </head>
 <body style="background:var(--paper);">
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
+<input type="radio" name="idioma" id="idioma-es" class="idioma-radio">
+<input type="radio" name="idioma" id="idioma-en" class="idioma-radio" checked>
 <div class="topbar">
-  <span class="topbar-brand">Linex Trip <small>MANUAL DE MARCA</small></span>
+  <span class="topbar-brand">Linex Trip <small><span data-lang="es">MANUAL DE MARCA</span><span data-lang="en">BRAND MANUAL</span></small></span>
+  <div class="idioma-switch"><label for="idioma-es">ES</label><label for="idioma-en">EN</label></div>
   <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="sidebar">
     <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
-    Menú
+    <span data-lang="es">Menú</span><span data-lang="en">Menu</span>
   </button>
 </div>
 <div class="nav-scrim" data-nav-scrim></div>
@@ -22,8 +25,9 @@
   <aside class="sidebar" id="sidebar">
     <a class="sidebar-brand" href="index.html">
       <span class="name">Linex Trip</span>
-      <span class="tag">Manual de Marca &middot; v1.0</span>
+      <span class="tag"><span data-lang="es">Manual de Marca &middot; v1.0</span><span data-lang="en">Brand Manual &middot; v1.0</span></span>
     </a>
+    <div class="idioma-switch"><label for="idioma-es">ES</label><label for="idioma-en">EN</label></div>
 
     <nav class="nav-group" aria-label="Portada">
         <ul class="nav-list">
@@ -65,7 +69,7 @@
   <main class="main" id="contenido">
     <div class="main-inner wide">
 
-<p class="page-index"><span class="page-index-n">03</span><span class="eyebrow" style="color:var(--cyan-dark);">Paleta de color</span></p>
+<p class="page-index"><span class="page-index-n">03</span><span class="eyebrow" style="color:var(--cyan-dark);"><span data-lang="es">Paleta de color</span><span data-lang="en">Colour palette</span></span></p>
 <h1 class="page-title">Siete colores, cada uno con un trabajo distinto</h1>
 <p class="lede">Los colores oficiales de Linex Trip &mdash; ya validados en el manual del grupo &mdash; y la proporción de uso que ayuda a mantener la paleta reconocible en cualquier pieza, de una tarjeta de destino a un banner de promoción. Los CMYK son de referencia hasta confirmar con la imprenta.</p>
 <p class="small-note" style="font-weight:700; color:var(--cyan-dark); max-width:70ch; margin:-14px 0 32px;">Los 7 HEX son un dato ya validado. El porcentaje de uso y el orden de esta página son una propuesta de guía visual de este manual, no una cifra medida ni una decisión aprobada por negocio.</p>

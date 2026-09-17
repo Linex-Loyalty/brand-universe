@@ -10,11 +10,14 @@
 </head>
 <body style="background:var(--paper);">
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
+<input type="radio" name="idioma" id="idioma-es" class="idioma-radio">
+<input type="radio" name="idioma" id="idioma-en" class="idioma-radio" checked>
 <div class="topbar">
-  <span class="topbar-brand">Linex Trip <small>MANUAL DE MARCA</small></span>
+  <span class="topbar-brand">Linex Trip <small><span data-lang="es">MANUAL DE MARCA</span><span data-lang="en">BRAND MANUAL</span></small></span>
+  <div class="idioma-switch"><label for="idioma-es">ES</label><label for="idioma-en">EN</label></div>
   <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="sidebar">
     <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
-    Menú
+    <span data-lang="es">Menú</span><span data-lang="en">Menu</span>
   </button>
 </div>
 <div class="nav-scrim" data-nav-scrim></div>
@@ -22,8 +25,9 @@
   <aside class="sidebar" id="sidebar">
     <a class="sidebar-brand" href="index.html">
       <span class="name">Linex Trip</span>
-      <span class="tag">Manual de Marca &middot; v1.0</span>
+      <span class="tag"><span data-lang="es">Manual de Marca &middot; v1.0</span><span data-lang="en">Brand Manual &middot; v1.0</span></span>
     </a>
+    <div class="idioma-switch"><label for="idioma-es">ES</label><label for="idioma-en">EN</label></div>
 
     <nav class="nav-group" aria-label="Portada">
         <ul class="nav-list">
@@ -65,7 +69,7 @@
   <main class="main" id="contenido">
     <div class="main-inner wide">
 
-<p class="page-index"><span class="page-index-n">06</span><span class="eyebrow" style="color:var(--cyan-dark);">Sistema gráfico y fotografía</span></p>
+<p class="page-index"><span class="page-index-n">06</span><span class="eyebrow" style="color:var(--cyan-dark);"><span data-lang="es">Sistema gráfico y fotografía</span><span data-lang="en">Graphic system and photography</span></span></p>
 <h1 class="page-title">Los elementos que sostienen cada pieza, y cómo se ve la fotografía</h1>
 <p class="lede">Radios de esquina y sombras propias de Linex Trip, aplicados a piezas reales &mdash; y el criterio fotográfico que las acompaña.</p>
 
