@@ -9,12 +9,15 @@
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body style="background:var(--paper);">
-<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<a class="skip-link" href="#contenido">Saltar al contenido / Skip to content</a>
+<input type="radio" name="idioma" id="idioma-es" class="idioma-radio" checked>
+<input type="radio" name="idioma" id="idioma-en" class="idioma-radio">
 <div class="topbar">
-  <span class="topbar-brand">Linex Travel <small>MANUAL DE MARCA</small></span>
+  <span class="topbar-brand">Linex Travel <small><span data-lang="es">MANUAL DE MARCA</span><span data-lang="en">BRAND MANUAL</span></small></span>
+  <div class="idioma-switch"><label for="idioma-es">ES</label><label for="idioma-en">EN</label></div>
   <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="sidebar">
     <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
-    Menú
+    <span data-lang="es">Menú</span><span data-lang="en">Menu</span>
   </button>
 </div>
 <div class="nav-scrim" data-nav-scrim></div>
@@ -22,42 +25,43 @@
   <aside class="sidebar" id="sidebar">
     <a class="sidebar-brand" href="index.html">
       <span class="name">Linex Travel</span>
-      <span class="tag">Manual de Marca &middot; v1.0</span>
+      <span class="tag"><span data-lang="es">Manual de Marca &middot; v1.0</span><span data-lang="en">Brand Manual &middot; v1.0</span></span>
     </a>
+    <div class="idioma-switch"><label for="idioma-es">ES</label><label for="idioma-en">EN</label></div>
     <!--nav-->
-    <nav class="nav-group" aria-label="Portada">
+    <nav class="nav-group" aria-label="Portada / Home">
         <ul class="nav-list">
-          <li><a href="index.html"><span class="n">00</span><span>Resumen ejecutivo</span></a></li>
+          <li><a href="index.html"><span class="n">00</span><span><span data-lang="es">Resumen ejecutivo</span><span data-lang="en">Executive summary</span></span></a></li>
         </ul>
     </nav>
-    <nav class="nav-group" aria-label="A · Identidad visual">
-        <span class="nav-group-title">A · Identidad visual</span>
+    <nav class="nav-group" aria-label="A · Identidad visual / A · Visual identity">
+        <span class="nav-group-title"><span data-lang="es">A · Identidad visual</span><span data-lang="en">A · Visual identity</span></span>
         <ul class="nav-list">
-          <li><a href="01-logotipo.html"><span class="n">01</span><span>Logotipo</span></a></li>
-          <li><a href="02-estado-logotipo.html"><span class="n">02</span><span>Estado del logotipo</span></a></li>
-          <li><a href="03-paleta-color.html"><span class="n">03</span><span>Paleta de color</span></a></li>
-          <li><a href="04-tipografia.html" class="active" aria-current="page"><span class="n">04</span><span>Tipografía</span></a></li>
-          <li><a href="05-iconografia-canal.html"><span class="n">05</span><span>Iconografía y diseño por canal</span></a></li>
-          <li><a href="06-sistema-fotografia.html"><span class="n">06</span><span>Sistema gráfico y fotografía</span></a></li>
-          <li><a href="07-accesibilidad.html"><span class="n">07</span><span>Accesibilidad</span></a></li>
+          <li><a href="01-logotipo.html"><span class="n">01</span><span><span data-lang="es">Logotipo</span><span data-lang="en">Logo</span></span></a></li>
+          <li><a href="02-estado-logotipo.html"><span class="n">02</span><span><span data-lang="es">Estado del logotipo</span><span data-lang="en">Logo status</span></span></a></li>
+          <li><a href="03-paleta-color.html"><span class="n">03</span><span><span data-lang="es">Paleta de color</span><span data-lang="en">Colour palette</span></span></a></li>
+          <li><a href="04-tipografia.html" class="active" aria-current="page"><span class="n">04</span><span><span data-lang="es">Tipografía</span><span data-lang="en">Typography</span></span></a></li>
+          <li><a href="05-iconografia-canal.html"><span class="n">05</span><span><span data-lang="es">Iconografía y diseño por canal</span><span data-lang="en">Iconography and channel design</span></span></a></li>
+          <li><a href="06-sistema-fotografia.html"><span class="n">06</span><span><span data-lang="es">Sistema gráfico y fotografía</span><span data-lang="en">Graphic system and photography</span></span></a></li>
+          <li><a href="07-accesibilidad.html"><span class="n">07</span><span><span data-lang="es">Accesibilidad</span><span data-lang="en">Accessibility</span></span></a></li>
         </ul>
     </nav>
-    <nav class="nav-group" aria-label="B · Quién es y cómo habla">
-        <span class="nav-group-title">B · Quién es y cómo habla</span>
+    <nav class="nav-group" aria-label="B · Quién es y cómo habla / B · Who it is and how it speaks">
+        <span class="nav-group-title"><span data-lang="es">B · Quién es y cómo habla</span><span data-lang="en">B · Who it is and how it speaks</span></span>
         <ul class="nav-list">
-          <li><a href="08-arquitectura.html"><span class="n">08</span><span>Arquitectura y nombre</span></a></li>
-          <li><a href="09-audiencias.html"><span class="n">09</span><span>Audiencias</span></a></li>
-          <li><a href="10-propuesta-valor.html"><span class="n">10</span><span>Propuesta de valor y claims</span></a></li>
-          <li><a href="11-voz-tono.html"><span class="n">11</span><span>Voz y tono</span></a></li>
-          <li><a href="12-vocabulario.html"><span class="n">12</span><span>Vocabulario</span></a></li>
+          <li><a href="08-arquitectura.html"><span class="n">08</span><span><span data-lang="es">Arquitectura y nombre</span><span data-lang="en">Architecture and naming</span></span></a></li>
+          <li><a href="09-audiencias.html"><span class="n">09</span><span><span data-lang="es">Audiencias</span><span data-lang="en">Audiences</span></span></a></li>
+          <li><a href="10-propuesta-valor.html"><span class="n">10</span><span><span data-lang="es">Propuesta de valor y claims</span><span data-lang="en">Value proposition and claims</span></span></a></li>
+          <li><a href="11-voz-tono.html"><span class="n">11</span><span><span data-lang="es">Voz y tono</span><span data-lang="en">Voice and tone</span></span></a></li>
+          <li><a href="12-vocabulario.html"><span class="n">12</span><span><span data-lang="es">Vocabulario</span><span data-lang="en">Vocabulary</span></span></a></li>
         </ul>
     </nav>
-    <nav class="nav-group" aria-label="C · Cómo se aplica">
-        <span class="nav-group-title">C · Cómo se aplica</span>
+    <nav class="nav-group" aria-label="C · Cómo se aplica / C · How it is applied">
+        <span class="nav-group-title"><span data-lang="es">C · Cómo se aplica</span><span data-lang="en">C · How it is applied</span></span>
         <ul class="nav-list">
-          <li><a href="13-promociones-cta.html"><span class="n">13</span><span>Promociones y CTA</span></a></li>
-          <li><a href="14-entregables.html"><span class="n">14</span><span>Entregables y aplicaciones</span></a></li>
-          <li><a href="15-redes-sociales.html"><span class="n">15</span><span>Redes sociales</span></a></li>
+          <li><a href="13-promociones-cta.html"><span class="n">13</span><span><span data-lang="es">Promociones y CTA</span><span data-lang="en">Promotions and CTAs</span></span></a></li>
+          <li><a href="14-entregables.html"><span class="n">14</span><span><span data-lang="es">Entregables y aplicaciones</span><span data-lang="en">Deliverables and applications</span></span></a></li>
+          <li><a href="15-redes-sociales.html"><span class="n">15</span><span><span data-lang="es">Redes sociales</span><span data-lang="en">Social media</span></span></a></li>
         </ul>
     </nav>
     <!--/nav-->
@@ -65,73 +69,82 @@
   <main class="main" id="contenido">
     <div class="main-inner">
 
-<p class="page-index"><span class="page-index-n">04</span><span class="eyebrow">Tipografía</span></p>
-<h1 class="page-title">Geist para lo que se diseña. Y una segunda familia para lo que se escribe todos los días.</h1>
-<p class="lede">El manual oficial de Linex Travel nombra <strong>Geist</strong> como la tipografía de la marca y <strong>Calibri</strong> como respaldo. El grupo Linex lo tiene organizado un paso más allá, y conviene conocer las dos lecturas porque no dicen exactamente lo mismo.</p>
+<p class="page-index"><span class="page-index-n">04</span><span class="eyebrow"><span data-lang="es">Tipografía</span><span data-lang="en">Typography</span></span></p>
+<h1 class="page-title"><span data-lang="es">Geist para lo que se diseña. Y una segunda familia para lo que se escribe todos los días.</span><span data-lang="en">Geist for what gets designed. And a second family for what gets written every day.</span></h1>
+<p class="lede"><span data-lang="es">El manual oficial de Linex Travel nombra <strong>Geist</strong> como la tipografía de la marca y <strong>Calibri</strong> como respaldo. El grupo Linex lo tiene organizado un paso más allá, y conviene conocer las dos lecturas porque no dicen exactamente lo mismo.</span><span data-lang="en">Linex Travel's official manual names <strong>Geist</strong> as the brand's typeface and <strong>Calibri</strong> as its backup. The Linex group has it organised one step further, and it's worth knowing both readings, because they don't say exactly the same thing.</span></p>
 
 <section class="section-block">
-  <h2 class="section-title">Geist</h2>
+  <h2 class="section-title"><span data-lang="es">Geist</span><span data-lang="en">Geist</span></h2>
   <div class="grid-2">
     <div class="card tint">
-      <strong style="font-size:13px; color:var(--base);">Pesos declarados en el manual oficial</strong>
+      <span data-lang="es"><strong style="font-size:13px; color:var(--base);">Pesos declarados en el manual oficial</strong>
       <p class="small-note" style="margin-top:8px;">Regular &middot; Medium &middot; Black &middot; ExtraBold</p>
-      <p class="small-note">Una familia moderna, limpia y muy legible, pensada para entornos digitales y corporativos.</p>
+      <p class="small-note">Una familia moderna, limpia y muy legible, pensada para entornos digitales y corporativos.</p></span><span data-lang="en"><strong style="font-size:13px; color:var(--base);">Weights declared in the official manual</strong>
+      <p class="small-note" style="margin-top:8px;">Regular &middot; Medium &middot; Black &middot; ExtraBold</p>
+      <p class="small-note">A modern, clean and highly legible family, built for digital and corporate settings.</p></span>
     </div>
     <div class="card tint">
-      <strong style="font-size:13px; color:var(--base);">Dónde vive</strong>
+      <span data-lang="es"><strong style="font-size:13px; color:var(--base);">Dónde vive</strong>
       <p class="small-note" style="margin-top:8px;">Sitios web, producto, presentaciones, piezas diseñadas y redes sociales.</p>
-      <p class="small-note">Se carga desde Google Fonts. Este manual la usa: lo que está leyendo es Geist.</p>
+      <p class="small-note">Se carga desde Google Fonts. Este manual la usa: lo que está leyendo es Geist.</p></span><span data-lang="en"><strong style="font-size:13px; color:var(--base);">Where it lives</strong>
+      <p class="small-note" style="margin-top:8px;">Websites, product, presentations, designed pieces and social media.</p>
+      <p class="small-note">It loads from Google Fonts. This manual uses it: what you're reading is Geist.</p></span>
     </div>
   </div>
 </section>
 
 <section class="section-block">
-  <h2 class="section-title">Los dos registros del grupo</h2>
-  <p>Esta es la decisión de grupo del 16 de septiembre de 2026, y aplica igual a Linex Travel, Linex Go y Linex Trip.</p>
+  <h2 class="section-title"><span data-lang="es">Los dos registros del grupo</span><span data-lang="en">The group's two registers</span></h2>
+  <p><span data-lang="es">Esta es la decisión de grupo del 16 de septiembre de 2026, y aplica igual a Linex Travel, Linex Go y Linex Trip.</span><span data-lang="en">This is the group decision of 16 September 2026, and it applies equally to Linex Travel, Linex Go and Linex Trip.</span></p>
   <div class="table-scroll">
     <table class="rtable">
-      <tr><td class="name">Registro digital</td><td><strong>Geist.</strong> Sitios web y producto. Es el que viste la marca.</td></tr>
-      <tr><td class="name">Registro operativo</td><td><strong>Segoe UI</strong> en títulos y <strong>Calibri</strong> en cuerpo. Cotizaciones, correo, Contact&nbsp;Center y cualquier documento de Office. Respaldo: Arial, Helvetica.</td></tr>
+      <tr data-lang="es"><td class="name">Registro digital</td><td><strong>Geist.</strong> Sitios web y producto. Es el que viste la marca.</td></tr><tr data-lang="en"><td class="name">Digital register</td><td><strong>Geist.</strong> Websites and product. It's the one that dresses the brand.</td></tr>
+      <tr data-lang="es"><td class="name">Registro operativo</td><td><strong>Segoe UI</strong> en títulos y <strong>Calibri</strong> en cuerpo. Cotizaciones, correo, Contact&nbsp;Center y cualquier documento de Office. Respaldo: Arial, Helvetica.</td></tr><tr data-lang="en"><td class="name">Operational register</td><td><strong>Segoe UI</strong> for titles and <strong>Calibri</strong> for body. Quotes, email, the Contact&nbsp;Center and any Office document. Fallback: Arial, Helvetica.</td></tr>
     </table>
   </div>
   <div class="callout" style="background:rgba(var(--apoyo-rgb),0.07); border:1px solid rgba(var(--apoyo-rgb),0.28); margin-top:16px;">
-    <span class="tag" style="color:var(--apoyo);">POR QUÉ HAY DOS</span>
-    <p>Porque una marca no se sostiene solo en lo que diseña una agencia. Se sostiene, sobre todo, en las decenas de documentos que alguien manda cada día desde un computador donde <strong style="color:var(--base);">no hay ninguna fuente instalada</strong>. Si la regla exige Geist para todo, la realidad la incumple en silencio y la marca se ve distinta en el 90% de sus contactos.<br>
-    <strong style="color:var(--base);">Segoe UI manda en lo que se ve, Calibri sostiene lo que se lee, Geist viste el sitio y el producto. Nunca al revés.</strong></p>
+    <span class="tag" style="color:var(--apoyo);"><span data-lang="es">POR QUÉ HAY DOS</span><span data-lang="en">WHY THERE ARE TWO</span></span>
+    <p><span data-lang="es">Porque una marca no se sostiene solo en lo que diseña una agencia. Se sostiene, sobre todo, en las decenas de documentos que alguien manda cada día desde un computador donde <strong style="color:var(--base);">no hay ninguna fuente instalada</strong>. Si la regla exige Geist para todo, la realidad la incumple en silencio y la marca se ve distinta en el 90% de sus contactos.<br>
+    <strong style="color:var(--base);">Segoe UI manda en lo que se ve, Calibri sostiene lo que se lee, Geist viste el sitio y el producto. Nunca al revés.</strong></span><span data-lang="en">Because a brand doesn't rest only on what an agency designs. It rests, above all, on the dozens of documents someone sends every day from a computer where <strong style="color:var(--base);">no font has been installed</strong>. If the rule demands Geist for everything, reality quietly breaks it, and the brand looks different across 90% of its contacts.<br>
+    <strong style="color:var(--base);">Segoe UI rules what's seen, Calibri carries what's read, Geist dresses the site and the product. Never the other way round.</strong></span></p>
   </div>
 </section>
 
 <section class="section-block">
-  <h2 class="section-title">Una diferencia que conviene tener presente</h2>
+  <h2 class="section-title"><span data-lang="es">Una diferencia que conviene tener presente</span><span data-lang="en">One difference worth keeping in mind</span></h2>
   <div class="callout pending">
-    <span class="tag">DOS LECTURAS DE CALIBRI</span>
-    <p>El manual oficial de Travel presenta a Calibri como <em>&laquo;fuente de respaldo cuando la tipografía principal no esté disponible en el dispositivo&raquo;</em>. El sistema del grupo le da algo distinto: un <strong style="color:var(--base);">dominio propio</strong>, el operativo, donde Calibri no es un sustituto sino la elección correcta.<br>
-    No es una contradicción de fondo &mdash; en los dos casos Calibri termina usándose en Office &mdash;, pero sí cambia cómo se le habla al equipo. &laquo;Respaldo&raquo; suena a que se está cediendo algo; &laquo;registro operativo&raquo; dice que es la decisión adecuada para ese contexto. Vale la pena unificar el lenguaje en la próxima edición.</p>
+    <span class="tag"><span data-lang="es">DOS LECTURAS DE CALIBRI</span><span data-lang="en">TWO READINGS OF CALIBRI</span></span>
+    <p><span data-lang="es">El manual oficial de Travel presenta a Calibri como <em>&laquo;fuente de respaldo cuando la tipografía principal no esté disponible en el dispositivo&raquo;</em>. El sistema del grupo le da algo distinto: un <strong style="color:var(--base);">dominio propio</strong>, el operativo, donde Calibri no es un sustituto sino la elección correcta.<br>
+    No es una contradicción de fondo &mdash; en los dos casos Calibri termina usándose en Office &mdash;, pero sí cambia cómo se le habla al equipo. &laquo;Respaldo&raquo; suena a que se está cediendo algo; &laquo;registro operativo&raquo; dice que es la decisión adecuada para ese contexto. Vale la pena unificar el lenguaje en la próxima edición.</span><span data-lang="en">Travel's official manual presents Calibri as a <em>&laquo;backup font for when the primary typeface isn't available on the device&raquo;</em>. The group's system gives it something different: a <strong style="color:var(--base);">domain of its own</strong>, the operational one, where Calibri isn't a substitute but the right choice.<br>
+    It isn't a contradiction at heart &mdash; in both readings Calibri ends up used in Office &mdash;, but it does change how it gets talked about with the team. &laquo;Backup&raquo; sounds like something is being conceded; &laquo;operational register&raquo; says it's the right decision for that context. It's worth unifying the language in the next edition.</span></p>
   </div>
-  <p class="small-note" style="margin-top:12px;">Nota menor: el manual oficial escribe el nombre como <em>&laquo;Calibrí&raquo;</em>, con tilde, en el titular de la lámina. El nombre real de la familia es <strong style="color:var(--base);">Calibri</strong>, sin tilde, y así hay que pedirla.</p>
+  <p class="small-note" style="margin-top:12px;"><span data-lang="es">Nota menor: el manual oficial escribe el nombre como <em>&laquo;Calibrí&raquo;</em>, con tilde, en el titular de la lámina. El nombre real de la familia es <strong style="color:var(--base);">Calibri</strong>, sin tilde, y así hay que pedirla.</span><span data-lang="en">Minor note: the official manual writes the name as <em>&laquo;Calibrí&raquo;</em>, with an accent, on the slide's heading. The family's real name is <strong style="color:var(--base);">Calibri</strong>, without the accent, and that's how it should be requested.</span></p>
 </section>
 
 <section class="section-block">
-  <h2 class="section-title">Cómo se escribe el nombre</h2>
+  <h2 class="section-title"><span data-lang="es">Cómo se escribe el nombre</span><span data-lang="en">How the name is written</span></h2>
   <div class="grid-2">
     <div class="card tint">
-      <strong style="font-size:13px; color:var(--base);">Así</strong>
-      <p class="small-note" style="margin-top:8px;"><strong style="color:var(--base); font-size:15px;">Linex Travel</strong><br>Dos palabras, con espacio, las dos con mayúscula inicial.</p>
+      <span data-lang="es"><strong style="font-size:13px; color:var(--base);">Así</strong>
+      <p class="small-note" style="margin-top:8px;"><strong style="color:var(--base); font-size:15px;">Linex Travel</strong><br>Dos palabras, con espacio, las dos con mayúscula inicial.</p></span><span data-lang="en"><strong style="font-size:13px; color:var(--base);">Correct</strong>
+      <p class="small-note" style="margin-top:8px;"><strong style="color:var(--base); font-size:15px;">Linex Travel</strong><br>Two words, with a space, both capitalised.</p></span>
     </div>
     <div class="card tint">
-      <strong style="font-size:13px; color:var(--base);">Así no</strong>
+      <span data-lang="es"><strong style="font-size:13px; color:var(--base);">Así no</strong>
       <p class="small-note" style="margin-top:8px;">LinexTravel &middot; linextravel &middot; LINEX TRAVEL &middot; Linex travel</p>
-      <p class="small-note">Sin espacio solo en nombres de archivo y en el dominio, donde el espacio no existe.</p>
+      <p class="small-note">Sin espacio solo en nombres de archivo y en el dominio, donde el espacio no existe.</p></span><span data-lang="en"><strong style="font-size:13px; color:var(--base);">Not like this</strong>
+      <p class="small-note" style="margin-top:8px;">LinexTravel &middot; linextravel &middot; LINEX TRAVEL &middot; Linex travel</p>
+      <p class="small-note">No space only in file names and in the domain, where a space cannot exist.</p></span>
     </div>
   </div>
 </section>
 
       <div class="footer-meta">
-        <span>manual-marca-linex-travel-v1.0 &middot; sitio estático de distribución</span>
-        <span>Manual de Marca de Linex Travel &middot; 2026</span>
+        <span data-lang="es">manual-marca-linex-travel-v1.0 &middot; sitio estático de distribución</span><span data-lang="en">manual-marca-linex-travel-v1.0 &middot; static distribution site</span>
+        <span data-lang="es">Manual de Marca de Linex Travel &middot; 2026</span><span data-lang="en">Linex Travel Brand Manual &middot; 2026</span>
       </div>
       <!--pager-->
-      <div class="pager"><a class="prev" href="03-paleta-color.html"><span class="dir">&larr; Anterior</span><span class="lbl">03 &middot; Paleta de color</span></a><a class="next" href="05-iconografia-canal.html"><span class="dir">Siguiente &rarr;</span><span class="lbl">05 &middot; Iconografía y diseño por canal</span></a></div>
+      <div class="pager"><a class="prev" href="03-paleta-color.html"><span class="dir"><span data-lang="es">&larr; Anterior</span><span data-lang="en">&larr; Previous</span></span><span class="lbl">03 &middot; <span data-lang="es">Paleta de color</span><span data-lang="en">Colour palette</span></span></a><a class="next" href="05-iconografia-canal.html"><span class="dir"><span data-lang="es">Siguiente &rarr;</span><span data-lang="en">Next &rarr;</span></span><span class="lbl">05 &middot; <span data-lang="es">Iconografía y diseño por canal</span><span data-lang="en">Iconography and channel design</span></span></a></div>
       <!--/pager-->
     </div>
   </main>

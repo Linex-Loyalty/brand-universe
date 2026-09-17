@@ -10,11 +10,14 @@
 </head>
 <body style="background:var(--paper);">
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
+<input type="radio" name="idioma" id="idioma-es" class="idioma-radio" checked>
+<input type="radio" name="idioma" id="idioma-en" class="idioma-radio">
 <div class="topbar">
-  <span class="topbar-brand">Linex Travel <small>MANUAL DE MARCA</small></span>
+  <span class="topbar-brand">Linex Travel <small><span data-lang="es">MANUAL DE MARCA</span><span data-lang="en">BRAND MANUAL</span></small></span>
+  <div class="idioma-switch"><label for="idioma-es">ES</label><label for="idioma-en">EN</label></div>
   <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="sidebar">
     <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
-    Menú
+    <span data-lang="es">Menú</span><span data-lang="en">Menu</span>
   </button>
 </div>
 <div class="nav-scrim" data-nav-scrim></div>
@@ -22,42 +25,43 @@
   <aside class="sidebar" id="sidebar">
     <a class="sidebar-brand" href="index.html">
       <span class="name">Linex Travel</span>
-      <span class="tag">Manual de Marca &middot; v1.0</span>
+      <span class="tag"><span data-lang="es">Manual de Marca &middot; v1.0</span><span data-lang="en">Brand Manual &middot; v1.0</span></span>
     </a>
+    <div class="idioma-switch"><label for="idioma-es">ES</label><label for="idioma-en">EN</label></div>
     <!--nav-->
-    <nav class="nav-group" aria-label="Portada">
+    <nav class="nav-group" aria-label="Portada / Home">
         <ul class="nav-list">
-          <li><a href="index.html"><span class="n">00</span><span>Resumen ejecutivo</span></a></li>
+          <li><a href="index.html"><span class="n">00</span><span><span data-lang="es">Resumen ejecutivo</span><span data-lang="en">Executive summary</span></span></a></li>
         </ul>
     </nav>
-    <nav class="nav-group" aria-label="A · Identidad visual">
-        <span class="nav-group-title">A · Identidad visual</span>
+    <nav class="nav-group" aria-label="A · Identidad visual / A · Visual identity">
+        <span class="nav-group-title"><span data-lang="es">A · Identidad visual</span><span data-lang="en">A · Visual identity</span></span>
         <ul class="nav-list">
-          <li><a href="01-logotipo.html"><span class="n">01</span><span>Logotipo</span></a></li>
-          <li><a href="02-estado-logotipo.html"><span class="n">02</span><span>Estado del logotipo</span></a></li>
-          <li><a href="03-paleta-color.html" class="active" aria-current="page"><span class="n">03</span><span>Paleta de color</span></a></li>
-          <li><a href="04-tipografia.html"><span class="n">04</span><span>Tipografía</span></a></li>
-          <li><a href="05-iconografia-canal.html"><span class="n">05</span><span>Iconografía y diseño por canal</span></a></li>
-          <li><a href="06-sistema-fotografia.html"><span class="n">06</span><span>Sistema gráfico y fotografía</span></a></li>
-          <li><a href="07-accesibilidad.html"><span class="n">07</span><span>Accesibilidad</span></a></li>
+          <li><a href="01-logotipo.html"><span class="n">01</span><span><span data-lang="es">Logotipo</span><span data-lang="en">Logo</span></span></a></li>
+          <li><a href="02-estado-logotipo.html"><span class="n">02</span><span><span data-lang="es">Estado del logotipo</span><span data-lang="en">Logo status</span></span></a></li>
+          <li><a href="03-paleta-color.html" class="active" aria-current="page"><span class="n">03</span><span><span data-lang="es">Paleta de color</span><span data-lang="en">Colour palette</span></span></a></li>
+          <li><a href="04-tipografia.html"><span class="n">04</span><span><span data-lang="es">Tipografía</span><span data-lang="en">Typography</span></span></a></li>
+          <li><a href="05-iconografia-canal.html"><span class="n">05</span><span><span data-lang="es">Iconografía y diseño por canal</span><span data-lang="en">Iconography and channel design</span></span></a></li>
+          <li><a href="06-sistema-fotografia.html"><span class="n">06</span><span><span data-lang="es">Sistema gráfico y fotografía</span><span data-lang="en">Graphic system and photography</span></span></a></li>
+          <li><a href="07-accesibilidad.html"><span class="n">07</span><span><span data-lang="es">Accesibilidad</span><span data-lang="en">Accessibility</span></span></a></li>
         </ul>
     </nav>
-    <nav class="nav-group" aria-label="B · Quién es y cómo habla">
-        <span class="nav-group-title">B · Quién es y cómo habla</span>
+    <nav class="nav-group" aria-label="B · Quién es y cómo habla / B · Who it is and how it speaks">
+        <span class="nav-group-title"><span data-lang="es">B · Quién es y cómo habla</span><span data-lang="en">B · Who it is and how it speaks</span></span>
         <ul class="nav-list">
-          <li><a href="08-arquitectura.html"><span class="n">08</span><span>Arquitectura y nombre</span></a></li>
-          <li><a href="09-audiencias.html"><span class="n">09</span><span>Audiencias</span></a></li>
-          <li><a href="10-propuesta-valor.html"><span class="n">10</span><span>Propuesta de valor y claims</span></a></li>
-          <li><a href="11-voz-tono.html"><span class="n">11</span><span>Voz y tono</span></a></li>
-          <li><a href="12-vocabulario.html"><span class="n">12</span><span>Vocabulario</span></a></li>
+          <li><a href="08-arquitectura.html"><span class="n">08</span><span><span data-lang="es">Arquitectura y nombre</span><span data-lang="en">Architecture and naming</span></span></a></li>
+          <li><a href="09-audiencias.html"><span class="n">09</span><span><span data-lang="es">Audiencias</span><span data-lang="en">Audiences</span></span></a></li>
+          <li><a href="10-propuesta-valor.html"><span class="n">10</span><span><span data-lang="es">Propuesta de valor y claims</span><span data-lang="en">Value proposition and claims</span></span></a></li>
+          <li><a href="11-voz-tono.html"><span class="n">11</span><span><span data-lang="es">Voz y tono</span><span data-lang="en">Voice and tone</span></span></a></li>
+          <li><a href="12-vocabulario.html"><span class="n">12</span><span><span data-lang="es">Vocabulario</span><span data-lang="en">Vocabulary</span></span></a></li>
         </ul>
     </nav>
-    <nav class="nav-group" aria-label="C · Cómo se aplica">
-        <span class="nav-group-title">C · Cómo se aplica</span>
+    <nav class="nav-group" aria-label="C · Cómo se aplica / C · How it is applied">
+        <span class="nav-group-title"><span data-lang="es">C · Cómo se aplica</span><span data-lang="en">C · How it is applied</span></span>
         <ul class="nav-list">
-          <li><a href="13-promociones-cta.html"><span class="n">13</span><span>Promociones y CTA</span></a></li>
-          <li><a href="14-entregables.html"><span class="n">14</span><span>Entregables y aplicaciones</span></a></li>
-          <li><a href="15-redes-sociales.html"><span class="n">15</span><span>Redes sociales</span></a></li>
+          <li><a href="13-promociones-cta.html"><span class="n">13</span><span><span data-lang="es">Promociones y CTA</span><span data-lang="en">Promotions and CTAs</span></span></a></li>
+          <li><a href="14-entregables.html"><span class="n">14</span><span><span data-lang="es">Entregables y aplicaciones</span><span data-lang="en">Deliverables and applications</span></span></a></li>
+          <li><a href="15-redes-sociales.html"><span class="n">15</span><span><span data-lang="es">Redes sociales</span><span data-lang="en">Social media</span></span></a></li>
         </ul>
     </nav>
     <!--/nav-->
@@ -65,205 +69,220 @@
   <main class="main" id="contenido">
     <div class="main-inner">
 
-<p class="page-index"><span class="page-index-n">03</span><span class="eyebrow">Paleta de color</span></p>
-<h1 class="page-title">Seis colores con rol fijo y una proporción que no se negocia.</h1>
-<p class="lede">Cada color tiene un trabajo. La lavanda viste el fondo, el azul noche sostiene el texto, el violeta actúa &mdash; pero solo actúa &mdash;, el lila da respiro y el negro se guarda para cuando la imprenta no admite otra cosa.</p>
+<p class="page-index"><span class="page-index-n">03</span><span class="eyebrow"><span data-lang="es">Paleta de color</span><span data-lang="en">Colour palette</span></span></p>
+<h1 class="page-title"><span data-lang="es">Seis colores con rol fijo y una proporción que no se negocia.</span><span data-lang="en">Six colours with a fixed role and a proportion that isn't negotiable.</span></h1>
+<p class="lede"><span data-lang="es">Cada color tiene un trabajo. La lavanda viste el fondo, el azul noche sostiene el texto, el violeta actúa &mdash; pero solo actúa &mdash;, el lila da respiro y el negro se guarda para cuando la imprenta no admite otra cosa.</span><span data-lang="en">Every colour has a job. Lavender dresses the background, Night blue carries the text, Violet acts &mdash; but only acts &mdash;, Light lilac gives breathing room, and Black is kept for when the press won't allow anything else.</span></p>
 
 <section class="section-block">
-  <h2 class="section-title">La proporción</h2>
+  <h2 class="section-title"><span data-lang="es">La proporción</span><span data-lang="en">The proportion</span></h2>
   <div class="palette-bars">
 
     <div style="flex:40 1 0%; background:#DDE1FF; box-shadow:inset 0 0 0 1px rgba(23,21,59,0.14);">
-      <strong style="color:#17153B;">Lavanda Linex</strong>
-      <span style="color:rgba(23,21,59,0.78);">Base &middot; 40%</span>
+      <span data-lang="es"><strong style="color:#17153B;">Lavanda Linex</strong>
+      <span style="color:rgba(23,21,59,0.78);">Base &middot; 40%</span></span><span data-lang="en"><strong style="color:#17153B;">Linex Lavender</strong>
+      <span style="color:rgba(23,21,59,0.78);">Base &middot; 40%</span></span>
     </div>
 
     <div style="flex:20 1 0%; background:#5B5CFF;">
-      <strong style="color:#fff;">Azul violeta</strong>
-      <span style="color:rgba(255,255,255,0.88);">Acento &middot; 20%</span>
+      <span data-lang="es"><strong style="color:#fff;">Azul violeta</strong>
+      <span style="color:rgba(255,255,255,0.88);">Acento &middot; 20%</span></span><span data-lang="en"><strong style="color:#fff;">Blue-violet</strong>
+      <span style="color:rgba(255,255,255,0.88);">Accent &middot; 20%</span></span>
     </div>
 
     <div style="flex:10 1 0%; background:#6D28D9;">
-      <strong style="color:#fff;">Violeta</strong>
-      <span style="color:rgba(255,255,255,0.88);">Apoyo &middot; 10%</span>
+      <span data-lang="es"><strong style="color:#fff;">Violeta</strong>
+      <span style="color:rgba(255,255,255,0.88);">Apoyo &middot; 10%</span></span><span data-lang="en"><strong style="color:#fff;">Violet</strong>
+      <span style="color:rgba(255,255,255,0.88);">Support &middot; 10%</span></span>
     </div>
 
     <div style="flex:10 1 0%; background:#E0B3FF; box-shadow:inset 0 0 0 1px rgba(23,21,59,0.14);">
-      <strong style="color:#17153B;">Lila claro</strong>
-      <span style="color:rgba(23,21,59,0.78);">Respiro &middot; 10%</span>
+      <span data-lang="es"><strong style="color:#17153B;">Lila claro</strong>
+      <span style="color:rgba(23,21,59,0.78);">Respiro &middot; 10%</span></span><span data-lang="en"><strong style="color:#17153B;">Light lilac</strong>
+      <span style="color:rgba(23,21,59,0.78);">Breathing room &middot; 10%</span></span>
     </div>
 
     <div style="flex:10 1 0%; background:#17153B;">
-      <strong style="color:#fff;">Azul Noche</strong>
-      <span style="color:rgba(255,255,255,0.86);">Contraste &middot; 10%</span>
+      <span data-lang="es"><strong style="color:#fff;">Azul Noche</strong>
+      <span style="color:rgba(255,255,255,0.86);">Contraste &middot; 10%</span></span><span data-lang="en"><strong style="color:#fff;">Night blue</strong>
+      <span style="color:rgba(255,255,255,0.86);">Contrast &middot; 10%</span></span>
     </div>
 
     <div style="flex:10 1 0%; background:#080808;">
-      <strong style="color:#fff;">Negro Linex</strong>
-      <span style="color:rgba(255,255,255,0.86);">Reserva &middot; 10%</span>
+      <span data-lang="es"><strong style="color:#fff;">Negro Linex</strong>
+      <span style="color:rgba(255,255,255,0.86);">Reserva &middot; 10%</span></span><span data-lang="en"><strong style="color:#fff;">Linex Black</strong>
+      <span style="color:rgba(255,255,255,0.86);">Reserve &middot; 10%</span></span>
     </div>
 
   </div>
-  <p class="small-note" style="max-width:76ch; margin-top:18px;">La proporción es regla, no descripción. El manual oficial lo dice de frente: <strong style="color:var(--base);">priorizar fondos claros y colores suaves, y reservar los oscuros para contraste, títulos y texto principal.</strong> De ahí salen los dos números que hay que respetar: la <strong style="color:var(--base);">lavanda se lleva el 40%</strong> porque es el fondo por defecto, y los <strong style="color:var(--base);">dos oscuros juntos no pasan del 20%</strong> &mdash; en el momento en que una pieza se vuelve mayoritariamente oscura, deja de parecerse a la marca.</p>
+  <p class="small-note" style="max-width:76ch; margin-top:18px;"><span data-lang="es">La proporción es regla, no descripción. El manual oficial lo dice de frente: <strong style="color:var(--base);">priorizar fondos claros y colores suaves, y reservar los oscuros para contraste, títulos y texto principal.</strong> De ahí salen los dos números que hay que respetar: la <strong style="color:var(--base);">lavanda se lleva el 40%</strong> porque es el fondo por defecto, y los <strong style="color:var(--base);">dos oscuros juntos no pasan del 20%</strong> &mdash; en el momento en que una pieza se vuelve mayoritariamente oscura, deja de parecerse a la marca.</span><span data-lang="en">The proportion is a rule, not a description. The official manual states it outright: <strong style="color:var(--base);">prioritise light backgrounds and soft colours, and reserve dark tones for contrast, titles and main text.</strong> Two numbers follow from that, and both have to be honoured: <strong style="color:var(--base);">Lavender takes 40%</strong> because it's the default background, and <strong style="color:var(--base);">the two dark tones together never exceed 20%</strong> &mdash; the moment a piece turns mostly dark, it stops looking like the brand.</span></p>
 
   <div class="callout resolved" style="margin-top:18px;">
-    <span class="tag">DOS DE ESTOS COLORES SON DEL GRUPO</span>
-    <p><strong style="color:var(--base);">Lavanda Linex #DDE1FF</strong> y <strong style="color:var(--base);">Negro Linex #080808</strong> están a <strong style="color:var(--base);">&Delta;E 0.0</strong> de dos colores que Linex&nbsp;Trip ya tenía. Son idénticos, no parecidos &mdash; el apellido &laquo;Linex&raquo; en el nombre era la pista.<br>
-    No son colores de Travel: son <strong style="color:var(--base);">tokens del grupo</strong>. Cambiar uno aquí lo cambia en Trip, y al revés. Cualquier ajuste sobre esos dos deja de ser una decisión de marca y pasa a ser una decisión de grupo.</p>
+    <span class="tag"><span data-lang="es">DOS DE ESTOS COLORES SON DEL GRUPO</span><span data-lang="en">TWO OF THESE COLOURS BELONG TO THE GROUP</span></span>
+    <p><span data-lang="es"><strong style="color:var(--base);">Lavanda Linex #DDE1FF</strong> y <strong style="color:var(--base);">Negro Linex #080808</strong> están a <strong style="color:var(--base);">&Delta;E 0.0</strong> de dos colores que Linex&nbsp;Trip ya tenía. Son idénticos, no parecidos &mdash; el apellido &laquo;Linex&raquo; en el nombre era la pista.<br>
+    No son colores de Travel: son <strong style="color:var(--base);">tokens del grupo</strong>. Cambiar uno aquí lo cambia en Trip, y al revés. Cualquier ajuste sobre esos dos deja de ser una decisión de marca y pasa a ser una decisión de grupo.</span><span data-lang="en">Both <strong style="color:var(--base);">Linex Lavender #DDE1FF</strong> and <strong style="color:var(--base);">Linex Black #080808</strong> sit at <strong style="color:var(--base);">&Delta;E 0.0</strong> from two colours Linex&nbsp;Trip already had. They're identical, not similar &mdash; the &laquo;Linex&raquo; surname was the clue.<br>
+    They aren't Travel's colours: they're <strong style="color:var(--base);">group tokens</strong>. Changing one here changes it in Trip, and the other way round. Any adjustment to either of these stops being a brand decision and becomes a group decision.</span></p>
   </div>
 </section>
 
 <section class="section-block">
-  <h2 class="section-title">Rol de cada color</h2>
+  <h2 class="section-title"><span data-lang="es">Rol de cada color</span><span data-lang="en">The role of each colour</span></h2>
   <div class="grid-3" style="gap:20px;">
 
     <div class="card tint">
       <div style="width:100%; height:44px; border-radius:8px; background:#DDE1FF; border:1px solid rgba(var(--base-rgb),0.14); margin-bottom:12px;"></div>
-      <strong style="font-size:13px; color:var(--base);">Lavanda Linex</strong>
-      <p class="small-note" style="margin:4px 0 6px; font-weight:700; color:var(--apoyo);">Base &middot; 40%</p>
+      <span data-lang="es"><strong style="font-size:13px; color:var(--base);">Lavanda Linex</strong>
+      <p class="small-note" style="margin:4px 0 6px; font-weight:700; color:var(--apoyo);">Base &middot; 40%</p></span><span data-lang="en"><strong style="font-size:13px; color:var(--base);">Linex Lavender</strong>
+      <p class="small-note" style="margin:4px 0 6px; font-weight:700; color:var(--apoyo);">Base &middot; 40%</p></span>
       <p class="small-note" style="margin:0 0 8px; font-weight:700;">#DDE1FF &middot; RGB 221, 225, 255</p>
-      <p class="small-note">El fondo por defecto de la marca. Sostiene la tinta oscura a 13.50:1 y es uno de los fondos permitidos para el logotipo. <strong style="color:var(--base);">Este manual no lo usa como página</strong> a propósito: si el papel fuera Lavanda, la banda de arriba mostraría el 40% de Lavanda sobre Lavanda y ese bloque no se vería. <strong style="color:var(--base);">Nunca como texto:</strong> sobre blanco da 1.29:1.</p>
+      <p class="small-note"><span data-lang="es">El fondo por defecto de la marca. Sostiene la tinta oscura a 13.50:1 y es uno de los fondos permitidos para el logotipo. <strong style="color:var(--base);">Este manual no lo usa como página</strong> a propósito: si el papel fuera Lavanda, la banda de arriba mostraría el 40% de Lavanda sobre Lavanda y ese bloque no se vería. <strong style="color:var(--base);">Nunca como texto:</strong> sobre blanco da 1.29:1.</span><span data-lang="en">The brand's default background. It carries the dark ink at 13.50:1 and is one of the permitted backgrounds for the logo. <strong style="color:var(--base);">This manual deliberately doesn't use it as its page</strong>: if the paper were Lavender, the band above would show 40% Lavender on Lavender and that block would be invisible. <strong style="color:var(--base);">Never as text:</strong> it gives 1.29:1 on white.</span></p>
     </div>
 
     <div class="card tint">
       <div style="width:100%; height:44px; border-radius:8px; background:#5B5CFF; margin-bottom:12px;"></div>
-      <strong style="font-size:13px; color:var(--base);">Azul violeta</strong>
-      <p class="small-note" style="margin:4px 0 6px; font-weight:700; color:var(--apoyo);">Acento &middot; 20%</p>
+      <span data-lang="es"><strong style="font-size:13px; color:var(--base);">Azul violeta</strong>
+      <p class="small-note" style="margin:4px 0 6px; font-weight:700; color:var(--apoyo);">Acento &middot; 20%</p></span><span data-lang="en"><strong style="font-size:13px; color:var(--base);">Blue-violet</strong>
+      <p class="small-note" style="margin:4px 0 6px; font-weight:700; color:var(--apoyo);">Accent &middot; 20%</p></span>
       <p class="small-note" style="margin:0 0 8px; font-weight:700;">#5B5CFF &middot; RGB 91, 92, 255</p>
-      <p class="small-note">El color de la palabra <em>Travel</em>. Trabaja <strong style="color:var(--base);">como superficie</strong>, con texto blanco encima (4.75:1). Como tinta solo aguanta el blanco, y <strong style="color:var(--base);">sobre lavanda da 3.69:1</strong> &mdash; ver la regla de acción.</p>
+      <p class="small-note"><span data-lang="es">El color de la palabra <em>Travel</em>. Trabaja <strong style="color:var(--base);">como superficie</strong>, con texto blanco encima (4.75:1). Como tinta solo aguanta el blanco, y <strong style="color:var(--base);">sobre lavanda da 3.69:1</strong> &mdash; ver la regla de acción.</span><span data-lang="en">The colour of the word <em>Travel</em>. It works <strong style="color:var(--base);">as a surface</strong>, with white text on top (4.75:1). As ink it only holds up on white, and <strong style="color:var(--base);">on Lavender it gives 3.69:1</strong> &mdash; see the action rule.</span></p>
     </div>
 
     <div class="card tint">
       <div style="width:100%; height:44px; border-radius:8px; background:#6D28D9; margin-bottom:12px;"></div>
-      <strong style="font-size:13px; color:var(--base);">Violeta</strong>
-      <p class="small-note" style="margin:4px 0 6px; font-weight:700; color:var(--apoyo);">Apoyo &middot; 10%</p>
+      <span data-lang="es"><strong style="font-size:13px; color:var(--base);">Violeta</strong>
+      <p class="small-note" style="margin:4px 0 6px; font-weight:700; color:var(--apoyo);">Apoyo &middot; 10%</p></span><span data-lang="en"><strong style="font-size:13px; color:var(--base);">Violet</strong>
+      <p class="small-note" style="margin:4px 0 6px; font-weight:700; color:var(--apoyo);">Support &middot; 10%</p></span>
       <p class="small-note" style="margin:0 0 8px; font-weight:700;">#6D28D9 &middot; RGB 109, 40, 217</p>
-      <p class="small-note"><strong style="color:var(--base);">El color de la acción.</strong> Es el violeta que sí aguanta la lavanda (5.51:1) y el blanco (7.10:1): enlaces, botones e iconografía. Sobre azul noche da 2.45:1 y desaparece.</p>
+      <p class="small-note"><span data-lang="es"><strong style="color:var(--base);">El color de la acción.</strong> Es el violeta que sí aguanta la lavanda (5.51:1) y el blanco (7.10:1): enlaces, botones e iconografía. Sobre azul noche da 2.45:1 y desaparece.</span><span data-lang="en"><strong style="color:var(--base);">The colour of action.</strong> It's the violet that does hold up on Lavender (5.51:1) and on white (7.10:1): links, buttons and icons. On Night blue it gives 2.45:1 and disappears.</span></p>
     </div>
 
     <div class="card tint">
       <div style="width:100%; height:44px; border-radius:8px; background:#E0B3FF; border:1px solid rgba(var(--base-rgb),0.14); margin-bottom:12px;"></div>
-      <strong style="font-size:13px; color:var(--base);">Lila claro</strong>
-      <p class="small-note" style="margin:4px 0 6px; font-weight:700; color:var(--apoyo);">Respiro &middot; 10%</p>
+      <span data-lang="es"><strong style="font-size:13px; color:var(--base);">Lila claro</strong>
+      <p class="small-note" style="margin:4px 0 6px; font-weight:700; color:var(--apoyo);">Respiro &middot; 10%</p></span><span data-lang="en"><strong style="font-size:13px; color:var(--base);">Light lilac</strong>
+      <p class="small-note" style="margin:4px 0 6px; font-weight:700; color:var(--apoyo);">Breathing room &middot; 10%</p></span>
       <p class="small-note" style="margin:0 0 8px; font-weight:700;">#E0B3FF &middot; RGB 224, 179, 255</p>
-      <p class="small-note">Superficies suaves y degradados. <strong style="color:var(--base);">Solo como fondo</strong> sobre claro: como tinta da 1.74:1 sobre blanco. Sobre azul noche sí se lee (9.99:1) y ahí hace los antetítulos y la letra chica.</p>
+      <p class="small-note"><span data-lang="es">Superficies suaves y degradados. <strong style="color:var(--base);">Solo como fondo</strong> sobre claro: como tinta da 1.74:1 sobre blanco. Sobre azul noche sí se lee (9.99:1) y ahí hace los antetítulos y la letra chica.</span><span data-lang="en">Soft surfaces and gradients. <strong style="color:var(--base);">Background only</strong> on light: as ink it gives 1.74:1 on white. On Night blue it does read (9.99:1) and there it carries eyebrows and fine print.</span></p>
     </div>
 
     <div class="card tint">
       <div style="width:100%; height:44px; border-radius:8px; background:#17153B; margin-bottom:12px;"></div>
-      <strong style="font-size:13px; color:var(--base);">Azul Noche Linex</strong>
-      <p class="small-note" style="margin:4px 0 6px; font-weight:700; color:var(--apoyo);">Contraste &middot; 10%</p>
+      <span data-lang="es"><strong style="font-size:13px; color:var(--base);">Azul Noche Linex</strong>
+      <p class="small-note" style="margin:4px 0 6px; font-weight:700; color:var(--apoyo);">Contraste &middot; 10%</p></span><span data-lang="en"><strong style="font-size:13px; color:var(--base);">Linex Night Blue</strong>
+      <p class="small-note" style="margin:4px 0 6px; font-weight:700; color:var(--apoyo);">Contrast &middot; 10%</p></span>
       <p class="small-note" style="margin:0 0 8px; font-weight:700;">#17153B &middot; RGB 23, 21, 59</p>
-      <p class="small-note">La tinta de la marca: títulos y texto principal. 17.40:1 sobre blanco y 13.50:1 sobre lavanda. También es la superficie oscura, y ahí todo lo que va encima es blanco, lavanda o lila.</p>
+      <p class="small-note"><span data-lang="es">La tinta de la marca: títulos y texto principal. 17.40:1 sobre blanco y 13.50:1 sobre lavanda. También es la superficie oscura, y ahí todo lo que va encima es blanco, lavanda o lila.</span><span data-lang="en">The brand's ink: titles and main text. 17.40:1 on white and 13.50:1 on Lavender. It's also the dark surface, and there everything on top is white, Lavender or lilac.</span></p>
     </div>
 
     <div class="card tint">
       <div style="width:100%; height:44px; border-radius:8px; background:#080808; margin-bottom:12px;"></div>
-      <strong style="font-size:13px; color:var(--base);">Negro Linex</strong>
-      <p class="small-note" style="margin:4px 0 6px; font-weight:700; color:var(--apoyo);">Reserva &middot; 10%</p>
+      <span data-lang="es"><strong style="font-size:13px; color:var(--base);">Negro Linex</strong>
+      <p class="small-note" style="margin:4px 0 6px; font-weight:700; color:var(--apoyo);">Reserva &middot; 10%</p></span><span data-lang="en"><strong style="font-size:13px; color:var(--base);">Linex Black</strong>
+      <p class="small-note" style="margin:4px 0 6px; font-weight:700; color:var(--apoyo);">Reserve &middot; 10%</p></span>
       <p class="small-note" style="margin:0 0 8px; font-weight:700;">#080808 &middot; RGB 8, 8, 8</p>
-      <p class="small-note">Impresión a un solo color y procesos que no admiten otra cosa. <strong style="color:var(--base);">No reemplaza al azul noche en digital:</strong> son dos decisiones distintas, no dos nombres del mismo color.</p>
+      <p class="small-note"><span data-lang="es">Impresión a un solo color y procesos que no admiten otra cosa. <strong style="color:var(--base);">No reemplaza al azul noche en digital:</strong> son dos decisiones distintas, no dos nombres del mismo color.</span><span data-lang="en">Single-colour printing and processes that allow nothing else. <strong style="color:var(--base);">It doesn't replace Night blue in digital:</strong> they're two different decisions, not two names for the same colour.</span></p>
     </div>
 
   </div>
-  <p class="small-note" style="max-width:76ch; margin-top:16px;">El manual oficial no entrega valores CMYK. Para impresión hay que pedirle la conversión al proveedor y registrarla aquí cuando llegue. Convertir a ojo es exactamente como una marca termina con dos versiones de su propio color.</p>
+  <p class="small-note" style="max-width:76ch; margin-top:16px;"><span data-lang="es">El manual oficial no entrega valores CMYK. Para impresión hay que pedirle la conversión al proveedor y registrarla aquí cuando llegue. Convertir a ojo es exactamente como una marca termina con dos versiones de su propio color.</span><span data-lang="en">The official manual doesn't provide CMYK values. For print, the conversion has to be requested from the supplier and logged here once it arrives. Eyeballing the conversion is exactly how a brand ends up with two versions of its own colour.</span></p>
 </section>
 
 <section class="section-block">
-  <h2 class="section-title">Qué combinaciones se permiten</h2>
-  <p class="small-note" style="max-width:76ch; margin-bottom:16px;">Se lee &ldquo;tinta sobre fondo&rdquo;. El número es el contraste medido de esa pareja.</p>
+  <h2 class="section-title"><span data-lang="es">Qué combinaciones se permiten</span><span data-lang="en">Which combinations are allowed</span></h2>
+  <p class="small-note" style="max-width:76ch; margin-bottom:16px;"><span data-lang="es">Se lee &ldquo;tinta sobre fondo&rdquo;. El número es el contraste medido de esa pareja.</span><span data-lang="en">Read as &ldquo;ink on background&rdquo;. The number is that pair's measured contrast.</span></p>
   <div class="grid-3" style="gap:12px;">
 
     <div>
-      <div style="background:#DDE1FF; color:#17153B; border:1px solid rgba(var(--base-rgb),0.14); border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;">Azul Noche / Lavanda</div>
-      <p class="small-note" style="margin-top:6px;">La base de lectura del sistema. <strong style="color:var(--base);">13.50:1</strong></p>
+      <div style="background:#DDE1FF; color:#17153B; border:1px solid rgba(var(--base-rgb),0.14); border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;"<span data-lang="es">>Azul Noche / Lavanda</span><span data-lang="en">>Night blue / Lavender</span></div>
+      <p class="small-note" style="margin-top:6px;"><span data-lang="es">La base de lectura del sistema. <strong style="color:var(--base);">13.50:1</strong></span><span data-lang="en">The system's base for reading. <strong style="color:var(--base);">13.50:1</strong></span></p>
     </div>
 
     <div>
-      <div style="background:#FFFFFF; color:#17153B; border:1px solid rgba(var(--base-rgb),0.14); border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;">Azul Noche / Blanco</div>
-      <p class="small-note" style="margin-top:6px;">Documentos y superficies de lectura. <strong style="color:var(--base);">17.40:1</strong></p>
+      <div style="background:#FFFFFF; color:#17153B; border:1px solid rgba(var(--base-rgb),0.14); border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;"<span data-lang="es">>Azul Noche / Blanco</span><span data-lang="en">>Night blue / White</span></div>
+      <p class="small-note" style="margin-top:6px;"><span data-lang="es">Documentos y superficies de lectura. <strong style="color:var(--base);">17.40:1</strong></span><span data-lang="en">Documents and reading surfaces. <strong style="color:var(--base);">17.40:1</strong></span></p>
     </div>
 
     <div>
-      <div style="background:#17153B; color:#FFFFFF; border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;">Blanco / Azul Noche</div>
-      <p class="small-note" style="margin-top:6px;">Piezas oscuras y fondos dominantes. <strong style="color:var(--base);">17.40:1</strong></p>
+      <div style="background:#17153B; color:#FFFFFF; border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;"<span data-lang="es">>Blanco / Azul Noche</span><span data-lang="en">>White / Night blue</span></div>
+      <p class="small-note" style="margin-top:6px;"><span data-lang="es">Piezas oscuras y fondos dominantes. <strong style="color:var(--base);">17.40:1</strong></span><span data-lang="en">Dark pieces and dominant backgrounds. <strong style="color:var(--base);">17.40:1</strong></span></p>
     </div>
 
     <div>
-      <div style="background:#6D28D9; color:#FFFFFF; border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;">Blanco / Violeta</div>
-      <p class="small-note" style="margin-top:6px;">El texto dentro del botón. <strong style="color:var(--base);">7.10:1</strong></p>
+      <div style="background:#6D28D9; color:#FFFFFF; border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;"<span data-lang="es">>Blanco / Violeta</span><span data-lang="en">>White / Violet</span></div>
+      <p class="small-note" style="margin-top:6px;"><span data-lang="es">El texto dentro del botón. <strong style="color:var(--base);">7.10:1</strong></span><span data-lang="en">The text inside the button. <strong style="color:var(--base);">7.10:1</strong></span></p>
     </div>
 
     <div>
-      <div style="background:#DDE1FF; color:#6D28D9; border:1px solid rgba(var(--base-rgb),0.14); border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;">Violeta / Lavanda</div>
-      <p class="small-note" style="margin-top:6px;">Enlaces e iconografía sobre el fondo de marca. <strong style="color:var(--base);">5.51:1</strong></p>
+      <div style="background:#DDE1FF; color:#6D28D9; border:1px solid rgba(var(--base-rgb),0.14); border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;"<span data-lang="es">>Violeta / Lavanda</span><span data-lang="en">>Violet / Lavender</span></div>
+      <p class="small-note" style="margin-top:6px;"><span data-lang="es">Enlaces e iconografía sobre el fondo de marca. <strong style="color:var(--base);">5.51:1</strong></span><span data-lang="en">Links and icons on the brand's background. <strong style="color:var(--base);">5.51:1</strong></span></p>
     </div>
 
     <div>
-      <div style="background:#5B5CFF; color:#FFFFFF; border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;">Blanco / Azul violeta</div>
-      <p class="small-note" style="margin-top:6px;">Botón con el acento del logotipo. <strong style="color:var(--base);">4.75:1</strong></p>
+      <div style="background:#5B5CFF; color:#FFFFFF; border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;"<span data-lang="es">>Blanco / Azul violeta</span><span data-lang="en">>White / Blue-violet</span></div>
+      <p class="small-note" style="margin-top:6px;"><span data-lang="es">Botón con el acento del logotipo. <strong style="color:var(--base);">4.75:1</strong></span><span data-lang="en">Button with the logo's accent. <strong style="color:var(--base);">4.75:1</strong></span></p>
     </div>
 
     <div>
-      <div style="background:#17153B; color:#E0B3FF; border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;">Lila claro / Azul Noche</div>
-      <p class="small-note" style="margin-top:6px;">Antetítulos y letra chica sobre oscuro. <strong style="color:var(--base);">9.99:1</strong></p>
+      <div style="background:#17153B; color:#E0B3FF; border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;"<span data-lang="es">>Lila claro / Azul Noche</span><span data-lang="en">>Light lilac / Night blue</span></div>
+      <p class="small-note" style="margin-top:6px;"><span data-lang="es">Antetítulos y letra chica sobre oscuro. <strong style="color:var(--base);">9.99:1</strong></span><span data-lang="en">Eyebrows and fine print on dark. <strong style="color:var(--base);">9.99:1</strong></span></p>
     </div>
 
     <div>
-      <div style="background:#17153B; color:#DDE1FF; border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;">Lavanda / Azul Noche</div>
-      <p class="small-note" style="margin-top:6px;">Texto secundario sobre oscuro. <strong style="color:var(--base);">13.50:1</strong></p>
+      <div style="background:#17153B; color:#DDE1FF; border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;"<span data-lang="es">>Lavanda / Azul Noche</span><span data-lang="en">>Lavender / Night blue</span></div>
+      <p class="small-note" style="margin-top:6px;"><span data-lang="es">Texto secundario sobre oscuro. <strong style="color:var(--base);">13.50:1</strong></span><span data-lang="en">Secondary text on dark. <strong style="color:var(--base);">13.50:1</strong></span></p>
     </div>
 
     <div>
-      <div style="background:#E0B3FF; color:#17153B; border:1px solid rgba(var(--base-rgb),0.14); border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;">Azul Noche / Lila claro</div>
-      <p class="small-note" style="margin-top:6px;">Tarjetas y avisos de realce. <strong style="color:var(--base);">9.99:1</strong></p>
+      <div style="background:#E0B3FF; color:#17153B; border:1px solid rgba(var(--base-rgb),0.14); border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;"<span data-lang="es">>Azul Noche / Lila claro</span><span data-lang="en">>Night blue / Light lilac</span></div>
+      <p class="small-note" style="margin-top:6px;"><span data-lang="es">Tarjetas y avisos de realce. <strong style="color:var(--base);">9.99:1</strong></span><span data-lang="en">Cards and highlight notices. <strong style="color:var(--base);">9.99:1</strong></span></p>
     </div>
 
   </div>
-  <p class="small-note" style="max-width:76ch; margin-top:16px;">La matriz completa, con las parejas que <em>no</em> se permiten y por qué, está en la <a href="07-accesibilidad.html">sección 07</a>.</p>
+  <p class="small-note" style="max-width:76ch; margin-top:16px;"><span data-lang="es">La matriz completa, con las parejas que <em>no</em> se permiten y por qué, está en la <a href="07-accesibilidad.html">sección 07</a>.</span><span data-lang="en">The full matrix, with the pairs that are <em>not</em> allowed and why, is in <a href="07-accesibilidad.html">section 07</a>.</span></p>
 </section>
 
 <section class="section-block">
-  <h2 class="section-title">La regla de acción: el Violeta actúa, el Azul Noche habla</h2>
-  <p class="small-note" style="max-width:76ch; margin-bottom:18px;">Vale para todo lo que sale a nombre de Linex Travel &mdash; presentaciones, correo, papelería, souvenir, redes y sitio. En corto: <strong style="color:var(--base);">si se puede tocar, es violeta; si se lee, es azul noche.</strong></p>
+  <h2 class="section-title"><span data-lang="es">La regla de acción: el Violeta actúa, el Azul Noche habla</span><span data-lang="en">The action rule: Violet acts, Night blue speaks</span></h2>
+  <p class="small-note" style="max-width:76ch; margin-bottom:18px;"><span data-lang="es">Vale para todo lo que sale a nombre de Linex Travel &mdash; presentaciones, correo, papelería, souvenir, redes y sitio. En corto: <strong style="color:var(--base);">si se puede tocar, es violeta; si se lee, es azul noche.</strong></span><span data-lang="en">This holds for everything published under Linex Travel &mdash; presentations, email, stationery, merchandise, social media and the site. In short: <strong style="color:var(--base);">if it can be touched, it's violet; if it's read, it's Night blue.</strong></span></p>
 
   <table class="rtable">
-    <tr><td class="name">Botón o CTA<span class="muted">tiene superficie: se toca</span></td><td>Relleno <strong>Violeta #6D28D9</strong> con el texto en <strong>blanco</strong>. 7.10:1. Con el acento del logotipo, relleno <strong>Azul violeta #5B5CFF</strong> y texto blanco: 4.75:1, que pasa con menos margen.</td></tr>
-    <tr><td class="name">Un dato, un porcentaje<span class="muted">no es una acción</span></td><td><strong>Va en azul noche, en negrita.</strong> El violeta no destaca datos: se reserva entero para lo que se puede tocar. Un dato se destaca con peso, con tamaño o metiéndolo en una tarjeta.</td></tr>
-    <tr><td class="name">Enlace en texto<span class="muted">sobre lavanda o blanco</span></td><td>Texto en <strong>Violeta</strong>. 5.51:1 sobre lavanda y 7.10:1 sobre blanco. Con subrayado, para no señalar solo con color.</td></tr>
-    <tr><td class="name">Enlace en texto<span class="muted">sobre azul noche</span></td><td>Texto en <strong>Lila claro</strong>, 9.99:1, o en <strong>blanco</strong>, 17.40:1. <strong>Ningún violeta</strong>: sobre oscuro los dos quedan por debajo de 4:1.</td></tr>
-    <tr><td class="name">Ícono<span class="muted">sobre fondo claro</span></td><td><strong>Violeta.</strong> 7.10:1 sobre blanco y 5.51:1 sobre lavanda, muy por encima del 3:1 que pide un objeto gráfico.</td></tr>
-    <tr><td class="name">Énfasis en un titular</td><td>Una palabra en <strong>Violeta</strong> dentro de un titular en azul noche. Nunca el titular entero en color.</td></tr>
+    <tr data-lang="es"><td class="name">Botón o CTA<span class="muted">tiene superficie: se toca</span></td><td>Relleno <strong>Violeta #6D28D9</strong> con el texto en <strong>blanco</strong>. 7.10:1. Con el acento del logotipo, relleno <strong>Azul violeta #5B5CFF</strong> y texto blanco: 4.75:1, que pasa con menos margen.</td></tr><tr data-lang="en"><td class="name">Button or CTA<span class="muted">has a surface: it's touched</span></td><td>Filled in <strong>Violet #6D28D9</strong> with the text in <strong>white</strong>. 7.10:1. With the logo's accent, filled in <strong>Blue-violet #5B5CFF</strong> with white text: 4.75:1, which passes with less margin.</td></tr>
+    <tr data-lang="es"><td class="name">Un dato, un porcentaje<span class="muted">no es una acción</span></td><td><strong>Va en azul noche, en negrita.</strong> El violeta no destaca datos: se reserva entero para lo que se puede tocar. Un dato se destaca con peso, con tamaño o metiéndolo en una tarjeta.</td></tr><tr data-lang="en"><td class="name">A figure, a percentage<span class="muted">is not an action</span></td><td><strong>Goes in Night blue, bold.</strong> Violet doesn't highlight data: it's reserved entirely for what can be touched. A figure gets highlighted with weight, with size, or by putting it in a card.</td></tr>
+    <tr data-lang="es"><td class="name">Enlace en texto<span class="muted">sobre lavanda o blanco</span></td><td>Texto en <strong>Violeta</strong>. 5.51:1 sobre lavanda y 7.10:1 sobre blanco. Con subrayado, para no señalar solo con color.</td></tr><tr data-lang="en"><td class="name">Text link<span class="muted">on lavender or white</span></td><td>Text in <strong>Violet</strong>. 5.51:1 on Lavender and 7.10:1 on white. Underlined, so colour alone isn't the only signal.</td></tr>
+    <tr data-lang="es"><td class="name">Enlace en texto<span class="muted">sobre azul noche</span></td><td>Texto en <strong>Lila claro</strong>, 9.99:1, o en <strong>blanco</strong>, 17.40:1. <strong>Ningún violeta</strong>: sobre oscuro los dos quedan por debajo de 4:1.</td></tr><tr data-lang="en"><td class="name">Text link<span class="muted">on Night blue</span></td><td>Text in <strong>Light lilac</strong>, 9.99:1, or in <strong>white</strong>, 17.40:1. <strong>Neither violet</strong>: on dark, both fall below 4:1.</td></tr>
+    <tr data-lang="es"><td class="name">Ícono<span class="muted">sobre fondo claro</span></td><td><strong>Violeta.</strong> 7.10:1 sobre blanco y 5.51:1 sobre lavanda, muy por encima del 3:1 que pide un objeto gráfico.</td></tr><tr data-lang="en"><td class="name">Icon<span class="muted">on a light background</span></td><td><strong>Violet.</strong> 7.10:1 on white and 5.51:1 on Lavender, well above the 3:1 a graphic object requires.</td></tr>
+    <tr data-lang="es"><td class="name">Énfasis en un titular</td><td>Una palabra en <strong>Violeta</strong> dentro de un titular en azul noche. Nunca el titular entero en color.</td></tr><tr data-lang="en"><td class="name">Emphasis in a headline</td><td>One word in <strong>Violet</strong> inside a headline in Night blue. Never the whole headline in colour.</td></tr>
   </table>
 
   <div class="callout" style="background:var(--coral-tint); border:1px solid rgba(var(--coral-rgb),0.3); margin-top:20px;">
-    <span class="tag" style="color:var(--coral);">LA TRAMPA DE ESTA PALETA</span>
-    <p>El color que todo el mundo asocia con la marca es el <strong style="color:var(--base);">Azul violeta</strong>, porque es el de la palabra <em>Travel</em>. Por eso el reflejo natural es pintar con él los enlaces y los titulares.<br>
+    <span class="tag" style="color:var(--coral);"><span data-lang="es">LA TRAMPA DE ESTA PALETA</span><span data-lang="en">THIS PALETTE'S TRAP</span></span>
+    <p><span data-lang="es">El color que todo el mundo asocia con la marca es el <strong style="color:var(--base);">Azul violeta</strong>, porque es el de la palabra <em>Travel</em>. Por eso el reflejo natural es pintar con él los enlaces y los titulares.<br>
     Sobre el fondo lavanda de la marca, el Azul violeta da <strong style="color:var(--base);">3.69:1</strong> y no llega a AA. Alcanza para el <strong style="color:var(--base);">logotipo</strong>, que es un objeto gráfico y necesita 3:1; no alcanza para nada que se lea.<br>
-    Por eso la acción es <strong style="color:var(--base);">Violeta</strong> y no Azul violeta: <strong style="color:var(--base);">el Azul violeta rellena, el Violeta escribe.</strong></p>
+    Por eso la acción es <strong style="color:var(--base);">Violeta</strong> y no Azul violeta: <strong style="color:var(--base);">el Azul violeta rellena, el Violeta escribe.</strong></span><span data-lang="en">The colour everyone associates with the brand is <strong style="color:var(--base);">Blue-violet</strong>, because it's the colour of the word <em>Travel</em>. So the natural reflex is to paint links and headlines with it.<br>
+    On the brand's lavender background, Blue-violet gives <strong style="color:var(--base);">3.69:1</strong> and misses AA. It's enough for the <strong style="color:var(--base);">logo</strong>, which is a graphic object and needs 3:1; it isn't enough for anything meant to be read.<br>
+    That's why the action colour is <strong style="color:var(--base);">Violet</strong>, not Blue-violet: <strong style="color:var(--base);">Blue-violet fills, Violet writes.</strong></span></p>
   </div>
 
   <div class="callout" style="background:rgba(var(--apoyo-rgb),0.07); border:1px solid rgba(var(--apoyo-rgb),0.28); margin-top:14px;">
-    <span class="tag" style="color:var(--apoyo);">POR QUÉ UN SOLO COLOR DE ACCIÓN</span>
-    <p>Un color de acción funciona por exclusividad. Si el mismo violeta pinta un botón en una pieza y un porcentaje en la siguiente, deja de responder la única pregunta que tiene que responder de un vistazo: <em>&iquest;dónde toco?</em></p>
+    <span class="tag" style="color:var(--apoyo);"><span data-lang="es">POR QUÉ UN SOLO COLOR DE ACCIÓN</span><span data-lang="en">WHY A SINGLE ACTION COLOUR</span></span>
+    <p><span data-lang="es">Un color de acción funciona por exclusividad. Si el mismo violeta pinta un botón en una pieza y un porcentaje en la siguiente, deja de responder la única pregunta que tiene que responder de un vistazo: <em>&iquest;dónde toco?</em></span><span data-lang="en">An action colour works through exclusivity. If the same violet paints a button in one piece and a percentage in the next, it stops answering the one question it has to answer at a glance: <em>where do I touch?</em></span></p>
   </div>
 </section>
 
 <section class="section-block card on-navy" style="padding:26px 28px;">
-  <h2 class="section-title on-dark">El mínimo que se respeta siempre</h2>
+  <h2 class="section-title on-dark"><span data-lang="es">El mínimo que se respeta siempre</span><span data-lang="en">The minimum that always holds</span></h2>
   <div class="grid-3" style="gap:20px;">
-    <div class="field on-dark"><span class="k">Texto corrido</span><span class="v">4.5:1 como mínimo, sin excepciones.</span></div>
-    <div class="field on-dark"><span class="k">Titulares</span><span class="v">3:1 por el tamaño. Aun así casi todos los de Travel son azul noche sobre claro o blanco sobre azul noche, que pasan de sobra.</span></div>
-    <div class="field on-dark"><span class="k">Los tres restringidos</span><span class="v">Lavanda y lila claro no son tinta sobre fondo claro: 1.29:1 y 1.74:1. El azul violeta solo aguanta el blanco &mdash; sobre lavanda, sobre lila y sobre oscuro se queda corto.</span></div>
+    <div class="field on-dark"><span data-lang="es"><span class="k">Texto corrido</span><span class="v">4.5:1 como mínimo, sin excepciones.</span></span><span data-lang="en"><span class="k">Running text</span><span class="v">4.5:1 minimum, no exceptions.</span></span></div>
+    <div class="field on-dark"><span data-lang="es"><span class="k">Titulares</span><span class="v">3:1 por el tamaño. Aun así casi todos los de Travel son azul noche sobre claro o blanco sobre azul noche, que pasan de sobra.</span></span><span data-lang="en"><span class="k">Headlines</span><span class="v">3:1 by size. Even so, almost all of Travel's are Night blue on light or white on Night blue, which pass comfortably.</span></span></div>
+    <div class="field on-dark"><span data-lang="es"><span class="k">Los tres restringidos</span><span class="v">Lavanda y lila claro no son tinta sobre fondo claro: 1.29:1 y 1.74:1. El azul violeta solo aguanta el blanco &mdash; sobre lavanda, sobre lila y sobre oscuro se queda corto.</span></span><span data-lang="en"><span class="k">The three restricted ones</span><span class="v">Lavender and light lilac aren't ink on a light background: 1.29:1 and 1.74:1. Blue-violet only holds up on white &mdash; on Lavender, on lilac and on dark it falls short.</span></span></div>
   </div>
 </section>
 
       <div class="footer-meta">
-        <span>manual-marca-linex-travel-v1.0 &middot; sitio estático de distribución</span>
-        <span>Manual de Marca de Linex Travel &middot; 2026</span>
+        <span><span data-lang="es">manual-marca-linex-travel-v1.0 &middot; sitio estático de distribución</span><span data-lang="en">manual-marca-linex-travel-v1.0 &middot; static distribution site</span></span>
+        <span><span data-lang="es">Manual de Marca de Linex Travel &middot; 2026</span><span data-lang="en">Linex Travel Brand Manual &middot; 2026</span></span>
       </div>
       <!--pager-->
-      <div class="pager"><a class="prev" href="02-estado-logotipo.html"><span class="dir">&larr; Anterior</span><span class="lbl">02 &middot; Estado del logotipo</span></a><a class="next" href="04-tipografia.html"><span class="dir">Siguiente &rarr;</span><span class="lbl">04 &middot; Tipografía</span></a></div>
+      <div class="pager"><a class="prev" href="02-estado-logotipo.html"><span class="dir"><span data-lang="es">&larr; Anterior</span><span data-lang="en">&larr; Previous</span></span><span class="lbl">02 &middot; <span data-lang="es">Estado del logotipo</span><span data-lang="en">Logo status</span></span></a><a class="next" href="04-tipografia.html"><span class="dir"><span data-lang="es">Siguiente &rarr;</span><span data-lang="en">Next &rarr;</span></span><span class="lbl">04 &middot; <span data-lang="es">Tipografía</span><span data-lang="en">Typography</span></span></a></div>
       <!--/pager-->
     </div>
   </main>

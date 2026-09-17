@@ -10,11 +10,14 @@
 </head>
 <body style="background:var(--paper);">
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
+<input type="radio" name="idioma" id="idioma-es" class="idioma-radio" checked>
+<input type="radio" name="idioma" id="idioma-en" class="idioma-radio">
 <div class="topbar">
-  <span class="topbar-brand">Linex Travel <small>MANUAL DE MARCA</small></span>
+  <span class="topbar-brand">Linex Travel <small><span data-lang="es">MANUAL DE MARCA</span><span data-lang="en">BRAND MANUAL</span></small></span>
+  <div class="idioma-switch"><label for="idioma-es">ES</label><label for="idioma-en">EN</label></div>
   <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="sidebar">
     <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
-    Menú
+    <span data-lang="es">Menú</span><span data-lang="en">Menu</span>
   </button>
 </div>
 <div class="nav-scrim" data-nav-scrim></div>
@@ -22,42 +25,43 @@
   <aside class="sidebar" id="sidebar">
     <a class="sidebar-brand" href="index.html">
       <span class="name">Linex Travel</span>
-      <span class="tag">Manual de Marca &middot; v1.0</span>
+      <span class="tag"><span data-lang="es">Manual de Marca &middot; v1.0</span><span data-lang="en">Brand Manual &middot; v1.0</span></span>
     </a>
+    <div class="idioma-switch"><label for="idioma-es">ES</label><label for="idioma-en">EN</label></div>
     <!--nav-->
-    <nav class="nav-group" aria-label="Portada">
+    <nav class="nav-group" aria-label="Portada / Home">
         <ul class="nav-list">
-          <li><a href="index.html"><span class="n">00</span><span>Resumen ejecutivo</span></a></li>
+          <li><a href="index.html"><span class="n">00</span><span><span data-lang="es">Resumen ejecutivo</span><span data-lang="en">Executive summary</span></span></a></li>
         </ul>
     </nav>
-    <nav class="nav-group" aria-label="A · Identidad visual">
-        <span class="nav-group-title">A · Identidad visual</span>
+    <nav class="nav-group" aria-label="A · Identidad visual / A · Visual identity">
+        <span class="nav-group-title"><span data-lang="es">A · Identidad visual</span><span data-lang="en">A · Visual identity</span></span>
         <ul class="nav-list">
-          <li><a href="01-logotipo.html"><span class="n">01</span><span>Logotipo</span></a></li>
-          <li><a href="02-estado-logotipo.html" class="active" aria-current="page"><span class="n">02</span><span>Estado del logotipo</span></a></li>
-          <li><a href="03-paleta-color.html"><span class="n">03</span><span>Paleta de color</span></a></li>
-          <li><a href="04-tipografia.html"><span class="n">04</span><span>Tipografía</span></a></li>
-          <li><a href="05-iconografia-canal.html"><span class="n">05</span><span>Iconografía y diseño por canal</span></a></li>
-          <li><a href="06-sistema-fotografia.html"><span class="n">06</span><span>Sistema gráfico y fotografía</span></a></li>
-          <li><a href="07-accesibilidad.html"><span class="n">07</span><span>Accesibilidad</span></a></li>
+          <li><a href="01-logotipo.html"><span class="n">01</span><span><span data-lang="es">Logotipo</span><span data-lang="en">Logo</span></span></a></li>
+          <li><a href="02-estado-logotipo.html" class="active" aria-current="page"><span class="n">02</span><span><span data-lang="es">Estado del logotipo</span><span data-lang="en">Logo status</span></span></a></li>
+          <li><a href="03-paleta-color.html"><span class="n">03</span><span><span data-lang="es">Paleta de color</span><span data-lang="en">Colour palette</span></span></a></li>
+          <li><a href="04-tipografia.html"><span class="n">04</span><span><span data-lang="es">Tipografía</span><span data-lang="en">Typography</span></span></a></li>
+          <li><a href="05-iconografia-canal.html"><span class="n">05</span><span><span data-lang="es">Iconografía y diseño por canal</span><span data-lang="en">Iconography and channel design</span></span></a></li>
+          <li><a href="06-sistema-fotografia.html"><span class="n">06</span><span><span data-lang="es">Sistema gráfico y fotografía</span><span data-lang="en">Graphic system and photography</span></span></a></li>
+          <li><a href="07-accesibilidad.html"><span class="n">07</span><span><span data-lang="es">Accesibilidad</span><span data-lang="en">Accessibility</span></span></a></li>
         </ul>
     </nav>
-    <nav class="nav-group" aria-label="B · Quién es y cómo habla">
-        <span class="nav-group-title">B · Quién es y cómo habla</span>
+    <nav class="nav-group" aria-label="B · Quién es y cómo habla / B · Who it is and how it speaks">
+        <span class="nav-group-title"><span data-lang="es">B · Quién es y cómo habla</span><span data-lang="en">B · Who it is and how it speaks</span></span>
         <ul class="nav-list">
-          <li><a href="08-arquitectura.html"><span class="n">08</span><span>Arquitectura y nombre</span></a></li>
-          <li><a href="09-audiencias.html"><span class="n">09</span><span>Audiencias</span></a></li>
-          <li><a href="10-propuesta-valor.html"><span class="n">10</span><span>Propuesta de valor y claims</span></a></li>
-          <li><a href="11-voz-tono.html"><span class="n">11</span><span>Voz y tono</span></a></li>
-          <li><a href="12-vocabulario.html"><span class="n">12</span><span>Vocabulario</span></a></li>
+          <li><a href="08-arquitectura.html"><span class="n">08</span><span><span data-lang="es">Arquitectura y nombre</span><span data-lang="en">Architecture and naming</span></span></a></li>
+          <li><a href="09-audiencias.html"><span class="n">09</span><span><span data-lang="es">Audiencias</span><span data-lang="en">Audiences</span></span></a></li>
+          <li><a href="10-propuesta-valor.html"><span class="n">10</span><span><span data-lang="es">Propuesta de valor y claims</span><span data-lang="en">Value proposition and claims</span></span></a></li>
+          <li><a href="11-voz-tono.html"><span class="n">11</span><span><span data-lang="es">Voz y tono</span><span data-lang="en">Voice and tone</span></span></a></li>
+          <li><a href="12-vocabulario.html"><span class="n">12</span><span><span data-lang="es">Vocabulario</span><span data-lang="en">Vocabulary</span></span></a></li>
         </ul>
     </nav>
-    <nav class="nav-group" aria-label="C · Cómo se aplica">
-        <span class="nav-group-title">C · Cómo se aplica</span>
+    <nav class="nav-group" aria-label="C · Cómo se aplica / C · How it is applied">
+        <span class="nav-group-title"><span data-lang="es">C · Cómo se aplica</span><span data-lang="en">C · How it is applied</span></span>
         <ul class="nav-list">
-          <li><a href="13-promociones-cta.html"><span class="n">13</span><span>Promociones y CTA</span></a></li>
-          <li><a href="14-entregables.html"><span class="n">14</span><span>Entregables y aplicaciones</span></a></li>
-          <li><a href="15-redes-sociales.html"><span class="n">15</span><span>Redes sociales</span></a></li>
+          <li><a href="13-promociones-cta.html"><span class="n">13</span><span><span data-lang="es">Promociones y CTA</span><span data-lang="en">Promotions and CTAs</span></span></a></li>
+          <li><a href="14-entregables.html"><span class="n">14</span><span><span data-lang="es">Entregables y aplicaciones</span><span data-lang="en">Deliverables and applications</span></span></a></li>
+          <li><a href="15-redes-sociales.html"><span class="n">15</span><span><span data-lang="es">Redes sociales</span><span data-lang="en">Social media</span></span></a></li>
         </ul>
     </nav>
     <!--/nav-->
@@ -65,146 +69,146 @@
   <main class="main" id="contenido">
     <div class="main-inner">
 
-<p class="page-index"><span class="page-index-n">02</span><span class="eyebrow">Estado del logotipo</span></p>
-<h1 class="page-title">Cuatro de las siete piezas están en archivo.</h1>
-<p class="lede">Esta página responde una sola pregunta: <strong>&iquest;existe el archivo que necesito?</strong> Se mira una vez, se sabe, y se sigue. Lo que no está no se recrea &mdash; se pide.</p>
+<p class="page-index"><span class="page-index-n">02</span><span class="eyebrow"><span data-lang="es">Estado del logotipo</span><span data-lang="en">Logo status</span></span></p>
+<h1 class="page-title"><span data-lang="es">Cuatro de las siete piezas están en archivo.</span><span data-lang="en">Four of the seven pieces are on file.</span></h1>
+<p class="lede"><span data-lang="es">Esta página responde una sola pregunta: <strong>&iquest;existe el archivo que necesito?</strong> Se mira una vez, se sabe, y se sigue. Lo que no está no se recrea &mdash; se pide.</span><span data-lang="en">This page answers a single question: <strong>does the file I need exist?</strong> Look once, know, and move on. Whatever isn't there doesn't get recreated &mdash; it gets requested.</span></p>
 
 <section class="section-block">
-  <h2 class="section-title">El inventario, de un vistazo</h2>
-  <p class="small-note" style="max-width:76ch; margin-bottom:16px;">Las casillas punteadas son piezas que todavía no existen. Se dejan a la vista, con su hueco, en vez de omitirlas: un hueco que se ve se resuelve, uno que se disimula se hereda.</p>
+  <h2 class="section-title"><span data-lang="es">El inventario, de un vistazo</span><span data-lang="en">The inventory, at a glance</span></h2>
+  <p class="small-note" style="max-width:76ch; margin-bottom:16px;"><span data-lang="es">Las casillas punteadas son piezas que todavía no existen. Se dejan a la vista, con su hueco, en vez de omitirlas: un hueco que se ve se resuelve, uno que se disimula se hereda.</span><span data-lang="en">The dashed boxes are pieces that don't exist yet. They're left visible, gap and all, instead of being left out: a gap you can see gets fixed; one that's hidden gets inherited.</span></p>
 
   <div class="logo-tests">
-    <figure><div class="logo-test light"><img src="assets/logos/color.svg" alt="Versión a color del logotipo de Linex Travel."></div><figcaption>Horizontal color</figcaption></figure>
-    <figure><div class="logo-test light"><img src="assets/logos/monocromo.svg" alt="Versión monocroma del logotipo."></div><figcaption>Horizontal monocromo</figcaption></figure>
-    <figure><div class="logo-test dark"><img src="assets/logos/negativo.svg" alt="Versión negativa del logotipo sobre fondo oscuro."></div><figcaption>Horizontal negativo</figcaption></figure>
-    <figure><div class="logo-test light"><img src="assets/logos/negro.svg" alt="Versión en negro puro del logotipo."></div><figcaption>Horizontal negro</figcaption></figure>
-    <figure><div class="logo-test" style="background:transparent; border:1.5px dashed rgba(var(--base-rgb),0.28); color:rgba(var(--base-rgb),0.45); font-size:11px; font-weight:800;">sin archivo</div><figcaption>Vertical</figcaption></figure>
-    <figure><div class="logo-test" style="background:transparent; border:1.5px dashed rgba(var(--base-rgb),0.28); color:rgba(var(--base-rgb),0.45); font-size:11px; font-weight:800;">sin archivo</div><figcaption>Avatar de redes</figcaption></figure>
-    <figure><div class="logo-test" style="background:transparent; border:1.5px dashed rgba(var(--base-rgb),0.28); color:rgba(var(--base-rgb),0.45); font-size:11px; font-weight:800;">sin archivo</div><figcaption>Con eslogan</figcaption></figure>
+    <figure><div class="logo-test light"><img src="assets/logos/color.svg" alt="Versión a color del logotipo de Linex Travel."></div><span data-lang="es"><figcaption>Horizontal color</figcaption></span><span data-lang="en"><figcaption>Horizontal colour</figcaption></span></figure>
+    <figure><div class="logo-test light"><img src="assets/logos/monocromo.svg" alt="Versión monocroma del logotipo."></div><span data-lang="es"><figcaption>Horizontal monocromo</figcaption></span><span data-lang="en"><figcaption>Horizontal monochrome</figcaption></span></figure>
+    <figure><div class="logo-test dark"><img src="assets/logos/negativo.svg" alt="Versión negativa del logotipo sobre fondo oscuro."></div><span data-lang="es"><figcaption>Horizontal negativo</figcaption></span><span data-lang="en"><figcaption>Horizontal reverse</figcaption></span></figure>
+    <figure><div class="logo-test light"><img src="assets/logos/negro.svg" alt="Versión en negro puro del logotipo."></div><span data-lang="es"><figcaption>Horizontal negro</figcaption></span><span data-lang="en"><figcaption>Horizontal black</figcaption></span></figure>
+    <figure><div class="logo-test" style="background:transparent; border:1.5px dashed rgba(var(--base-rgb),0.28); color:rgba(var(--base-rgb),0.45); font-size:11px; font-weight:800;"><span data-lang="es">sin archivo</span><span data-lang="en">no file</span></div><span data-lang="es"><figcaption>Vertical</figcaption></span><span data-lang="en"><figcaption>Vertical</figcaption></span></figure>
+    <figure><div class="logo-test" style="background:transparent; border:1.5px dashed rgba(var(--base-rgb),0.28); color:rgba(var(--base-rgb),0.45); font-size:11px; font-weight:800;"><span data-lang="es">sin archivo</span><span data-lang="en">no file</span></div><span data-lang="es"><figcaption>Avatar de redes</figcaption></span><span data-lang="en"><figcaption>Social avatar</figcaption></span></figure>
+    <figure><div class="logo-test" style="background:transparent; border:1.5px dashed rgba(var(--base-rgb),0.28); color:rgba(var(--base-rgb),0.45); font-size:11px; font-weight:800;"><span data-lang="es">sin archivo</span><span data-lang="en">no file</span></div><span data-lang="es"><figcaption>Con eslogan</figcaption></span><span data-lang="en"><figcaption>With tagline</figcaption></span></figure>
   </div>
 </section>
 
 <section class="section-block">
-  <h2 class="section-title">Dónde está cada archivo</h2>
+  <h2 class="section-title"><span data-lang="es">Dónde está cada archivo</span><span data-lang="en">Where each file lives</span></h2>
   <div class="table-scroll">
     <table class="rtable">
       <tr>
-        <th>Pieza</th><th>Cuándo se usa</th><th>Estado</th><th>Archivo</th>
+        <span data-lang="es"><th>Pieza</th><th>Cuándo se usa</th><th>Estado</th><th>Archivo</th></span><span data-lang="en"><th>Piece</th><th>When it's used</th><th>Status</th><th>File</th></span>
       </tr>
       <tr>
-        <td class="name">Horizontal color<span class="muted">la versión por defecto</span></td>
-        <td>Sobre blanco, sobre Lavanda y sobre los degradados claros.</td>
-        <td style="white-space:nowrap;"><span class="status ok">en archivo</span></td>
+        <td class="name"><span data-lang="es">Horizontal color<span class="muted">la versión por defecto</span></span><span data-lang="en">Horizontal colour<span class="muted">the default version</span></span></td>
+        <td><span data-lang="es">Sobre blanco, sobre Lavanda y sobre los degradados claros.</span><span data-lang="en">On white, on Lavender and on the light gradients.</span></td>
+        <td style="white-space:nowrap;"><span class="status ok"><span data-lang="es">en archivo</span><span data-lang="en">on file</span></span></td>
         <td><code>LinexTravel-logo-color</code><span class="muted">SVG y PNG</span></td>
       </tr>
       <tr>
-        <td class="name">Horizontal monocromo<span class="muted">una sola tinta</span></td>
-        <td>Prensa a un color, grabado, sello, bordado de un hilo.</td>
-        <td style="white-space:nowrap;"><span class="status ok">en archivo</span></td>
+        <td class="name"><span data-lang="es">Horizontal monocromo<span class="muted">una sola tinta</span></span><span data-lang="en">Horizontal monochrome<span class="muted">a single ink</span></span></td>
+        <td><span data-lang="es">Prensa a un color, grabado, sello, bordado de un hilo.</span><span data-lang="en">Single-colour press, engraving, stamps, single-thread embroidery.</span></td>
+        <td style="white-space:nowrap;"><span class="status ok"><span data-lang="es">en archivo</span><span data-lang="en">on file</span></span></td>
         <td><code>LinexTravel-logo-monocromo</code><span class="muted">SVG y PNG</span></td>
       </tr>
       <tr>
-        <td class="name">Horizontal negativo<span class="muted">todo en blanco</span></td>
-        <td><strong>Obligatoria</strong> sobre Azul Noche, sobre Violeta y sobre fotografía oscura. Ninguna otra versión sirve ahí.</td>
-        <td style="white-space:nowrap;"><span class="status ok">en archivo</span></td>
+        <td class="name"><span data-lang="es">Horizontal negativo<span class="muted">todo en blanco</span></span><span data-lang="en">Horizontal reverse<span class="muted">all in white</span></span></td>
+        <td><span data-lang="es"><strong>Obligatoria</strong> sobre Azul Noche, sobre Violeta y sobre fotografía oscura. Ninguna otra versión sirve ahí.</span><span data-lang="en"><strong>Mandatory</strong> on Night blue, on Violet and on dark photography. No other version works there.</span></td>
+        <td style="white-space:nowrap;"><span class="status ok"><span data-lang="es">en archivo</span><span data-lang="en">on file</span></span></td>
         <td><code>LinexTravel-logo-negativo</code><span class="muted">SVG y PNG</span></td>
       </tr>
       <tr>
-        <td class="name">Horizontal negro<span class="muted">negro puro</span></td>
-        <td>Cuando la restricción es del proceso y no del diseño: fax, fotocopia, documento legal, troquel.</td>
-        <td style="white-space:nowrap;"><span class="status ok">en archivo</span></td>
+        <td class="name"><span data-lang="es">Horizontal negro<span class="muted">negro puro</span></span><span data-lang="en">Horizontal black<span class="muted">pure black</span></span></td>
+        <td><span data-lang="es">Cuando la restricción es del proceso y no del diseño: fax, fotocopia, documento legal, troquel.</span><span data-lang="en">When the restriction comes from the process, not the design: fax, photocopy, legal document, die-cut.</span></td>
+        <td style="white-space:nowrap;"><span class="status ok"><span data-lang="es">en archivo</span><span data-lang="en">on file</span></span></td>
         <td><code>LinexTravel-logo-negro</code><span class="muted">SVG y PNG</span></td>
       </tr>
       <tr>
-        <td class="name">Vertical<span class="muted">formatos angostos</span></td>
-        <td>Pendón, etiqueta, sello, cualquier espacio más alto que ancho.</td>
-        <td style="white-space:nowrap;"><span class="status tent">falta</span></td>
-        <td>El manual oficial la muestra y le fija espacio de seguridad, pero el archivo no llegó.</td>
+        <td class="name"><span data-lang="es">Vertical<span class="muted">formatos angostos</span></span><span data-lang="en">Vertical<span class="muted">narrow formats</span></span></td>
+        <td><span data-lang="es">Pendón, etiqueta, sello, cualquier espacio más alto que ancho.</span><span data-lang="en">Banner, label, stamp, any space taller than it is wide.</span></td>
+        <td style="white-space:nowrap;"><span class="status tent"><span data-lang="es">falta</span><span data-lang="en">missing</span></span></td>
+        <td><span data-lang="es">El manual oficial la muestra y le fija espacio de seguridad, pero el archivo no llegó.</span><span data-lang="en">The official manual shows it and sets its clear space, but the file never arrived.</span></td>
       </tr>
       <tr>
-        <td class="name">Avatar de redes<span class="muted">pieza cuadrada</span></td>
-        <td>Foto de perfil en LinkedIn y en cualquier otra red.</td>
-        <td style="white-space:nowrap;"><span class="status tent">falta</span></td>
-        <td>Hoy se recorta el horizontal a mano, y cada quien lo recorta distinto.</td>
+        <td class="name"><span data-lang="es">Avatar de redes<span class="muted">pieza cuadrada</span></span><span data-lang="en">Social avatar<span class="muted">square piece</span></span></td>
+        <td><span data-lang="es">Foto de perfil en LinkedIn y en cualquier otra red.</span><span data-lang="en">Profile picture on LinkedIn and on any other network.</span></td>
+        <td style="white-space:nowrap;"><span class="status tent"><span data-lang="es">falta</span><span data-lang="en">missing</span></span></td>
+        <td><span data-lang="es">Hoy se recorta el horizontal a mano, y cada quien lo recorta distinto.</span><span data-lang="en">Today the horizontal version gets cropped by hand, and everyone crops it differently.</span></td>
       </tr>
       <tr>
-        <td class="name">Con eslogan</td>
-        <td>Firma de marca junto al logotipo.</td>
-        <td style="white-space:nowrap;"><span class="status tent">falta</span></td>
-        <td><strong>Y falta antes el eslogan:</strong> la marca todavía no declara ninguno. Ver la <a href="10-propuesta-valor.html">sección 10</a>.</td>
+        <td class="name"><span data-lang="es">Con eslogan</span><span data-lang="en">With tagline</span></td>
+        <td><span data-lang="es">Firma de marca junto al logotipo.</span><span data-lang="en">Brand signature next to the logo.</span></td>
+        <td style="white-space:nowrap;"><span class="status tent"><span data-lang="es">falta</span><span data-lang="en">missing</span></span></td>
+        <td><span data-lang="es"><strong>Y falta antes el eslogan:</strong> la marca todavía no declara ninguno. Ver la <a href="10-propuesta-valor.html">sección 10</a>.</span><span data-lang="en"><strong>And before that, the tagline is missing:</strong> the brand hasn't declared one yet. See <a href="10-propuesta-valor.html">section 10</a>.</span></td>
       </tr>
     </table>
   </div>
 
-  <p class="small-note" style="margin-top:14px;">Los archivos viven en <strong style="color:var(--base);">Logos/logos-oficiales/linex-travel/</strong>. El <strong style="color:var(--base);">editable</strong> existe pero no se distribuye en este repositorio &mdash; se pide por separado. No confundir &laquo;no está aquí&raquo; con &laquo;no existe&raquo;: son cosas distintas y solo una de las dos es un pendiente.</p>
+  <p class="small-note" style="margin-top:14px;"><span data-lang="es">Los archivos viven en <strong style="color:var(--base);">Logos/logos-oficiales/linex-travel/</strong>. El <strong style="color:var(--base);">editable</strong> existe pero no se distribuye en este repositorio &mdash; se pide por separado. No confundir &laquo;no está aquí&raquo; con &laquo;no existe&raquo;: son cosas distintas y solo una de las dos es un pendiente.</span><span data-lang="en">The files live in <strong style="color:var(--base);">Logos/logos-oficiales/linex-travel/</strong>. The <strong style="color:var(--base);">editable</strong> file exists but isn't distributed in this repository &mdash; it's requested separately. Don't confuse &laquo;not here&raquo; with &laquo;doesn't exist&raquo;: they're different things, and only one of them is a pending item.</span></p>
 </section>
 
 <section class="section-block">
-  <h2 class="section-title">Qué se puede hacer hoy</h2>
+  <h2 class="section-title"><span data-lang="es">Qué se puede hacer hoy</span><span data-lang="en">What can be produced today</span></h2>
   <div class="grid-2">
     <div class="card">
-      <strong style="font-size:13px; color:var(--base);">Se puede</strong>
+      <span data-lang="es"><strong style="font-size:13px; color:var(--base);">Se puede</strong></span><span data-lang="en"><strong style="font-size:13px; color:var(--base);">What can be done</strong></span>
       <ul style="margin:10px 0 0; padding-left:18px;">
-        <li class="small-note" style="margin-bottom:6px;">Cualquier pieza horizontal, sobre fondo claro u oscuro.</li>
-        <li class="small-note" style="margin-bottom:6px;">Presentaciones, correo, membrete y firmas.</li>
-        <li class="small-note" style="margin-bottom:6px;">Impresión a una tinta, en negro o en el oscuro de marca.</li>
-        <li class="small-note">Souvenir &mdash; recordando que va <strong style="color:var(--base);">sin el endoso UltraGroup</strong>.</li>
+        <li class="small-note" style="margin-bottom:6px;"><span data-lang="es">Cualquier pieza horizontal, sobre fondo claro u oscuro.</span><span data-lang="en">Any horizontal piece, on a light or dark background.</span></li>
+        <li class="small-note" style="margin-bottom:6px;"><span data-lang="es">Presentaciones, correo, membrete y firmas.</span><span data-lang="en">Presentations, email, letterhead and signatures.</span></li>
+        <li class="small-note" style="margin-bottom:6px;"><span data-lang="es">Impresión a una tinta, en negro o en el oscuro de marca.</span><span data-lang="en">Single-ink printing, in black or in the brand's dark tone.</span></li>
+        <li class="small-note"><span data-lang="es">Souvenir &mdash; recordando que va <strong style="color:var(--base);">sin el endoso UltraGroup</strong>.</span><span data-lang="en">Merchandise &mdash; remembering it goes <strong style="color:var(--base);">without the UltraGroup endorsement</strong>.</span></li>
       </ul>
     </div>
     <div class="card">
-      <strong style="font-size:13px; color:var(--base);">No se puede todavía</strong>
+      <span data-lang="es"><strong style="font-size:13px; color:var(--base);">No se puede todavía</strong></span><span data-lang="en"><strong style="font-size:13px; color:var(--base);">Not possible yet</strong></span>
       <ul style="margin:10px 0 0; padding-left:18px;">
-        <li class="small-note" style="margin-bottom:6px;">Un pendón, una etiqueta o cualquier formato vertical.</li>
-        <li class="small-note" style="margin-bottom:6px;">Abrir o actualizar un perfil de red con avatar propio.</li>
-        <li class="small-note" style="margin-bottom:6px;">Una pieza que necesite el logotipo con eslogan.</li>
-        <li class="small-note">Una plantilla con ranura fija de logotipo &mdash; ver el punto 1 de abajo.</li>
+        <li class="small-note" style="margin-bottom:6px;"><span data-lang="es">Un pendón, una etiqueta o cualquier formato vertical.</span><span data-lang="en">A banner, a label or any vertical format.</span></li>
+        <li class="small-note" style="margin-bottom:6px;"><span data-lang="es">Abrir o actualizar un perfil de red con avatar propio.</span><span data-lang="en">Opening or updating a social profile with its own avatar.</span></li>
+        <li class="small-note" style="margin-bottom:6px;"><span data-lang="es">Una pieza que necesite el logotipo con eslogan.</span><span data-lang="en">A piece that needs the logo with its tagline.</span></li>
+        <li class="small-note"><span data-lang="es">Una plantilla con ranura fija de logotipo &mdash; ver el punto 1 de abajo.</span><span data-lang="en">A template with a fixed logo slot &mdash; see point 1 below.</span></li>
       </ul>
     </div>
   </div>
   <div class="callout pending" style="margin-top:16px;">
-    <span class="tag">LA REGLA</span>
-    <p>Si la pieza que necesita no está en la lista de la izquierda, <strong style="color:var(--base);">no se improvisa una versión.</strong> Se pide el archivo. Una versión improvisada no se queda en esa pieza: alguien la reutiliza, y a los seis meses hay dos logotipos en circulación sin que nadie lo haya decidido.</p>
+    <span class="tag"><span data-lang="es">LA REGLA</span><span data-lang="en">THE RULE</span></span>
+    <p><span data-lang="es">Si la pieza que necesita no está en la lista de la izquierda, <strong style="color:var(--base);">no se improvisa una versión.</strong> Se pide el archivo. Una versión improvisada no se queda en esa pieza: alguien la reutiliza, y a los seis meses hay dos logotipos en circulación sin que nadie lo haya decidido.</span><span data-lang="en">If the piece you need isn't in the list on the left, <strong style="color:var(--base);">a version doesn't get improvised.</strong> The file gets requested. An improvised version never stays in that one piece: someone reuses it, and six months later there are two logos in circulation that nobody decided on.</span></p>
   </div>
 </section>
 
 <section class="section-block">
-  <h2 class="section-title">Tres cosas por resolver</h2>
-  <p class="small-note" style="max-width:76ch; margin-bottom:16px;">No impiden trabajar, pero cada una tiene un dueño y una acción concreta.</p>
+  <h2 class="section-title"><span data-lang="es">Tres cosas por resolver</span><span data-lang="en">Three things to resolve</span></h2>
+  <p class="small-note" style="max-width:76ch; margin-bottom:16px;"><span data-lang="es">No impiden trabajar, pero cada una tiene un dueño y una acción concreta.</span><span data-lang="en">They don't block work, but each one has an owner and a concrete action.</span></p>
   <div class="table-scroll">
     <table class="rtable">
       <tr>
-        <th>Qué pasa</th><th>La medida</th><th>Qué hay que hacer</th>
+        <span data-lang="es"><th>Qué pasa</th><th>La medida</th><th>Qué hay que hacer</th></span><span data-lang="en"><th>What's happening</th><th>The measurement</th><th>What to do</th></span>
       </tr>
       <tr>
-        <td class="name">1 &middot; Las cuatro piezas no tienen la misma proporción</td>
-        <td>Color y monocromo <strong>5.11:1</strong><br>Negativo y negro <strong>4.35:1</strong><br><span class="muted">17% de diferencia</span></td>
-        <td>Pedir las cuatro reexportadas con la misma caja. Mientras tanto, <strong>no usar plantillas con ranura fija</strong>: cambiar de versión mueve la composición.</td>
+        <td class="name"><span data-lang="es">1 &middot; Las cuatro piezas no tienen la misma proporción</span><span data-lang="en">1 &middot; The four files don't share a proportion</span></td>
+        <td><span data-lang="es">Color y monocromo <strong>5.11:1</strong><br>Negativo y negro <strong>4.35:1</strong><br><span class="muted">17% de diferencia</span></span><span data-lang="en">Colour and monochrome <strong>5.11:1</strong><br>Reverse and black <strong>4.35:1</strong><br><span class="muted">17% difference</span></span></td>
+        <td><span data-lang="es">Pedir las cuatro reexportadas con la misma caja. Mientras tanto, <strong>no usar plantillas con ranura fija</strong>: cambiar de versión mueve la composición.</span><span data-lang="en">Request all four re-exported to the same box. In the meantime, <strong>don't use templates with a fixed slot</strong>: switching versions shifts the composition.</span></td>
       </tr>
       <tr>
-        <td class="name">2 &middot; El manual nombra tres variaciones y en disco hay cuatro</td>
-        <td>Oficial: color, positivo, negativo<br>En disco: color, monocromo, negativo, negro</td>
-        <td>Que el dueño de marca fije el nombre de cada una. Lo más probable es que &laquo;positivo&raquo; sea el monocromo, pero eso es una suposición y no un dato.</td>
+        <td class="name"><span data-lang="es">2 &middot; El manual nombra tres variaciones y en disco hay cuatro</span><span data-lang="en">2 &middot; The manual names three variants and there are four on disk</span></td>
+        <td><span data-lang="es">Oficial: color, positivo, negativo<br>En disco: color, monocromo, negativo, negro</span><span data-lang="en">Official: colour, positive, reverse<br>On disk: colour, monochrome, reverse, black</span></td>
+        <td><span data-lang="es">Que el dueño de marca fije el nombre de cada una. Lo más probable es que &laquo;positivo&raquo; sea el monocromo, pero eso es una suposición y no un dato.</span><span data-lang="en">The brand owner needs to fix the name for each. It's most likely that &laquo;positive&raquo; is the monochrome, but that's an assumption, not a fact.</span></td>
       </tr>
       <tr>
-        <td class="name">3 &middot; El gris del endoso no está en la paleta</td>
-        <td><strong>#B4B4B4</strong><br><strong>2.07:1</strong> sobre blanco<br><span class="muted">AA pide 4.5:1</span></td>
-        <td>Decidir si se corrige o se convive. El criterio 1.4.3 no aplica a logotipos, y el endoso desaparece en enero de 2027 &mdash; esperar es una salida válida, pero hay que elegirla, no heredarla.</td>
+        <td class="name"><span data-lang="es">3 &middot; El gris del endoso no está en la paleta</span><span data-lang="en">3 &middot; The endorsement grey isn't in the palette</span></td>
+        <td><span data-lang="es"><strong>#B4B4B4</strong><br><strong>2.07:1</strong> sobre blanco<br><span class="muted">AA pide 4.5:1</span></span><span data-lang="en"><strong>#B4B4B4</strong><br><strong>2.07:1</strong> on white<br><span class="muted">AA requires 4.5:1</span></span></td>
+        <td><span data-lang="es">Decidir si se corrige o se convive. El criterio 1.4.3 no aplica a logotipos, y el endoso desaparece en enero de 2027 &mdash; esperar es una salida válida, pero hay que elegirla, no heredarla.</span><span data-lang="en">Decide whether to fix it or live with it. Criterion 1.4.3 doesn't apply to logos, and the endorsement disappears in January 2027 &mdash; waiting is a valid choice, but it has to be chosen, not inherited.</span></td>
       </tr>
     </table>
   </div>
 
   <div class="callout" style="background:rgba(var(--apoyo-rgb),0.07); border:1px solid rgba(var(--apoyo-rgb),0.28); margin-top:16px;">
-    <span class="tag" style="color:var(--apoyo);">Y UNA CUARTA, YA DECIDIDA</span>
-    <p>Los archivos no están pintados con los colores de la paleta. Por decisión del dueño de marca manda el archivo mientras se recolorean los SVG, y es transitorio. Está medido y explicado en la <a href="01-logotipo.html">sección 01</a>.</p>
+    <span class="tag" style="color:var(--apoyo);"><span data-lang="es">Y UNA CUARTA, YA DECIDIDA</span><span data-lang="en">AND A FOURTH, ALREADY DECIDED</span></span>
+    <p><span data-lang="es">Los archivos no están pintados con los colores de la paleta. Por decisión del dueño de marca manda el archivo mientras se recolorean los SVG, y es transitorio. Está medido y explicado en la <a href="01-logotipo.html">sección 01</a>.</span><span data-lang="en">The files aren't painted in the palette's colours. By the brand owner's decision the file rules while the SVGs get recoloured, and it's transitional. It's measured and explained in <a href="01-logotipo.html">section 01</a>.</span></p>
   </div>
 </section>
 
       <div class="footer-meta">
-        <span>manual-marca-linex-travel-v1.0 &middot; sitio estático de distribución</span>
-        <span>Manual de Marca de Linex Travel &middot; 2026</span>
+        <span><span data-lang="es">manual-marca-linex-travel-v1.0 &middot; sitio estático de distribución</span><span data-lang="en">manual-marca-linex-travel-v1.0 &middot; static distribution site</span></span>
+        <span><span data-lang="es">Manual de Marca de Linex Travel &middot; 2026</span><span data-lang="en">Linex Travel Brand Manual &middot; 2026</span></span>
       </div>
       <!--pager-->
-      <div class="pager"><a class="prev" href="01-logotipo.html"><span class="dir">&larr; Anterior</span><span class="lbl">01 &middot; Logotipo</span></a><a class="next" href="03-paleta-color.html"><span class="dir">Siguiente &rarr;</span><span class="lbl">03 &middot; Paleta de color</span></a></div>
+      <div class="pager"><a class="prev" href="01-logotipo.html"><span class="dir"><span data-lang="es">&larr; Anterior</span><span data-lang="en">&larr; Previous</span></span><span class="lbl">01 &middot; <span data-lang="es">Logotipo</span><span data-lang="en">Logo</span></span></a><a class="next" href="03-paleta-color.html"><span class="dir"><span data-lang="es">Siguiente &rarr;</span><span data-lang="en">Next &rarr;</span></span><span class="lbl">03 &middot; <span data-lang="es">Paleta de color</span><span data-lang="en">Colour palette</span></span></a></div>
       <!--/pager-->
     </div>
   </main>

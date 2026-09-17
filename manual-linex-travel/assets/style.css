@@ -894,3 +894,74 @@ code {
   content: 'en curso'; margin-left: auto; white-space: nowrap; align-self: center; font-size: 9.5px; font-weight: 700;
   letter-spacing: 0.04em; color: var(--coral); opacity: 0.85;
 }
+
+/* ---------- selector de idioma — español / inglés ----------
+   Solo CSS, sin JavaScript nuevo. Cada bloque de contenido traducido vive
+   dos veces en el mismo archivo, envuelto en <span data-lang="es"> y
+   <span data-lang="en">; dos radios ocultos al inicio del <body> deciden
+   cuál se muestra, con el combinador de hermanos (~).
+
+   Por qué un solo archivo y no una carpeta /en/: en este proyecto cada
+   edición futura de una página se hace una sola vez, en un solo lugar. Una
+   carpeta espejo exige recordar tocar los dos árboles siempre — es el mismo
+   problema que ya resolvimos con sync-nav.js y con los contrastes viejos de
+   Trip, aplicado al idioma.
+
+   El interruptor vive dos veces en el DOM —en el topbar para móvil y en el
+   encabezado del sidebar para escritorio— porque topbar y sidebar nunca se
+   ven a la vez (ver el breakpoint de 900px arriba). Los dos apuntan a los
+   mismos dos radios por su atributo "for": no hace falta un tercer par.
+
+   Límite honesto: la elección no se recuerda al navegar a otra página —eso
+   exigiría JavaScript o una cookie de servidor, y este manual no tiene
+   ninguno de los dos—. Cada página abre en español y el visitante cambia de
+   nuevo si lo necesita. El <title> de la pestaña y la meta description
+   tampoco cambian, porque no son contenido renderizado y no hay forma de
+   alternarlos sin script. */
+.idioma-radio {
+  position: absolute; width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+.idioma-switch { display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: rgba(255,255,255,0.1); }
+.idioma-switch label {
+  padding: 4px 11px; border-radius: 999px; font-size: 11px; font-weight: 800;
+  letter-spacing: 0.03em; cursor: pointer; color: rgba(255,255,255,0.6);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.idioma-switch label:hover { color: #fff; }
+.sidebar-brand + .idioma-switch { margin-bottom: 22px; }
+
+/* Cuál etiqueta se ve activa */
+#idioma-es:checked ~ .topbar .idioma-switch label[for="idioma-es"],
+#idioma-es:checked ~ .shell .idioma-switch label[for="idioma-es"] { background: #fff; color: var(--base); }
+#idioma-en:checked ~ .topbar .idioma-switch label[for="idioma-en"],
+#idioma-en:checked ~ .shell .idioma-switch label[for="idioma-en"] { background: #fff; color: var(--base); }
+
+/* El contenido bilingüe. Envolver SIEMPRE en <span>, nunca en <div> o <p>:
+   un span es inline en cualquier contexto —párrafo, celda, título, lista—
+   así que una sola regla de "display" sirve para todo el manual, sin tener
+   que declarar un valor de display distinto por cada etiqueta contenedora. */
+span[data-lang] { display: none; }
+
+/* Las filas de tabla NO se envuelven en <span>: un <span> no puede contener
+   válidamente una <tr> o cruzar el límite entre dos <td> — el navegador saca
+   ese contenido de la tabla al analizarlo ("foster parenting") y la rompe en
+   los dos idiomas por igual, antes de que el CSS llegue a aplicarse. Una fila
+   bilingüe se duplica entera: dos <tr> reales, cada uno con su data-lang. */
+tr[data-lang] { display: none; }
+#idioma-es:checked ~ .topbar tr[data-lang="es"],
+#idioma-es:checked ~ .shell tr[data-lang="es"] { display: table-row; }
+#idioma-en:checked ~ .topbar tr[data-lang="en"],
+#idioma-en:checked ~ .shell tr[data-lang="en"] { display: table-row; }
+#idioma-es:checked ~ .topbar span[data-lang="es"],
+#idioma-es:checked ~ .shell span[data-lang="es"] { display: inline; }
+#idioma-en:checked ~ .topbar span[data-lang="en"],
+#idioma-en:checked ~ .shell span[data-lang="en"] { display: inline; }
+
+@media print {
+  .idioma-switch { display: none; }
+  span[data-lang="es"] { display: inline !important; }
+  span[data-lang="en"] { display: none !important; }
+}

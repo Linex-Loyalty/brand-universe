@@ -10,11 +10,14 @@
 </head>
 <body style="background:var(--paper);">
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
+<input type="radio" name="idioma" id="idioma-es" class="idioma-radio" checked>
+<input type="radio" name="idioma" id="idioma-en" class="idioma-radio">
 <div class="topbar">
-  <span class="topbar-brand">Linex Travel <small>MANUAL DE MARCA</small></span>
+  <span class="topbar-brand">Linex Travel <small><span data-lang="es">MANUAL DE MARCA</span><span data-lang="en">BRAND MANUAL</span></small></span>
+  <div class="idioma-switch"><label for="idioma-es">ES</label><label for="idioma-en">EN</label></div>
   <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="sidebar">
     <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
-    Menú
+    <span data-lang="es">Menú</span><span data-lang="en">Menu</span>
   </button>
 </div>
 <div class="nav-scrim" data-nav-scrim></div>
@@ -22,42 +25,43 @@
   <aside class="sidebar" id="sidebar">
     <a class="sidebar-brand" href="index.html">
       <span class="name">Linex Travel</span>
-      <span class="tag">Manual de Marca &middot; v1.0</span>
+      <span class="tag"><span data-lang="es">Manual de Marca &middot; v1.0</span><span data-lang="en">Brand Manual &middot; v1.0</span></span>
     </a>
+    <div class="idioma-switch"><label for="idioma-es">ES</label><label for="idioma-en">EN</label></div>
     <!--nav-->
-    <nav class="nav-group" aria-label="Portada">
+    <nav class="nav-group" aria-label="Portada / Home">
         <ul class="nav-list">
-          <li><a href="index.html"><span class="n">00</span><span>Resumen ejecutivo</span></a></li>
+          <li><a href="index.html"><span class="n">00</span><span><span data-lang="es">Resumen ejecutivo</span><span data-lang="en">Executive summary</span></span></a></li>
         </ul>
     </nav>
-    <nav class="nav-group" aria-label="A · Identidad visual">
-        <span class="nav-group-title">A · Identidad visual</span>
+    <nav class="nav-group" aria-label="A · Identidad visual / A · Visual identity">
+        <span class="nav-group-title"><span data-lang="es">A · Identidad visual</span><span data-lang="en">A · Visual identity</span></span>
         <ul class="nav-list">
-          <li><a href="01-logotipo.html" class="active" aria-current="page"><span class="n">01</span><span>Logotipo</span></a></li>
-          <li><a href="02-estado-logotipo.html"><span class="n">02</span><span>Estado del logotipo</span></a></li>
-          <li><a href="03-paleta-color.html"><span class="n">03</span><span>Paleta de color</span></a></li>
-          <li><a href="04-tipografia.html"><span class="n">04</span><span>Tipografía</span></a></li>
-          <li><a href="05-iconografia-canal.html"><span class="n">05</span><span>Iconografía y diseño por canal</span></a></li>
-          <li><a href="06-sistema-fotografia.html"><span class="n">06</span><span>Sistema gráfico y fotografía</span></a></li>
-          <li><a href="07-accesibilidad.html"><span class="n">07</span><span>Accesibilidad</span></a></li>
+          <li><a href="01-logotipo.html" class="active" aria-current="page"><span class="n">01</span><span><span data-lang="es">Logotipo</span><span data-lang="en">Logo</span></span></a></li>
+          <li><a href="02-estado-logotipo.html"><span class="n">02</span><span><span data-lang="es">Estado del logotipo</span><span data-lang="en">Logo status</span></span></a></li>
+          <li><a href="03-paleta-color.html"><span class="n">03</span><span><span data-lang="es">Paleta de color</span><span data-lang="en">Colour palette</span></span></a></li>
+          <li><a href="04-tipografia.html"><span class="n">04</span><span><span data-lang="es">Tipografía</span><span data-lang="en">Typography</span></span></a></li>
+          <li><a href="05-iconografia-canal.html"><span class="n">05</span><span><span data-lang="es">Iconografía y diseño por canal</span><span data-lang="en">Iconography and channel design</span></span></a></li>
+          <li><a href="06-sistema-fotografia.html"><span class="n">06</span><span><span data-lang="es">Sistema gráfico y fotografía</span><span data-lang="en">Graphic system and photography</span></span></a></li>
+          <li><a href="07-accesibilidad.html"><span class="n">07</span><span><span data-lang="es">Accesibilidad</span><span data-lang="en">Accessibility</span></span></a></li>
         </ul>
     </nav>
-    <nav class="nav-group" aria-label="B · Quién es y cómo habla">
-        <span class="nav-group-title">B · Quién es y cómo habla</span>
+    <nav class="nav-group" aria-label="B · Quién es y cómo habla / B · Who it is and how it speaks">
+        <span class="nav-group-title"><span data-lang="es">B · Quién es y cómo habla</span><span data-lang="en">B · Who it is and how it speaks</span></span>
         <ul class="nav-list">
-          <li><a href="08-arquitectura.html"><span class="n">08</span><span>Arquitectura y nombre</span></a></li>
-          <li><a href="09-audiencias.html"><span class="n">09</span><span>Audiencias</span></a></li>
-          <li><a href="10-propuesta-valor.html"><span class="n">10</span><span>Propuesta de valor y claims</span></a></li>
-          <li><a href="11-voz-tono.html"><span class="n">11</span><span>Voz y tono</span></a></li>
-          <li><a href="12-vocabulario.html"><span class="n">12</span><span>Vocabulario</span></a></li>
+          <li><a href="08-arquitectura.html"><span class="n">08</span><span><span data-lang="es">Arquitectura y nombre</span><span data-lang="en">Architecture and naming</span></span></a></li>
+          <li><a href="09-audiencias.html"><span class="n">09</span><span><span data-lang="es">Audiencias</span><span data-lang="en">Audiences</span></span></a></li>
+          <li><a href="10-propuesta-valor.html"><span class="n">10</span><span><span data-lang="es">Propuesta de valor y claims</span><span data-lang="en">Value proposition and claims</span></span></a></li>
+          <li><a href="11-voz-tono.html"><span class="n">11</span><span><span data-lang="es">Voz y tono</span><span data-lang="en">Voice and tone</span></span></a></li>
+          <li><a href="12-vocabulario.html"><span class="n">12</span><span><span data-lang="es">Vocabulario</span><span data-lang="en">Vocabulary</span></span></a></li>
         </ul>
     </nav>
-    <nav class="nav-group" aria-label="C · Cómo se aplica">
-        <span class="nav-group-title">C · Cómo se aplica</span>
+    <nav class="nav-group" aria-label="C · Cómo se aplica / C · How it is applied">
+        <span class="nav-group-title"><span data-lang="es">C · Cómo se aplica</span><span data-lang="en">C · How it is applied</span></span>
         <ul class="nav-list">
-          <li><a href="13-promociones-cta.html"><span class="n">13</span><span>Promociones y CTA</span></a></li>
-          <li><a href="14-entregables.html"><span class="n">14</span><span>Entregables y aplicaciones</span></a></li>
-          <li><a href="15-redes-sociales.html"><span class="n">15</span><span>Redes sociales</span></a></li>
+          <li><a href="13-promociones-cta.html"><span class="n">13</span><span><span data-lang="es">Promociones y CTA</span><span data-lang="en">Promotions and CTAs</span></span></a></li>
+          <li><a href="14-entregables.html"><span class="n">14</span><span><span data-lang="es">Entregables y aplicaciones</span><span data-lang="en">Deliverables and applications</span></span></a></li>
+          <li><a href="15-redes-sociales.html"><span class="n">15</span><span><span data-lang="es">Redes sociales</span><span data-lang="en">Social media</span></span></a></li>
         </ul>
     </nav>
     <!--/nav-->
@@ -65,120 +69,129 @@
   <main class="main" id="contenido">
     <div class="main-inner">
 
-<p class="page-index"><span class="page-index-n">01</span><span class="eyebrow">Logotipo</span></p>
-<h1 class="page-title">Un logotipo que lleva su propia historia encima.</h1>
-<p class="lede">Linex Travel no nació de cero: es UltraGroup con otro nombre. El logotipo lo dice de forma literal &mdash; el endoso <strong>&laquo;Formerly UltraGroup&raquo;</strong> va debajo del nombre, y se va a quitar en enero de 2027. Hasta entonces, el endoso es parte del logotipo y no un adorno que se pueda omitir.</p>
+<p class="page-index"><span class="page-index-n">01</span><span class="eyebrow"><span data-lang="es">Logotipo</span><span data-lang="en">Logo</span></span></p>
+<h1 class="page-title"><span data-lang="es">Un logotipo que lleva su propia historia encima.</span><span data-lang="en">A logo that carries its own history on its sleeve.</span></h1>
+<p class="lede"><span data-lang="es">Linex Travel no nació de cero: es UltraGroup con otro nombre. El logotipo lo dice de forma literal &mdash; el endoso <strong>&laquo;Formerly UltraGroup&raquo;</strong> va debajo del nombre, y se va a quitar en enero de 2027. Hasta entonces, el endoso es parte del logotipo y no un adorno que se pueda omitir.</span><span data-lang="en">Linex Travel wasn't born from scratch: it is UltraGroup under a new name. The logo says so literally &mdash; the <strong>&laquo;Formerly UltraGroup&raquo;</strong> endorsement sits below the name, and it comes off in January 2027. Until then, the endorsement is part of the logo, not a decoration that can be left out.</span></p>
 
 <section class="section-block">
-  <h2 class="section-title">Las cuatro versiones</h2>
-  <p>El manual oficial habla de <strong>tres</strong> variaciones &mdash; color, positivo y negativo &mdash; y en la carpeta de logos hay <strong>cuatro</strong> archivos. Los cuatro son reales y se usan; lo que falta es fijar qué nombre le corresponde a cada uno. Está anotado en la sección 02.</p>
+  <h2 class="section-title"><span data-lang="es">Las cuatro versiones</span><span data-lang="en">The four versions</span></h2>
+  <p><span data-lang="es">El manual oficial habla de <strong>tres</strong> variaciones &mdash; color, positivo y negativo &mdash; y en la carpeta de logos hay <strong>cuatro</strong> archivos. Los cuatro son reales y se usan; lo que falta es fijar qué nombre le corresponde a cada uno. Está anotado en la sección 02.</span><span data-lang="en">The official manual speaks of <strong>three</strong> variants &mdash; colour, positive and reverse &mdash; and the logo folder holds <strong>four</strong> files. All four are real and in use; what's missing is settling which name belongs to which. That's noted in section 02.</span></p>
 
   <div class="logo-stage"><img src="assets/logos/color.svg" alt="Logotipo de Linex Travel: la palabra Linex en un índigo muy oscuro y la palabra Travel en violeta, con el endoso Formerly UltraGroup debajo."></div>
 
   <div class="logo-tests" style="margin-top:12px;">
-    <figure><div class="logo-test light"><img src="assets/logos/color.svg" alt="Logotipo a color sobre fondo blanco."></div><figcaption>Color sobre blanco</figcaption></figure>
-    <figure><div class="logo-test lav"><img src="assets/logos/color.svg" alt="Logotipo a color sobre Lavanda Linex."></div><figcaption>Color sobre Lavanda</figcaption></figure>
-    <figure><div class="logo-test dark"><img src="assets/logos/negativo.svg" alt="Logotipo en negativo sobre Azul Noche."></div><figcaption>Negativo sobre Azul Noche</figcaption></figure>
-    <figure><div class="logo-test light"><img src="assets/logos/monocromo.svg" alt="Logotipo monocromo, en un solo oscuro."></div><figcaption>Monocromo</figcaption></figure>
-    <figure><div class="logo-test light"><img src="assets/logos/negro.svg" alt="Logotipo en negro puro."></div><figcaption>Negro</figcaption></figure>
+    <figure><div class="logo-test light"><img src="assets/logos/color.svg" alt="Logotipo a color sobre fondo blanco."></div><span data-lang="es"><figcaption>Color sobre blanco</figcaption></span><span data-lang="en"><figcaption>Colour on white</figcaption></span></figure>
+    <figure><div class="logo-test lav"><img src="assets/logos/color.svg" alt="Logotipo a color sobre Lavanda Linex."></div><span data-lang="es"><figcaption>Color sobre Lavanda</figcaption></span><span data-lang="en"><figcaption>Colour on Lavender</figcaption></span></figure>
+    <figure><div class="logo-test dark"><img src="assets/logos/negativo.svg" alt="Logotipo en negativo sobre Azul Noche."></div><span data-lang="es"><figcaption>Negativo sobre Azul Noche</figcaption></span><span data-lang="en"><figcaption>Reverse on Night blue</figcaption></span></figure>
+    <figure><div class="logo-test light"><img src="assets/logos/monocromo.svg" alt="Logotipo monocromo, en un solo oscuro."></div><span data-lang="es"><figcaption>Monocromo</figcaption></span><span data-lang="en"><figcaption>Monochrome</figcaption></span></figure>
+    <figure><div class="logo-test light"><img src="assets/logos/negro.svg" alt="Logotipo en negro puro."></div><span data-lang="es"><figcaption>Negro</figcaption></span><span data-lang="en"><figcaption>Black</figcaption></span></figure>
   </div>
-  <p class="small-note" style="margin-top:10px;">El negativo solo aparece sobre oscuro porque es blanco: sobre cualquier fondo claro desaparece. Es la razón de que exista.</p>
+  <p class="small-note" style="margin-top:10px;"><span data-lang="es">El negativo solo aparece sobre oscuro porque es blanco: sobre cualquier fondo claro desaparece. Es la razón de que exista.</span><span data-lang="en">The reverse version only ever appears on dark backgrounds because it's white: on any light background it disappears. That's the whole reason it exists.</span></p>
 
 
 
   <div class="grid-2">
     <div class="card tint">
-      <strong style="font-size:13px; color:var(--base);">Color</strong>
+      <span data-lang="es"><strong style="font-size:13px; color:var(--base);">Color</strong>
       <p class="small-note" style="margin:4px 0 8px; font-weight:700; color:var(--apoyo);">La versión por defecto</p>
-      <p class="small-note">Sobre fondos claros: blanco, Lavanda Linex o los degradados suaves de la marca. Es la que lleva el contraste entre el oscuro y el violeta, y la que se usa siempre que el fondo lo permita.</p>
+      <p class="small-note">Sobre fondos claros: blanco, Lavanda Linex o los degradados suaves de la marca. Es la que lleva el contraste entre el oscuro y el violeta, y la que se usa siempre que el fondo lo permita.</p></span><span data-lang="en"><strong style="font-size:13px; color:var(--base);">Colour</strong>
+      <p class="small-note" style="margin:4px 0 8px; font-weight:700; color:var(--apoyo);">The default version</p>
+      <p class="small-note">On light backgrounds: white, Linex Lavender or the brand's soft gradients. It carries the contrast between the dark tone and the violet, and it's used whenever the background allows it.</p></span>
     </div>
     <div class="card tint">
-      <strong style="font-size:13px; color:var(--base);">Monocromo</strong>
+      <span data-lang="es"><strong style="font-size:13px; color:var(--base);">Monocromo</strong>
       <p class="small-note" style="margin:4px 0 8px; font-weight:700; color:var(--apoyo);">Un solo oscuro</p>
-      <p class="small-note">Cuando el fondo es claro pero la pieza no admite dos tintas: prensa a un color, grabados, sellos, bordados de un hilo.</p>
+      <p class="small-note">Cuando el fondo es claro pero la pieza no admite dos tintas: prensa a un color, grabados, sellos, bordados de un hilo.</p></span><span data-lang="en"><strong style="font-size:13px; color:var(--base);">Monochrome</strong>
+      <p class="small-note" style="margin:4px 0 8px; font-weight:700; color:var(--apoyo);">A single dark tone</p>
+      <p class="small-note">When the background is light but the piece can't carry two inks: single-colour press, engraving, stamps, single-thread embroidery.</p></span>
     </div>
     <div class="card tint">
-      <strong style="font-size:13px; color:var(--base);">Negativo</strong>
+      <span data-lang="es"><strong style="font-size:13px; color:var(--base);">Negativo</strong>
       <p class="small-note" style="margin:4px 0 8px; font-weight:700; color:var(--apoyo);">Todo en blanco</p>
-      <p class="small-note">Sobre Azul Noche, sobre Violeta y sobre fotografía oscura. Es la única versión válida sobre fondo oscuro: las otras tres desaparecen.</p>
+      <p class="small-note">Sobre Azul Noche, sobre Violeta y sobre fotografía oscura. Es la única versión válida sobre fondo oscuro: las otras tres desaparecen.</p></span><span data-lang="en"><strong style="font-size:13px; color:var(--base);">Reverse</strong>
+      <p class="small-note" style="margin:4px 0 8px; font-weight:700; color:var(--apoyo);">All in white</p>
+      <p class="small-note">On Night blue, on Violet and on dark photography. It's the only version valid on a dark background: the other three disappear.</p></span>
     </div>
     <div class="card tint">
-      <strong style="font-size:13px; color:var(--base);">Negro</strong>
+      <span data-lang="es"><strong style="font-size:13px; color:var(--base);">Negro</strong>
       <p class="small-note" style="margin:4px 0 8px; font-weight:700; color:var(--apoyo);">Negro puro</p>
-      <p class="small-note">Para cuando la restricción es del proceso y no del diseño: fax, fotocopia, documentos legales, troquelados. No reemplaza al monocromo en digital.</p>
+      <p class="small-note">Para cuando la restricción es del proceso y no del diseño: fax, fotocopia, documentos legales, troquelados. No reemplaza al monocromo en digital.</p></span><span data-lang="en"><strong style="font-size:13px; color:var(--base);">Black</strong>
+      <p class="small-note" style="margin:4px 0 8px; font-weight:700; color:var(--apoyo);">Pure black</p>
+      <p class="small-note">For when the restriction comes from the process, not the design: fax, photocopy, legal documents, die-cutting. It does not replace monochrome in digital use.</p></span>
     </div>
   </div>
 </section>
 
 <section class="section-block">
-  <h2 class="section-title">Sobre qué fondo va cada una</h2>
-  <p>Los números son el contraste real de la tinta del logotipo contra cada fondo, medidos y no estimados. El umbral de 3:1 es el que WCAG&nbsp;2.1 pide para un objeto gráfico.</p>
+  <h2 class="section-title"><span data-lang="es">Sobre qué fondo va cada una</span><span data-lang="en">Which one goes on which background</span></h2>
+  <p><span data-lang="es">Los números son el contraste real de la tinta del logotipo contra cada fondo, medidos y no estimados. El umbral de 3:1 es el que WCAG&nbsp;2.1 pide para un objeto gráfico.</span><span data-lang="en">The numbers are the logo ink's real contrast against each background, measured, not estimated. The 3:1 threshold is what WCAG&nbsp;2.1 requires for a graphic object.</span></p>
 
   <div class="table-scroll">
     <table class="rtable">
-      <tr><td class="name">Blanco <span class="small-note">#FFFFFF</span></td><td><strong>Color</strong> o <strong>monocromo</strong>. La tinta oscura da <strong>17.85:1</strong> y el violeta del logotipo <strong>4.97:1</strong>.</td></tr>
-      <tr><td class="name">Lavanda Linex <span class="small-note">#DDE1FF</span></td><td><strong>Color</strong> o <strong>monocromo</strong>. La tinta oscura da <strong>13.85:1</strong> y el violeta <strong>3.86:1</strong> &mdash; suficiente para el logotipo, que es un objeto gráfico, y no para texto de lectura.</td></tr>
-      <tr><td class="name">Azul Noche <span class="small-note">#17153B</span></td><td><strong>Solo negativo.</strong> La versión a color sobre este fondo desaparece.</td></tr>
-      <tr><td class="name">Violeta <span class="small-note">#6D28D9</span></td><td><strong>Solo negativo.</strong></td></tr>
-      <tr><td class="name">Fotografía</td><td><strong>Negativo</strong>, y sobre una zona de la imagen que sea uniforme y oscura. Si la foto es clara o movida, va el logotipo sobre una banda sólida, no sobre la foto.</td></tr>
-      <tr><td class="name">Lila claro <span class="small-note">#E0B3FF</span></td><td>No es fondo de logotipo. Es superficie de realce.</td></tr>
+      <tr data-lang="es"><td class="name">Blanco <span class="small-note">#FFFFFF</span></td><td><strong>Color</strong> o <strong>monocromo</strong>. La tinta oscura da <strong>17.85:1</strong> y el violeta del logotipo <strong>4.97:1</strong>.</td></tr><tr data-lang="en"><td class="name">White <span class="small-note">#FFFFFF</span></td><td><strong>Colour</strong> or <strong>monochrome</strong>. The dark ink gives <strong>17.85:1</strong> and the logo's violet <strong>4.97:1</strong>.</td></tr>
+      <tr data-lang="es"><td class="name">Lavanda Linex <span class="small-note">#DDE1FF</span></td><td><strong>Color</strong> o <strong>monocromo</strong>. La tinta oscura da <strong>13.85:1</strong> y el violeta <strong>3.86:1</strong> &mdash; suficiente para el logotipo, que es un objeto gráfico, y no para texto de lectura.</td></tr><tr data-lang="en"><td class="name">Linex Lavender <span class="small-note">#DDE1FF</span></td><td><strong>Colour</strong> or <strong>monochrome</strong>. The dark ink gives <strong>13.85:1</strong> and the violet <strong>3.86:1</strong> &mdash; enough for the logo, which is a graphic object, not for reading text.</td></tr>
+      <tr data-lang="es"><td class="name">Azul Noche <span class="small-note">#17153B</span></td><td><strong>Solo negativo.</strong> La versión a color sobre este fondo desaparece.</td></tr><tr data-lang="en"><td class="name">Night blue <span class="small-note">#17153B</span></td><td><strong>Reverse only.</strong> The colour version disappears on this background.</td></tr>
+      <tr data-lang="es"><td class="name">Violeta <span class="small-note">#6D28D9</span></td><td><strong>Solo negativo.</strong></td></tr><tr data-lang="en"><td class="name">Violet <span class="small-note">#6D28D9</span></td><td><strong>Reverse only.</strong></td></tr>
+      <tr data-lang="es"><td class="name">Fotografía</td><td><strong>Negativo</strong>, y sobre una zona de la imagen que sea uniforme y oscura. Si la foto es clara o movida, va el logotipo sobre una banda sólida, no sobre la foto.</td></tr><tr data-lang="en"><td class="name">Photography</td><td><strong>Reverse</strong>, and over an area of the image that is uniform and dark. If the photo is light or busy, the logo goes on a solid band instead of on the photo.</td></tr>
+      <tr data-lang="es"><td class="name">Lila claro <span class="small-note">#E0B3FF</span></td><td>No es fondo de logotipo. Es superficie de realce.</td></tr><tr data-lang="en"><td class="name">Light lilac <span class="small-note">#E0B3FF</span></td><td>Not a logo background. It's a highlight surface.</td></tr>
     </table>
   </div>
 </section>
 
 <section class="section-block">
-  <h2 class="section-title">Espacio de seguridad</h2>
-  <p>La regla del manual oficial es una sola y sirve para las dos orientaciones:</p>
+  <h2 class="section-title"><span data-lang="es">Espacio de seguridad</span><span data-lang="en">Clear space</span></h2>
+  <p><span data-lang="es">La regla del manual oficial es una sola y sirve para las dos orientaciones:</span><span data-lang="en">The official manual states a single rule, and it covers both orientations:</span></p>
   <div class="callout" style="background:rgba(var(--apoyo-rgb),0.07); border:1px solid rgba(var(--apoyo-rgb),0.28);">
-    <span class="tag" style="color:var(--apoyo);">REGLA</span>
-    <p><strong style="color:var(--base);">X = la altura de la letra &laquo;L&raquo; del logotipo.</strong> Ese espacio queda libre de cualquier elemento gráfico por los cuatro lados. Aplica igual al logotipo horizontal y al vertical.</p>
+    <span class="tag" style="color:var(--apoyo);"><span data-lang="es">REGLA</span><span data-lang="en">RULE</span></span>
+    <p><span data-lang="es"><strong style="color:var(--base);">X = la altura de la letra &laquo;L&raquo; del logotipo.</strong> Ese espacio queda libre de cualquier elemento gráfico por los cuatro lados. Aplica igual al logotipo horizontal y al vertical.</span><span data-lang="en"><strong style="color:var(--base);">X = the height of the &laquo;L&raquo; in the logo.</strong> That much space stays free of any graphic element on all four sides. It applies equally to the horizontal and vertical logo.</span></p>
   </div>
-  <p class="small-note" style="margin-top:12px;">La ventaja de medir con una letra del propio logotipo, y no en píxeles o milímetros, es que la regla sobrevive a cualquier escala: vale igual en un favicon que en una valla.</p>
+  <p class="small-note" style="margin-top:12px;"><span data-lang="es">La ventaja de medir con una letra del propio logotipo, y no en píxeles o milímetros, es que la regla sobrevive a cualquier escala: vale igual en un favicon que en una valla.</span><span data-lang="en">The advantage of measuring with a letter from the logo itself, rather than in pixels or millimetres, is that the rule survives any scale: it holds equally for a favicon and for a billboard.</span></p>
 </section>
 
 <section class="section-block">
-  <h2 class="section-title">Usos incorrectos</h2>
-  <p>Cuatro, textuales del manual oficial.</p>
+  <h2 class="section-title"><span data-lang="es">Usos incorrectos</span><span data-lang="en">Incorrect uses</span></h2>
+  <p><span data-lang="es">Cuatro, textuales del manual oficial.</span><span data-lang="en">Four, verbatim from the official manual.</span></p>
   <div class="grid-2">
-    <div class="dont-row"><strong>No</strong> deformar el logotipo.</div>
-    <div class="dont-row"><strong>No</strong> cambiar los colores oficiales.</div>
-    <div class="dont-row"><strong>No</strong> modificar la jerarquía entre marcas.</div>
-    <div class="dont-row"><strong>No</strong> aplicar efectos.</div>
+    <div class="dont-row"><span data-lang="es"><strong>No</strong> deformar el logotipo.</span><span data-lang="en"><strong>Do not</strong> distort the logo.</span></div>
+    <div class="dont-row"><span data-lang="es"><strong>No</strong> cambiar los colores oficiales.</span><span data-lang="en"><strong>Do not</strong> change the official colours.</span></div>
+    <div class="dont-row"><span data-lang="es"><strong>No</strong> modificar la jerarquía entre marcas.</span><span data-lang="en"><strong>Do not</strong> alter the hierarchy between brands.</span></div>
+    <div class="dont-row"><span data-lang="es"><strong>No</strong> aplicar efectos.</span><span data-lang="en"><strong>Do not</strong> apply effects.</span></div>
   </div>
-  <p class="small-note" style="margin-top:14px;">La tercera es la menos obvia y la más importante: <strong style="color:var(--base);">&laquo;Linex Travel&raquo; y &laquo;Formerly UltraGroup&raquo; no son dos marcas del mismo rango.</strong> El endoso va siempre más pequeño y más abajo. Igualarlos, o poner UltraGroup encima, cuenta una historia que no es la que la compañía está contando.</p>
+  <p class="small-note" style="margin-top:14px;"><span data-lang="es">La tercera es la menos obvia y la más importante: <strong style="color:var(--base);">&laquo;Linex Travel&raquo; y &laquo;Formerly UltraGroup&raquo; no son dos marcas del mismo rango.</strong> El endoso va siempre más pequeño y más abajo. Igualarlos, o poner UltraGroup encima, cuenta una historia que no es la que la compañía está contando.</span><span data-lang="en">The third is the least obvious and the most important: <strong style="color:var(--base);">&laquo;Linex Travel&raquo; and &laquo;Formerly UltraGroup&raquo; are not two brands of the same rank.</strong> The endorsement always sits smaller and lower. Making them equal, or putting UltraGroup on top, tells a story that isn't the one the company is telling.</span></p>
 </section>
 
 <section class="section-block">
-  <h2 class="section-title">La tinta del logotipo no es la de la paleta</h2>
-  <p>Esto hay que saberlo antes de producir cualquier pieza. Los archivos del logotipo están pintados con oscuros que <em>no</em> son el Azul Noche de la paleta, y con un violeta que no es exactamente el Azul violeta.</p>
+  <h2 class="section-title"><span data-lang="es">La tinta del logotipo no es la de la paleta</span><span data-lang="en">The logo ink is not the palette's</span></h2>
+  <p><span data-lang="es">Esto hay que saberlo antes de producir cualquier pieza. Los archivos del logotipo están pintados con oscuros que <em>no</em> son el Azul Noche de la paleta, y con un violeta que no es exactamente el Azul violeta.</span><span data-lang="en">This needs to be known before producing any piece. The logo files are painted in dark tones that are <em>not</em> the palette's Night blue, and in a violet that isn't exactly Blue-violet.</span></p>
 
   <div class="table-scroll">
     <table class="rtable">
-      <tr><td class="name">Tinta del monocromo</td><td><strong>#1A0E3E</strong> &mdash; a &Delta;E 8.2 del Azul Noche #17153B</td></tr>
-      <tr><td class="name">Oscuro de la versión color</td><td><strong>#150D40</strong> &mdash; a &Delta;E 10.0 del Azul Noche</td></tr>
-      <tr><td class="name">Violeta de la versión color</td><td><strong>#5C57FC</strong> &mdash; a &Delta;E 2.4 del Azul violeta #5B5CFF</td></tr>
-      <tr><td class="name">Gris del endoso</td><td><strong>#B4B4B4</strong> &mdash; no está en la paleta</td></tr>
+      <tr data-lang="es"><td class="name">Tinta del monocromo</td><td><strong>#1A0E3E</strong> &mdash; a &Delta;E 8.2 del Azul Noche #17153B</td></tr><tr data-lang="en"><td class="name">Monochrome ink</td><td><strong>#1A0E3E</strong> &mdash; &Delta;E 8.2 from Night blue #17153B</td></tr>
+      <tr data-lang="es"><td class="name">Oscuro de la versión color</td><td><strong>#150D40</strong> &mdash; a &Delta;E 10.0 del Azul Noche</td></tr><tr data-lang="en"><td class="name">Dark tone in the colour version</td><td><strong>#150D40</strong> &mdash; &Delta;E 10.0 from Night blue</td></tr>
+      <tr data-lang="es"><td class="name">Violeta de la versión color</td><td><strong>#5C57FC</strong> &mdash; a &Delta;E 2.4 del Azul violeta #5B5CFF</td></tr><tr data-lang="en"><td class="name">Violet in the colour version</td><td><strong>#5C57FC</strong> &mdash; &Delta;E 2.4 from Blue-violet #5B5CFF</td></tr>
+      <tr data-lang="es"><td class="name">Gris del endoso</td><td><strong>#B4B4B4</strong> &mdash; no está en la paleta</td></tr><tr data-lang="en"><td class="name">Endorsement grey</td><td><strong>#B4B4B4</strong> &mdash; not in the palette</td></tr>
     </table>
   </div>
 
   <div class="callout pending" style="margin-top:18px;">
-    <span class="tag">TRANSITORIO &middot; 2026-09-17</span>
-    <p>Por decisión del dueño de marca, <strong style="color:var(--base);">mandan los archivos por ahora</strong>, para no detener la producción. Los SVG se van a recolorear a la paleta del manual, y cuando eso pase esta sección desaparece y queda una sola verdad.<br>
-    Mientras tanto: <strong style="color:var(--base);">la paleta gobierna las piezas y el archivo gobierna el logotipo.</strong> No se corrige el color del logotipo a mano en una pieza suelta &mdash; eso produce dos versiones distintas circulando.</p>
+    <span class="tag"><span data-lang="es">TRANSITORIO &middot; 2026-09-17</span><span data-lang="en">TRANSITIONAL &middot; 2026-09-17</span></span>
+    <p><span data-lang="es">Por decisión del dueño de marca, <strong style="color:var(--base);">mandan los archivos por ahora</strong>, para no detener la producción. Los SVG se van a recolorear a la paleta del manual, y cuando eso pase esta sección desaparece y queda una sola verdad.<br>
+    Mientras tanto: <strong style="color:var(--base);">la paleta gobierna las piezas y el archivo gobierna el logotipo.</strong> No se corrige el color del logotipo a mano en una pieza suelta &mdash; eso produce dos versiones distintas circulando.</span><span data-lang="en">By the brand owner's decision, <strong style="color:var(--base);">the files rule for now</strong>, so as not to stop production. The SVGs will be recoloured to the manual's palette, and once that happens this section goes away and a single truth remains.<br>
+    In the meantime: <strong style="color:var(--base);">the palette governs pieces and the file governs the logo.</strong> The logo's colour is never hand-corrected in a one-off piece &mdash; that's how two different versions end up in circulation.</span></p>
   </div>
 
   <div class="callout" style="background:rgba(var(--coral-rgb),0.07); border:1px solid rgba(var(--coral-rgb),0.28); margin-top:14px;">
-    <span class="tag" style="color:var(--coral);">OJO</span>
-    <p>El <strong style="color:var(--base);">#1A0E3E</strong> del monocromo está a <strong style="color:var(--base);">&Delta;E 0.0</strong> del índigo que Linex&nbsp;Go tiene declarado como oficial para <em>su</em> logotipo. Hoy la marca madre y una de sus sub-marcas comparten la tinta del logotipo sin que nadie lo haya decidido. Si Travel y Go van juntas en una pieza, los dos logotipos se leen como el mismo color.</p>
+    <span class="tag" style="color:var(--coral);"><span data-lang="es">OJO</span><span data-lang="en">WORTH NOTING</span></span>
+    <p><span data-lang="es">El <strong style="color:var(--base);">#1A0E3E</strong> del monocromo está a <strong style="color:var(--base);">&Delta;E 0.0</strong> del índigo que Linex&nbsp;Go tiene declarado como oficial para <em>su</em> logotipo. Hoy la marca madre y una de sus sub-marcas comparten la tinta del logotipo sin que nadie lo haya decidido. Si Travel y Go van juntas en una pieza, los dos logotipos se leen como el mismo color.</span><span data-lang="en">The monochrome's <strong style="color:var(--base);">#1A0E3E</strong> sits at <strong style="color:var(--base);">&Delta;E 0.0</strong> from the indigo Linex&nbsp;Go has declared official for <em>its</em> own logo. Today the parent brand and one of its sub-brands share their logo ink without anyone having decided that. If Travel and Go appear together in one piece, the two logos read as the same colour.</span></p>
   </div>
 </section>
 
       <div class="footer-meta">
-        <span>manual-marca-linex-travel-v1.0 &middot; sitio estático de distribución</span>
-        <span>Manual de Marca de Linex Travel &middot; 2026</span>
+        <span><span data-lang="es">manual-marca-linex-travel-v1.0 &middot; sitio estático de distribución</span><span data-lang="en">manual-marca-linex-travel-v1.0 &middot; static distribution site</span></span>
+        <span><span data-lang="es">Manual de Marca de Linex Travel &middot; 2026</span><span data-lang="en">Linex Travel Brand Manual &middot; 2026</span></span>
       </div>
       <!--pager-->
-      <div class="pager"><a class="prev" href="index.html"><span class="dir">&larr; Anterior</span><span class="lbl">Portada</span></a><a class="next" href="02-estado-logotipo.html"><span class="dir">Siguiente &rarr;</span><span class="lbl">02 &middot; Estado del logotipo</span></a></div>
+      <div class="pager"><a class="prev" href="index.html"><span class="dir"><span data-lang="es">&larr; Anterior</span><span data-lang="en">&larr; Previous</span></span><span class="lbl"><span data-lang="es">Portada</span><span data-lang="en">Home</span></span></a><a class="next" href="02-estado-logotipo.html"><span class="dir"><span data-lang="es">Siguiente &rarr;</span><span data-lang="en">Next &rarr;</span></span><span class="lbl">02 &middot; <span data-lang="es">Estado del logotipo</span><span data-lang="en">Logo status</span></span></a></div>
       <!--/pager-->
     </div>
   </main>

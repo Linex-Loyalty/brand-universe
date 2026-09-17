@@ -10,11 +10,14 @@
 </head>
 <body style="background:var(--paper);">
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
+<input type="radio" name="idioma" id="idioma-es" class="idioma-radio" checked>
+<input type="radio" name="idioma" id="idioma-en" class="idioma-radio">
 <div class="topbar">
-  <span class="topbar-brand">Linex Travel <small>MANUAL DE MARCA</small></span>
+  <span class="topbar-brand">Linex Travel <small><span data-lang="es">MANUAL DE MARCA</span><span data-lang="en">BRAND MANUAL</span></small></span>
+  <div class="idioma-switch"><label for="idioma-es">ES</label><label for="idioma-en">EN</label></div>
   <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="sidebar">
     <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
-    Menú
+    <span data-lang="es">Menú</span><span data-lang="en">Menu</span>
   </button>
 </div>
 <div class="nav-scrim" data-nav-scrim></div>
@@ -22,42 +25,43 @@
   <aside class="sidebar" id="sidebar">
     <a class="sidebar-brand" href="index.html">
       <span class="name">Linex Travel</span>
-      <span class="tag">Manual de Marca &middot; v1.0</span>
+      <span class="tag"><span data-lang="es">Manual de Marca &middot; v1.0</span><span data-lang="en">Brand Manual &middot; v1.0</span></span>
     </a>
+    <div class="idioma-switch"><label for="idioma-es">ES</label><label for="idioma-en">EN</label></div>
     <!--nav-->
-    <nav class="nav-group" aria-label="Portada">
+    <nav class="nav-group" aria-label="Portada / Home">
         <ul class="nav-list">
-          <li><a href="index.html" class="active" aria-current="page"><span class="n">00</span><span>Resumen ejecutivo</span></a></li>
+          <li><a href="index.html" class="active" aria-current="page"><span class="n">00</span><span><span data-lang="es">Resumen ejecutivo</span><span data-lang="en">Executive summary</span></span></a></li>
         </ul>
     </nav>
-    <nav class="nav-group" aria-label="A · Identidad visual">
-        <span class="nav-group-title">A · Identidad visual</span>
+    <nav class="nav-group" aria-label="A · Identidad visual / A · Visual identity">
+        <span class="nav-group-title"><span data-lang="es">A · Identidad visual</span><span data-lang="en">A · Visual identity</span></span>
         <ul class="nav-list">
-          <li><a href="01-logotipo.html"><span class="n">01</span><span>Logotipo</span></a></li>
-          <li><a href="02-estado-logotipo.html"><span class="n">02</span><span>Estado del logotipo</span></a></li>
-          <li><a href="03-paleta-color.html"><span class="n">03</span><span>Paleta de color</span></a></li>
-          <li><a href="04-tipografia.html"><span class="n">04</span><span>Tipografía</span></a></li>
-          <li><a href="05-iconografia-canal.html"><span class="n">05</span><span>Iconografía y diseño por canal</span></a></li>
-          <li><a href="06-sistema-fotografia.html"><span class="n">06</span><span>Sistema gráfico y fotografía</span></a></li>
-          <li><a href="07-accesibilidad.html"><span class="n">07</span><span>Accesibilidad</span></a></li>
+          <li><a href="01-logotipo.html"><span class="n">01</span><span><span data-lang="es">Logotipo</span><span data-lang="en">Logo</span></span></a></li>
+          <li><a href="02-estado-logotipo.html"><span class="n">02</span><span><span data-lang="es">Estado del logotipo</span><span data-lang="en">Logo status</span></span></a></li>
+          <li><a href="03-paleta-color.html"><span class="n">03</span><span><span data-lang="es">Paleta de color</span><span data-lang="en">Colour palette</span></span></a></li>
+          <li><a href="04-tipografia.html"><span class="n">04</span><span><span data-lang="es">Tipografía</span><span data-lang="en">Typography</span></span></a></li>
+          <li><a href="05-iconografia-canal.html"><span class="n">05</span><span><span data-lang="es">Iconografía y diseño por canal</span><span data-lang="en">Iconography and channel design</span></span></a></li>
+          <li><a href="06-sistema-fotografia.html"><span class="n">06</span><span><span data-lang="es">Sistema gráfico y fotografía</span><span data-lang="en">Graphic system and photography</span></span></a></li>
+          <li><a href="07-accesibilidad.html"><span class="n">07</span><span><span data-lang="es">Accesibilidad</span><span data-lang="en">Accessibility</span></span></a></li>
         </ul>
     </nav>
-    <nav class="nav-group" aria-label="B · Quién es y cómo habla">
-        <span class="nav-group-title">B · Quién es y cómo habla</span>
+    <nav class="nav-group" aria-label="B · Quién es y cómo habla / B · Who it is and how it speaks">
+        <span class="nav-group-title"><span data-lang="es">B · Quién es y cómo habla</span><span data-lang="en">B · Who it is and how it speaks</span></span>
         <ul class="nav-list">
-          <li><a href="08-arquitectura.html"><span class="n">08</span><span>Arquitectura y nombre</span></a></li>
-          <li><a href="09-audiencias.html"><span class="n">09</span><span>Audiencias</span></a></li>
-          <li><a href="10-propuesta-valor.html"><span class="n">10</span><span>Propuesta de valor y claims</span></a></li>
-          <li><a href="11-voz-tono.html"><span class="n">11</span><span>Voz y tono</span></a></li>
-          <li><a href="12-vocabulario.html"><span class="n">12</span><span>Vocabulario</span></a></li>
+          <li><a href="08-arquitectura.html"><span class="n">08</span><span><span data-lang="es">Arquitectura y nombre</span><span data-lang="en">Architecture and naming</span></span></a></li>
+          <li><a href="09-audiencias.html"><span class="n">09</span><span><span data-lang="es">Audiencias</span><span data-lang="en">Audiences</span></span></a></li>
+          <li><a href="10-propuesta-valor.html"><span class="n">10</span><span><span data-lang="es">Propuesta de valor y claims</span><span data-lang="en">Value proposition and claims</span></span></a></li>
+          <li><a href="11-voz-tono.html"><span class="n">11</span><span><span data-lang="es">Voz y tono</span><span data-lang="en">Voice and tone</span></span></a></li>
+          <li><a href="12-vocabulario.html"><span class="n">12</span><span><span data-lang="es">Vocabulario</span><span data-lang="en">Vocabulary</span></span></a></li>
         </ul>
     </nav>
-    <nav class="nav-group" aria-label="C · Cómo se aplica">
-        <span class="nav-group-title">C · Cómo se aplica</span>
+    <nav class="nav-group" aria-label="C · Cómo se aplica / C · How it is applied">
+        <span class="nav-group-title"><span data-lang="es">C · Cómo se aplica</span><span data-lang="en">C · How it is applied</span></span>
         <ul class="nav-list">
-          <li><a href="13-promociones-cta.html"><span class="n">13</span><span>Promociones y CTA</span></a></li>
-          <li><a href="14-entregables.html"><span class="n">14</span><span>Entregables y aplicaciones</span></a></li>
-          <li><a href="15-redes-sociales.html"><span class="n">15</span><span>Redes sociales</span></a></li>
+          <li><a href="13-promociones-cta.html"><span class="n">13</span><span><span data-lang="es">Promociones y CTA</span><span data-lang="en">Promotions and CTAs</span></span></a></li>
+          <li><a href="14-entregables.html"><span class="n">14</span><span><span data-lang="es">Entregables y aplicaciones</span><span data-lang="en">Deliverables and applications</span></span></a></li>
+          <li><a href="15-redes-sociales.html"><span class="n">15</span><span><span data-lang="es">Redes sociales</span><span data-lang="en">Social media</span></span></a></li>
         </ul>
     </nav>
     <!--/nav-->
@@ -65,51 +69,52 @@
   <main class="main" id="contenido">
     <div class="main-inner">
 
-<p class="page-index"><span class="page-index-n">00</span><span class="eyebrow">Resumen ejecutivo</span></p>
+<p class="page-index"><span class="page-index-n">00</span><span class="eyebrow"><span data-lang="es">Resumen ejecutivo</span><span data-lang="en">Executive summary</span></span></p>
 <h1 class="page-title">Linex Travel</h1>
-<p class="lede">La marca de viaje del grupo Linex, y la más grande que opera hoy. Antes se llamaba UltraGroup. Este manual dice cómo se usa &mdash; y dice también, sin maquillarlo, qué todavía no está decidido.</p>
+<p class="lede"><span data-lang="es">La marca de viaje del grupo Linex, y la más grande que opera hoy. Antes se llamaba UltraGroup. Este manual dice cómo se usa &mdash; y dice también, sin maquillarlo, qué todavía no está decidido.</span><span data-lang="en">The Linex group's travel brand, and the largest one operating today. It used to be called UltraGroup. This manual states how it is used &mdash; and also states, plainly, what has not been decided yet.</span></p>
 
 <section class="section-block">
-  <h2 class="section-title">Lo esencial, en una lámina</h2>
+  <span data-lang="es"><h2 class="section-title">Lo esencial, en una lámina</h2></span><span data-lang="en"><h2 class="section-title">The essentials, on one page</h2></span>
   <div class="table-scroll">
     <table class="rtable">
-      <tr><td class="name">Qué es</td><td>Una compañía de <strong>travel commerce con IA primero</strong>, que transforma cómo las organizaciones conectan a la gente con el viaje.</td></tr>
-      <tr><td class="name">A quién le habla</td><td>A <strong>organizaciones</strong>. Cuando la pieza se dirige a un viajero, la marca es Linex Trip; cuando se dirige a una agencia, es Linex Go.</td></tr>
-      <tr><td class="name">Logotipo</td><td>Cuatro versiones, con el endoso <strong>&laquo;Formerly UltraGroup&raquo;</strong> hasta diciembre de 2026.</td></tr>
-      <tr><td class="name">Color</td><td>Seis: Lavanda 40% &middot; Azul violeta 20% &middot; Violeta 10% &middot; Lila claro 10% &middot; Azul Noche 10% &middot; Negro 10%.</td></tr>
-      <tr><td class="name">Tipografía</td><td><strong>Geist</strong> en lo diseñado. <strong>Segoe UI + Calibri</strong> en lo operativo.</td></tr>
-      <tr><td class="name">Voz</td><td>Clara, profesional, cercana, inspiradora, tecnológica y <strong>multilenguaje</strong>.</td></tr>
-      <tr><td class="name">Dominio</td><td>linextravel.com &middot; correo @linextravel.com</td></tr>
-      <tr><td class="name">Vigencia</td><td>Hasta el <strong>31 de diciembre de 2026</strong>. Nueva edición en enero de 2027 sin UltraGroup.</td></tr>
+      <tr data-lang="es"><td class="name">Qué es</td><td>Una compañía de <strong>travel commerce con IA primero</strong>, que transforma cómo las organizaciones conectan a la gente con el viaje.</td></tr><tr data-lang="en"><td class="name">What it is</td><td>An <strong>AI-first travel commerce</strong> company that transforms how organisations connect people with travel.</td></tr>
+      <tr data-lang="es"><td class="name">A quién le habla</td><td>A <strong>organizaciones</strong>. Cuando la pieza se dirige a un viajero, la marca es Linex Trip; cuando se dirige a una agencia, es Linex Go.</td></tr><tr data-lang="en"><td class="name">Who it speaks to</td><td>To <strong>organisations</strong>. When a piece speaks to a traveller, the brand is Linex Trip; when it speaks to an agency, it is Linex Go.</td></tr>
+      <tr data-lang="es"><td class="name">Logotipo</td><td>Cuatro versiones, con el endoso <strong>&laquo;Formerly UltraGroup&raquo;</strong> hasta diciembre de 2026.</td></tr><tr data-lang="en"><td class="name">Logo</td><td>Four versions, carrying the <strong>&laquo;Formerly UltraGroup&raquo;</strong> endorsement until December 2026.</td></tr>
+      <tr data-lang="es"><td class="name">Color</td><td>Seis: Lavanda 40% &middot; Azul violeta 20% &middot; Violeta 10% &middot; Lila claro 10% &middot; Azul Noche 10% &middot; Negro 10%.</td></tr><tr data-lang="en"><td class="name">Colour</td><td>Six: Lavender 40% &middot; Blue-violet 20% &middot; Violet 10% &middot; Light lilac 10% &middot; Night blue 10% &middot; Black 10%.</td></tr>
+      <tr data-lang="es"><td class="name">Tipografía</td><td><strong>Geist</strong> en lo diseñado. <strong>Segoe UI + Calibri</strong> en lo operativo.</td></tr><tr data-lang="en"><td class="name">Typography</td><td><strong>Geist</strong> for designed pieces. <strong>Segoe UI + Calibri</strong> for operational documents.</td></tr>
+      <tr data-lang="es"><td class="name">Voz</td><td>Clara, profesional, cercana, inspiradora, tecnológica y <strong>multilenguaje</strong>.</td></tr><tr data-lang="en"><td class="name">Voice</td><td>Clear, professional, warm, inspiring, technological and <strong>multilingual</strong>.</td></tr>
+      <tr data-lang="es"><td class="name">Dominio</td><td>linextravel.com &middot; correo @linextravel.com</td></tr><tr data-lang="en"><td class="name">Domain</td><td>linextravel.com &middot; email @linextravel.com</td></tr>
+      <tr data-lang="es"><td class="name">Vigencia</td><td>Hasta el <strong>31 de diciembre de 2026</strong>. Nueva edición en enero de 2027 sin UltraGroup.</td></tr><tr data-lang="en"><td class="name">In force until</td><td>Until <strong>31 December 2026</strong>. A new edition ships in January 2027, without UltraGroup.</td></tr>
     </table>
   </div>
 </section>
 
 <section class="section-block">
-  <h2 class="section-title">Las tres cosas que más se equivocan</h2>
+  <span data-lang="es"><h2 class="section-title">Las tres cosas que más se equivocan</h2></span><span data-lang="en"><h2 class="section-title">The three things most often gotten wrong</h2></span>
 
   <div class="callout" style="background:rgba(var(--coral-rgb),0.07); border:1px solid rgba(var(--coral-rgb),0.28);">
-    <span class="tag" style="color:var(--coral);">1 &middot; EL COLOR DE LA MARCA NO ES UN COLOR DE TEXTO</span>
-    <p>El <strong style="color:var(--base);">Azul violeta #5B5CFF</strong> es el de la palabra <em>Travel</em> y por eso es el que todo el mundo quiere usar. Sobre el fondo lavanda de la marca da <strong style="color:var(--base);">3.69:1</strong> y no pasa AA.<br>
-    <strong style="color:var(--base);">El Azul violeta rellena; el Violeta escribe.</strong> Detalle completo en la <a href="03-paleta-color.html">sección 03</a>.</p>
+    <span class="tag" style="color:var(--coral);"><span data-lang="es">1 &middot; EL COLOR DE LA MARCA NO ES UN COLOR DE TEXTO</span><span data-lang="en">1 &middot; THE BRAND'S SIGNATURE COLOUR IS NOT A TEXT COLOUR</span></span>
+    <p><span data-lang="es">El <strong style="color:var(--base);">Azul violeta #5B5CFF</strong> es el de la palabra <em>Travel</em> y por eso es el que todo el mundo quiere usar. Sobre el fondo lavanda de la marca da <strong style="color:var(--base);">3.69:1</strong> y no pasa AA.<br>
+    <strong style="color:var(--base);">El Azul violeta rellena; el Violeta escribe.</strong> Detalle completo en la <a href="03-paleta-color.html">sección 03</a>.</span><span data-lang="en">The <strong style="color:var(--base);">Blue-violet #5B5CFF</strong> is the colour of the word <em>Travel</em>, which is exactly why everyone reaches for it. On the brand's lavender background it gives <strong style="color:var(--base);">3.69:1</strong> and fails AA.<br>
+    <strong style="color:var(--base);">Blue-violet fills; Violet writes.</strong> Full detail in <a href="03-paleta-color.html">section 03</a>.</span></p>
   </div>
 
   <div class="callout" style="background:rgba(var(--apoyo-rgb),0.07); border:1px solid rgba(var(--apoyo-rgb),0.28); margin-top:14px;">
-    <span class="tag" style="color:var(--apoyo);">2 &middot; EL ENDOSO NO ES OPCIONAL, PERO TIENE UNA EXCEPCIÓN</span>
-    <p>Hasta diciembre de 2026 el logotipo lleva <strong style="color:var(--base);">&laquo;Formerly UltraGroup&raquo;</strong>. La única excepción, escrita en el manual oficial, son las <strong style="color:var(--base);">piezas de larga duración</strong> &mdash;souvenir&mdash;, que van sin endoso desde ya porque sobreviven a la transición. Ver la <a href="08-arquitectura.html">sección 08</a>.</p>
+    <span class="tag" style="color:var(--apoyo);"><span data-lang="es">2 &middot; EL ENDOSO NO ES OPCIONAL, PERO TIENE UNA EXCEPCIÓN</span><span data-lang="en">2 &middot; THE ENDORSEMENT IS NOT OPTIONAL, BUT IT HAS ONE EXCEPTION</span></span>
+    <p><span data-lang="es">Hasta diciembre de 2026 el logotipo lleva <strong style="color:var(--base);">&laquo;Formerly UltraGroup&raquo;</strong>. La única excepción, escrita en el manual oficial, son las <strong style="color:var(--base);">piezas de larga duración</strong> &mdash;souvenir&mdash;, que van sin endoso desde ya porque sobreviven a la transición. Ver la <a href="08-arquitectura.html">sección 08</a>.</span><span data-lang="en">Until December 2026 the logo carries <strong style="color:var(--base);">&laquo;Formerly UltraGroup&raquo;</strong>. The one exception, written into the official manual, is <strong style="color:var(--base);">long-lived items</strong> &mdash;merchandise&mdash;, which go without the endorsement already, because they outlive the transition. See <a href="08-arquitectura.html">section 08</a>.</span></p>
   </div>
 
   <div class="callout" style="background:rgba(var(--apoyo-rgb),0.07); border:1px solid rgba(var(--apoyo-rgb),0.28); margin-top:14px;">
-    <span class="tag" style="color:var(--apoyo);">3 &middot; SOBRE FONDO OSCURO NO SIRVE NINGÚN VIOLETA</span>
-    <p>Sobre el Azul Noche, el Violeta da 2.45:1 y el Azul violeta 3.66:1. Los dos fallan. Ahí el texto va en <strong style="color:var(--base);">blanco, Lavanda o Lila claro</strong>, y el logotipo en <strong style="color:var(--base);">negativo</strong>. Ver la <a href="07-accesibilidad.html">sección 07</a>.</p>
+    <span class="tag" style="color:var(--apoyo);"><span data-lang="es">3 &middot; SOBRE FONDO OSCURO NO SIRVE NINGÚN VIOLETA</span><span data-lang="en">3 &middot; ON A DARK BACKGROUND, NEITHER VIOLET WORKS</span></span>
+    <p><span data-lang="es">Sobre el Azul Noche, el Violeta da 2.45:1 y el Azul violeta 3.66:1. Los dos fallan. Ahí el texto va en <strong style="color:var(--base);">blanco, Lavanda o Lila claro</strong>, y el logotipo en <strong style="color:var(--base);">negativo</strong>. Ver la <a href="07-accesibilidad.html">sección 07</a>.</span><span data-lang="en">On Night blue, Violet gives 2.45:1 and Blue-violet 3.66:1. Both fail. There, text goes in <strong style="color:var(--base);">white, Lavender or Light lilac</strong>, and the logo in <strong style="color:var(--base);">reverse</strong>. See <a href="07-accesibilidad.html">section 07</a>.</span></p>
   </div>
 </section>
 
 <section class="section-block">
-  <h2 class="section-title">Cómo está hecho este manual</h2>
-  <p>Todo lo que dice sale de una sola fuente: la entrada de Linex Travel en <code>brand-tokens.json</code>, que a su vez se llenó con el manual oficial de la marca del 10 de septiembre de 2026.</p>
-  <p><strong>Ningún contraste de este manual se estimó.</strong> Todos se calculan con la fórmula de WCAG&nbsp;2.1 y una prueba automática los vuelve a calcular cada vez que algo cambia. Si un número estuviera mal, la prueba falla antes de que alguien lo lea.</p>
-  <p class="small-note">Y lo que no está decidido aparece marcado como <strong style="color:var(--base);">pendiente</strong>, nunca rellenado con algo verosímil. Una paleta plausible para una marca que no tiene paleta es el peor resultado posible: se ve bien, nadie la cuestiona, y a los seis meses <em>es</em> la paleta.</p>
+  <span data-lang="es"><h2 class="section-title">Cómo está hecho este manual</h2></span><span data-lang="en"><h2 class="section-title">How this manual is built</h2></span>
+  <p><span data-lang="es">Todo lo que dice sale de una sola fuente: la entrada de Linex Travel en <code>brand-tokens.json</code>, que a su vez se llenó con el manual oficial de la marca del 10 de septiembre de 2026.</span><span data-lang="en">Everything it states comes from a single source: the Linex Travel entry in <code>brand-tokens.json</code>, which was in turn filled from the brand's official manual of 10 September 2026.</span></p>
+  <p><span data-lang="es"><strong>Ningún contraste de este manual se estimó.</strong> Todos se calculan con la fórmula de WCAG&nbsp;2.1 y una prueba automática los vuelve a calcular cada vez que algo cambia. Si un número estuviera mal, la prueba falla antes de que alguien lo lea.</span><span data-lang="en"><strong>No contrast ratio in this manual was estimated.</strong> All of them are computed with the WCAG&nbsp;2.1 formula, and an automated test recalculates them every time something changes. If a number were wrong, the test would fail before anyone read it.</span></p>
+  <p class="small-note"><span data-lang="es">Y lo que no está decidido aparece marcado como <strong style="color:var(--base);">pendiente</strong>, nunca rellenado con algo verosímil. Una paleta plausible para una marca que no tiene paleta es el peor resultado posible: se ve bien, nadie la cuestiona, y a los seis meses <em>es</em> la paleta.</span><span data-lang="en">And whatever has not been decided is marked as <strong style="color:var(--base);">pending</strong>, never filled in with something plausible. A believable palette for a brand with no palette is the worst possible outcome: it looks right, nobody questions it, and six months later it <em>is</em> the palette.</span></p>
 </section>
 
 <section class="section-block">
@@ -117,33 +122,33 @@
   <!--indice-->
   <div class="grid-3" style="gap:22px; align-items:start;">
       <div>
-        <span class="nav-group-title" style="color:var(--apoyo); padding-left:0;">A · Identidad visual</span>
+        <span class="nav-group-title" style="color:var(--apoyo); padding-left:0;"><span data-lang="es">A · Identidad visual</span><span data-lang="en">A · Visual identity</span></span>
         <ul style="list-style:none; margin:8px 0 0; padding:0;">
-        <li><a href="01-logotipo.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">01</span>Logotipo</a></li>
-        <li><a href="02-estado-logotipo.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">02</span>Estado del logotipo</a></li>
-        <li><a href="03-paleta-color.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">03</span>Paleta de color</a></li>
-        <li><a href="04-tipografia.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">04</span>Tipografía</a></li>
-        <li><a href="05-iconografia-canal.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">05</span>Iconografía y diseño por canal</a></li>
-        <li><a href="06-sistema-fotografia.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">06</span>Sistema gráfico y fotografía</a></li>
-        <li><a href="07-accesibilidad.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">07</span>Accesibilidad</a></li>
+        <li><a href="01-logotipo.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">01</span><span data-lang="es">Logotipo</span><span data-lang="en">Logo</span></a></li>
+        <li><a href="02-estado-logotipo.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">02</span><span data-lang="es">Estado del logotipo</span><span data-lang="en">Logo status</span></a></li>
+        <li><a href="03-paleta-color.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">03</span><span data-lang="es">Paleta de color</span><span data-lang="en">Colour palette</span></a></li>
+        <li><a href="04-tipografia.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">04</span><span data-lang="es">Tipografía</span><span data-lang="en">Typography</span></a></li>
+        <li><a href="05-iconografia-canal.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">05</span><span data-lang="es">Iconografía y diseño por canal</span><span data-lang="en">Iconography and channel design</span></a></li>
+        <li><a href="06-sistema-fotografia.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">06</span><span data-lang="es">Sistema gráfico y fotografía</span><span data-lang="en">Graphic system and photography</span></a></li>
+        <li><a href="07-accesibilidad.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">07</span><span data-lang="es">Accesibilidad</span><span data-lang="en">Accessibility</span></a></li>
         </ul>
       </div>
       <div>
-        <span class="nav-group-title" style="color:var(--apoyo); padding-left:0;">B · Quién es y cómo habla</span>
+        <span class="nav-group-title" style="color:var(--apoyo); padding-left:0;"><span data-lang="es">B · Quién es y cómo habla</span><span data-lang="en">B · Who it is and how it speaks</span></span>
         <ul style="list-style:none; margin:8px 0 0; padding:0;">
-        <li><a href="08-arquitectura.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">08</span>Arquitectura y nombre</a></li>
-        <li><a href="09-audiencias.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">09</span>Audiencias</a></li>
-        <li><a href="10-propuesta-valor.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">10</span>Propuesta de valor y claims</a></li>
-        <li><a href="11-voz-tono.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">11</span>Voz y tono</a></li>
-        <li><a href="12-vocabulario.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">12</span>Vocabulario</a></li>
+        <li><a href="08-arquitectura.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">08</span><span data-lang="es">Arquitectura y nombre</span><span data-lang="en">Architecture and naming</span></a></li>
+        <li><a href="09-audiencias.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">09</span><span data-lang="es">Audiencias</span><span data-lang="en">Audiences</span></a></li>
+        <li><a href="10-propuesta-valor.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">10</span><span data-lang="es">Propuesta de valor y claims</span><span data-lang="en">Value proposition and claims</span></a></li>
+        <li><a href="11-voz-tono.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">11</span><span data-lang="es">Voz y tono</span><span data-lang="en">Voice and tone</span></a></li>
+        <li><a href="12-vocabulario.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">12</span><span data-lang="es">Vocabulario</span><span data-lang="en">Vocabulary</span></a></li>
         </ul>
       </div>
       <div>
-        <span class="nav-group-title" style="color:var(--apoyo); padding-left:0;">C · Cómo se aplica</span>
+        <span class="nav-group-title" style="color:var(--apoyo); padding-left:0;"><span data-lang="es">C · Cómo se aplica</span><span data-lang="en">C · How it is applied</span></span>
         <ul style="list-style:none; margin:8px 0 0; padding:0;">
-        <li><a href="13-promociones-cta.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">13</span>Promociones y CTA</a></li>
-        <li><a href="14-entregables.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">14</span>Entregables y aplicaciones</a></li>
-        <li><a href="15-redes-sociales.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">15</span>Redes sociales</a></li>
+        <li><a href="13-promociones-cta.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">13</span><span data-lang="es">Promociones y CTA</span><span data-lang="en">Promotions and CTAs</span></a></li>
+        <li><a href="14-entregables.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">14</span><span data-lang="es">Entregables y aplicaciones</span><span data-lang="en">Deliverables and applications</span></a></li>
+        <li><a href="15-redes-sociales.html" style="display:flex; gap:10px; padding:7px 0; font-size:13.5px; border-bottom:1px solid rgba(var(--base-rgb),0.07); color:var(--base);"><span style="font-weight:700; flex:none; width:18px; color:var(--apoyo);">15</span><span data-lang="es">Redes sociales</span><span data-lang="en">Social media</span></a></li>
         </ul>
       </div>
   </div>
@@ -151,26 +156,26 @@
 </section>
 
 <section class="section-block">
-  <h2 class="section-title">Qué falta</h2>
-  <p>Diecisiete asuntos abiertos, ninguno de los cuales impide trabajar hoy. Los cinco que más pesan:</p>
+  <span data-lang="es"><h2 class="section-title">Qué falta</h2></span><span data-lang="en"><h2 class="section-title">What is missing</h2></span>
+  <p><span data-lang="es">Diecisiete asuntos abiertos, ninguno de los cuales impide trabajar hoy. Los cinco que más pesan:</span><span data-lang="en">Seventeen open items, none of which block work today. The five that matter most:</span></p>
   <div class="table-scroll">
     <table class="rtable">
-      <tr><td class="name">El logotipo</td><td>Los archivos están pintados con colores que no son los de la paleta. El dueño de marca los va a recolorear. <a href="01-logotipo.html">Sección 01</a></td></tr>
-      <tr><td class="name">Las proporciones</td><td>Las cuatro piezas del logotipo no comparten proporción: 5.11:1 contra 4.35:1. <a href="02-estado-logotipo.html">Sección 02</a></td></tr>
-      <tr><td class="name">El canal B2B2C</td><td>El organigrama le da tres canales a Travel y solo dos tienen marca. <a href="08-arquitectura.html">Sección 08</a></td></tr>
-      <tr><td class="name">Audiencias y claims</td><td>Los tres canales están nombrados pero sin perfilar, y no hay lista de afirmaciones autorizadas. <a href="09-audiencias.html">Secciones 09</a> y <a href="10-propuesta-valor.html">10</a></td></tr>
-      <tr><td class="name">Iconografía corporativa</td><td>Siete de los doce íconos del manual oficial &mdash;IA, crecimiento, beneficios&mdash; no existen en el diccionario del grupo. <a href="05-iconografia-canal.html">Sección 05</a></td></tr>
+      <tr data-lang="es"><td class="name">El logotipo</td><td>Los archivos están pintados con colores que no son los de la paleta. El dueño de marca los va a recolorear. <a href="01-logotipo.html">Sección 01</a></td></tr><tr data-lang="en"><td class="name">The logo</td><td>The files are painted in colours that are not the palette's. The brand owner will have them recoloured. <a href="01-logotipo.html">Section 01</a></td></tr>
+      <tr data-lang="es"><td class="name">Las proporciones</td><td>Las cuatro piezas del logotipo no comparten proporción: 5.11:1 contra 4.35:1. <a href="02-estado-logotipo.html">Sección 02</a></td></tr><tr data-lang="en"><td class="name">Proportions</td><td>The logo's four files don't share a proportion: 5.11:1 versus 4.35:1. <a href="02-estado-logotipo.html">Section 02</a></td></tr>
+      <tr data-lang="es"><td class="name">El canal B2B2C</td><td>El organigrama le da tres canales a Travel y solo dos tienen marca. <a href="08-arquitectura.html">Sección 08</a></td></tr><tr data-lang="en"><td class="name">The B2B2C channel</td><td>The org chart gives Travel three channels, and only two have a brand. <a href="08-arquitectura.html">Section 08</a></td></tr>
+      <tr data-lang="es"><td class="name">Audiencias y claims</td><td>Los tres canales están nombrados pero sin perfilar, y no hay lista de afirmaciones autorizadas. <a href="09-audiencias.html">Secciones 09</a> y <a href="10-propuesta-valor.html">10</a></td></tr><tr data-lang="en"><td class="name">Audiences and claims</td><td>All three channels are named but not profiled, and there is no list of authorised claims. <a href="09-audiencias.html">Sections 09</a> and <a href="10-propuesta-valor.html">10</a></td></tr>
+      <tr data-lang="es"><td class="name">Iconografía corporativa</td><td>Siete de los doce íconos del manual oficial &mdash;IA, crecimiento, beneficios&mdash; no existen en el diccionario del grupo. <a href="05-iconografia-canal.html">Sección 05</a></td></tr><tr data-lang="en"><td class="name">Corporate iconography</td><td>Seven of the twelve icons in the official manual &mdash;AI, growth, benefits&mdash; don't exist in the group's dictionary. <a href="05-iconografia-canal.html">Section 05</a></td></tr>
     </table>
   </div>
-  <p class="small-note" style="margin-top:12px;">La lista completa vive en <code>brand-tokens.json</code> y aparece en la tarjeta de Linex Travel del sitio Constelación.</p>
+  <p class="small-note" style="margin-top:12px;"><span data-lang="es">La lista completa vive en <code>brand-tokens.json</code> y aparece en la tarjeta de Linex Travel del sitio Constelación.</span><span data-lang="en">The full list lives in <code>brand-tokens.json</code> and appears on the Linex Travel card of the Constellation site.</span></p>
 </section>
 
       <div class="footer-meta">
-        <span>manual-marca-linex-travel-v1.0 &middot; sitio estático de distribución</span>
-        <span>Manual de Marca de Linex Travel &middot; 2026</span>
+        <span><span data-lang="es">manual-marca-linex-travel-v1.0 &middot; sitio estático de distribución</span><span data-lang="en">manual-marca-linex-travel-v1.0 &middot; static distribution site</span></span>
+        <span><span data-lang="es">Manual de Marca de Linex Travel &middot; 2026</span><span data-lang="en">Linex Travel Brand Manual &middot; 2026</span></span>
       </div>
       <!--pager-->
-      <div class="pager"><a class="prev" href="index.html"><span class="dir">&larr; Anterior</span><span class="lbl">Portada</span></a><span class="spacer"></span></div>
+      <div class="pager"><a class="prev" href="index.html"><span class="dir"><span data-lang="es">&larr; Anterior</span><span data-lang="en">&larr; Previous</span></span><span class="lbl"><span data-lang="es">Portada</span><span data-lang="en">Home</span></span></a><span class="spacer"></span></div>
       <!--/pager-->
     </div>
   </main>

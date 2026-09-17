@@ -9,12 +9,15 @@
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body style="background:var(--paper);">
-<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<a class="skip-link" href="#contenido">Saltar al contenido / Skip to content</a>
+<input type="radio" name="idioma" id="idioma-es" class="idioma-radio" checked>
+<input type="radio" name="idioma" id="idioma-en" class="idioma-radio">
 <div class="topbar">
-  <span class="topbar-brand">Linex Travel <small>MANUAL DE MARCA</small></span>
+  <span class="topbar-brand">Linex Travel <small><span data-lang="es">MANUAL DE MARCA</span><span data-lang="en">BRAND MANUAL</span></small></span>
+  <div class="idioma-switch"><label for="idioma-es">ES</label><label for="idioma-en">EN</label></div>
   <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="sidebar">
     <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
-    Menú
+    <span data-lang="es">Menú</span><span data-lang="en">Menu</span>
   </button>
 </div>
 <div class="nav-scrim" data-nav-scrim></div>
@@ -22,42 +25,43 @@
   <aside class="sidebar" id="sidebar">
     <a class="sidebar-brand" href="index.html">
       <span class="name">Linex Travel</span>
-      <span class="tag">Manual de Marca &middot; v1.0</span>
+      <span class="tag"><span data-lang="es">Manual de Marca &middot; v1.0</span><span data-lang="en">Brand Manual &middot; v1.0</span></span>
     </a>
+    <div class="idioma-switch"><label for="idioma-es">ES</label><label for="idioma-en">EN</label></div>
     <!--nav-->
-    <nav class="nav-group" aria-label="Portada">
+    <nav class="nav-group" aria-label="Portada / Home">
         <ul class="nav-list">
-          <li><a href="index.html"><span class="n">00</span><span>Resumen ejecutivo</span></a></li>
+          <li><a href="index.html"><span class="n">00</span><span><span data-lang="es">Resumen ejecutivo</span><span data-lang="en">Executive summary</span></span></a></li>
         </ul>
     </nav>
-    <nav class="nav-group" aria-label="A · Identidad visual">
-        <span class="nav-group-title">A · Identidad visual</span>
+    <nav class="nav-group" aria-label="A · Identidad visual / A · Visual identity">
+        <span class="nav-group-title"><span data-lang="es">A · Identidad visual</span><span data-lang="en">A · Visual identity</span></span>
         <ul class="nav-list">
-          <li><a href="01-logotipo.html"><span class="n">01</span><span>Logotipo</span></a></li>
-          <li><a href="02-estado-logotipo.html"><span class="n">02</span><span>Estado del logotipo</span></a></li>
-          <li><a href="03-paleta-color.html"><span class="n">03</span><span>Paleta de color</span></a></li>
-          <li><a href="04-tipografia.html"><span class="n">04</span><span>Tipografía</span></a></li>
-          <li><a href="05-iconografia-canal.html" class="active" aria-current="page"><span class="n">05</span><span>Iconografía y diseño por canal</span></a></li>
-          <li><a href="06-sistema-fotografia.html"><span class="n">06</span><span>Sistema gráfico y fotografía</span></a></li>
-          <li><a href="07-accesibilidad.html"><span class="n">07</span><span>Accesibilidad</span></a></li>
+          <li><a href="01-logotipo.html"><span class="n">01</span><span><span data-lang="es">Logotipo</span><span data-lang="en">Logo</span></span></a></li>
+          <li><a href="02-estado-logotipo.html"><span class="n">02</span><span><span data-lang="es">Estado del logotipo</span><span data-lang="en">Logo status</span></span></a></li>
+          <li><a href="03-paleta-color.html"><span class="n">03</span><span><span data-lang="es">Paleta de color</span><span data-lang="en">Colour palette</span></span></a></li>
+          <li><a href="04-tipografia.html"><span class="n">04</span><span><span data-lang="es">Tipografía</span><span data-lang="en">Typography</span></span></a></li>
+          <li><a href="05-iconografia-canal.html" class="active" aria-current="page"><span class="n">05</span><span><span data-lang="es">Iconografía y diseño por canal</span><span data-lang="en">Iconography and channel design</span></span></a></li>
+          <li><a href="06-sistema-fotografia.html"><span class="n">06</span><span><span data-lang="es">Sistema gráfico y fotografía</span><span data-lang="en">Graphic system and photography</span></span></a></li>
+          <li><a href="07-accesibilidad.html"><span class="n">07</span><span><span data-lang="es">Accesibilidad</span><span data-lang="en">Accessibility</span></span></a></li>
         </ul>
     </nav>
-    <nav class="nav-group" aria-label="B · Quién es y cómo habla">
-        <span class="nav-group-title">B · Quién es y cómo habla</span>
+    <nav class="nav-group" aria-label="B · Quién es y cómo habla / B · Who it is and how it speaks">
+        <span class="nav-group-title"><span data-lang="es">B · Quién es y cómo habla</span><span data-lang="en">B · Who it is and how it speaks</span></span>
         <ul class="nav-list">
-          <li><a href="08-arquitectura.html"><span class="n">08</span><span>Arquitectura y nombre</span></a></li>
-          <li><a href="09-audiencias.html"><span class="n">09</span><span>Audiencias</span></a></li>
-          <li><a href="10-propuesta-valor.html"><span class="n">10</span><span>Propuesta de valor y claims</span></a></li>
-          <li><a href="11-voz-tono.html"><span class="n">11</span><span>Voz y tono</span></a></li>
-          <li><a href="12-vocabulario.html"><span class="n">12</span><span>Vocabulario</span></a></li>
+          <li><a href="08-arquitectura.html"><span class="n">08</span><span><span data-lang="es">Arquitectura y nombre</span><span data-lang="en">Architecture and naming</span></span></a></li>
+          <li><a href="09-audiencias.html"><span class="n">09</span><span><span data-lang="es">Audiencias</span><span data-lang="en">Audiences</span></span></a></li>
+          <li><a href="10-propuesta-valor.html"><span class="n">10</span><span><span data-lang="es">Propuesta de valor y claims</span><span data-lang="en">Value proposition and claims</span></span></a></li>
+          <li><a href="11-voz-tono.html"><span class="n">11</span><span><span data-lang="es">Voz y tono</span><span data-lang="en">Voice and tone</span></span></a></li>
+          <li><a href="12-vocabulario.html"><span class="n">12</span><span><span data-lang="es">Vocabulario</span><span data-lang="en">Vocabulary</span></span></a></li>
         </ul>
     </nav>
-    <nav class="nav-group" aria-label="C · Cómo se aplica">
-        <span class="nav-group-title">C · Cómo se aplica</span>
+    <nav class="nav-group" aria-label="C · Cómo se aplica / C · How it is applied">
+        <span class="nav-group-title"><span data-lang="es">C · Cómo se aplica</span><span data-lang="en">C · How it is applied</span></span>
         <ul class="nav-list">
-          <li><a href="13-promociones-cta.html"><span class="n">13</span><span>Promociones y CTA</span></a></li>
-          <li><a href="14-entregables.html"><span class="n">14</span><span>Entregables y aplicaciones</span></a></li>
-          <li><a href="15-redes-sociales.html"><span class="n">15</span><span>Redes sociales</span></a></li>
+          <li><a href="13-promociones-cta.html"><span class="n">13</span><span><span data-lang="es">Promociones y CTA</span><span data-lang="en">Promotions and CTAs</span></span></a></li>
+          <li><a href="14-entregables.html"><span class="n">14</span><span><span data-lang="es">Entregables y aplicaciones</span><span data-lang="en">Deliverables and applications</span></span></a></li>
+          <li><a href="15-redes-sociales.html"><span class="n">15</span><span><span data-lang="es">Redes sociales</span><span data-lang="en">Social media</span></span></a></li>
         </ul>
     </nav>
     <!--/nav-->
@@ -65,85 +69,87 @@
   <main class="main" id="contenido">
     <div class="main-inner">
 
-<p class="page-index"><span class="page-index-n">05</span><span class="eyebrow">Iconografía y diseño por canal</span></p>
-<h1 class="page-title">Los íconos son los mismos de todo el grupo. El estilo lo pone Travel.</h1>
-<p class="lede">El manual oficial describe cómo tienen que verse los íconos, pero no nombra de dónde salen. Esa pieza la pone el grupo, y es una decisión del dueño de marca: <strong>Linex Travel usa la misma librería que Linex Go y Linex Trip.</strong></p>
+<p class="page-index"><span class="page-index-n">05</span><span class="eyebrow"><span data-lang="es">Iconografía y diseño por canal</span><span data-lang="en">Iconography and channel design</span></span></p>
+<h1 class="page-title"><span data-lang="es">Los íconos son los mismos de todo el grupo. El estilo lo pone Travel.</span><span data-lang="en">The icons are the same across the group. Travel sets the style.</span></h1>
+<p class="lede"><span data-lang="es">El manual oficial describe cómo tienen que verse los íconos, pero no nombra de dónde salen. Esa pieza la pone el grupo, y es una decisión del dueño de marca: <strong>Linex Travel usa la misma librería que Linex Go y Linex Trip.</strong></span><span data-lang="en">The official manual describes how the icons should look, but doesn't say where they come from. That piece is set by the group, and it's the brand owner's decision: <strong>Linex Travel uses the same library as Linex Go and Linex Trip.</strong></span></p>
 
 <section class="section-block">
-  <h2 class="section-title">El estilo, según el manual oficial</h2>
+  <h2 class="section-title"><span data-lang="es">El estilo, según el manual oficial</span><span data-lang="en">The style, per the official manual</span></h2>
   <div class="grid-4">
-    <div class="card tint"><strong style="font-size:13px; color:var(--base);">Lineal</strong><p class="small-note" style="margin-top:6px;">Trazo, no relleno.</p></div>
-    <div class="card tint"><strong style="font-size:13px; color:var(--base);">Limpio</strong><p class="small-note" style="margin-top:6px;">Sin adornos ni sombras.</p></div>
-    <div class="card tint"><strong style="font-size:13px; color:var(--base);">Minimalista</strong><p class="small-note" style="margin-top:6px;">Formas simples.</p></div>
-    <div class="card tint"><strong style="font-size:13px; color:var(--base);">Esquinas suaves</strong><p class="small-note" style="margin-top:6px;">Coherente con los radios del grupo.</p></div>
+    <div class="card tint"><span data-lang="es"><strong style="font-size:13px; color:var(--base);">Lineal</strong><p class="small-note" style="margin-top:6px;">Trazo, no relleno.</p></span><span data-lang="en"><strong style="font-size:13px; color:var(--base);">Lineal</strong><p class="small-note" style="margin-top:6px;">Stroke, not fill.</p></span></div>
+    <div class="card tint"><span data-lang="es"><strong style="font-size:13px; color:var(--base);">Limpio</strong><p class="small-note" style="margin-top:6px;">Sin adornos ni sombras.</p></span><span data-lang="en"><strong style="font-size:13px; color:var(--base);">Clean</strong><p class="small-note" style="margin-top:6px;">No ornament, no shadows.</p></span></div>
+    <div class="card tint"><span data-lang="es"><strong style="font-size:13px; color:var(--base);">Minimalista</strong><p class="small-note" style="margin-top:6px;">Formas simples.</p></span><span data-lang="en"><strong style="font-size:13px; color:var(--base);">Minimalist</strong><p class="small-note" style="margin-top:6px;">Simple shapes.</p></span></div>
+    <div class="card tint"><span data-lang="es"><strong style="font-size:13px; color:var(--base);">Esquinas suaves</strong><p class="small-note" style="margin-top:6px;">Coherente con los radios del grupo.</p></span><span data-lang="en"><strong style="font-size:13px; color:var(--base);">Soft corners</strong><p class="small-note" style="margin-top:6px;">Consistent with the group's radii.</p></span></div>
   </div>
-  <p style="margin-top:14px;">Y el color: los íconos van en <strong>los colores principales de la paleta</strong>. En la práctica eso significa <strong>Violeta</strong> sobre fondos claros &mdash; 7.10:1 sobre blanco y 5.51:1 sobre Lavanda, muy por encima del 3:1 que pide WCAG&nbsp;2.1 para un objeto gráfico. Sobre el fondo oscuro de la marca los íconos van en <strong>blanco</strong> o en <strong>Lila claro</strong>: ahí el Violeta da 2.45:1 y desaparece.</p>
+  <p style="margin-top:14px;"><span data-lang="es">Y el color: los íconos van en <strong>los colores principales de la paleta</strong>. En la práctica eso significa <strong>Violeta</strong> sobre fondos claros &mdash; 7.10:1 sobre blanco y 5.51:1 sobre Lavanda, muy por encima del 3:1 que pide WCAG&nbsp;2.1 para un objeto gráfico. Sobre el fondo oscuro de la marca los íconos van en <strong>blanco</strong> o en <strong>Lila claro</strong>: ahí el Violeta da 2.45:1 y desaparece.</span><span data-lang="en">And colour: icons go in <strong>the palette's primary colours</strong>. In practice that means <strong>Violet</strong> on light backgrounds &mdash; 7.10:1 on white and 5.51:1 on Lavender, well above the 3:1 WCAG&nbsp;2.1 requires for a graphic object. On the brand's dark background, icons go in <strong>white</strong> or in <strong>Light lilac</strong>: there, Violet gives 2.45:1 and disappears.</span></p>
 </section>
 
 <section class="section-block">
-  <h2 class="section-title">La librería</h2>
+  <h2 class="section-title"><span data-lang="es">La librería</span><span data-lang="en">The library</span></h2>
   <div class="table-scroll">
     <table class="rtable">
-      <tr><td class="name">Librería</td><td><strong>Font Awesome Pro</strong></td></tr>
-      <tr><td class="name">Familia</td><td>Classic</td></tr>
-      <tr><td class="name">Estilo</td><td>Regular &mdash; que es exactamente el &laquo;lineal&raquo; que pide el manual oficial</td></tr>
-      <tr><td class="name">Excepciones</td><td>Solid dentro de un contenedor relleno &middot; Solid por debajo de 4&nbsp;mm en impreso &middot; familia Brands para íconos de redes, sin recolorear</td></tr>
-      <tr><td class="name">Nunca</td><td><strong>Dibujar un ícono a mano</strong> &middot; <strong>mezclar librerías</strong></td></tr>
+      <tr data-lang="es"><td class="name">Librería</td><td><strong>Font Awesome Pro</strong></td></tr><tr data-lang="en"><td class="name">Library</td><td><strong>Font Awesome Pro</strong></td></tr>
+      <tr data-lang="es"><td class="name">Familia</td><td>Classic</td></tr><tr data-lang="en"><td class="name">Family</td><td>Classic</td></tr>
+      <tr data-lang="es"><td class="name">Estilo</td><td>Regular &mdash; que es exactamente el &laquo;lineal&raquo; que pide el manual oficial</td></tr><tr data-lang="en"><td class="name">Style</td><td>Regular &mdash; which is exactly the &laquo;lineal&raquo; the official manual calls for</td></tr>
+      <tr data-lang="es"><td class="name">Excepciones</td><td>Solid dentro de un contenedor relleno &middot; Solid por debajo de 4&nbsp;mm en impreso &middot; familia Brands para íconos de redes, sin recolorear</td></tr><tr data-lang="en"><td class="name">Exceptions</td><td>Solid inside a filled container &middot; Solid below 4&nbsp;mm in print &middot; the Brands family for social icons, never recoloured</td></tr>
+      <tr data-lang="es"><td class="name">Nunca</td><td><strong>Dibujar un ícono a mano</strong> &middot; <strong>mezclar librerías</strong></td></tr><tr data-lang="en"><td class="name">Never</td><td><strong>Drawing an icon by hand</strong> &middot; <strong>mixing libraries</strong></td></tr>
     </table>
   </div>
-  <p class="small-note" style="margin-top:12px;">La regla de fondo: <strong style="color:var(--base);">un concepto, un ícono, siempre el mismo.</strong> El diccionario es común a todo el grupo y vive en <code>brand-tokens.json</code>, no dentro de un manual, porque ninguna marca es dueña de la lista.</p>
+  <p class="small-note" style="margin-top:12px;"><span data-lang="es">La regla de fondo: <strong style="color:var(--base);">un concepto, un ícono, siempre el mismo.</strong> El diccionario es común a todo el grupo y vive en <code>brand-tokens.json</code>, no dentro de un manual, porque ninguna marca es dueña de la lista.</span><span data-lang="en">The underlying rule: <strong style="color:var(--base);">one concept, one icon, always the same one.</strong> The dictionary is shared across the group and lives in <code>brand-tokens.json</code>, not inside any one manual, because no brand owns the list.</span></p>
 </section>
 
 <section class="section-block">
-  <h2 class="section-title">Los doce íconos del manual oficial, contra el diccionario</h2>
-  <p>La lámina de iconografía muestra doce íconos. Cinco corresponden a conceptos que el diccionario del grupo ya tiene resueltos. Los otros siete no, y eso dice algo sobre Travel.</p>
+  <h2 class="section-title"><span data-lang="es">Los doce íconos del manual oficial, contra el diccionario</span><span data-lang="en">The twelve icons in the official manual, against the dictionary</span></h2>
+  <p><span data-lang="es">La lámina de iconografía muestra doce íconos. Cinco corresponden a conceptos que el diccionario del grupo ya tiene resueltos. Los otros siete no, y eso dice algo sobre Travel.</span><span data-lang="en">The iconography slide shows twelve icons. Five correspond to concepts the group's dictionary already covers. The other seven don't, and that says something about Travel.</span></p>
 
   <div class="table-scroll">
     <table class="rtable">
-      <tr><td class="name">Avión</td><td><span class="status ok">En el diccionario</span> <code>fa-plane-up</code> &middot; producto / vuelos</td></tr>
-      <tr><td class="name">Carro</td><td><span class="status ok">En el diccionario</span> <code>fa-car-side</code> &middot; producto / autos</td></tr>
-      <tr><td class="name">Maleta</td><td><span class="status ok">En el diccionario</span> <code>fa-suitcase-rolling</code> &middot; producto / equipaje</td></tr>
-      <tr><td class="name">Pin de ubicación</td><td><span class="status ok">En el diccionario</span> <code>fa-location-dot</code> &middot; búsqueda / destino</td></tr>
-      <tr><td class="name">Diadema</td><td><span class="status ok">En el diccionario</span> <code>fa-headset</code> &middot; contacto / soporte</td></tr>
-      <tr><td class="name">Destello</td><td><span class="status warn">Sin concepto</span> Representa la IA, que es el centro del fundamento de la marca</td></tr>
-      <tr><td class="name">Engranaje</td><td><span class="status warn">Sin concepto</span> Tecnología o automatización</td></tr>
-      <tr><td class="name">Gráfica ascendente</td><td><span class="status warn">Sin concepto</span> Crecimiento y resultados medibles</td></tr>
-      <tr><td class="name">Regalo</td><td><span class="status warn">Sin concepto</span> Beneficios y recompensas</td></tr>
-      <tr><td class="name">Cámara</td><td><span class="status warn">Sin concepto</span> Contenido y experiencias</td></tr>
-      <tr><td class="name">Tiquete</td><td><span class="status warn">Sin concepto</span> El diccionario tiene <code>fa-ticket</code> pero para <em>cupón</em>, que no es lo mismo</td></tr>
-      <tr><td class="name">Cometa</td><td><span class="status warn">Sin concepto</span> No hay lectura clara del concepto que representa</td></tr>
+      <tr data-lang="es"><td class="name">Avión</td><td><span class="status ok">En el diccionario</span> <code>fa-plane-up</code> &middot; producto / vuelos</td></tr><tr data-lang="en"><td class="name">Plane</td><td><span class="status ok">In the dictionary</span> <code>fa-plane-up</code> &middot; product / flights</td></tr>
+      <tr data-lang="es"><td class="name">Carro</td><td><span class="status ok">En el diccionario</span> <code>fa-car-side</code> &middot; producto / autos</td></tr><tr data-lang="en"><td class="name">Car</td><td><span class="status ok">In the dictionary</span> <code>fa-car-side</code> &middot; product / cars</td></tr>
+      <tr data-lang="es"><td class="name">Maleta</td><td><span class="status ok">En el diccionario</span> <code>fa-suitcase-rolling</code> &middot; producto / equipaje</td></tr><tr data-lang="en"><td class="name">Suitcase</td><td><span class="status ok">In the dictionary</span> <code>fa-suitcase-rolling</code> &middot; product / luggage</td></tr>
+      <tr data-lang="es"><td class="name">Pin de ubicación</td><td><span class="status ok">En el diccionario</span> <code>fa-location-dot</code> &middot; búsqueda / destino</td></tr><tr data-lang="en"><td class="name">Location pin</td><td><span class="status ok">In the dictionary</span> <code>fa-location-dot</code> &middot; search / destination</td></tr>
+      <tr data-lang="es"><td class="name">Diadema</td><td><span class="status ok">En el diccionario</span> <code>fa-headset</code> &middot; contacto / soporte</td></tr><tr data-lang="en"><td class="name">Headset</td><td><span class="status ok">In the dictionary</span> <code>fa-headset</code> &middot; contact / support</td></tr>
+      <tr data-lang="es"><td class="name">Destello</td><td><span class="status warn">Sin concepto</span> Representa la IA, que es el centro del fundamento de la marca</td></tr><tr data-lang="en"><td class="name">Sparkle</td><td><span class="status warn">No concept</span> Represents AI, which sits at the centre of the brand's foundation</td></tr>
+      <tr data-lang="es"><td class="name">Engranaje</td><td><span class="status warn">Sin concepto</span> Tecnología o automatización</td></tr><tr data-lang="en"><td class="name">Gear</td><td><span class="status warn">No concept</span> Technology or automation</td></tr>
+      <tr data-lang="es"><td class="name">Gráfica ascendente</td><td><span class="status warn">Sin concepto</span> Crecimiento y resultados medibles</td></tr><tr data-lang="en"><td class="name">Upward chart</td><td><span class="status warn">No concept</span> Growth and measurable results</td></tr>
+      <tr data-lang="es"><td class="name">Regalo</td><td><span class="status warn">Sin concepto</span> Beneficios y recompensas</td></tr><tr data-lang="en"><td class="name">Gift</td><td><span class="status warn">No concept</span> Benefits and rewards</td></tr>
+      <tr data-lang="es"><td class="name">Cámara</td><td><span class="status warn">Sin concepto</span> Contenido y experiencias</td></tr><tr data-lang="en"><td class="name">Camera</td><td><span class="status warn">No concept</span> Content and experiences</td></tr>
+      <tr data-lang="es"><td class="name">Tiquete</td><td><span class="status warn">Sin concepto</span> El diccionario tiene <code>fa-ticket</code> pero para <em>cupón</em>, que no es lo mismo</td></tr><tr data-lang="en"><td class="name">Ticket</td><td><span class="status warn">No concept</span> The dictionary has <code>fa-ticket</code>, but for <em>coupon</em>, which isn't the same thing</td></tr>
+      <tr data-lang="es"><td class="name">Cometa</td><td><span class="status warn">Sin concepto</span> No hay lectura clara del concepto que representa</td></tr><tr data-lang="en"><td class="name">Kite</td><td><span class="status warn">No concept</span> There's no clear reading of what concept it represents</td></tr>
     </table>
   </div>
 
   <div class="callout pending" style="margin-top:18px;">
-    <span class="tag">LO QUE ESTO REVELA</span>
-    <p>El diccionario del grupo se armó para <strong style="color:var(--base);">dos canales de venta de viaje</strong>: Trip, que le vende al viajero, y Go, que le vende a la agencia. Por eso está lleno de vuelos, hoteles, tarifas y comisiones.<br>
+    <span class="tag"><span data-lang="es">LO QUE ESTO REVELA</span><span data-lang="en">WHAT THIS REVEALS</span></span>
+    <p><span data-lang="es">El diccionario del grupo se armó para <strong style="color:var(--base);">dos canales de venta de viaje</strong>: Trip, que le vende al viajero, y Go, que le vende a la agencia. Por eso está lleno de vuelos, hoteles, tarifas y comisiones.<br>
     Travel no es un canal: es la marca madre, y habla de <strong style="color:var(--base);">inteligencia artificial, automatización, crecimiento y beneficios</strong>. Ninguno de esos conceptos existe en el diccionario, porque ninguna de las dos hijas los necesitaba.<br>
-    <strong style="color:var(--base);">Falta una categoría corporativa en el diccionario del grupo.</strong> Hasta que se abra, cualquier pieza de Travel que necesite un ícono de IA o de crecimiento está eligiendo uno sin regla &mdash; y así es como una librería se convierte en dos.</p>
+    <strong style="color:var(--base);">Falta una categoría corporativa en el diccionario del grupo.</strong> Hasta que se abra, cualquier pieza de Travel que necesite un ícono de IA o de crecimiento está eligiendo uno sin regla &mdash; y así es como una librería se convierte en dos.</span><span data-lang="en">The group's dictionary was built for <strong style="color:var(--base);">two travel sales channels</strong>: Trip, which sells to the traveller, and Go, which sells to the agency. That's why it's full of flights, hotels, fares and commissions.<br>
+    Travel isn't a channel: it's the parent brand, and it talks about <strong style="color:var(--base);">artificial intelligence, automation, growth and benefits</strong>. None of those concepts exist in the dictionary, because neither of its two children needed them.<br>
+    <strong style="color:var(--base);">The group's dictionary is missing a corporate category.</strong> Until one opens, any Travel piece that needs an AI or growth icon is picking one with no rule to follow &mdash; and that's exactly how one library turns into two.</span></p>
   </div>
 </section>
 
 <section class="section-block">
-  <h2 class="section-title">Radios</h2>
-  <p>La escala del grupo, idéntica en las tres marcas documentadas.</p>
+  <h2 class="section-title"><span data-lang="es">Radios</span><span data-lang="en">Radii</span></h2>
+  <p><span data-lang="es">La escala del grupo, idéntica en las tres marcas documentadas.</span><span data-lang="en">The group's scale, identical across the three documented brands.</span></p>
   <div class="table-scroll">
     <table class="rtable">
-      <tr><td class="name">6&nbsp;px</td><td>Chips, etiquetas y elementos pequeños</td></tr>
-      <tr><td class="name">12&nbsp;px</td><td>Botones y campos</td></tr>
-      <tr><td class="name">16&nbsp;px</td><td>Tarjetas</td></tr>
-      <tr><td class="name">24&nbsp;px</td><td>Contenedores grandes y módulos</td></tr>
-      <tr><td class="name">999&nbsp;px</td><td>Píldoras</td></tr>
+      <tr data-lang="es"><td class="name">6&nbsp;px</td><td>Chips, etiquetas y elementos pequeños</td></tr><tr data-lang="en"><td class="name">6&nbsp;px</td><td>Chips, tags and small elements</td></tr>
+      <tr data-lang="es"><td class="name">12&nbsp;px</td><td>Botones y campos</td></tr><tr data-lang="en"><td class="name">12&nbsp;px</td><td>Buttons and fields</td></tr>
+      <tr data-lang="es"><td class="name">16&nbsp;px</td><td>Tarjetas</td></tr><tr data-lang="en"><td class="name">16&nbsp;px</td><td>Cards</td></tr>
+      <tr data-lang="es"><td class="name">24&nbsp;px</td><td>Contenedores grandes y módulos</td></tr><tr data-lang="en"><td class="name">24&nbsp;px</td><td>Large containers and modules</td></tr>
+      <tr data-lang="es"><td class="name">999&nbsp;px</td><td>Píldoras</td></tr><tr data-lang="en"><td class="name">999&nbsp;px</td><td>Pills</td></tr>
     </table>
   </div>
-  <p class="small-note" style="margin-top:12px;">Cinco valores, ninguno más. Un radio fuera de la escala no se nota en una pieza suelta; se nota cuando hay veinte piezas juntas y ninguna encaja con la siguiente.</p>
+  <p class="small-note" style="margin-top:12px;"><span data-lang="es">Cinco valores, ninguno más. Un radio fuera de la escala no se nota en una pieza suelta; se nota cuando hay veinte piezas juntas y ninguna encaja con la siguiente.</span><span data-lang="en">Five values, no more. A radius outside the scale goes unnoticed in a single piece; it shows the moment twenty pieces sit together and none of them lines up with the next.</span></p>
 </section>
 
       <div class="footer-meta">
-        <span>manual-marca-linex-travel-v1.0 &middot; sitio estático de distribución</span>
-        <span>Manual de Marca de Linex Travel &middot; 2026</span>
+        <span data-lang="es">manual-marca-linex-travel-v1.0 &middot; sitio estático de distribución</span><span data-lang="en">manual-marca-linex-travel-v1.0 &middot; static distribution site</span>
+        <span data-lang="es">Manual de Marca de Linex Travel &middot; 2026</span><span data-lang="en">Linex Travel Brand Manual &middot; 2026</span>
       </div>
       <!--pager-->
-      <div class="pager"><a class="prev" href="04-tipografia.html"><span class="dir">&larr; Anterior</span><span class="lbl">04 &middot; Tipografía</span></a><a class="next" href="06-sistema-fotografia.html"><span class="dir">Siguiente &rarr;</span><span class="lbl">06 &middot; Sistema gráfico y fotografía</span></a></div>
+      <div class="pager"><a class="prev" href="04-tipografia.html"><span class="dir"><span data-lang="es">&larr; Anterior</span><span data-lang="en">&larr; Previous</span></span><span class="lbl">04 &middot; <span data-lang="es">Tipografía</span><span data-lang="en">Typography</span></span></a><a class="next" href="06-sistema-fotografia.html"><span class="dir"><span data-lang="es">Siguiente &rarr;</span><span data-lang="en">Next &rarr;</span></span><span class="lbl">06 &middot; <span data-lang="es">Sistema gráfico y fotografía</span><span data-lang="en">Graphic system and photography</span></span></a></div>
       <!--/pager-->
     </div>
   </main>
