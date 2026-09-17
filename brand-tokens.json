@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "actualizado": "2026-09-16",
+  "actualizado": "2026-09-17",
   "nota": "Fuente única de la constelación Linex. Reconstruido desde contexto-linex-trip.md y contexto-linex-go.md tras perderse brand-system/brand-tokens.json. Si un dato difiere del manual, manda el manual — salvo los contrastes, que se recalculan con tools/contraste.js.",
   "grupo": {
     "tipografia": {
@@ -265,6 +265,12 @@
         "estado": "en pausa",
         "decision": "Linex Loyalty queda en pausa por decisión del dueño de marca. No se trabaja su manual ni se completa su paleta por ahora.",
         "al_retomar": "Lo primero es fijar su base oscura: el Verde #C5F04A da 1.32:1 sobre blanco y no tiene dónde vivir sin ella."
+      },
+      "fuente": {
+        "documento": null,
+        "de": "Instrucción directa del dueño de marca",
+        "fecha": "2026-09-16",
+        "nota": "El Verde #C5F04A no viene de un manual ni de un documento: lo entregó el dueño de marca de viva voz. Es la única marca del grupo cuyo único dato de color no tiene respaldo escrito, y por eso se registra la procedencia aquí. Al retomar, conviene confirmarlo contra una fuente."
       }
     },
     "linex-travel": {
@@ -277,7 +283,7 @@
       "padre": null,
       "genio": null,
       "genio_nota": "Nombre en proceso. Construye soluciones de viaje a la medida: sitio de redención, API de agencia, UX de viaje.",
-      "estado": "pendiente",
+      "estado": "confirmed_pending_trademark",
       "prioridad": "1 · operando",
       "sub_marcas": [
         "linex-go",
@@ -285,7 +291,156 @@
       ],
       "atrae": "Compañías que necesitan el viaje como redención; agencias que buscan un front-to-back; revendedores de servicios de viaje con IA.",
       "filtra": "Inversionistas y necesidades ajenas al viaje — el Group Bar los enruta.",
-      "color": [],
+      "color": [
+        {
+          "nombre": "Lavanda Linex",
+          "hex": "#DDE1FF",
+          "rgb": [
+            221,
+            225,
+            255
+          ],
+          "cmyk": null,
+          "rol": "Base — el fondo por defecto de la marca",
+          "proporcion": 40,
+          "regla": {
+            "solo_sobre": null,
+            "nunca": [
+              "llevar texto en Azul violeta a tamaño de lectura: 3.69:1",
+              "usarse como color de texto: da 1.29:1 sobre blanco"
+            ],
+            "contrastes": {
+              "#FFFFFF": 1.29,
+              "#17153B": 13.5,
+              "#080808": 15.53,
+              "#6D28D9": 5.51
+            }
+          }
+        },
+        {
+          "nombre": "Azul violeta",
+          "hex": "#5B5CFF",
+          "rgb": [
+            91,
+            92,
+            255
+          ],
+          "cmyk": null,
+          "rol": "Acento — la palabra Travel y los elementos de acción",
+          "proporcion": 20,
+          "regla": {
+            "solo_sobre": null,
+            "nunca": [
+              "texto corrido sobre Lavanda Linex: 3.69:1, por debajo de AA",
+              "texto corrido sobre Lila claro"
+            ],
+            "contrastes": {
+              "#FFFFFF": 4.75,
+              "#DDE1FF": 3.69,
+              "#E0B3FF": 2.73,
+              "#17153B": 3.66,
+              "#080808": 4.21
+            }
+          }
+        },
+        {
+          "nombre": "Violeta",
+          "hex": "#6D28D9",
+          "rgb": [
+            109,
+            40,
+            217
+          ],
+          "cmyk": null,
+          "rol": "Apoyo — títulos, iconografía y superficies de realce",
+          "proporcion": 10,
+          "regla": {
+            "solo_sobre": null,
+            "nunca": [
+              "ponerse sobre Azul Noche: 2.45:1, desaparece"
+            ],
+            "contrastes": {
+              "#FFFFFF": 7.1,
+              "#DDE1FF": 5.51,
+              "#E0B3FF": 4.08,
+              "#17153B": 2.45,
+              "#080808": 2.82
+            }
+          }
+        },
+        {
+          "nombre": "Lila claro",
+          "hex": "#E0B3FF",
+          "rgb": [
+            224,
+            179,
+            255
+          ],
+          "cmyk": null,
+          "rol": "Respiro — superficies suaves y degradados",
+          "proporcion": 10,
+          "regla": {
+            "solo_sobre": null,
+            "nunca": [
+              "usarse como color de texto: da 1.74:1 sobre blanco"
+            ],
+            "contrastes": {
+              "#FFFFFF": 1.74,
+              "#17153B": 9.99,
+              "#080808": 11.5,
+              "#6D28D9": 4.08
+            }
+          }
+        },
+        {
+          "nombre": "Azul Noche Linex",
+          "hex": "#17153B",
+          "rgb": [
+            23,
+            21,
+            59
+          ],
+          "cmyk": null,
+          "rol": "Contraste — títulos y texto principal",
+          "proporcion": 10,
+          "regla": {
+            "solo_sobre": null,
+            "nunca": [
+              "confundirse con la tinta del logotipo, que hoy es otro oscuro"
+            ],
+            "contrastes": {
+              "#FFFFFF": 17.4,
+              "#DDE1FF": 13.5,
+              "#E0B3FF": 9.99,
+              "#5B5CFF": 3.66
+            }
+          }
+        },
+        {
+          "nombre": "Negro Linex",
+          "hex": "#080808",
+          "rgb": [
+            8,
+            8,
+            8
+          ],
+          "cmyk": null,
+          "rol": "Reserva para impresión a un solo color",
+          "proporcion": 10,
+          "regla": {
+            "solo_sobre": null,
+            "nunca": [
+              "reemplazar al Azul Noche en digital"
+            ],
+            "contrastes": {
+              "#FFFFFF": 20.03,
+              "#DDE1FF": 15.53,
+              "#E0B3FF": 11.5,
+              "#5B5CFF": 4.21
+            }
+          }
+        }
+      ],
       "derivados": [],
       "tipografia": "grupo",
       "iconografia": "grupo",
@@ -297,27 +452,252 @@
         "pill": 999
       },
       "logos": {
-        "principal": null,
-        "negativo": null,
-        "monocromo": null
+        "principal": "Logos/logos-oficiales/linex-travel/LinexTravel-logo-color.svg",
+        "principal_png": "Logos/logos-oficiales/linex-travel/LinexTravel-logo-color.png",
+        "negativo": "Logos/logos-oficiales/linex-travel/LinexTravel-logo-negativo.svg",
+        "monocromo": "Logos/logos-oficiales/linex-travel/LinexTravel-logo-monocromo.svg",
+        "negro": "Logos/logos-oficiales/linex-travel/LinexTravel-logo-negro.svg",
+        "editable": null,
+        "secundario": null,
+        "vertical": null,
+        "vertical_negativo": null,
+        "avatar": null,
+        "con_eslogan": null
       },
-      "logo_nota": "Carpeta Logos/logos-oficiales/linex-travel/ vacía.",
-      "voz": null,
+      "logo_nota": "Cuatro versiones en SVG y PNG, recibidas el 17 de septiembre de 2026 y renombradas a la convención del grupo. El manual oficial habla de TRES variaciones (color, positivo, negativo) y en disco hay CUATRO: falta fijar qué nombre corresponde a cuál. El logotipo incluye el endoso \"Formerly UltraGroup\" y el manual lo muestra en horizontal y en vertical, pero el archivo vertical no llegó.",
+      "voz": {
+        "principios": [
+          "Claro",
+          "Profesional",
+          "Cercano",
+          "Inspirador",
+          "Tecnología Inteligente",
+          "Multilenguaje"
+        ],
+        "matiz": "Le habla a empresas y a personas a la vez: es la marca madre, no un canal.",
+        "prueba": "Si el texto no deja ver ni la tecnología ni el viaje, todavía no suena a Linex Travel.",
+        "detalle": {
+          "Claro": "Mensajes fáciles de entender y directos.",
+          "Profesional": "Comunicación con credibilidad y conocimiento del sector.",
+          "Cercano": "Habla de manera humana y empática.",
+          "Inspirador": "Invita a descubrir nuevas experiencias y oportunidades.",
+          "Tecnología Inteligente": "Resalta la tecnología y la inteligencia artificial como motores de la experiencia de viaje.",
+          "Multilenguaje": "Se adapta a inglés y español, priorizando siempre el idioma del receptor."
+        },
+        "registro": "Lenguaje sencillo y accesible, evitando tecnicismos innecesarios, pero reflejando el liderazgo tecnológico de la marca.",
+        "claim": null,
+        "claim_nota": "El manual oficial no declara un eslogan. \"Todo tu ecosistema de viaje en un solo lugar\" aparece en piezas de souvenir, sin estatus de claim.",
+        "claims_pendientes": [],
+        "claims_prohibidos": [],
+        "vocabulario": null,
+        "cta": null
+      },
       "legal": {
         "operador": null,
         "rnt": null,
-        "ciudad": null,
-        "admite_simbolo_marca": false
+        "ciudad": "Medellín, Colombia",
+        "admite_simbolo_marca": false,
+        "dominio_correo": "@linextravel.com",
+        "dominio_correo_nota": "Durante la transición conviven @ultragroupla.com y @linextravel.com."
       },
       "manual": null,
       "contexto": null,
       "pendientes": [
-        "Sin logo",
-        "Sin paleta",
-        "Sin voz documentada",
-        "Sin manual propio",
-        "Sus dos sub-marcas están mejor documentadas que ella"
-      ]
+        "El logotipo está pintado con colores que no son los de su paleta (ΔE 8.2 y 10.0) — el dueño de marca los va a recolorear",
+        "Las cuatro piezas del logotipo no comparten proporción: 5.11:1 contra 4.35:1",
+        "El manual oficial nombra tres variaciones y en disco hay cuatro: falta fijar el nombre de cada una",
+        "Faltan en archivo las versiones vertical, avatar de redes y con eslogan",
+        "Faltan los logos de Hertz, Dollar, Thrifty y Walt Disney World",
+        "El canal B2B2C no tiene sub-marca asignada",
+        "Las tres audiencias están sin perfilar",
+        "Sin eslogan declarado",
+        "Sin lista de claims autorizados ni de términos prohibidos",
+        "Sin vocabulario de marca",
+        "Sin texto legal obligatorio por tipo de pieza",
+        "Sin nombre corporativo legal aprobado",
+        "Sin banco de imágenes propio",
+        "El monograma LT de las mangas no está documentado en ninguna sección",
+        "El gris del endoso Formerly (#B4B4B4) no está en la paleta y da 2.07:1 sobre blanco",
+        "Solo LinkedIn tiene reglas escritas; las demás redes no",
+        "El Azul Noche de Travel y el Azul Trip de su sub-marca quedan a ΔE 21.8 con la misma luminosidad: falta decidir si es aire de familia o un choque"
+      ],
+      "concepto_rector": "Todo tu ecosistema de viaje en un solo lugar.",
+      "viene_de": "UltraGroup",
+      "transicion_nota": "UltraGroup evoluciona hacia Linex Travel. Hasta el 31 de diciembre de 2026 ambas marcas conviven de forma progresiva, y el logotipo lleva el endoso \"Formerly UltraGroup\". En enero de 2027 sale una nueva edición del manual que lo elimina. Excepción escrita en el manual oficial: las piezas de larga duración —souvenir— llevan el logotipo SIN el endoso desde ya, porque sobreviven a la transición.",
+      "vigencia": {
+        "hasta": "2026-12-31",
+        "nueva_edicion": "2027-01",
+        "que_cambia": "Se elimina el endoso UltraGroup del logotipo."
+      },
+      "fundamento": "Linex Travel is an AI-first Travel Commerce company transforming how businesses connect people with travel. We combine Agentic AI, intelligent automation, and a global ecosystem of travel partners to create seamless, personalized experiences while helping organizations scale faster, operate smarter, and drive measurable growth.",
+      "fundamento_nota": "Está en inglés en el manual oficial y así se cita. La marca es multilenguaje y prioriza el idioma del receptor.",
+      "valores": [
+        "Disruptivos",
+        "Ágiles",
+        "Resilientes",
+        "Confiables",
+        "Determinados"
+      ],
+      "proporcion_nota": "Regla escrita en el manual oficial: priorizar fondos claros y colores suaves, y reservar los oscuros para contraste, títulos y texto principal. Por eso la Lavanda se lleva el 40% y los dos oscuros juntos no pasan del 20%.",
+      "tokens_del_grupo": {
+        "nota": "Lavanda Linex #DDE1FF y Negro Linex #080808 no son colores propios de Travel: están a ΔE 0.0 de los que Linex Trip ya tenía. El apellido \"Linex\" en el nombre era la pista. Son tokens del grupo, y cambiarlos en una marca los cambia en la otra.",
+        "compartidos": [
+          "#DDE1FF",
+          "#080808"
+        ],
+        "con": "linex-trip"
+      },
+      "parentesco_cromatico": {
+        "nota": "El Azul Noche de Travel y el Azul Trip de su sub-marca están a ΔE 21.8, con luminosidad casi igual (L* 9.3 contra 10.8). En una misma pieza, madre e hija se leen como el mismo oscuro. Puede ser aire de familia buscado, pero hoy no está escrito como decisión.",
+        "deltaE": 21.8,
+        "pares": [
+          "linex-travel #17153B",
+          "linex-trip #00145A"
+        ],
+        "estado": "sin decidir"
+      },
+      "logo_color_transitorio": {
+        "registrado": "2026-09-17",
+        "estado": "transitorio",
+        "decision": "Mandan los archivos por ahora, para no bloquear producción. El dueño de marca va a recolorear los SVG a la paleta del manual. Cuando eso pase, esta entrada se borra y la paleta queda como única verdad.",
+        "tinta_actual": {
+          "monocromo": "#1A0E3E",
+          "color_oscuro": "#150D40",
+          "color_acento": "#5C57FC"
+        },
+        "tinta_destino": {
+          "oscuro": "#17153B",
+          "acento": "#5B5CFF"
+        },
+        "distancia": {
+          "monocromo #1A0E3E contra Azul Noche #17153B": 8.2,
+          "color #150D40 contra Azul Noche #17153B": 10,
+          "acento #5C57FC contra Azul violeta #5B5CFF": 2.4
+        },
+        "alcance": "Solo el logotipo. La paleta de la marca no cambia: el Azul Noche #17153B y el Azul violeta #5B5CFF gobiernan las piezas.",
+        "ojo": "El #1A0E3E del monocromo está a ΔE 0.0 del índigo que Linex Go tiene declarado como oficial para SU logotipo. Hoy madre e hija comparten tinta de logotipo sin que nadie lo haya decidido.",
+        "contrastes_del_logo": {
+          "#1A0E3E sobre #FFFFFF": 17.85,
+          "#1A0E3E sobre #DDE1FF": 13.85,
+          "#150D40 sobre #DDE1FF": 14,
+          "#5C57FC sobre #FFFFFF": 4.97,
+          "#5C57FC sobre #DDE1FF": 3.86
+        }
+      },
+      "logo_proporciones": {
+        "problema": "Las cuatro piezas no tienen la misma proporción.",
+        "medido": {
+          "color y monocromo": "2308 x 452, o sea 5.11 : 1",
+          "negativo y negro": "2524 x 580, o sea 4.35 : 1"
+        },
+        "consecuencia": "Puestas al mismo ancho salen de distinta altura: 17% de diferencia. El manual oficial prohíbe deformar el logotipo, y con archivos que no concuerdan entre sí esa regla no se puede cumplir.",
+        "estado": "sin resolver"
+      },
+      "logo_espacio": {
+        "regla": "X = la altura de la letra L del logotipo, libre de elementos gráficos por los cuatro lados.",
+        "aplica_a": [
+          "horizontal",
+          "vertical"
+        ]
+      },
+      "logo_usos_incorrectos": [
+        "Deformar el logotipo",
+        "Cambiar los colores oficiales",
+        "Modificar la jerarquía entre marcas",
+        "Aplicar efectos"
+      ],
+      "logo_endoso": {
+        "gris": "#B4B4B4",
+        "contraste_sobre_blanco": 2.07,
+        "nota": "La palabra \"Formerly\" va en un gris que no está en la paleta y que da 2.07:1 sobre blanco, por debajo de AA. Como es parte del logotipo puede quedar exento de 1.4.3, pero conviene decidirlo en vez de heredarlo."
+      },
+      "aliados": {
+        "nota": "Marcas representadas. Aparecen en la firma de correo tipo \"Representations (Alliances)\", nunca en la firma \"Linex Travel Only\".",
+        "hertz": null,
+        "dollar": null,
+        "thrifty": null,
+        "disney": null,
+        "estado": "Nombradas en el manual oficial. Los archivos de logo no están en el repositorio."
+      },
+      "audiencias": {
+        "regla": "El manual oficial nombra tres canales bajo Linex Travel: B2B2C, B2B y B2C.",
+        "lista": [
+          "B2B2C",
+          "B2B",
+          "B2C"
+        ],
+        "cobertura": {
+          "B2B": "linex-go",
+          "B2C": "linex-trip",
+          "B2B2C": null
+        },
+        "estado": "Sin perfilar. Y el B2B2C no tiene sub-marca asignada."
+      },
+      "fotografia": {
+        "atributos": [
+          "Natural",
+          "Aspiracional",
+          "Limpio",
+          "Cercano",
+          "Moderno"
+        ],
+        "categorias": [
+          "Personas",
+          "Destino",
+          "Empresas"
+        ],
+        "usar": "Viajeros en aeropuertos, hoteles, destinos, experiencias locales, familias, parejas, usuarios interactuando con plataformas digitales, momentos de compra, beneficios y recompensas.",
+        "evitar": "Imágenes muy saturadas, posadas artificiales, bancos de imágenes genéricos, exceso de filtros, colores apagados o fotografías que no conecten con el universo de viajes y experiencias."
+      },
+      "fondos": {
+        "regla": "Degradados suaves que aportan profundidad y sensación tecnológica sin ensuciar la marca. Sutiles, modernos y funcionales, manteniendo siempre legibilidad y contraste con textos, logotipos e iconografía.",
+        "tonos": [
+          "Lavanda Linex",
+          "Violeta",
+          "Azul Noche Linex"
+        ],
+        "medida_dura": "El Azul violeta sobre Lavanda da 3.69:1. Alcanza para el logotipo a tamaño grande (umbral 3:1) y no alcanza para texto de lectura."
+      },
+      "entregables": {
+        "papeleria": [
+          "Hoja membrete",
+          "Presentaciones",
+          "Email"
+        ],
+        "papeleria_nota": "Hay versión de uso interno y de uso externo.",
+        "firmas": [
+          "Representations (Alliances)",
+          "Linex Travel Only"
+        ],
+        "otros": [
+          "Carnet corporativo",
+          "Souvenir",
+          "Camisetas tipo polo",
+          "Fondo de Teams",
+          "Background"
+        ],
+        "souvenir_regla": "Debe llevar el logotipo de Linex Travel SIN UltraGroup, porque es elemento de larga duración.",
+        "polos": [
+          "Clásica negra",
+          "Clásica blanca",
+          "Deep Indigo",
+          "Propuesta color"
+        ],
+        "monograma": "Las mangas de los polos llevan un monograma LT que ninguna sección del manual oficial documenta."
+      },
+      "redes": {
+        "regla": "Comunicación clara, moderna y visualmente atractiva, alineada con el universo de viajes, beneficios y tecnología. Cada publicación refuerza la marca con el logotipo, la paleta oficial, la tipografía Geist, fotografía aspiracional y recursos gráficos limpios.",
+        "documentadas": [
+          "LinkedIn"
+        ],
+        "estado": "Solo LinkedIn tiene pieza de referencia. Las demás redes no tienen reglas escritas."
+      },
+      "fuente": {
+        "documento": "Manual de marca Linex-Ultragroup OFICIAL.pdf",
+        "fecha": "2026-09-10",
+        "paginas": 28,
+        "nota": "Documento de consulta del dueño de marca. No entra al repositorio y se puede borrar: todo lo que sirve quedó en este JSON y en el manual."
+      }
     },
     "linex-go": {
       "id": "linex-go",

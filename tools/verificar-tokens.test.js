@@ -67,41 +67,55 @@ test('Loyalty tiene el Verde con su regla dura', () => {
     'un color que muere sobre blanco necesita prohibiciones');
 });
 
-test('ninguna marca sin datos inventa color, logo ni voz', () => {
-  for (const id of ['linex-capital', 'linex-travel', 'linex-marketplace',
-                    'linex-rewards', 'linex-school']) {
-    const m = tokens.marcas[id];
-    assert.deepStrictEqual(m.color, [], `${id} tiene colores inventados`);
-    assert.strictEqual(m.voz, null, `${id} tiene voz inventada`);
+/* La regla de oro del sistema, hecha mecánica: el dato tiene que tener
+   procedencia. Una marca sin manual, sin contexto y sin documento fuente no
+   puede tener paleta, voz ni logo — eso sería dato inventado.
+
+   Antes esta prueba llevaba los cinco ids escritos a mano y se quedó vieja el
+   día que Linex Travel consiguió su manual oficial. Derivada no se envejece. */
+test('ninguna marca sin fuente tiene color, voz ni logo', () => {
+  for (const m of Object.values(tokens.marcas)) {
+    if (m.manual || m.contexto || m.fuente) continue;
+    assert.deepStrictEqual(m.color, [], `${m.id}: paleta sin fuente que la respalde`);
+    assert.strictEqual(m.voz, null, `${m.id}: voz sin fuente`);
     assert.ok(Object.values(m.logos).every(v => v === null),
-      `${id} tiene un logo inventado`);
-    assert.ok(m.pendientes.length > 0, `${id} no declara qué le falta`);
+      `${m.id}: logo sin fuente`);
+    assert.ok(m.pendientes.length > 0, `${m.id} no declara qué le falta`);
   }
 });
 
-test('las seis sin manual declaran estado pendiente', () => {
-  for (const id of ['linex-capital', 'linex-loyalty', 'linex-travel',
-                    'linex-marketplace', 'linex-rewards', 'linex-school']) {
-    assert.strictEqual(tokens.marcas[id].estado, 'pendiente');
+/* El estado describe la MARCA, no el manual. Linex Travel tuvo paleta y voz
+   antes que manual, y ahí dejó de estar pendiente. Sin una de las dos, no hay
+   marca definida todavía. */
+test('a la marca sin paleta o sin voz le corresponde estado pendiente', () => {
+  for (const m of Object.values(tokens.marcas)) {
+    if (m.color.length && m.voz) continue;
+    assert.strictEqual(m.estado, 'pendiente',
+      `${m.id} no tiene marca definida y su estado dice "${m.estado}"`);
   }
 });
 
-test('una marca sin registro de marca no admite el símbolo', () => {
-  for (const id of ['linex-trip', 'linex-go']) {
-    const m = tokens.marcas[id];
-    assert.strictEqual(m.estado, 'confirmed_pending_trademark');
+test('ninguna marca con el registro pendiente admite el símbolo', () => {
+  const conEstado = Object.values(tokens.marcas)
+    .filter(m => m.estado === 'confirmed_pending_trademark');
+  assert.ok(conEstado.length > 0, 'nadie declara el estado de registro');
+  for (const m of conEstado) {
     assert.strictEqual(m.legal.admite_simbolo_marca, false,
-      `${id} no puede admitir ™/® con el registro pendiente`);
+      `${m.id} no puede admitir ™/® con el registro pendiente`);
   }
 });
 
-test('Trip y Go comparten iconografía y radios', () => {
-  const t = tokens.marcas['linex-trip'];
-  const g = tokens.marcas['linex-go'];
-  assert.deepStrictEqual(t.iconografia, g.iconografia);
-  assert.deepStrictEqual(t.radios, g.radios);
-  assert.deepStrictEqual(t.radios, { s: 6, btn: 12, m: 16, l: 24, pill: 999 });
-  assert.deepStrictEqual(t.radios, tokens.grupo.radios);
+/* Ya no son dos: Travel entró con la misma decisión de grupo. La prueba
+   recorre todas las que dicen heredar del grupo, sin nombrarlas. */
+test('toda marca que hereda del grupo comparte iconografía y radios', () => {
+  const herederas = Object.values(tokens.marcas)
+    .filter(m => m.iconografia === 'grupo');
+  assert.ok(herederas.length >= 3, 'esperaba al menos Trip, Go y Travel');
+  for (const m of herederas) {
+    assert.deepStrictEqual(m.radios, tokens.grupo.radios,
+      `${m.id} dice heredar del grupo pero tiene otros radios`);
+    assert.deepStrictEqual(m.radios, { s: 6, btn: 12, m: 16, l: 24, pill: 999 });
+  }
 });
 
 /* brand-system/ se perdió y sus diez rutas quedaron rotas. El archivo puede

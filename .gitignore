@@ -29,3 +29,7 @@ npm-debug.log*
 *.indd
 *.sketch
 *.fig
+
+# Fuentes de consulta: se leen, no se distribuyen. El dato que sirve
+# termina en brand-tokens.json y en el manual; el archivo se puede borrar.
+Manual de marca Linex-Ultragroup OFICIAL.pdf
