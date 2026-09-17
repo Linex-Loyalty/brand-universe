@@ -7,12 +7,21 @@
       "operativo": {
         "titulos": "Segoe UI",
         "cuerpo": "Calibri",
-        "respaldo": ["Arial", "Helvetica"],
+        "respaldo": [
+          "Arial",
+          "Helvetica"
+        ],
         "donde": "Cotizaciones, correo, Contact Center, documentos en Office"
       },
       "digital": {
         "familia": "Geist",
-        "pesos": [400, 500, 700, 800, 900],
+        "pesos": [
+          400,
+          500,
+          700,
+          800,
+          900
+        ],
         "origen": "Google Fonts",
         "donde": "Sitios web y producto"
       },
@@ -30,49 +39,80 @@
         "Solid por debajo de 4 mm en impreso",
         "Familia Brands para íconos de redes, sin recolorear"
       ],
-      "nunca": ["dibujar un ícono a mano", "mezclar librerías"],
+      "nunca": [
+        "dibujar un ícono a mano",
+        "mezclar librerías"
+      ],
       "decidido": "2026-09-16",
       "diccionario": {
         "nota": "Un concepto, un ícono, siempre el mismo. Común a todo el grupo: vive aquí y no en un manual, porque ninguna marca es dueña de la lista. Cada manual muestra los conceptos que usa.",
         "producto": {
-          "vuelos": "fa-plane-up", "salida": "fa-plane-departure",
-          "hoteles": "fa-hotel", "habitacion": "fa-bed",
-          "autos": "fa-car-side", "traslados": "fa-van-shuttle",
-          "paquetes": "fa-suitcase", "equipaje": "fa-suitcase-rolling"
+          "vuelos": "fa-plane-up",
+          "salida": "fa-plane-departure",
+          "hoteles": "fa-hotel",
+          "habitacion": "fa-bed",
+          "autos": "fa-car-side",
+          "traslados": "fa-van-shuttle",
+          "paquetes": "fa-suitcase",
+          "equipaje": "fa-suitcase-rolling"
         },
         "busqueda": {
-          "destino": "fa-location-dot", "internacional": "fa-earth-americas",
-          "experiencias": "fa-umbrella-beach", "fechas": "fa-calendar-days",
-          "duracion": "fa-clock", "buscar": "fa-magnifying-glass",
-          "viajeros": "fa-user-group", "documentos": "fa-passport"
+          "destino": "fa-location-dot",
+          "internacional": "fa-earth-americas",
+          "experiencias": "fa-umbrella-beach",
+          "fechas": "fa-calendar-days",
+          "duracion": "fa-clock",
+          "buscar": "fa-magnifying-glass",
+          "viajeros": "fa-user-group",
+          "documentos": "fa-passport"
         },
         "precio": {
-          "pago": "fa-credit-card", "cotizacion": "fa-receipt",
-          "oferta": "fa-tag", "descuento": "fa-percent", "cupon": "fa-ticket"
+          "pago": "fa-credit-card",
+          "cotizacion": "fa-receipt",
+          "oferta": "fa-tag",
+          "descuento": "fa-percent",
+          "cupon": "fa-ticket"
         },
         "confianza": {
-          "confirmado": "fa-circle-check", "asistencia": "fa-shield-halved",
-          "pago_seguro": "fa-lock", "calificacion": "fa-star",
-          "aviso": "fa-triangle-exclamation", "informacion": "fa-circle-info"
+          "confirmado": "fa-circle-check",
+          "asistencia": "fa-shield-halved",
+          "pago_seguro": "fa-lock",
+          "calificacion": "fa-star",
+          "aviso": "fa-triangle-exclamation",
+          "informacion": "fa-circle-info"
         },
         "contacto": {
-          "soporte": "fa-headset", "chat": "fa-comment-dots",
-          "comidas": "fa-utensils", "wifi": "fa-wifi", "siguiente": "fa-arrow-right"
+          "soporte": "fa-headset",
+          "chat": "fa-comment-dots",
+          "comidas": "fa-utensils",
+          "wifi": "fa-wifi",
+          "siguiente": "fa-arrow-right"
         },
         "b2b": {
           "nota": "Los conceptos que Linex Go necesita y Trip no tenía.",
-          "comision": "fa-hand-holding-dollar", "portafolio": "fa-layer-group",
-          "cupo": "fa-list-check", "condiciones": "fa-file-contract",
-          "agencia": "fa-building", "demo": "fa-desktop"
+          "comision": "fa-hand-holding-dollar",
+          "portafolio": "fa-layer-group",
+          "cupo": "fa-list-check",
+          "condiciones": "fa-file-contract",
+          "agencia": "fa-building",
+          "demo": "fa-desktop"
         },
         "redes": {
           "familia": "Brands — estilo único, no se recolorean ni se encierran en formas propias",
-          "whatsapp": "fa-whatsapp", "instagram": "fa-instagram",
-          "facebook": "fa-facebook", "tiktok": "fa-tiktok"
+          "whatsapp": "fa-whatsapp",
+          "instagram": "fa-instagram",
+          "facebook": "fa-facebook",
+          "tiktok": "fa-tiktok"
         }
       }
     },
-    "radios": { "s": 6, "btn": 12, "m": 16, "l": 24, "pill": 999 },
+    "radios": {
+      "s": 6,
+      "btn": 12,
+      "m": 16,
+      "l": 24,
+      "pill": 999
+    },
     "radios_roles": {
       "6": "Chips de categoría. Casi cuadrado: se lee como control, no como pieza.",
       "12": "Botones primario y secundario.",
@@ -112,11 +152,26 @@
       "derivados": [],
       "tipografia": "grupo",
       "iconografia": "grupo",
-      "radios": { "s": 6, "btn": 12, "m": 16, "l": 24, "pill": 999 },
-      "logos": { "principal": null, "negativo": null, "monocromo": null },
+      "radios": {
+        "s": 6,
+        "btn": 12,
+        "m": 16,
+        "l": 24,
+        "pill": 999
+      },
+      "logos": {
+        "principal": null,
+        "negativo": null,
+        "monocromo": null
+      },
       "logo_nota": "Sin archivo. No tiene carpeta en Logos/logos-oficiales/.",
       "voz": null,
-      "legal": { "operador": null, "rnt": null, "ciudad": null, "admite_simbolo_marca": false },
+      "legal": {
+        "operador": null,
+        "rnt": null,
+        "ciudad": null,
+        "admite_simbolo_marca": false
+      },
       "manual": null,
       "contexto": null,
       "pendientes": [
@@ -128,7 +183,6 @@
         "No aparece en ninguno de los dos contextos de marca"
       ]
     },
-
     "linex-loyalty": {
       "id": "linex-loyalty",
       "nombre": "Linex Loyalty",
@@ -149,14 +203,25 @@
           "nombre": "Verde",
           "nombre_pendiente": true,
           "hex": "#C5F04A",
-          "rgb": [197, 240, 74],
+          "rgb": [
+            197,
+            240,
+            74
+          ],
           "cmyk": null,
           "rol": "Acento",
           "proporcion": null,
           "regla": {
             "solo_sobre": null,
-            "nunca": ["texto sobre fondo claro", "cualquier uso sobre blanco"],
-            "contrastes": { "#FFFFFF": 1.32, "#080808": 15.20, "#00145A": 12.77 },
+            "nunca": [
+              "texto sobre fondo claro",
+              "cualquier uso sobre blanco"
+            ],
+            "contrastes": {
+              "#FFFFFF": 1.32,
+              "#080808": 15.2,
+              "#00145A": 12.77
+            },
             "nota": "Necesita fondo oscuro. Loyalty todavía no tiene base oscura definida: fijarla es el siguiente dato que le falta a la marca."
           }
         }
@@ -164,11 +229,26 @@
       "derivados": [],
       "tipografia": "grupo",
       "iconografia": "grupo",
-      "radios": { "s": 6, "btn": 12, "m": 16, "l": 24, "pill": 999 },
-      "logos": { "principal": null, "negativo": null, "monocromo": null },
+      "radios": {
+        "s": 6,
+        "btn": 12,
+        "m": 16,
+        "l": 24,
+        "pill": 999
+      },
+      "logos": {
+        "principal": null,
+        "negativo": null,
+        "monocromo": null
+      },
       "logo_nota": "Carpeta Logos/logos-oficiales/linex-loyalty/ vacía.",
       "voz": null,
-      "legal": { "operador": null, "rnt": null, "ciudad": null, "admite_simbolo_marca": false },
+      "legal": {
+        "operador": null,
+        "rnt": null,
+        "ciudad": null,
+        "admite_simbolo_marca": false
+      },
       "manual": null,
       "contexto": null,
       "pendientes": [
@@ -179,9 +259,14 @@
         "Sin voz documentada",
         "Sin manual",
         "El Verde queda a la misma luminosidad que el Amarillo de Trip (L* 89.2 vs 88.1): se distinguen por tono, no por valor"
-      ]
+      ],
+      "estado_trabajo": {
+        "fecha": "2026-09-17",
+        "estado": "en pausa",
+        "decision": "Linex Loyalty queda en pausa por decisión del dueño de marca. No se trabaja su manual ni se completa su paleta por ahora.",
+        "al_retomar": "Lo primero es fijar su base oscura: el Verde #C5F04A da 1.32:1 sobre blanco y no tiene dónde vivir sin ella."
+      }
     },
-
     "linex-travel": {
       "id": "linex-travel",
       "nombre": "Linex Travel",
@@ -194,18 +279,36 @@
       "genio_nota": "Nombre en proceso. Construye soluciones de viaje a la medida: sitio de redención, API de agencia, UX de viaje.",
       "estado": "pendiente",
       "prioridad": "1 · operando",
-      "sub_marcas": ["linex-go", "linex-trip"],
+      "sub_marcas": [
+        "linex-go",
+        "linex-trip"
+      ],
       "atrae": "Compañías que necesitan el viaje como redención; agencias que buscan un front-to-back; revendedores de servicios de viaje con IA.",
       "filtra": "Inversionistas y necesidades ajenas al viaje — el Group Bar los enruta.",
       "color": [],
       "derivados": [],
       "tipografia": "grupo",
       "iconografia": "grupo",
-      "radios": { "s": 6, "btn": 12, "m": 16, "l": 24, "pill": 999 },
-      "logos": { "principal": null, "negativo": null, "monocromo": null },
+      "radios": {
+        "s": 6,
+        "btn": 12,
+        "m": 16,
+        "l": 24,
+        "pill": 999
+      },
+      "logos": {
+        "principal": null,
+        "negativo": null,
+        "monocromo": null
+      },
       "logo_nota": "Carpeta Logos/logos-oficiales/linex-travel/ vacía.",
       "voz": null,
-      "legal": { "operador": null, "rnt": null, "ciudad": null, "admite_simbolo_marca": false },
+      "legal": {
+        "operador": null,
+        "rnt": null,
+        "ciudad": null,
+        "admite_simbolo_marca": false
+      },
       "manual": null,
       "contexto": null,
       "pendientes": [
@@ -216,7 +319,6 @@
         "Sus dos sub-marcas están mejor documentadas que ella"
       ]
     },
-
     "linex-go": {
       "id": "linex-go",
       "nombre": "Linex Go",
@@ -234,58 +336,187 @@
       "filtra": "El viajero final — se enruta a Linex Trip por el Group Bar o por el asesor.",
       "color": [
         {
-          "nombre": "Petróleo", "hex": "#012D33", "rgb": [1, 45, 51], "cmyk": [98, 12, 0, 80],
-          "rol": "Principal", "proporcion": 32,
+          "nombre": "Petróleo",
+          "hex": "#012D33",
+          "rgb": [
+            1,
+            45,
+            51
+          ],
+          "cmyk": [
+            98,
+            12,
+            0,
+            80
+          ],
+          "rol": "Principal",
+          "proporcion": 32,
           "regla": {
             "solo_sobre": null,
-            "nunca": ["rellenar un botón"],
-            "contrastes": { "#FFFFFF": 14.74, "#F8F9FC": 14.00, "#F3F0E9": 12.95, "#FFE3DD": 12.13, "#FF725E": 5.49 }
+            "nunca": [
+              "rellenar un botón"
+            ],
+            "contrastes": {
+              "#FFFFFF": 14.74,
+              "#F8F9FC": 14,
+              "#F3F0E9": 12.95,
+              "#FFE3DD": 12.13,
+              "#FF725E": 5.49
+            }
           }
         },
         {
-          "nombre": "Petróleo claro", "hex": "#004751", "rgb": [0, 71, 81], "cmyk": [100, 12, 0, 68],
-          "rol": "Apoyo — texto secundario, contenedores de ícono", "proporcion": 18,
+          "nombre": "Petróleo claro",
+          "hex": "#004751",
+          "rgb": [
+            0,
+            71,
+            81
+          ],
+          "cmyk": [
+            100,
+            12,
+            0,
+            68
+          ],
+          "rol": "Apoyo — texto secundario, contenedores de ícono",
+          "proporcion": 18,
           "regla": {
             "solo_sobre": null,
             "nunca": [],
-            "contrastes": { "#FFFFFF": 10.40, "#F8F9FC": 9.87 },
+            "contrastes": {
+              "#FFFFFF": 10.4,
+              "#F8F9FC": 9.87
+            },
             "nota": "Es el acento tecnológico transversal que Go comparte con Linex Travel, no un color exclusivo de Go."
           }
         },
         {
-          "nombre": "Blanco frío", "hex": "#F8F9FC", "rgb": [248, 249, 252], "cmyk": [2, 1, 0, 1],
-          "rol": "Respiro — fondo por defecto", "proporcion": 18, "regla": null
+          "nombre": "Blanco frío",
+          "hex": "#F8F9FC",
+          "rgb": [
+            248,
+            249,
+            252
+          ],
+          "cmyk": [
+            2,
+            1,
+            0,
+            1
+          ],
+          "rol": "Respiro — fondo por defecto",
+          "proporcion": 18,
+          "regla": null
         },
         {
-          "nombre": "Coral", "hex": "#FF725E", "rgb": [255, 114, 94], "cmyk": [0, 55, 63, 0],
-          "rol": "Acción — y solo la acción", "proporcion": 12,
+          "nombre": "Coral",
+          "hex": "#FF725E",
+          "rgb": [
+            255,
+            114,
+            94
+          ],
+          "cmyk": [
+            0,
+            55,
+            63,
+            0
+          ],
+          "rol": "Acción — y solo la acción",
+          "proporcion": 12,
           "regla": {
             "solo_sobre": null,
-            "nunca": ["texto sobre fondo claro", "texto blanco encima", "destacar un dato que no se puede tocar", "soporte de marca", "fondo del logotipo"],
-            "contrastes": { "#012D33": 5.49, "#004751": 3.87, "#FFFFFF": 2.69, "#F8F9FC": 2.55, "#F3F0E9": 2.36 },
+            "nunca": [
+              "texto sobre fondo claro",
+              "texto blanco encima",
+              "destacar un dato que no se puede tocar",
+              "soporte de marca",
+              "fondo del logotipo"
+            ],
+            "contrastes": {
+              "#012D33": 5.49,
+              "#004751": 3.87,
+              "#FFFFFF": 2.69,
+              "#F8F9FC": 2.55,
+              "#F3F0E9": 2.36
+            },
             "nota": "Un color de acción funciona por exclusividad. Si el mismo coral pinta un botón en una pieza y un porcentaje en la siguiente, deja de responder la única pregunta que tiene que responder de un vistazo: ¿dónde toco?"
           }
         },
         {
-          "nombre": "Blanco cálido", "hex": "#F3F0E9", "rgb": [243, 240, 233], "cmyk": [0, 1, 4, 5],
-          "rol": "Apoyo editorial", "proporcion": 10, "regla": null
+          "nombre": "Blanco cálido",
+          "hex": "#F3F0E9",
+          "rgb": [
+            243,
+            240,
+            233
+          ],
+          "cmyk": [
+            0,
+            1,
+            4,
+            5
+          ],
+          "rol": "Apoyo editorial",
+          "proporcion": 10,
+          "regla": null
         },
         {
-          "nombre": "Coral claro", "hex": "#FFE3DD", "rgb": [255, 227, 221], "cmyk": [0, 11, 13, 0],
-          "rol": "Superficie — avisos y tarjetas de realce", "proporcion": 6,
+          "nombre": "Coral claro",
+          "hex": "#FFE3DD",
+          "rgb": [
+            255,
+            227,
+            221
+          ],
+          "cmyk": [
+            0,
+            11,
+            13,
+            0
+          ],
+          "rol": "Superficie — avisos y tarjetas de realce",
+          "proporcion": 6,
           "regla": {
             "solo_sobre": null,
-            "nunca": ["usarse como tinta"],
-            "contrastes": { "#012D33": 12.13, "#F8F9FC": 1.15 }
+            "nunca": [
+              "usarse como tinta"
+            ],
+            "contrastes": {
+              "#012D33": 12.13,
+              "#F8F9FC": 1.15
+            }
           }
         },
         {
-          "nombre": "Arena", "hex": "#E6D5B8", "rgb": [230, 213, 184], "cmyk": [0, 7, 20, 10],
-          "rol": "Detalle — antetítulos, vigencias, letra chica", "proporcion": 4,
+          "nombre": "Arena",
+          "hex": "#E6D5B8",
+          "rgb": [
+            230,
+            213,
+            184
+          ],
+          "cmyk": [
+            0,
+            7,
+            20,
+            10
+          ],
+          "rol": "Detalle — antetítulos, vigencias, letra chica",
+          "proporcion": 4,
           "regla": {
             "solo_sobre": "#012D33",
-            "nunca": ["títulos", "botones", "tinta sobre fondo claro"],
-            "contrastes": { "#012D33": 10.23, "#004751": 7.21, "#F8F9FC": 1.37 }
+            "nunca": [
+              "títulos",
+              "botones",
+              "tinta sobre fondo claro"
+            ],
+            "contrastes": {
+              "#012D33": 10.23,
+              "#004751": 7.21,
+              "#F8F9FC": 1.37
+            }
           }
         }
       ],
@@ -293,7 +524,13 @@
       "proporcion_nota": "Dos de los porcentajes son regla, no descripción: el coral no pasa del 12% y la arena se queda en 4%. Un color que aparece poco es un color que se nota cuando aparece.",
       "tipografia": "grupo",
       "iconografia": "grupo",
-      "radios": { "s": 6, "btn": 12, "m": 16, "l": 24, "pill": 999 },
+      "radios": {
+        "s": 6,
+        "btn": 12,
+        "m": 16,
+        "l": 24,
+        "pill": 999
+      },
       "logos": {
         "principal": "Logos/logos-oficiales/linex-go/LinexGo-logo-color.svg",
         "principal_png": "Logos/logos-oficiales/linex-go/LinexGo-logo-color.png",
@@ -313,7 +550,11 @@
         "hex": "#1A0E3E",
         "alcance": "Solo el logotipo. El Petróleo #012D33 sigue siendo el color principal de la marca, el que sostiene el texto y el que va encima del coral.",
         "no_cambia": "Ningún contraste de la paleta, ninguna regla de acción, ningún token del CSS.",
-        "contrastes_del_logo": { "#F8F9FC": 16.96, "#F3F0E9": 15.69, "#012D33": 1.21 },
+        "contrastes_del_logo": {
+          "#F8F9FC": 16.96,
+          "#F3F0E9": 15.69,
+          "#012D33": 1.21
+        },
         "consecuencia_dura": "Sobre Petróleo el logotipo a color da 1.21:1 y desaparece. Sobre ese fondo va SIEMPRE la versión negativa, sin excepción.",
         "convivencia": "En una pieza con fondo o tipografía en Petróleo, el logotipo queda en otro oscuro. Están a ΔE 39.3: la diferencia se ve, y es intencional.",
         "contexto": "#1A0E3E era el Índigo de Linex Trip hasta el 14 de septiembre de 2026, cuando Trip lo cambió por el Azul Trip #00145A. El oscuro del logotipo de Go y el de Trip quedan a ΔE 15.5 y a 7° de tono: conviene tenerlo en cuenta al poner las dos marcas en una misma pieza."
@@ -324,14 +565,31 @@
         "renombrado": {
           "fecha": "2026-09-17",
           "por_que": "Tres de los cuatro archivos llegaron nombrados 'LinexTrip' estando en la carpeta de Linex Go, y los cuatro traían un sufijo ' 1' con espacio. Se renombraron con git mv para conservar el historial, adoptando la misma convención que Linex Trip.",
-          "de": ["LinexGo-logo-color 1", "LinexTrip-logo-monocromo 1", "LinexTrip-logo-negativo 1", "LinexTrip-logo-negro 1"],
-          "a": ["LinexGo-logo-color", "LinexGo-logo-monocromo", "LinexGo-logo-negativo", "LinexGo-logo-negro"]
+          "de": [
+            "LinexGo-logo-color 1",
+            "LinexTrip-logo-monocromo 1",
+            "LinexTrip-logo-negativo 1",
+            "LinexTrip-logo-negro 1"
+          ],
+          "a": [
+            "LinexGo-logo-color",
+            "LinexGo-logo-monocromo",
+            "LinexGo-logo-negativo",
+            "LinexGo-logo-negro"
+          ]
         },
-        "duda_abierta": "El archivo 'negro' usa fill=\"black\", y la regla 04 dice que el 'Linex' nunca va en negro. El manual define una sola versión monocromática, no dos. Falta decidir si 'monocromo' y 'negro' son la misma pieza o dos distintas."
+        "negro_oficial": "Confirmado como pieza oficial por el dueño de marca el 17 de septiembre de 2026. Son dos versiones distintas, no una: el monocromo usa el oscuro de la marca y el negro usa negro puro. La regla 04 de los usos incorrectos se refiere a la versión a color, no a esta. PENDIENTE MENOR: falta escribir cuándo va cada una — el criterio habitual es monocromo cuando se puede imprimir el color de marca, y negro cuando la restricción solo admite negro (grabado, sellos, prensa, documentos legales)."
       },
       "logo_fondos": {
-        "permitidos": ["#F8F9FC", "#F3F0E9", "#012D33"],
-        "prohibidos": ["#FF725E", "#004751"],
+        "permitidos": [
+          "#F8F9FC",
+          "#F3F0E9",
+          "#012D33"
+        ],
+        "prohibidos": [
+          "#FF725E",
+          "#004751"
+        ],
         "nota": "Sobre petróleo solo con la versión negativa, que no existe todavía. Nunca sobre coral: el Go coral desaparecería dentro de él."
       },
       "aliados": {
@@ -344,30 +602,78 @@
         "assistviaje": null
       },
       "voz": {
-        "principios": ["Profesional", "Cercana", "Útil", "Clara", "Sin tecnicismos"],
+        "principios": [
+          "Profesional",
+          "Cercana",
+          "Útil",
+          "Clara",
+          "Sin tecnicismos"
+        ],
         "matiz": "Le habla a quien vende viajes, no a quien los compra.",
         "prueba": "Si el texto podría firmarlo cualquier mayorista, todavía no suena a Linex Go.",
         "claim": "Soluciones que impulsan tu agencia de viajes.",
         "claim_nota": "Es el eslogan. Se usa completo, sin recortar ni parafrasear.",
         "claims_pendientes": [],
-        "claims_prohibidos": ["Los precios más bajos", "Disponibilidad garantizada", "La mejor plataforma", "Vende más automáticamente", "La opción número uno"],
+        "claims_prohibidos": [
+          "Los precios más bajos",
+          "Disponibilidad garantizada",
+          "La mejor plataforma",
+          "Vende más automáticamente",
+          "La opción número uno"
+        ],
         "vocabulario": {
-          "usar": ["Aliado", "Respaldo", "Portafolio", "Clientes de tu agencia"],
-          "evitar": ["proveedor", "catálogo de ofertas", "tus clientes", "Reserva tus vacaciones", "Compra tu viaje", "Vive esta experiencia"],
+          "usar": [
+            "Aliado",
+            "Respaldo",
+            "Portafolio",
+            "Clientes de tu agencia"
+          ],
+          "evitar": [
+            "proveedor",
+            "catálogo de ofertas",
+            "tus clientes",
+            "Reserva tus vacaciones",
+            "Compra tu viaje",
+            "Vive esta experiencia"
+          ],
           "nota": "Proveedor, catálogo y tus clientes no son errores de estilo: cada uno cambia quién manda en la relación. Decir clientes de tu agencia en vez de tus clientes es la diferencia entre acompañar una venta y disputarla."
         },
         "cta": {
-          "educativos": ["Guarda esta guía", "Descarga el material de apoyo", "Aprende a cotizarlo en la plataforma"],
-          "comerciales": ["Consulta el portafolio", "Cotiza para tus clientes", "Solicita condiciones para tu agencia"],
-          "relacion": ["Conversa con nuestro equipo", "Agenda una demo de la plataforma", "Escríbenos y te acompañamos"]
+          "educativos": [
+            "Guarda esta guía",
+            "Descarga el material de apoyo",
+            "Aprende a cotizarlo en la plataforma"
+          ],
+          "comerciales": [
+            "Consulta el portafolio",
+            "Cotiza para tus clientes",
+            "Solicita condiciones para tu agencia"
+          ],
+          "relacion": [
+            "Conversa con nuestro equipo",
+            "Agenda una demo de la plataforma",
+            "Escríbenos y te acompañamos"
+          ]
         }
       },
       "audiencias": {
         "regla": "No se comunica al viajero final, salvo en piezas autorizadas y cofirmadas con la agencia.",
-        "lista": ["Agencias de viajes", "Operadores", "Equipos comerciales", "Agentes independientes", "Minoristas", "Dueños de agencia"],
+        "lista": [
+          "Agencias de viajes",
+          "Operadores",
+          "Equipos comerciales",
+          "Agentes independientes",
+          "Minoristas",
+          "Dueños de agencia"
+        ],
         "estado": "Existe la estructura de ficha (Necesidades, Dolores, Motivaciones, Objeciones, CTA, Lenguaje a evitar), no el contenido."
       },
-      "legal": { "operador": null, "rnt": null, "ciudad": null, "admite_simbolo_marca": false },
+      "legal": {
+        "operador": null,
+        "rnt": null,
+        "ciudad": null,
+        "admite_simbolo_marca": false
+      },
       "manual": "manual-linex-go/",
       "contexto": "contexto-linex-go.md",
       "pendientes": [
@@ -380,11 +686,16 @@
         "Sin nombre corporativo legal aprobado",
         "Sin plazo definido para la transición UltraGo → Linex Go",
         "Sin banco de imágenes propio",
-        "Conflicto sin resolver: la sección de canal pide tarjeta en fondo petróleo con logo negativo, y las piezas producidas usan cara clara",
+        "Las piezas producidas se ajustan CON EL DISEÑADOR (decisión 17-sep-2026): el conflicto de la tarjeta —fondo petróleo con logo negativo según la sección de canal, cara clara según lo producido— y los radios de 20 y 28 px que quedaron fuera de la escala del grupo",
         "Solo Instagram tiene reglas escritas; las demás redes no"
-      ]
+      ],
+      "paleta_confirmada": {
+        "fecha": "2026-09-17",
+        "decision": "La paleta del manual NO se reemplaza. Los siete colores documentados son los definidos, con el Petróleo #012D33 como principal.",
+        "alcance": "Que el logotipo lleve Índigo #1A0E3E es una excepción del logotipo y nada más. No arrastra a la paleta, ni a los contrastes, ni a los tokens del CSS.",
+        "no_reabrir": "Esta decisión cierra la pregunta de si el oscuro de la marca debía cambiar con el del logotipo. La respuesta es no."
+      }
     },
-
     "linex-trip": {
       "id": "linex-trip",
       "nombre": "Linex Trip",
@@ -402,61 +713,183 @@
       "filtra": "Agencias y operadores — se enrutan a Linex Go, sin armarles tarifa B2B.",
       "color": [
         {
-          "nombre": "Azul Trip", "hex": "#00145A", "rgb": [0, 20, 90], "cmyk": [100, 78, 0, 65],
-          "rol": "Principal — sostiene el texto y viste los fondos oscuros", "proporcion": 30,
+          "nombre": "Azul Trip",
+          "hex": "#00145A",
+          "rgb": [
+            0,
+            20,
+            90
+          ],
+          "cmyk": [
+            100,
+            78,
+            0,
+            65
+          ],
+          "rol": "Principal — sostiene el texto y viste los fondos oscuros",
+          "proporcion": 30,
           "regla": {
             "solo_sobre": null,
-            "nunca": ["rellenar un botón"],
-            "contrastes": { "#FFFFFF": 16.83, "#00B5F5": 7.16 }
+            "nunca": [
+              "rellenar un botón"
+            ],
+            "contrastes": {
+              "#FFFFFF": 16.83,
+              "#00B5F5": 7.16
+            }
           }
         },
         {
-          "nombre": "Celeste Acción", "hex": "#00B5F5", "rgb": [0, 181, 245], "cmyk": [100, 26, 0, 4],
-          "rol": "Acción / CTA — todo lo que se toca", "proporcion": 21,
+          "nombre": "Celeste Acción",
+          "hex": "#00B5F5",
+          "rgb": [
+            0,
+            181,
+            245
+          ],
+          "cmyk": [
+            100,
+            26,
+            0,
+            4
+          ],
+          "rol": "Acción / CTA — todo lo que se toca",
+          "proporcion": 21,
           "regla": {
             "solo_sobre": null,
-            "nunca": ["texto sobre fondo claro", "texto blanco encima", "fondo del logotipo"],
-            "contrastes": { "#00145A": 7.16, "#FFFFFF": 2.35, "#E6F8FE": 2.15 },
+            "nunca": [
+              "texto sobre fondo claro",
+              "texto blanco encima",
+              "fondo del logotipo"
+            ],
+            "contrastes": {
+              "#00145A": 7.16,
+              "#FFFFFF": 2.35,
+              "#E6F8FE": 2.15
+            },
             "nota": "La regla de acción: si se puede tocar es Celeste, si se lee es Azul Trip. Vale para todos los canales sin excepción."
           }
         },
         {
-          "nombre": "Blanco", "hex": "#FFFFFF", "rgb": [255, 255, 255], "cmyk": [0, 0, 0, 0],
-          "rol": "Base y respiro", "proporcion": 19, "regla": null
+          "nombre": "Blanco",
+          "hex": "#FFFFFF",
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "cmyk": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "rol": "Base y respiro",
+          "proporcion": 19,
+          "regla": null
         },
         {
-          "nombre": "Celeste Cielo", "hex": "#E6F8FE", "rgb": [230, 248, 254], "cmyk": [9, 2, 0, 0],
-          "rol": "Respiro — cápsulas, chips y tarjetas tenues", "proporcion": 10, "regla": null
+          "nombre": "Celeste Cielo",
+          "hex": "#E6F8FE",
+          "rgb": [
+            230,
+            248,
+            254
+          ],
+          "cmyk": [
+            9,
+            2,
+            0,
+            0
+          ],
+          "rol": "Respiro — cápsulas, chips y tarjetas tenues",
+          "proporcion": 10,
+          "regla": null
         },
         {
-          "nombre": "Lavanda Linex", "hex": "#DDE1FF", "rgb": [221, 225, 255], "cmyk": [13, 12, 0, 0],
-          "rol": "Apoyo — uno de los tres fondos del logotipo", "proporcion": 8,
+          "nombre": "Lavanda Linex",
+          "hex": "#DDE1FF",
+          "rgb": [
+            221,
+            225,
+            255
+          ],
+          "cmyk": [
+            13,
+            12,
+            0,
+            0
+          ],
+          "rol": "Apoyo — uno de los tres fondos del logotipo",
+          "proporcion": 8,
           "regla": {
             "solo_sobre": null,
-            "nunca": ["usarse como texto"],
-            "contrastes": { "#FFFFFF": 1.29 }
+            "nunca": [
+              "usarse como texto"
+            ],
+            "contrastes": {
+              "#FFFFFF": 1.29
+            }
           }
         },
         {
-          "nombre": "Negro Linex", "hex": "#080808", "rgb": [8, 8, 8], "cmyk": [0, 0, 0, 97],
-          "rol": "Reserva para impresión a un solo color", "proporcion": 8, "regla": null
+          "nombre": "Negro Linex",
+          "hex": "#080808",
+          "rgb": [
+            8,
+            8,
+            8
+          ],
+          "cmyk": [
+            0,
+            0,
+            0,
+            97
+          ],
+          "rol": "Reserva para impresión a un solo color",
+          "proporcion": 8,
+          "regla": null
         },
         {
-          "nombre": "Amarillo", "hex": "#ECE200", "rgb": [236, 226, 0], "cmyk": [0, 4, 100, 7],
-          "rol": "Detalle — antetítulos, letra chica, separadores", "proporcion": 4,
+          "nombre": "Amarillo",
+          "hex": "#ECE200",
+          "rgb": [
+            236,
+            226,
+            0
+          ],
+          "cmyk": [
+            0,
+            4,
+            100,
+            7
+          ],
+          "rol": "Detalle — antetítulos, letra chica, separadores",
+          "proporcion": 4,
           "regla": {
             "solo_sobre": "#00145A",
-            "nunca": ["títulos", "botones", "cualquier fondo claro"],
-            "contrastes": { "#00145A": 12.38, "#FFFFFF": 1.36 },
+            "nunca": [
+              "títulos",
+              "botones",
+              "cualquier fondo claro"
+            ],
+            "contrastes": {
+              "#00145A": 12.38,
+              "#FFFFFF": 1.36
+            },
             "nota": "Es el color más llamativo de la paleta, y por eso el primer impulso es ponerlo sobre blanco. No hay excepción por tamaño, por grosor ni por tratarse de un ícono."
           }
         }
       ],
       "derivados": [
         {
-          "nombre": "Celeste Oscuro", "hex": "#0090C2",
+          "nombre": "Celeste Oscuro",
+          "hex": "#0090C2",
           "rol": "Ícono de acción sobre fondo claro — no es de la paleta",
-          "contrastes": { "#FFFFFF": 3.64, "#F6F8FF": 3.43 }
+          "contrastes": {
+            "#FFFFFF": 3.64,
+            "#F6F8FF": 3.43
+          }
         }
       ],
       "proporcion_nota": "Los siete HEX son dato validado. El porcentaje de uso es una propuesta de guía visual del manual, no una cifra medida ni aprobada por negocio. Los CMYK están calculados desde el HEX, no medidos en imprenta.",
@@ -466,18 +899,42 @@
         "por_que": "Separar a Trip del navy de Linex Go.",
         "deuda": "SALDADA el 17 de septiembre de 2026. El cambio de oscuro dejó seis contrastes del manual medidos todavía contra el Índigo, en 15 apariciones repartidas en tres páginas. Se recalcularon todos con tools/contraste.js y se corrigieron. Ningún veredicto cambió — los seis seguían cumpliendo lo que decían cumplir — pero el manual se contradecía a sí mismo (decía 7.59 y 7.16 para el mismo par).",
         "correcciones": {
-          "blanco_sobre_navy": { "decia": 17.85, "real": 16.83 },
-          "celeste_sobre_navy": { "decia": 7.59, "real": 7.16 },
-          "papel_sobre_navy": { "decia": 16.82, "real": 15.86 },
-          "celeste_cielo_sobre_navy": { "decia": 16.34, "real": 15.41 },
-          "lavanda_sobre_navy": { "decia": 13.85, "real": 13.05 },
-          "celeste_oscuro_sobre_navy": { "decia": 4.90, "real": 4.62 }
+          "blanco_sobre_navy": {
+            "decia": 17.85,
+            "real": 16.83
+          },
+          "celeste_sobre_navy": {
+            "decia": 7.59,
+            "real": 7.16
+          },
+          "papel_sobre_navy": {
+            "decia": 16.82,
+            "real": 15.86
+          },
+          "celeste_cielo_sobre_navy": {
+            "decia": 16.34,
+            "real": 15.41
+          },
+          "lavanda_sobre_navy": {
+            "decia": 13.85,
+            "real": 13.05
+          },
+          "celeste_oscuro_sobre_navy": {
+            "decia": 4.9,
+            "real": 4.62
+          }
         },
         "leccion": "Un cambio de color invalida todos los ratios medidos contra él. Los números viejos sobreviven en las tablas porque un ratio con dos decimales parece un hecho, y nadie recalcula un hecho."
       },
       "tipografia": "grupo",
       "iconografia": "grupo",
-      "radios": { "s": 6, "btn": 12, "m": 16, "l": 24, "pill": 999 },
+      "radios": {
+        "s": 6,
+        "btn": 12,
+        "m": 16,
+        "l": 24,
+        "pill": 999
+      },
       "logos": {
         "principal": "Logos/logos-oficiales/linex-trip/LinexTrip-logo-color.svg",
         "principal_png": "Logos/logos-oficiales/linex-trip/LinexTrip-logo-color.png",
@@ -494,16 +951,27 @@
         "vectorial": true,
         "colores_correctos": true,
         "nota": "El archivo nuevo LinexTrip-logo-color.svg y el anterior logo-LinexTrip.svg son la misma pieza: 9 formas y los mismos dos colores. Se adopta el nombre nuevo por consistencia con el resto del lote.",
-        "duda_abierta": "La versión en negro puro (#000000) no está en el manual, que define el monocromo en Azul Trip. Falta decidir si es una pieza oficial o un extra del diseñador."
+        "negro_oficial": "Confirmado como pieza oficial por el dueño de marca el 17 de septiembre de 2026. Convive con el monocromo en Azul Trip: son dos versiones distintas. PENDIENTE MENOR: falta escribir cuándo va cada una."
       },
       "logo_fondos": {
-        "permitidos": ["#FFFFFF", "#DDE1FF", "#00145A"],
-        "prohibidos": ["#00B5F5"],
+        "permitidos": [
+          "#FFFFFF",
+          "#DDE1FF",
+          "#00145A"
+        ],
+        "prohibidos": [
+          "#00B5F5"
+        ],
         "nota": "Zona de seguridad igual a la altura de la L de Linex, por los cuatro costados. Mínimo 120 px digital, 30 mm impreso."
       },
       "propuestas_logo": "Logos/logos-oficiales/linex-trip/propuesta/",
       "voz": {
-        "principios": ["Claro", "Cercano", "Confiable", "Inspirador"],
+        "principios": [
+          "Claro",
+          "Cercano",
+          "Confiable",
+          "Inspirador"
+        ],
         "matiz": "Como un viajero le habla a otro. Más directa que Linex Go, porque le habla al viajero final y no a una agencia.",
         "claim": "Viaja Inteligente",
         "claim_nota": "El único aprobado. Acompaña al nombre, nunca lo reemplaza: una pieza puede llevar el logo sin el claim, nunca el claim sin la marca. No es un CTA y no va dentro de un botón.",
@@ -512,26 +980,71 @@
           "Reserva hoy, viaja tranquilo.",
           "El mundo, a un clic de distancia."
         ],
-        "claims_prohibidos": ["el mejor precio", "garantizado", "última oportunidad sin vigencia real", "24/7", "respuesta inmediata", "asesor personal"],
+        "claims_prohibidos": [
+          "el mejor precio",
+          "garantizado",
+          "última oportunidad sin vigencia real",
+          "24/7",
+          "respuesta inmediata",
+          "asesor personal"
+        ],
         "vocabulario": {
-          "usar": ["Viajero", "Reservar", "Vuelo", "Tiquete", "Pagar en cuotas", "Contact Center", "Equipo de Linex Trip"],
-          "evitar": ["usuario", "cliente", "booking", "hacer check-out", "ticket", "financiar", "diferir", "call center", "bookear", "aplicar a la promoción"],
+          "usar": [
+            "Viajero",
+            "Reservar",
+            "Vuelo",
+            "Tiquete",
+            "Pagar en cuotas",
+            "Contact Center",
+            "Equipo de Linex Trip"
+          ],
+          "evitar": [
+            "usuario",
+            "cliente",
+            "booking",
+            "hacer check-out",
+            "ticket",
+            "financiar",
+            "diferir",
+            "call center",
+            "bookear",
+            "aplicar a la promoción"
+          ],
           "nota": "Precio con las dos monedas y separador de miles: $112 USD · $450.000 COP. Sin jerga técnica (GDS, PNR, inventario) en comunicación al viajero."
         },
         "cta": {
-          "descubrimiento": ["Buscar vuelos", "Ver destinos", "Cotiza tu viaje"],
-          "decision": ["Reserva ahora", "Ver disponibilidad", "Paga en cuotas"],
-          "soporte": ["Habla con un asesor", "Escríbenos por WhatsApp", "Ver mi reserva"]
+          "descubrimiento": [
+            "Buscar vuelos",
+            "Ver destinos",
+            "Cotiza tu viaje"
+          ],
+          "decision": [
+            "Reserva ahora",
+            "Ver disponibilidad",
+            "Paga en cuotas"
+          ],
+          "soporte": [
+            "Habla con un asesor",
+            "Escríbenos por WhatsApp",
+            "Ver mi reserva"
+          ]
         }
       },
       "audiencias": {
         "regla": "Antes de diseñar se elige un arquetipo, no dos. Una pieza que le habla a los tres no le habla a ninguno.",
-        "lista": ["El planificador digital", "El decisor rápido", "La familia viajera"],
+        "lista": [
+          "El planificador digital",
+          "El decisor rápido",
+          "La familia viajera"
+        ],
         "estado": "El comportamiento de cada arquetipo está decidido. El perfil demográfico y de dispositivo es hipótesis: orienta una pieza, no se cita como dato en un reporte a negocio."
       },
       "legal": {
         "operador": "Strategic Points S.A.S.",
-        "rnt": ["59151", "82366"],
+        "rnt": [
+          "59151",
+          "82366"
+        ],
         "ciudad": "Medellín, Colombia",
         "admite_simbolo_marca": false
       },
@@ -543,11 +1056,9 @@
         "Las siete propuestas están dibujadas con el Índigo viejo y habría que recolorearlas",
         "Sin banco de fotografía propio",
         "Claims secundarios sin aprobar",
-        
         "Repositorio central de activos pendiente de validar con negocio"
       ]
     },
-
     "linex-marketplace": {
       "id": "linex-marketplace",
       "nombre": "Linex Marketplace",
@@ -566,17 +1077,37 @@
       "derivados": [],
       "tipografia": "grupo",
       "iconografia": "grupo",
-      "radios": { "s": 6, "btn": 12, "m": 16, "l": 24, "pill": 999 },
-      "logos": { "principal": null, "negativo": null, "monocromo": null },
+      "radios": {
+        "s": 6,
+        "btn": 12,
+        "m": 16,
+        "l": 24,
+        "pill": 999
+      },
+      "logos": {
+        "principal": null,
+        "negativo": null,
+        "monocromo": null
+      },
       "logo_nota": "Carpeta Logos/logos-oficiales/linex-marketplace/ vacía.",
       "voz": null,
-      "legal": { "operador": null, "rnt": null, "ciudad": null, "admite_simbolo_marca": false },
+      "legal": {
+        "operador": null,
+        "rnt": null,
+        "ciudad": null,
+        "admite_simbolo_marca": false
+      },
       "manual": null,
       "contexto": null,
       "nota": "Es un paraguas, no un nicho: cualquier categoría puede desprenderse en su propia estrella cuando el negocio lo justifique.",
-      "pendientes": ["Sin logo", "Sin paleta", "Sin voz documentada", "Sin manual", "Genio sin nombrar"]
+      "pendientes": [
+        "Sin logo",
+        "Sin paleta",
+        "Sin voz documentada",
+        "Sin manual",
+        "Genio sin nombrar"
+      ]
     },
-
     "linex-rewards": {
       "id": "linex-rewards",
       "nombre": "Linex Rewards",
@@ -595,16 +1126,35 @@
       "derivados": [],
       "tipografia": "grupo",
       "iconografia": "grupo",
-      "radios": { "s": 6, "btn": 12, "m": 16, "l": 24, "pill": 999 },
-      "logos": { "principal": null, "negativo": null, "monocromo": null },
+      "radios": {
+        "s": 6,
+        "btn": 12,
+        "m": 16,
+        "l": 24,
+        "pill": 999
+      },
+      "logos": {
+        "principal": null,
+        "negativo": null,
+        "monocromo": null
+      },
       "logo_nota": "Carpeta Logos/logos-oficiales/linex-rewards/ vacía.",
       "voz": null,
-      "legal": { "operador": null, "rnt": null, "ciudad": null, "admite_simbolo_marca": false },
+      "legal": {
+        "operador": null,
+        "rnt": null,
+        "ciudad": null,
+        "admite_simbolo_marca": false
+      },
       "manual": null,
       "contexto": null,
-      "pendientes": ["Sin logo", "Sin paleta", "Sin voz documentada", "Sin manual"]
+      "pendientes": [
+        "Sin logo",
+        "Sin paleta",
+        "Sin voz documentada",
+        "Sin manual"
+      ]
     },
-
     "linex-school": {
       "id": "linex-school",
       "nombre": "Linex School",
@@ -621,11 +1171,26 @@
       "derivados": [],
       "tipografia": "grupo",
       "iconografia": "grupo",
-      "radios": { "s": 6, "btn": 12, "m": 16, "l": 24, "pill": 999 },
-      "logos": { "principal": null, "negativo": null, "monocromo": null },
+      "radios": {
+        "s": 6,
+        "btn": 12,
+        "m": 16,
+        "l": 24,
+        "pill": 999
+      },
+      "logos": {
+        "principal": null,
+        "negativo": null,
+        "monocromo": null
+      },
       "logo_nota": "Sin archivo. No tiene carpeta en Logos/logos-oficiales/.",
       "voz": null,
-      "legal": { "operador": null, "rnt": null, "ciudad": null, "admite_simbolo_marca": false },
+      "legal": {
+        "operador": null,
+        "rnt": null,
+        "ciudad": null,
+        "admite_simbolo_marca": false
+      },
       "manual": null,
       "contexto": null,
       "nota": "El número y la identidad de las estrellas es deliberadamente abierto: una categoría puede nacer cuando el negocio lo justifique.",
@@ -638,5 +1203,11 @@
         "No aparece en ninguno de los dos contextos de marca"
       ]
     }
+  },
+  "hoja_de_ruta": {
+    "fecha": "2026-09-17",
+    "manuales_faltantes": "Los cuatro manuales que faltan se hacen PASO A PASO, uno por uno, no en lote. Decisión del dueño de marca.",
+    "por_que_no_se_puede_aun": "Travel, Marketplace, Rewards y School no tienen color, ni voz, ni logo. Un manual suyo hoy saldría con quince secciones diciendo pendiente: lo que hace falta es una sesión de marca, no un sitio.",
+    "loyalty": "En pausa. Ver marcas.linex-loyalty.estado_trabajo."
   }
 }
