@@ -2,6 +2,15 @@
 
 Sitio estático, sin dependencias ni build. Se abre con doble clic en `index.html`.
 
+**Bilingüe, español e inglés.** El selector de arriba a la izquierda cambia el
+idioma sin recargar la página — es solo CSS, no hay JavaScript nuevo. Cada
+página lleva las dos versiones adentro del mismo archivo: no existe una
+carpeta `/en/` en espejo, porque una carpeta espejo exige recordar tocar los
+dos árboles en cada edición futura, y eso es exactamente cómo dos idiomas se
+desincronizan. La elección de idioma no se recuerda al cambiar de página —eso
+exigiría JavaScript o una cookie, y este manual no tiene ninguno de los dos—;
+cada página abre en español.
+
 ## Qué es
 
 Las 15 secciones del manual de marca de Linex Travel, construidas el 17 de
@@ -46,8 +55,19 @@ Tres cosas que este manual dice y que conviene no descubrir a mitad de una pieza
   veces seguidas no cambia nada.
 - **`tools/plantilla.js`** es el armazón común de las páginas. Es referencia, no
   herramienta: no lo requiere nadie.
-- **`assets/style.css`** son los 82 componentes compartidos con Trip y Go. Un
-  manual nuevo no diseña componentes: hereda los 82 y cambia su `:root`.
+- **`assets/style.css`** son los 82 componentes compartidos con Trip y Go, más
+  el selector de idioma. Un manual nuevo no diseña componentes: hereda los 82
+  y cambia su `:root`.
+- **`tools/envolver.js`** son las cuatro funciones con las que se escribió el
+  bilingüe: `aplicar()` para prosa, `aplicarFila()` para filas de tabla
+  completas —nunca se envuelve una `<tr>` en un `<span>`, se duplica—,
+  `aplicarTitulo()` para el texto interior de un título sin tocar la etiqueta,
+  y `aplicarTituloTodas()` para una etiqueta que se repite a propósito. No es
+  parte del sitio publicado; es la herramienta con la que se mantiene.
+- **`tools/verificar-bilingue.js`** revisa las 16 páginas después de cualquier
+  cambio: que ningún `span[data-lang]` cierre una celda o fila ajena, que los
+  dos idiomas aparezcan el mismo número de veces, y que las etiquetas estén
+  balanceadas. `node tools/verificar-bilingue.js`
 
 ## Los contrastes
 
