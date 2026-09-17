@@ -567,7 +567,10 @@ code {
 .logo-test.icono img { height: 32px; width: 32px; object-fit: contain; }
 .logo-test.light { background: var(--white); border: 1px solid rgba(var(--base-rgb), 0.1); }
 .logo-test.dark  { background: var(--base); }
-.logo-test.lav   { background: var(--calido); }
+/* El tercer escenario prueba el logotipo sobre la Lavanda Linex, que es el otro
+   fondo claro permitido además del blanco. En Go esta clase era el blanco cálido;
+   aquí es el color real sobre el que la marca pone su logotipo casi siempre. */
+.logo-test.lav   { background: var(--lavanda); border: 1px solid rgba(var(--base-rgb), 0.1); }
 
 /* Rejilla del moodboard: solo los símbolos, sin wordmark, para que el territorio
    común (punto, trayectoria, persona) se vea antes que el nombre. */
