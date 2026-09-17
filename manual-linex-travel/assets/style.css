@@ -543,21 +543,33 @@ code {
    situaciones donde un logo se rompe, y solo sirven si se aplican igual a todos. */
 .logo-stage {
   display: flex; align-items: center; justify-content: center;
-  height: 132px; padding: 20px 26px;
+  height: 208px; padding: 26px 34px;
   background: var(--white); border: 1px solid rgba(var(--base-rgb), 0.1);
   border-radius: var(--radius-m);
 }
 .logo-stage.on-navy { background: var(--base); border-color: transparent; }
 .logo-stage img { max-height: 100%; max-width: 100%; }
 
-.logo-tests { display: grid; grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); gap: 10px; }
+/* Dos por fila en el escritorio: con un wordmark de 5:1 el ancho de la casilla
+   ES el tamaño del logotipo, y por debajo de unos 400 px el endoso «Formerly
+   UltraGroup» deja de leerse. El min(340px, 100%) es lo que evita que en un
+   teléfono de 335 px la pista de 340 desborde la página a lo ancho.
+   Y es auto-fill y no auto-fit a propósito: con auto-fit, la casilla que queda
+   sola en la última fila se estira al ancho entero y ese logotipo sale al doble
+   que sus vecinos, como si fuera más importante. */
+.logo-tests { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr)); gap: 14px; }
 .logo-tests figure { margin: 0; }
 .logo-tests figcaption {
-  font-size: 10.5px; font-weight: 700; line-height: 1.35; margin-top: 6px;
-  color: rgba(var(--base-rgb), 0.55);
+  font-size: 12px; font-weight: 700; line-height: 1.35; margin-top: 8px;
+  color: rgba(var(--base-rgb), 0.7);
 }
 .logo-test {
-  height: 78px; padding: 12px; border-radius: var(--radius-s);
+/* 140 px de alto no es un número redondo: es el mínimo para que las CUATRO
+   versiones quepan por ancho y no por alto. Las de 4.35:1 necesitan 94 px y
+   las de 5.11:1, 80 px. Si la casilla fuera más baja, el negativo se
+   encogería a lo ancho y parecería un logotipo más pequeño en vez de uno con
+   otra proporción — que es justo lo que esta página tiene que dejar ver. */
+  height: 140px; padding: 18px 22px; border-radius: var(--radius-s);
   display: flex; align-items: center; justify-content: center;
 }
 .logo-test img { max-height: 100%; max-width: 100%; }
@@ -619,7 +631,7 @@ code {
    wordmark "Linex Trip" salga a la misma altura de mayúscula (~50px) en las
    siete propuestas, que es lo único que todas comparten y por tanto la única
    referencia honesta para igualarlas. */
-.logo-stage img { max-width: min(100%, 430px); max-height: min(100%, 104px); }
+.logo-stage img { max-width: min(100%, 740px); max-height: min(100%, 156px); }
 .logo-stage.vertical { min-height: 280px; }
 .logo-stage.vertical img { max-width: min(100%, 340px); max-height: min(100%, 232px); }
 
