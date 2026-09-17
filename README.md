@@ -48,16 +48,16 @@ you've created a second truth.
 |---|---|---|---|---|---|
 | Linex Capital | 1 · The fund | — | — | — | — |
 | **Linex Loyalty** | 2 · Space port | — | 1 accent | — | **Ixar** |
-| Linex Travel | 3 · Star | — | — | — | *unnamed* |
+| **Linex Travel** | 3 · Star | ✅ 16 pages | ✅ 6 colours | ✅ | *unnamed* |
 | **Linex Go** | 3 · B2B sub-brand | ✅ 16 pages | ✅ 7 colours | ✅ | — |
 | **Linex Trip** | 3 · B2C sub-brand | ✅ 16 pages | ✅ 7 colours | ✅ | — |
 | Linex Marketplace | 3 · Star | — | — | — | *unnamed* |
 | Linex Rewards | 3 · Star | — | — | — | **Milton** |
 | Linex School | 3 · Expanding | — | — | — | — |
 
-**Two manuals out of eight brands. 50 open items, none of them blocking.**
+**Three manuals out of eight brands. 62 open items, none of them blocking.**
 
-The honest read: six brands have no brand yet. Writing a manual for Linex
+The honest read: four brands have no brand yet. Writing a manual for Linex
 Marketplace today would produce fifteen sections that all say *pending* — what's
 missing there is a branding session, not a website.
 
@@ -71,6 +71,7 @@ missing there is a branding session, not a website.
 | `brand-tokens.json` | Single source of truth: eight brands |
 | `manual-linex-trip/` | Linex Trip manual · 16 pages · self-contained |
 | `manual-linex-go/` | Linex Go manual · 16 pages · self-contained |
+| `manual-linex-travel/` | Linex Travel manual · 16 pages · self-contained |
 | `Logos/` | Official logos, and the partner brands we represent |
 | `contexto-linex-*.md` | Full brand briefing, loadable in one go |
 | `tools/` | Contrast calculator, token verifier, site generator |
@@ -115,7 +116,7 @@ Edit `brand-tokens.json`, then:
 ```bash
 node tools/verificar-tokens.js      # checks the data doesn't lie
 node tools/sync-constelacion.js     # regenerates index.html
-node --test tools/*.test.js         # 44 tests
+node --test tools/*.test.js         # 49 tests
 ```
 
 **The verifier doesn't trust the file.** It recomputes every contrast ratio the

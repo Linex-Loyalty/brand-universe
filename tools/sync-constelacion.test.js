@@ -16,11 +16,25 @@ test('incluye las ocho marcas', () => {
   }
 });
 
-test('enlaza solo los manuales que existen', () => {
-  assert.ok(html.includes('href="manual-linex-trip/index.html"'));
-  assert.ok(html.includes('href="manual-linex-go/index.html"'));
-  assert.ok(!/href="manual-linex-(travel|rewards|marketplace|school|capital|loyalty)/.test(html),
-    'enlaza un manual que no existe');
+/* Llevaba los seis ids sin manual escritos a mano y se quedó vieja el día que
+   Linex Travel estrenó el suyo. Derivada exige más: que cada manual declarado
+   se enlace, que ninguno sin declarar aparezca, y que el archivo exista. */
+test('enlaza los manuales que existen, y solo esos', () => {
+  const marcas = Object.values(tokens.marcas);
+  const conManual = marcas.filter(m => m.manual);
+  assert.ok(conManual.length > 0, 'ninguna marca declara manual');
+
+  for (const m of conManual) {
+    const href = `href="${m.manual}index.html"`;
+    assert.ok(html.includes(href), `${m.id} declara manual y el sitio no lo enlaza`);
+    assert.ok(fs.existsSync(path.join(__dirname, '..', m.manual, 'index.html')),
+      `${m.id} enlaza ${m.manual} y ese archivo no existe en disco`);
+  }
+
+  for (const m of marcas.filter(m => !m.manual)) {
+    assert.ok(!html.includes(`href="manual-${m.id.replace(/^linex-/, 'linex-')}/`),
+      `${m.id} no tiene manual y el sitio lo enlaza`);
+  }
 });
 
 test('las marcas sin manual no dejan enlaces muertos', () => {

@@ -500,7 +500,7 @@
         "dominio_correo": "@linextravel.com",
         "dominio_correo_nota": "Durante la transición conviven @ultragroupla.com y @linextravel.com."
       },
-      "manual": null,
+      "manual": "manual-linex-travel/",
       "contexto": null,
       "pendientes": [
         "El logotipo está pintado con colores que no son los de su paleta (ΔE 8.2 y 10.0) — el dueño de marca los va a recolorear",

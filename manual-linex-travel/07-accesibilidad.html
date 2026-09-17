@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>07 · Accesibilidad · Manual de Marca Linex Travel</title>
+<meta name="description" content="La matriz completa de contrastes medidos de la paleta de Linex Travel, las cuatro conclusiones que cambian cómo se usa el color, y cómo verificar cualquier combinación sin estimarla.">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body style="background:var(--paper);">
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<div class="topbar">
+  <span class="topbar-brand">Linex Travel <small>MANUAL DE MARCA</small></span>
+  <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="sidebar">
+    <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
+    Menú
+  </button>
+</div>
+<div class="nav-scrim" data-nav-scrim></div>
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <a class="sidebar-brand" href="index.html">
+      <span class="name">Linex Travel</span>
+      <span class="tag">Manual de Marca &middot; v1.0</span>
+    </a>
+    <!--nav-->
+    <nav class="nav-group" aria-label="Portada">
+        <ul class="nav-list">
+          <li><a href="index.html"><span class="n">00</span><span>Resumen ejecutivo</span></a></li>
+        </ul>
+    </nav>
+    <nav class="nav-group" aria-label="A · Identidad visual">
+        <span class="nav-group-title">A · Identidad visual</span>
+        <ul class="nav-list">
+          <li><a href="01-logotipo.html"><span class="n">01</span><span>Logotipo</span></a></li>
+          <li><a href="02-estado-logotipo.html"><span class="n">02</span><span>Estado del logotipo</span></a></li>
+          <li><a href="03-paleta-color.html"><span class="n">03</span><span>Paleta de color</span></a></li>
+          <li><a href="04-tipografia.html"><span class="n">04</span><span>Tipografía</span></a></li>
+          <li><a href="05-iconografia-canal.html"><span class="n">05</span><span>Iconografía y diseño por canal</span></a></li>
+          <li><a href="06-sistema-fotografia.html"><span class="n">06</span><span>Sistema gráfico y fotografía</span></a></li>
+          <li><a href="07-accesibilidad.html" class="active" aria-current="page"><span class="n">07</span><span>Accesibilidad</span></a></li>
+        </ul>
+    </nav>
+    <nav class="nav-group" aria-label="B · Quién es y cómo habla">
+        <span class="nav-group-title">B · Quién es y cómo habla</span>
+        <ul class="nav-list">
+          <li><a href="08-arquitectura.html"><span class="n">08</span><span>Arquitectura y nombre</span></a></li>
+          <li><a href="09-audiencias.html"><span class="n">09</span><span>Audiencias</span></a></li>
+          <li><a href="10-propuesta-valor.html"><span class="n">10</span><span>Propuesta de valor y claims</span></a></li>
+          <li><a href="11-voz-tono.html"><span class="n">11</span><span>Voz y tono</span></a></li>
+          <li><a href="12-vocabulario.html"><span class="n">12</span><span>Vocabulario</span></a></li>
+        </ul>
+    </nav>
+    <nav class="nav-group" aria-label="C · Cómo se aplica">
+        <span class="nav-group-title">C · Cómo se aplica</span>
+        <ul class="nav-list">
+          <li><a href="13-promociones-cta.html"><span class="n">13</span><span>Promociones y CTA</span></a></li>
+          <li><a href="14-entregables.html"><span class="n">14</span><span>Entregables y aplicaciones</span></a></li>
+          <li><a href="15-redes-sociales.html"><span class="n">15</span><span>Redes sociales</span></a></li>
+        </ul>
+    </nav>
+    <!--/nav-->
+  </aside>
+  <main class="main" id="contenido">
+    <div class="main-inner">
+
+<p class="page-index"><span class="page-index-n">07</span><span class="eyebrow">Accesibilidad</span></p>
+<h1 class="page-title">Ninguno de estos números se estimó.</h1>
+<p class="lede">Todos salen de la fórmula de luminancia relativa de WCAG&nbsp;2.1, calculada sobre los HEX oficiales. Están en <code>brand-tokens.json</code> y una prueba automática los vuelve a calcular cada vez que algo cambia. Si un contraste de esta página estuviera mal, la prueba fallaría antes de que usted lo leyera.</p>
+
+<section class="section-block">
+  <h2 class="section-title">Los umbrales</h2>
+  <div class="table-scroll">
+    <table class="rtable">
+      <tr><td class="name">4.5:1</td><td>Texto normal &mdash; criterio 1.4.3, nivel AA</td></tr>
+      <tr><td class="name">3:1</td><td>Texto grande (24&nbsp;px, o 19&nbsp;px en negrita) &mdash; 1.4.3</td></tr>
+      <tr><td class="name">3:1</td><td>Objetos gráficos y componentes de interfaz &mdash; 1.4.11. Aquí entran el logotipo, los íconos y los bordes de un campo</td></tr>
+      <tr><td class="name">7:1</td><td>Nivel AAA. No es obligatorio, pero varias combinaciones de esta paleta lo alcanzan sin esfuerzo</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="section-block">
+  <h2 class="section-title">La matriz completa</h2>
+  <p>Fila = tinta. Columna = fondo. El signo dice si sirve para <strong>texto normal</strong>.</p>
+  <div class="table-scroll">
+    <table class="rtable">
+      <tr><td class="name">&nbsp;</td><td><strong>Blanco</strong></td><td><strong>Lavanda</strong></td><td><strong>Lila claro</strong></td><td><strong>Azul Noche</strong></td><td><strong>Negro</strong></td></tr>
+      <tr><td class="name">Azul Noche</td><td>17.40 &check;</td><td>13.50 &check;</td><td>9.99 &check;</td><td>&mdash;</td><td>1.15 &times;</td></tr>
+      <tr><td class="name">Negro Linex</td><td>20.03 &check;</td><td>15.53 &check;</td><td>11.50 &check;</td><td>1.15 &times;</td><td>&mdash;</td></tr>
+      <tr><td class="name">Violeta</td><td>7.10 &check;</td><td>5.51 &check;</td><td>4.08 &times;</td><td>2.45 &times;</td><td>2.82 &times;</td></tr>
+      <tr><td class="name">Azul violeta</td><td>4.75 &check;</td><td>3.69 &times;</td><td>2.73 &times;</td><td>3.66 &times;</td><td>4.21 &times;</td></tr>
+      <tr><td class="name">Blanco</td><td>&mdash;</td><td>1.29 &times;</td><td>1.74 &times;</td><td>17.40 &check;</td><td>20.03 &check;</td></tr>
+      <tr><td class="name">Lavanda</td><td>1.29 &times;</td><td>&mdash;</td><td>&mdash;</td><td>13.50 &check;</td><td>15.53 &check;</td></tr>
+      <tr><td class="name">Lila claro</td><td>1.74 &times;</td><td>&mdash;</td><td>&mdash;</td><td>9.99 &check;</td><td>11.50 &check;</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="section-block">
+  <h2 class="section-title">Las cuatro conclusiones que hay que llevarse</h2>
+
+  <div class="callout" style="background:rgba(var(--coral-rgb),0.07); border:1px solid rgba(var(--coral-rgb),0.28);">
+    <span class="tag" style="color:var(--coral);">1 &middot; EL ACENTO NO ES UN COLOR DE TEXTO DE PROPÓSITO GENERAL</span>
+    <p>El <strong style="color:var(--base);">Azul violeta</strong> solo pasa AA sobre blanco, y por poco: <strong style="color:var(--base);">4.75:1</strong>. Sobre la Lavanda &mdash;que es el fondo por defecto de la marca&mdash; da <strong style="color:var(--base);">3.69:1</strong> y no pasa.<br>
+    Donde hace falta un color de marca que se lea sobre casi cualquier fondo claro, el que sirve es el <strong style="color:var(--base);">Violeta</strong>.</p>
+  </div>
+
+  <div class="callout" style="background:rgba(var(--apoyo-rgb),0.07); border:1px solid rgba(var(--apoyo-rgb),0.28); margin-top:14px;">
+    <span class="tag" style="color:var(--apoyo);">2 &middot; SOBRE OSCURO NO SIRVE NINGÚN VIOLETA</span>
+    <p>Sobre Azul Noche, el Violeta da 2.45:1 y el Azul violeta 3.66:1. <strong style="color:var(--base);">Los dos fallan.</strong><br>
+    En fondo oscuro, el texto va en <strong style="color:var(--base);">blanco</strong> (17.40:1), en <strong style="color:var(--base);">Lavanda</strong> (13.50:1) o en <strong style="color:var(--base);">Lila claro</strong> (9.99:1). El acento sobre oscuro se usa como relleno, no como tinta.</p>
+  </div>
+
+  <div class="callout" style="background:rgba(var(--apoyo-rgb),0.07); border:1px solid rgba(var(--apoyo-rgb),0.28); margin-top:14px;">
+    <span class="tag" style="color:var(--apoyo);">3 &middot; LOS BOTONES FUNCIONAN AL REVÉS DE LO QUE PARECE</span>
+    <p>Un botón relleno en Azul violeta con texto blanco da <strong style="color:var(--base);">4.75:1</strong> &mdash; pasa. Un botón relleno en Violeta con texto blanco da <strong style="color:var(--base);">7.10:1</strong> &mdash; pasa con holgura.<br>
+    Lo que no funciona es el <strong style="color:var(--base);">enlace de texto en Azul violeta</strong>, que es justamente lo que más se tiende a hacer, porque es el color de la palabra <em>Travel</em>.</p>
+  </div>
+
+  <div class="callout pending" style="margin-top:14px;">
+    <span class="tag">4 &middot; EL GRIS DEL ENDOSO</span>
+    <p>El <strong style="color:var(--base);">#B4B4B4</strong> de la palabra &laquo;Formerly&raquo; da <strong style="color:var(--base);">2.07:1 sobre blanco</strong>. El criterio 1.4.3 no aplica a logotipos, así que técnicamente no es un incumplimiento &mdash; pero sí es texto que mucha gente no va a poder leer.<br>
+    Como el endoso desaparece en enero de 2027, la salida más barata es no tocarlo y dejar que el calendario lo resuelva. La decisión, sin embargo, hay que tomarla: heredar un problema sin mirarlo no es lo mismo que decidir convivir con él.</p>
+  </div>
+</section>
+
+<section class="section-block">
+  <h2 class="section-title">Más allá del color</h2>
+  <div class="table-scroll">
+    <table class="rtable">
+      <tr><td class="name">Foco visible</td><td>Todo elemento navegable por teclado muestra un anillo de <strong>3&nbsp;px en Azul violeta</strong>: 3.69:1 sobre la Lavanda y 4.75:1 sobre blanco, por encima del 3:1 que pide 1.4.11. Sobre fondos oscuros se refuerza en blanco.</td></tr>
+      <tr><td class="name">El color no informa solo</td><td>Si un estado se comunica con color, lleva además texto o ícono. Un 8% de los hombres no distingue rojo de verde.</td></tr>
+      <tr><td class="name">Texto alternativo</td><td>Toda imagen con contenido lleva <code>alt</code>. Las decorativas llevan <code>alt=""</code>, que no es lo mismo que no llevar nada.</td></tr>
+      <tr><td class="name">Tamaño mínimo</td><td>Nada de texto por debajo de 12&nbsp;px en digital. La letra chica legal tampoco.</td></tr>
+      <tr><td class="name">Área táctil</td><td>44 &times; 44&nbsp;px mínimo para cualquier cosa que se toque en móvil.</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="section-block">
+  <h2 class="section-title">Cómo verificar un color sin adivinar</h2>
+  <p>Desde la carpeta del repositorio:</p>
+  <div class="card tint">
+    <p class="small-note" style="font-family:ui-monospace, Consolas, monospace; margin:0;">node -e "const{contraste}=require('./tools/contraste.js');console.log(contraste('#5B5CFF','#DDE1FF').toFixed(2))"</p>
+  </div>
+  <p class="small-note" style="margin-top:12px;">Nunca se copia un contraste de un manual, ni siquiera de este. Se recalcula. Un número con dos decimales <em>parece</em> un hecho, y por eso nadie lo vuelve a mirar &mdash; que es exactamente cómo un contraste viejo sobrevive a un cambio de color.</p>
+</section>
+
+      <div class="footer-meta">
+        <span>manual-marca-linex-travel-v1.0 &middot; sitio estático de distribución</span>
+        <span>Manual de Marca de Linex Travel &middot; 2026</span>
+      </div>
+      <!--pager-->
+      <div class="pager"><a class="prev" href="06-sistema-fotografia.html"><span class="dir">&larr; Anterior</span><span class="lbl">06 &middot; Sistema gráfico y fotografía</span></a><a class="next" href="08-arquitectura.html"><span class="dir">Siguiente &rarr;</span><span class="lbl">08 &middot; Arquitectura y nombre</span></a></div>
+      <!--/pager-->
+    </div>
+  </main>
+</div>
+<script src="assets/nav.js"></script>
+</body>
+</html>
