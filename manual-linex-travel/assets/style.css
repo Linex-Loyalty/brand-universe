@@ -23,17 +23,35 @@
      nuevo no diseña componentes: hereda los 82 y cambia este bloque. */
   --base: var(--azul-noche);  /* tinta, estructura y títulos · 13.50:1 sobre la página */
   --base-rgb: 23, 21, 59;
-  --paper: var(--lavanda);    /* la página · es la base declarada de la marca, al 40% */
+  /* EL FONDO NO ES UN COLOR DE LA PALETA, Y ES A PROPÓSITO.
+     Al principio la página era la Lavanda #DDE1FF, que es la base declarada
+     de la marca al 40%. Se veía bien hasta que llegó la sección 03: la banda
+     de proporción mostraba el 40% de Lavanda sobre un fondo de Lavanda, y ese
+     bloque —el más grande de la paleta— simplemente no existía.
+
+     Un manual tiene que poder mostrar sus seis colores COMO DATO. Si la página
+     es uno de ellos, ese nunca se puede mostrar. Así que el papel es un tinte
+     lavanda muy lavado que no pertenece a la paleta: cromo del manual, igual
+     que el verde y el rojo de acierto y error.
+     Es el mismo papel del manual de Linex Trip, que ya tenía este problema
+     resuelto: su paleta también incluye la Lavanda. ΔE 14.2 de la Lavanda
+     —se separa— y 4.3 del blanco de las tarjetas, que así se siguen leyendo
+     como una capa por encima. */
+  --paper: #F6F8FF;
   --calido: #FFFFFF;          /* la superficie de lectura que se apoya sobre la página */
   --white: #FFFFFF;
   --black: var(--negro-linex);
 
   /* ACCIÓN — y aquí hay que tener cuidado, porque es contraintuitivo.
      El acento de la marca es el Azul violeta #5B5CFF, el de la palabra
-     «Travel». Pero sobre la página lavanda da 3.69:1 y no llega a AA. Así que
-     todo lo que se toca —enlaces, botones, CTA— va en VIOLETA: 5.51:1 sobre
-     la página y 7.10:1 sobre blanco. El Azul violeta se queda para las
-     superficies blancas y para rellenar, con texto blanco encima (4.75:1). */
+     «Travel», y es el que uno quiere usar para todo. Pero como tinta no da:
+     sobre el fondo lavanda de la MARCA queda en 3.69:1 y sobre el papel de
+     este manual en 4.48:1. Ninguno de los dos llega a AA.
+
+     Así que todo lo que se toca —enlaces, botones, CTA— va en VIOLETA:
+     6.70:1 sobre este papel, 5.51:1 sobre la lavanda de la marca y 7.10:1
+     sobre blanco. El Azul violeta se queda para rellenar, con texto blanco
+     encima (4.75:1). En corto: el Azul violeta rellena, el Violeta escribe. */
   --coral: var(--violeta);
   --coral-rgb: 109, 40, 217;
   --coral-claro: var(--lila-claro);  /* superficie de realce · nunca tinta: 1.74:1 sobre blanco */
@@ -441,7 +459,7 @@ code {
 /* ---------- Navegación por teclado ---------- */
 
 /* Un solo anillo de foco para todo el manual. Va en Azul violeta #5B5CFF,
-   el acento del logotipo: 3.69:1 sobre la página lavanda y 4.75:1 sobre las
+   el acento del logotipo: 4.48:1 sobre el papel del manual y 4.75:1 sobre las
    superficies blancas — por encima del 3:1 que pide 1.4.11 para un indicador.
    Sobre el sidebar oscuro se refuerza con blanco más abajo, porque ahí el
    azul violeta solo llega a 3.66:1. Solo :focus-visible: no aparece al hacer
