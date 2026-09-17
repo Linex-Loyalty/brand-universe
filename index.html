@@ -294,29 +294,87 @@ footer p { margin: 0 0 4px; }
   * { animation: none !important; transition: none !important; }
 }
 
+/* ---------- selector de idioma — español / inglés ----------
+   Mismo mecanismo que el manual de Linex Travel: solo CSS, sin JavaScript
+   nuevo. Esta página en particular tiene una prueba que exige que no haya
+   ninguna etiqueta de guion incrustada —tiene que abrir con doble clic y
+   funcionar sin servidor—, así que el toggle no podía resolverse de
+   ninguna otra forma.
+
+   Cada texto vive dos veces en el HTML, envuelto en <span data-lang="es">
+   y <span data-lang="en">; dos radios ocultos, hijos directos de <body>,
+   deciden cuál se muestra con el combinador de hermanos (~). El límite
+   honesto es el mismo de allá: la elección no sobrevive a un refresco,
+   porque eso exigiría JavaScript o una cookie de servidor. */
+.idioma-radio {
+  position: absolute; width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+.idioma-switch {
+  position: fixed; top: 20px; right: 20px; z-index: 10;
+  display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--line);
+  box-shadow: 0 2px 10px rgba(14, 21, 38, 0.08);
+}
+.idioma-switch label {
+  padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.02em; cursor: pointer; color: var(--ink-3);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.idioma-switch label:hover { color: var(--ink); }
+
+#idioma-es:checked ~ .wrap .idioma-switch label[for="idioma-es"],
+#idioma-en:checked ~ .wrap .idioma-switch label[for="idioma-en"] {
+  background: var(--ink); color: var(--surface);
+}
+
+/* El contenido bilingüe. Siempre en <span>, nunca en <div> o <li> enteros:
+   un span es inline en cualquier contexto, así que una sola regla de
+   "display" sirve para todo el sitio. Las excepciones de estructura de
+   tabla que sí importan en el manual no aplican aquí — esta página no
+   tiene ninguna <table>. */
+span[data-lang] { display: none; }
+#idioma-es:checked ~ .wrap span[data-lang="es"] { display: inline; }
+#idioma-en:checked ~ .wrap span[data-lang="en"] { display: inline; }
+
+@media (max-width: 560px) {
+  .idioma-switch { top: 12px; right: 12px; }
+}
+
+@media print {
+  .idioma-switch { display: none; }
+  span[data-lang="es"] { display: inline !important; }
+  span[data-lang="en"] { display: none !important; }
+}
+
 </style>
 </head>
 <body>
 <!-- GENERADO POR tools/sync-constelacion.js — NO EDITAR A MANO.
      Cambia brand-tokens.json y corre: node tools/sync-constelacion.js -->
+<input type="radio" name="idioma" id="idioma-es" class="idioma-radio" checked>
+<input type="radio" name="idioma" id="idioma-en" class="idioma-radio">
 <div class="wrap">
+  <div class="idioma-switch"><label for="idioma-es">ES</label><label for="idioma-en">EN</label></div>
   <header>
-    <p class="eyebrow">Grupo Linex · Sistema de marca</p>
-    <h1>Constelación Linex</h1>
-    <p class="lede">Las ocho marcas del grupo, su lugar en los tres tiers, y el manual de cada una. Lo que todavía no existe aparece como pendiente — nada se aproxima.</p>
+    <p class="eyebrow"><span data-lang="es">Grupo Linex · Sistema de marca</span><span data-lang="en">Linex Group · Brand system</span></p>
+    <h1><span data-lang="es">Constelación Linex</span><span data-lang="en">Linex Constellation</span></h1>
+    <p class="lede"><span data-lang="es">Las ocho marcas del grupo, su lugar en los tres tiers, y el manual de cada una. Lo que todavía no existe aparece como pendiente — nada se aproxima.</span><span data-lang="en">The group's eight brands, their place in the three tiers, and each one's manual. Whatever doesn't exist yet shows up as pending — nothing gets approximated.</span></p>
     <div class="tally">
-      <div><b>8</b><span>marcas en el modelo</span></div>
-      <div><b>3</b><span>con manual vigente</span></div>
-      <div><b>4</b><span>con color definido</span></div>
-      <div><b>5</b><span>pendientes</span></div>
+      <div><b>8</b><span><span data-lang="es">marcas en el modelo</span><span data-lang="en">brands in the model</span></span></div>
+      <div><b>3</b><span><span data-lang="es">con manual vigente</span><span data-lang="en">with a live manual</span></span></div>
+      <div><b>4</b><span><span data-lang="es">con color definido</span><span data-lang="en">with colour defined</span></span></div>
+      <div><b>5</b><span><span data-lang="es">pendientes</span><span data-lang="en">pending</span></span></div>
     </div>
   </header>
 
   <section class="tier">
     <div class="tier-head">
       <span class="tier-n">TIER 1</span>
-      <h2>El fondo</h2>
-      <p class="tier-nota">Comunicación corporativa · global y estático</p>
+      <h2><span data-lang="es">El fondo</span><span data-lang="en">The foundation</span></h2>
+      <p class="tier-nota"><span data-lang="es">Comunicación corporativa · global y estático</span><span data-lang="en">Corporate communication · global and static</span></p>
     </div>
     <article class="marca pend">
       <div class="marca-top">
@@ -325,24 +383,24 @@ footer p { margin: 0 0 4px; }
           <p class="dom">linexcapital.com</p>
         </div>
         <div class="pills">
-          <span class="pill soon">Pendiente</span>
+          <span class="pill soon"><span data-lang="es">Pendiente</span><span data-lang="en">Pending</span></span>
         </div>
       </div>
-      <p class="rol">El fondo — comunicación corporativa, global y estático</p>
+      <p class="rol"><span data-lang="es">El fondo — comunicación corporativa, global y estático</span><span data-lang="en">The foundation — corporate communication, global and static</span></p>
       <div class="af">
-        <div><h4>Atrae</h4><p>Grandes inversionistas y compañías que quieren entrar a la constelación. Gestionado con Laurent, de bajo mantenimiento.</p></div>
-        <div><h4>Filtra</h4><p>Clientes operativos, usuarios finales y prospectos pequeños — aquí no hay producto ni precio.</p></div>
+        <div><h4><span data-lang="es">Atrae</span><span data-lang="en">Attracts</span></h4><p><span data-lang="es">Grandes inversionistas y compañías que quieren entrar a la constelación. Gestionado con Laurent, de bajo mantenimiento.</span><span data-lang="en">Major investors and companies looking to enter the constellation. Managed with Laurent, low-maintenance.</span></p></div>
+        <div><h4><span data-lang="es">Filtra</span><span data-lang="en">Filters out</span></h4><p><span data-lang="es">Clientes operativos, usuarios finales y prospectos pequeños — aquí no hay producto ni precio.</span><span data-lang="en">Operational customers, end users and small prospects — there's no product or price here.</span></p></div>
       </div>
-      <p class="acceso sin"><span>Sin manual todavía</span></p>
+      <p class="acceso sin"><span><span data-lang="es">Sin manual todavía</span><span data-lang="en">No manual yet</span></span></p>
       <details class="gaps">
-        <summary><b>6</b> pendientes</summary>
+        <summary><b>6</b> <span data-lang="es">pendientes</span><span data-lang="en">pending items</span></summary>
         <ul class="gap-list">
-          <li class="gap">Sin logo</li>
-          <li class="gap">Sin paleta</li>
-          <li class="gap">Sin voz documentada</li>
-          <li class="gap">Sin manual</li>
-          <li class="gap">Sin carpeta en Logos/logos-oficiales/</li>
-          <li class="gap">No aparece en ninguno de los dos contextos de marca</li>
+          <li class="gap"><span data-lang="es">Sin logo</span><span data-lang="en">No logo</span></li>
+          <li class="gap"><span data-lang="es">Sin paleta</span><span data-lang="en">No palette</span></li>
+          <li class="gap"><span data-lang="es">Sin voz documentada</span><span data-lang="en">No documented voice</span></li>
+          <li class="gap"><span data-lang="es">Sin manual</span><span data-lang="en">No manual</span></li>
+          <li class="gap"><span data-lang="es">Sin carpeta en Logos/logos-oficiales/</span><span data-lang="en">No folder in Logos/logos-oficiales/</span></li>
+          <li class="gap"><span data-lang="es">No aparece en ninguno de los dos contextos de marca</span><span data-lang="en">Doesn't appear in either of the two brand context files</span></li>
         </ul>
       </details>
     </article>
@@ -351,8 +409,8 @@ footer p { margin: 0 0 4px; }
   <section class="tier">
     <div class="tier-head">
       <span class="tier-n">TIER 2</span>
-      <h2>El puerto espacial</h2>
-      <p class="tier-nota">El punto de entrada a la constelación — no una caja de pago</p>
+      <h2><span data-lang="es">El puerto espacial</span><span data-lang="en">The space port</span></h2>
+      <p class="tier-nota"><span data-lang="es">El punto de entrada a la constelación — no una caja de pago</span><span data-lang="en">The constellation's point of entry — not a payment box</span></p>
     </div>
     <article class="marca" style="--acento:#C5F04A">
       <div class="marca-top">
@@ -361,34 +419,34 @@ footer p { margin: 0 0 4px; }
           <p class="dom">linex-loyalty.com</p>
         </div>
         <div class="pills">
-          <span class="pill soon">Pendiente</span>
-          <span class="pill hold">en pausa</span>
+          <span class="pill soon"><span data-lang="es">Pendiente</span><span data-lang="en">Pending</span></span>
+          <span class="pill hold"><span data-lang="es">en pausa</span><span data-lang="en">paused</span></span>
         </div>
       </div>
-      <p class="rol">El puerto espacial — punto de entrada a la constelación, no una caja de pago</p>
-      <p class="genio">Genio · <b>Ixar</b> — Se pronuncia ee-SAR. El genio maestro: habla por toda la constelación, explica las estrellas y convoca a los otros genios para armar una solución a la medida.</p>
+      <p class="rol"><span data-lang="es">El puerto espacial — punto de entrada a la constelación, no una caja de pago</span><span data-lang="en">The space port — the constellation's point of entry, not a payment box</span></p>
+      <p class="genio"><span data-lang="es">Genio</span><span data-lang="en">Genie</span> · <b>Ixar</b> — <span data-lang="es">Se pronuncia ee-SAR. El genio maestro: habla por toda la constelación, explica las estrellas y convoca a los otros genios para armar una solución a la medida.</span><span data-lang="en">Pronounced ee-SAR. The master genie: speaks for the whole constellation, explains the stars and calls in the other genies to build a tailored solution.</span></p>
       <div class="pausa">
-        <p class="pausa-q"><b>En pausa</b> · 2026-09-17 — Linex Loyalty queda en pausa por decisión del dueño de marca. No se trabaja su manual ni se completa su paleta por ahora.</p>
-        <p class="pausa-r"><span>Al retomar</span>Lo primero es fijar su base oscura: el Verde #C5F04A da 1.32:1 sobre blanco y no tiene dónde vivir sin ella.</p>
+        <p class="pausa-q"><b><span data-lang="es">En pausa</span><span data-lang="en">Paused</span></b> · 2026-09-17 — <span data-lang="es">Linex Loyalty queda en pausa por decisión del dueño de marca. No se trabaja su manual ni se completa su paleta por ahora.</span><span data-lang="en">Linex Loyalty is on hold by the brand owner's decision. Its manual isn't being worked on and its palette isn't being completed for now.</span></p>
+        <p class="pausa-r"><span><span data-lang="es">Al retomar</span><span data-lang="en">When resuming</span></span><span data-lang="es">Lo primero es fijar su base oscura: el Verde #C5F04A da 1.32:1 sobre blanco y no tiene dónde vivir sin ella.</span><span data-lang="en">The first thing is fixing its dark base: Green #C5F04A gives 1.32:1 on white and has nowhere to live without one.</span></p>
       </div>
       <div class="af">
-        <div><h4>Atrae</h4><p>Bancos y grandes corporaciones que evalúan lealtad a escala. La audiencia big scale.</p></div>
-        <div><h4>Filtra</h4><p>Cazadores de ofertas, compradores de una sola función y visitantes casuales — se enrutan a una estrella.</p></div>
+        <div><h4><span data-lang="es">Atrae</span><span data-lang="en">Attracts</span></h4><p><span data-lang="es">Bancos y grandes corporaciones que evalúan lealtad a escala. La audiencia big scale.</span><span data-lang="en">Banks and large corporations evaluating loyalty at scale. The big-scale audience.</span></p></div>
+        <div><h4><span data-lang="es">Filtra</span><span data-lang="en">Filters out</span></h4><p><span data-lang="es">Cazadores de ofertas, compradores de una sola función y visitantes casuales — se enrutan a una estrella.</span><span data-lang="en">Deal hunters, single-function buyers and casual visitors — routed to a star.</span></p></div>
       </div>
       <div class="pal">
         <span class="sw"><i style="background:#C5F04A"></i>Verde <code>#C5F04A</code></span>
       </div>
-      <p class="acceso sin"><span>Sin manual todavía</span></p>
+      <p class="acceso sin"><span><span data-lang="es">Sin manual todavía</span><span data-lang="en">No manual yet</span></span></p>
       <details class="gaps">
-        <summary><b>7</b> pendientes</summary>
+        <summary><b>7</b> <span data-lang="es">pendientes</span><span data-lang="en">pending items</span></summary>
         <ul class="gap-list">
-          <li class="gap">Sin base oscura definida — y el Verde la necesita para existir</li>
-          <li class="gap">Sin nombre de color para el Verde</li>
-          <li class="gap">Sin paleta completa</li>
-          <li class="gap">Sin logo</li>
-          <li class="gap">Sin voz documentada</li>
-          <li class="gap">Sin manual</li>
-          <li class="gap">El Verde queda a la misma luminosidad que el Amarillo de Trip (L* 89.2 vs 88.1): se distinguen por tono, no por valor</li>
+          <li class="gap"><span data-lang="es">Sin base oscura definida — y el Verde la necesita para existir</span><span data-lang="en">No dark base defined — and Green needs one to exist</span></li>
+          <li class="gap"><span data-lang="es">Sin nombre de color para el Verde</span><span data-lang="en">No colour name for Green</span></li>
+          <li class="gap"><span data-lang="es">Sin paleta completa</span><span data-lang="en">No complete palette</span></li>
+          <li class="gap"><span data-lang="es">Sin logo</span><span data-lang="en">No logo</span></li>
+          <li class="gap"><span data-lang="es">Sin voz documentada</span><span data-lang="en">No documented voice</span></li>
+          <li class="gap"><span data-lang="es">Sin manual</span><span data-lang="en">No manual</span></li>
+          <li class="gap"><span data-lang="es">El Verde queda a la misma luminosidad que el Amarillo de Trip (L* 89.2 vs 88.1): se distinguen por tono, no por valor</span><span data-lang="en">Green sits at the same luminosity as Trip's Yellow (L* 89.2 vs 88.1): they're told apart by hue, not by value</span></li>
         </ul>
       </details>
     </article>
@@ -397,8 +455,8 @@ footer p { margin: 0 0 4px; }
   <section class="tier">
     <div class="tier-head">
       <span class="tier-n">TIER 3</span>
-      <h2>Las estrellas</h2>
-      <p class="tier-nota">Motores comerciales · cada una con su genio y su público</p>
+      <h2><span data-lang="es">Las estrellas</span><span data-lang="en">The stars</span></h2>
+      <p class="tier-nota"><span data-lang="es">Motores comerciales · cada una con su genio y su público</span><span data-lang="en">Commercial engines · each with its own genie and audience</span></p>
     </div>
     <article class="marca" style="--acento:#5B5CFF">
       <div class="marca-top">
@@ -407,13 +465,13 @@ footer p { margin: 0 0 4px; }
           <p class="dom">linextravel.com</p>
         </div>
         <div class="pills">
-          <span class="pill live">Vigente</span>
+          <span class="pill live"><span data-lang="es">Vigente</span><span data-lang="en">Live</span></span>
         </div>
       </div>
-      <p class="rol">Estrella — opera B2B2C, B2B y B2C</p>
+      <p class="rol"><span data-lang="es">Estrella — opera B2B2C, B2B y B2C</span><span data-lang="en">Star — operates B2B2C, B2B and B2C</span></p>
       <div class="af">
-        <div><h4>Atrae</h4><p>Compañías que necesitan el viaje como redención; agencias que buscan un front-to-back; revendedores de servicios de viaje con IA.</p></div>
-        <div><h4>Filtra</h4><p>Inversionistas y necesidades ajenas al viaje — el Group Bar los enruta.</p></div>
+        <div><h4><span data-lang="es">Atrae</span><span data-lang="en">Attracts</span></h4><p><span data-lang="es">Compañías que necesitan el viaje como redención; agencias que buscan un front-to-back; revendedores de servicios de viaje con IA.</span><span data-lang="en">Companies that need travel as redemption; agencies looking for a front-to-back; resellers of AI-powered travel services.</span></p></div>
+        <div><h4><span data-lang="es">Filtra</span><span data-lang="en">Filters out</span></h4><p><span data-lang="es">Inversionistas y necesidades ajenas al viaje — el Group Bar los enruta.</span><span data-lang="en">Investors and needs unrelated to travel — the Group Bar routes them.</span></p></div>
       </div>
       <div class="pal">
         <span class="sw"><i style="background:#DDE1FF"></i>Lavanda Linex <code>#DDE1FF</code> <em>40%</em></span>
@@ -423,31 +481,31 @@ footer p { margin: 0 0 4px; }
         <span class="sw"><i style="background:#17153B"></i>Azul Noche Linex <code>#17153B</code> <em>10%</em></span>
         <span class="sw"><i style="background:#080808"></i>Negro Linex <code>#080808</code> <em>10%</em></span>
       </div>
-      <p class="acceso"><a class="btn" href="manual-linex-travel/index.html">Abrir el manual de Linex Travel</a></p>
+      <p class="acceso"><a class="btn" href="manual-linex-travel/index.html"><span data-lang="es">Abrir el manual de Linex Travel</span><span data-lang="en">Open the Linex Travel manual</span></a></p>
       <details class="gaps">
-        <summary><b>17</b> pendientes</summary>
+        <summary><b>17</b> <span data-lang="es">pendientes</span><span data-lang="en">pending items</span></summary>
         <ul class="gap-list">
-          <li class="gap">El logotipo está pintado con colores que no son los de su paleta (ΔE 8.2 y 10.0) — el dueño de marca los va a recolorear</li>
-          <li class="gap">Las cuatro piezas del logotipo no comparten proporción: 5.11:1 contra 4.35:1</li>
-          <li class="gap">El manual oficial nombra tres variaciones y en disco hay cuatro: falta fijar el nombre de cada una</li>
-          <li class="gap">Faltan en archivo las versiones vertical, avatar de redes y con eslogan</li>
-          <li class="gap">Faltan los logos de Hertz, Dollar, Thrifty y Walt Disney World</li>
-          <li class="gap">El canal B2B2C no tiene sub-marca asignada</li>
-          <li class="gap">Las tres audiencias están sin perfilar</li>
-          <li class="gap">Sin eslogan declarado</li>
-          <li class="gap">Sin lista de claims autorizados ni de términos prohibidos</li>
-          <li class="gap">Sin vocabulario de marca</li>
-          <li class="gap">Sin texto legal obligatorio por tipo de pieza</li>
-          <li class="gap">Sin nombre corporativo legal aprobado</li>
-          <li class="gap">Sin banco de imágenes propio</li>
-          <li class="gap">El monograma LT de las mangas no está documentado en ninguna sección</li>
-          <li class="gap">El gris del endoso Formerly (#B4B4B4) no está en la paleta y da 2.07:1 sobre blanco</li>
-          <li class="gap">Solo LinkedIn tiene reglas escritas; las demás redes no</li>
-          <li class="gap">El Azul Noche de Travel y el Azul Trip de su sub-marca quedan a ΔE 21.8 con la misma luminosidad: falta decidir si es aire de familia o un choque</li>
+          <li class="gap"><span data-lang="es">El logotipo está pintado con colores que no son los de su paleta (ΔE 8.2 y 10.0) — el dueño de marca los va a recolorear</span><span data-lang="en">The logo is painted in colours that aren't its palette's (ΔE 8.2 and 10.0) — the brand owner will have them recoloured</span></li>
+          <li class="gap"><span data-lang="es">Las cuatro piezas del logotipo no comparten proporción: 5.11:1 contra 4.35:1</span><span data-lang="en">The logo's four files don't share a proportion: 5.11:1 versus 4.35:1</span></li>
+          <li class="gap"><span data-lang="es">El manual oficial nombra tres variaciones y en disco hay cuatro: falta fijar el nombre de cada una</span><span data-lang="en">The official manual names three variants and there are four on disk: the name for each still needs fixing</span></li>
+          <li class="gap"><span data-lang="es">Faltan en archivo las versiones vertical, avatar de redes y con eslogan</span><span data-lang="en">The vertical, social-avatar and with-tagline versions are still missing on file</span></li>
+          <li class="gap"><span data-lang="es">Faltan los logos de Hertz, Dollar, Thrifty y Walt Disney World</span><span data-lang="en">The logos for Hertz, Dollar, Thrifty and Walt Disney World are missing</span></li>
+          <li class="gap"><span data-lang="es">El canal B2B2C no tiene sub-marca asignada</span><span data-lang="en">The B2B2C channel has no sub-brand assigned</span></li>
+          <li class="gap"><span data-lang="es">Las tres audiencias están sin perfilar</span><span data-lang="en">All three audiences are unprofiled</span></li>
+          <li class="gap"><span data-lang="es">Sin eslogan declarado</span><span data-lang="en">No tagline declared</span></li>
+          <li class="gap"><span data-lang="es">Sin lista de claims autorizados ni de términos prohibidos</span><span data-lang="en">No list of authorised claims or forbidden terms</span></li>
+          <li class="gap"><span data-lang="es">Sin vocabulario de marca</span><span data-lang="en">No brand vocabulary</span></li>
+          <li class="gap"><span data-lang="es">Sin texto legal obligatorio por tipo de pieza</span><span data-lang="en">No mandatory legal text per piece type</span></li>
+          <li class="gap"><span data-lang="es">Sin nombre corporativo legal aprobado</span><span data-lang="en">No approved legal corporate name</span></li>
+          <li class="gap"><span data-lang="es">Sin banco de imágenes propio</span><span data-lang="en">No image library of its own</span></li>
+          <li class="gap"><span data-lang="es">El monograma LT de las mangas no está documentado en ninguna sección</span><span data-lang="en">The LT monogram on the sleeves isn't documented in any section</span></li>
+          <li class="gap"><span data-lang="es">El gris del endoso Formerly (#B4B4B4) no está en la paleta y da 2.07:1 sobre blanco</span><span data-lang="en">The Formerly endorsement's grey (#B4B4B4) isn't in the palette and gives 2.07:1 on white</span></li>
+          <li class="gap"><span data-lang="es">Solo LinkedIn tiene reglas escritas; las demás redes no</span><span data-lang="en">Only LinkedIn has written rules; the other networks don't</span></li>
+          <li class="gap"><span data-lang="es">El Azul Noche de Travel y el Azul Trip de su sub-marca quedan a ΔE 21.8 con la misma luminosidad: falta decidir si es aire de familia o un choque</span><span data-lang="en">Travel's Night blue and its sub-brand's Azul Trip sit at ΔE 21.8 with the same luminosity: still to be decided whether that's a family resemblance or a clash</span></li>
         </ul>
       </details>
       <div class="subs">
-        <p class="subs-label">Sub-marcas de canal — dentro de la estrella, nunca estrella propia</p>
+        <p class="subs-label"><span data-lang="es">Sub-marcas de canal — dentro de la estrella, nunca estrella propia</span><span data-lang="en">Channel sub-brands — inside the star, never a star of their own</span></p>
         <div class="subs-grid">
     <article class="marca" style="--acento:#FF725E">
       <div class="marca-top">
@@ -456,13 +514,13 @@ footer p { margin: 0 0 4px; }
           <p class="dom">linexgo.com</p>
         </div>
         <div class="pills">
-          <span class="pill live">Vigente</span>
+          <span class="pill live"><span data-lang="es">Vigente</span><span data-lang="en">Live</span></span>
         </div>
       </div>
-      <p class="rol">Sub-marca B2B dentro de Linex Travel — la cara comercial hacia agencias y operadores</p>
+      <p class="rol"><span data-lang="es">Sub-marca B2B dentro de Linex Travel — la cara comercial hacia agencias y operadores</span><span data-lang="en">B2B sub-brand within Linex Travel — the commercial face toward agencies and operators</span></p>
       <div class="af">
-        <div><h4>Atrae</h4><p>Agencias y operadores que necesitan un sistema para vender viaje. Canal B2B, con tarifas y herramientas de reventa.</p></div>
-        <div><h4>Filtra</h4><p>El viajero final — se enruta a Linex Trip por el Group Bar o por el asesor.</p></div>
+        <div><h4><span data-lang="es">Atrae</span><span data-lang="en">Attracts</span></h4><p><span data-lang="es">Agencias y operadores que necesitan un sistema para vender viaje. Canal B2B, con tarifas y herramientas de reventa.</span><span data-lang="en">Agencies and operators that need a system to sell travel. B2B channel, with fares and resale tools.</span></p></div>
+        <div><h4><span data-lang="es">Filtra</span><span data-lang="en">Filters out</span></h4><p><span data-lang="es">El viajero final — se enruta a Linex Trip por el Group Bar o por el asesor.</span><span data-lang="en">The end traveller — routed to Linex Trip through the Group Bar or the advisor.</span></p></div>
       </div>
       <div class="pal">
         <span class="sw"><i style="background:#012D33"></i>Petróleo <code>#012D33</code> <em>32%</em></span>
@@ -473,21 +531,21 @@ footer p { margin: 0 0 4px; }
         <span class="sw"><i style="background:#FFE3DD"></i>Coral claro <code>#FFE3DD</code> <em>6%</em></span>
         <span class="sw"><i style="background:#E6D5B8"></i>Arena <code>#E6D5B8</code> <em>4%</em></span>
       </div>
-      <p class="acceso"><a class="btn" href="manual-linex-go/index.html">Abrir el manual de Linex Go</a></p>
+      <p class="acceso"><a class="btn" href="manual-linex-go/index.html"><span data-lang="es">Abrir el manual de Linex Go</span><span data-lang="en">Open the Linex Go manual</span></a></p>
       <details class="gaps">
-        <summary><b>11</b> pendientes</summary>
+        <summary><b>11</b> <span data-lang="es">pendientes</span><span data-lang="en">pending items</span></summary>
         <ul class="gap-list">
-          <li class="gap">Faltan las versiones vertical, avatar de redes y con eslogan — el vertical no es prioritario por ahora</li>
-          <li class="gap">Faltan los logos de Disney y Assistviaje</li>
-          <li class="gap">Las seis fichas de audiencia están sin perfilar</li>
-          <li class="gap">Sin lista de claims autorizados con su evidencia</li>
-          <li class="gap">Sin lista de términos prohibidos validada</li>
-          <li class="gap">Sin texto legal obligatorio por tipo de pieza</li>
-          <li class="gap">Sin nombre corporativo legal aprobado</li>
-          <li class="gap">Sin plazo definido para la transición UltraGo → Linex Go</li>
-          <li class="gap">Sin banco de imágenes propio</li>
-          <li class="gap">Las piezas producidas se ajustan CON EL DISEÑADOR (decisión 17-sep-2026): el conflicto de la tarjeta —fondo petróleo con logo negativo según la sección de canal, cara clara según lo producido— y los radios de 20 y 28 px que quedaron fuera de la escala del grupo</li>
-          <li class="gap">Solo Instagram tiene reglas escritas; las demás redes no</li>
+          <li class="gap"><span data-lang="es">Faltan las versiones vertical, avatar de redes y con eslogan — el vertical no es prioritario por ahora</span><span data-lang="en">The vertical, social-avatar and with-tagline versions are missing — the vertical isn't a priority for now</span></li>
+          <li class="gap"><span data-lang="es">Faltan los logos de Disney y Assistviaje</span><span data-lang="en">The Disney and Assistviaje logos are missing</span></li>
+          <li class="gap"><span data-lang="es">Las seis fichas de audiencia están sin perfilar</span><span data-lang="en">All six audience profiles are unprofiled</span></li>
+          <li class="gap"><span data-lang="es">Sin lista de claims autorizados con su evidencia</span><span data-lang="en">No list of authorised claims with their evidence</span></li>
+          <li class="gap"><span data-lang="es">Sin lista de términos prohibidos validada</span><span data-lang="en">No validated list of forbidden terms</span></li>
+          <li class="gap"><span data-lang="es">Sin texto legal obligatorio por tipo de pieza</span><span data-lang="en">No mandatory legal text per piece type</span></li>
+          <li class="gap"><span data-lang="es">Sin nombre corporativo legal aprobado</span><span data-lang="en">No approved legal corporate name</span></li>
+          <li class="gap"><span data-lang="es">Sin plazo definido para la transición UltraGo → Linex Go</span><span data-lang="en">No set deadline for the UltraGo → Linex Go transition</span></li>
+          <li class="gap"><span data-lang="es">Sin banco de imágenes propio</span><span data-lang="en">No image library of its own</span></li>
+          <li class="gap"><span data-lang="es">Las piezas producidas se ajustan CON EL DISEÑADOR (decisión 17-sep-2026): el conflicto de la tarjeta —fondo petróleo con logo negativo según la sección de canal, cara clara según lo producido— y los radios de 20 y 28 px que quedaron fuera de la escala del grupo</span><span data-lang="en">Produced pieces get adjusted WITH THE DESIGNER (decision 17-Sep-2026): the card's conflict —petroleum background with a negative logo per the channel section, a light face per what was actually produced— and the 20 and 28 px radii that fell outside the group's scale</span></li>
+          <li class="gap"><span data-lang="es">Solo Instagram tiene reglas escritas; las demás redes no</span><span data-lang="en">Only Instagram has written rules; the other networks don't</span></li>
         </ul>
       </details>
     </article>
@@ -498,13 +556,13 @@ footer p { margin: 0 0 4px; }
           <p class="dom">linextrip.com</p>
         </div>
         <div class="pills">
-          <span class="pill live">Vigente</span>
+          <span class="pill live"><span data-lang="es">Vigente</span><span data-lang="en">Live</span></span>
         </div>
       </div>
-      <p class="rol">Sub-marca B2C dentro de Linex Travel — reserva de viajes para el viajero final</p>
+      <p class="rol"><span data-lang="es">Sub-marca B2C dentro de Linex Travel — reserva de viajes para el viajero final</span><span data-lang="en">B2C sub-brand within Linex Travel — travel booking for the end traveller</span></p>
       <div class="af">
-        <div><h4>Atrae</h4><p>El viajero final, para sí o su familia. Canal B2C, con precio a la vista y Contact Center propio.</p></div>
-        <div><h4>Filtra</h4><p>Agencias y operadores — se enrutan a Linex Go, sin armarles tarifa B2B.</p></div>
+        <div><h4><span data-lang="es">Atrae</span><span data-lang="en">Attracts</span></h4><p><span data-lang="es">El viajero final, para sí o su familia. Canal B2C, con precio a la vista y Contact Center propio.</span><span data-lang="en">The end traveller, for themselves or their family. B2C channel, with visible pricing and its own Contact Center.</span></p></div>
+        <div><h4><span data-lang="es">Filtra</span><span data-lang="en">Filters out</span></h4><p><span data-lang="es">Agencias y operadores — se enrutan a Linex Go, sin armarles tarifa B2B.</span><span data-lang="en">Agencies and operators — routed to Linex Go, without building them a B2B fare.</span></p></div>
       </div>
       <div class="pal">
         <span class="sw"><i style="background:#00145A"></i>Azul Trip <code>#00145A</code> <em>30%</em></span>
@@ -515,16 +573,16 @@ footer p { margin: 0 0 4px; }
         <span class="sw"><i style="background:#080808"></i>Negro Linex <code>#080808</code> <em>8%</em></span>
         <span class="sw"><i style="background:#ECE200"></i>Amarillo <code>#ECE200</code> <em>4%</em></span>
       </div>
-      <p class="acceso"><a class="btn" href="manual-linex-trip/index.html">Abrir el manual de Linex Trip</a></p>
+      <p class="acceso"><a class="btn" href="manual-linex-trip/index.html"><span data-lang="es">Abrir el manual de Linex Trip</span><span data-lang="en">Open the Linex Trip manual</span></a></p>
       <details class="gaps">
-        <summary><b>6</b> pendientes</summary>
+        <summary><b>6</b> <span data-lang="es">pendientes</span><span data-lang="en">pending items</span></summary>
         <ul class="gap-list">
-          <li class="gap">Isotipo sin decidir — siete propuestas en exploración abierta</li>
-          <li class="gap">Sin versión vertical ni avatar de redes</li>
-          <li class="gap">Las siete propuestas están dibujadas con el Índigo viejo y habría que recolorearlas</li>
-          <li class="gap">Sin banco de fotografía propio</li>
-          <li class="gap">Claims secundarios sin aprobar</li>
-          <li class="gap">Repositorio central de activos pendiente de validar con negocio</li>
+          <li class="gap"><span data-lang="es">Isotipo sin decidir — siete propuestas en exploración abierta</span><span data-lang="en">Logomark undecided — seven proposals in open exploration</span></li>
+          <li class="gap"><span data-lang="es">Sin versión vertical ni avatar de redes</span><span data-lang="en">No vertical version or social avatar</span></li>
+          <li class="gap"><span data-lang="es">Las siete propuestas están dibujadas con el Índigo viejo y habría que recolorearlas</span><span data-lang="en">All seven proposals are drawn in the old Indigo and would need recolouring</span></li>
+          <li class="gap"><span data-lang="es">Sin banco de fotografía propio</span><span data-lang="en">No photography library of its own</span></li>
+          <li class="gap"><span data-lang="es">Claims secundarios sin aprobar</span><span data-lang="en">Secondary claims not yet approved</span></li>
+          <li class="gap"><span data-lang="es">Repositorio central de activos pendiente de validar con negocio</span><span data-lang="en">Central asset repository pending validation with the business</span></li>
         </ul>
       </details>
     </article>
@@ -538,23 +596,23 @@ footer p { margin: 0 0 4px; }
           <p class="dom">linexmarketplace.com</p>
         </div>
         <div class="pills">
-          <span class="pill soon">Pendiente</span>
+          <span class="pill soon"><span data-lang="es">Pendiente</span><span data-lang="en">Pending</span></span>
         </div>
       </div>
-      <p class="rol">Estrella — el supermercado de redención</p>
+      <p class="rol"><span data-lang="es">Estrella — el supermercado de redención</span><span data-lang="en">Star — the redemption supermarket</span></p>
       <div class="af">
-        <div><h4>Atrae</h4><p>Programas que necesitan redención de bienes despachables curada.</p></div>
-        <div><h4>Filtra</h4><p>Audiencias solo de viaje — se enrutan a Linex Travel.</p></div>
+        <div><h4><span data-lang="es">Atrae</span><span data-lang="en">Attracts</span></h4><p><span data-lang="es">Programas que necesitan redención de bienes despachables curada.</span><span data-lang="en">Programmes that need curated redemption of shippable goods.</span></p></div>
+        <div><h4><span data-lang="es">Filtra</span><span data-lang="en">Filters out</span></h4><p><span data-lang="es">Audiencias solo de viaje — se enrutan a Linex Travel.</span><span data-lang="en">Travel-only audiences — routed to Linex Travel.</span></p></div>
       </div>
-      <p class="acceso sin"><span>Sin manual todavía</span></p>
+      <p class="acceso sin"><span><span data-lang="es">Sin manual todavía</span><span data-lang="en">No manual yet</span></span></p>
       <details class="gaps">
-        <summary><b>5</b> pendientes</summary>
+        <summary><b>5</b> <span data-lang="es">pendientes</span><span data-lang="en">pending items</span></summary>
         <ul class="gap-list">
-          <li class="gap">Sin logo</li>
-          <li class="gap">Sin paleta</li>
-          <li class="gap">Sin voz documentada</li>
-          <li class="gap">Sin manual</li>
-          <li class="gap">Genio sin nombrar</li>
+          <li class="gap"><span data-lang="es">Sin logo</span><span data-lang="en">No logo</span></li>
+          <li class="gap"><span data-lang="es">Sin paleta</span><span data-lang="en">No palette</span></li>
+          <li class="gap"><span data-lang="es">Sin voz documentada</span><span data-lang="en">No documented voice</span></li>
+          <li class="gap"><span data-lang="es">Sin manual</span><span data-lang="en">No manual</span></li>
+          <li class="gap"><span data-lang="es">Genio sin nombrar</span><span data-lang="en">Genie not yet named</span></li>
         </ul>
       </details>
     </article>
@@ -565,23 +623,23 @@ footer p { margin: 0 0 4px; }
           <p class="dom">linexrewards.com</p>
         </div>
         <div class="pills">
-          <span class="pill soon">Pendiente</span>
+          <span class="pill soon"><span data-lang="es">Pendiente</span><span data-lang="en">Pending</span></span>
         </div>
       </div>
-      <p class="rol">Estrella — el motor EARN</p>
-      <p class="genio">Genio · <b>Milton</b> — Construye motores de puntos a la medida: reglas de acumulación, wallet y checkout.</p>
+      <p class="rol"><span data-lang="es">Estrella — el motor EARN</span><span data-lang="en">Star — the EARN engine</span></p>
+      <p class="genio"><span data-lang="es">Genio</span><span data-lang="en">Genie</span> · <b>Milton</b> — <span data-lang="es">Construye motores de puntos a la medida: reglas de acumulación, wallet y checkout.</span><span data-lang="en">Builds tailored points engines: accrual rules, wallet and checkout.</span></p>
       <div class="af">
-        <div><h4>Atrae</h4><p>Bancos y programas que necesitan crear y administrar puntos.</p></div>
-        <div><h4>Filtra</h4><p>Compradores solo de redención — se enrutan a Travel o Marketplace.</p></div>
+        <div><h4><span data-lang="es">Atrae</span><span data-lang="en">Attracts</span></h4><p><span data-lang="es">Bancos y programas que necesitan crear y administrar puntos.</span><span data-lang="en">Banks and programmes that need to create and manage points.</span></p></div>
+        <div><h4><span data-lang="es">Filtra</span><span data-lang="en">Filters out</span></h4><p><span data-lang="es">Compradores solo de redención — se enrutan a Travel o Marketplace.</span><span data-lang="en">Redemption-only buyers — routed to Travel or Marketplace.</span></p></div>
       </div>
-      <p class="acceso sin"><span>Sin manual todavía</span></p>
+      <p class="acceso sin"><span><span data-lang="es">Sin manual todavía</span><span data-lang="en">No manual yet</span></span></p>
       <details class="gaps">
-        <summary><b>4</b> pendientes</summary>
+        <summary><b>4</b> <span data-lang="es">pendientes</span><span data-lang="en">pending items</span></summary>
         <ul class="gap-list">
-          <li class="gap">Sin logo</li>
-          <li class="gap">Sin paleta</li>
-          <li class="gap">Sin voz documentada</li>
-          <li class="gap">Sin manual</li>
+          <li class="gap"><span data-lang="es">Sin logo</span><span data-lang="en">No logo</span></li>
+          <li class="gap"><span data-lang="es">Sin paleta</span><span data-lang="en">No palette</span></li>
+          <li class="gap"><span data-lang="es">Sin voz documentada</span><span data-lang="en">No documented voice</span></li>
+          <li class="gap"><span data-lang="es">Sin manual</span><span data-lang="en">No manual</span></li>
         </ul>
       </details>
     </article>
@@ -592,32 +650,32 @@ footer p { margin: 0 0 4px; }
           <p class="dom">linexschool.com</p>
         </div>
         <div class="pills">
-          <span class="pill soon">Pendiente</span>
+          <span class="pill soon"><span data-lang="es">Pendiente</span><span data-lang="en">Pending</span></span>
         </div>
       </div>
-      <p class="rol">Estrella en expansión</p>
+      <p class="rol"><span data-lang="es">Estrella en expansión</span><span data-lang="en">Expanding star</span></p>
       <div class="af">
-        <div><h4>Atrae</h4><p>Sin definir.</p></div>
-        <div><h4>Filtra</h4><p>Sin definir.</p></div>
+        <div><h4><span data-lang="es">Atrae</span><span data-lang="en">Attracts</span></h4><p><span data-lang="es">Sin definir.</span><span data-lang="en">Not yet defined.</span></p></div>
+        <div><h4><span data-lang="es">Filtra</span><span data-lang="en">Filters out</span></h4><p><span data-lang="es">Sin definir.</span><span data-lang="en">Not yet defined.</span></p></div>
       </div>
-      <p class="acceso sin"><span>Sin manual todavía</span></p>
+      <p class="acceso sin"><span><span data-lang="es">Sin manual todavía</span><span data-lang="en">No manual yet</span></span></p>
       <details class="gaps">
-        <summary><b>6</b> pendientes</summary>
+        <summary><b>6</b> <span data-lang="es">pendientes</span><span data-lang="en">pending items</span></summary>
         <ul class="gap-list">
-          <li class="gap">Sin logo</li>
-          <li class="gap">Sin paleta</li>
-          <li class="gap">Sin voz documentada</li>
-          <li class="gap">Sin manual</li>
-          <li class="gap">Sin carpeta en Logos/logos-oficiales/</li>
-          <li class="gap">No aparece en ninguno de los dos contextos de marca</li>
+          <li class="gap"><span data-lang="es">Sin logo</span><span data-lang="en">No logo</span></li>
+          <li class="gap"><span data-lang="es">Sin paleta</span><span data-lang="en">No palette</span></li>
+          <li class="gap"><span data-lang="es">Sin voz documentada</span><span data-lang="en">No documented voice</span></li>
+          <li class="gap"><span data-lang="es">Sin manual</span><span data-lang="en">No manual</span></li>
+          <li class="gap"><span data-lang="es">Sin carpeta en Logos/logos-oficiales/</span><span data-lang="en">No folder in Logos/logos-oficiales/</span></li>
+          <li class="gap"><span data-lang="es">No aparece en ninguno de los dos contextos de marca</span><span data-lang="en">Doesn't appear in either of the two brand context files</span></li>
         </ul>
       </details>
     </article>
   </section>
 
   <footer>
-    <p>Generado desde brand-tokens.json &middot; 2026-09-17</p>
-    <p>Confidencial &mdash; marca y estrategia digital</p>
+    <p><span data-lang="es">Generado desde brand-tokens.json</span><span data-lang="en">Generated from brand-tokens.json</span> &middot; 2026-09-17</p>
+    <p><span data-lang="es">Confidencial — marca y estrategia digital</span><span data-lang="en">Confidential — brand and digital strategy</span></p>
   </footer>
 </div>
 </body>

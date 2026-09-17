@@ -181,6 +181,17 @@
         "Sin manual",
         "Sin carpeta en Logos/logos-oficiales/",
         "No aparece en ninguno de los dos contextos de marca"
+      ],
+      "rol_en": "The foundation — corporate communication, global and static",
+      "atrae_en": "Major investors and companies looking to enter the constellation. Managed with Laurent, low-maintenance.",
+      "filtra_en": "Operational customers, end users and small prospects — there's no product or price here.",
+      "pendientes_en": [
+        "No logo",
+        "No palette",
+        "No documented voice",
+        "No manual",
+        "No folder in Logos/logos-oficiales/",
+        "Doesn't appear in either of the two brand context files"
       ]
     },
     "linex-loyalty": {
@@ -264,14 +275,30 @@
         "fecha": "2026-09-17",
         "estado": "en pausa",
         "decision": "Linex Loyalty queda en pausa por decisión del dueño de marca. No se trabaja su manual ni se completa su paleta por ahora.",
-        "al_retomar": "Lo primero es fijar su base oscura: el Verde #C5F04A da 1.32:1 sobre blanco y no tiene dónde vivir sin ella."
+        "al_retomar": "Lo primero es fijar su base oscura: el Verde #C5F04A da 1.32:1 sobre blanco y no tiene dónde vivir sin ella.",
+        "estado_en": "paused",
+        "decision_en": "Linex Loyalty is on hold by the brand owner's decision. Its manual isn't being worked on and its palette isn't being completed for now.",
+        "al_retomar_en": "The first thing is fixing its dark base: Green #C5F04A gives 1.32:1 on white and has nowhere to live without one."
       },
       "fuente": {
         "documento": null,
         "de": "Instrucción directa del dueño de marca",
         "fecha": "2026-09-16",
         "nota": "El Verde #C5F04A no viene de un manual ni de un documento: lo entregó el dueño de marca de viva voz. Es la única marca del grupo cuyo único dato de color no tiene respaldo escrito, y por eso se registra la procedencia aquí. Al retomar, conviene confirmarlo contra una fuente."
-      }
+      },
+      "rol_en": "The space port — the constellation's point of entry, not a payment box",
+      "atrae_en": "Banks and large corporations evaluating loyalty at scale. The big-scale audience.",
+      "filtra_en": "Deal hunters, single-function buyers and casual visitors — routed to a star.",
+      "genio_nota_en": "Pronounced ee-SAR. The master genie: speaks for the whole constellation, explains the stars and calls in the other genies to build a tailored solution.",
+      "pendientes_en": [
+        "No dark base defined — and Green needs one to exist",
+        "No colour name for Green",
+        "No complete palette",
+        "No logo",
+        "No documented voice",
+        "No manual",
+        "Green sits at the same luminosity as Trip's Yellow (L* 89.2 vs 88.1): they're told apart by hue, not by value"
+      ]
     },
     "linex-travel": {
       "id": "linex-travel",
@@ -697,7 +724,30 @@
         "fecha": "2026-09-10",
         "paginas": 28,
         "nota": "Documento de consulta del dueño de marca. No entra al repositorio y se puede borrar: todo lo que sirve quedó en este JSON y en el manual."
-      }
+      },
+      "rol_en": "Star — operates B2B2C, B2B and B2C",
+      "atrae_en": "Companies that need travel as redemption; agencies looking for a front-to-back; resellers of AI-powered travel services.",
+      "filtra_en": "Investors and needs unrelated to travel — the Group Bar routes them.",
+      "genio_nota_en": "Name in progress. Builds tailored travel solutions: redemption site, agency API, travel UX.",
+      "pendientes_en": [
+        "The logo is painted in colours that aren't its palette's (ΔE 8.2 and 10.0) — the brand owner will have them recoloured",
+        "The logo's four files don't share a proportion: 5.11:1 versus 4.35:1",
+        "The official manual names three variants and there are four on disk: the name for each still needs fixing",
+        "The vertical, social-avatar and with-tagline versions are still missing on file",
+        "The logos for Hertz, Dollar, Thrifty and Walt Disney World are missing",
+        "The B2B2C channel has no sub-brand assigned",
+        "All three audiences are unprofiled",
+        "No tagline declared",
+        "No list of authorised claims or forbidden terms",
+        "No brand vocabulary",
+        "No mandatory legal text per piece type",
+        "No approved legal corporate name",
+        "No image library of its own",
+        "The LT monogram on the sleeves isn't documented in any section",
+        "The Formerly endorsement's grey (#B4B4B4) isn't in the palette and gives 2.07:1 on white",
+        "Only LinkedIn has written rules; the other networks don't",
+        "Travel's Night blue and its sub-brand's Azul Trip sit at ΔE 21.8 with the same luminosity: still to be decided whether that's a family resemblance or a clash"
+      ]
     },
     "linex-go": {
       "id": "linex-go",
@@ -1074,7 +1124,23 @@
         "decision": "La paleta del manual NO se reemplaza. Los siete colores documentados son los definidos, con el Petróleo #012D33 como principal.",
         "alcance": "Que el logotipo lleve Índigo #1A0E3E es una excepción del logotipo y nada más. No arrastra a la paleta, ni a los contrastes, ni a los tokens del CSS.",
         "no_reabrir": "Esta decisión cierra la pregunta de si el oscuro de la marca debía cambiar con el del logotipo. La respuesta es no."
-      }
+      },
+      "rol_en": "B2B sub-brand within Linex Travel — the commercial face toward agencies and operators",
+      "atrae_en": "Agencies and operators that need a system to sell travel. B2B channel, with fares and resale tools.",
+      "filtra_en": "The end traveller — routed to Linex Trip through the Group Bar or the advisor.",
+      "pendientes_en": [
+        "The vertical, social-avatar and with-tagline versions are missing — the vertical isn't a priority for now",
+        "The Disney and Assistviaje logos are missing",
+        "All six audience profiles are unprofiled",
+        "No list of authorised claims with their evidence",
+        "No validated list of forbidden terms",
+        "No mandatory legal text per piece type",
+        "No approved legal corporate name",
+        "No set deadline for the UltraGo → Linex Go transition",
+        "No image library of its own",
+        "Produced pieces get adjusted WITH THE DESIGNER (decision 17-Sep-2026): the card's conflict —petroleum background with a negative logo per the channel section, a light face per what was actually produced— and the 20 and 28 px radii that fell outside the group's scale",
+        "Only Instagram has written rules; the other networks don't"
+      ]
     },
     "linex-trip": {
       "id": "linex-trip",
@@ -1437,6 +1503,17 @@
         "Sin banco de fotografía propio",
         "Claims secundarios sin aprobar",
         "Repositorio central de activos pendiente de validar con negocio"
+      ],
+      "rol_en": "B2C sub-brand within Linex Travel — travel booking for the end traveller",
+      "atrae_en": "The end traveller, for themselves or their family. B2C channel, with visible pricing and its own Contact Center.",
+      "filtra_en": "Agencies and operators — routed to Linex Go, without building them a B2B fare.",
+      "pendientes_en": [
+        "Logomark undecided — seven proposals in open exploration",
+        "No vertical version or social avatar",
+        "All seven proposals are drawn in the old Indigo and would need recolouring",
+        "No photography library of its own",
+        "Secondary claims not yet approved",
+        "Central asset repository pending validation with the business"
       ]
     },
     "linex-marketplace": {
@@ -1486,6 +1563,17 @@
         "Sin voz documentada",
         "Sin manual",
         "Genio sin nombrar"
+      ],
+      "rol_en": "Star — the redemption supermarket",
+      "atrae_en": "Programmes that need curated redemption of shippable goods.",
+      "filtra_en": "Travel-only audiences — routed to Linex Travel.",
+      "genio_nota_en": "Name in progress. The supermarket builder: shippable goods, games, streaming and other redemption categories under one roof.",
+      "pendientes_en": [
+        "No logo",
+        "No palette",
+        "No documented voice",
+        "No manual",
+        "Genie not yet named"
       ]
     },
     "linex-rewards": {
@@ -1533,6 +1621,16 @@
         "Sin paleta",
         "Sin voz documentada",
         "Sin manual"
+      ],
+      "rol_en": "Star — the EARN engine",
+      "atrae_en": "Banks and programmes that need to create and manage points.",
+      "filtra_en": "Redemption-only buyers — routed to Travel or Marketplace.",
+      "genio_nota_en": "Builds tailored points engines: accrual rules, wallet and checkout.",
+      "pendientes_en": [
+        "No logo",
+        "No palette",
+        "No documented voice",
+        "No manual"
       ]
     },
     "linex-school": {
@@ -1581,6 +1679,17 @@
         "Sin manual",
         "Sin carpeta en Logos/logos-oficiales/",
         "No aparece en ninguno de los dos contextos de marca"
+      ],
+      "rol_en": "Expanding star",
+      "atrae_en": "Not yet defined.",
+      "filtra_en": "Not yet defined.",
+      "pendientes_en": [
+        "No logo",
+        "No palette",
+        "No documented voice",
+        "No manual",
+        "No folder in Logos/logos-oficiales/",
+        "Doesn't appear in either of the two brand context files"
       ]
     }
   },

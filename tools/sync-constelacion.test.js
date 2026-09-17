@@ -241,3 +241,41 @@ test('el componente de pendientes cumple AA en claro y en oscuro', () => {
     }
   }
 });
+
+/* ---------- bilingüe ----------
+   El mismo mecanismo del manual de Linex Travel, con el mismo riesgo: un
+   span[data-lang] puede terminar cerrando un elemento ajeno —una <li>, un
+   <div>, un <article>— sin que el CONTEO de aperturas y cierres lo delate,
+   porque no se agregó ni se quitó ninguna etiqueta, solo se anidó mal. Por
+   eso se revisa el contenido de cada span, no solo su cantidad. */
+test('el sitio es bilingüe: cada texto tiene su par en el otro idioma', () => {
+  const es = (html.match(/data-lang="es"/g) || []).length;
+  const en = (html.match(/data-lang="en"/g) || []).length;
+  assert.strictEqual(es, en,
+    `${es} marcas "es" contra ${en} "en" — un idioma quedó sin su par`);
+  assert.ok(es > 0, 'no se encontró ningún span bilingüe');
+});
+
+test('ningún span bilingüe cierra un elemento ajeno', () => {
+  const re = /<span data-lang="(es|en)">((?:(?!<span data-lang).)*?)<\/span>/gs;
+  const rotos = [];
+  let m;
+  while ((m = re.exec(html))) {
+    if (/<\/(div|li|article|section|ul|h[1-4]|p)>/.test(m[2])) rotos.push(m[0].slice(0, 80));
+  }
+  assert.deepStrictEqual(rotos, [],
+    'un span[data-lang] envuelve el cierre de un elemento que no le pertenece');
+});
+
+test('el selector de idioma no depende de brand-tokens.json para existir', () => {
+  // Aunque una marca no tenga _en, el sitio no deja un hueco: bi() cae de
+  // vuelta al español bajo las dos banderas. Se comprueba con un token sin
+  // traducir a propósito.
+  const t = copia();
+  delete t.marcas['linex-go'].atrae_en;
+  const conHueco = construirSitio(t);
+  const i = conHueco.indexOf('<h3>Linex Go</h3>');
+  const bloque = conHueco.slice(i, i + 3000);
+  assert.ok(/<span data-lang="en">Agencias y operadores/.test(bloque),
+    'sin traducción, el inglés debería repetir el español, no quedar vacío');
+});

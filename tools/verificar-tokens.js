@@ -99,6 +99,13 @@ function verificar(tokens) {
       }
     }
 
+    // 6b · El sitio Constelación es bilingüe: un pendientes_en que se
+    // desalinea de pendientes deja al visitante en inglés leyendo un ítem
+    // que no corresponde, o ninguno.
+    if (m.pendientes_en && m.pendientes_en.length !== (m.pendientes || []).length) {
+      errores.push(`${id}: pendientes_en tiene ${m.pendientes_en.length} ítems y pendientes tiene ${(m.pendientes || []).length}`);
+    }
+
     // 6 · Lo pendiente se nombra, no se disimula.
     const sinLogo = Object.values(m.logos || {}).every(v => v === null);
     if (sinLogo && !(m.pendientes || []).some(p => /logo/i.test(p))) {

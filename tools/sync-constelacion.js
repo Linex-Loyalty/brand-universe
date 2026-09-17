@@ -14,6 +14,17 @@
  * pinta de ningún color que nadie aprobó. Los colores de marca aparecen
  * solo como DATO, dentro de la tarjeta de su marca.
  *
+ * BILINGÜE
+ * Mismo mecanismo que el manual de Linex Travel: cada texto vive dos
+ * veces, envuelto en <span data-lang="es">/<span data-lang="en">, y un
+ * selector solo-CSS decide cuál se ve. Sin JavaScript — esta página tiene
+ * una prueba que lo exige ("el sitio no depende de JavaScript"), porque
+ * tiene que abrir con doble clic y funcionar como archivo, sin servidor.
+ *
+ * Un campo sin su "_en" no se inventa: bi() cae de vuelta al español bajo
+ * las dos banderas, para que nunca aparezca un hueco en blanco — pero eso
+ * es una señal de que falta traducir, no una traducción lograda.
+ *
  * USO
  *   node tools/sync-constelacion.js
  */
@@ -27,13 +38,24 @@ const esc = s => String(s == null ? '' : s)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;')
   .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
+/* Envuelve un texto en sus dos idiomas. Si falta la versión en inglés,
+ * repite el español bajo las dos banderas — nunca un hueco vacío. */
+function bi(es, en) {
+  const safeEs = esc(es);
+  const safeEn = en != null ? esc(en) : safeEs;
+  return `<span data-lang="es">${safeEs}</span><span data-lang="en">${safeEn}</span>`;
+}
+
 const TIERS = [
-  { n: 1, nombre: 'El fondo',
-    nota: 'Comunicación corporativa · global y estático' },
-  { n: 2, nombre: 'El puerto espacial',
-    nota: 'El punto de entrada a la constelación — no una caja de pago' },
-  { n: 3, nombre: 'Las estrellas',
-    nota: 'Motores comerciales · cada una con su genio y su público' },
+  { n: 1, nombre: 'El fondo', nombre_en: 'The foundation',
+    nota: 'Comunicación corporativa · global y estático',
+    nota_en: 'Corporate communication · global and static' },
+  { n: 2, nombre: 'El puerto espacial', nombre_en: 'The space port',
+    nota: 'El punto de entrada a la constelación — no una caja de pago',
+    nota_en: "The constellation's point of entry — not a payment box" },
+  { n: 3, nombre: 'Las estrellas', nombre_en: 'The stars',
+    nota: 'Motores comerciales · cada una con su genio y su público',
+    nota_en: 'Commercial engines · each with its own genie and audience' },
 ];
 
 function swatches(m) {
@@ -46,10 +68,11 @@ function swatches(m) {
   return `\n      <div class="pal">\n        ${chips}\n      </div>`;
 }
 
-/* Cincuenta pendientes repartidos en ocho marcas no caben abiertos: la
- * tarjeta se vuelve su propia lista de tareas y entierra lo que la gente
- * viene a buscar —la paleta y el botón del manual—. Van colapsados, con
- * el conteo a la vista: el número es el dato, la lista es el detalle.
+/* Cincuenta y tantos pendientes repartidos en ocho marcas no caben
+ * abiertos: la tarjeta se vuelve su propia lista de tareas y entierra lo
+ * que la gente viene a buscar —la paleta y el botón del manual—. Van
+ * colapsados, con el conteo a la vista: el número es el dato, la lista es
+ * el detalle.
  *
  * <details> nativo, no JavaScript: abre con doble clic sobre el archivo,
  * sin servidor, lo navega el teclado y se imprime desplegado.
@@ -66,14 +89,15 @@ function pendientes(m) {
   const esBloqueante = p => /^BLOQUEANTE/.test(p);
   const n = m.pendientes.length;
   const bloqueantes = m.pendientes.filter(esBloqueante).length;
+  const pendientesEn = m.pendientes_en || [];
 
-  const items = m.pendientes.map(p =>
-    `<li class="${esBloqueante(p) ? 'stop' : 'gap'}">${esc(p)}</li>`
+  const items = m.pendientes.map((p, i) =>
+    `<li class="${esBloqueante(p) ? 'stop' : 'gap'}">${bi(p, pendientesEn[i])}</li>`
   ).join('\n          ');
 
-  const resumen = `<b>${n}</b> ${n === 1 ? 'pendiente' : 'pendientes'}` +
+  const resumen = `<b>${n}</b> ${bi(n === 1 ? 'pendiente' : 'pendientes', n === 1 ? 'pending item' : 'pending items')}` +
     (bloqueantes
-      ? ` <span class="sum-stop">· ${bloqueantes} bloqueante${bloqueantes === 1 ? '' : 's'}</span>`
+      ? ` <span class="sum-stop">· ${bloqueantes} ${bi(bloqueantes === 1 ? 'bloqueante' : 'bloqueantes', bloqueantes === 1 ? 'blocker' : 'blockers')}</span>`
       : '');
 
   return `\n      <details class="gaps"${bloqueantes ? ' open' : ''}>
@@ -92,9 +116,12 @@ function pausa(m) {
   const e = m.estado_trabajo;
   if (!e) return '';
   const titulo = e.estado.charAt(0).toUpperCase() + e.estado.slice(1);
+  const tituloEn = e.estado_en
+    ? e.estado_en.charAt(0).toUpperCase() + e.estado_en.slice(1)
+    : null;
   return `\n      <div class="pausa">
-        <p class="pausa-q"><b>${esc(titulo)}</b>${e.fecha ? ' · ' + esc(e.fecha) : ''} — ${esc(e.decision)}</p>${e.al_retomar
-          ? `\n        <p class="pausa-r"><span>Al retomar</span>${esc(e.al_retomar)}</p>`
+        <p class="pausa-q"><b>${bi(titulo, tituloEn)}</b>${e.fecha ? ' · ' + esc(e.fecha) : ''} — ${bi(e.decision, e.decision_en)}</p>${e.al_retomar
+          ? `\n        <p class="pausa-r"><span>${bi('Al retomar', 'When resuming')}</span>${bi(e.al_retomar, e.al_retomar_en)}</p>`
           : ''}
       </div>`;
 }
@@ -103,9 +130,9 @@ function pausa(m) {
 function acceso(m) {
   if (m.manual) {
     return `\n      <p class="acceso"><a class="btn" href="${esc(m.manual)}index.html">` +
-           `Abrir el manual de ${esc(m.nombre)}</a></p>`;
+           `${bi('Abrir el manual de ' + m.nombre, 'Open the ' + m.nombre + ' manual')}</a></p>`;
   }
-  return `\n      <p class="acceso sin"><span>Sin manual todavía</span></p>`;
+  return `\n      <p class="acceso sin"><span>${bi('Sin manual todavía', 'No manual yet')}</span></p>`;
 }
 
 function tarjeta(m) {
@@ -122,18 +149,18 @@ function tarjeta(m) {
           <p class="dom">${esc(m.dominio)}</p>
         </div>
         <div class="pills">
-          <span class="pill ${m.manual ? 'live' : 'soon'}">${m.manual ? 'Vigente' : 'Pendiente'}</span>${m.estado_trabajo
+          <span class="pill ${m.manual ? 'live' : 'soon'}">${bi(m.manual ? 'Vigente' : 'Pendiente', m.manual ? 'Live' : 'Pending')}</span>${m.estado_trabajo
             ? `
-          <span class="pill hold">${esc(m.estado_trabajo.estado)}</span>`
+          <span class="pill hold">${bi(m.estado_trabajo.estado, m.estado_trabajo.estado_en)}</span>`
             : ''}
         </div>
       </div>
-      <p class="rol">${esc(m.rol)}</p>${m.genio
-        ? `\n      <p class="genio">Genio · <b>${esc(m.genio)}</b>${m.genio_nota ? ' — ' + esc(m.genio_nota) : ''}</p>`
+      <p class="rol">${bi(m.rol, m.rol_en)}</p>${m.genio
+        ? `\n      <p class="genio">${bi('Genio', 'Genie')} · <b>${esc(m.genio)}</b>${m.genio_nota ? ' — ' + bi(m.genio_nota, m.genio_nota_en) : ''}</p>`
         : ''}${pausa(m)}
       <div class="af">
-        <div><h4>Atrae</h4><p>${esc(m.atrae)}</p></div>
-        <div><h4>Filtra</h4><p>${esc(m.filtra)}</p></div>
+        <div><h4>${bi('Atrae', 'Attracts')}</h4><p>${bi(m.atrae, m.atrae_en)}</p></div>
+        <div><h4>${bi('Filtra', 'Filters out')}</h4><p>${bi(m.filtra, m.filtra_en)}</p></div>
       </div>${swatches(m)}${acceso(m)}${pendientes(m)}
     </article>`;
 }
@@ -151,7 +178,7 @@ function construirSitio(tokens) {
       // Las sub-marcas viven DENTRO de la tarjeta de su estrella.
       return tarjeta(m).replace(/\n    <\/article>$/,
         `\n      <div class="subs">
-        <p class="subs-label">Sub-marcas de canal — dentro de la estrella, nunca estrella propia</p>
+        <p class="subs-label">${bi('Sub-marcas de canal — dentro de la estrella, nunca estrella propia', 'Channel sub-brands — inside the star, never a star of their own')}</p>
         <div class="subs-grid">
 ${hijas.map(tarjeta).join('\n')}
         </div>
@@ -162,8 +189,8 @@ ${hijas.map(tarjeta).join('\n')}
     return `  <section class="tier">
     <div class="tier-head">
       <span class="tier-n">TIER ${t.n}</span>
-      <h2>${esc(t.nombre)}</h2>
-      <p class="tier-nota">${esc(t.nota)}</p>
+      <h2>${bi(t.nombre, t.nombre_en)}</h2>
+      <p class="tier-nota">${bi(t.nota, t.nota_en)}</p>
     </div>
 ${cuerpo}
   </section>`;
@@ -191,24 +218,27 @@ ${css}
 <body>
 <!-- GENERADO POR tools/sync-constelacion.js — NO EDITAR A MANO.
      Cambia brand-tokens.json y corre: node tools/sync-constelacion.js -->
+<input type="radio" name="idioma" id="idioma-es" class="idioma-radio" checked>
+<input type="radio" name="idioma" id="idioma-en" class="idioma-radio">
 <div class="wrap">
+  <div class="idioma-switch"><label for="idioma-es">ES</label><label for="idioma-en">EN</label></div>
   <header>
-    <p class="eyebrow">Grupo Linex · Sistema de marca</p>
-    <h1>Constelación Linex</h1>
-    <p class="lede">Las ocho marcas del grupo, su lugar en los tres tiers, y el manual de cada una. Lo que todavía no existe aparece como pendiente — nada se aproxima.</p>
+    <p class="eyebrow">${bi('Grupo Linex · Sistema de marca', 'Linex Group · Brand system')}</p>
+    <h1>${bi('Constelación Linex', 'Linex Constellation')}</h1>
+    <p class="lede">${bi("Las ocho marcas del grupo, su lugar en los tres tiers, y el manual de cada una. Lo que todavía no existe aparece como pendiente — nada se aproxima.", "The group's eight brands, their place in the three tiers, and each one's manual. Whatever doesn't exist yet shows up as pending — nothing gets approximated.")}</p>
     <div class="tally">
-      <div><b>${marcas.length}</b><span>marcas en el modelo</span></div>
-      <div><b>${conManual}</b><span>con manual vigente</span></div>
-      <div><b>${conColor}</b><span>con color definido</span></div>
-      <div><b>${marcas.length - conManual}</b><span>pendientes</span></div>
+      <div><b>${marcas.length}</b><span>${bi('marcas en el modelo', 'brands in the model')}</span></div>
+      <div><b>${conManual}</b><span>${bi('con manual vigente', 'with a live manual')}</span></div>
+      <div><b>${conColor}</b><span>${bi('con color definido', 'with colour defined')}</span></div>
+      <div><b>${marcas.length - conManual}</b><span>${bi('pendientes', 'pending')}</span></div>
     </div>
   </header>
 
 ${secciones}
 
   <footer>
-    <p>Generado desde brand-tokens.json &middot; ${esc(tokens.actualizado)}</p>
-    <p>Confidencial &mdash; marca y estrategia digital</p>
+    <p>${bi('Generado desde brand-tokens.json', 'Generated from brand-tokens.json')} &middot; ${esc(tokens.actualizado)}</p>
+    <p>${bi('Confidencial — marca y estrategia digital', 'Confidential — brand and digital strategy')}</p>
   </footer>
 </div>
 </body>

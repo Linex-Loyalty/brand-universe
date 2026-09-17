@@ -282,3 +282,58 @@ footer p { margin: 0 0 4px; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
+/* ---------- selector de idioma — español / inglés ----------
+   Mismo mecanismo que el manual de Linex Travel: solo CSS, sin JavaScript
+   nuevo. Esta página en particular tiene una prueba que exige que no haya
+   ninguna etiqueta de guion incrustada —tiene que abrir con doble clic y
+   funcionar sin servidor—, así que el toggle no podía resolverse de
+   ninguna otra forma.
+
+   Cada texto vive dos veces en el HTML, envuelto en <span data-lang="es">
+   y <span data-lang="en">; dos radios ocultos, hijos directos de <body>,
+   deciden cuál se muestra con el combinador de hermanos (~). El límite
+   honesto es el mismo de allá: la elección no sobrevive a un refresco,
+   porque eso exigiría JavaScript o una cookie de servidor. */
+.idioma-radio {
+  position: absolute; width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+.idioma-switch {
+  position: fixed; top: 20px; right: 20px; z-index: 10;
+  display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--line);
+  box-shadow: 0 2px 10px rgba(14, 21, 38, 0.08);
+}
+.idioma-switch label {
+  padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.02em; cursor: pointer; color: var(--ink-3);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.idioma-switch label:hover { color: var(--ink); }
+
+#idioma-es:checked ~ .wrap .idioma-switch label[for="idioma-es"],
+#idioma-en:checked ~ .wrap .idioma-switch label[for="idioma-en"] {
+  background: var(--ink); color: var(--surface);
+}
+
+/* El contenido bilingüe. Siempre en <span>, nunca en <div> o <li> enteros:
+   un span es inline en cualquier contexto, así que una sola regla de
+   "display" sirve para todo el sitio. Las excepciones de estructura de
+   tabla que sí importan en el manual no aplican aquí — esta página no
+   tiene ninguna <table>. */
+span[data-lang] { display: none; }
+#idioma-es:checked ~ .wrap span[data-lang="es"] { display: inline; }
+#idioma-en:checked ~ .wrap span[data-lang="en"] { display: inline; }
+
+@media (max-width: 560px) {
+  .idioma-switch { top: 12px; right: 12px; }
+}
+
+@media print {
+  .idioma-switch { display: none; }
+  span[data-lang="es"] { display: inline !important; }
+  span[data-lang="en"] { display: none !important; }
+}
