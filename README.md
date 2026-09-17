@@ -160,13 +160,13 @@ the repo, restart it.*
 
 ---
 
-## Branch history
+## A couple of things worth knowing
 
-`main-anterior` holds the previous version of this repository — a group-level
-manual of 16 sections and six brand profile pages, retired on 17 September 2026
-by decision of the brand owner. It's kept in full in case anything there is
-worth recovering.
+**`main-anterior` is a superseded snapshot.** It holds what this repository
+contained before 17 September 2026. It was retired by decision of the brand
+owner and **nothing from it carries over** — don't use it as a source. It stays
+on the remote as a backup, not as a reference.
 
-Design-source files (`.ai`, `.psd`) are deliberately not in this repository.
-It distributes what you use — SVG, PNG, HTML — not what you edit. Ask for the
-editable separately.
+**Design-source files (`.ai`, `.psd`) are deliberately not here.** This
+repository distributes what you use — SVG, PNG, HTML — not what you edit. Ask
+for the editable separately.
