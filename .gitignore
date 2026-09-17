@@ -21,3 +21,11 @@ npm-debug.log*
 # Temporales de autoría
 *.tmp
 *.bak
+
+# Editables: no van al repositorio (decisión del dueño de marca, 17-sep-2026).
+# El repo distribuye lo que se usa —SVG, PNG, HTML—, no los fuentes de diseño.
+*.ai
+*.psd
+*.indd
+*.sketch
+*.fig
