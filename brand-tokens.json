@@ -1,0 +1,642 @@
+{
+  "version": "1.0",
+  "actualizado": "2026-09-16",
+  "nota": "Fuente única de la constelación Linex. Reconstruido desde contexto-linex-trip.md y contexto-linex-go.md tras perderse brand-system/brand-tokens.json. Si un dato difiere del manual, manda el manual — salvo los contrastes, que se recalculan con tools/contraste.js.",
+  "grupo": {
+    "tipografia": {
+      "operativo": {
+        "titulos": "Segoe UI",
+        "cuerpo": "Calibri",
+        "respaldo": ["Arial", "Helvetica"],
+        "donde": "Cotizaciones, correo, Contact Center, documentos en Office"
+      },
+      "digital": {
+        "familia": "Geist",
+        "pesos": [400, 500, 700, 800, 900],
+        "origen": "Google Fonts",
+        "donde": "Sitios web y producto"
+      },
+      "regla": "Segoe UI manda en lo que se ve, Calibri sostiene lo que se lee, Geist viste el sitio y el producto. Nunca al revés.",
+      "por_que": "Las agencias producen cotizaciones todos los días. La marca tiene que verse consistente en sus manos sin que instalen nada.",
+      "decidido": "2026-09-16"
+    },
+    "iconografia": {
+      "libreria": "Font Awesome Pro",
+      "familia": "Classic",
+      "estilo": "Regular",
+      "filtro": "classic & s=regular & ic=pro-collection",
+      "excepciones": [
+        "Solid dentro de un contenedor relleno",
+        "Solid por debajo de 4 mm en impreso",
+        "Familia Brands para íconos de redes, sin recolorear"
+      ],
+      "nunca": ["dibujar un ícono a mano", "mezclar librerías"],
+      "decidido": "2026-09-16",
+      "diccionario": {
+        "nota": "Un concepto, un ícono, siempre el mismo. Común a todo el grupo: vive aquí y no en un manual, porque ninguna marca es dueña de la lista. Cada manual muestra los conceptos que usa.",
+        "producto": {
+          "vuelos": "fa-plane-up", "salida": "fa-plane-departure",
+          "hoteles": "fa-hotel", "habitacion": "fa-bed",
+          "autos": "fa-car-side", "traslados": "fa-van-shuttle",
+          "paquetes": "fa-suitcase", "equipaje": "fa-suitcase-rolling"
+        },
+        "busqueda": {
+          "destino": "fa-location-dot", "internacional": "fa-earth-americas",
+          "experiencias": "fa-umbrella-beach", "fechas": "fa-calendar-days",
+          "duracion": "fa-clock", "buscar": "fa-magnifying-glass",
+          "viajeros": "fa-user-group", "documentos": "fa-passport"
+        },
+        "precio": {
+          "pago": "fa-credit-card", "cotizacion": "fa-receipt",
+          "oferta": "fa-tag", "descuento": "fa-percent", "cupon": "fa-ticket"
+        },
+        "confianza": {
+          "confirmado": "fa-circle-check", "asistencia": "fa-shield-halved",
+          "pago_seguro": "fa-lock", "calificacion": "fa-star",
+          "aviso": "fa-triangle-exclamation", "informacion": "fa-circle-info"
+        },
+        "contacto": {
+          "soporte": "fa-headset", "chat": "fa-comment-dots",
+          "comidas": "fa-utensils", "wifi": "fa-wifi", "siguiente": "fa-arrow-right"
+        },
+        "b2b": {
+          "nota": "Los conceptos que Linex Go necesita y Trip no tenía.",
+          "comision": "fa-hand-holding-dollar", "portafolio": "fa-layer-group",
+          "cupo": "fa-list-check", "condiciones": "fa-file-contract",
+          "agencia": "fa-building", "demo": "fa-desktop"
+        },
+        "redes": {
+          "familia": "Brands — estilo único, no se recolorean ni se encierran en formas propias",
+          "whatsapp": "fa-whatsapp", "instagram": "fa-instagram",
+          "facebook": "fa-facebook", "tiktok": "fa-tiktok"
+        }
+      }
+    },
+    "radios": { "s": 6, "btn": 12, "m": 16, "l": 24, "pill": 999 },
+    "radios_roles": {
+      "6": "Chips de categoría. Casi cuadrado: se lee como control, no como pieza.",
+      "12": "Botones primario y secundario.",
+      "16": "Tarjetas. Contenedor con contenido propio.",
+      "24": "Contenedores y banners. Pieza completa que se lee entera.",
+      "999": "Pills, badges y estados. Radio total = dato, no acción."
+    },
+    "group_bar": {
+      "copy": "Part of Linex Loyalty",
+      "posicion": "Encima de la navegación propia, no dentro de ella",
+      "obligatorio": true,
+      "nota": "No se rediseña por marca ni se quita por campaña. Respalda a una marca joven con el peso del grupo y enruta al visitante equivocado."
+    },
+    "reglas_comunes": [
+      "El acento solo pinta lo que se toca. Nunca destaca un dato.",
+      "El color oscuro nunca rellena un botón.",
+      "Filete de 1 px del color oscuro en el botón (WCAG 1.4.11 pide 3:1 en el contorno de un control).",
+      "Sin mayúscula sostenida en ningún canal. El énfasis va con peso o tamaño.",
+      "El estado nunca se comunica solo con color: se escribe.",
+      "Área táctil mínima de 44x44 px reales."
+    ]
+  },
+  "marcas": {
+    "linex-capital": {
+      "id": "linex-capital",
+      "nombre": "Linex Capital",
+      "forma_compacta": "linexcapital",
+      "tier": 1,
+      "rol": "El fondo — comunicación corporativa, global y estático",
+      "dominio": "linexcapital.com",
+      "padre": null,
+      "genio": null,
+      "estado": "pendiente",
+      "atrae": "Grandes inversionistas y compañías que quieren entrar a la constelación. Gestionado con Laurent, de bajo mantenimiento.",
+      "filtra": "Clientes operativos, usuarios finales y prospectos pequeños — aquí no hay producto ni precio.",
+      "color": [],
+      "derivados": [],
+      "tipografia": "grupo",
+      "iconografia": "grupo",
+      "radios": { "s": 6, "btn": 12, "m": 16, "l": 24, "pill": 999 },
+      "logos": { "principal": null, "negativo": null, "monocromo": null },
+      "logo_nota": "Sin archivo. No tiene carpeta en Logos/logos-oficiales/.",
+      "voz": null,
+      "legal": { "operador": null, "rnt": null, "ciudad": null, "admite_simbolo_marca": false },
+      "manual": null,
+      "contexto": null,
+      "pendientes": [
+        "Sin logo",
+        "Sin paleta",
+        "Sin voz documentada",
+        "Sin manual",
+        "Sin carpeta en Logos/logos-oficiales/",
+        "No aparece en ninguno de los dos contextos de marca"
+      ]
+    },
+
+    "linex-loyalty": {
+      "id": "linex-loyalty",
+      "nombre": "Linex Loyalty",
+      "forma_compacta": "linexloyalty",
+      "tier": 2,
+      "rol": "El puerto espacial — punto de entrada a la constelación, no una caja de pago",
+      "dominio": "linex-loyalty.com",
+      "padre": null,
+      "genio": "Ixar",
+      "genio_nota": "Se pronuncia ee-SAR. El genio maestro: habla por toda la constelación, explica las estrellas y convoca a los otros genios para armar una solución a la medida.",
+      "estado": "pendiente",
+      "antes": "UltraGroup",
+      "atrae": "Bancos y grandes corporaciones que evalúan lealtad a escala. La audiencia big scale.",
+      "filtra": "Cazadores de ofertas, compradores de una sola función y visitantes casuales — se enrutan a una estrella.",
+      "firma": "Solo en documentos formales, contratos y comunicación corporativa, como respaldo. Nunca dos marcas firmando con el mismo peso en una pieza comercial: si las dos mandan, no manda ninguna.",
+      "color": [
+        {
+          "nombre": "Verde",
+          "nombre_pendiente": true,
+          "hex": "#C5F04A",
+          "rgb": [197, 240, 74],
+          "cmyk": null,
+          "rol": "Acento",
+          "proporcion": null,
+          "regla": {
+            "solo_sobre": null,
+            "nunca": ["texto sobre fondo claro", "cualquier uso sobre blanco"],
+            "contrastes": { "#FFFFFF": 1.32, "#080808": 15.20, "#00145A": 12.77 },
+            "nota": "Necesita fondo oscuro. Loyalty todavía no tiene base oscura definida: fijarla es el siguiente dato que le falta a la marca."
+          }
+        }
+      ],
+      "derivados": [],
+      "tipografia": "grupo",
+      "iconografia": "grupo",
+      "radios": { "s": 6, "btn": 12, "m": 16, "l": 24, "pill": 999 },
+      "logos": { "principal": null, "negativo": null, "monocromo": null },
+      "logo_nota": "Carpeta Logos/logos-oficiales/linex-loyalty/ vacía.",
+      "voz": null,
+      "legal": { "operador": null, "rnt": null, "ciudad": null, "admite_simbolo_marca": false },
+      "manual": null,
+      "contexto": null,
+      "pendientes": [
+        "Sin base oscura definida — y el Verde la necesita para existir",
+        "Sin nombre de color para el Verde",
+        "Sin paleta completa",
+        "Sin logo",
+        "Sin voz documentada",
+        "Sin manual",
+        "El Verde queda a la misma luminosidad que el Amarillo de Trip (L* 89.2 vs 88.1): se distinguen por tono, no por valor"
+      ]
+    },
+
+    "linex-travel": {
+      "id": "linex-travel",
+      "nombre": "Linex Travel",
+      "forma_compacta": "linextravel",
+      "tier": 3,
+      "rol": "Estrella — opera B2B2C, B2B y B2C",
+      "dominio": "linextravel.com",
+      "padre": null,
+      "genio": null,
+      "genio_nota": "Nombre en proceso. Construye soluciones de viaje a la medida: sitio de redención, API de agencia, UX de viaje.",
+      "estado": "pendiente",
+      "prioridad": "1 · operando",
+      "sub_marcas": ["linex-go", "linex-trip"],
+      "atrae": "Compañías que necesitan el viaje como redención; agencias que buscan un front-to-back; revendedores de servicios de viaje con IA.",
+      "filtra": "Inversionistas y necesidades ajenas al viaje — el Group Bar los enruta.",
+      "color": [],
+      "derivados": [],
+      "tipografia": "grupo",
+      "iconografia": "grupo",
+      "radios": { "s": 6, "btn": 12, "m": 16, "l": 24, "pill": 999 },
+      "logos": { "principal": null, "negativo": null, "monocromo": null },
+      "logo_nota": "Carpeta Logos/logos-oficiales/linex-travel/ vacía.",
+      "voz": null,
+      "legal": { "operador": null, "rnt": null, "ciudad": null, "admite_simbolo_marca": false },
+      "manual": null,
+      "contexto": null,
+      "pendientes": [
+        "Sin logo",
+        "Sin paleta",
+        "Sin voz documentada",
+        "Sin manual propio",
+        "Sus dos sub-marcas están mejor documentadas que ella"
+      ]
+    },
+
+    "linex-go": {
+      "id": "linex-go",
+      "nombre": "Linex Go",
+      "forma_compacta": "linexgo",
+      "tier": 3,
+      "rol": "Sub-marca B2B dentro de Linex Travel — la cara comercial hacia agencias y operadores",
+      "dominio": "linexgo.com",
+      "padre": "linex-travel",
+      "genio": null,
+      "estado": "confirmed_pending_trademark",
+      "viene_de": "UltraGo",
+      "transicion_nota": "El material nuevo ya sale como Linex Go, sin excepciones. El heredado se reemplaza, no se corrige a mano. PENDIENTE: el plazo de transición sigue sin definir.",
+      "concepto_rector": "Tu aliado en cada venta.",
+      "atrae": "Agencias y operadores que necesitan un sistema para vender viaje. Canal B2B, con tarifas y herramientas de reventa.",
+      "filtra": "El viajero final — se enruta a Linex Trip por el Group Bar o por el asesor.",
+      "color": [
+        {
+          "nombre": "Petróleo", "hex": "#012D33", "rgb": [1, 45, 51], "cmyk": [98, 12, 0, 80],
+          "rol": "Principal", "proporcion": 32,
+          "regla": {
+            "solo_sobre": null,
+            "nunca": ["rellenar un botón"],
+            "contrastes": { "#FFFFFF": 14.74, "#F8F9FC": 14.00, "#F3F0E9": 12.95, "#FFE3DD": 12.13, "#FF725E": 5.49 }
+          }
+        },
+        {
+          "nombre": "Petróleo claro", "hex": "#004751", "rgb": [0, 71, 81], "cmyk": [100, 12, 0, 68],
+          "rol": "Apoyo — texto secundario, contenedores de ícono", "proporcion": 18,
+          "regla": {
+            "solo_sobre": null,
+            "nunca": [],
+            "contrastes": { "#FFFFFF": 10.40, "#F8F9FC": 9.87 },
+            "nota": "Es el acento tecnológico transversal que Go comparte con Linex Travel, no un color exclusivo de Go."
+          }
+        },
+        {
+          "nombre": "Blanco frío", "hex": "#F8F9FC", "rgb": [248, 249, 252], "cmyk": [2, 1, 0, 1],
+          "rol": "Respiro — fondo por defecto", "proporcion": 18, "regla": null
+        },
+        {
+          "nombre": "Coral", "hex": "#FF725E", "rgb": [255, 114, 94], "cmyk": [0, 55, 63, 0],
+          "rol": "Acción — y solo la acción", "proporcion": 12,
+          "regla": {
+            "solo_sobre": null,
+            "nunca": ["texto sobre fondo claro", "texto blanco encima", "destacar un dato que no se puede tocar", "soporte de marca", "fondo del logotipo"],
+            "contrastes": { "#012D33": 5.49, "#004751": 3.87, "#FFFFFF": 2.69, "#F8F9FC": 2.55, "#F3F0E9": 2.36 },
+            "nota": "Un color de acción funciona por exclusividad. Si el mismo coral pinta un botón en una pieza y un porcentaje en la siguiente, deja de responder la única pregunta que tiene que responder de un vistazo: ¿dónde toco?"
+          }
+        },
+        {
+          "nombre": "Blanco cálido", "hex": "#F3F0E9", "rgb": [243, 240, 233], "cmyk": [0, 1, 4, 5],
+          "rol": "Apoyo editorial", "proporcion": 10, "regla": null
+        },
+        {
+          "nombre": "Coral claro", "hex": "#FFE3DD", "rgb": [255, 227, 221], "cmyk": [0, 11, 13, 0],
+          "rol": "Superficie — avisos y tarjetas de realce", "proporcion": 6,
+          "regla": {
+            "solo_sobre": null,
+            "nunca": ["usarse como tinta"],
+            "contrastes": { "#012D33": 12.13, "#F8F9FC": 1.15 }
+          }
+        },
+        {
+          "nombre": "Arena", "hex": "#E6D5B8", "rgb": [230, 213, 184], "cmyk": [0, 7, 20, 10],
+          "rol": "Detalle — antetítulos, vigencias, letra chica", "proporcion": 4,
+          "regla": {
+            "solo_sobre": "#012D33",
+            "nunca": ["títulos", "botones", "tinta sobre fondo claro"],
+            "contrastes": { "#012D33": 10.23, "#004751": 7.21, "#F8F9FC": 1.37 }
+          }
+        }
+      ],
+      "derivados": [],
+      "proporcion_nota": "Dos de los porcentajes son regla, no descripción: el coral no pasa del 12% y la arena se queda en 4%. Un color que aparece poco es un color que se nota cuando aparece.",
+      "tipografia": "grupo",
+      "iconografia": "grupo",
+      "radios": { "s": 6, "btn": 12, "m": 16, "l": 24, "pill": 999 },
+      "logos": {
+        "principal": "Logos/logos-oficiales/linex-go/LinexGo-logo-color.svg",
+        "principal_png": "Logos/logos-oficiales/linex-go/LinexGo-logo-color.png",
+        "negativo": "Logos/logos-oficiales/linex-go/LinexGo-logo-negativo.svg",
+        "monocromo": "Logos/logos-oficiales/linex-go/LinexGo-logo-monocromo.svg",
+        "negro": "Logos/logos-oficiales/linex-go/LinexGo-logo-negro.svg",
+        "editable": null,
+        "secundario": null,
+        "vertical": null,
+        "vertical_negativo": null,
+        "avatar": null,
+        "con_eslogan": null
+      },
+      "logo_nota": "Desbloqueado el 17 de septiembre de 2026. Llegaron cuatro SVG reales (7 formas cada uno), no el PNG dentro de .svg que había antes, y ya existe la versión negativa: la papelería deja de estar bloqueada. El 'Linex' va en Índigo #1A0E3E — NO en el Petróleo #012D33 de la paleta — por decisión del dueño de marca del 17 de septiembre. Es la única excepción del sistema: afecta solo al logotipo, la paleta de la marca no cambia. Ver logo_color_propio.",
+      "logo_color_propio": {
+        "decidido": "2026-09-17",
+        "hex": "#1A0E3E",
+        "alcance": "Solo el logotipo. El Petróleo #012D33 sigue siendo el color principal de la marca, el que sostiene el texto y el que va encima del coral.",
+        "no_cambia": "Ningún contraste de la paleta, ninguna regla de acción, ningún token del CSS.",
+        "contrastes_del_logo": { "#F8F9FC": 16.96, "#F3F0E9": 15.69, "#012D33": 1.21 },
+        "consecuencia_dura": "Sobre Petróleo el logotipo a color da 1.21:1 y desaparece. Sobre ese fondo va SIEMPRE la versión negativa, sin excepción.",
+        "convivencia": "En una pieza con fondo o tipografía en Petróleo, el logotipo queda en otro oscuro. Están a ΔE 39.3: la diferencia se ve, y es intencional.",
+        "contexto": "#1A0E3E era el Índigo de Linex Trip hasta el 14 de septiembre de 2026, cuando Trip lo cambió por el Azul Trip #00145A. El oscuro del logotipo de Go y el de Trip quedan a ΔE 15.5 y a 7° de tono: conviene tenerlo en cuenta al poner las dos marcas en una misma pieza."
+      },
+      "logo_revision": {
+        "fecha": "2026-09-17",
+        "vectorial": true,
+        "renombrado": {
+          "fecha": "2026-09-17",
+          "por_que": "Tres de los cuatro archivos llegaron nombrados 'LinexTrip' estando en la carpeta de Linex Go, y los cuatro traían un sufijo ' 1' con espacio. Se renombraron con git mv para conservar el historial, adoptando la misma convención que Linex Trip.",
+          "de": ["LinexGo-logo-color 1", "LinexTrip-logo-monocromo 1", "LinexTrip-logo-negativo 1", "LinexTrip-logo-negro 1"],
+          "a": ["LinexGo-logo-color", "LinexGo-logo-monocromo", "LinexGo-logo-negativo", "LinexGo-logo-negro"]
+        },
+        "duda_abierta": "El archivo 'negro' usa fill=\"black\", y la regla 04 dice que el 'Linex' nunca va en negro. El manual define una sola versión monocromática, no dos. Falta decidir si 'monocromo' y 'negro' son la misma pieza o dos distintas."
+      },
+      "logo_fondos": {
+        "permitidos": ["#F8F9FC", "#F3F0E9", "#012D33"],
+        "prohibidos": ["#FF725E", "#004751"],
+        "nota": "Sobre petróleo solo con la versión negativa, que no existe todavía. Nunca sobre coral: el Go coral desaparecería dentro de él."
+      },
+      "aliados": {
+        "nota": "Marcas de terceros bajo acuerdo de representación comercial. No son de la constelación. Nunca se modifican ni en color ni en proporciones, siempre en la zona de aliados y en menor tamaño que Linex Go.",
+        "calidad": "Los tres recibidos son PNG monocromos con alfa de 31 px de alto: sirven para pantalla, no para impresión ni gran formato.",
+        "hertz": "Logos/logos-aliados/hertz.png",
+        "dollar": "Logos/logos-aliados/dollar.png",
+        "thrifty": "Logos/logos-aliados/thrifty.png",
+        "disney": null,
+        "assistviaje": null
+      },
+      "voz": {
+        "principios": ["Profesional", "Cercana", "Útil", "Clara", "Sin tecnicismos"],
+        "matiz": "Le habla a quien vende viajes, no a quien los compra.",
+        "prueba": "Si el texto podría firmarlo cualquier mayorista, todavía no suena a Linex Go.",
+        "claim": "Soluciones que impulsan tu agencia de viajes.",
+        "claim_nota": "Es el eslogan. Se usa completo, sin recortar ni parafrasear.",
+        "claims_pendientes": [],
+        "claims_prohibidos": ["Los precios más bajos", "Disponibilidad garantizada", "La mejor plataforma", "Vende más automáticamente", "La opción número uno"],
+        "vocabulario": {
+          "usar": ["Aliado", "Respaldo", "Portafolio", "Clientes de tu agencia"],
+          "evitar": ["proveedor", "catálogo de ofertas", "tus clientes", "Reserva tus vacaciones", "Compra tu viaje", "Vive esta experiencia"],
+          "nota": "Proveedor, catálogo y tus clientes no son errores de estilo: cada uno cambia quién manda en la relación. Decir clientes de tu agencia en vez de tus clientes es la diferencia entre acompañar una venta y disputarla."
+        },
+        "cta": {
+          "educativos": ["Guarda esta guía", "Descarga el material de apoyo", "Aprende a cotizarlo en la plataforma"],
+          "comerciales": ["Consulta el portafolio", "Cotiza para tus clientes", "Solicita condiciones para tu agencia"],
+          "relacion": ["Conversa con nuestro equipo", "Agenda una demo de la plataforma", "Escríbenos y te acompañamos"]
+        }
+      },
+      "audiencias": {
+        "regla": "No se comunica al viajero final, salvo en piezas autorizadas y cofirmadas con la agencia.",
+        "lista": ["Agencias de viajes", "Operadores", "Equipos comerciales", "Agentes independientes", "Minoristas", "Dueños de agencia"],
+        "estado": "Existe la estructura de ficha (Necesidades, Dolores, Motivaciones, Objeciones, CTA, Lenguaje a evitar), no el contenido."
+      },
+      "legal": { "operador": null, "rnt": null, "ciudad": null, "admite_simbolo_marca": false },
+      "manual": "manual-linex-go/",
+      "contexto": "contexto-linex-go.md",
+      "pendientes": [
+        "Faltan las versiones vertical, avatar de redes y con eslogan — el vertical no es prioritario por ahora",
+        "Faltan los logos de Disney y Assistviaje",
+        "Las seis fichas de audiencia están sin perfilar",
+        "Sin lista de claims autorizados con su evidencia",
+        "Sin lista de términos prohibidos validada",
+        "Sin texto legal obligatorio por tipo de pieza",
+        "Sin nombre corporativo legal aprobado",
+        "Sin plazo definido para la transición UltraGo → Linex Go",
+        "Sin banco de imágenes propio",
+        "Conflicto sin resolver: la sección de canal pide tarjeta en fondo petróleo con logo negativo, y las piezas producidas usan cara clara",
+        "Solo Instagram tiene reglas escritas; las demás redes no"
+      ]
+    },
+
+    "linex-trip": {
+      "id": "linex-trip",
+      "nombre": "Linex Trip",
+      "forma_compacta": "linextrip",
+      "tier": 3,
+      "rol": "Sub-marca B2C dentro de Linex Travel — reserva de viajes para el viajero final",
+      "dominio": "linextrip.com",
+      "padre": "linex-travel",
+      "genio": null,
+      "estado": "confirmed_pending_trademark",
+      "viene_de": "DestinoJet",
+      "proposito": "Que cualquier viajero pueda comparar, decidir y reservar su viaje en minutos, con precios claros y acompañamiento real.",
+      "vision": "Ser la forma más inteligente de viajar en Latinoamérica.",
+      "atrae": "El viajero final, para sí o su familia. Canal B2C, con precio a la vista y Contact Center propio.",
+      "filtra": "Agencias y operadores — se enrutan a Linex Go, sin armarles tarifa B2B.",
+      "color": [
+        {
+          "nombre": "Azul Trip", "hex": "#00145A", "rgb": [0, 20, 90], "cmyk": [100, 78, 0, 65],
+          "rol": "Principal — sostiene el texto y viste los fondos oscuros", "proporcion": 30,
+          "regla": {
+            "solo_sobre": null,
+            "nunca": ["rellenar un botón"],
+            "contrastes": { "#FFFFFF": 16.83, "#00B5F5": 7.16 }
+          }
+        },
+        {
+          "nombre": "Celeste Acción", "hex": "#00B5F5", "rgb": [0, 181, 245], "cmyk": [100, 26, 0, 4],
+          "rol": "Acción / CTA — todo lo que se toca", "proporcion": 21,
+          "regla": {
+            "solo_sobre": null,
+            "nunca": ["texto sobre fondo claro", "texto blanco encima", "fondo del logotipo"],
+            "contrastes": { "#00145A": 7.16, "#FFFFFF": 2.35, "#E6F8FE": 2.15 },
+            "nota": "La regla de acción: si se puede tocar es Celeste, si se lee es Azul Trip. Vale para todos los canales sin excepción."
+          }
+        },
+        {
+          "nombre": "Blanco", "hex": "#FFFFFF", "rgb": [255, 255, 255], "cmyk": [0, 0, 0, 0],
+          "rol": "Base y respiro", "proporcion": 19, "regla": null
+        },
+        {
+          "nombre": "Celeste Cielo", "hex": "#E6F8FE", "rgb": [230, 248, 254], "cmyk": [9, 2, 0, 0],
+          "rol": "Respiro — cápsulas, chips y tarjetas tenues", "proporcion": 10, "regla": null
+        },
+        {
+          "nombre": "Lavanda Linex", "hex": "#DDE1FF", "rgb": [221, 225, 255], "cmyk": [13, 12, 0, 0],
+          "rol": "Apoyo — uno de los tres fondos del logotipo", "proporcion": 8,
+          "regla": {
+            "solo_sobre": null,
+            "nunca": ["usarse como texto"],
+            "contrastes": { "#FFFFFF": 1.29 }
+          }
+        },
+        {
+          "nombre": "Negro Linex", "hex": "#080808", "rgb": [8, 8, 8], "cmyk": [0, 0, 0, 97],
+          "rol": "Reserva para impresión a un solo color", "proporcion": 8, "regla": null
+        },
+        {
+          "nombre": "Amarillo", "hex": "#ECE200", "rgb": [236, 226, 0], "cmyk": [0, 4, 100, 7],
+          "rol": "Detalle — antetítulos, letra chica, separadores", "proporcion": 4,
+          "regla": {
+            "solo_sobre": "#00145A",
+            "nunca": ["títulos", "botones", "cualquier fondo claro"],
+            "contrastes": { "#00145A": 12.38, "#FFFFFF": 1.36 },
+            "nota": "Es el color más llamativo de la paleta, y por eso el primer impulso es ponerlo sobre blanco. No hay excepción por tamaño, por grosor ni por tratarse de un ícono."
+          }
+        }
+      ],
+      "derivados": [
+        {
+          "nombre": "Celeste Oscuro", "hex": "#0090C2",
+          "rol": "Ícono de acción sobre fondo claro — no es de la paleta",
+          "contrastes": { "#FFFFFF": 3.64, "#F6F8FF": 3.43 }
+        }
+      ],
+      "proporcion_nota": "Los siete HEX son dato validado. El porcentaje de uso es una propuesta de guía visual del manual, no una cifra medida ni aprobada por negocio. Los CMYK están calculados desde el HEX, no medidos en imprenta.",
+      "cambio_color": {
+        "fecha": "2026-09-14",
+        "que": "El oscuro pasó de Índigo #1A0E3E a Azul Trip #00145A, y entró el Amarillo #ECE200 como tercer color.",
+        "por_que": "Separar a Trip del navy de Linex Go.",
+        "deuda": "SALDADA el 17 de septiembre de 2026. El cambio de oscuro dejó seis contrastes del manual medidos todavía contra el Índigo, en 15 apariciones repartidas en tres páginas. Se recalcularon todos con tools/contraste.js y se corrigieron. Ningún veredicto cambió — los seis seguían cumpliendo lo que decían cumplir — pero el manual se contradecía a sí mismo (decía 7.59 y 7.16 para el mismo par).",
+        "correcciones": {
+          "blanco_sobre_navy": { "decia": 17.85, "real": 16.83 },
+          "celeste_sobre_navy": { "decia": 7.59, "real": 7.16 },
+          "papel_sobre_navy": { "decia": 16.82, "real": 15.86 },
+          "celeste_cielo_sobre_navy": { "decia": 16.34, "real": 15.41 },
+          "lavanda_sobre_navy": { "decia": 13.85, "real": 13.05 },
+          "celeste_oscuro_sobre_navy": { "decia": 4.90, "real": 4.62 }
+        },
+        "leccion": "Un cambio de color invalida todos los ratios medidos contra él. Los números viejos sobreviven en las tablas porque un ratio con dos decimales parece un hecho, y nadie recalcula un hecho."
+      },
+      "tipografia": "grupo",
+      "iconografia": "grupo",
+      "radios": { "s": 6, "btn": 12, "m": 16, "l": 24, "pill": 999 },
+      "logos": {
+        "principal": "Logos/logos-oficiales/linex-trip/LinexTrip-logo-color.svg",
+        "principal_png": "Logos/logos-oficiales/linex-trip/LinexTrip-logo-color.png",
+        "negativo": "Logos/logos-oficiales/linex-trip/LinexTrip-logo-negativo.svg",
+        "monocromo": "Logos/logos-oficiales/linex-trip/LinexTrip-logo-monocromo.svg",
+        "negro": "Logos/logos-oficiales/linex-trip/LinexTrip-logo-negro.svg",
+        "editable": null,
+        "isotipo": null
+      },
+      "editable_nota": "Los fuentes de diseño (.ai, .psd) no viven en este repositorio por decisión del dueño de marca: aquí va lo que se usa, no lo que se edita. El editable de Trip existe, pero se pide por fuera.",
+      "logo_nota": "Las tres versiones que el manual define están completas desde el 17 de septiembre de 2026, y con los colores correctos: color (#00145A + #00B5F5), monocromo en Azul Trip (#00145A, no negro, como manda el manual) y negativo (#00B5F5 + blanco). Hay además una versión en negro puro que el manual no define. El logotipo vigente sigue siendo SOLO el wordmark: Linex Trip no tiene isotipo. Las siete propuestas de símbolo son exploración abierta y están dibujadas con el Índigo anterior #1A0E3E — si se elige alguna hay que recolorearla. Mientras tanto ninguna pieza usa símbolo.",
+      "logo_revision": {
+        "fecha": "2026-09-17",
+        "vectorial": true,
+        "colores_correctos": true,
+        "nota": "El archivo nuevo LinexTrip-logo-color.svg y el anterior logo-LinexTrip.svg son la misma pieza: 9 formas y los mismos dos colores. Se adopta el nombre nuevo por consistencia con el resto del lote.",
+        "duda_abierta": "La versión en negro puro (#000000) no está en el manual, que define el monocromo en Azul Trip. Falta decidir si es una pieza oficial o un extra del diseñador."
+      },
+      "logo_fondos": {
+        "permitidos": ["#FFFFFF", "#DDE1FF", "#00145A"],
+        "prohibidos": ["#00B5F5"],
+        "nota": "Zona de seguridad igual a la altura de la L de Linex, por los cuatro costados. Mínimo 120 px digital, 30 mm impreso."
+      },
+      "propuestas_logo": "Logos/logos-oficiales/linex-trip/propuesta/",
+      "voz": {
+        "principios": ["Claro", "Cercano", "Confiable", "Inspirador"],
+        "matiz": "Como un viajero le habla a otro. Más directa que Linex Go, porque le habla al viajero final y no a una agencia.",
+        "claim": "Viaja Inteligente",
+        "claim_nota": "El único aprobado. Acompaña al nombre, nunca lo reemplaza: una pieza puede llevar el logo sin el claim, nunca el claim sin la marca. No es un CTA y no va dentro de un botón.",
+        "claims_pendientes": [
+          "Tu próximo viaje, más simple.",
+          "Reserva hoy, viaja tranquilo.",
+          "El mundo, a un clic de distancia."
+        ],
+        "claims_prohibidos": ["el mejor precio", "garantizado", "última oportunidad sin vigencia real", "24/7", "respuesta inmediata", "asesor personal"],
+        "vocabulario": {
+          "usar": ["Viajero", "Reservar", "Vuelo", "Tiquete", "Pagar en cuotas", "Contact Center", "Equipo de Linex Trip"],
+          "evitar": ["usuario", "cliente", "booking", "hacer check-out", "ticket", "financiar", "diferir", "call center", "bookear", "aplicar a la promoción"],
+          "nota": "Precio con las dos monedas y separador de miles: $112 USD · $450.000 COP. Sin jerga técnica (GDS, PNR, inventario) en comunicación al viajero."
+        },
+        "cta": {
+          "descubrimiento": ["Buscar vuelos", "Ver destinos", "Cotiza tu viaje"],
+          "decision": ["Reserva ahora", "Ver disponibilidad", "Paga en cuotas"],
+          "soporte": ["Habla con un asesor", "Escríbenos por WhatsApp", "Ver mi reserva"]
+        }
+      },
+      "audiencias": {
+        "regla": "Antes de diseñar se elige un arquetipo, no dos. Una pieza que le habla a los tres no le habla a ninguno.",
+        "lista": ["El planificador digital", "El decisor rápido", "La familia viajera"],
+        "estado": "El comportamiento de cada arquetipo está decidido. El perfil demográfico y de dispositivo es hipótesis: orienta una pieza, no se cita como dato en un reporte a negocio."
+      },
+      "legal": {
+        "operador": "Strategic Points S.A.S.",
+        "rnt": ["59151", "82366"],
+        "ciudad": "Medellín, Colombia",
+        "admite_simbolo_marca": false
+      },
+      "manual": "manual-linex-trip/",
+      "contexto": "contexto-linex-trip.md",
+      "pendientes": [
+        "Isotipo sin decidir — siete propuestas en exploración abierta",
+        "Sin versión vertical ni avatar de redes",
+        "Las siete propuestas están dibujadas con el Índigo viejo y habría que recolorearlas",
+        "Sin banco de fotografía propio",
+        "Claims secundarios sin aprobar",
+        
+        "Repositorio central de activos pendiente de validar con negocio"
+      ]
+    },
+
+    "linex-marketplace": {
+      "id": "linex-marketplace",
+      "nombre": "Linex Marketplace",
+      "forma_compacta": "linexmarketplace",
+      "tier": 3,
+      "rol": "Estrella — el supermercado de redención",
+      "dominio": "linexmarketplace.com",
+      "padre": null,
+      "genio": null,
+      "genio_nota": "Nombre en proceso. Es el constructor de supermercado: bienes despachables, juegos, streaming y otras categorías de redención bajo un paraguas.",
+      "estado": "pendiente",
+      "prioridad": "2 · siguiente M&A",
+      "atrae": "Programas que necesitan redención de bienes despachables curada.",
+      "filtra": "Audiencias solo de viaje — se enrutan a Linex Travel.",
+      "color": [],
+      "derivados": [],
+      "tipografia": "grupo",
+      "iconografia": "grupo",
+      "radios": { "s": 6, "btn": 12, "m": 16, "l": 24, "pill": 999 },
+      "logos": { "principal": null, "negativo": null, "monocromo": null },
+      "logo_nota": "Carpeta Logos/logos-oficiales/linex-marketplace/ vacía.",
+      "voz": null,
+      "legal": { "operador": null, "rnt": null, "ciudad": null, "admite_simbolo_marca": false },
+      "manual": null,
+      "contexto": null,
+      "nota": "Es un paraguas, no un nicho: cualquier categoría puede desprenderse en su propia estrella cuando el negocio lo justifique.",
+      "pendientes": ["Sin logo", "Sin paleta", "Sin voz documentada", "Sin manual", "Genio sin nombrar"]
+    },
+
+    "linex-rewards": {
+      "id": "linex-rewards",
+      "nombre": "Linex Rewards",
+      "forma_compacta": "linexrewards",
+      "tier": 3,
+      "rol": "Estrella — el motor EARN",
+      "dominio": "linexrewards.com",
+      "padre": null,
+      "genio": "Milton",
+      "genio_nota": "Construye motores de puntos a la medida: reglas de acumulación, wallet y checkout.",
+      "estado": "pendiente",
+      "prioridad": "3ª línea fundacional",
+      "atrae": "Bancos y programas que necesitan crear y administrar puntos.",
+      "filtra": "Compradores solo de redención — se enrutan a Travel o Marketplace.",
+      "color": [],
+      "derivados": [],
+      "tipografia": "grupo",
+      "iconografia": "grupo",
+      "radios": { "s": 6, "btn": 12, "m": 16, "l": 24, "pill": 999 },
+      "logos": { "principal": null, "negativo": null, "monocromo": null },
+      "logo_nota": "Carpeta Logos/logos-oficiales/linex-rewards/ vacía.",
+      "voz": null,
+      "legal": { "operador": null, "rnt": null, "ciudad": null, "admite_simbolo_marca": false },
+      "manual": null,
+      "contexto": null,
+      "pendientes": ["Sin logo", "Sin paleta", "Sin voz documentada", "Sin manual"]
+    },
+
+    "linex-school": {
+      "id": "linex-school",
+      "nombre": "Linex School",
+      "forma_compacta": "linexschool",
+      "tier": 3,
+      "rol": "Estrella en expansión",
+      "dominio": "linexschool.com",
+      "padre": null,
+      "genio": null,
+      "estado": "pendiente",
+      "atrae": "Sin definir.",
+      "filtra": "Sin definir.",
+      "color": [],
+      "derivados": [],
+      "tipografia": "grupo",
+      "iconografia": "grupo",
+      "radios": { "s": 6, "btn": 12, "m": 16, "l": 24, "pill": 999 },
+      "logos": { "principal": null, "negativo": null, "monocromo": null },
+      "logo_nota": "Sin archivo. No tiene carpeta en Logos/logos-oficiales/.",
+      "voz": null,
+      "legal": { "operador": null, "rnt": null, "ciudad": null, "admite_simbolo_marca": false },
+      "manual": null,
+      "contexto": null,
+      "nota": "El número y la identidad de las estrellas es deliberadamente abierto: una categoría puede nacer cuando el negocio lo justifique.",
+      "pendientes": [
+        "Sin logo",
+        "Sin paleta",
+        "Sin voz documentada",
+        "Sin manual",
+        "Sin carpeta en Logos/logos-oficiales/",
+        "No aparece en ninguno de los dos contextos de marca"
+      ]
+    }
+  }
+}

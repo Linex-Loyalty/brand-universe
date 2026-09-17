@@ -1,0 +1,831 @@
+/* Grupo Linex — Manual de Marca — hoja de estilo compartida
+   Sin build step. Vanilla CSS. Tokens tomados 1:1 del manual canvas (.dc.html). */
+
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --navy: #00145A;
+  --navy-rgb: 0, 20, 90;
+  --paper: #F6F8FF;
+  --white: #FFFFFF;
+  --black: #080808;
+  --lavender: #DDE1FF;
+
+  --violet: #5B5CFF;
+  --violet-deep: #6D28D9;
+  --violet-light: #8B8CFF;
+  --violet-rgb: 91, 92, 255;
+
+  --coral: #FF725E;
+  --coral-tint: #FFF3F0;
+  --coral-pale: #FFE3DD;
+  --coral-rgb: 255, 114, 94;
+
+  --cyan: #00B5F5;
+  /* Amarillo de detalle (03 · Paleta). SOLO sobre el Azul Trip: sobre blanco da
+     1.36:1 y desaparece. Textos pequeños y elementos menores, nunca títulos ni
+     botones — ver 07 · Accesibilidad. */
+  --amarillo: #ECE200;
+  --amarillo-rgb: 236, 226, 0;
+  --cyan-dark: #0090C2;
+  --cyan-tint: #EAF9FF;
+  --cyan-sky: #E6F8FE;
+  --cyan-rgb: 0, 181, 245;
+
+  --gold: #C99A3B;
+  --gold-deep: #7A5714;
+  --green-c: #3CCEAB;
+  --green-ink: #0D3B34;
+  --magenta-c: #CC3383;
+  --red-c: #CC333F;
+
+  --good: #3CCEAB;
+
+  --font: 'Geist', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Radios alineados 1:1 al sistema real de LinexTrip (ver 08 - Sistema gráfico y fotografía).
+     La escala completa documentada en 08 vive aquí como token, sin excepciones sueltas:
+     6px chips, 12px botones, 16px tarjetas, 24px contenedores/banners, total para pills y badges. */
+  --radius-s: 6px;
+  --radius-btn: 12px;
+  --radius-m: 16px;
+  --radius-l: 24px;
+  --radius-pill: 999px;
+
+  --sidebar-w: 288px;
+  --content-max: 920px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--paper);
+  color: var(--navy);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: var(--violet); text-decoration: none; }
+a:hover { color: var(--violet-deep); }
+p a, li a, .v a, .small-note a, .lede a { text-decoration: underline; text-underline-offset: 2px; text-decoration-color: rgba(var(--violet-rgb), 0.4); }
+p a:hover, li a:hover, .v a:hover, .small-note a:hover, .lede a:hover { text-decoration-color: currentColor; }
+
+img, svg { max-width: 100%; }
+
+::selection { background: rgba(var(--violet-rgb), 0.22); }
+
+/* ---------- App shell: topbar (mobile) + sidebar + main ---------- */
+
+.topbar {
+  display: none;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--navy);
+  color: var(--white);
+}
+.topbar .topbar-brand { display: flex; align-items: baseline; gap: 8px; font-weight: 800; font-size: 15px; }
+.topbar .topbar-brand small { font-weight: 600; font-size: 10.5px; color: rgba(255,255,255,0.5); letter-spacing: 0.06em; }
+.nav-toggle {
+  appearance: none; border: 1px solid rgba(255,255,255,0.25); background: rgba(255,255,255,0.08);
+  color: #fff; border-radius: 8px; padding: 8px 10px; font-size: 13px; font-weight: 700; cursor: pointer;
+  display: flex; align-items: center; gap: 8px; font-family: var(--font);
+}
+.nav-toggle:hover { background: rgba(255,255,255,0.16); }
+.nav-toggle .bars { width: 18px; height: 13px; position: relative; }
+.nav-toggle .bars span { position:absolute; left:0; right:0; height:2px; background:#fff; border-radius:2px; }
+.nav-toggle .bars span:nth-child(1){ top:0; }
+.nav-toggle .bars span:nth-child(2){ top:5.5px; }
+.nav-toggle .bars span:nth-child(3){ top:11px; }
+
+.shell { display: flex; min-height: 100vh; align-items: flex-start; }
+
+.sidebar {
+  width: var(--sidebar-w);
+  flex: none;
+  min-height: 100vh;
+  background: var(--navy);
+  color: var(--white);
+  padding: 28px 22px 40px;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  overflow-y: auto;
+}
+.sidebar-brand { display: block; margin-bottom: 26px; }
+.sidebar-brand .name { font-size: 19px; font-weight: 900; color: #fff; letter-spacing: -0.01em; }
+.sidebar-brand .tag { display:block; margin-top:4px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: var(--violet-light); text-transform: uppercase; }
+
+.nav-group { margin-bottom: 20px; }
+.nav-group-title {
+  display: block; font-size: 10.5px; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase;
+  color: var(--violet-light); padding: 0 10px 8px;
+}
+.nav-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1px; }
+.nav-list a {
+  display: flex; align-items: baseline; gap: 8px; padding: 8px 10px; border-radius: 8px;
+  font-size: 13px; color: rgba(255,255,255,0.78); line-height: 1.35;    text-decoration: none;
+}
+.nav-list a .n { font-size: 10.5px; color: rgba(255,255,255,0.4); font-weight: 700; flex: none; width: 28px; }
+.nav-list a:hover { background: rgba(255,255,255,0.06); color: #fff; }
+.nav-list a.active { background: rgba(91,92,255,0.22); color: #fff; font-weight: 700; }
+.nav-list a.active .n { color: var(--violet-light); }
+
+.main {
+  flex: 1;
+  min-width: 0;
+  padding: 56px clamp(20px, 5vw, 64px) 80px;
+}
+.main-inner { max-width: var(--content-max); margin: 0 auto; }
+.main-inner.wide { max-width: 1120px; }
+
+/* ---------- Typographic scale & content primitives ---------- */
+
+/* Encabezado de página - un solo indicador de posición (número real de sección, coherente
+   con el sidebar y el pager), sin repetir "LinexTrip · Manual de Marca" que ya dicen el topbar
+   y el sidebar en cada página. */
+.page-index { display:flex; align-items:center; gap: 10px; margin: 0 0 16px; }
+.page-index-n {
+  display:inline-flex; align-items:center; justify-content:center; min-width: 24px; height: 20px;
+  padding: 0 6px; border-radius: var(--radius-s); background: var(--navy); color: #fff;
+  font-size: 11px; font-weight: 800; flex: none;
+}
+.page-index-n.on-dark { background: rgba(255,255,255,0.16); }
+.eyebrow { font-size: 12.5px; font-weight: 700; letter-spacing: 0.01em; color: var(--violet); }
+.eyebrow.on-dark { color: var(--violet-light); }
+
+h1.page-title { font-size: clamp(26px, 3.6vw, 38px); line-height: 1.12; font-weight: 800; margin: 0 0 14px; text-wrap: balance; color: var(--navy); }
+h1.page-title.on-dark { color: #fff; }
+.lede { font-size: 15.5px; line-height: 1.6; color: rgba(var(--navy-rgb), 0.65); max-width: 68ch; margin: 0 0 32px; }
+.lede.on-dark { color: rgba(255,255,255,0.7); }
+
+/* h2 primario: subtítulo editorial real (sin mayúscula sostenida ni tracking de eyebrow).
+   .muted queda para micro-etiquetas de agrupación breve (equivalentes a un th de tabla), no para títulos. */
+/* Selector por clase, no por elemento: así una sub-sección puede ser <h3> y
+   conservar el mismo tratamiento sin romper la jerarquía del documento. */
+.section-title { font-size: 14.5px; font-weight: 700; letter-spacing: 0; text-transform: none; color: var(--violet); margin: 0 0 14px; }
+.section-title.on-dark { color: var(--violet-light); }
+.section-title.muted { font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(var(--navy-rgb), 0.5); }
+
+.stack { display: flex; flex-direction: column; gap: 28px; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+/* Escala de radios (08 - Sistema grafico): UNA FILA POR PASO, de menor a mayor.
+   El punto de la escala es la progresion, y en la grilla horizontal anterior se
+   perdia: obligaba a comparar en paralelo elementos de alturas distintas, con la
+   etiqueta del radio debajo y el orden 6-12-16-24-total leyendose en zigzag.
+   Cada fila muestra lo mismo tres veces: el numero, la esquina sola a escala 1:1
+   (geometria pura) y el elemento real que la usa. */
+.radii-scale { display: flex; flex-direction: column; }
+.radii-row {
+  display: grid;
+  grid-template-columns: 62px 56px minmax(190px, 1.1fr) minmax(170px, 1fr);
+  gap: 18px; align-items: center;
+  padding: 16px 0; border-top: 1px solid rgba(var(--navy-rgb), 0.09);
+}
+.radii-row:first-child { border-top: none; padding-top: 2px; }
+.radii-row .tok { font-size: 13px; font-weight: 800; color: var(--violet); font-variant-numeric: tabular-nums; }
+/* Muestra de esquina: cuadrado fijo de 56px con el radio aplicado SOLO arriba a la
+   izquierda, para que el numero se pueda ver, no solo leer. */
+.radii-row .corner {
+  width: 56px; height: 56px; flex: none;
+  background: rgba(var(--navy-rgb), 0.05);
+  border: 1.5px solid rgba(var(--navy-rgb), 0.22);
+}
+.radii-row .demo { display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+.radii-row .use { font-size: 12px; line-height: 1.5; color: rgba(var(--navy-rgb), 0.55); }
+.radii-row .use strong { display: block; font-size: 12px; font-weight: 800; color: var(--navy); margin-bottom: 2px; }
+
+@media (max-width: 900px) {
+  .radii-row { grid-template-columns: 52px 44px 1fr; }
+  .radii-row .corner { width: 44px; height: 44px; }
+  .radii-row .use { grid-column: 2 / -1; }
+}
+
+/* Barras proporcionales de paleta.
+   Dentro de la barra van SOLO nombre + porcentaje (las dos cadenas más cortas que
+   existen), porque una barra de 8% mide ~50px en una ventana de 1024px y el rol
+   ("Reserva", "Respiro") no cabe ahí a ningún tamaño de fuente legible. El rol vive
+   en la grilla "Rol de cada color" debajo. El min-width es el piso que garantiza que
+   el nombre nunca se desborde sobre la barra vecina: por debajo de ese ancho total,
+   las barras se apilan en vertical (ver breakpoint 760px). */
+.palette-bars { display: flex; align-items: stretch; border-radius: var(--radius-m); overflow: hidden; min-height: 220px; }
+.palette-bars > div { display: flex; flex-direction: column; justify-content: flex-end; gap: 4px; padding: 14px 12px; min-width: 76px; overflow-wrap: normal; white-space: normal; }
+.palette-bars strong { display: block; font-size: 14px; font-weight: 800; line-height: 1.2; }
+.palette-bars span { display: block; font-size: 11px; font-weight: 700; line-height: 1.3; font-variant-numeric: tabular-nums; }
+
+@media (max-width: 760px) {
+  .palette-bars { flex-direction: column; min-height: 0; }
+  .palette-bars > div { flex: none !important; min-width: 0; min-height: 62px; border-left: none !important; border-top: 1.5px solid rgba(0,20,90,0.1); }
+  .palette-bars > div:first-child { border-top: none; }
+}
+
+@media (max-width: 760px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+.field-list { display: flex; flex-direction: column; gap: 16px; }
+.field { border-left: 2px solid var(--violet); padding-left: 16px; }
+.field .k { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--violet); margin-bottom: 3px; }
+.field .v { font-size: 14px; line-height: 1.55; color: var(--navy); }
+.field.on-dark { border-left-color: var(--violet-light); }
+.field.on-dark .k { color: var(--violet-light); }
+.field.on-dark .v { color: #fff; }
+
+.pill { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: var(--navy); background: var(--paper); border-radius: 999px; padding: 8px 16px; }
+.chip-row { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.card { background: var(--white); border: 1px solid rgba(var(--navy-rgb), 0.08); border-radius: var(--radius-m); padding: 18px 20px; }
+/* Variante "quieta" de la tarjeta, para bloques secundarios: ejemplos, sub-items,
+   notas de apoyo. Antes era background:var(--paper) con borde transparente, es decir
+   exactamente el fondo de la pagina: el contenedor desaparecia y el bloque se leia
+   como texto suelto. Ahora es un lavado de Indigo al 3.5% con el mismo borde hairline
+   que usa el resto del manual, asi se lee como panel tanto sobre papel como sobre
+   blanco, sin introducir un color nuevo ni competir con la tarjeta blanca. */
+.card.tint { background: rgba(var(--navy-rgb), 0.035); border-color: rgba(var(--navy-rgb), 0.1); }
+.card.on-navy { background: var(--navy); color: #fff; }
+/* Reservado para el único bloque de cierre/CTA de una página - no un tratamiento por defecto.
+   Sombra "Nivel 2" tomada del propio sistema documentado en 08, no una sombra gris inventada aparte. */
+.card.feature { background: var(--white); border: none; border-radius: var(--radius-l); box-shadow: 0 8px 20px rgba(var(--navy-rgb), 0.16); }
+
+.callout { display: flex; gap: 12px; align-items: flex-start; border-radius: var(--radius-m); padding: 14px 18px; }
+.callout .tag { font-size: 11px; font-weight: 800; letter-spacing: 0.04em; white-space: nowrap; flex: none; margin-top: 2px; }
+.callout p { margin: 0; font-size: 13.5px; line-height: 1.55; }
+.callout.pending { background: rgba(var(--coral-rgb), 0.08); border: 1px solid rgba(var(--coral-rgb), 0.25); }
+.callout.pending .tag { color: var(--coral); }
+.callout.pending p { color: rgba(var(--navy-rgb), 0.78); }
+.callout.pending.on-dark { background: rgba(255,255,255,0.06); border-color: transparent; }
+.callout.pending.on-dark .tag { color: #FF9E8F; }
+.callout.pending.on-dark p { color: rgba(255,255,255,0.75); }
+.callout.resolved { background: rgba(60,206,171,0.10); border: 1px solid rgba(60,206,171,0.3); }
+.callout.resolved .tag { color: var(--green-ink); }
+
+/* row-table (sí/no, atrae/filtra, pendientes list) */
+.rtable { width: 100%; border-collapse: collapse; }
+.rtable th { text-align: left; font-size: 11px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(var(--navy-rgb), 0.5); padding: 8px 10px 10px; border-bottom: 2px solid var(--navy); }
+.rtable td { padding: 12px 10px; border-bottom: 1px solid rgba(var(--navy-rgb), 0.08); font-size: 13.5px; line-height: 1.5; vertical-align: top; }
+.rtable tr:last-child td { border-bottom: none; }
+.rtable .name { font-weight: 800; color: var(--navy); }
+.rtable .muted { color: rgba(var(--navy-rgb), 0.45); font-size: 11px; display:block; margin-top: 2px; font-weight: 600; }
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+/* Cadenas literales que se copian tal cual (clases de Font Awesome, tokens, HEX).
+   Monoespaciadas y con fondo tenue para que nadie transcriba "fa-regular" a ojo. */
+code {
+  font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", Menlo, Consolas, monospace;
+  font-size: 0.9em; line-height: 1.5;
+  background: rgba(var(--navy-rgb), 0.06);
+  border-radius: 4px; padding: 1px 5px;
+  color: var(--navy); overflow-wrap: anywhere;
+}
+
+/* Diccionario de iconos (09): celda = icono + concepto + clase de produccion.
+   auto-fill en vez de un numero fijo de columnas porque la lista crece cada vez
+   que se documenta un concepto nuevo, y nadie deberia tener que retocar la grilla. */
+/* Fichas de arquetipo (02 - Audiencias): pares etiqueta/valor apilados.
+   Etiqueta arriba y valor debajo, no en dos columnas: en una tarjeta de ~290px
+   un layout de dos columnas parte el valor en tiras de tres palabras. Las tres
+   fichas comparten el mismo orden de campos para poder compararlas en vertical. */
+.arch-row { padding: 9px 0; border-top: 1px solid rgba(var(--navy-rgb), 0.08); }
+.arch-row:first-child { border-top: none; padding-top: 0; }
+.arch-row .k {
+  display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+  font-size: 9.5px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+  color: rgba(var(--navy-rgb), 0.45); margin-bottom: 4px;
+}
+.arch-row .v { font-size: 12.5px; line-height: 1.55; color: rgba(var(--navy-rgb), 0.7); }
+.arch-row .v strong { color: var(--navy); font-weight: 700; }
+/* Marca de hipotesis: reusa el estado "tentative" del sistema (dorado), que ya
+   significa "propuesto, no validado" en el resto del manual. */
+.arch-row .status.tent { font-size: 8.5px; padding: 1px 6px; letter-spacing: 0.03em; }
+
+.icon-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(158px, 1fr)); gap: 10px; }
+.icon-cell {
+  background: var(--white); border: 1px solid rgba(var(--navy-rgb), 0.08); border-radius: var(--radius-s);
+  padding: 12px 10px; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+}
+/* Celeste Oscuro y no Celeste: sobre este fondo claro el acento no pasa el 3:1
+   de objetos no textuales; la pagina cumple la regla que documenta. */
+/* Los iconos van empotrados como SVG (glifos reales de FA 7 Pro Classic Regular,
+   extraidos de la fuente de escritorio) y no como fuente de iconos: la pagina no
+   depende de un CDN ni de tener la licencia instalada para verse bien.
+   Indigo y no Celeste: sobre fondo claro el acento no pasa el 3:1 de objetos no
+   textuales; la pagina cumple la regla que documenta. */
+.icon-cell svg { height: 24px; width: auto; max-width: 100%; color: var(--navy); display: block; }
+.icon-cell .lbl { font-size: 11.5px; font-weight: 700; color: var(--navy); line-height: 1.3; }
+.icon-cell code { font-size: 9.5px; padding: 1px 4px; background: rgba(var(--navy-rgb), 0.05); color: rgba(var(--navy-rgb), 0.6); }
+
+/* Texto solo para lectores de pantalla - la alternativa a aria-label cuando el
+   texto tiene que poder copiarse o traducirse. Documentado en 09. */
+.vh {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+
+.status { display:inline-flex; align-items:center; font-size: 10.5px; font-weight: 800; letter-spacing: 0.02em; padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
+.status.ok { background: rgba(60,206,171,0.18); color: var(--green-ink); }
+.status.tent { background: rgba(201,154,59,0.18); color: var(--gold-deep); }
+.status.clear { background: rgba(91,92,255,0.14); color: #4342d6; }
+.status.warn { background: rgba(var(--coral-rgb), 0.16); color: #b8452f; }
+
+.swatch-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; }
+.swatch { border-radius: var(--radius-m); padding: 14px; min-height: 84px; display: flex; flex-direction: column; justify-content: flex-end; gap: 4px; }
+.swatch .name { font-size: 13px; font-weight: 800; }
+.swatch .hex { font-size: 11px; opacity: 0.85; }
+.swatch.dashed { border: 1.5px dashed rgba(var(--coral-rgb), 0.5); background: repeating-linear-gradient(45deg, rgba(var(--navy-rgb),0.06) 0 10px, rgba(var(--navy-rgb),0.02) 10px 20px); }
+.swatch.dashed .name { color: var(--navy); }
+.swatch.dashed .hex { color: var(--coral); font-weight: 700; }
+.swatch.outline { background: var(--paper); border: 1.5px solid rgba(var(--navy-rgb), 0.16); justify-content: center; }
+
+.tier-strip { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+.tier-chip { flex: 1 1 220px; border-radius: var(--radius-m); padding: 12px 18px; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.tier-chip .k { font-size: 10px; font-weight: 800; letter-spacing: 0.08em; }
+.tier-chip .v { font-size: 14px; font-weight: 800; }
+
+.groupbar-demo { border-radius: var(--radius-s); overflow: hidden; border: 1px solid rgba(var(--navy-rgb), 0.12); max-width: 640px; }
+.groupbar-demo .bar { background: var(--navy); padding: 8px 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.groupbar-demo .bar .of { font-size: 11px; color: rgba(255,255,255,0.6); }
+.groupbar-demo .bar .of strong { color: #fff; }
+.groupbar-demo .bar .links { display: flex; gap: 14px; flex-wrap: wrap; }
+.groupbar-demo .bar .links span { font-size: 10.5px; color: rgba(255,255,255,0.55); }
+.groupbar-demo .body { background: var(--paper); padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+
+.cta-btn { display: inline-flex; align-items: center; gap: 6px; padding: 0.75em 1.2em; border-radius: 999px; font-weight: 700; font-size: 13px; width: fit-content; }
+
+.wordmark { font-size: 19px; font-weight: 800; }
+.wordmark.no-space span + span { margin-left: 0; }
+.wordmark span.tight + span { margin-left: 0; }
+
+.dont-row { display:flex; align-items:center; justify-content:space-between; gap: 12px; background: var(--paper); border-radius: var(--radius-s); padding: 10px 14px; }
+.dont-row .no-tag { font-size: 9.5px; font-weight: 800; color: #fff; background: var(--navy); padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.dont-row.flag .no-tag { background: var(--coral); }
+
+.icon-row { display: flex; gap: 24px; flex-wrap: wrap; }
+.icon-row svg { flex: none; }
+
+.photo-tile { height: 130px; border-radius: var(--radius-m); }
+
+.pager { display: flex; justify-content: space-between; gap: 16px; margin-top: 56px; padding-top: 16px; border-top: 1px solid rgba(var(--navy-rgb), 0.12); }
+.pager a {
+  flex: 1 1 0; border: 1px solid rgba(var(--navy-rgb), 0.14); border-radius: var(--radius-m);
+  padding: 14px 18px; display: flex; flex-direction: column; gap: 4px; color: var(--navy);
+}
+.pager a:hover { border-color: var(--violet); background: var(--white); }
+.pager a.next { text-align: right; align-items: flex-end; }
+.pager .dir { font-size: 10.5px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(var(--navy-rgb), 0.45); }
+.pager .lbl { font-size: 13.5px; font-weight: 700; }
+.pager .spacer { flex: 1 1 0; }
+
+.hero-band {
+  background: var(--navy); color: #fff; border-radius: var(--radius-l);
+  padding: clamp(28px, 5vw, 48px); margin-bottom: 8px; position: relative; overflow: hidden;
+}
+.hero-band::before {
+  content: ""; position: absolute; width: 420px; height: 420px; border-radius: 50%;
+  right: -140px; top: -160px; background: radial-gradient(circle at 30% 30%, rgba(91,92,255,0.28), rgba(91,92,255,0) 70%);
+}
+.hero-band .content { position: relative; }
+
+.section-block { margin-bottom: 44px; }
+.section-block:last-child { margin-bottom: 0; }
+
+.small-note { font-size: 12px; color: rgba(var(--navy-rgb), 0.55); line-height: 1.5; }
+
+/* ---------- Responsive: collapse sidebar to off-canvas drawer ---------- */
+@media (max-width: 900px) {
+  .topbar { display: flex; }
+  .shell { display: block; }
+  .sidebar {
+    position: fixed; inset: 0 auto 0 0; z-index: 30; width: min(84vw, 320px);
+    transform: translateX(-100%); transition: transform 0.22s ease; box-shadow: 24px 0 48px rgba(0,0,0,0.25);
+  }
+  body.nav-open .sidebar { transform: translateX(0); }
+  .nav-scrim {
+    display: none; position: fixed; inset: 0; background: rgba(10,8,30,0.45); z-index: 25;
+  }
+  body.nav-open .nav-scrim { display: block; }
+  .main { padding: 32px 20px 64px; }
+}
+
+@media (max-width: 560px) {
+  .grid-2.tight-mobile { gap: 20px; }
+  .pager { flex-direction: column; }
+}
+
+/* ---------- Navegación por teclado ---------- */
+
+/* Un solo anillo de foco para todo el manual. Se dibuja en Celeste sobre fondo claro
+   y en blanco sobre el sidebar navy, porque el outline por defecto del navegador es
+   casi invisible sobre #00145A. Solo :focus-visible: no aparece al hacer clic con mouse. */
+:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 2px;
+  border-radius: var(--radius-s);
+}
+.sidebar :focus-visible,
+.topbar :focus-visible {
+  outline-color: #fff;
+  outline-offset: 1px;
+}
+
+/* Salto directo al contenido: primer elemento tabulable de cada página, invisible
+   hasta que recibe foco. Sin esto hay que tabular los 15 ítems del menú en cada página. */
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 50;
+  background: var(--cyan);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: var(--radius-s);
+  transition: top 0.15s ease;
+}
+.skip-link:focus { top: 12px; color: #fff; }
+
+/* ---------- Movimiento reducido ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- Impresión / exportar a PDF ----------
+   El manual se imprime y se pasa a PDF. Sin esto, el sidebar navy de 288px se
+   reimprime en cada hoja y el contenido queda comprimido a la derecha. */
+@media print {
+  .topbar, .sidebar, .nav-scrim, .pager, .skip-link { display: none !important; }
+  .shell { display: block; }
+  .main { padding: 0; }
+  .main-inner, .main-inner.wide { max-width: none; }
+  body { background: #fff; }
+
+  /* Los bloques oscuros se imprimen tal cual: son muestras de color del manual,
+     no decoración, y en gris perderían el sentido. */
+  .card.on-navy, .hero-band, .palette-bars > div, .swatch {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .section-block, .card, .callout { break-inside: avoid; }
+  h1.page-title, h2.section-title { break-after: avoid; }
+  .card.feature { box-shadow: none; border: 1px solid rgba(var(--navy-rgb), 0.2); }
+
+  /* En papel el destino de un enlace interno no se ve; se imprime al lado. */
+  .main a[href$=".html"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    color: rgba(var(--navy-rgb), 0.5);
+    font-weight: 400;
+  }
+}
+
+/* ---------- 06c · Propuestas de logo (exploración) ----------
+   Una exploración de logo no se lee, se compara: si cada propuesta se muestra al
+   tamaño que trae su propio SVG, gana la que el diseñador dibujó más grande y la
+   comparación deja de ser honesta. Por eso el escenario tiene altura fija y el
+   logo se ajusta dentro (contain), no al revés — todas las fichas parten del
+   mismo encuadre.
+
+   Las mismas cuatro pruebas se repiten en las siete fichas por la misma razón:
+   sobre blanco, sobre navy, en monocromo y como ícono de 32px. Son las cuatro
+   situaciones donde un logo se rompe, y solo sirven si se aplican igual a todos. */
+.logo-stage {
+  display: flex; align-items: center; justify-content: center;
+  height: 132px; padding: 20px 26px;
+  background: var(--white); border: 1px solid rgba(var(--navy-rgb), 0.1);
+  border-radius: var(--radius-m);
+}
+.logo-stage.on-navy { background: var(--navy); border-color: transparent; }
+.logo-stage img { max-height: 100%; max-width: 100%; }
+
+.logo-tests { display: grid; grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); gap: 10px; }
+.logo-tests figure { margin: 0; }
+.logo-tests figcaption {
+  font-size: 10.5px; font-weight: 700; line-height: 1.35; margin-top: 6px;
+  color: rgba(var(--navy-rgb), 0.55);
+}
+.logo-test {
+  height: 78px; padding: 12px; border-radius: var(--radius-s);
+  display: flex; align-items: center; justify-content: center;
+}
+.logo-test img { max-height: 100%; max-width: 100%; }
+/* El ícono se fija a 32px reales — es el tamaño de un favicon y de un avatar de
+   perfil, y es donde un símbolo fino deja de leerse. Escalarlo "más o menos"
+   invalidaría justo la prueba que interesa. */
+.logo-test.icono img { height: 32px; width: 32px; object-fit: contain; }
+.logo-test.light { background: var(--white); border: 1px solid rgba(var(--navy-rgb), 0.1); }
+.logo-test.dark  { background: var(--navy); }
+.logo-test.lav   { background: var(--lavender); }
+
+/* Rejilla del moodboard: solo los símbolos, sin wordmark, para que el territorio
+   común (punto, trayectoria, persona) se vea antes que el nombre. */
+.mood-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(116px, 1fr)); gap: 12px; }
+.mood-cell {
+  background: var(--white); border: 1px solid rgba(var(--navy-rgb), 0.1);
+  border-radius: var(--radius-m); padding: 16px 12px 12px;
+  display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center;
+}
+.mood-cell img { height: 52px; width: auto; }
+.mood-cell .n { font-size: 10.5px; font-weight: 800; color: rgba(var(--navy-rgb), 0.4); letter-spacing: 0.06em; }
+.mood-cell .t { font-size: 11.5px; font-weight: 700; color: var(--navy); line-height: 1.3; }
+
+/* Ficha de propuesta. El borde superior grueso lleva el color de la familia, que
+   es lo único que agrupa las siete: sin esa marca, siete tarjetas iguales se
+   leen como una lista y se pierde la lectura por territorio. */
+.ficha { border-top: 3px solid rgba(var(--navy-rgb), 0.18); padding-top: 20px; margin-top: 40px; }
+.ficha.lugar      { border-top-color: var(--cyan-dark); }
+.ficha.movimiento { border-top-color: var(--violet); }
+.ficha.gente      { border-top-color: var(--coral); }
+.ficha.objeto     { border-top-color: var(--gold); }
+.ficha-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
+.ficha-head .num { font-size: 26px; font-weight: 900; color: rgba(var(--navy-rgb), 0.22); line-height: 1; }
+.ficha-head h2 { margin: 0; font-size: 19px; font-weight: 800; color: var(--navy); }
+
+/* La columna izquierda de la ficha (escenario + pruebas) es más corta que la de
+   texto. Con align-items:start quedaba media pantalla en blanco debajo de las
+   pruebas y la ficha se leía partida en dos, así que el escenario crece hasta
+   igualar la altura del texto en vez de dejar el hueco. */
+.ficha .grid-2 { align-items: stretch; }
+.ficha .stack { gap: 14px; }
+.ficha .logo-stage:first-child { flex: 1 1 auto; }
+
+/* Las grillas de esta sección sí colapsan en móvil: una ficha son dos columnas
+   densas (un logo y cinco párrafos) y a 2 x 1fr en un teléfono el logo queda
+   ilegible. El resto del manual conserva su comportamiento. */
+@media (max-width: 860px) {
+  .ficha .grid-2 { grid-template-columns: 1fr; }
+  .ficha .logo-stage:first-child { flex: none; }
+}
+
+/* Tope de tamaño del lockup dentro del escenario. El escenario crece con el
+   texto de la ficha, pero el logo NO puede crecer con él: si lo hiciera, la
+   propuesta que tocó al lado del párrafo más largo se vería más grande, y la
+   comparación volvería a ser injusta. Los topes están calculados para que el
+   wordmark "Linex Trip" salga a la misma altura de mayúscula (~50px) en las
+   siete propuestas, que es lo único que todas comparten y por tanto la única
+   referencia honesta para igualarlas. */
+.logo-stage img { max-width: min(100%, 430px); max-height: min(100%, 104px); }
+.logo-stage.vertical { min-height: 280px; }
+.logo-stage.vertical img { max-width: min(100%, 340px); max-height: min(100%, 232px); }
+
+/* Un <img> dentro de un contenedor flex arranca con min-width:auto, es decir,
+   con su ancho intrínseco: los SVG de logo miden 2000-2500px de viewBox y en un
+   teléfono se salían de la caja aunque tuvieran max-width. */
+.logo-stage img, .logo-test img, .mood-cell img { min-width: 0; }
+
+/* Las tarjetas de familia y de decisiones se apilan en pantalla angosta: a tres
+   columnas en un teléfono cada una queda de ~100px y el texto no cabe. */
+@media (max-width: 700px) {
+  .mob-stack { grid-template-columns: 1fr; }
+}
+
+/* ---------- 02 · Propuestas de logo: recomendación y jerarquía ----------
+   La lámina lleva una propuesta recomendada y seis alternativas. Dos elementos
+   sostienen esa jerarquía sin repetirla en prosa: el badge de la recomendada y
+   la línea de claim, que reemplazó a la nota técnica gris que había debajo del
+   título — esa nota describía el lockup, y lo que la sala necesita ahí es la
+   frase que resume el caso de la propuesta.
+
+   La numeración (01–07) es la del orden de presentación, y los archivos de
+   assets están nombrados igual (p1/s1 = propuesta 01). Si alguna vez se
+   reordena la lámina, hay que renombrar los assets en el mismo cambio o el
+   número deja de coincidir con el dibujo. La correspondencia con los archivos
+   originales del diseñador está en el README. */
+.rank {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 10.5px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase;
+  padding: 4px 11px; border-radius: 999px; white-space: nowrap;
+  background: rgba(var(--navy-rgb), 0.06); color: rgba(var(--navy-rgb), 0.55);
+}
+/* La recomendada se marca con el navy sólido de la marca, no con un verde de
+   "aprobado": esto es una recomendación argumentada, no un sello de calidad. */
+.rank.top { background: var(--navy); color: #fff; }
+
+.ficha-claim {
+  font-size: 15px; line-height: 1.5; font-weight: 600;
+  color: rgba(var(--navy-rgb), 0.82); max-width: 62ch; margin: 2px 0 20px;
+}
+.ficha-claim strong { color: var(--navy); font-weight: 800; }
+.ficha.top .ficha-claim { font-size: 16.5px; }
+
+
+/* ================= 14 · Entregables — piezas por canal =================
+   PROBLEMA QUE RESUELVE
+   Las piezas vivían encogidas en media columna: un hero de 1440px renderizaba a
+   480 y su texto quedaba en 5px. Lo ilegible se lee como mal hecho, por bien
+   compuesta que esté la pieza.
+
+   COMO FUNCIONA
+   Cada pieza se maqueta UNA vez a su tamaño real (el que tiene en el mundo: el
+   email a 600px porque esa es la regla, la tarjeta a 89x51mm) dentro de
+   .pieza-lienzo, y se muestra encogida con transform:scale(). La miniatura y la
+   versión ampliada del lightbox son el mismo DOM con distinto --escala, así que
+   no hay dos fuentes que mantener y el texto queda nítido en las dos.
+
+   .pieza declara su tamaño real en --pieza-w/--pieza-h (números sin unidad, para
+   poder multiplicarlos) y reserva en el flujo la caja ya encogida — si no, el
+   elemento seguiría ocupando 1440px y rompería el layout. */
+.pieza {
+  --f: 1;
+  position: relative;
+  width: calc(var(--pieza-w) * var(--escala) * var(--f) * 1px);
+  height: calc(var(--pieza-h) * var(--escala) * var(--f) * 1px);
+  cursor: zoom-in;
+  border-radius: var(--radius-m);
+}
+.pieza-lienzo {
+  width: calc(var(--pieza-w) * 1px);
+  height: calc(var(--pieza-h) * 1px);
+  transform: scale(calc(var(--escala) * var(--f)));
+  transform-origin: top left;
+  font-family: var(--font);
+}
+/* En el lightbox la pieza ya no es un botón y ocupa su caja completa. */
+.pieza.es-clon { cursor: default; }
+.pieza.es-clon .pieza-marca { display: none; }
+
+/* El afordance de ampliar tiene que verse: un elemento clicable que no se
+   anuncia no se usa. Va fuera del lienzo para no contaminar la pieza. */
+.pieza-marca {
+  position: absolute; top: 10px; right: 10px; z-index: 2;
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 10.5px; font-weight: 800; letter-spacing: 0.04em;
+  padding: 5px 10px; border-radius: 999px;
+  background: rgba(var(--navy-rgb), 0.82); color: #fff;
+  opacity: 0; transition: opacity 0.15s ease;
+}
+.pieza:hover .pieza-marca, .pieza:focus-visible .pieza-marca { opacity: 1; }
+@media (hover: none) { .pieza-marca { opacity: 1; } }
+
+/* El factor responsive se calcula contra la pieza MÁS ANCHA (la web, 1440px de
+   diseño): si cabe ella, caben las cuatro. La banda de 900 a 1280 es la peor —
+   el sidebar de 288px sigue ocupando espacio y el contenido se queda en ~520px —
+   y por eso baja más ahí que justo debajo de 900, donde el sidebar desaparece y
+   el ancho disponible vuelve a subir. Medido, no estimado. */
+.pieza { --fg: 1; --f: var(--fg); }
+@media (max-width: 1280px) { .pieza { --fg: 0.55; } }
+@media (max-width: 900px)  { .pieza { --fg: 0.72; } }
+@media (max-width: 700px)  { .pieza { --fg: 0.55; } }
+@media (max-width: 560px)  { .pieza { --fg: 0.42; } }
+@media (max-width: 430px)  { .pieza { --fg: 0.30; } }
+/* WhatsApp mide 360px de diseño: no necesita encogerse tanto como las anchas, y
+   por debajo de cierto punto la miniatura deja de mostrar nada útil. */
+#canal-whatsapp .pieza { --f: max(var(--fg), 0.62); }
+
+/* ---- Marcos de dispositivo ----
+   El contenedor es información: dice en qué canal estás parado. Van en Azul Trip a
+   baja opacidad en vez de gris de sistema, para que se lean como parte del
+   manual. Deliberadamente callados — contorno fino, sin brillos ni 3D: si el
+   marco compite con la pieza volvemos al problema original. El texto del cromo
+   (URL, hora, remitente) sí va en tipografía de sistema y no en Geist, porque en
+   el mundo real ese cromo no es de la marca y ponerlo en Geist mentiría sobre
+   cómo se ve la pieza de verdad. */
+.crom {
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 12px; color: rgba(var(--navy-rgb), 0.5);
+}
+.marco-navegador { height: 100%; background: #fff; border: 1px solid rgba(var(--navy-rgb), 0.14); border-radius: 12px; overflow: hidden; }
+.marco-navegador > .barra {
+  height: 40px; display: flex; align-items: center; gap: 10px; padding: 0 14px;
+  background: rgba(var(--navy-rgb), 0.045); border-bottom: 1px solid rgba(var(--navy-rgb), 0.1);
+}
+.marco-navegador .puntos { display: flex; gap: 6px; }
+.marco-navegador .puntos i { width: 10px; height: 10px; border-radius: 50%; background: rgba(var(--navy-rgb), 0.16); }
+.marco-navegador .url {
+  flex: 1; height: 24px; border-radius: 999px; background: #fff;
+  border: 1px solid rgba(var(--navy-rgb), 0.1); display: flex; align-items: center;
+  padding: 0 12px; max-width: 420px; margin: 0 auto;
+}
+
+.marco-telefono {
+  height: 100%; background: #fff; border: 2px solid rgba(var(--navy-rgb), 0.22);
+  border-radius: 34px; overflow: hidden; display: flex; flex-direction: column;
+}
+.marco-telefono > .estado {
+  height: 34px; flex: none; display: flex; align-items: center; justify-content: space-between;
+  padding: 0 22px; background: #fff;
+}
+.marco-telefono > .estado .muesca { width: 74px; height: 18px; border-radius: 999px; background: rgba(var(--navy-rgb), 0.12); }
+
+.marco-correo { height: 100%; background: #fff; border: 1px solid rgba(var(--navy-rgb), 0.14); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+.marco-correo > .cabecera { flex: none; padding: 12px 18px; border-bottom: 1px solid rgba(var(--navy-rgb), 0.1); }
+/* Fondo del cliente de correo: el email mide 600px reales y flota centrado
+   sobre él. Ese contraste es la única forma de mostrar que 600px es una
+   decisión y no el ancho que le tocó a la pieza. */
+.marco-correo > .bandeja { flex: 1; background: rgba(var(--navy-rgb), 0.05); display: flex; justify-content: center; padding: 22px 0; overflow: hidden; }
+
+/* Escena de papelería: la tarjeta es el único entregable físico del conjunto y
+   tiene dos caras, así que se muestra como objeto — con sombra real y las dos
+   caras a la vista — en vez de como dos rectángulos planos uno al lado del otro. */
+.escena-papeleria { height: 100%; background: linear-gradient(160deg, #EEF1FB 0%, #E3E8F7 100%); border-radius: 12px; position: relative; overflow: hidden; }
+.tarjeta-fisica { position: absolute; border-radius: 10px; box-shadow: 0 18px 38px rgba(var(--navy-rgb), 0.26), 0 3px 8px rgba(var(--navy-rgb), 0.14); overflow: hidden; }
+
+/* ---- Lightbox ---- */
+.lb-overlay {
+  position: fixed; inset: 0; z-index: 100;
+  background: rgba(10, 8, 30, 0.86);
+  /* Scroll por si la pieza no cabe: es preferible desplazarse a que Ampliar
+     devuelva algo más pequeño que la miniatura. */
+  display: flex; align-items: center; justify-content: center; padding: 24px; overflow: auto;
+  animation: lb-entra 0.16s ease-out;
+}
+@keyframes lb-entra { from { opacity: 0; } to { opacity: 1; } }
+.lb-caja { display: flex; align-items: center; justify-content: center; margin: auto; flex: none; }
+.lb-cerrar {
+  position: fixed; top: 18px; right: 18px; z-index: 2;
+  font: inherit; font-size: 13px; font-weight: 700; color: var(--navy);
+  background: #fff; border: none; border-radius: 999px; padding: 9px 20px; cursor: pointer;
+}
+.lb-cerrar:hover { background: var(--lavender); }
+@media (prefers-reduced-motion: reduce) {
+  .lb-overlay { animation: none; }
+  .pieza-marca { transition: none; }
+}
+
+/* Layout de cada bloque de canal. Antes los cuatro eran la misma rejilla
+   reglas-izquierda / pieza-derecha, así que una web, un chat, un correo y una
+   tarjeta impresa se leían como el mismo objeto. Ahora la pieza manda sobre el
+   layout: la web y el email son anchos y van a todo el ancho con las reglas
+   debajo en dos columnas; WhatsApp y la papelería son verticales y van al lado
+   de sus reglas, que es donde ese formato rinde. */
+.canal { border-top: 1px solid rgba(var(--navy-rgb), 0.1); padding-top: 26px; margin-top: 44px; }
+.canal-split { display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: start; }
+.canal-split.invertido { grid-template-columns: 1fr auto; }
+.reglas-titulo {
+  font-size: 11px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase;
+  color: rgba(var(--navy-rgb), 0.5); margin: 22px 0 12px;
+}
+.canal-split .reglas-titulo { margin-top: 0; }
+/* Las reglas del bloque ancho van en dos columnas: en una sola quedaban en
+   líneas de 140 caracteres bajo una pieza de 1440px. */
+.canal > .reglas { columns: 2; column-gap: 44px; }
+.reglas { margin: 0; padding-left: 20px; list-style: disc; }
+.reglas li { font-size: 13.5px; line-height: 1.55; color: rgba(var(--navy-rgb), 0.68); margin-bottom: 11px; break-inside: avoid; }
+.reglas li strong { color: var(--navy); }
+.pie-pieza { font-size: 12.5px; line-height: 1.5; color: rgba(var(--navy-rgb), 0.55); margin: 14px 0 0; max-width: 72ch; }
+.canal-split .pie-pieza { margin-top: 18px; }
+
+@media (max-width: 980px) {
+  .canal-split, .canal-split.invertido { grid-template-columns: 1fr; gap: 24px; }
+  /* En una columna la pieza va primero: es lo que la persona vino a ver. */
+  .canal-split.invertido > div:first-child { order: 2; }
+  .canal > .reglas { columns: 1; }
+}
+
+/* Piezas físicas de papelería (hoja, sobre, tarjeta). Las tres comparten la
+   misma sombra y el mismo radio porque en un flat-lay real están sobre la
+   misma superficie, con la misma luz: variar la sombra entre piezas es lo que
+   hace que un montaje se vea falso. Los tamaños son los reales a la escala
+   real del lienzo (≈1.96px/mm): 216×279mm, 220×110mm y 89×51mm — ver 14 para
+   el cálculo. Cada objeto lleva además una leve rotación individual (inline,
+   por pieza) para que el conjunto respire como algo apoyado sobre una mesa y
+   no como una grilla alineada a la perfección. */
+.hoja, .sobre, .tarjeta-fisica {
+  position: absolute;
+  box-shadow: 0 14px 30px rgba(var(--navy-rgb), 0.18), 0 2px 6px rgba(var(--navy-rgb), 0.1);
+}
+.hoja { background: #fff; border-radius: 3px; overflow: hidden; }
+.sobre { border-radius: 4px; overflow: hidden; }
+.tarjeta-fisica { border-radius: 7px; overflow: hidden; }
+/* Renglones de texto simulado en la hoja membretada: la carta no lleva copy real
+   porque lo que se está mostrando es la retícula y el pie legal, no un texto. */
+.renglon { display: block; height: 6px; border-radius: 3px; background: rgba(var(--navy-rgb), 0.09); margin-bottom: 9px; }
+
+/* La firma de correo ya NO vive dentro del flat-lay de papel: es una pantalla,
+   no un objeto físico, y compartir la sombra de la hoja/sobre/tarjeta la hacía
+   leerse como una cuarta pieza de papel encima de las demás. Vive en su propia
+   pieza (ver 14, #canal-papeleria), del mismo ancho que un email real (600px,
+   la regla de la sección Email), con un borde plano en vez de sombra de objeto. */
+.firma-correo { background: #fff; border-radius: 3px; padding: 20px 26px; }
+
+/* Íconos de contacto (tarjeta reverso y firma de correo). Tamaño en `em` para
+   que escalen con el texto de cada contexto (7.5px en la tarjeta, ~10px en la
+   firma) sin tener que fijar un px distinto en cada sitio. Azul Trip siempre: la
+   regla de 05 prohíbe Celeste como color de ícono sobre fondo claro, y aquí el
+   fondo es blanco en los dos casos. */
+.ico-contacto { width: 0.92em; height: 0.92em; flex: none; color: var(--navy); }
+
+/* Etiqueta de medida real sobre cada pieza del flat-lay: sin ella, quien mira
+   la lámina no sabe que está viendo una hoja carta o un sobre DL salvo que lea
+   el pie de foto. Fondo semitransparente para no taparse con la pieza. */
+.dim-tag {
+  position: absolute;
+  font-size: 9.5px; font-weight: 800; letter-spacing: 0.01em; color: var(--navy);
+  background: rgba(255,255,255,0.9); border: 1px solid rgba(var(--navy-rgb), 0.16);
+  padding: 3px 9px; border-radius: 999px; white-space: nowrap; pointer-events: none;
+}
