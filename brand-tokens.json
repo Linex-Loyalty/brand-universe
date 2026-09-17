@@ -484,9 +484,10 @@
         "negativo": "Logos/logos-oficiales/linex-trip/LinexTrip-logo-negativo.svg",
         "monocromo": "Logos/logos-oficiales/linex-trip/LinexTrip-logo-monocromo.svg",
         "negro": "Logos/logos-oficiales/linex-trip/LinexTrip-logo-negro.svg",
-        "editable": "Logos/logos-oficiales/linex-trip/logo-LinexTrip.ai",
+        "editable": null,
         "isotipo": null
       },
+      "editable_nota": "Los fuentes de diseño (.ai, .psd) no viven en este repositorio por decisión del dueño de marca: aquí va lo que se usa, no lo que se edita. El editable de Trip existe, pero se pide por fuera.",
       "logo_nota": "Las tres versiones que el manual define están completas desde el 17 de septiembre de 2026, y con los colores correctos: color (#00145A + #00B5F5), monocromo en Azul Trip (#00145A, no negro, como manda el manual) y negativo (#00B5F5 + blanco). Hay además una versión en negro puro que el manual no define. El logotipo vigente sigue siendo SOLO el wordmark: Linex Trip no tiene isotipo. Las siete propuestas de símbolo son exploración abierta y están dibujadas con el Índigo anterior #1A0E3E — si se elige alguna hay que recolorearla. Mientras tanto ninguna pieza usa símbolo.",
       "logo_revision": {
         "fecha": "2026-09-17",
