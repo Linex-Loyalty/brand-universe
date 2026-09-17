@@ -968,3 +968,26 @@ tr[data-lang] { display: none; }
   span[data-lang="es"] { display: inline !important; }
   span[data-lang="en"] { display: none !important; }
 }
+
+/* ---------- descarga de logotipos ----------
+   Enlace nativo con el atributo "download": el navegador guarda el archivo
+   en vez de navegar a él, sin una sola línea de JavaScript. Cada botón
+   apunta al archivo real dentro de assets/logos/ — la misma carpeta que ya
+   usan las imágenes que se ven en pantalla, así que nunca hay un enlace a
+   un archivo que la página no esté mostrando también.
+
+   El texto va en Violeta —var(--coral) en este manual—, no en Azul violeta:
+   es la misma regla de acción de toda la página (sección 03). El Azul
+   violeta solo pasa AA sobre blanco puro, y sobre su propio tinte de fondo
+   cae a 4.18:1 — por debajo del mínimo. El Violeta da 6.04:1 en el mismo
+   lugar. */
+.dl-row { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+.dl {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 11px; font-weight: 800; letter-spacing: 0.02em;
+  padding: 4px 10px; border-radius: 999px; text-decoration: none;
+  background: rgba(var(--coral-rgb), 0.1); color: var(--coral);
+  transition: background 0.15s ease;
+}
+.dl:hover { background: rgba(var(--coral-rgb), 0.2); }
+.dl::before { content: "↓"; font-weight: 900; }
