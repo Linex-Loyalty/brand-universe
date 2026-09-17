@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>03 · Paleta de color · Manual de Marca Linex Travel</title>
-<meta name="description" content="Los seis colores de Linex Travel con su proporción y su regla, la matriz completa de contrastes medidos, la regla dura del Azul violeta sobre Lavanda, y los dos colores que en realidad son del grupo.">
+<meta name="description" content="Los seis colores de Linex Travel con su proporción y su rol, las combinaciones permitidas con su contraste medido, la regla de acción, y por qué el color más reconocible de la marca no sirve para texto.">
 <link rel="icon" href="assets/favicon.svg">
 <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -66,19 +66,63 @@
     <div class="main-inner">
 
 <p class="page-index"><span class="page-index-n">03</span><span class="eyebrow">Paleta de color</span></p>
-<h1 class="page-title">Seis colores, y una regla que decide cuánto pesa cada uno.</h1>
-<p class="lede">La proporción no es una descripción de cómo quedaron las piezas: es parte de la regla. El manual oficial lo dice de frente &mdash; <strong>priorizar fondos claros y colores suaves, y reservar los oscuros para contraste, títulos y texto principal</strong>. Por eso la Lavanda se lleva el 40% y los dos oscuros juntos no pasan del 20%.</p>
+<h1 class="page-title">Seis colores con rol fijo y una proporción que no se negocia.</h1>
+<p class="lede">Cada color tiene un trabajo. La lavanda viste el fondo, el azul noche sostiene el texto, el violeta actúa &mdash; pero solo actúa &mdash;, el lila da respiro y el negro se guarda para cuando la imprenta no admite otra cosa.</p>
 
 <section class="section-block">
-  <h2 class="section-title">Los seis</h2>
-  <div class="grid-3">
+  <h2 class="section-title">La proporción</h2>
+  <div class="palette-bars">
+
+    <div style="flex:40 1 0%; background:#DDE1FF;">
+      <strong style="color:#17153B;">Lavanda Linex</strong>
+      <span style="color:rgba(23,21,59,0.78);">Base &middot; 40%</span>
+    </div>
+
+    <div style="flex:20 1 0%; background:#5B5CFF;">
+      <strong style="color:#fff;">Azul violeta</strong>
+      <span style="color:rgba(255,255,255,0.88);">Acento &middot; 20%</span>
+    </div>
+
+    <div style="flex:10 1 0%; background:#6D28D9;">
+      <strong style="color:#fff;">Violeta</strong>
+      <span style="color:rgba(255,255,255,0.88);">Apoyo &middot; 10%</span>
+    </div>
+
+    <div style="flex:10 1 0%; background:#E0B3FF;">
+      <strong style="color:#17153B;">Lila claro</strong>
+      <span style="color:rgba(23,21,59,0.78);">Respiro &middot; 10%</span>
+    </div>
+
+    <div style="flex:10 1 0%; background:#17153B;">
+      <strong style="color:#fff;">Azul Noche</strong>
+      <span style="color:rgba(255,255,255,0.86);">Contraste &middot; 10%</span>
+    </div>
+
+    <div style="flex:10 1 0%; background:#080808;">
+      <strong style="color:#fff;">Negro Linex</strong>
+      <span style="color:rgba(255,255,255,0.86);">Reserva &middot; 10%</span>
+    </div>
+
+  </div>
+  <p class="small-note" style="max-width:76ch; margin-top:18px;">La proporción es regla, no descripción. El manual oficial lo dice de frente: <strong style="color:var(--base);">priorizar fondos claros y colores suaves, y reservar los oscuros para contraste, títulos y texto principal.</strong> De ahí salen los dos números que hay que respetar: la <strong style="color:var(--base);">lavanda se lleva el 40%</strong> porque es el fondo por defecto, y los <strong style="color:var(--base);">dos oscuros juntos no pasan del 20%</strong> &mdash; en el momento en que una pieza se vuelve mayoritariamente oscura, deja de parecerse a la marca.</p>
+
+  <div class="callout resolved" style="margin-top:18px;">
+    <span class="tag">DOS DE ESTOS COLORES SON DEL GRUPO</span>
+    <p><strong style="color:var(--base);">Lavanda Linex #DDE1FF</strong> y <strong style="color:var(--base);">Negro Linex #080808</strong> están a <strong style="color:var(--base);">&Delta;E 0.0</strong> de dos colores que Linex&nbsp;Trip ya tenía. Son idénticos, no parecidos &mdash; el apellido &laquo;Linex&raquo; en el nombre era la pista.<br>
+    No son colores de Travel: son <strong style="color:var(--base);">tokens del grupo</strong>. Cambiar uno aquí lo cambia en Trip, y al revés. Cualquier ajuste sobre esos dos deja de ser una decisión de marca y pasa a ser una decisión de grupo.</p>
+  </div>
+</section>
+
+<section class="section-block">
+  <h2 class="section-title">Rol de cada color</h2>
+  <div class="grid-3" style="gap:20px;">
 
     <div class="card tint">
       <div style="width:100%; height:44px; border-radius:8px; background:#DDE1FF; border:1px solid rgba(var(--base-rgb),0.14); margin-bottom:12px;"></div>
       <strong style="font-size:13px; color:var(--base);">Lavanda Linex</strong>
       <p class="small-note" style="margin:4px 0 6px; font-weight:700; color:var(--apoyo);">Base &middot; 40%</p>
       <p class="small-note" style="margin:0 0 8px; font-weight:700;">#DDE1FF &middot; RGB 221, 225, 255</p>
-      <p class="small-note">El fondo por defecto de la marca, y el de este manual. Sostiene la tinta oscura a <strong style="color:var(--base);">13.50:1</strong>. <strong style="color:var(--base);">Nunca como texto</strong>: sobre blanco da 1.29:1.</p>
+      <p class="small-note">El fondo por defecto de la marca, y el de este manual. Sostiene la tinta oscura a 13.50:1 y es uno de los fondos permitidos para el logotipo. <strong style="color:var(--base);">Nunca como texto:</strong> sobre blanco da 1.29:1.</p>
     </div>
 
     <div class="card tint">
@@ -86,7 +130,7 @@
       <strong style="font-size:13px; color:var(--base);">Azul violeta</strong>
       <p class="small-note" style="margin:4px 0 6px; font-weight:700; color:var(--apoyo);">Acento &middot; 20%</p>
       <p class="small-note" style="margin:0 0 8px; font-weight:700;">#5B5CFF &middot; RGB 91, 92, 255</p>
-      <p class="small-note">El color de la palabra <em>Travel</em>. Sobre blanco da <strong style="color:var(--base);">4.75:1</strong> y sirve como texto. <strong style="color:var(--base);">Sobre Lavanda da 3.69:1 y no sirve</strong> &mdash; ver la regla dura abajo.</p>
+      <p class="small-note">El color de la palabra <em>Travel</em>. Trabaja <strong style="color:var(--base);">como superficie</strong>, con texto blanco encima (4.75:1). Como tinta solo aguanta el blanco, y <strong style="color:var(--base);">sobre lavanda da 3.69:1</strong> &mdash; ver la regla de acción.</p>
     </div>
 
     <div class="card tint">
@@ -94,7 +138,7 @@
       <strong style="font-size:13px; color:var(--base);">Violeta</strong>
       <p class="small-note" style="margin:4px 0 6px; font-weight:700; color:var(--apoyo);">Apoyo &middot; 10%</p>
       <p class="small-note" style="margin:0 0 8px; font-weight:700;">#6D28D9 &middot; RGB 109, 40, 217</p>
-      <p class="small-note">Títulos, iconografía y superficies de realce. Es el violeta que <em>sí</em> aguanta la Lavanda: <strong style="color:var(--base);">5.51:1</strong>. Sobre Azul Noche da 2.45:1 y desaparece.</p>
+      <p class="small-note"><strong style="color:var(--base);">El color de la acción.</strong> Es el violeta que sí aguanta la lavanda (5.51:1) y el blanco (7.10:1): enlaces, botones e iconografía. Sobre azul noche da 2.45:1 y desaparece.</p>
     </div>
 
     <div class="card tint">
@@ -102,7 +146,7 @@
       <strong style="font-size:13px; color:var(--base);">Lila claro</strong>
       <p class="small-note" style="margin:4px 0 6px; font-weight:700; color:var(--apoyo);">Respiro &middot; 10%</p>
       <p class="small-note" style="margin:0 0 8px; font-weight:700;">#E0B3FF &middot; RGB 224, 179, 255</p>
-      <p class="small-note">Superficies suaves y degradados. <strong style="color:var(--base);">Solo como fondo</strong>: como tinta sobre blanco da 1.74:1. Sobre Azul Noche sí se lee (9.99:1) y ahí sirve para antetítulos y letra chica.</p>
+      <p class="small-note">Superficies suaves y degradados. <strong style="color:var(--base);">Solo como fondo</strong> sobre claro: como tinta da 1.74:1 sobre blanco. Sobre azul noche sí se lee (9.99:1) y ahí hace los antetítulos y la letra chica.</p>
     </div>
 
     <div class="card tint">
@@ -110,7 +154,7 @@
       <strong style="font-size:13px; color:var(--base);">Azul Noche Linex</strong>
       <p class="small-note" style="margin:4px 0 6px; font-weight:700; color:var(--apoyo);">Contraste &middot; 10%</p>
       <p class="small-note" style="margin:0 0 8px; font-weight:700;">#17153B &middot; RGB 23, 21, 59</p>
-      <p class="small-note">La tinta: títulos y texto principal. <strong style="color:var(--base);">17.40:1</strong> sobre blanco y <strong style="color:var(--base);">13.50:1</strong> sobre la Lavanda. También es el fondo oscuro de la marca.</p>
+      <p class="small-note">La tinta de la marca: títulos y texto principal. 17.40:1 sobre blanco y 13.50:1 sobre lavanda. También es la superficie oscura, y ahí todo lo que va encima es blanco, lavanda o lila.</p>
     </div>
 
     <div class="card tint">
@@ -118,48 +162,99 @@
       <strong style="font-size:13px; color:var(--base);">Negro Linex</strong>
       <p class="small-note" style="margin:4px 0 6px; font-weight:700; color:var(--apoyo);">Reserva &middot; 10%</p>
       <p class="small-note" style="margin:0 0 8px; font-weight:700;">#080808 &middot; RGB 8, 8, 8</p>
-      <p class="small-note">Impresión a un solo color y procesos que no admiten otra cosa. <strong style="color:var(--base);">No reemplaza al Azul Noche en digital</strong>: son dos decisiones distintas, no dos nombres del mismo color.</p>
+      <p class="small-note">Impresión a un solo color y procesos que no admiten otra cosa. <strong style="color:var(--base);">No reemplaza al azul noche en digital:</strong> son dos decisiones distintas, no dos nombres del mismo color.</p>
     </div>
 
   </div>
-  <p class="small-note" style="margin-top:14px;">El manual oficial no entrega valores CMYK. Para impresión hay que pedir la conversión al proveedor y registrarla aquí cuando llegue: convertir a ojo es exactamente como una marca termina con dos versiones de su propio color.</p>
+  <p class="small-note" style="max-width:76ch; margin-top:16px;">El manual oficial no entrega valores CMYK. Para impresión hay que pedirle la conversión al proveedor y registrarla aquí cuando llegue. Convertir a ojo es exactamente como una marca termina con dos versiones de su propio color.</p>
 </section>
 
 <section class="section-block">
-  <h2 class="section-title">La regla dura</h2>
-  <div class="callout" style="background:rgba(var(--coral-rgb),0.07); border:1px solid rgba(var(--coral-rgb),0.28);">
-    <span class="tag" style="color:var(--coral);">MEDIDO &middot; 3.69:1</span>
-    <p><strong style="color:var(--base);">El Azul violeta sobre Lavanda Linex no alcanza para texto de lectura.</strong><br>
-    Y es justo la combinación que más aparece en las piezas de la marca, porque la Lavanda es el fondo por defecto y el Azul violeta es el acento.<br><br>
-    Alcanza para el <strong style="color:var(--base);">logotipo</strong>, que es un objeto gráfico y necesita 3:1. No alcanza para <strong style="color:var(--base);">un titular, un enlace, una etiqueta o un pie de foto</strong>, que necesitan 4.5:1.<br>
-    Sobre Lavanda, lo que se lee va en <strong style="color:var(--base);">Azul Noche</strong> (13.50:1) o en <strong style="color:var(--base);">Violeta</strong> (5.51:1).</p>
+  <h2 class="section-title">Qué combinaciones se permiten</h2>
+  <p class="small-note" style="max-width:76ch; margin-bottom:16px;">Se lee &ldquo;tinta sobre fondo&rdquo;. El número es el contraste medido de esa pareja.</p>
+  <div class="grid-3" style="gap:12px;">
+
+    <div>
+      <div style="background:#DDE1FF; color:#17153B; border:1px solid rgba(var(--base-rgb),0.14); border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;">Azul Noche / Lavanda</div>
+      <p class="small-note" style="margin-top:6px;">La base de lectura del sistema. <strong style="color:var(--base);">13.50:1</strong></p>
+    </div>
+
+    <div>
+      <div style="background:#FFFFFF; color:#17153B; border:1px solid rgba(var(--base-rgb),0.14); border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;">Azul Noche / Blanco</div>
+      <p class="small-note" style="margin-top:6px;">Documentos y superficies de lectura. <strong style="color:var(--base);">17.40:1</strong></p>
+    </div>
+
+    <div>
+      <div style="background:#17153B; color:#FFFFFF; border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;">Blanco / Azul Noche</div>
+      <p class="small-note" style="margin-top:6px;">Piezas oscuras y fondos dominantes. <strong style="color:var(--base);">17.40:1</strong></p>
+    </div>
+
+    <div>
+      <div style="background:#6D28D9; color:#FFFFFF; border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;">Blanco / Violeta</div>
+      <p class="small-note" style="margin-top:6px;">El texto dentro del botón. <strong style="color:var(--base);">7.10:1</strong></p>
+    </div>
+
+    <div>
+      <div style="background:#DDE1FF; color:#6D28D9; border:1px solid rgba(var(--base-rgb),0.14); border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;">Violeta / Lavanda</div>
+      <p class="small-note" style="margin-top:6px;">Enlaces e iconografía sobre el fondo de marca. <strong style="color:var(--base);">5.51:1</strong></p>
+    </div>
+
+    <div>
+      <div style="background:#5B5CFF; color:#FFFFFF; border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;">Blanco / Azul violeta</div>
+      <p class="small-note" style="margin-top:6px;">Botón con el acento del logotipo. <strong style="color:var(--base);">4.75:1</strong></p>
+    </div>
+
+    <div>
+      <div style="background:#17153B; color:#E0B3FF; border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;">Lila claro / Azul Noche</div>
+      <p class="small-note" style="margin-top:6px;">Antetítulos y letra chica sobre oscuro. <strong style="color:var(--base);">9.99:1</strong></p>
+    </div>
+
+    <div>
+      <div style="background:#17153B; color:#DDE1FF; border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;">Lavanda / Azul Noche</div>
+      <p class="small-note" style="margin-top:6px;">Texto secundario sobre oscuro. <strong style="color:var(--base);">13.50:1</strong></p>
+    </div>
+
+    <div>
+      <div style="background:#E0B3FF; color:#17153B; border:1px solid rgba(var(--base-rgb),0.14); border-radius:var(--radius-s); padding:20px 16px; font-weight:800; font-size:14px;">Azul Noche / Lila claro</div>
+      <p class="small-note" style="margin-top:6px;">Tarjetas y avisos de realce. <strong style="color:var(--base);">9.99:1</strong></p>
+    </div>
+
+  </div>
+  <p class="small-note" style="max-width:76ch; margin-top:16px;">La matriz completa, con las parejas que <em>no</em> se permiten y por qué, está en la <a href="07-accesibilidad.html">sección 07</a>.</p>
+</section>
+
+<section class="section-block">
+  <h2 class="section-title">La regla de acción: el Violeta actúa, el Azul Noche habla</h2>
+  <p class="small-note" style="max-width:76ch; margin-bottom:18px;">Vale para todo lo que sale a nombre de Linex Travel &mdash; presentaciones, correo, papelería, souvenir, redes y sitio. En corto: <strong style="color:var(--base);">si se puede tocar, es violeta; si se lee, es azul noche.</strong></p>
+
+  <table class="rtable">
+    <tr><td class="name">Botón o CTA<span class="muted">tiene superficie: se toca</span></td><td>Relleno <strong>Violeta #6D28D9</strong> con el texto en <strong>blanco</strong>. 7.10:1. Con el acento del logotipo, relleno <strong>Azul violeta #5B5CFF</strong> y texto blanco: 4.75:1, que pasa con menos margen.</td></tr>
+    <tr><td class="name">Un dato, un porcentaje<span class="muted">no es una acción</span></td><td><strong>Va en azul noche, en negrita.</strong> El violeta no destaca datos: se reserva entero para lo que se puede tocar. Un dato se destaca con peso, con tamaño o metiéndolo en una tarjeta.</td></tr>
+    <tr><td class="name">Enlace en texto<span class="muted">sobre lavanda o blanco</span></td><td>Texto en <strong>Violeta</strong>. 5.51:1 sobre lavanda y 7.10:1 sobre blanco. Con subrayado, para no señalar solo con color.</td></tr>
+    <tr><td class="name">Enlace en texto<span class="muted">sobre azul noche</span></td><td>Texto en <strong>Lila claro</strong>, 9.99:1, o en <strong>blanco</strong>, 17.40:1. <strong>Ningún violeta</strong>: sobre oscuro los dos quedan por debajo de 4:1.</td></tr>
+    <tr><td class="name">Ícono<span class="muted">sobre fondo claro</span></td><td><strong>Violeta.</strong> 7.10:1 sobre blanco y 5.51:1 sobre lavanda, muy por encima del 3:1 que pide un objeto gráfico.</td></tr>
+    <tr><td class="name">Énfasis en un titular</td><td>Una palabra en <strong>Violeta</strong> dentro de un titular en azul noche. Nunca el titular entero en color.</td></tr>
+  </table>
+
+  <div class="callout" style="background:var(--coral-tint); border:1px solid rgba(var(--coral-rgb),0.3); margin-top:20px;">
+    <span class="tag" style="color:var(--coral);">LA TRAMPA DE ESTA PALETA</span>
+    <p>El color que todo el mundo asocia con la marca es el <strong style="color:var(--base);">Azul violeta</strong>, porque es el de la palabra <em>Travel</em>. Por eso el reflejo natural es pintar con él los enlaces y los titulares.<br>
+    Sobre el fondo lavanda de la marca, el Azul violeta da <strong style="color:var(--base);">3.69:1</strong> y no llega a AA. Alcanza para el <strong style="color:var(--base);">logotipo</strong>, que es un objeto gráfico y necesita 3:1; no alcanza para nada que se lea.<br>
+    Por eso la acción es <strong style="color:var(--base);">Violeta</strong> y no Azul violeta: <strong style="color:var(--base);">el Azul violeta rellena, el Violeta escribe.</strong></p>
+  </div>
+
+  <div class="callout" style="background:rgba(var(--apoyo-rgb),0.07); border:1px solid rgba(var(--apoyo-rgb),0.28); margin-top:14px;">
+    <span class="tag" style="color:var(--apoyo);">POR QUÉ UN SOLO COLOR DE ACCIÓN</span>
+    <p>Un color de acción funciona por exclusividad. Si el mismo violeta pinta un botón en una pieza y un porcentaje en la siguiente, deja de responder la única pregunta que tiene que responder de un vistazo: <em>&iquest;dónde toco?</em></p>
   </div>
 </section>
 
-<section class="section-block">
-  <h2 class="section-title">Qué se puede poner sobre qué</h2>
-  <p>Todo medido con la fórmula de WCAG&nbsp;2.1. El umbral de texto es 4.5:1.</p>
-  <div class="table-scroll">
-    <table class="rtable">
-      <tr><td class="name">&nbsp;</td><td><strong>sobre Blanco</strong></td><td><strong>sobre Lavanda</strong></td><td><strong>sobre Lila claro</strong></td><td><strong>sobre Azul Noche</strong></td></tr>
-      <tr><td class="name">Azul Noche</td><td>17.40 &check;</td><td>13.50 &check;</td><td>9.99 &check;</td><td>&mdash;</td></tr>
-      <tr><td class="name">Negro Linex</td><td>20.03 &check;</td><td>15.53 &check;</td><td>11.50 &check;</td><td>1.15 &times;</td></tr>
-      <tr><td class="name">Violeta</td><td>7.10 &check;</td><td>5.51 &check;</td><td>4.08 &times;</td><td>2.45 &times;</td></tr>
-      <tr><td class="name">Azul violeta</td><td>4.75 &check;</td><td>3.69 &times;</td><td>2.73 &times;</td><td>3.66 &times;</td></tr>
-      <tr><td class="name">Lavanda</td><td>1.29 &times;</td><td>&mdash;</td><td>&mdash;</td><td>13.50 &check;</td></tr>
-      <tr><td class="name">Lila claro</td><td>1.74 &times;</td><td>&mdash;</td><td>&mdash;</td><td>9.99 &check;</td></tr>
-      <tr><td class="name">Blanco</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>17.40 &check;</td></tr>
-    </table>
-  </div>
-  <p class="small-note" style="margin-top:12px;">Lo que hay que leer de esta tabla: <strong style="color:var(--base);">sobre el fondo oscuro de la marca no sirve ninguno de los dos violetas.</strong> Ahí el texto va en blanco, en Lavanda o en Lila claro. El acento, sobre oscuro, se usa como relleno &mdash; nunca como tinta.</p>
-</section>
-
-<section class="section-block">
-  <h2 class="section-title">Dos de estos colores no son de Travel</h2>
-  <div class="callout resolved">
-    <span class="tag">TOKENS DEL GRUPO</span>
-    <p><strong style="color:var(--base);">Lavanda Linex #DDE1FF</strong> y <strong style="color:var(--base);">Negro Linex #080808</strong> están a <strong style="color:var(--base);">&Delta;E 0.0</strong> de dos colores que Linex&nbsp;Trip ya tenía en su paleta. Son idénticos, no parecidos.<br>
-    El apellido &laquo;Linex&raquo; en el nombre era la pista: no son colores de Travel, son <strong style="color:var(--base);">tokens del grupo</strong>. Cambiar uno aquí lo cambia en Trip, y al revés. Cualquier ajuste sobre esos dos deja de ser una decisión de marca y pasa a ser una decisión de grupo.</p>
+<section class="section-block card on-navy" style="padding:26px 28px;">
+  <h2 class="section-title on-dark">El mínimo que se respeta siempre</h2>
+  <div class="grid-3" style="gap:20px;">
+    <div class="field on-dark"><span class="k">Texto corrido</span><span class="v">4.5:1 como mínimo, sin excepciones.</span></div>
+    <div class="field on-dark"><span class="k">Titulares</span><span class="v">3:1 por el tamaño. Aun así casi todos los de Travel son azul noche sobre claro o blanco sobre azul noche, que pasan de sobra.</span></div>
+    <div class="field on-dark"><span class="k">Los tres restringidos</span><span class="v">Lavanda y lila claro no son tinta sobre fondo claro: 1.29:1 y 1.74:1. El azul violeta solo aguanta el blanco &mdash; sobre lavanda, sobre lila y sobre oscuro se queda corto.</span></div>
   </div>
 </section>
 
