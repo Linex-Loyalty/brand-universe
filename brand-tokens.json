@@ -295,11 +295,11 @@
       "iconografia": "grupo",
       "radios": { "s": 6, "btn": 12, "m": 16, "l": 24, "pill": 999 },
       "logos": {
-        "principal": "Logos/logos-oficiales/linex-go/LinexGo-logo-color 1.svg",
-        "principal_png": "Logos/logos-oficiales/linex-go/LinexGo-logo-color 1.png",
-        "negativo": "Logos/logos-oficiales/linex-go/LinexTrip-logo-negativo 1.svg",
-        "monocromo": "Logos/logos-oficiales/linex-go/LinexTrip-logo-monocromo 1.svg",
-        "negro": "Logos/logos-oficiales/linex-go/LinexTrip-logo-negro 1.svg",
+        "principal": "Logos/logos-oficiales/linex-go/LinexGo-logo-color.svg",
+        "principal_png": "Logos/logos-oficiales/linex-go/LinexGo-logo-color.png",
+        "negativo": "Logos/logos-oficiales/linex-go/LinexGo-logo-negativo.svg",
+        "monocromo": "Logos/logos-oficiales/linex-go/LinexGo-logo-monocromo.svg",
+        "negro": "Logos/logos-oficiales/linex-go/LinexGo-logo-negro.svg",
         "editable": null,
         "secundario": null,
         "vertical": null,
@@ -321,11 +321,12 @@
       "logo_revision": {
         "fecha": "2026-09-17",
         "vectorial": true,
-        "nombres_incorrectos": [
-          "LinexTrip-logo-monocromo 1.svg",
-          "LinexTrip-logo-negativo 1.svg",
-          "LinexTrip-logo-negro 1.svg"
-        ],
+        "renombrado": {
+          "fecha": "2026-09-17",
+          "por_que": "Tres de los cuatro archivos llegaron nombrados 'LinexTrip' estando en la carpeta de Linex Go, y los cuatro traían un sufijo ' 1' con espacio. Se renombraron con git mv para conservar el historial, adoptando la misma convención que Linex Trip.",
+          "de": ["LinexGo-logo-color 1", "LinexTrip-logo-monocromo 1", "LinexTrip-logo-negativo 1", "LinexTrip-logo-negro 1"],
+          "a": ["LinexGo-logo-color", "LinexGo-logo-monocromo", "LinexGo-logo-negativo", "LinexGo-logo-negro"]
+        },
         "duda_abierta": "El archivo 'negro' usa fill=\"black\", y la regla 04 dice que el 'Linex' nunca va en negro. El manual define una sola versión monocromática, no dos. Falta decidir si 'monocromo' y 'negro' son la misma pieza o dos distintas."
       },
       "logo_fondos": {
@@ -370,8 +371,7 @@
       "manual": "manual-linex-go/",
       "contexto": "contexto-linex-go.md",
       "pendientes": [
-        "Tres de los cuatro archivos se llaman LinexTrip estando en la carpeta de Go",
-        "Faltan las versiones vertical, avatar de redes y con eslogan",
+        "Faltan las versiones vertical, avatar de redes y con eslogan — el vertical no es prioritario por ahora",
         "Faltan los logos de Disney y Assistviaje",
         "Las seis fichas de audiencia están sin perfilar",
         "Sin lista de claims autorizados con su evidencia",
