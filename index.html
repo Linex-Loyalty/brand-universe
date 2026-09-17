@@ -162,6 +162,27 @@ h1 {
 .pill.live { background: var(--ok-bg); color: var(--ok); }
 .pill.soon { background: var(--wait-bg); color: var(--wait); }
 
+/* Estado de trabajo: una marca detenida por decisión del dueño de marca
+   no puede verse igual que una activa, o alguien retoma lo que ya se paró. */
+.pills { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.pill.hold {
+  background: transparent; color: var(--ink);
+  border: 1px solid var(--ink);
+}
+.pausa {
+  margin-top: 12px; padding: 11px 13px;
+  background: var(--sunk); border-radius: var(--radius-btn);
+  border-left: 3px solid var(--ink-2);
+}
+.pausa p { margin: 0; font-size: 13px; color: var(--ink-2); text-wrap: pretty; }
+.pausa-q b { color: var(--ink); font-weight: 600; }
+.pausa-r { margin-top: 9px !important; }
+.pausa-r span {
+  display: block; margin-bottom: 3px;
+  font-size: 10px; font-weight: 600; letter-spacing: .11em;
+  text-transform: uppercase; color: var(--ink-2);
+}
+
 .af {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 10px; margin-top: 14px;
@@ -201,14 +222,50 @@ h1 {
 .btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 .acceso.sin span { font-size: 13px; color: var(--ink-3); font-style: italic; }
 
-/* ---------- pendientes ---------- */
-.gaps { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
-.gap, .stop {
-  font-size: 11.5px; font-family: var(--mono);
-  border-radius: var(--radius-s); padding: 3px 9px;
+/* ---------- pendientes ----------
+   Colapsados: el conteo es el dato de la tarjeta, la lista es el detalle.
+   Son <li> y no chips porque el contenido son frases —la más larga de hoy
+   tiene 261 caracteres— y un chip de 261 caracteres es un párrafo con
+   borde. La monoespaciada se queda para el dato: hex y dominio. */
+.gaps {
+  margin-top: 16px; padding-top: 13px; border-top: 1px solid var(--line);
 }
-.gap { color: var(--ink-3); border: 1px dashed var(--line-2); }
-.stop { color: var(--stop); border: 1px solid var(--stop); background: var(--stop-bg); }
+.gaps > summary {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12.5px; color: var(--ink-2);
+  cursor: pointer; list-style: none; padding: 2px 0;
+}
+.gaps > summary::-webkit-details-marker { display: none; }
+/* Triángulo propio: el marcador nativo no se comporta igual en todos los
+   navegadores, y este es el único gesto de la página. */
+.gaps > summary::before {
+  content: ""; flex: none; width: 6px; height: 6px;
+  border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+  transform: rotate(-45deg); transition: transform .15s ease;
+}
+.gaps[open] > summary::before { transform: rotate(45deg); }
+.gaps > summary:hover { color: var(--ink); }
+.gaps > summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.gaps > summary b { color: var(--ink); font-weight: 600; }
+.sum-stop { color: var(--stop); font-weight: 600; }
+
+.gap-list { list-style: none; margin: 12px 0 2px; padding: 0; display: grid; gap: 8px; }
+.gap-list li {
+  position: relative; padding-left: 16px; max-width: 72ch;
+  font-size: 13px; line-height: 1.45; color: var(--ink-2); text-wrap: pretty;
+}
+.gap-list li::before {
+  content: ""; position: absolute; left: 1px; top: .52em;
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--ink-3);
+}
+/* Un bloqueante no se lee en la misma fila que lo demás. */
+.gap-list li.stop {
+  color: var(--stop); background: var(--stop-bg);
+  border-left: 3px solid var(--stop);
+  border-radius: var(--radius-s); padding: 9px 12px;
+}
+.gap-list li.stop::before { display: none; }
 
 /* ---------- sub-marcas anidadas ---------- */
 .subs { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); }
@@ -267,7 +324,9 @@ footer p { margin: 0 0 4px; }
           <h3>Linex Capital</h3>
           <p class="dom">linexcapital.com</p>
         </div>
-        <span class="pill soon">Pendiente</span>
+        <div class="pills">
+          <span class="pill soon">Pendiente</span>
+        </div>
       </div>
       <p class="rol">El fondo — comunicación corporativa, global y estático</p>
       <div class="af">
@@ -275,14 +334,17 @@ footer p { margin: 0 0 4px; }
         <div><h4>Filtra</h4><p>Clientes operativos, usuarios finales y prospectos pequeños — aquí no hay producto ni precio.</p></div>
       </div>
       <p class="acceso sin"><span>Sin manual todavía</span></p>
-      <div class="gaps">
-        <span class="gap">Sin logo</span>
-        <span class="gap">Sin paleta</span>
-        <span class="gap">Sin voz documentada</span>
-        <span class="gap">Sin manual</span>
-        <span class="gap">Sin carpeta en Logos/logos-oficiales/</span>
-        <span class="gap">No aparece en ninguno de los dos contextos de marca</span>
-      </div>
+      <details class="gaps">
+        <summary><b>6</b> pendientes</summary>
+        <ul class="gap-list">
+          <li class="gap">Sin logo</li>
+          <li class="gap">Sin paleta</li>
+          <li class="gap">Sin voz documentada</li>
+          <li class="gap">Sin manual</li>
+          <li class="gap">Sin carpeta en Logos/logos-oficiales/</li>
+          <li class="gap">No aparece en ninguno de los dos contextos de marca</li>
+        </ul>
+      </details>
     </article>
   </section>
 
@@ -298,10 +360,17 @@ footer p { margin: 0 0 4px; }
           <h3>Linex Loyalty</h3>
           <p class="dom">linex-loyalty.com</p>
         </div>
-        <span class="pill soon">Pendiente</span>
+        <div class="pills">
+          <span class="pill soon">Pendiente</span>
+          <span class="pill hold">en pausa</span>
+        </div>
       </div>
       <p class="rol">El puerto espacial — punto de entrada a la constelación, no una caja de pago</p>
       <p class="genio">Genio · <b>Ixar</b> — Se pronuncia ee-SAR. El genio maestro: habla por toda la constelación, explica las estrellas y convoca a los otros genios para armar una solución a la medida.</p>
+      <div class="pausa">
+        <p class="pausa-q"><b>En pausa</b> · 2026-09-17 — Linex Loyalty queda en pausa por decisión del dueño de marca. No se trabaja su manual ni se completa su paleta por ahora.</p>
+        <p class="pausa-r"><span>Al retomar</span>Lo primero es fijar su base oscura: el Verde #C5F04A da 1.32:1 sobre blanco y no tiene dónde vivir sin ella.</p>
+      </div>
       <div class="af">
         <div><h4>Atrae</h4><p>Bancos y grandes corporaciones que evalúan lealtad a escala. La audiencia big scale.</p></div>
         <div><h4>Filtra</h4><p>Cazadores de ofertas, compradores de una sola función y visitantes casuales — se enrutan a una estrella.</p></div>
@@ -310,15 +379,18 @@ footer p { margin: 0 0 4px; }
         <span class="sw"><i style="background:#C5F04A"></i>Verde <code>#C5F04A</code></span>
       </div>
       <p class="acceso sin"><span>Sin manual todavía</span></p>
-      <div class="gaps">
-        <span class="gap">Sin base oscura definida — y el Verde la necesita para existir</span>
-        <span class="gap">Sin nombre de color para el Verde</span>
-        <span class="gap">Sin paleta completa</span>
-        <span class="gap">Sin logo</span>
-        <span class="gap">Sin voz documentada</span>
-        <span class="gap">Sin manual</span>
-        <span class="gap">El Verde queda a la misma luminosidad que el Amarillo de Trip (L* 89.2 vs 88.1): se distinguen por tono, no por valor</span>
-      </div>
+      <details class="gaps">
+        <summary><b>7</b> pendientes</summary>
+        <ul class="gap-list">
+          <li class="gap">Sin base oscura definida — y el Verde la necesita para existir</li>
+          <li class="gap">Sin nombre de color para el Verde</li>
+          <li class="gap">Sin paleta completa</li>
+          <li class="gap">Sin logo</li>
+          <li class="gap">Sin voz documentada</li>
+          <li class="gap">Sin manual</li>
+          <li class="gap">El Verde queda a la misma luminosidad que el Amarillo de Trip (L* 89.2 vs 88.1): se distinguen por tono, no por valor</li>
+        </ul>
+      </details>
     </article>
   </section>
 
@@ -334,7 +406,9 @@ footer p { margin: 0 0 4px; }
           <h3>Linex Travel</h3>
           <p class="dom">linextravel.com</p>
         </div>
-        <span class="pill soon">Pendiente</span>
+        <div class="pills">
+          <span class="pill soon">Pendiente</span>
+        </div>
       </div>
       <p class="rol">Estrella — opera B2B2C, B2B y B2C</p>
       <div class="af">
@@ -342,13 +416,16 @@ footer p { margin: 0 0 4px; }
         <div><h4>Filtra</h4><p>Inversionistas y necesidades ajenas al viaje — el Group Bar los enruta.</p></div>
       </div>
       <p class="acceso sin"><span>Sin manual todavía</span></p>
-      <div class="gaps">
-        <span class="gap">Sin logo</span>
-        <span class="gap">Sin paleta</span>
-        <span class="gap">Sin voz documentada</span>
-        <span class="gap">Sin manual propio</span>
-        <span class="gap">Sus dos sub-marcas están mejor documentadas que ella</span>
-      </div>
+      <details class="gaps">
+        <summary><b>5</b> pendientes</summary>
+        <ul class="gap-list">
+          <li class="gap">Sin logo</li>
+          <li class="gap">Sin paleta</li>
+          <li class="gap">Sin voz documentada</li>
+          <li class="gap">Sin manual propio</li>
+          <li class="gap">Sus dos sub-marcas están mejor documentadas que ella</li>
+        </ul>
+      </details>
       <div class="subs">
         <p class="subs-label">Sub-marcas de canal — dentro de la estrella, nunca estrella propia</p>
         <div class="subs-grid">
@@ -358,7 +435,9 @@ footer p { margin: 0 0 4px; }
           <h3>Linex Go</h3>
           <p class="dom">linexgo.com</p>
         </div>
-        <span class="pill live">Vigente</span>
+        <div class="pills">
+          <span class="pill live">Vigente</span>
+        </div>
       </div>
       <p class="rol">Sub-marca B2B dentro de Linex Travel — la cara comercial hacia agencias y operadores</p>
       <div class="af">
@@ -375,19 +454,22 @@ footer p { margin: 0 0 4px; }
         <span class="sw"><i style="background:#E6D5B8"></i>Arena <code>#E6D5B8</code> <em>4%</em></span>
       </div>
       <p class="acceso"><a class="btn" href="manual-linex-go/index.html">Abrir el manual de Linex Go</a></p>
-      <div class="gaps">
-        <span class="gap">Faltan las versiones vertical, avatar de redes y con eslogan — el vertical no es prioritario por ahora</span>
-        <span class="gap">Faltan los logos de Disney y Assistviaje</span>
-        <span class="gap">Las seis fichas de audiencia están sin perfilar</span>
-        <span class="gap">Sin lista de claims autorizados con su evidencia</span>
-        <span class="gap">Sin lista de términos prohibidos validada</span>
-        <span class="gap">Sin texto legal obligatorio por tipo de pieza</span>
-        <span class="gap">Sin nombre corporativo legal aprobado</span>
-        <span class="gap">Sin plazo definido para la transición UltraGo → Linex Go</span>
-        <span class="gap">Sin banco de imágenes propio</span>
-        <span class="gap">Las piezas producidas se ajustan CON EL DISEÑADOR (decisión 17-sep-2026): el conflicto de la tarjeta —fondo petróleo con logo negativo según la sección de canal, cara clara según lo producido— y los radios de 20 y 28 px que quedaron fuera de la escala del grupo</span>
-        <span class="gap">Solo Instagram tiene reglas escritas; las demás redes no</span>
-      </div>
+      <details class="gaps">
+        <summary><b>11</b> pendientes</summary>
+        <ul class="gap-list">
+          <li class="gap">Faltan las versiones vertical, avatar de redes y con eslogan — el vertical no es prioritario por ahora</li>
+          <li class="gap">Faltan los logos de Disney y Assistviaje</li>
+          <li class="gap">Las seis fichas de audiencia están sin perfilar</li>
+          <li class="gap">Sin lista de claims autorizados con su evidencia</li>
+          <li class="gap">Sin lista de términos prohibidos validada</li>
+          <li class="gap">Sin texto legal obligatorio por tipo de pieza</li>
+          <li class="gap">Sin nombre corporativo legal aprobado</li>
+          <li class="gap">Sin plazo definido para la transición UltraGo → Linex Go</li>
+          <li class="gap">Sin banco de imágenes propio</li>
+          <li class="gap">Las piezas producidas se ajustan CON EL DISEÑADOR (decisión 17-sep-2026): el conflicto de la tarjeta —fondo petróleo con logo negativo según la sección de canal, cara clara según lo producido— y los radios de 20 y 28 px que quedaron fuera de la escala del grupo</li>
+          <li class="gap">Solo Instagram tiene reglas escritas; las demás redes no</li>
+        </ul>
+      </details>
     </article>
     <article class="marca" style="--acento:#00B5F5">
       <div class="marca-top">
@@ -395,7 +477,9 @@ footer p { margin: 0 0 4px; }
           <h3>Linex Trip</h3>
           <p class="dom">linextrip.com</p>
         </div>
-        <span class="pill live">Vigente</span>
+        <div class="pills">
+          <span class="pill live">Vigente</span>
+        </div>
       </div>
       <p class="rol">Sub-marca B2C dentro de Linex Travel — reserva de viajes para el viajero final</p>
       <div class="af">
@@ -412,14 +496,17 @@ footer p { margin: 0 0 4px; }
         <span class="sw"><i style="background:#ECE200"></i>Amarillo <code>#ECE200</code> <em>4%</em></span>
       </div>
       <p class="acceso"><a class="btn" href="manual-linex-trip/index.html">Abrir el manual de Linex Trip</a></p>
-      <div class="gaps">
-        <span class="gap">Isotipo sin decidir — siete propuestas en exploración abierta</span>
-        <span class="gap">Sin versión vertical ni avatar de redes</span>
-        <span class="gap">Las siete propuestas están dibujadas con el Índigo viejo y habría que recolorearlas</span>
-        <span class="gap">Sin banco de fotografía propio</span>
-        <span class="gap">Claims secundarios sin aprobar</span>
-        <span class="gap">Repositorio central de activos pendiente de validar con negocio</span>
-      </div>
+      <details class="gaps">
+        <summary><b>6</b> pendientes</summary>
+        <ul class="gap-list">
+          <li class="gap">Isotipo sin decidir — siete propuestas en exploración abierta</li>
+          <li class="gap">Sin versión vertical ni avatar de redes</li>
+          <li class="gap">Las siete propuestas están dibujadas con el Índigo viejo y habría que recolorearlas</li>
+          <li class="gap">Sin banco de fotografía propio</li>
+          <li class="gap">Claims secundarios sin aprobar</li>
+          <li class="gap">Repositorio central de activos pendiente de validar con negocio</li>
+        </ul>
+      </details>
     </article>
         </div>
       </div>
@@ -430,7 +517,9 @@ footer p { margin: 0 0 4px; }
           <h3>Linex Marketplace</h3>
           <p class="dom">linexmarketplace.com</p>
         </div>
-        <span class="pill soon">Pendiente</span>
+        <div class="pills">
+          <span class="pill soon">Pendiente</span>
+        </div>
       </div>
       <p class="rol">Estrella — el supermercado de redención</p>
       <div class="af">
@@ -438,13 +527,16 @@ footer p { margin: 0 0 4px; }
         <div><h4>Filtra</h4><p>Audiencias solo de viaje — se enrutan a Linex Travel.</p></div>
       </div>
       <p class="acceso sin"><span>Sin manual todavía</span></p>
-      <div class="gaps">
-        <span class="gap">Sin logo</span>
-        <span class="gap">Sin paleta</span>
-        <span class="gap">Sin voz documentada</span>
-        <span class="gap">Sin manual</span>
-        <span class="gap">Genio sin nombrar</span>
-      </div>
+      <details class="gaps">
+        <summary><b>5</b> pendientes</summary>
+        <ul class="gap-list">
+          <li class="gap">Sin logo</li>
+          <li class="gap">Sin paleta</li>
+          <li class="gap">Sin voz documentada</li>
+          <li class="gap">Sin manual</li>
+          <li class="gap">Genio sin nombrar</li>
+        </ul>
+      </details>
     </article>
     <article class="marca pend">
       <div class="marca-top">
@@ -452,7 +544,9 @@ footer p { margin: 0 0 4px; }
           <h3>Linex Rewards</h3>
           <p class="dom">linexrewards.com</p>
         </div>
-        <span class="pill soon">Pendiente</span>
+        <div class="pills">
+          <span class="pill soon">Pendiente</span>
+        </div>
       </div>
       <p class="rol">Estrella — el motor EARN</p>
       <p class="genio">Genio · <b>Milton</b> — Construye motores de puntos a la medida: reglas de acumulación, wallet y checkout.</p>
@@ -461,12 +555,15 @@ footer p { margin: 0 0 4px; }
         <div><h4>Filtra</h4><p>Compradores solo de redención — se enrutan a Travel o Marketplace.</p></div>
       </div>
       <p class="acceso sin"><span>Sin manual todavía</span></p>
-      <div class="gaps">
-        <span class="gap">Sin logo</span>
-        <span class="gap">Sin paleta</span>
-        <span class="gap">Sin voz documentada</span>
-        <span class="gap">Sin manual</span>
-      </div>
+      <details class="gaps">
+        <summary><b>4</b> pendientes</summary>
+        <ul class="gap-list">
+          <li class="gap">Sin logo</li>
+          <li class="gap">Sin paleta</li>
+          <li class="gap">Sin voz documentada</li>
+          <li class="gap">Sin manual</li>
+        </ul>
+      </details>
     </article>
     <article class="marca pend">
       <div class="marca-top">
@@ -474,7 +571,9 @@ footer p { margin: 0 0 4px; }
           <h3>Linex School</h3>
           <p class="dom">linexschool.com</p>
         </div>
-        <span class="pill soon">Pendiente</span>
+        <div class="pills">
+          <span class="pill soon">Pendiente</span>
+        </div>
       </div>
       <p class="rol">Estrella en expansión</p>
       <div class="af">
@@ -482,14 +581,17 @@ footer p { margin: 0 0 4px; }
         <div><h4>Filtra</h4><p>Sin definir.</p></div>
       </div>
       <p class="acceso sin"><span>Sin manual todavía</span></p>
-      <div class="gaps">
-        <span class="gap">Sin logo</span>
-        <span class="gap">Sin paleta</span>
-        <span class="gap">Sin voz documentada</span>
-        <span class="gap">Sin manual</span>
-        <span class="gap">Sin carpeta en Logos/logos-oficiales/</span>
-        <span class="gap">No aparece en ninguno de los dos contextos de marca</span>
-      </div>
+      <details class="gaps">
+        <summary><b>6</b> pendientes</summary>
+        <ul class="gap-list">
+          <li class="gap">Sin logo</li>
+          <li class="gap">Sin paleta</li>
+          <li class="gap">Sin voz documentada</li>
+          <li class="gap">Sin manual</li>
+          <li class="gap">Sin carpeta en Logos/logos-oficiales/</li>
+          <li class="gap">No aparece en ninguno de los dos contextos de marca</li>
+        </ul>
+      </details>
     </article>
   </section>
 

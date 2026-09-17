@@ -46,13 +46,57 @@ function swatches(m) {
   return `\n      <div class="pal">\n        ${chips}\n      </div>`;
 }
 
+/* Cincuenta pendientes repartidos en ocho marcas no caben abiertos: la
+ * tarjeta se vuelve su propia lista de tareas y entierra lo que la gente
+ * viene a buscar —la paleta y el botón del manual—. Van colapsados, con
+ * el conteo a la vista: el número es el dato, la lista es el detalle.
+ *
+ * <details> nativo, no JavaScript: abre con doble clic sobre el archivo,
+ * sin servidor, lo navega el teclado y se imprime desplegado.
+ *
+ * Un bloqueante nace abierto. Colapsar sirve para ordenar lo que espera,
+ * nunca para esconder lo que detiene.
+ *
+ * Y son <li>, no chips: el pendiente más largo de hoy tiene 261
+ * caracteres. Un chip de 261 caracteres no es un chip, es un párrafo con
+ * borde. */
 function pendientes(m) {
   if (!m.pendientes || !m.pendientes.length) return '';
-  const items = m.pendientes.map(p => {
-    const clase = /^BLOQUEANTE/.test(p) ? 'stop' : 'gap';
-    return `<span class="${clase}">${esc(p)}</span>`;
-  }).join('\n        ');
-  return `\n      <div class="gaps">\n        ${items}\n      </div>`;
+
+  const esBloqueante = p => /^BLOQUEANTE/.test(p);
+  const n = m.pendientes.length;
+  const bloqueantes = m.pendientes.filter(esBloqueante).length;
+
+  const items = m.pendientes.map(p =>
+    `<li class="${esBloqueante(p) ? 'stop' : 'gap'}">${esc(p)}</li>`
+  ).join('\n          ');
+
+  const resumen = `<b>${n}</b> ${n === 1 ? 'pendiente' : 'pendientes'}` +
+    (bloqueantes
+      ? ` <span class="sum-stop">· ${bloqueantes} bloqueante${bloqueantes === 1 ? '' : 's'}</span>`
+      : '');
+
+  return `\n      <details class="gaps"${bloqueantes ? ' open' : ''}>
+        <summary>${resumen}</summary>
+        <ul class="gap-list">
+          ${items}
+        </ul>
+      </details>`;
+}
+
+/* Una marca en pausa que se ve igual que una activa hace que alguien
+ * retome trabajo que el dueño de marca ya paró. El "al retomar" viaja con
+ * ella porque es lo único accionable del bloque: sin eso, retomar empieza
+ * por reconstruir por qué se paró. */
+function pausa(m) {
+  const e = m.estado_trabajo;
+  if (!e) return '';
+  const titulo = e.estado.charAt(0).toUpperCase() + e.estado.slice(1);
+  return `\n      <div class="pausa">
+        <p class="pausa-q"><b>${esc(titulo)}</b>${e.fecha ? ' · ' + esc(e.fecha) : ''} — ${esc(e.decision)}</p>${e.al_retomar
+          ? `\n        <p class="pausa-r"><span>Al retomar</span>${esc(e.al_retomar)}</p>`
+          : ''}
+      </div>`;
 }
 
 /* Un manual que no existe no lleva enlace. Nunca href="#". */
@@ -77,11 +121,16 @@ function tarjeta(m) {
           <h3>${esc(m.nombre)}</h3>
           <p class="dom">${esc(m.dominio)}</p>
         </div>
-        <span class="pill ${m.manual ? 'live' : 'soon'}">${m.manual ? 'Vigente' : 'Pendiente'}</span>
+        <div class="pills">
+          <span class="pill ${m.manual ? 'live' : 'soon'}">${m.manual ? 'Vigente' : 'Pendiente'}</span>${m.estado_trabajo
+            ? `
+          <span class="pill hold">${esc(m.estado_trabajo.estado)}</span>`
+            : ''}
+        </div>
       </div>
       <p class="rol">${esc(m.rol)}</p>${m.genio
         ? `\n      <p class="genio">Genio · <b>${esc(m.genio)}</b>${m.genio_nota ? ' — ' + esc(m.genio_nota) : ''}</p>`
-        : ''}
+        : ''}${pausa(m)}
       <div class="af">
         <div><h4>Atrae</h4><p>${esc(m.atrae)}</p></div>
         <div><h4>Filtra</h4><p>${esc(m.filtra)}</p></div>

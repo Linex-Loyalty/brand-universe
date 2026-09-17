@@ -151,6 +151,27 @@ h1 {
 .pill.live { background: var(--ok-bg); color: var(--ok); }
 .pill.soon { background: var(--wait-bg); color: var(--wait); }
 
+/* Estado de trabajo: una marca detenida por decisión del dueño de marca
+   no puede verse igual que una activa, o alguien retoma lo que ya se paró. */
+.pills { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.pill.hold {
+  background: transparent; color: var(--ink);
+  border: 1px solid var(--ink);
+}
+.pausa {
+  margin-top: 12px; padding: 11px 13px;
+  background: var(--sunk); border-radius: var(--radius-btn);
+  border-left: 3px solid var(--ink-2);
+}
+.pausa p { margin: 0; font-size: 13px; color: var(--ink-2); text-wrap: pretty; }
+.pausa-q b { color: var(--ink); font-weight: 600; }
+.pausa-r { margin-top: 9px !important; }
+.pausa-r span {
+  display: block; margin-bottom: 3px;
+  font-size: 10px; font-weight: 600; letter-spacing: .11em;
+  text-transform: uppercase; color: var(--ink-2);
+}
+
 .af {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 10px; margin-top: 14px;
@@ -190,14 +211,50 @@ h1 {
 .btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 .acceso.sin span { font-size: 13px; color: var(--ink-3); font-style: italic; }
 
-/* ---------- pendientes ---------- */
-.gaps { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
-.gap, .stop {
-  font-size: 11.5px; font-family: var(--mono);
-  border-radius: var(--radius-s); padding: 3px 9px;
+/* ---------- pendientes ----------
+   Colapsados: el conteo es el dato de la tarjeta, la lista es el detalle.
+   Son <li> y no chips porque el contenido son frases —la más larga de hoy
+   tiene 261 caracteres— y un chip de 261 caracteres es un párrafo con
+   borde. La monoespaciada se queda para el dato: hex y dominio. */
+.gaps {
+  margin-top: 16px; padding-top: 13px; border-top: 1px solid var(--line);
 }
-.gap { color: var(--ink-3); border: 1px dashed var(--line-2); }
-.stop { color: var(--stop); border: 1px solid var(--stop); background: var(--stop-bg); }
+.gaps > summary {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12.5px; color: var(--ink-2);
+  cursor: pointer; list-style: none; padding: 2px 0;
+}
+.gaps > summary::-webkit-details-marker { display: none; }
+/* Triángulo propio: el marcador nativo no se comporta igual en todos los
+   navegadores, y este es el único gesto de la página. */
+.gaps > summary::before {
+  content: ""; flex: none; width: 6px; height: 6px;
+  border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+  transform: rotate(-45deg); transition: transform .15s ease;
+}
+.gaps[open] > summary::before { transform: rotate(45deg); }
+.gaps > summary:hover { color: var(--ink); }
+.gaps > summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.gaps > summary b { color: var(--ink); font-weight: 600; }
+.sum-stop { color: var(--stop); font-weight: 600; }
+
+.gap-list { list-style: none; margin: 12px 0 2px; padding: 0; display: grid; gap: 8px; }
+.gap-list li {
+  position: relative; padding-left: 16px; max-width: 72ch;
+  font-size: 13px; line-height: 1.45; color: var(--ink-2); text-wrap: pretty;
+}
+.gap-list li::before {
+  content: ""; position: absolute; left: 1px; top: .52em;
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--ink-3);
+}
+/* Un bloqueante no se lee en la misma fila que lo demás. */
+.gap-list li.stop {
+  color: var(--stop); background: var(--stop-bg);
+  border-left: 3px solid var(--stop);
+  border-radius: var(--radius-s); padding: 9px 12px;
+}
+.gap-list li.stop::before { display: none; }
 
 /* ---------- sub-marcas anidadas ---------- */
 .subs { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); }

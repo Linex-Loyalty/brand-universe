@@ -124,3 +124,106 @@ test('cada marca dice si tiene manual o qué le falta', () => {
       `${m.nombre} no dice su estado de manual`);
   }
 });
+
+/* ---------- el componente de pendientes ----------
+   Cincuenta pendientes repartidos en ocho marcas no caben abiertos: la
+   tarjeta pasa a ser su propia lista de tareas y entierra lo que la gente
+   viene a buscar —la paleta y el botón del manual—. Van colapsados, con el
+   conteo a la vista para que nadie tenga que abrirlos para saber cuántos son. */
+
+/* Corta la tarjeta de una marca: de su <h3> al <h3> siguiente. Las
+   sub-marcas van después del contenido propio de su estrella, así que
+   esto devuelve lo de cada una sin mezclarlo. */
+function tarjetaDe(doc, nombre) {
+  const i = doc.indexOf(`<h3>${nombre}</h3>`);
+  if (i < 0) return '';
+  const j = doc.indexOf('<h3>', i + 1);
+  return doc.slice(i, j < 0 ? doc.length : j);
+}
+
+test('los pendientes van colapsados y dicen cuántos son sin abrirlos', () => {
+  for (const m of Object.values(tokens.marcas)) {
+    const n = (m.pendientes || []).length;
+    const card = tarjetaDe(html, m.nombre);
+    if (!n) {
+      assert.ok(!/<details class="gaps"/.test(card),
+        `${m.nombre} no tiene pendientes y aun así muestra el desplegable`);
+      continue;
+    }
+    assert.ok(/<details class="gaps"/.test(card),
+      `los pendientes de ${m.nombre} no están colapsados`);
+    const resumen = (card.match(/<summary[^>]*>([\s\S]*?)<\/summary>/) || [])[1] || '';
+    assert.ok(resumen.includes(`<b>${n}</b>`),
+      `el resumen de ${m.nombre} no dice que son ${n}: "${resumen.trim()}"`);
+  }
+});
+
+/* Colapsar nunca puede esconder algo que detiene el trabajo. */
+test('un pendiente bloqueante deja el desplegable abierto', () => {
+  const t = copia();
+  t.marcas['linex-school'].pendientes.push('BLOQUEANTE prueba');
+  const card = tarjetaDe(construirSitio(t), t.marcas['linex-school'].nombre);
+  assert.match(card, /<details class="gaps" open>/,
+    'el bloqueante quedó escondido detrás de un desplegable cerrado');
+
+  const sinBloqueante = tarjetaDe(html, tokens.marcas['linex-school'].nombre);
+  assert.ok(!/<details class="gaps" open>/.test(sinBloqueante),
+    'sin bloqueantes el desplegable debería nacer cerrado');
+});
+
+/* Una marca en pausa que se ve igual que una activa hace que alguien
+   retome trabajo que el dueño de marca ya paró. */
+test('la marca en pausa lo dice en la tarjeta, y solo ella', () => {
+  const enPausa = Object.values(tokens.marcas).filter(m => m.estado_trabajo);
+  const pills = html.match(/class="pill hold"/g) || [];
+  assert.strictEqual(pills.length, enPausa.length,
+    `${enPausa.length} marcas con estado de trabajo y ${pills.length} marcadas`);
+
+  for (const m of enPausa) {
+    const card = tarjetaDe(html, m.nombre);
+    assert.ok(card.includes(m.estado_trabajo.estado), `${m.nombre} no dice su estado`);
+    assert.ok(card.includes(m.estado_trabajo.al_retomar),
+      `${m.nombre} no dice por dónde se retoma — que es lo único accionable`);
+  }
+});
+
+/* Un desplegable hecho con <details> abre con doble clic sobre el archivo,
+   sin servidor, y lo navega el teclado. Uno hecho con JS, no siempre. */
+test('el sitio no depende de JavaScript', () => {
+  assert.ok(!/<script/i.test(html), 'apareció un <script> en el sitio');
+});
+
+/* El componente de pendientes se lee en los dos modos. Los pares se
+   declaran aquí a mano —el CSS no es analizable de forma confiable— y el
+   valor se recalcula: es el mismo criterio que verificar-tokens.js aplica
+   sobre el JSON. Un contraste escrito a mano envejece; uno medido, no. */
+test('el componente de pendientes cumple AA en claro y en oscuro', () => {
+  const { contraste, cumple } = require('./contraste.js');
+
+  const claro = { surface: '#FFFFFF', sunk: '#EDF0F7', ink: '#0E1526',
+    ink2: '#545E78', ink3: '#7A849C', stop: '#A33A32', stopbg: '#FBE9E7' };
+  const oscuro = { surface: '#121827', sunk: '#0E1422', ink: '#E9EDF8',
+    ink2: '#A2ACC6', ink3: '#7B85A0', stop: '#F09189', stopbg: '#2C1613' };
+
+  // [qué es, frente, fondo, es objeto gráfico (umbral 3:1) o texto (4.5:1)]
+  const pares = t => [
+    ['píldora de estado de trabajo', t.ink, t.surface, false],
+    ['resumen del desplegable', t.ink2, t.surface, false],
+    ['conteo en negrita', t.ink, t.surface, false],
+    ['triángulo del desplegable', t.ink2, t.surface, true],
+    ['ítem de la lista', t.ink2, t.surface, false],
+    ['viñeta del ítem', t.ink3, t.surface, true],
+    ['ítem bloqueante', t.stop, t.stopbg, false],
+    ['texto del bloque de pausa', t.ink2, t.sunk, false],
+    ['rótulo AL RETOMAR', t.ink2, t.sunk, false],
+  ];
+
+  for (const [modo, t] of [['claro', claro], ['oscuro', oscuro]]) {
+    for (const [qué, frente, fondo, gráfico] of pares(t)) {
+      const r = contraste(frente, fondo);
+      assert.ok(cumple(r, 'AA', gráfico),
+        `${qué} en modo ${modo}: ${r.toFixed(2)}:1 — ` +
+        `no llega a ${gráfico ? '3' : '4.5'}:1`);
+    }
+  }
+});
