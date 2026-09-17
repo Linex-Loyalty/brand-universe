@@ -1,8 +1,8 @@
-# Pruebas de aceptación · Fase 1
+# Pruebas de aceptación · Fases 1 y 2
 
 **Fecha de corrida:** 17 de septiembre de 2026
 **Plan:** `docs/superpowers/plans/2026-09-16-fundacion-y-sitio-constelacion.md`
-**Resultado:** 6 de 6 pasan
+**Resultado:** 11 de 11 pasan
 
 Un skill de marca se prueba por lo que **se niega a hacer**. Las pruebas 1, 2 y
 3 son la prueba de fuego: verifican que prefiera decir "falta" antes que
@@ -156,3 +156,104 @@ así que es idempotente por construcción.
   comportamiento— es el contenido del `SKILL.md` y sus references.
 - **Las pruebas 7 a 11** son de la fase 2 (el sitio Constelación) y se corren
   al terminarla.
+
+---
+
+# Fase 2 · El sitio Constelación
+
+## 7 · `index.html` abre con doble clic
+
+**Criterio:** renderiza completo en `file://`, sin servidor.
+
+```
+$ grep -oE '(src|href)="(https?:)?//[^"]+"' index.html
+href="https://fonts.googleapis.com"
+href="https://fonts.gstatic.com"
+href="https://fonts.googleapis.com/css2?family=Geist:...&display=swap"
+```
+
+**Veredicto: PASA.** El CSS va incrustado y no hay un solo script. La única
+dependencia externa es la fuente Geist desde Google Fonts, igual que en los
+manuales; sin red cae a `Segoe UI` por la pila de respaldo y la página
+renderiza igual de completa. Un solo archivo de 24 KB.
+
+## 8 · Los enlaces a Trip y Go abren el manual correcto
+
+```
+$ for h in $(grep -oE 'href="manual-[^"]+"' index.html ...); do ... done
+  OK   manual-linex-go/index.html
+  OK   manual-linex-trip/index.html
+```
+
+**Veredicto: PASA.** Los dos únicos enlaces a manual apuntan a archivos que
+existen.
+
+## 9 · Las seis marcas sin manual no dejan enlaces muertos
+
+```
+  href vacíos o "#": 0
+  marcas que dicen "Sin manual todavía": 6
+```
+
+**Veredicto: PASA.** Ningún `href="#"` ni `href=""`. Las seis declaran su
+estado y listan qué les falta.
+
+## 10 · Un cambio de HEX en el JSON se propaga al sitio
+
+```
+$ sed -i 's/"hex": "#FF725E"/"hex": "#AA00AA"/' brand-tokens.json
+$ node tools/sync-constelacion.js
+  ¿aparece #AA00AA en el sitio? 2
+  ¿queda #FF725E?               0
+$ git checkout brand-tokens.json && node tools/sync-constelacion.js
+  ¿vuelve #FF725E? 2
+  (árbol limpio)
+```
+
+**Veredicto: PASA.** El cambio se propagó, la reversión lo devolvió, y el
+árbol quedó limpio. Es la prueba de que el sitio se genera del dato y no lo
+duplica.
+
+## 11 · El sitio a 400 px de ancho
+
+**Criterio:** sin scroll horizontal.
+
+```
+$ grep -oE 'min-width:\s*[0-9]+px' assets/constelacion.css
+(ninguno)
+$ grep -oE 'minmax\([0-9]+px' assets/constelacion.css
+minmax(124px    ← la barra de conteo
+minmax(230px    ← atrae / filtra
+minmax(320px    ← las sub-marcas
+```
+
+**Veredicto: PASA.** No hay un solo `min-width` declarado, y el `minmax` más
+grande es 320 px: a 400 px de viewport quedan ~360 px útiles tras el gutter de
+20 px, así que todas las rejillas colapsan a una columna antes de desbordar.
+Las tiras de muestras de color y de pendientes usan `flex-wrap`.
+
+---
+
+# Resumen
+
+| Fase | Pruebas | Resultado |
+|---|---|---|
+| 1 · Fundación | 1 a 6 | 6 de 6 |
+| 2 · Sitio Constelación | 7 a 11 | 5 de 5 |
+
+**Total: 11 de 11.** Más 42 pruebas unitarias en `tools/`.
+
+## Lo que estas pruebas NO cubren
+
+- **El agente `brand-designer` no se probó como tipo registrado.** Los agentes
+  de `.claude/agents/` se registran al arrancar la sesión, y este se creó
+  durante ella. Lo que sí se probó —y es lo que decide el comportamiento— es
+  el contenido del `SKILL.md` y sus references.
+- **El sitio no se abrió en un navegador real.** Se verificó la estructura
+  (etiquetas balanceadas, anidamiento correcto, sin enlaces muertos) y las
+  reglas CSS de responsive, no el resultado visual.
+- **Los radios fuera de escala del cromo de los manuales** quedaron
+  documentados como hallazgo, sin corregir: Go usa 8 px (7 veces) y 3 px (1);
+  Trip usa 8 px (37), 5 px (18) y 10 px (10). Son estilos de las páginas del
+  manual, no de piezas de marca. Falta decidir si la regla aplica también al
+  documento que la enuncia.
