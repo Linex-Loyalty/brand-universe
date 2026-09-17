@@ -100,9 +100,17 @@ test('Go y Trip salen anidadas dentro de Travel', () => {
   assert.ok(go > subs && trip > subs, 'Go y Trip no están anidadas');
 });
 
-test('los pendientes BLOQUEANTE se destacan aparte', () => {
-  assert.ok(html.includes('class="stop"'), 'ningún pendiente sale como bloqueante');
+/* No se exige que EXISTA un bloqueante — ojalá no exista ninguno. Se exige la
+   correspondencia en los dos sentidos: todo bloqueante del JSON sale
+   destacado, y nada sale destacado sin serlo. */
+test('los pendientes BLOQUEANTE, y solo esos, se destacan aparte', () => {
+  const enJson = Object.values(tokens.marcas)
+    .flatMap(m => m.pendientes || [])
+    .filter(p => /^BLOQUEANTE/.test(p));
+
   const stops = html.match(/class="stop">([^<]*)</g) || [];
+  assert.strictEqual(stops.length, enJson.length,
+    `el JSON tiene ${enJson.length} bloqueantes y el sitio destaca ${stops.length}`);
   assert.ok(stops.every(s => /BLOQUEANTE/.test(s)),
     'algo se marcó como bloqueante sin serlo');
 });

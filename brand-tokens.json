@@ -295,17 +295,32 @@
       "iconografia": "grupo",
       "radios": { "s": 6, "btn": 12, "m": 16, "l": 24, "pill": 999 },
       "logos": {
-        "principal": "Logos/logos-oficiales/linex-go/logo-LinexGo.svg",
+        "principal": "Logos/logos-oficiales/linex-go/LinexGo-logo-color 1.svg",
+        "principal_png": "Logos/logos-oficiales/linex-go/LinexGo-logo-color 1.png",
+        "negativo": "Logos/logos-oficiales/linex-go/LinexTrip-logo-negativo 1.svg",
+        "monocromo": "Logos/logos-oficiales/linex-go/LinexTrip-logo-monocromo 1.svg",
+        "negro": "Logos/logos-oficiales/linex-go/LinexTrip-logo-negro 1.svg",
         "editable": null,
-        "negativo": null,
-        "monocromo": null,
         "secundario": null,
         "vertical": null,
         "vertical_negativo": null,
         "avatar": null,
         "con_eslogan": null
       },
-      "logo_nota": "BLOQUEANTE. De las quince piezas que define el manual existe una, y no es vectorial: es un PNG de 2645x462 px dentro de un contenedor .svg. Sirve en pantalla y en impresión hasta unos 22 cm a 300 dpi, no para gran formato ni para generar las demás versiones recoloreando. La falta de la versión negativa bloquea toda la papelería, porque el petróleo es uno de los tres fondos permitidos.",
+      "logo_nota": "El bloqueo de vectorización se resolvió el 17 de septiembre de 2026: llegaron cuatro archivos SVG reales (7 formas cada uno), no el PNG dentro de .svg que había antes. Ya existe la versión negativa, así que la papelería se desbloquea. QUEDAN DOS COSAS POR CORREGIR EN LOS ARCHIVOS: (1) el 'Linex' está pintado con #1A0E3E, que es el Índigo anterior de Linex Trip, no el Petróleo #012D33 que manda este manual — están a ΔE 39.3, uno es morado oscuro y el otro petróleo; (2) tres de los cuatro archivos se llaman 'LinexTrip' estando en la carpeta de Linex Go. El coral #FF725E sí es el correcto.",
+      "logo_revision": {
+        "fecha": "2026-09-17",
+        "vectorial": true,
+        "oscuro_en_archivo": "#1A0E3E",
+        "oscuro_correcto": "#012D33",
+        "delta_e": 39.3,
+        "nombres_incorrectos": [
+          "LinexTrip-logo-monocromo 1.svg",
+          "LinexTrip-logo-negativo 1.svg",
+          "LinexTrip-logo-negro 1.svg"
+        ],
+        "duda_abierta": "El archivo 'negro' usa fill=\"black\", y la regla 4 de los usos incorrectos dice que el 'Linex' nunca va en negro. El manual define una sola versión monocromática, no dos. Falta decidir si 'monocromo' y 'negro' son la misma pieza o dos distintas."
+      },
       "logo_fondos": {
         "permitidos": ["#F8F9FC", "#F3F0E9", "#012D33"],
         "prohibidos": ["#FF725E", "#004751"],
@@ -348,8 +363,9 @@
       "manual": "manual-linex-go/",
       "contexto": "contexto-linex-go.md",
       "pendientes": [
-        "BLOQUEANTE: existen 1 de las 15 piezas de logotipo, y la que hay no es vectorial",
-        "BLOQUEANTE: sin la versión negativa no se puede producir papelería",
+        "El Linex de los cuatro SVG está en #1A0E3E (Índigo viejo de Trip) y debe ir en Petróleo #012D33",
+        "Tres de los cuatro archivos se llaman LinexTrip estando en la carpeta de Go",
+        "Faltan las versiones vertical, avatar de redes y con eslogan",
         "Faltan los logos de Disney y Assistviaje",
         "Las seis fichas de audiencia están sin perfilar",
         "Sin lista de claims autorizados con su evidencia",
@@ -442,19 +458,37 @@
         "fecha": "2026-09-14",
         "que": "El oscuro pasó de Índigo #1A0E3E a Azul Trip #00145A, y entró el Amarillo #ECE200 como tercer color.",
         "por_que": "Separar a Trip del navy de Linex Go.",
-        "deuda": "Tres contrastes del manual quedaron sin recalcular y siguen siendo los del Índigo: blanco/navy dice 17.85 y es 16.83, celeste/navy dice 7.59 y es 7.16, papel/navy dice 16.82 y es 15.86. Ninguna regla se rompe — los tres siguen por encima de 7:1 — pero los números están viejos. Este JSON trae los reales."
+        "deuda": "SALDADA el 17 de septiembre de 2026. El cambio de oscuro dejó seis contrastes del manual medidos todavía contra el Índigo, en 15 apariciones repartidas en tres páginas. Se recalcularon todos con tools/contraste.js y se corrigieron. Ningún veredicto cambió — los seis seguían cumpliendo lo que decían cumplir — pero el manual se contradecía a sí mismo (decía 7.59 y 7.16 para el mismo par).",
+        "correcciones": {
+          "blanco_sobre_navy": { "decia": 17.85, "real": 16.83 },
+          "celeste_sobre_navy": { "decia": 7.59, "real": 7.16 },
+          "papel_sobre_navy": { "decia": 16.82, "real": 15.86 },
+          "celeste_cielo_sobre_navy": { "decia": 16.34, "real": 15.41 },
+          "lavanda_sobre_navy": { "decia": 13.85, "real": 13.05 },
+          "celeste_oscuro_sobre_navy": { "decia": 4.90, "real": 4.62 }
+        },
+        "leccion": "Un cambio de color invalida todos los ratios medidos contra él. Los números viejos sobreviven en las tablas porque un ratio con dos decimales parece un hecho, y nadie recalcula un hecho."
       },
       "tipografia": "grupo",
       "iconografia": "grupo",
       "radios": { "s": 6, "btn": 12, "m": 16, "l": 24, "pill": 999 },
       "logos": {
-        "principal": "Logos/logos-oficiales/linex-trip/logo-LinexTrip.svg",
+        "principal": "Logos/logos-oficiales/linex-trip/LinexTrip-logo-color.svg",
+        "principal_png": "Logos/logos-oficiales/linex-trip/LinexTrip-logo-color.png",
+        "negativo": "Logos/logos-oficiales/linex-trip/LinexTrip-logo-negativo.svg",
+        "monocromo": "Logos/logos-oficiales/linex-trip/LinexTrip-logo-monocromo.svg",
+        "negro": "Logos/logos-oficiales/linex-trip/LinexTrip-logo-negro.svg",
         "editable": "Logos/logos-oficiales/linex-trip/logo-LinexTrip.ai",
-        "negativo": null,
-        "monocromo": null,
         "isotipo": null
       },
-      "logo_nota": "El logotipo vigente es SOLO el wordmark: Linex Trip no tiene isotipo todavía. El manual define tres versiones (color, negativo y monocromo en Azul Trip), pero aquí solo está el archivo principal. Hay siete propuestas de símbolo en exploración abierta, dibujadas con el Índigo anterior #1A0E3E: si se elige alguna hay que recolorearla. Nada de esa exploración es vigente, y mientras tanto ninguna pieza usa símbolo.",
+      "logo_nota": "Las tres versiones que el manual define están completas desde el 17 de septiembre de 2026, y con los colores correctos: color (#00145A + #00B5F5), monocromo en Azul Trip (#00145A, no negro, como manda el manual) y negativo (#00B5F5 + blanco). Hay además una versión en negro puro que el manual no define. El logotipo vigente sigue siendo SOLO el wordmark: Linex Trip no tiene isotipo. Las siete propuestas de símbolo son exploración abierta y están dibujadas con el Índigo anterior #1A0E3E — si se elige alguna hay que recolorearla. Mientras tanto ninguna pieza usa símbolo.",
+      "logo_revision": {
+        "fecha": "2026-09-17",
+        "vectorial": true,
+        "colores_correctos": true,
+        "nota": "El archivo nuevo LinexTrip-logo-color.svg y el anterior logo-LinexTrip.svg son la misma pieza: 9 formas y los mismos dos colores. Se adopta el nombre nuevo por consistencia con el resto del lote.",
+        "duda_abierta": "La versión en negro puro (#000000) no está en el manual, que define el monocromo en Azul Trip. Falta decidir si es una pieza oficial o un extra del diseñador."
+      },
       "logo_fondos": {
         "permitidos": ["#FFFFFF", "#DDE1FF", "#00145A"],
         "prohibidos": ["#00B5F5"],
@@ -498,10 +532,11 @@
       "contexto": "contexto-linex-trip.md",
       "pendientes": [
         "Isotipo sin decidir — siete propuestas en exploración abierta",
+        "Sin versión vertical ni avatar de redes",
         "Las siete propuestas están dibujadas con el Índigo viejo y habría que recolorearlas",
         "Sin banco de fotografía propio",
         "Claims secundarios sin aprobar",
-        "Tres contrastes del manual quedaron sin recalcular tras el cambio de color",
+        
         "Repositorio central de activos pendiente de validar con negocio"
       ]
     },

@@ -130,11 +130,46 @@ test('toda ruta declarada existe en disco', () => {
   assert.deepStrictEqual(faltan, [], 'hay rutas que no existen');
 });
 
-test('Trip registra la deuda de contraste del cambio de color', () => {
+/* La deuda se saldó el 17-sep-2026, pero el registro se queda: es la historia
+   que explica por qué alguien puede encontrar un 17.85 en una copia vieja. */
+test('Trip conserva el registro del cambio de color y su corrección', () => {
   const cc = tokens.marcas['linex-trip'].cambio_color;
   assert.ok(cc, 'falta el registro del cambio de color');
   assert.ok(/1A0E3E/i.test(cc.que), 'no nombra el Índigo que se reemplazó');
-  assert.ok(/16\.83|17\.85/.test(cc.deuda), 'no registra los contrastes viejos');
+  assert.ok(/SALDADA/.test(cc.deuda), 'no registra que la deuda se corrigió');
+  assert.ok(cc.correcciones, 'falta la tabla de correcciones');
+});
+
+/* Cada corrección se vuelve a calcular: si alguien "arregla" un número a mano
+   y se equivoca, esto lo atrapa. */
+test('las seis correcciones de contraste de Trip se sostienen', () => {
+  const { contraste } = require('./contraste.js');
+  const navy = '#00145A';
+  const pares = {
+    blanco_sobre_navy: '#FFFFFF', celeste_sobre_navy: '#00B5F5',
+    papel_sobre_navy: '#F6F8FF', celeste_cielo_sobre_navy: '#E6F8FE',
+    lavanda_sobre_navy: '#DDE1FF', celeste_oscuro_sobre_navy: '#0090C2',
+  };
+  const c = tokens.marcas['linex-trip'].cambio_color.correcciones;
+  for (const [k, hex] of Object.entries(pares)) {
+    const real = contraste(hex, navy);
+    assert.ok(Math.abs(real - c[k].real) < 0.02,
+      `${k}: el JSON dice ${c[k].real} y el real es ${real.toFixed(2)}`);
+    assert.ok(Math.abs(real - c[k].decia) > 0.1,
+      `${k}: el valor viejo ${c[k].decia} no era erróneo`);
+  }
+});
+
+/* El manual ya no debe contener ninguno de los seis valores viejos. */
+test('el manual de Trip ya no tiene ratios del Índigo', () => {
+  const viejos = ['17.85:1', '7.59:1', '16.82:1', '16.34:1', '13.85:1', '4.90:1'];
+  const dir = path.join(__dirname, '..', 'manual-linex-trip');
+  const encontrados = [];
+  for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.html'))) {
+    const t = fs.readFileSync(path.join(dir, f), 'utf8');
+    for (const v of viejos) if (t.includes(v)) encontrados.push(`${f}: ${v}`);
+  }
+  assert.deepStrictEqual(encontrados, [], 'quedaron ratios del Índigo');
 });
 
 /* ---------- el verificador detecta lo que tiene que detectar ---------- */
