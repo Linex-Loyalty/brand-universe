@@ -10,6 +10,17 @@ const tokens = JSON.parse(crudo);
 const copia = () => JSON.parse(crudo);
 const html = construirSitio(tokens);
 
+/* Ancla el inicio de la tarjeta de una marca. Con logo, el nombre en texto
+ * no existe — el <h3> lo reemplaza el <img class="marca-logo" ... alt="…">,
+ * así que hay que reconocer las dos formas. */
+function anclaMarca(doc, nombre) {
+  const porH3 = doc.indexOf(`<h3>${nombre}</h3>`);
+  if (porH3 > -1) return porH3;
+  const escapado = nombre.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const m = doc.match(new RegExp(`<img class="marca-logo" src="[^"]*" alt="${escapado}">`));
+  return m ? doc.indexOf(m[0]) : -1;
+}
+
 test('incluye las ocho marcas', () => {
   for (const m of Object.values(tokens.marcas)) {
     assert.ok(html.includes(m.nombre), `falta ${m.nombre}`);
@@ -141,7 +152,7 @@ test('los pendientes BLOQUEANTE, y solo esos, se destacan aparte', () => {
 
 test('cada marca dice si tiene manual o qué le falta', () => {
   for (const m of Object.values(tokens.marcas)) {
-    const i = html.indexOf(`<h3>${m.nombre}</h3>`);
+    const i = anclaMarca(html, m.nombre);
     assert.ok(i > -1, `falta la tarjeta de ${m.nombre}`);
     const bloque = html.slice(i, i + 4000);
     assert.ok(/Abrir el manual|Sin manual todavía/.test(bloque),
@@ -155,13 +166,15 @@ test('cada marca dice si tiene manual o qué le falta', () => {
    viene a buscar —la paleta y el botón del manual—. Van colapsados, con el
    conteo a la vista para que nadie tenga que abrirlos para saber cuántos son. */
 
-/* Corta la tarjeta de una marca: de su <h3> al <h3> siguiente. Las
+/* Corta la tarjeta de una marca: de su ancla (h3 o logo) a la siguiente. Las
    sub-marcas van después del contenido propio de su estrella, así que
    esto devuelve lo de cada una sin mezclarlo. */
 function tarjetaDe(doc, nombre) {
-  const i = doc.indexOf(`<h3>${nombre}</h3>`);
+  const i = anclaMarca(doc, nombre);
   if (i < 0) return '';
-  const j = doc.indexOf('<h3>', i + 1);
+  const candidatos = [doc.indexOf('<h3>', i + 1), doc.indexOf('<img class="marca-logo"', i + 1)]
+    .filter(x => x > -1);
+  const j = candidatos.length ? Math.min(...candidatos) : -1;
   return doc.slice(i, j < 0 ? doc.length : j);
 }
 
@@ -284,7 +297,7 @@ test('el selector de idioma no depende de brand-tokens.json para existir', () =>
   const t = copia();
   delete t.marcas['linex-go'].atrae_en;
   const conHueco = construirSitio(t);
-  const i = conHueco.indexOf('<h3>Linex Go</h3>');
+  const i = anclaMarca(conHueco, 'Linex Go');
   const bloque = conHueco.slice(i, i + 3000);
   assert.ok(/<span data-lang="en">Agencias y operadores/.test(bloque),
     'sin traducción, el inglés debería repetir el español, no quedar vacío');

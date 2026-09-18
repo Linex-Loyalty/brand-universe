@@ -152,10 +152,15 @@ function tarjeta(m) {
     : '';
   const logo = LOGOS[m.id];
 
+  // Con logo, el nombre en texto sobra — el logo ya lo dice. Sin logo, el
+  // nombre en texto es lo único que dice qué marca es esta tarjeta.
+  const nombre = logo
+    ? `\n          <img class="marca-logo" src="${esc(logo)}" alt="${esc(m.nombre)}">`
+    : `\n          <h3>${esc(m.nombre)}</h3>`;
+
   return `    <article class="marca${conColor ? '' : ' pend'}"${acento}>
       <div class="marca-top">
-        <div>${logo ? `\n          <img class="marca-logo" src="${esc(logo)}" alt="${esc(m.nombre)}">` : ''}
-          <h3>${esc(m.nombre)}</h3>
+        <div>${nombre}
           <p class="dom">${esc(m.dominio)}</p>
         </div>
         <div class="pills">
