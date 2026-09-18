@@ -135,16 +135,26 @@ function acceso(m) {
   return `\n      <p class="acceso sin"><span>${bi('Sin manual todavía', 'No manual yet')}</span></p>`;
 }
 
+/* Solo tres marcas tienen un archivo de logo real hoy: las tres que
+ * tienen manual. Las otras cinco no tienen manual ni logo todavía — la
+ * tarjeta no inventa uno, se queda con el nombre en texto, como siempre. */
+const LOGOS = {
+  'linex-travel': 'manual-linex-travel/assets/logos/color.svg',
+  'linex-go': 'manual-linex-go/assets/logos/color.svg',
+  'linex-trip': 'manual-linex-trip/assets/logos/wordmark-color.svg',
+};
+
 function tarjeta(m) {
   // El riel de acento solo existe si la marca tiene un color real.
   const conColor = m.color && m.color.length;
   const acento = conColor
     ? ` style="--acento:${esc((m.color.find(c => /acci[oó]n|acento/i.test(c.rol)) || m.color[0]).hex)}"`
     : '';
+  const logo = LOGOS[m.id];
 
   return `    <article class="marca${conColor ? '' : ' pend'}"${acento}>
       <div class="marca-top">
-        <div>
+        <div>${logo ? `\n          <img class="marca-logo" src="${esc(logo)}" alt="${esc(m.nombre)}">` : ''}
           <h3>${esc(m.nombre)}</h3>
           <p class="dom">${esc(m.dominio)}</p>
         </div>
@@ -220,8 +230,13 @@ ${css}
      Cambia brand-tokens.json y corre: node tools/sync-constelacion.js -->
 <input type="radio" name="idioma" id="idioma-es" class="idioma-radio">
 <input type="radio" name="idioma" id="idioma-en" class="idioma-radio" checked>
+<input type="radio" name="tema" id="tema-claro" class="idioma-radio" checked>
+<input type="radio" name="tema" id="tema-oscuro" class="idioma-radio">
 <div class="wrap">
-  <div class="idioma-switch"><label for="idioma-es">ES</label><label for="idioma-en">EN</label></div>
+  <div class="chrome-switches">
+    <div class="idioma-switch"><label for="idioma-es">ES</label><label for="idioma-en">EN</label></div>
+    <div class="tema-switch"><label for="tema-claro">Claro</label><label for="tema-oscuro">Oscuro</label></div>
+  </div>
   <header>
     <p class="eyebrow">${bi('Grupo Linex · Sistema de marca', 'Linex Group · Brand system')}</p>
     <h1>${bi('Constelación Linex', 'Linex Constellation')}</h1>

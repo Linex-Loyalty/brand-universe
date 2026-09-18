@@ -70,10 +70,20 @@ test('todo color de marca que aparece viene del JSON', () => {
   }
 });
 
-test('define los tres estados de tema', () => {
-  assert.ok(html.includes('prefers-color-scheme: dark'));
-  assert.ok(html.includes(':root:not([data-theme="light"])'));
-  assert.ok(html.includes(':root[data-theme="dark"]'));
+test('el tema es claro por defecto, oscuro solo por elección explícita', () => {
+  // Decisión del dueño de marca (2026-09-18): nada de auto-oscuro por
+  // preferencia del sistema — quien entra ve claro, y el oscuro es un
+  // interruptor visible, igual que el de idioma.
+  assert.ok(!html.includes('prefers-color-scheme: dark'),
+    'no debe depender de la preferencia del sistema operativo');
+  assert.ok(html.includes('id="tema-claro"') && html.includes('id="tema-oscuro"'),
+    'faltan los radios del selector de tema');
+  assert.ok(/id="tema-claro"[^>]*\schecked/.test(html),
+    'el tema claro debe ser el que arranca marcado');
+  assert.ok(!/id="tema-oscuro"[^>]*\schecked/.test(html),
+    'el tema oscuro no debe arrancar marcado');
+  assert.ok(html.includes('#tema-oscuro:checked ~ .wrap'),
+    'el oscuro debe aplicarse solo cuando el visitante lo elige');
 });
 
 test('el body pinta su propio fondo', () => {

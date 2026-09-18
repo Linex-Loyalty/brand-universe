@@ -37,17 +37,15 @@
   --radius-pill: 999px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --ground: #090D16; --surface: #121827; --sunk: #0E1422;
-    --ink: #E9EDF8; --ink-2: #A2ACC6; --ink-3: #7B85A0;
-    --line: #222A3D; --line-2: #2E3750;
-    --ok: #6FD9B0; --ok-bg: #10291F;
-    --wait: #E3BE6B; --wait-bg: #2A2313;
-    --stop: #F09189; --stop-bg: #2C1613;
-  }
-}
-:root[data-theme="dark"] {
+/* El tema por decisión del dueño de marca (2026-09-18): claro por defecto,
+   siempre — antes, un visitante con el sistema en modo oscuro caía aquí sin
+   aviso y sin salida, porque el cambio ocurría solo por preferencia del
+   sistema operativo, sin ningún control en la página. Ahora es al revés:
+   oscuro es una elección explícita, nunca algo que le pasa a alguien. Mismo
+   mecanismo del selector de idioma — un radio oculto, sin JavaScript — y
+   las variables se redefinen sobre .wrap, no sobre :root, porque los radios
+   son hermanos de .wrap y no de <html>. */
+#tema-oscuro:checked ~ .wrap {
   --ground: #090D16; --surface: #121827; --sunk: #0E1422;
   --ink: #E9EDF8; --ink-2: #A2ACC6; --ink-3: #7B85A0;
   --line: #222A3D; --line-2: #2E3750;
@@ -137,6 +135,10 @@ h1 {
   display: flex; justify-content: space-between; align-items: flex-start;
   gap: 14px; flex-wrap: wrap;
 }
+/* Solo tres marcas tienen un archivo de logo real hoy — Travel, Go y Trip,
+   las tres con manual. Las otras cinco no tienen manual ni logo todavía, y
+   la tarjeta no inventa uno: se queda con el nombre en texto, como siempre. */
+.marca-logo { display: block; height: 22px; width: auto; margin-bottom: 9px; }
 .marca h3 { font-size: 20px; font-weight: 700; letter-spacing: -.018em; margin: 0 0 2px; }
 .marca.pend h3 { color: var(--ink-2); font-weight: 600; }
 .dom { font-family: var(--mono); font-size: 12px; color: var(--ink-3); margin: 0; }
@@ -301,21 +303,28 @@ footer p { margin: 0 0 4px; }
   clip: rect(0 0 0 0); white-space: nowrap;
 }
 
-.idioma-switch {
+.chrome-switches {
   position: fixed; top: 20px; right: 20px; z-index: 10;
+  display: flex; gap: 8px;
+}
+.idioma-switch, .tema-switch {
   display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px;
   background: var(--surface); border: 1px solid var(--line);
   box-shadow: 0 2px 10px rgba(14, 21, 38, 0.08);
 }
-.idioma-switch label {
+.idioma-switch label, .tema-switch label {
   padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 700;
   letter-spacing: 0.02em; cursor: pointer; color: var(--ink-3);
   transition: background 0.15s ease, color 0.15s ease;
 }
-.idioma-switch label:hover { color: var(--ink); }
+.idioma-switch label:hover, .tema-switch label:hover { color: var(--ink); }
 
 #idioma-es:checked ~ .wrap .idioma-switch label[for="idioma-es"],
 #idioma-en:checked ~ .wrap .idioma-switch label[for="idioma-en"] {
+  background: var(--ink); color: var(--surface);
+}
+#tema-claro:checked ~ .wrap .tema-switch label[for="tema-claro"],
+#tema-oscuro:checked ~ .wrap .tema-switch label[for="tema-oscuro"] {
   background: var(--ink); color: var(--surface);
 }
 
@@ -329,11 +338,21 @@ span[data-lang] { display: none; }
 #idioma-en:checked ~ .wrap span[data-lang="en"] { display: inline; }
 
 @media (max-width: 560px) {
-  .idioma-switch { top: 12px; right: 12px; }
+  .chrome-switches { top: 12px; right: 12px; gap: 6px; }
 }
 
 @media print {
-  .idioma-switch { display: none; }
+  .chrome-switches { display: none; }
   span[data-lang="es"] { display: inline !important; }
   span[data-lang="en"] { display: none !important; }
+  /* Impreso siempre en claro, elija lo que elija la pantalla — nadie quiere
+     gastar tóner en un fondo oscuro. */
+  .wrap {
+    --ground:  #F5F7FC; --surface: #FFFFFF; --sunk: #EDF0F7;
+    --ink: #0E1526; --ink-2: #545E78; --ink-3: #7A849C;
+    --line: #DBE0EC; --line-2: #C6CDDE;
+    --ok: #1E7A5F; --ok-bg: #E3F3EC;
+    --wait: #8A6A1F; --wait-bg: #F7EEDA;
+    --stop: #A33A32; --stop-bg: #FBE9E7;
+  }
 }
