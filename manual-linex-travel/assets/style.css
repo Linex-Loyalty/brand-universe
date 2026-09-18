@@ -147,6 +147,22 @@ img, svg { max-width: 100%; }
 .sidebar-brand { display: block; margin-bottom: 26px; }
 .sidebar-brand .name { font-size: 19px; font-weight: 900; color: #fff; letter-spacing: -0.01em; }
 .sidebar-brand .tag { display:block; margin-top:4px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: var(--coral-claro); text-transform: uppercase; }
+/* El Azul violeta es el color de la palabra "Travel" — pero como texto falla
+   AA sobre casi cualquier fondo (ver la sección "Las tres cosas que más se
+   equivocan" en la portada: "el Azul violeta rellena, el Violeta escribe").
+   Aquí lo usamos exactamente así, como relleno de la placa detrás del
+   logotipo — nunca como color de letra — así el color principal de la marca
+   aparece en la navegación sin tocar ningún contraste ya calibrado del resto
+   del menú. */
+.sidebar-brand .brand-logo-chip,
+.topbar-brand .brand-logo-chip {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--azul-violeta); border-radius: 8px;
+}
+.sidebar-brand .brand-logo-chip { padding: 8px 12px; }
+.topbar-brand .brand-logo-chip { padding: 5px 9px; }
+.brand-logo-chip .brand-logo { display: block; height: 26px; width: auto; }
+.topbar-brand .brand-logo-chip .brand-logo { height: 16px; }
 
 .nav-group { margin-bottom: 20px; }
 .nav-group-title {

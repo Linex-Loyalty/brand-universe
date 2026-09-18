@@ -123,6 +123,8 @@ img, svg { max-width: 100%; }
 .sidebar-brand { display: block; margin-bottom: 26px; }
 .sidebar-brand .name { font-size: 19px; font-weight: 900; color: #fff; letter-spacing: -0.01em; }
 .sidebar-brand .tag { display:block; margin-top:4px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: var(--coral-claro); text-transform: uppercase; }
+.sidebar-brand .brand-logo { display: block; height: 26px; width: auto; }
+.topbar-brand .brand-logo { display: block; height: 18px; width: auto; }
 
 .nav-group { margin-bottom: 20px; }
 .nav-group-title {
