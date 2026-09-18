@@ -83,7 +83,19 @@ const UI = {
   anterior: { es: "Anterior", en: "Previous" },
   siguiente: { es: "Siguiente", en: "Next" },
   enCurso: { es: "en curso", en: "in progress" },
+  constelacion: { es: "Constelación Linex", en: "Linex Constellation" },
 };
+
+/* Go es una sub-marca de canal dentro de la estrella Travel. Desde aquí se
+   puede volver a la Constelación y saltar a Travel o a Trip — y desde ahí,
+   de vuelta o entre sí (ver sus propios tools/sync-nav.js y
+   tools/sync-nav-bilingue.js). Los nombres de marca no se traducen: son el
+   mismo texto en los dos idiomas. */
+const CONSTELACION = [
+  { href: "../index.html", n: "★", nombre: "Volver a la Constelación", nombre_en: "Back to the Constellation" },
+  { href: "../manual-linex-travel/index.html", n: "TV", nombre: "Linex Travel" },
+  { href: "../manual-linex-trip/index.html", n: "TP", nombre: "Linex Trip" },
+];
 
 /* Envuelve un par es/en en los dos spans que el CSS alterna. Es la única
    función que "sabe" del selector de idioma — todo lo demás solo la llama. */
@@ -110,6 +122,11 @@ ${items}
         </ul>
     </nav>`;
 
+  const constelacion = grupo(UI.constelacion.es, UI.constelacion.en, bi(UI.constelacion.es, UI.constelacion.en),
+    CONSTELACION.map(c =>
+      `          <li><a href="${c.href}"><span class="n">${c.n}</span><span>${bi(c.nombre, c.nombre_en || c.nombre)}</span></a></li>`
+    ).join("\n"));
+
   const portadaActiva = actual === "index.html" ? ' class="active" aria-current="page"' : "";
   const portada = grupo(UI.portada.es, UI.portada.en, null,
     `          <li><a href="index.html"${portadaActiva}><span class="n">00</span><span>${bi(UI.resumen.es, UI.resumen.en)}</span></a></li>`);
@@ -125,7 +142,7 @@ ${items}
     return grupo(b.titulo, b.titulo_en, bi(b.titulo, b.titulo_en), items);
   });
 
-  return [portada].concat(grupos).join("\n");
+  return [constelacion, portada].concat(grupos).join("\n");
 }
 
 /* ---------- paginador ----------
