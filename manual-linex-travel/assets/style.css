@@ -157,11 +157,9 @@ img, svg { max-width: 100%; }
 .sidebar-brand .brand-logo-chip,
 .topbar-brand .brand-logo-chip {
   display: inline-flex; align-items: center; justify-content: center;
-  background: var(--azul-violeta); border-radius: 8px;
 }
-.sidebar-brand .brand-logo-chip { padding: 8px 12px; }
 .topbar-brand .brand-logo-chip { padding: 5px 9px; }
-.brand-logo-chip .brand-logo { display: block; height: 26px; width: auto; }
+.brand-logo-chip .brand-logo { display: block; height: 40px; width: auto; }
 .topbar-brand .brand-logo-chip .brand-logo { height: 16px; }
 
 .nav-group { margin-bottom: 20px; }
