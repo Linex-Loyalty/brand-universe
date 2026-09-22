@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Linex Trip — El sistema de tres colores</title>
+<meta name="description" content="Azul #00145A principal, Celeste #00B5F5 de acción y Amarillo #ECE200 de detalle, aplicados a la web, un post de redes y la tarjeta impresa.">
+<style>
+  :root { --tinta: #1A1A1A; --suave: #707070; --papel: #F7F7F8; --linea: rgba(0,0,0,0.1); --alerta: #B4342A; --ok: #1B7F4B;
+          --azul: #00145A; --celeste: #00B5F5; --amarillo: #ECE200; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--papel); color: var(--tinta);
+         font: 15px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }
+  .marco { max-width: 1160px; margin: 0 auto; padding: 44px 26px 80px; }
+
+  .kicker { font-size: 11.5px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--suave); margin: 0 0 9px; }
+  h1 { font-size: clamp(26px, 3.6vw, 36px); line-height: 1.14; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 12px; max-width: 24ch; }
+  .intro { font-size: 16px; line-height: 1.55; color: #444; max-width: 68ch; margin: 0; }
+  h2 { font-size: 19px; font-weight: 700; margin: 46px 0 6px; letter-spacing: -0.01em; }
+  h2 + .sub { font-size: 14.5px; color: var(--suave); margin: 0 0 20px; max-width: 70ch; }
+
+  /* Los tres colores con su papel. El papel es el dato: un color de marca sin
+     rol asignado es lo que produce piezas donde todo compite con todo. */
+  .roles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 26px; }
+  .rol { border: 1px solid var(--linea); background: #fff; }
+  .rol .muestra { height: 76px; }
+  .rol .txt { padding: 15px 17px 18px; }
+  .rol .hex { font: 700 15px/1 ui-monospace, "Cascadia Mono", Consolas, monospace; margin: 0 0 6px; }
+  .rol .nom { font-size: 13.5px; font-weight: 700; margin: 0 0 6px; }
+  .rol .uso { font-size: 12.5px; line-height: 1.5; color: var(--suave); margin: 0; }
+
+  /* La regla dura va destacada porque es la que se rompe sola: el amarillo es
+     invisible sobre blanco y aun así es el primer sitio donde alguien lo pone. */
+  .regla-dura { border: 1px solid rgba(180,52,42,0.3); background: rgba(180,52,42,0.04); padding: 18px 20px; margin-top: 22px; }
+  .regla-dura p { margin: 0 0 12px; font-size: 14.5px; line-height: 1.55; }
+  .regla-dura p:last-child { margin-bottom: 0; }
+  .prueba { display: flex; flex-wrap: wrap; gap: 0; border: 1px solid var(--linea); margin-top: 6px; }
+  .prueba > div { flex: 1 1 220px; padding: 15px 17px; font-size: 14px; font-weight: 700; }
+
+  .lista { margin: 18px 0 0; padding: 0; list-style: none; }
+  .lista li { font-size: 14px; line-height: 1.55; padding: 9px 0 9px 26px; border-bottom: 1px solid var(--linea); position: relative; }
+  .lista li:last-child { border-bottom: none; }
+  .lista li::before { position: absolute; left: 0; top: 9px; font-weight: 700; }
+  .lista li.si::before { content: "Sí"; color: var(--ok); font-size: 12px; }
+  .lista li.no::before { content: "No"; color: var(--alerta); font-size: 12px; }
+
+  .pestanas { display: flex; gap: 4px; margin: 30px 0 18px; border-bottom: 1px solid var(--linea); }
+  .pest { appearance: none; background: none; border: none; border-bottom: 2px solid transparent; margin-bottom: -1px;
+          font: 600 14px/1 inherit; color: var(--suave); padding: 11px 15px; cursor: pointer; }
+  .pest:hover { color: var(--tinta); }
+  .pest.activa { color: var(--tinta); border-bottom-color: var(--tinta); font-weight: 700; }
+  .pest:focus-visible { outline: 2px solid var(--tinta); outline-offset: -2px; }
+
+  .interruptor { display: inline-flex; align-items: center; gap: 9px; font-size: 13.5px; font-weight: 600;
+                 background: #fff; border: 1px solid var(--linea); border-radius: 999px; padding: 7px 15px 7px 9px; cursor: pointer; margin-bottom: 18px; }
+  .interruptor span.pip { width: 34px; height: 19px; border-radius: 999px; background: rgba(0,0,0,0.16); position: relative; transition: background 0.15s; }
+  .interruptor span.pip::after { content: ""; position: absolute; top: 2px; left: 2px; width: 15px; height: 15px; border-radius: 50%; background: #fff; transition: transform 0.15s; }
+  .interruptor.on span.pip { background: var(--azul); }
+  .interruptor.on span.pip::after { transform: translateX(15px); }
+  .interruptor:focus-visible { outline: 2px solid var(--tinta); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { .interruptor span.pip, .interruptor span.pip::after { transition: none; } }
+
+  /* El amarillo solo se enciende cuando el <body> lo permite: así el mismo
+     marcado sirve de antes y de después, sin duplicar las piezas. */
+  .am-eyebrow, .am-inline { color: inherit; }
+  body.con-amarillo .am-eyebrow { color: var(--amarillo); }
+  body.con-amarillo .am-inline { color: var(--amarillo); }
+
+  .lamina { display: none; }
+  .lamina.activa { display: block; }
+  .lamina-pie { font-size: 12.5px; line-height: 1.5; color: var(--suave); margin: 16px 0 0; max-width: 74ch; }
+
+  /* ---- piezas ---- */
+  .pieza { font-family: Geist, system-ui, sans-serif; --nv: #00145A; }
+  .browser { border: 1px solid var(--linea); border-radius: 11px; overflow: hidden; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.07); }
+  .bbar { height: 38px; display: flex; align-items: center; gap: 7px; padding: 0 14px; background: rgba(0,0,0,0.03); border-bottom: 1px solid var(--linea); }
+  .bbar i { width: 9px; height: 9px; border-radius: 50%; background: rgba(0,0,0,0.13); }
+  .url { flex: 1; max-width: 290px; margin: 0 auto; height: 22px; background: #fff; border: 1px solid var(--linea); border-radius: 999px; font: 11px/22px system-ui, sans-serif; color: var(--suave); text-align: center; }
+  .gb { background: var(--nv); color: rgba(255,255,255,0.8); font-size: 10.5px; font-weight: 700; text-align: right; padding: 7px 28px; }
+  .nav { display: flex; align-items: center; gap: 28px; padding: 15px 28px; border-bottom: 1px solid rgba(0,0,0,0.07); }
+  .nav .marca { font-size: 20px; font-weight: 800; color: var(--nv); }
+  .nav .marca b { color: var(--celeste); }
+  .nav .links { display: flex; gap: 19px; }
+  .nav .links i { font-style: normal; font-size: 13px; font-weight: 600; color: rgba(0,0,0,0.6); }
+  .btn-linea { margin-left: auto; font-size: 12.5px; font-weight: 700; color: var(--nv); border: 1.5px solid var(--nv); border-radius: 999px; padding: 9px 17px; }
+  .hero { position: relative; background: var(--nv); padding: 34px 28px 50px; overflow: hidden; }
+  .glow { position: absolute; right: -70px; top: -115px; width: 340px; height: 340px; border-radius: 50%; background: radial-gradient(circle, rgba(0,181,245,0.4) 0%, rgba(0,181,245,0) 70%); }
+  .hero .am-eyebrow { position: relative; margin: 0 0 9px; font-size: 11.5px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+  .h1p { position: relative; margin: 0 0 9px; font-size: 33px; line-height: 1.11; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+  .h2p { position: relative; margin: 0 0 28px; font-size: 14.5px; color: rgba(255,255,255,0.72); }
+  .h2p .am-inline { font-weight: 700; }
+  .buscador { position: relative; display: flex; gap: 10px; background: #fff; border-radius: 14px; padding: 12px; box-shadow: 0 12px 28px rgba(0,0,0,0.22); }
+  .campo { flex: 1; height: 42px; border: 1px solid rgba(0,0,0,0.12); border-radius: 10px; display: flex; align-items: center; padding: 0 15px; font-size: 13.5px; color: rgba(0,0,0,0.42); }
+  .campo.corto { flex: 0 0 135px; }
+  .cta { flex: 0 0 155px; height: 42px; background: var(--celeste); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; color: #fff; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; padding: 24px 28px 28px; }
+  .card { border: 1px solid rgba(0,0,0,0.1); border-radius: 14px; overflow: hidden; }
+  .foto { height: 138px; background: var(--nv); overflow: hidden; }
+  .foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .ctxt { padding: 14px 16px 17px; }
+  .ctxt .t { margin: 0 0 3px; font-size: 15px; font-weight: 800; color: var(--nv); }
+  .ctxt .s { margin: 0 0 9px; font-size: 12.5px; color: rgba(0,0,0,0.55); }
+  .ctxt .p { margin: 0; font-size: 15.5px; font-weight: 800; color: var(--nv); }
+
+  .ig { width: 440px; max-width: 100%; margin: 0 auto; background: #fff; border: 1px solid var(--linea); border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.07); }
+  .ig-top { display: flex; align-items: center; gap: 9px; padding: 11px 14px; border-bottom: 1px solid rgba(0,0,0,0.07); }
+  .ig-av { width: 28px; height: 28px; border-radius: 50%; background: var(--nv); flex: none; }
+  .ig-user { font-size: 13px; font-weight: 700; color: rgba(0,0,0,0.8); }
+  .ig-foto { height: 232px; overflow: hidden; background: var(--nv); }
+  .ig-foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .ig-cuerpo { background: var(--nv); padding: 22px 24px 26px; }
+  .ig-kicker { margin: 0 0 5px; font-size: 11.5px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .ig-titular { margin: 0 0 5px; font-size: 34px; line-height: 1; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+  .ig-sub { margin: 0 0 16px; font-size: 13px; color: rgba(255,255,255,0.72); }
+  .ig-precio { margin: 0 0 18px; font-size: 21px; font-weight: 800; color: #fff; }
+  .ig-cta { display: inline-block; background: var(--celeste); color: #fff; font-size: 13.5px; font-weight: 800; padding: 11px 22px; border-radius: 999px; }
+  .ig-legal { margin: 16px 0 0; font-size: 10px; color: rgba(255,255,255,0.5); }
+  /* El Amarillo señala estatus, así que a plena fuerza en la letra legal invertía
+     la jerarquía: el descargo pesaba más que el antetítulo. Al 80% sigue leyéndose
+     como amarillo y como letra chica — 8.10:1 sobre el azul, de sobra. */
+  .ig-legal .am-inline { opacity: 0.8; }
+  .ig-barra { display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; }
+  .ig-iconos { display: flex; gap: 9px; }
+  .ig-iconos i { width: 17px; height: 17px; border: 2px solid rgba(0,0,0,0.22); border-radius: 4px; display: block; }
+  .ig-marca { font-size: 13px; font-weight: 800; color: var(--nv); }
+  .ig-marca b { color: var(--celeste); }
+
+  .mesa { background: #ECECEE; border-radius: 12px; padding: 46px 30px; display: flex; flex-wrap: wrap; gap: 26px; justify-content: center; }
+  .tj { width: 336px; height: 193px; border-radius: 10px; overflow: hidden; position: relative; box-shadow: 0 16px 34px rgba(0,0,0,0.22), 0 2px 6px rgba(0,0,0,0.12); }
+  .tj-frente { background: var(--nv); }
+  .tj-dorso { background: #fff; }
+  .tj-glow { position: absolute; right: -44px; bottom: -66px; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(0,181,245,0.45) 0%, rgba(0,181,245,0) 70%); }
+  .tj-cont { position: relative; height: 100%; padding: 20px 22px; display: flex; flex-direction: column; justify-content: space-between; }
+  .tj-marca { font-size: 19px; font-weight: 800; color: #fff; }
+  .tj-marca b { color: var(--celeste); }
+  .tj-nom { margin: 0 0 2px; font-size: 14px; font-weight: 800; color: #fff; }
+  .tj-cargo { margin: 0; font-size: 11px; color: rgba(255,255,255,0.7); }
+  .tj-datos { font-size: 11.5px; line-height: 1.9; color: var(--nv); font-weight: 600; }
+  .tj-datos p { margin: 0; }
+  .tj-legal { margin: 0; font-size: 8.5px; line-height: 1.5; color: rgba(0,0,0,0.5); }
+
+  .pie { margin-top: 46px; padding-top: 16px; border-top: 1px solid var(--linea); font-size: 12px; line-height: 1.6; color: var(--suave); }
+
+  @media (max-width: 860px) { .roles { grid-template-columns: 1fr; } }
+  @media (max-width: 720px) {
+    .cards { grid-template-columns: 1fr; }
+    .buscador { flex-wrap: wrap; }
+    .campo, .campo.corto, .cta { flex: 1 1 100%; }
+    .nav { flex-wrap: wrap; gap: 12px; padding: 12px 16px; }
+    .nav .links { order: 3; width: 100%; gap: 15px; }
+    .btn-linea { margin-left: auto; font-size: 11px; padding: 7px 12px; }
+    .gb, .hero, .cards { padding-left: 16px; padding-right: 16px; }
+    .h1p { font-size: 25px; }
+    .ig-titular { font-size: 28px; }
+    .mesa { padding: 26px 14px; gap: 18px; }
+    .tj { width: 100%; max-width: 336px; }
+  }
+</style>
+</head>
+<body class="con-amarillo">
+<div class="marco">
+
+  <p class="kicker">Linex Trip · Sistema de color · 14 de septiembre de 2026</p>
+  <h1>Tres colores, tres trabajos</h1>
+  <p class="intro">El oscuro de la marca pasa de <code>#1A0E3E</code> a <code>#00145A</code>, y entra un tercer color: el Amarillo <code>#ECE200</code>. Cada uno tiene un trabajo y solo uno — es lo que evita que en una pieza todo compita con todo.</p>
+
+  <div class="roles">
+    <div class="rol">
+      <div class="muestra" style="background:#00145A;"></div>
+      <div class="txt"><p class="hex">#00145A</p><p class="nom">Azul · el principal</p>
+      <p class="uso">Sostiene el texto sobre fondos claros y viste tapas, banners y navegación en oscuro. Es el que más aparece.</p></div>
+    </div>
+    <div class="rol">
+      <div class="muestra" style="background:#00B5F5;"></div>
+      <div class="txt"><p class="hex">#00B5F5</p><p class="nom">Celeste · la acción</p>
+      <p class="uso">CTA, precios y enlaces. Siempre sobre el azul o en bloques y botones grandes, nunca como texto sobre blanco.</p></div>
+    </div>
+    <div class="rol">
+      <div class="muestra" style="background:#ECE200;"></div>
+      <div class="txt"><p class="hex">#ECE200</p><p class="nom">Amarillo · el detalle</p>
+      <p class="uso">Textos pequeños y elementos menores, en web y en redes. Da estatus sin levantar la voz: aparece poco y por eso se nota.</p></div>
+    </div>
+  </div>
+
+  <h2>La regla que hay que proteger</h2>
+  <p class="sub">El Amarillo se rompe solo, y siempre por el mismo sitio.</p>
+  <div class="regla-dura">
+    <p><strong>El Amarillo vive únicamente sobre el Azul.</strong> Sobre <code>#00145A</code> da <strong>12.38:1</strong>, de sobra para texto pequeño. Sobre blanco da <strong>1.36:1</strong> — la norma pide 4.5:1. No es que se lea mal: es que no se lee.</p>
+    <div class="prueba">
+      <div style="background:#00145A; color:#ECE200;">Aplican términos y condiciones — 12.38:1</div>
+      <div style="background:#fff; color:#ECE200;">Aplican términos y condiciones — 1.36:1</div>
+    </div>
+  </div>
+
+  <ul class="lista">
+    <li class="si">Antetítulos y etiquetas cortas sobre el azul</li>
+    <li class="si">Letra chica: condiciones, vigencias, notas al pie</li>
+    <li class="si">Detalles menores: separadores, viñetas, subrayados finos</li>
+    <li class="no">Títulos. El titular es blanco, siempre</li>
+    <li class="no">Botones. La acción es Celeste, siempre</li>
+    <li class="no">Nada sobre fondo claro — ni texto, ni ícono, ni filete</li>
+  </ul>
+
+  <h2>Las piezas, antes y después</h2>
+  <p class="sub">El mismo marcado con el Amarillo apagado y encendido. Apágalo y fíjate en cuánto lo echas de menos: si la pieza no cambia, es que estaba bien puesto.</p>
+
+  <button type="button" class="interruptor on" id="sw" aria-pressed="true"><span class="pip"></span>Amarillo encendido</button>
+
+  <div class="pestanas" role="tablist">
+    <button type="button" class="pest activa" data-pieza="web" role="tab" aria-selected="true">Página web</button>
+    <button type="button" class="pest" data-pieza="redes" role="tab" aria-selected="false">Post de redes</button>
+    <button type="button" class="pest" data-pieza="papeleria" role="tab" aria-selected="false">Tarjeta impresa</button>
+  </div>
+
+  <div class="pieza" id="pieza">
+    
+  <div class="lamina" data-pieza="web">
+    <div class="browser">
+      <div class="bbar"><i></i><i></i><i></i><span class="url">linextrip.com</span></div>
+      <div class="gb">Part of Linex Loyalty</div>
+      <div class="nav">
+        <span class="marca">Linex <b>Trip</b></span>
+        <span class="links"><i>Vuelos</i><i>Hoteles</i><i>Paquetes</i><i>Autos</i></span>
+        <span class="btn-linea">Habla con un asesor</span>
+      </div>
+      <div class="hero">
+        <div class="glow"></div>
+        <p class="am-eyebrow">Viaja Inteligente</p>
+        <p class="h1p">Compara y reserva tu próximo viaje</p>
+        <p class="h2p">Vuelos, hoteles y paquetes con precio claro en <span class="am-inline">USD y COP</span>.</p>
+        <div class="buscador">
+          <span class="campo">Destino</span><span class="campo">Fechas</span><span class="campo corto">2 viajeros</span>
+          <span class="cta">Buscar vuelos</span>
+        </div>
+      </div>
+      <div class="cards">
+        
+        <div class="card">
+          <div class="foto"><img src="assets/referencias-graficas/linex-trip/image3.webp" alt="" style="object-position:center 62%;"></div>
+          <div class="ctxt"><p class="t">Cartagena</p><p class="s">4 días · 3 noches en hotel</p><p class="p">$112 USD · $450.000 COP</p></div>
+        </div>
+        <div class="card">
+          <div class="foto"><img src="assets/referencias-graficas/linex-trip/image1.webp" alt="" style="object-position:center 24%; transform:scale(1.35);"></div>
+          <div class="ctxt"><p class="t">San Andrés</p><p class="s">5 días · 4 noches en hotel</p><p class="p">$245 USD · $987.000 COP</p></div>
+        </div>
+        <div class="card">
+          <div class="foto"><img src="assets/referencias-graficas/linex-trip/image2.webp" alt="" style="object-position:center 80%;"></div>
+          <div class="ctxt"><p class="t">Vuelos de última hora</p><p class="s">Salidas esta semana</p><p class="p">$99 USD · $398.000 COP</p></div>
+        </div>
+      </div>
+    </div>
+    <p class="lamina-pie">En la web el Amarillo aparece dos veces y nada más: el antetítulo del hero y <em>USD y COP</em> en la bajada. En las tarjetas de resultado no aparece &mdash; son blancas, y ahí el Amarillo no existe.</p>
+  </div>
+    
+  <div class="lamina" data-pieza="redes">
+    <div class="ig">
+      <div class="ig-top"><span class="ig-av"></span><span class="ig-user">linextrip</span></div>
+      <div class="ig-foto"><img src="assets/referencias-graficas/linex-trip/image3.webp" alt="" style="object-position:center 62%;"></div>
+      <div class="ig-cuerpo">
+        <p class="ig-kicker am-eyebrow">Escapada de fin de semana</p>
+        <p class="ig-titular">Cartagena</p>
+        <p class="ig-sub">4 días · 3 noches en hotel · vuelo incluido</p>
+        <p class="ig-precio">$112 USD <span class="am-inline">·</span> $450.000 COP</p>
+        <span class="ig-cta">Ver disponibilidad</span>
+        <p class="ig-legal">Precio por persona. <span class="am-inline">Aplican términos y condiciones.</span></p>
+      </div>
+      <div class="ig-barra"><span class="ig-iconos"><i></i><i></i><i></i></span><span class="ig-marca">Linex <b>Trip</b></span></div>
+    </div>
+    <p class="lamina-pie">En redes tiene más aire para trabajar porque casi todo el bloque es azul: el antetítulo, el separador del precio y la línea de condiciones. Aun así son tres apariciones pequeñas, no una mancha.</p>
+  </div>
+    
+  <div class="lamina" data-pieza="papeleria">
+    <div class="mesa">
+      <div class="tj tj-frente">
+        <div class="tj-glow"></div>
+        <div class="tj-cont">
+          <span class="tj-marca">Linex <b>Trip</b></span>
+          <div>
+            <p class="tj-nom">Camila Restrepo</p>
+            <p class="tj-cargo am-inline">Asesora de viajes</p>
+          </div>
+        </div>
+      </div>
+      <div class="tj tj-dorso">
+        <div class="tj-cont">
+          <div class="tj-datos"><p>+57 300 000 0000</p><p>camila@linextrip.com</p><p>linextrip.com</p></div>
+          <p class="tj-legal">Strategic Points S.A.S.<br>RNT 59151 y 82366 · Medellín, Colombia</p>
+        </div>
+      </div>
+    </div>
+    <p class="lamina-pie">Solo en la cara oscura, y solo en el cargo. El dorso es blanco: ahí no entra. Impreso, el Amarillo sobre azul es de los pocos pares que aguantan bien en tintas planas.</p>
+  </div>
+  </div>
+
+  <p class="pie">
+    Contrastes calculados al generar la página con la fórmula de WCAG 2.1, ninguno escrito a mano.
+    Distancias entre los tres: Azul&ndash;Celeste 58 ΔE, Azul&ndash;Amarillo 102, Celeste&ndash;Amarillo 62 &mdash; los tres claramente distintos entre sí.
+    El Amarillo queda a 22 ΔE del Dorado que Linex Loyalty tiene como candidato: son distinguibles, pero conviene avisarlo antes de fijarlo.
+    La exploración que llevó hasta este sistema está en <code>Linex-Trip-Analisis-Color.html</code>.
+    <strong>El manual y <code>brand-tokens.json</code> todavía no reflejan este cambio</strong> &mdash; se actualizan cuando lo confirmes.
+  </p>
+
+</div>
+
+<script>
+(function () {
+  var sw = document.getElementById("sw");
+  sw.addEventListener("click", function () {
+    var on = document.body.classList.toggle("con-amarillo");
+    sw.classList.toggle("on", on);
+    sw.setAttribute("aria-pressed", String(on));
+    sw.lastChild.nodeValue = on ? "Amarillo encendido" : "Amarillo apagado";
+  });
+
+  var laminas = Array.prototype.slice.call(document.querySelectorAll(".lamina"));
+  var pests = Array.prototype.slice.call(document.querySelectorAll(".pest"));
+  laminas[0].classList.add("activa");
+  pests.forEach(function (p) {
+    p.addEventListener("click", function () {
+      var cual = p.getAttribute("data-pieza");
+      pests.forEach(function (o) { o.classList.remove("activa"); o.setAttribute("aria-selected", "false"); });
+      p.classList.add("activa"); p.setAttribute("aria-selected", "true");
+      laminas.forEach(function (l) { l.classList.toggle("activa", l.getAttribute("data-pieza") === cual); });
+    });
+  });
+})();
+</script>
+</body>
+</html>

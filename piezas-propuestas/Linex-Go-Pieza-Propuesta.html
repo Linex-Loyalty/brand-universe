@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Linex Go — Propuestas de color aplicadas</title>
+<meta name="description" content="Propuestas de color para Linex Go, cada una recorrida por las mismas seis piezas. El coral se conserva como color de acción en todas.">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  /* El marco del documento es neutro: si usara los colores que se juzgan,
+     contaminaría la lectura de cada propuesta. */
+  :root { --tinta:#1A1A1A; --tinta-2:#5A5A5A; --linea:#E3E3E3; --fondo:#FAFAFA; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fondo); color:var(--tinta);
+         font:15px/1.6 Geist, system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .marco { max-width:1280px; margin:0 auto; padding:52px 26px 90px; }
+  h1 { font-size:clamp(28px,4.2vw,40px); line-height:1.08; font-weight:900; letter-spacing:-0.03em; margin:0 0 14px; max-width:24ch; }
+  .lede { font-size:17px; color:var(--tinta-2); max-width:74ch; margin:0 0 16px; }
+  code { font-family:ui-monospace,Consolas,monospace; font-size:11.5px; }
+
+  .reglas { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin:0 0 38px; }
+  .regla { background:#fff; border:1px solid var(--linea); border-radius:13px; padding:15px 17px; }
+  /* Solo el título de la tarjeta es bloque. Sin el > , cualquier negrita dentro
+     del párrafo se parte en su propia línea y deja la coma huérfana. */
+  .regla > b { font-size:13.5px; display:block; margin-bottom:6px; }
+  .regla p { font-size:12.5px; color:var(--tinta-2); margin:0; }
+  .regla p b { color:var(--tinta); }
+  .regla .mal { color:#B3261E; }
+
+  .prop { background:#fff; border:1px solid var(--linea); border-radius:16px; padding:24px 26px; margin-bottom:22px; }
+  .prop-cab { display:grid; grid-template-columns:1fr auto; gap:20px; align-items:start; margin-bottom:10px; }
+  h2 { font-size:19px; font-weight:800; margin:0 0 3px; letter-spacing:-0.01em; }
+  .prop-nota { font-size:13px; color:var(--tinta-2); margin:0; max-width:64ch; }
+  .prop-chips { display:flex; flex-direction:column; gap:5px; }
+  .prop-chips span { font-size:11px; color:var(--tinta-2); white-space:nowrap; }
+  .prop-chips i { display:inline-block; width:12px; height:12px; border-radius:4px; vertical-align:-2px; margin-right:6px; box-shadow:inset 0 0 0 1px rgba(0,0,0,.2); }
+  .prop-med { display:flex; flex-wrap:wrap; gap:18px; padding:10px 0 18px; border-bottom:1px solid var(--linea); margin-bottom:20px; }
+  .prop-med span { font-size:11.5px; color:var(--tinta-2); }
+  .prop-med b { font-size:13px; color:var(--tinta); font-variant-numeric:tabular-nums; }
+
+  .rejilla { display:grid; grid-template-columns:repeat(auto-fit,minmax(196px,1fr)); gap:16px; align-items:start; }
+  .celda-n { display:block; font-size:10.5px; font-weight:800; letter-spacing:.05em; text-transform:uppercase; color:var(--tinta-2); margin-bottom:7px; }
+
+
+  .pz { border-radius:12px; overflow:hidden; font-size:11px; }
+  .lg { font-size:11px; font-weight:800; color:var(--base); display:block; margin-bottom:9px; }
+  .tit { font-size:17px; font-weight:900; line-height:1.1; letter-spacing:-0.02em; color:var(--base); }
+  /* El énfasis del titular se hace con PESO, no con color: el color de acción
+     está reservado entero para lo que se puede tocar. */
+  .liviana { font-weight:600; font-size:.74em; letter-spacing:0; }
+  .baja { font-size:9px; margin:5px 0 9px; }
+  .dato { border-radius:9px; padding:8px 10px; margin-bottom:9px; }
+  .desde { display:block; font-size:8px; }
+  .precio { font-size:15px; font-weight:800; color:var(--base); letter-spacing:-0.01em; }
+  .precio small { font-size:8px; font-weight:700; }
+  .cta { display:inline-flex; align-items:center; border-radius:9px; padding:7px 12px; font-size:10px; font-weight:800;
+         background:var(--accion); color:var(--base); box-shadow:inset 0 0 0 1px var(--base); }
+  .chico { font-size:8px; font-weight:700; margin-top:9px; }
+  /* Sobre claro el tercer color no puede ser tinta, así que pasa a superficie. */
+  .chip { display:inline-block; background:var(--tercero); color:var(--base); border-radius:5px; padding:3px 6px; }
+
+  .promo { min-height:236px; }
+  .promo .pin { padding:15px 14px 16px; }
+  .promo.osc { background:var(--base); }
+  .promo.cla { background:var(--papel); box-shadow:inset 0 0 0 1px rgba(0,0,0,.1); }
+
+  .wa { background:#E9EDEC; padding:10px; }
+  .wa-top { display:flex; align-items:baseline; gap:6px; margin-bottom:8px; }
+  .wa-top small { font-size:8px; color:var(--apoyo); }
+  .wa-top .lg { margin-bottom:0; }
+  .wa-burb { background:#fff; border-radius:10px; overflow:hidden; }
+  .wa-img { height:56px; background:var(--apoyo); }
+  .wa-cuerpo { padding:9px 10px 11px; }
+  .wa-tit { font-size:11px; font-weight:800; color:var(--base); margin-bottom:3px; }
+  .wa-cond { font-size:8.5px; color:var(--apoyo); margin:4px 0 7px; }
+
+  .hero { background:var(--base); }
+  .hero-barra { display:flex; align-items:center; justify-content:space-between; padding:9px 12px; border-bottom:1px solid rgba(255,255,255,.12); }
+  .hero-barra .lg { margin-bottom:0; }
+  .hero-nav { font-size:8px; color:rgba(255,255,255,.72); }
+  .hero-in { padding:14px 12px 16px; }
+  .buscador { background:#fff; border-radius:10px; padding:8px; display:flex; gap:6px; align-items:center; }
+  .bus-campo { flex:1; background:var(--papel); border-radius:6px; padding:6px 7px; font-size:8px; color:var(--apoyo); }
+
+  .firma { background:#fff; box-shadow:inset 0 0 0 1px rgba(0,0,0,.1); padding:13px 14px; display:flex; gap:12px; min-height:110px; }
+  .firma-logo { border-right:1px solid rgba(0,0,0,.12); padding-right:12px; }
+  .firma-logo .lg { white-space:nowrap; }
+  .firma-datos { display:flex; flex-direction:column; gap:1px; font-size:8.5px; color:var(--apoyo); }
+  .firma-datos b { font-size:10px; color:var(--base); }
+  .enlace { color:var(--base); font-weight:700; text-decoration:underline; text-decoration-color:var(--accion); text-decoration-thickness:2px; text-underline-offset:2px; }
+  .firma-aliados { margin-top:6px; font-size:7.5px; color:var(--apoyo); border-top:1px solid rgba(0,0,0,.1); padding-top:5px; }
+
+  .tarjeta { display:flex; flex-direction:column; gap:7px; background:transparent; }
+  .tar-cara, .tar-dorso { background:var(--base); border-radius:9px; padding:12px; }
+  .tar-cara { min-height:74px; }
+  .tar-slogan { font-size:8px; font-weight:700; line-height:1.35; margin-top:4px; }
+  .tar-dorso { display:flex; flex-direction:column; gap:1px; font-size:8px; }
+  .tar-dorso b { font-size:10px; }
+
+
+  footer { margin-top:32px; padding-top:20px; border-top:1px solid var(--linea); font-size:12.5px; color:var(--tinta-2); max-width:82ch; }
+  footer b { color:var(--tinta); }
+</style>
+</head>
+<body>
+<div class="marco">
+
+  <h1>6 propuestas, las mismas 6 piezas.</h1>
+  <p class="lede">El coral <code>#FF725E</code> no se toca en ninguna: es el color de acción de Go y eso ya está decidido. Lo que cambia es la base, su apoyo y el tercer color. <b>Un color no se juzga en un cuadrito: se juzga aplicado</b>, y en la pieza donde más puede fallar.</p>
+
+  <div class="reglas">
+    <div class="regla">
+      <b>El coral hace lo que se toca</b>
+      <p>Botones y CTA: relleno coral, texto en la base, filete de 1&nbsp;px. Enlaces: sobre oscuro va en coral, sobre claro va el subrayado. <span class="mal">Nunca como tinta sobre fondo claro.</span></p>
+    </div>
+    <div class="regla">
+      <b>El tercer color cambia de papel</b>
+      <p>Sobre la base oscura es tinta: antetítulos, vigencias, letra chica. Sobre claro no llega ni a objeto gráfico, así que <b>se vuelve superficie</b> con la base encima. <span class="mal">Nunca en títulos ni en botones.</span></p>
+    </div>
+    <div class="regla">
+      <b>El énfasis no se hace con coral</b>
+      <p>El titular resalta con <b>peso</b>, no con color &mdash; es lo que pide la sección 04 del manual: <i>titular en dos pesos</i>. El único coral que no es una acción es la palabra <b>&ldquo;Go&rdquo; del logotipo</b>, porque ahí es parte del wordmark.</p>
+    </div>
+    <div class="regla">
+      <b>El filete marca el control</b>
+      <p>Un destacado de titular compartiría relleno con el botón. Se distinguen por el filete: si lo lleva, se toca.</p>
+    </div>
+  </div>
+
+
+
+  <section class="prop" id="p4" style="--base:#002C29; --apoyo:#004640; --papel:#F3F9F8; --tercero:#E6D5B8; --accion:#FF725E;">
+    <div class="prop-cab">
+      <div>
+        <h2>1 · Verde petróleo + arena</h2>
+        <p class="prop-nota">Un paso hacia el verde. Territorio que casi nadie ocupa en el sector — con las asociaciones que eso trae.</p>
+      </div>
+      <div class="prop-chips">
+        <span><i style="background:#002C29;"></i><code>#002C29</code> base</span>
+        <span><i style="background:#FF725E;"></i><code>#FF725E</code> acción</span>
+        <span><i style="background:#E6D5B8;"></i><code>#E6D5B8</code> arena</span>
+      </div>
+    </div>
+    <div class="prop-med"><span><b>5.6</b> coral sobre la base</span><span><b>10.5</b> tercero sobre la base</span><span><b>14.2</b> base sobre el papel</span><span><b>10.5</b> base sobre el tercero</span></div>
+    <div class="rejilla">
+      <div class="celda"><span class="celda-n">Promoción · oscura</span>
+  <div class="pz promo osc">
+    <div class="pin">
+      <span class="lg" style="color:#fff;">Linex <span style="color:var(--accion);">Go</span></span>
+      <div class="tit" style="color:#fff;"><span class="liviana">Escápate a</span><br>Cartagena</div>
+      <div class="baja" style="color:var(--tercero);">4 días / 3 noches &middot; desde Bogotá</div>
+      <div class="dato" style="background:rgba(255,255,255,.08);">
+        <span class="desde" style="color:rgba(255,255,255,.7);">Desde, por persona</span>
+        <span class="precio" style="color:#fff;">$1.290.000 <small style="color:rgba(255,255,255,.7);">COP</small></span>
+      </div>
+      <span class="cta">Cotiza para tus clientes &rarr;</span>
+      <div class="chico" style="color:var(--tercero);">Vigencia 30 sep &middot; comisión 12%</div>
+    </div>
+  </div></div><div class="celda"><span class="celda-n">Promoción · clara</span>
+  <div class="pz promo cla">
+    <div class="pin">
+      <span class="lg">Linex <span style="color:var(--accion);">Go</span></span>
+      <div class="tit"><span class="liviana">Escápate a</span><br>Cartagena</div>
+      <div class="baja" style="color:var(--apoyo);">4 días / 3 noches &middot; desde Bogotá</div>
+      <div class="dato" style="background:#fff; box-shadow:inset 0 0 0 1px rgba(0,0,0,.1);">
+        <span class="desde" style="color:var(--apoyo);">Desde, por persona</span>
+        <span class="precio">$1.290.000 <small style="color:var(--apoyo);">COP</small></span>
+      </div>
+      <span class="cta">Cotiza para tus clientes &rarr;</span>
+      <div class="chico chip">Vigencia 30 sep &middot; comisión 12%</div>
+    </div>
+  </div></div><div class="celda"><span class="celda-n">WhatsApp</span>
+  <div class="pz wa">
+    <div class="wa-top"><span class="lg">Linex <span style="color:var(--accion);">Go</span></span><small>Asesor comercial</small></div>
+    <div class="wa-burb">
+      <div class="wa-img"></div>
+      <div class="wa-cuerpo">
+        <div class="wa-tit">Cartagena &middot; 4 días / 3 noches</div>
+        <div class="precio" style="font-size:17px;">$1.290.000 <small style="color:var(--apoyo);">COP por persona</small></div>
+        <div class="wa-cond">Vuelo + hotel + traslado. Base doble.</div>
+        <div class="chico chip">Vigencia 30 sep &middot; comisión 12%</div>
+        <span class="cta" style="margin-top:10px;">Ver condiciones &rarr;</span>
+      </div>
+    </div>
+  </div></div><div class="celda"><span class="celda-n">Hero de la web</span>
+  <div class="pz hero">
+    <div class="hero-barra"><span class="lg" style="color:#fff;">Linex <span style="color:var(--accion);">Go</span></span><span class="hero-nav">Portafolio &middot; Plataforma &middot; Soporte</span></div>
+    <div class="hero-in">
+      <div class="tit" style="color:#fff; font-size:21px;"><span class="liviana">Plataforma integral para</span><br>agentes de viajes</div>
+      <div class="baja" style="color:var(--tercero); margin-bottom:14px;">Cotiza, reserva y controla tu operación en un solo lugar</div>
+      <div class="buscador">
+        <span class="bus-campo">Destino</span>
+        <span class="bus-campo">Fechas</span>
+        <span class="cta">Buscar</span>
+      </div>
+    </div>
+  </div></div><div class="celda"><span class="celda-n">Firma de correo</span>
+  <div class="pz firma">
+    <div class="firma-logo"><span class="lg">Linex <span style="color:var(--accion);">Go</span></span></div>
+    <div class="firma-datos">
+      <b>Nombre Apellido</b>
+      <span>Director comercial B2B</span>
+      <span>+57 300 000 0000</span>
+      <a href="#" class="enlace">nombre@linexgo.com</a>
+      <div class="firma-aliados">Representamos a &middot; Hertz &middot; Dollar &middot; Thrifty</div>
+    </div>
+  </div></div><div class="celda"><span class="celda-n">Tarjeta de presentación</span>
+  <div class="pz tarjeta">
+    <div class="tar-cara">
+      <span class="lg" style="color:#fff;">Linex <span style="color:var(--accion);">Go</span></span>
+      <div class="tar-slogan" style="color:var(--tercero);">Soluciones que impulsan<br>tu agencia de viajes</div>
+    </div>
+    <div class="tar-dorso">
+      <b style="color:#fff;">Nombre Apellido</b>
+      <span style="color:var(--tercero);">Director comercial B2B</span>
+      <span style="color:rgba(255,255,255,.82);">+57 300 000 0000</span>
+      <span style="color:rgba(255,255,255,.82);">linexgo.com</span>
+    </div>
+  </div></div>
+    </div>
+  </section>
+
+
+  <footer>
+    <p><b>Cómo se lee esta página.</b> Las 6 piezas son las mismas en las 6 propuestas, con el mismo contenido, para que lo único que cambie sea el color. Los cuatro números bajo cada propuesta son contrastes WCAG calculados: todos pasan 4.5:1 en todas, así que la decisión es de marca, no de accesibilidad.</p>
+    <p><b>Para probar otra combinación</b> se edita <code>PROPUESTAS</code> en <code>tools/generar-piezas-color-go.js</code> y se vuelve a correr. Ninguna pieza tiene un color escrito a mano: todas leen variables que cada propuesta redefine en su contenedor.</p>
+    <p><b>Las piezas se comparten</b> con el documento de Linex Trip, desde <code>tools/piezas-linex.js</code>. Lo que cambia entre marcas es el contenido, porque Go le habla a una agencia y Trip al viajero.</p>
+    <p><b>Qué no decide esto.</b> El color lo fija el administrador de marca (regla 8). Ninguno de estos colores está en <code>brand-tokens.json</code> ni debe usarse en producción hasta que se elija. El logotipo va escrito como texto porque el archivo oficial no es vectorial y no se puede recolorear &mdash; ver la sección 01 del manual.</p>
+    <p>El análisis con las mediciones completas está en <a href="Linex-Go-Estudio-Color.html">Linex-Go-Estudio-Color.html</a>.</p>
+  </footer>
+
+</div>
+</body>
+</html>

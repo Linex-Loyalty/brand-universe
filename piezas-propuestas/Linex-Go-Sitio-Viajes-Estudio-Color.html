@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Linex Go — Sitio de viajes, estudio de color</title>
+<meta name="description" content="Tres aplicaciones de la paleta oficial de Linex Go sobre el layout de un portal B2B: fiel al pantallazo de referencia y dos alternativas conformes al manual.">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root { --tinta:#1A1A1A; --tinta-2:#5A5A5A; --linea:#E3E3E3; --fondo:#FAFAFA; --ok:#1B7F4B; --alerta:#B3261E; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--fondo); color:var(--tinta);
+         font:15px/1.6 Geist, system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .marco { max-width:1400px; margin:0 auto; padding:52px 26px 90px; }
+  .kicker { font-size:11.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--tinta-2); margin:0 0 9px; }
+  h1.tit { font-size:clamp(26px,3.4vw,34px); font-weight:900; letter-spacing:-.03em; line-height:1.12; margin:0 0 14px; max-width:28ch; }
+  .lede { font-size:16px; color:var(--tinta-2); max-width:78ch; margin:0 0 34px; }
+  code { font-family:ui-monospace, Consolas, monospace; font-size:11.5px; }
+
+  .reglas { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin:0 0 40px; }
+  .regla { background:#fff; border:1px solid var(--linea); border-radius:13px; padding:15px 17px; }
+  .regla > b { font-size:13px; display:block; margin-bottom:6px; }
+  .regla p { font-size:12.5px; color:var(--tinta-2); margin:0; }
+  .regla p b { color:var(--tinta); }
+
+  .rejilla { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; align-items:start; }
+  @media (max-width:1150px) { .rejilla { grid-template-columns:1fr; max-width:520px; margin:0 auto; } }
+
+  .prop { background:#fff; border:1px solid var(--linea); border-radius:16px; padding:16px; }
+  .badge { display:inline-block; font-size:10.5px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; padding:4px 10px; border-radius:999px; margin-bottom:9px; }
+  .badge.riesgo { background:rgba(179,38,30,.09); color:#8a2820; }
+  .badge.ok { background:rgba(27,127,75,.1); color:#155c37; }
+  .prop h2 { font-size:15.5px; font-weight:800; margin:0 0 4px; letter-spacing:-.01em; }
+  .prop > p.nota { font-size:12px; color:var(--tinta-2); margin:0 0 12px; }
+
+  .aviso { font-size:11.5px; line-height:1.55; padding:9px 11px; border-radius:9px; margin:12px 0 0; }
+  .aviso.riesgo { background:rgba(179,38,30,.06); color:#8a2820; }
+  .aviso.ok { background:rgba(27,127,75,.07); color:#155c37; }
+  .aviso ul { margin:4px 0 0; padding-left:16px; }
+  .aviso li { margin:2px 0; }
+
+  .medidas { display:flex; flex-wrap:wrap; gap:12px; padding:10px 0; border-top:1px solid var(--linea); border-bottom:1px solid var(--linea); margin:12px 0; }
+  .medidas span { font-size:10.5px; color:var(--tinta-2); display:block; }
+  .medidas b { font-size:12.5px; color:var(--tinta); font-variant-numeric:tabular-nums; }
+
+  /* ---- ventana de navegador ---- */
+  .browser { border-radius:12px; overflow:hidden; box-shadow:0 10px 26px rgba(0,0,0,.09); }
+  .bbar { height:30px; display:flex; align-items:center; gap:6px; padding:0 12px; background:rgba(0,0,0,.18); }
+  .bbar i { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,.28); }
+
+  /* ---- el sitio, parametrizado por variables de color ---- */
+  .sitio { font-family:Geist, system-ui, sans-serif; padding:20px 20px 22px; background:var(--bg); color:var(--tx); }
+
+  .sitio .nav { display:flex; align-items:center; justify-content:space-between; padding-bottom:13px; border-bottom:1px solid var(--linea-w); margin-bottom:22px; }
+  .sitio .nav-logo img { height:15px; display:block; }
+  .sitio .nav-r { display:flex; align-items:center; gap:13px; font-size:10px; }
+  .sitio .estado { display:flex; align-items:center; color:var(--tx-mute); }
+  .sitio .estado .dot { width:6px; height:6px; border-radius:50%; background:var(--ok); display:inline-block; margin-right:5px; }
+  .sitio .contacto { color:var(--contacto); text-decoration:underline; text-underline-offset:2px; font-weight:600; }
+
+  .sitio .hero { display:grid; grid-template-columns:1.15fr 1fr; gap:18px; align-items:start; }
+  .sitio .dash { width:24px; height:3px; border-radius:2px; background:var(--accent); margin-bottom:11px; }
+  .sitio h1 { font-size:21px; line-height:1.16; letter-spacing:-.02em; margin:0 0 9px; }
+  .sitio h1 span { display:block; font-weight:800; color:var(--tx); }
+  .sitio h1 span.emph { color:var(--h1-emph); font-weight:var(--h1-emph-w,800); }
+  .sitio .sub { font-size:11px; line-height:1.5; color:var(--tx-mute); margin:0 0 17px; max-width:30ch; }
+
+  .sitio .atrib { display:flex; gap:13px; margin-bottom:19px; flex-wrap:wrap; }
+  .sitio .atrib div { display:flex; align-items:center; gap:7px; }
+  .sitio .atrib .ico { width:23px; height:23px; border-radius:50%; background:var(--ico-bg); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .sitio .atrib .ico svg { width:11px; height:11px; fill:none; stroke:var(--ico-fg); stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+  .sitio .atrib span { font-size:9px; font-weight:700; line-height:1.2; max-width:8.5ch; color:var(--tx); }
+
+  .sitio .aliados { display:flex; gap:15px; align-items:center; flex-wrap:wrap; opacity:.6; }
+  .sitio .aliados img { height:13px; filter:grayscale(1) brightness(6); }
+  .sitio .aliados .txt { font-size:9px; font-weight:700; letter-spacing:.02em; color:var(--tx); border:1px dashed var(--tx-mute); border-radius:5px; padding:2px 6px; opacity:.85; }
+
+  .sitio .card { background:var(--card-bg); border-radius:14px; padding:18px 18px 14px; }
+  .sitio .card h3 { font-size:14.5px; font-weight:800; margin:0 0 11px; letter-spacing:-.01em; color:var(--card-tx); }
+  .sitio .paises { display:grid; grid-template-columns:1fr 1fr; gap:7px; margin-bottom:11px; }
+  .sitio .pais { display:flex; align-items:center; gap:8px; background:var(--pais-bg); border-radius:9px; padding:8px 9px; position:relative; }
+  .sitio .cc { width:24px; height:24px; border-radius:6px; background:var(--card-bg); box-shadow:inset 0 0 0 1px var(--card-linea); display:flex; align-items:center; justify-content:center; font-size:8.5px; font-weight:800; color:var(--card-tx-2); flex-shrink:0; }
+  .sitio .pais .nom { font-size:10px; font-weight:800; display:block; color:var(--card-tx); }
+  .sitio .pais .por { font-size:8px; display:block; color:var(--card-tx-2); }
+  .sitio .pais .fl { position:absolute; top:8px; right:8px; }
+  .sitio .pais .fl svg { width:9px; height:9px; stroke:var(--fl); fill:none; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
+  .sitio .card-pie { font-size:9px; color:var(--card-tx-2); padding-top:9px; border-top:1px solid var(--card-linea); }
+  .sitio .foot { margin-top:16px; font-size:8.5px; color:var(--foot); text-align:center; }
+
+  /* ---- V1 · fiel al pantallazo (referencia, no cumple el manual) ---- */
+  .v1 { --bg:#012D33; --tx:#F8F9FC; --tx-mute:rgba(248,249,252,.68); --linea-w:rgba(248,249,252,.14);
+        --accent:#FF725E; --contacto:#F8F9FC; --h1-emph:#FF725E; --h1-emph-w:800;
+        --ico-bg:#004751; --ico-fg:#fff; --card-bg:#F8F9FC; --card-tx:#012D33; --card-tx-2:#5A5A5A; --card-linea:#E3E3E3;
+        --pais-bg:#F3F4F8; --fl:#FF725E; --foot:rgba(248,249,252,.45); }
+
+  /* ---- V2 · conforme al manual, mismo fondo Petróleo ---- */
+  .v2 { --bg:#012D33; --tx:#F8F9FC; --tx-mute:rgba(248,249,252,.68); --linea-w:rgba(248,249,252,.14);
+        --accent:#FF725E; --contacto:#FF725E; --h1-emph:#F8F9FC; --h1-emph-w:900;
+        --ico-bg:#004751; --ico-fg:#fff; --card-bg:#F8F9FC; --card-tx:#012D33; --card-tx-2:#5A5A5A; --card-linea:#E3E3E3;
+        --pais-bg:#F3F4F8; --fl:#012D33; --foot:rgba(248,249,252,.45); }
+
+  /* ---- V3 · conforme al manual, fondo Petróleo claro + card cálida + arena ---- */
+  .v3 { --bg:#004751; --tx:#F8F9FC; --tx-mute:#E6D5B8; --linea-w:rgba(248,249,252,.16);
+        --accent:#FF725E; --contacto:#FF725E; --h1-emph:#F8F9FC; --h1-emph-w:900;
+        --ico-bg:#012D33; --ico-fg:#fff; --card-bg:#F3F0E9; --card-tx:#012D33; --card-tx-2:#7A6F5C; --card-linea:rgba(1,45,51,.14);
+        --pais-bg:#FFFFFF; --fl:#012D33; --foot:#E6D5B8; }
+</style>
+</head>
+<body>
+<div class="marco">
+  <p class="kicker">Estudio de color · Linex Go</p>
+  <h1 class="tit">El portal del pantallazo, en tres aplicaciones de la paleta oficial</h1>
+  <p class="lede">Mismo layout — logo, titular, atributos, aliados y selector de país — recorrido tres veces. La
+    primera reproduce el pantallazo tal como llegó; las otras dos corrigen los dos puntos donde ese diseño se
+    aparta del manual de Linex Go. El objetivo es decidir color y su aplicación, no maquetar el sitio final.</p>
+
+  <div class="reglas">
+    <div class="regla"><b>El coral es solo de la acción</b><p>Botones y enlaces reales. <b>Nunca</b> énfasis de
+      titular ni el color de un ícono — un ícono no es una acción.</p></div>
+    <div class="regla"><b>El énfasis se hace con peso</b><p>Un titular no se destaca pintando una línea de otro
+      color: se destaca con tamaño o negrita, nunca con color.</p></div>
+    <div class="regla"><b>La arena solo vive sobre petróleo</b><p>10.23:1 sobre petróleo, 7.21:1 sobre petróleo
+      claro. Sobre blanco frío da <b>1.37:1</b>, ilegible.</p></div>
+    <div class="regla"><b>El enlace sobre fondo oscuro va en coral</b><p>5.49:1 — es la única acción legítima
+      del coral fuera de un botón relleno.</p></div>
+  </div>
+
+  <div class="rejilla">
+
+    <div class="prop">
+      <span class="badge riesgo">V1 · Fiel al pantallazo</span>
+      <h2>Referencia, sin corregir</h2>
+      <p class="nota">Petróleo de fondo, tal como llegó. Conserva dos usos del coral que el manual no permite.</p>
+      <div class="medidas">
+        <div><span>Titular / fondo</span><b>14.74:1</b></div>
+        <div><span>CTA icono flecha</span><b style="color:var(--alerta)">no aplica</b></div>
+      </div>
+      <div class="browser">
+        <div class="bbar"><i></i><i></i><i></i></div>
+        <div class="sitio v1">
+          <div class="nav">
+            <div class="nav-logo"><img src="../Logos/logos-oficiales/linex-go/LinexGo-logo-negativo.svg" alt="Linex Go"></div>
+            <div class="nav-r">
+              <span class="estado"><i class="dot"></i>Soporte regional</span>
+              <a class="contacto" href="#">Contacto</a>
+            </div>
+          </div>
+          <div class="hero">
+            <div>
+              <div class="dash"></div>
+              <h1><span>Soluciones que</span><span class="emph">impulsan tu</span><span>agencia de viajes</span></h1>
+              <p class="sub">Cotiza, reserva y controla tu operación en un solo lugar.</p>
+              <div class="atrib">
+                <div><span class="ico"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span><span>Tarifa competitiva</span></div>
+                <div><span class="ico"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 3a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.1-.5c1 .3 2 .5 3 .7a2 2 0 0 1 1.7 2z"/></svg></span><span>Soporte experto</span></div>
+                <div><span class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16.5 7.3a3.2 3.2 0 0 1 0 6.2M22 20a6 6 0 0 0-5-5.9"/></svg></span><span>Representaciones Exclusivas</span></div>
+              </div>
+              <div class="aliados">
+                <span class="txt">assist viaje</span>
+                <span class="txt">Disney</span>
+                <img src="../Logos/logos-aliados/hertz.png" alt="Hertz">
+                <img src="../Logos/logos-aliados/dollar.png" alt="Dollar">
+                <img src="../Logos/logos-aliados/thrifty.png" alt="Thrifty">
+              </div>
+            </div>
+            <div class="card">
+              <h3>Elige tu país</h3>
+              <div class="paises">
+                <div class="pais"><span class="cc">CO</span><span><span class="nom">Colombia</span><span class="por">Portal regional</span></span><span class="fl"><svg viewBox="0 0 24 24"><path d="M7 17V3M7 3l10 5-10 5"/></svg></span></div>
+                <div class="pais"><span class="cc">EC</span><span><span class="nom">Ecuador</span><span class="por">Portal regional</span></span><span class="fl"><svg viewBox="0 0 24 24"><path d="M7 17V3M7 3l10 5-10 5"/></svg></span></div>
+                <div class="pais"><span class="cc">PE</span><span><span class="nom">Perú</span><span class="por">Portal regional</span></span><span class="fl"><svg viewBox="0 0 24 24"><path d="M7 17V3M7 3l10 5-10 5"/></svg></span></div>
+                <div class="pais"><span class="cc">PA</span><span><span class="nom">Panamá</span><span class="por">Portal regional</span></span><span class="fl"><svg viewBox="0 0 24 24"><path d="M7 17V3M7 3l10 5-10 5"/></svg></span></div>
+              </div>
+              <p class="card-pie">La oferta, las tarifas y el soporte se adaptan a cada mercado.</p>
+            </div>
+          </div>
+          <p class="foot">© 2026 Linex Go. Todos los derechos reservados.</p>
+        </div>
+      </div>
+      <div class="aviso riesgo">Dos usos fuera del manual, conservados a propósito para verlos en contexto:
+        <ul>
+          <li><b>"impulsan tu"</b> en coral — el énfasis de un titular va con peso, nunca con color.</li>
+          <li>Flecha del selector de país en coral — un ícono no es una acción, nunca lleva coral.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="prop">
+      <span class="badge ok">V2 · Conforme al manual</span>
+      <h2>Mismo fondo Petróleo, corregido</h2>
+      <p class="nota">Idéntica base oscura que V1. Cambia solo lo que el manual no permite: el titular y el ícono.</p>
+      <div class="medidas">
+        <div><span>Titular / fondo</span><b>14.74:1</b></div>
+        <div><span>Enlace "Contacto"</span><b>5.49:1</b></div>
+      </div>
+      <div class="browser">
+        <div class="bbar"><i></i><i></i><i></i></div>
+        <div class="sitio v2">
+          <div class="nav">
+            <div class="nav-logo"><img src="../Logos/logos-oficiales/linex-go/LinexGo-logo-negativo.svg" alt="Linex Go"></div>
+            <div class="nav-r">
+              <span class="estado"><i class="dot"></i>Soporte regional</span>
+              <a class="contacto" href="#">Contacto</a>
+            </div>
+          </div>
+          <div class="hero">
+            <div>
+              <div class="dash"></div>
+              <h1><span>Soluciones que</span><span class="emph">impulsan tu</span><span>agencia de viajes</span></h1>
+              <p class="sub">Cotiza, reserva y controla tu operación en un solo lugar.</p>
+              <div class="atrib">
+                <div><span class="ico"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span><span>Tarifa competitiva</span></div>
+                <div><span class="ico"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 3a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.1-.5c1 .3 2 .5 3 .7a2 2 0 0 1 1.7 2z"/></svg></span><span>Soporte experto</span></div>
+                <div><span class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16.5 7.3a3.2 3.2 0 0 1 0 6.2M22 20a6 6 0 0 0-5-5.9"/></svg></span><span>Representaciones Exclusivas</span></div>
+              </div>
+              <div class="aliados">
+                <span class="txt">assist viaje</span>
+                <span class="txt">Disney</span>
+                <img src="../Logos/logos-aliados/hertz.png" alt="Hertz">
+                <img src="../Logos/logos-aliados/dollar.png" alt="Dollar">
+                <img src="../Logos/logos-aliados/thrifty.png" alt="Thrifty">
+              </div>
+            </div>
+            <div class="card">
+              <h3>Elige tu país</h3>
+              <div class="paises">
+                <div class="pais"><span class="cc">CO</span><span><span class="nom">Colombia</span><span class="por">Portal regional</span></span><span class="fl"><svg viewBox="0 0 24 24"><path d="M7 17V3M7 3l10 5-10 5"/></svg></span></div>
+                <div class="pais"><span class="cc">EC</span><span><span class="nom">Ecuador</span><span class="por">Portal regional</span></span><span class="fl"><svg viewBox="0 0 24 24"><path d="M7 17V3M7 3l10 5-10 5"/></svg></span></div>
+                <div class="pais"><span class="cc">PE</span><span><span class="nom">Perú</span><span class="por">Portal regional</span></span><span class="fl"><svg viewBox="0 0 24 24"><path d="M7 17V3M7 3l10 5-10 5"/></svg></span></div>
+                <div class="pais"><span class="cc">PA</span><span><span class="nom">Panamá</span><span class="por">Portal regional</span></span><span class="fl"><svg viewBox="0 0 24 24"><path d="M7 17V3M7 3l10 5-10 5"/></svg></span></div>
+              </div>
+              <p class="card-pie">La oferta, las tarifas y el soporte se adaptan a cada mercado.</p>
+            </div>
+          </div>
+          <p class="foot">© 2026 Linex Go. Todos los derechos reservados.</p>
+        </div>
+      </div>
+      <div class="aviso ok">Titular entero en blanco frío, con "impulsan tu" en mayor peso en vez de color.
+        "Contacto" pasa a coral (el enlace real sobre fondo oscuro) y la flecha del selector vuelve a petróleo.</div>
+    </div>
+
+    <div class="prop">
+      <span class="badge ok">V3 · Conforme al manual</span>
+      <h2>Petróleo claro + card cálida</h2>
+      <p class="nota">Misma corrección que V2, pero sobre un fondo más liviano y una card en blanco cálido con
+        arena de detalle.</p>
+      <div class="medidas">
+        <div><span>Titular / fondo</span><b>10.40:1</b></div>
+        <div><span>Arena / fondo</span><b>7.21:1</b></div>
+      </div>
+      <div class="browser">
+        <div class="bbar"><i></i><i></i><i></i></div>
+        <div class="sitio v3">
+          <div class="nav">
+            <div class="nav-logo"><img src="../Logos/logos-oficiales/linex-go/LinexGo-logo-negativo.svg" alt="Linex Go"></div>
+            <div class="nav-r">
+              <span class="estado"><i class="dot"></i>Soporte regional</span>
+              <a class="contacto" href="#">Contacto</a>
+            </div>
+          </div>
+          <div class="hero">
+            <div>
+              <div class="dash"></div>
+              <h1><span>Soluciones que</span><span class="emph">impulsan tu</span><span>agencia de viajes</span></h1>
+              <p class="sub">Cotiza, reserva y controla tu operación en un solo lugar.</p>
+              <div class="atrib">
+                <div><span class="ico"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span><span>Tarifa competitiva</span></div>
+                <div><span class="ico"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 3a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.1-.5c1 .3 2 .5 3 .7a2 2 0 0 1 1.7 2z"/></svg></span><span>Soporte experto</span></div>
+                <div><span class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16.5 7.3a3.2 3.2 0 0 1 0 6.2M22 20a6 6 0 0 0-5-5.9"/></svg></span><span>Representaciones Exclusivas</span></div>
+              </div>
+              <div class="aliados">
+                <span class="txt">assist viaje</span>
+                <span class="txt">Disney</span>
+                <img src="../Logos/logos-aliados/hertz.png" alt="Hertz">
+                <img src="../Logos/logos-aliados/dollar.png" alt="Dollar">
+                <img src="../Logos/logos-aliados/thrifty.png" alt="Thrifty">
+              </div>
+            </div>
+            <div class="card">
+              <h3>Elige tu país</h3>
+              <div class="paises">
+                <div class="pais"><span class="cc">CO</span><span><span class="nom">Colombia</span><span class="por">Portal regional</span></span><span class="fl"><svg viewBox="0 0 24 24"><path d="M7 17V3M7 3l10 5-10 5"/></svg></span></div>
+                <div class="pais"><span class="cc">EC</span><span><span class="nom">Ecuador</span><span class="por">Portal regional</span></span><span class="fl"><svg viewBox="0 0 24 24"><path d="M7 17V3M7 3l10 5-10 5"/></svg></span></div>
+                <div class="pais"><span class="cc">PE</span><span><span class="nom">Perú</span><span class="por">Portal regional</span></span><span class="fl"><svg viewBox="0 0 24 24"><path d="M7 17V3M7 3l10 5-10 5"/></svg></span></div>
+                <div class="pais"><span class="cc">PA</span><span><span class="nom">Panamá</span><span class="por">Portal regional</span></span><span class="fl"><svg viewBox="0 0 24 24"><path d="M7 17V3M7 3l10 5-10 5"/></svg></span></div>
+              </div>
+              <p class="card-pie">La oferta, las tarifas y el soporte se adaptan a cada mercado.</p>
+            </div>
+          </div>
+          <p class="foot">© 2026 Linex Go. Todos los derechos reservados.</p>
+        </div>
+      </div>
+      <div class="aviso ok">Misma corrección que V2, con Petróleo claro de fondo, card en blanco cálido y el
+        estado "Soporte regional" en arena — la letra chica que el manual reserva para ese color.</div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
