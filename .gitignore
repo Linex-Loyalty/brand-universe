@@ -33,3 +33,7 @@ npm-debug.log*
 # Fuentes de consulta: se leen, no se distribuyen. El dato que sirve
 # termina en brand-tokens.json y en el manual; el archivo se puede borrar.
 Manual de marca Linex-Ultragroup OFICIAL.pdf
+
+# PDFs sueltos de referencia/trabajo en docs/ — no van al repo.
+# docs/superpowers/ (specs, planes) sigue trackeado normal.
+docs/*.pdf
