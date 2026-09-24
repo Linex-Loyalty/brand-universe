@@ -213,11 +213,11 @@
         {
           "nombre": "Verde",
           "nombre_pendiente": true,
-          "hex": "#C5F04A",
+          "hex": "#3CCEAB",
           "rgb": [
-            197,
-            240,
-            74
+            60,
+            206,
+            171
           ],
           "cmyk": null,
           "rol": "Acento",
@@ -229,9 +229,9 @@
               "cualquier uso sobre blanco"
             ],
             "contrastes": {
-              "#FFFFFF": 1.32,
-              "#080808": 15.2,
-              "#00145A": 12.77
+              "#FFFFFF": 1.98,
+              "#080808": 10.12,
+              "#00145A": 8.5
             },
             "nota": "Necesita fondo oscuro. Loyalty todavía no tiene base oscura definida: fijarla es el siguiente dato que le falta a la marca."
           }
@@ -268,23 +268,22 @@
         "Sin paleta completa",
         "Sin logo",
         "Sin voz documentada",
-        "Sin manual",
-        "El Verde queda a la misma luminosidad que el Amarillo de Trip (L* 89.2 vs 88.1): se distinguen por tono, no por valor"
+        "Sin manual"
       ],
       "estado_trabajo": {
         "fecha": "2026-09-17",
         "estado": "en pausa",
         "decision": "Linex Loyalty queda en pausa por decisión del dueño de marca. No se trabaja su manual ni se completa su paleta por ahora.",
-        "al_retomar": "Lo primero es fijar su base oscura: el Verde #C5F04A da 1.32:1 sobre blanco y no tiene dónde vivir sin ella.",
+        "al_retomar": "Lo primero es fijar su base oscura: el Verde #3CCEAB da 1.98:1 sobre blanco y no tiene dónde vivir sin ella.",
         "estado_en": "paused",
         "decision_en": "Linex Loyalty is on hold by the brand owner's decision. Its manual isn't being worked on and its palette isn't being completed for now.",
-        "al_retomar_en": "The first thing is fixing its dark base: Green #C5F04A gives 1.32:1 on white and has nowhere to live without one."
+        "al_retomar_en": "The first thing is fixing its dark base: Green #3CCEAB gives 1.98:1 on white and has nowhere to live without one."
       },
       "fuente": {
         "documento": null,
         "de": "Instrucción directa del dueño de marca",
         "fecha": "2026-09-16",
-        "nota": "El Verde #C5F04A no viene de un manual ni de un documento: lo entregó el dueño de marca de viva voz. Es la única marca del grupo cuyo único dato de color no tiene respaldo escrito, y por eso se registra la procedencia aquí. Al retomar, conviene confirmarlo contra una fuente."
+        "nota": "El Verde #3CCEAB no viene de un manual ni de un documento: lo entregó el dueño de marca de viva voz. Es la única marca del grupo cuyo único dato de color no tiene respaldo escrito, y por eso se registra la procedencia aquí. Al retomar, conviene confirmarlo contra una fuente."
       },
       "rol_en": "The space port — the constellation's point of entry, not a payment box",
       "atrae_en": "Banks and large corporations evaluating loyalty at scale. The big-scale audience.",
@@ -296,8 +295,7 @@
         "No complete palette",
         "No logo",
         "No documented voice",
-        "No manual",
-        "Green sits at the same luminosity as Trip's Yellow (L* 89.2 vs 88.1): they're told apart by hue, not by value"
+        "No manual"
       ]
     },
     "linex-travel": {
