@@ -152,6 +152,13 @@ const LOGOS = {
   'linex-trip': 'manual-linex-trip/assets/logos/wordmark-color.svg',
 };
 
+/* Alto por defecto: 22px (.marca-logo en constelacion.css). Travel es la
+ * única excepción — su isotipo se lee más chico que el de Go y Trip a esa
+ * misma altura, así que necesita más para pesar igual en la tarjeta. */
+const LOGO_ALTURAS = {
+  'linex-travel': 39,
+};
+
 function tarjeta(m) {
   // El riel de acento solo existe si la marca tiene un color real.
   const conColor = m.color && m.color.length;
@@ -159,11 +166,12 @@ function tarjeta(m) {
     ? ` style="--acento:${esc((m.color.find(c => /acci[oó]n|acento/i.test(c.rol)) || m.color[0]).hex)}"`
     : '';
   const logo = LOGOS[m.id];
+  const altura = LOGO_ALTURAS[m.id];
 
   // Con logo, el nombre en texto sobra — el logo ya lo dice. Sin logo, el
   // nombre en texto es lo único que dice qué marca es esta tarjeta.
   const nombre = logo
-    ? `\n          <img class="marca-logo" src="${esc(logo)}" alt="${esc(m.nombre)}">`
+    ? `\n          <img class="marca-logo" src="${esc(logo)}" alt="${esc(m.nombre)}"${altura ? ` style="height: ${altura}px;"` : ''}>`
     : `\n          <h3>${esc(m.nombre)}</h3>`;
 
   return `    <article class="marca${conColor ? '' : ' pend'}"${acento}>
