@@ -1,0 +1,38 @@
+{
+  "$comment": "Manifiesto compartido por la familia Linex Travel: tipografia e iconos. Las paletas por marca viven en brands/<id>.json. El logo esta fuera del alcance de esta skill; se gestiona por otro medio.",
+  "brand": "Familia Linex Travel",
+  "updated": "2026-09-24",
+  "brands": {
+    "default": "linex-travel",
+    "available": [
+      "linex-travel",
+      "linex-go",
+      "linex-trip"
+    ],
+    "dir": "brands/"
+  },
+  "typography": {
+    "primary": "Figtree",
+    "webfont": "https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap",
+    "emailFallback": "Figtree, 'Helvetica Neue', Arial, sans-serif"
+  },
+  "icons": {
+    "library": "Font Awesome Pro",
+    "family": "classic",
+    "style": "regular",
+    "classPattern": "fa-regular fa-{nombre}",
+    "mode": "kit-cdn",
+    "modeOptions": {
+      "kit-cdn": "ACTIVO. Kit con iconos Pro habilitados. Se carga con el script de embedScript en el <head>. Es el modo para prototipos, landings y piezas web.",
+      "kit-npm": "Para React en el repo. Paquete npmPackage, requiere API token en .npmrc local o en el CI; el token no va al repositorio.",
+      "self-hosted": "CSS y webfonts descargados del sitio de Font Awesome. Poner la ruta publica en stylesheetUrl y cambiar mode.",
+      "free-cdn-fallback": "CDN gratuito. Set Classic Regular muy reducido: muchos iconos renderizan vacios. Solo como ultimo recurso."
+    },
+    "embedScript": "<script src=\"https://kit.fontawesome.com/YOUR_KIT_CODE.js\" crossorigin=\"anonymous\"></script>",
+    "kitCode": "YOUR_KIT_CODE",
+    "npmPackage": "@awesome.me/kit-YOUR_KIT_CODE",
+    "npmImportPath": "@awesome.me/kit-YOUR_KIT_CODE/icons/classic/regular",
+    "stylesheetUrl": null,
+    "notes": "Reemplazar YOUR_KIT_CODE por el kit code real de tu cuenta de Font Awesome Pro antes de usar (fontawesome.com/kits). El valor real nunca debe subirse a un repositorio publico ni a una skill publica: es consumo directo contra la cuenta. Si el kit tiene dominios restringidos, los iconos no renderizan fuera de esa lista y la pieza se ve sin fallar. Ante iconos vacios, revisar primero la restriccion de dominios y despues el nombre del icono."
+  }
+}

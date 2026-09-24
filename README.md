@@ -75,8 +75,9 @@ missing there is a branding session, not a website.
 | `Logos/` | Official logos, and the partner brands we represent |
 | `contexto-linex-*.md` | Full brand briefing, loadable in one go |
 | `tools/` | Contrast calculator, token verifier, site generator |
-| `.claude/` | The `/linex-brand` skill and the `brand-designer` agent |
+| `.claude/` | The `/linex-brand` skill, `/manual-marca-linex-travel` skill, and the `brand-designer` agent |
 | `docs/superpowers/` | Design specs, implementation plan, test records |
+| `manual-marca-linex-travel.skill` | Packaged download of the Travel/Go/Trip design-system skill — source of truth is `.claude/skills/manual-marca-linex-travel/` |
 
 Each manual is a self-contained folder. You can send `manual-linex-go/` to an
 external agency on its own and it works — no missing stylesheet, no broken

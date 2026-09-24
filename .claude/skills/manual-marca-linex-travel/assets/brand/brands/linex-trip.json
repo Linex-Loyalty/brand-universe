@@ -1,0 +1,140 @@
+{
+  "$comment": "Submarca Linex Trip. Paleta tomada del manual de marca (seccion Color). Los overrides se aplican sobre tokens.json ANTES de resolver alias, asi que los componentes del DS heredan la marca en cascada. Valores 'mix' son derivados (hover/pressed) que el manual no define: pendientes de validar con marca. Hover/pressed se aclaran (no se oscurecen) porque el texto sobre la accion es oscuro: oscurecer baja el contraste por debajo de 4.5:1.",
+  "id": "linex-trip",
+  "name": "Linex Trip",
+  "aliases": [
+    "linex trip",
+    "trip",
+    "linextrip.com"
+  ],
+  "extends": "linex-travel",
+  "updated": "2026-09-24",
+  "palette": {
+    "trip-blue": {
+      "hex": "#00145A",
+      "name": "Trip Blue",
+      "role": "Primario",
+      "share": 30,
+      "usage": "Texto sobre fondos claros y superficie oscura (portadas, banners, navegacion). Nunca rellena un boton."
+    },
+    "sky-blue": {
+      "hex": "#00B5F5",
+      "name": "Action Sky Blue",
+      "role": "Accion / CTA",
+      "share": 21,
+      "usage": "Todo lo que se toca: botones, CTAs, links. Como superficie, con texto Trip Blue encima. Nunca como texto sobre fondo claro (2.35:1). Los precios no van aqui: se leen, no se tocan."
+    },
+    "white": {
+      "hex": "#FFFFFF",
+      "name": "White",
+      "role": "Base y respiro",
+      "share": 19,
+      "usage": "Fondo base de superficies claras, cotizaciones y piezas impresas."
+    },
+    "sky-tint": {
+      "hex": "#E6F8FE",
+      "name": "Sky Blue Tint",
+      "role": "Respiro",
+      "share": 10,
+      "usage": "Fondo de pills, chips de categoria y cards suaves que piden un tono mas calido que el blanco."
+    },
+    "lavender": {
+      "hex": "#DDE1FF",
+      "name": "Linex Lavender",
+      "role": "Soporte",
+      "share": 8,
+      "usage": "Uno de los tres fondos permitidos para el logo y superficies decorativas discretas. Nunca como texto."
+    },
+    "black": {
+      "hex": "#080808",
+      "name": "Linex Black",
+      "role": "Reserva",
+      "share": 8,
+      "usage": "Casi no se usa: no va en logo, botones ni fondos. Reserva para impresion a una tinta."
+    },
+    "yellow": {
+      "hex": "#ECE200",
+      "name": "Yellow",
+      "role": "Detalle",
+      "share": 4,
+      "usage": "SOLO sobre Trip Blue (12.38:1). Eyebrows, letra chica, separadores. Nunca en titulares ni botones; sobre blanco es ilegible (1.36:1)."
+    }
+  },
+  "roles": {
+    "primary": "trip-blue",
+    "action": "sky-blue",
+    "on-action": "trip-blue",
+    "on-primary": "white",
+    "background": "white",
+    "background-soft": "sky-tint",
+    "support": "lavender",
+    "accent": "yellow",
+    "accent-only-on": "trip-blue",
+    "link-on-light": "trip-blue"
+  },
+  "overrides": {
+    "semantics.color.surface.primary.default": "sky-blue",
+    "semantics.color.surface.primary.strong": {
+      "mix": [
+        "sky-blue",
+        "white",
+        0.15
+      ]
+    },
+    "semantics.color.surface.primary.stronger": {
+      "mix": [
+        "sky-blue",
+        "white",
+        0.25
+      ]
+    },
+    "semantics.color.surface.primary.subtlest": "sky-tint",
+    "semantics.color.surface.primary.subtle": "sky-tint",
+    "semantics.color.surface.secondary.default": "trip-blue",
+    "semantics.color.surface.secondary.subtle": "lavender",
+    "semantics.color.surface.secondary.subtlest": "lavender",
+    "semantics.color.surface.base.default": "white",
+    "semantics.color.background.default": "white",
+    "semantics.color.background.subtle": "sky-tint",
+    "semantics.color.text.neutral.strong": "trip-blue",
+    "semantics.color.text.neutral.stronger": "trip-blue",
+    "semantics.color.text.primary.default": "trip-blue",
+    "semantics.color.text.primary.strong": "trip-blue",
+    "semantics.color.text.link.default": "trip-blue",
+    "semantics.color.text.link.visited": "trip-blue",
+    "semantics.color.icon.primary.default": "trip-blue",
+    "semantics.color.icon.primary.strong": "trip-blue",
+    "semantics.color.focus.primary.default": "sky-tint",
+    "semantics.color.focus.primary.subtle": "sky-tint",
+    "components.button.primary.text.default": "trip-blue",
+    "components.button.primary.icon.default": "trip-blue",
+    "components.button.primary.outline.text.default": "trip-blue",
+    "components.button.primary.outline.icon.default": "trip-blue",
+    "semantics.color.border.primary.default": "trip-blue",
+    "semantics.color.border.primary.strong": {
+      "mix": [
+        "trip-blue",
+        "sky-blue",
+        0.25
+      ]
+    },
+    "semantics.color.border.primary.subtle": "lavender",
+    "semantics.color.surface.primary.muted": "lavender",
+    "semantics.color.text.primary.muted": "trip-blue",
+    "semantics.color.text.primary.subtle": "trip-blue",
+    "semantics.color.text.primary.subtlest": "trip-blue",
+    "semantics.color.icon.primary.muted": "trip-blue",
+    "semantics.color.icon.primary.subtle": "trip-blue",
+    "semantics.color.dialog.closeButton.focusRing": "sky-tint"
+  },
+  "rules": [
+    "Trip Blue nunca rellena un boton: el CTA es Sky Blue con texto Trip Blue (7.16:1).",
+    "Sky Blue nunca es texto sobre fondo claro (2.35:1 sobre blanco). Los links sobre claro van en Trip Blue subrayado.",
+    "Yellow solo sobre Trip Blue, y solo en eyebrows, letra chica y separadores.",
+    "Lavender nunca como texto: falla contraste incluso sobre blanco.",
+    "Linex Black no se usa en botones, fondos ni logo.",
+    "Titular sobre Trip Blue: blanco. La accion sobre Trip Blue: Sky Blue.",
+    "Precios: texto Trip Blue, no Sky Blue (se leen, no se tocan).",
+    "Proporcion guia de la pieza: Trip Blue 30 · Sky Blue 21 · White 19 · Tint 10 · Lavender 8 · Black 8 · Yellow 4."
+  ]
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Linex — Prototipo</title>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap">
+
+<!-- Iconos: el script sale de brand.json -> icons.embedScript. No lo escribas de memoria.
+     YOUR_KIT_CODE debe reemplazarse por el kit code real; nunca subir el valor real
+     a un repo publico. -->
+<script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+
+<style>
+/* ==========================================================================
+   TOKENS
+   Pegar aquí el bloque :root completo que genera:
+       python3 scripts/build_css_vars.py --brand <linex-travel|linex-go|linex-trip>
+   La marca va en el comando, no en el CSS: el bloque ya sale con su paleta.
+   No recortarlo a mano ni escribir valores sueltos.
+   ========================================================================== */
+:root {
+  /* <-- bloque generado */
+}
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font: var(--s-typography-body-md-regular);
+  color: var(--s-color-text-neutral-default);
+  background: var(--s-color-background-subtle);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { margin: 0; color: var(--s-color-text-neutral-strong); }
+h1 { font: var(--s-typography-heading-md-bold); }
+h2 { font: var(--s-typography-heading-sm-semibold); }
+
+img { max-width: 100%; height: auto; }
+
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--s-color-focus-primary-default);
+}
+
+/* ==========================================================================
+   COMPONENTES
+   Recetas completas en references/components.md
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--c-button-gap);
+  border: none;
+  border-radius: var(--c-button-border-radius);
+  cursor: pointer;
+  min-height: 44px;                    /* target táctil */
+  padding: var(--c-button-md-padding-y) var(--c-button-md-padding-x);
+  font: var(--c-button-md-typography-font-weight)
+        var(--c-button-md-typography-font-size)/var(--c-button-md-typography-line-height)
+        var(--c-button-md-typography-font-family);
+  transition: background var(--p-duration-200) var(--p-easing-ease-out);
+}
+.btn .fa-regular { font-size: var(--c-button-md-icon-size); }
+
+.btn--primary { background: var(--c-button-primary-background-default); color: var(--c-button-primary-text-default); }
+.btn--primary:hover { background: var(--c-button-primary-background-hover); }
+.btn--primary:disabled {
+  background: var(--c-button-primary-background-disabled);
+  color: var(--c-button-primary-text-disabled);
+  cursor: not-allowed;
+}
+
+.card {
+  background: var(--s-color-background-default);
+  border: 1px solid var(--s-color-border-neutral-subtle);
+  border-radius: var(--p-border-radius-lg);
+  padding: var(--p-layout-padding-lg);
+  box-shadow: var(--s-shadow-sm);
+}
+
+/* Estado vacío y estado de error: incluirlos siempre, son los que destraban
+   la conversación con producto. */
+.state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--p-layout-gap-sm);
+  padding: var(--p-layout-padding-2xl);
+  text-align: center;
+  color: var(--s-color-text-neutral-muted);
+}
+.state .fa-regular { font-size: var(--p-icon-size-xl); color: var(--s-color-icon-neutral-subtle); }
+
+/* Sin regla de logo: el asset esta fuera del alcance de esta skill. */
+
+@media (max-width: 768px) {
+  .shell { padding: var(--p-layout-padding-md); }
+}
+</style>
+</head>
+<body>
+
+<main class="shell">
+  <!-- El logo está fuera del alcance de esta skill. Si la pieza lo necesita, marcar
+       el espacio (ej. un div con "[LOGO]") y mencionarlo en la entrega. -->
+
+  <!-- Contenido del prototipo -->
+</main>
+
+<script>
+/* Interacción real: estados implementados, no descritos.
+   Estado en memoria — nada de localStorage si corre como artifact. */
+const state = {};
+</script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+{
+  "$comment": "Submarca Linex Go. Paleta tomada del manual de marca (seccion 'The role of each colour'). Los overrides se aplican sobre tokens.json ANTES de resolver alias. Valores 'mix' son derivados (hover/pressed) que el manual no define: pendientes de validar con marca. Hover/pressed se aclaran (no se oscurecen) porque el texto sobre la accion es oscuro: oscurecer baja el contraste por debajo de 4.5:1.",
+  "id": "linex-go",
+  "name": "Linex Go",
+  "aliases": [
+    "linex go",
+    "go",
+    "linexgo"
+  ],
+  "extends": "linex-travel",
+  "updated": "2026-09-24",
+  "palette": {
+    "petroleum": {
+      "hex": "#012D33",
+      "name": "Petroleum",
+      "role": "Primario",
+      "share": 32,
+      "usage": "Color base: superficies oscuras, texto sobre fondo claro (14.00:1) y texto sobre coral. Nunca rellena un boton."
+    },
+    "light-petroleum": {
+      "hex": "#004751",
+      "name": "Light petroleum",
+      "role": "Soporte",
+      "share": 18,
+      "usage": "Texto secundario sobre claro (9.87:1), contenedores de icono y superficies que se separan del base sin salir de la familia."
+    },
+    "cool-white": {
+      "hex": "#F8F9FC",
+      "name": "Cool white",
+      "role": "Respiro",
+      "share": 18,
+      "usage": "Fondo por defecto de piezas claras; uno de los tres fondos permitidos para el logo."
+    },
+    "coral": {
+      "hex": "#FF725E",
+      "name": "Coral",
+      "role": "Accion",
+      "share": 12,
+      "usage": "El color de la accion, y solo de la accion: botones, CTAs, links. Superficie con texto Petroleum encima (5.49:1). Nunca texto sobre claro (2.55:1) ni para resaltar un dato."
+    },
+    "warm": {
+      "hex": "#F3F0E9",
+      "name": "Warm",
+      "role": "Soporte",
+      "share": 10,
+      "usage": "Alternativa editorial al cool white, para piezas que se sienten mas documento que interfaz."
+    },
+    "light-coral": {
+      "hex": "#FFE3DD",
+      "name": "Light coral",
+      "role": "Superficie",
+      "share": 6,
+      "usage": "SOLO como fondo: alertas, cards, highlights de superficie. Como tinta sobre claro da 1.15:1 y sobre petroleum se confunde con la accion."
+    },
+    "sand": {
+      "hex": "#E6D5B8",
+      "name": "Sand",
+      "role": "Detalle",
+      "share": 4,
+      "usage": "SOLO sobre Petroleum (10.23:1). Eyebrows, fechas de vigencia, letra chica. Nunca en titulares ni botones."
+    }
+  },
+  "roles": {
+    "primary": "petroleum",
+    "secondary": "light-petroleum",
+    "action": "coral",
+    "on-action": "petroleum",
+    "on-primary": "cool-white",
+    "background": "cool-white",
+    "background-soft": "warm",
+    "surface-highlight": "light-coral",
+    "accent": "sand",
+    "accent-only-on": "petroleum",
+    "link-on-light": "petroleum"
+  },
+  "overrides": {
+    "semantics.color.surface.primary.default": "coral",
+    "semantics.color.surface.primary.strong": {
+      "mix": [
+        "coral",
+        "cool-white",
+        0.15
+      ]
+    },
+    "semantics.color.surface.primary.stronger": {
+      "mix": [
+        "coral",
+        "cool-white",
+        0.25
+      ]
+    },
+    "semantics.color.surface.primary.subtlest": "light-coral",
+    "semantics.color.surface.primary.subtle": "light-coral",
+    "semantics.color.surface.secondary.default": "petroleum",
+    "semantics.color.surface.secondary.strong": "light-petroleum",
+    "semantics.color.surface.secondary.subtle": "warm",
+    "semantics.color.surface.secondary.subtlest": "warm",
+    "semantics.color.surface.base.default": "cool-white",
+    "semantics.color.background.default": "cool-white",
+    "semantics.color.background.subtle": "warm",
+    "semantics.color.text.neutral.strong": "petroleum",
+    "semantics.color.text.neutral.stronger": "petroleum",
+    "semantics.color.text.neutral.muted": "light-petroleum",
+    "semantics.color.text.primary.default": "petroleum",
+    "semantics.color.text.primary.strong": "petroleum",
+    "semantics.color.text.link.default": "petroleum",
+    "semantics.color.text.link.visited": "light-petroleum",
+    "semantics.color.icon.primary.default": "petroleum",
+    "semantics.color.icon.primary.strong": "petroleum",
+    "semantics.color.icon.primary.subtle": "light-petroleum",
+    "semantics.color.focus.primary.default": "light-coral",
+    "semantics.color.focus.primary.subtle": "light-coral",
+    "components.button.primary.text.default": "petroleum",
+    "components.button.primary.icon.default": "petroleum",
+    "components.button.primary.outline.text.default": "petroleum",
+    "components.button.primary.outline.icon.default": "petroleum",
+    "semantics.color.border.primary.default": "petroleum",
+    "semantics.color.border.primary.strong": "light-petroleum",
+    "semantics.color.border.primary.subtle": "light-coral",
+    "semantics.color.surface.primary.muted": "light-coral",
+    "semantics.color.text.primary.muted": "light-petroleum",
+    "semantics.color.text.primary.subtle": "light-petroleum",
+    "semantics.color.text.primary.subtlest": "light-petroleum",
+    "semantics.color.icon.primary.muted": "light-petroleum",
+    "semantics.color.dialog.closeButton.focusRing": "light-coral"
+  },
+  "rules": [
+    "Petroleum nunca rellena un boton: el CTA es Coral con texto Petroleum (5.49:1).",
+    "Coral es solo accion: nunca texto sobre claro (2.55:1) y nunca para resaltar un dato o precio.",
+    "Light coral solo como fondo (alertas, cards, highlights); nunca como tinta.",
+    "Sand solo sobre Petroleum, y solo en eyebrows, vigencias y letra chica. Nunca en titulares ni botones.",
+    "Texto secundario sobre claro: Light petroleum.",
+    "Warm es la alternativa editorial al cool white (piezas tipo documento).",
+    "Proporcion guia de la pieza: Petroleum 32 · Light petroleum 18 · Cool white 18 · Coral 12 · Warm 10 · Light coral 6 · Sand 4."
+  ]
+}

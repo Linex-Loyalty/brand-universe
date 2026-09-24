@@ -1,0 +1,19 @@
+{
+  "$comment": "De donde salen los tokens. El verificador de frescura (scripts/check_ds_version.py) usa esto. Completar organization, project, repository y path con los valores reales de tu repo antes de usar. No subir este archivo con datos reales a un repositorio publico: los nombres de organizacion y proyecto son informacion interna, aunque no den acceso por si solos.",
+  "provider": "azure-devops",
+  "organization": "YOUR_ORG",
+  "project": "YOUR_PROJECT",
+  "repository": "YOUR_REPO",
+  "branch": "main",
+  "path": "/tokens.json",
+  "apiVersion": "7.1",
+  "webUrl": "https://dev.azure.com/YOUR_ORG/YOUR_PROJECT/_git/YOUR_REPO",
+  "auth": {
+    "method": "pat-env",
+    "envVar": "AZDO_PAT",
+    "$comment": "Personal Access Token con permiso de lectura de codigo. Va en una variable de entorno, nunca en este archivo ni en el repo de la skill."
+  },
+  "localSnapshot": "tokens.json",
+  "snapshotTakenOn": "2026-09-22",
+  "snapshotVersion": null
+}

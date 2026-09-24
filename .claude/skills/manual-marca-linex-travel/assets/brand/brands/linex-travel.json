@@ -1,0 +1,13 @@
+{
+  "$comment": "Marca madre. Usa Nomad DS tal cual: sin overrides. Es la marca por defecto cuando el pedido dice 'Linex Travel' o no nombra submarca y el contexto es claramente Travel.",
+  "id": "linex-travel",
+  "name": "Linex Travel",
+  "aliases": ["linex travel", "travel", "linex"],
+  "extends": null,
+  "palette": {},
+  "roles": {},
+  "overrides": {},
+  "rules": [
+    "Paleta completa de Nomad DS (azulVioleta como primario). Ver references/tokens.md."
+  ]
+}
