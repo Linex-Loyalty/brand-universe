@@ -4,9 +4,6 @@ Manual de marca de la familia Linex Travel (Linex Travel, Linex Go, Linex Trip).
 componentes React, prototipos HTML interactivos y piezas de marketing usando los tokens
 reales de Nomad DS con la paleta de la marca aplicada como override.
 
-Antes se llamaba `ui-designer-linex`. Si ambas quedan instaladas compiten por activarse:
-borrar `ui-designer-linex` desde ajustes.
-
 **Esta carpeta es la fuente de verdad.** El archivo `.skill` es solo el empaquetado para
 distribuir e instalar. Si alguien edita un `.skill` suelto y no vuelca el cambio acá, ese
 cambio se pierde en el siguiente empaquetado.
