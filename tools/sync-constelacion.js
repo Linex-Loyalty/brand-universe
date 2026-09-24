@@ -126,6 +126,14 @@ function pausa(m) {
       </div>`;
 }
 
+/* La skill de diseño cubre Travel, Go y Trip, pero vive una sola vez —
+ * en la tarjeta de Travel, la estrella que las agrupa como familia. */
+function skillDescarga(m) {
+  if (m.id !== 'linex-travel') return '';
+  return `\n      <p class="acceso"><a class="btn btn-alt" href="manual-marca-linex-travel.skill" download>` +
+         `${bi('Descargar la skill de diseño (Travel · Go · Trip)', 'Download the design skill (Travel · Go · Trip)')}</a></p>`;
+}
+
 /* Un manual que no existe no lleva enlace. Nunca href="#". */
 function acceso(m) {
   if (m.manual) {
@@ -176,7 +184,7 @@ function tarjeta(m) {
       <div class="af">
         <div><h4>${bi('Atrae', 'Attracts')}</h4><p>${bi(m.atrae, m.atrae_en)}</p></div>
         <div><h4>${bi('Filtra', 'Filters out')}</h4><p>${bi(m.filtra, m.filtra_en)}</p></div>
-      </div>${swatches(m)}${acceso(m)}${pendientes(m)}
+      </div>${swatches(m)}${acceso(m)}${skillDescarga(m)}${pendientes(m)}
     </article>`;
 }
 

@@ -211,6 +211,10 @@ h1 {
 }
 .btn:hover { opacity: .88; }
 .btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+/* Segundo tono, mismo neutro del grupo — nunca un color de marca sin
+   aprobar. Distingue "descargar" de "abrir manual" por valor, no por matiz. */
+.btn-alt { background: var(--ink-2); }
+.btn-alt:focus-visible { outline-color: var(--ink-2); }
 .acceso.sin span { font-size: 13px; color: var(--ink-3); font-style: italic; }
 
 /* ---------- pendientes ----------
