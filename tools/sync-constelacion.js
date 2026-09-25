@@ -140,9 +140,20 @@ const ICONO_DESCARGA = '<svg class="dl-ico" viewBox="0 0 16 16" aria-hidden="tru
   '<path d="M8 2v8m0 0L4.5 6.5M8 10l3.5-3.5M2.5 13.5h11" fill="none" stroke="currentColor" ' +
   'stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
+/* Un enlace que sale del sitio no baja un archivo: abre otra página. Lleva
+ * su propio ícono para no prometer una descarga que no ocurre al clic. */
+const ICONO_EXTERNO = '<svg class="dl-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false">' +
+  '<path d="M6.5 3.5h-3v9h9v-3M9 2.5h4.5V7M13.5 2.5 7 9" fill="none" stroke="currentColor" ' +
+  'stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+/* La skill de diseño se publica en Atlas, no como archivo del repositorio. */
+const SKILL_URL = 'https://atlas.linexrewards.com/artifact/manual-marca-linex-travel';
+
 function enlaceDescarga(href, es, en, formato) {
+  const externo = /^https?:\/\//.test(href);
+  const attrs = externo ? ' target="_blank" rel="noopener"' : ' download';
   return `
-          <a class="dl" href="${esc(href)}" download>${ICONO_DESCARGA}` +
+          <a class="dl" href="${esc(href)}"${attrs}>${externo ? ICONO_EXTERNO : ICONO_DESCARGA}` +
          `<span class="dl-txt"><b>${bi(es, en)}</b><small>${esc(formato)}</small></span></a>`;
 }
 
@@ -153,8 +164,8 @@ function descargas(m) {
     items.push(enlaceDescarga(zip, 'Logos', 'Logos', 'SVG + PNG · .zip'));
   }
   if (m.id === 'linex-travel') {
-    items.push(enlaceDescarga('manual-marca-linex-travel.skill',
-      'Skill de diseño', 'Design skill', 'Travel · Go · Trip · .skill'));
+    items.push(enlaceDescarga(SKILL_URL,
+      'Skill de diseño', 'Design skill', 'Travel · Go · Trip · Atlas'));
   }
   if (!items.length) return '';
   return `
