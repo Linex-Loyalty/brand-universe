@@ -161,9 +161,11 @@ const LOGO_ALTURAS = {
 
 function tarjeta(m) {
   // El riel de acento solo existe si la marca tiene un color real.
+  // Manda el color de acción: en Go el acento azul es el de Travel, y el
+  // riel de su tarjeta quedaría igual al de la marca madre.
   const conColor = m.color && m.color.length;
   const acento = conColor
-    ? ` style="--acento:${esc((m.color.find(c => /acci[oó]n|acento/i.test(c.rol)) || m.color[0]).hex)}"`
+    ? ` style="--acento:${esc((m.color.find(c => /acci[oó]n/i.test(c.rol)) || m.color.find(c => /acento/i.test(c.rol)) || m.color[0]).hex)}"`
     : '';
   const logo = LOGOS[m.id];
   const altura = LOGO_ALTURAS[m.id];

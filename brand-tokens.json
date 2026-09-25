@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "actualizado": "2026-09-17",
+  "actualizado": "2026-09-25",
   "nota": "Fuente única de la constelación Linex. Reconstruido desde contexto-linex-trip.md y contexto-linex-go.md tras perderse brand-system/brand-tokens.json. Si un dato difiere del manual, manda el manual — salvo los contrastes, que se recalculan con tools/contraste.js.",
   "grupo": {
     "tipografia": {
@@ -764,18 +764,18 @@
       "filtra": "El viajero final — se enruta a Linex Trip por el Group Bar o por el asesor.",
       "color": [
         {
-          "nombre": "Petróleo",
-          "hex": "#012D33",
+          "nombre": "Navy",
+          "hex": "#15172F",
           "rgb": [
-            1,
-            45,
-            51
+            21,
+            23,
+            47
           ],
           "cmyk": [
-            98,
-            12,
+            55,
+            51,
             0,
-            80
+            82
           ],
           "rol": "Principal",
           "proporcion": 32,
@@ -785,38 +785,46 @@
               "rellenar un botón"
             ],
             "contrastes": {
-              "#FFFFFF": 14.74,
-              "#F8F9FC": 14,
-              "#F3F0E9": 12.95,
-              "#FFE3DD": 12.13,
-              "#FF725E": 5.49
+              "#FFFFFF": 17.57,
+              "#F8F9FC": 16.69,
+              "#F3F0E9": 15.43,
+              "#FFE3DD": 14.46,
+              "#FF725E": 6.54
             }
           }
         },
         {
-          "nombre": "Petróleo claro",
-          "hex": "#004751",
+          "nombre": "Azul",
+          "hex": "#5B5CFF",
           "rgb": [
-            0,
-            71,
-            81
+            91,
+            92,
+            255
           ],
           "cmyk": [
-            100,
-            12,
+            64,
+            64,
             0,
-            68
+            0
           ],
-          "rol": "Apoyo — texto secundario, contenedores de ícono",
-          "proporcion": 18,
+          "rol": "Acento — texto secundario, contenedores de ícono",
+          "proporcion": 20,
           "regla": {
             "solo_sobre": null,
-            "nunca": [],
+            "nunca": [
+              "rellenar un botón",
+              "texto sobre blanco cálido",
+              "texto sobre navy",
+              "tocar el coral"
+            ],
             "contrastes": {
-              "#FFFFFF": 10.4,
-              "#F8F9FC": 9.87
+              "#FFFFFF": 4.75,
+              "#F8F9FC": 4.51,
+              "#F3F0E9": 4.17,
+              "#15172F": 3.7,
+              "#FF725E": 1.77
             },
-            "nota": "Es el acento tecnológico transversal que Go comparte con Linex Travel, no un color exclusivo de Go."
+            "nota": "Es el mismo #5B5CFF de Nomad DS / Linex Travel, donde rellena el botón. En Go no: la acción es del coral, y un botón azul leería como Travel. Como tinta solo sobre blanco o blanco frío, y sobre este último queda al límite (4.51:1)."
           }
         },
         {
@@ -860,11 +868,12 @@
               "texto blanco encima",
               "destacar un dato que no se puede tocar",
               "soporte de marca",
-              "fondo del logotipo"
+              "fondo del logotipo",
+              "tocar el azul"
             ],
             "contrastes": {
-              "#012D33": 5.49,
-              "#004751": 3.87,
+              "#15172F": 6.54,
+              "#5B5CFF": 1.77,
               "#FFFFFF": 2.69,
               "#F8F9FC": 2.55,
               "#F3F0E9": 2.36
@@ -905,51 +914,21 @@
             0
           ],
           "rol": "Superficie — avisos y tarjetas de realce",
-          "proporcion": 6,
+          "proporcion": 8,
           "regla": {
             "solo_sobre": null,
             "nunca": [
               "usarse como tinta"
             ],
             "contrastes": {
-              "#012D33": 12.13,
+              "#15172F": 14.46,
               "#F8F9FC": 1.15
-            }
-          }
-        },
-        {
-          "nombre": "Arena",
-          "hex": "#E6D5B8",
-          "rgb": [
-            230,
-            213,
-            184
-          ],
-          "cmyk": [
-            0,
-            7,
-            20,
-            10
-          ],
-          "rol": "Detalle — antetítulos, vigencias, letra chica",
-          "proporcion": 4,
-          "regla": {
-            "solo_sobre": "#012D33",
-            "nunca": [
-              "títulos",
-              "botones",
-              "tinta sobre fondo claro"
-            ],
-            "contrastes": {
-              "#012D33": 10.23,
-              "#004751": 7.21,
-              "#F8F9FC": 1.37
             }
           }
         }
       ],
       "derivados": [],
-      "proporcion_nota": "Dos de los porcentajes son regla, no descripción: el coral no pasa del 12% y la arena se queda en 4%. Un color que aparece poco es un color que se nota cuando aparece.",
+      "proporcion_nota": "Uno de los porcentajes es regla, no descripción: el coral no pasa del 12%. Por encima deja de ser señal y se vuelve decoración.",
       "tipografia": "grupo",
       "iconografia": "grupo",
       "radios": {
@@ -972,19 +951,19 @@
         "avatar": null,
         "con_eslogan": null
       },
-      "logo_nota": "Desbloqueado el 17 de septiembre de 2026. Llegaron cuatro SVG reales (7 formas cada uno), no el PNG dentro de .svg que había antes, y ya existe la versión negativa: la papelería deja de estar bloqueada. El 'Linex' va en Índigo #1A0E3E — NO en el Petróleo #012D33 de la paleta — por decisión del dueño de marca del 17 de septiembre. Es la única excepción del sistema: afecta solo al logotipo, la paleta de la marca no cambia. Ver logo_color_propio.",
+      "logo_nota": "Desbloqueado el 17 de septiembre de 2026. Llegaron cuatro SVG reales (7 formas cada uno), no el PNG dentro de .svg que había antes, y ya existe la versión negativa: la papelería deja de estar bloqueada. El 'Linex' va en Índigo #1A0E3E — NO en el Navy #15172F de la paleta (la excepción nació frente al Petróleo #012D33, paleta anterior al 25-09-2026) — por decisión del dueño de marca del 17 de septiembre. Es la única excepción del sistema: afecta solo al logotipo, la paleta de la marca no cambia. Ver logo_color_propio.",
       "logo_color_propio": {
         "decidido": "2026-09-17",
         "hex": "#1A0E3E",
-        "alcance": "Solo el logotipo. El Petróleo #012D33 sigue siendo el color principal de la marca, el que sostiene el texto y el que va encima del coral.",
+        "alcance": "Solo el logotipo. El Navy #15172F es el color principal de la marca, el que sostiene el texto y el que va encima del coral.",
         "no_cambia": "Ningún contraste de la paleta, ninguna regla de acción, ningún token del CSS.",
         "contrastes_del_logo": {
           "#F8F9FC": 16.96,
           "#F3F0E9": 15.69,
-          "#012D33": 1.21
+          "#15172F": 1.02
         },
-        "consecuencia_dura": "Sobre Petróleo el logotipo a color da 1.21:1 y desaparece. Sobre ese fondo va SIEMPRE la versión negativa, sin excepción.",
-        "convivencia": "En una pieza con fondo o tipografía en Petróleo, el logotipo queda en otro oscuro. Están a ΔE 39.3: la diferencia se ve, y es intencional.",
+        "consecuencia_dura": "Sobre Navy el logotipo a color da 1.02:1 y desaparece. Sobre ese fondo va SIEMPRE la versión negativa, sin excepción.",
+        "convivencia": "En una pieza con fondo o tipografía en Navy, el logotipo queda en otro oscuro. Están a ΔE 18.3 (CIE76): dos oscuros azulados muy cercanos, la diferencia apenas se nota. No se corrige el archivo del logotipo para igualarlos.",
         "contexto": "#1A0E3E era el Índigo de Linex Trip hasta el 14 de septiembre de 2026, cuando Trip lo cambió por el Azul Trip #00145A. El oscuro del logotipo de Go y el de Trip quedan a ΔE 15.5 y a 7° de tono: conviene tenerlo en cuenta al poner las dos marcas en una misma pieza."
       },
       "logo_revision": {
@@ -1012,13 +991,13 @@
         "permitidos": [
           "#F8F9FC",
           "#F3F0E9",
-          "#012D33"
+          "#15172F"
         ],
         "prohibidos": [
           "#FF725E",
-          "#004751"
+          "#5B5CFF"
         ],
-        "nota": "Sobre petróleo solo con la versión negativa, que no existe todavía. Nunca sobre coral: el Go coral desaparecería dentro de él."
+        "nota": "Sobre navy solo con la versión negativa. Nunca sobre coral: el Go coral desaparecería dentro de él. Nunca sobre azul: el coral da 1.77:1 ahí."
       },
       "aliados": {
         "nota": "Marcas de terceros bajo acuerdo de representación comercial. No son de la constelación. Nunca se modifican ni en color ni en proporciones, siempre en la zona de aliados y en menor tamaño que Linex Go.",
@@ -1114,14 +1093,16 @@
         "Sin nombre corporativo legal aprobado",
         "Sin plazo definido para la transición UltraGo → Linex Go",
         "Sin banco de imágenes propio",
-        "Las piezas producidas se ajustan CON EL DISEÑADOR (decisión 17-sep-2026): el conflicto de la tarjeta —fondo petróleo con logo negativo según la sección de canal, cara clara según lo producido— y los radios de 20 y 28 px que quedaron fuera de la escala del grupo",
+        "Las piezas producidas se ajustan CON EL DISEÑADOR (decisión 17-sep-2026): el conflicto de la tarjeta —fondo navy con logo negativo según la sección de canal, cara clara según lo producido— y los radios de 20 y 28 px que quedaron fuera de la escala del grupo",
         "Solo Instagram tiene reglas escritas; las demás redes no"
       ],
       "paleta_confirmada": {
-        "fecha": "2026-09-17",
-        "decision": "La paleta del manual NO se reemplaza. Los siete colores documentados son los definidos, con el Petróleo #012D33 como principal.",
-        "alcance": "Que el logotipo lleve Índigo #1A0E3E es una excepción del logotipo y nada más. No arrastra a la paleta, ni a los contrastes, ni a los tokens del CSS.",
-        "no_reabrir": "Esta decisión cierra la pregunta de si el oscuro de la marca debía cambiar con el del logotipo. La respuesta es no."
+        "fecha": "2026-09-25",
+        "decision": "La paleta pasa a Navy #15172F (principal, 32%) y Azul #5B5CFF (acento, 20%), con Blanco frío 18%, Coral 12%, Blanco cálido 10% y Coral claro 8%. Seis colores.",
+        "reemplaza": "La paleta del 2026-09-15 / confirmada el 2026-09-17: Petróleo #012D33, Petróleo claro #004751 y Arena #E6D5B8 salen del sistema. Esto reabre, por decisión del dueño de marca, el 'no_reabrir' del 17-09.",
+        "consecuencia": "El navy y el azul son los de Nomad DS / Linex Travel: Go ya no se distingue de su marca madre por el oscuro, sino por el coral y el logotipo.",
+        "sigue_vigente": "El coral es solo de la acción (decisión 2026-09-15). La lámina recibida decía 'solo CTA o dato clave'; esa frase no se adopta.",
+        "alcance": "Que el logotipo lleve Índigo #1A0E3E sigue siendo una excepción del logotipo y nada más."
       },
       "rol_en": "B2B sub-brand within Linex Travel — the commercial face toward agencies and operators",
       "atrae_en": "Agencies and operators that need a system to sell travel. B2B channel, with fares and resale tools.",
@@ -1136,7 +1117,7 @@
         "No approved legal corporate name",
         "No set deadline for the UltraGo → Linex Go transition",
         "No image library of its own",
-        "Produced pieces get adjusted WITH THE DESIGNER (decision 17-Sep-2026): the card's conflict —petroleum background with a negative logo per the channel section, a light face per what was actually produced— and the 20 and 28 px radii that fell outside the group's scale",
+        "Produced pieces get adjusted WITH THE DESIGNER (decision 17-Sep-2026): the card's conflict —navy background with a negative logo per the channel section, a light face per what was actually produced— and the 20 and 28 px radii that fell outside the group's scale",
         "Only Instagram has written rules; the other networks don't"
       ]
     },

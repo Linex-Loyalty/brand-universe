@@ -4,14 +4,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-  /* Los siete colores oficiales de Linex Go — paleta revisada 2026-09-15.
-     Petróleo y su variante clara, los dos blancos, el coral de acción con su tinte,
-     y la arena para el detalle.
+  /* Los seis colores oficiales de Linex Go — paleta adoptada 2026-09-25.
+     Navy y su azul de acento, los dos blancos, el coral de acción con su tinte.
+     Reemplaza a la paleta Petróleo del 2026-09-15; la arena salió con ella.
      La proporción es parte de la regla, por eso se anota aquí:
-     Petróleo 32% · Petróleo claro 18% · Blanco frío 18% · Coral 12% ·
-     Cálido 10% · Coral claro 6% · Arena 4%. */
-  --base: #012D33;            /* petróleo · principal, base y estructura */
-  --base-rgb: 1, 45, 51;
+     Navy 32% · Azul 20% · Blanco frío 18% · Coral 12% ·
+     Cálido 10% · Coral claro 8%. */
+  --base: #15172F;            /* navy · principal, base y estructura */
+  --base-rgb: 21, 23, 47;
   --paper: #F8F9FC;           /* blanco frío · respiro, fondo por defecto */
   --calido: #F3F0E9;          /* blanco cálido · alternativa editorial */
   --white: #FFFFFF;
@@ -20,24 +20,20 @@
   /* Coral: color de ACCIÓN, y solo de la acción — botones, CTA y enlaces.
      Nunca destaca un dato (decisión del administrador de marca, 2026-09-15)
      ni va como texto sobre fondo claro: 2.55:1 sobre el blanco frío.
-     Sobre coral el texto va en petróleo, 5.49:1. */
+     Sobre coral el texto va en navy, 6.54:1. */
   --coral: #FF725E;
   --coral-rgb: 255, 114, 94;
   --coral-claro: #FFE3DD;     /* superficie tenue derivada del coral · fondo, nunca tinta */
   --coral-claro-rgb: 255, 227, 221;
   --coral-tint: #FFF3F0;      /* la misma idea, aún más tenue */
 
-  /* Petróleo claro: el mismo matiz, más claro. Sustituye al azul que Go
-     compartía con Linex Travel. Texto secundario sobre claro (9.87:1),
-     contenedores de ícono y superficies que se separan de la base. */
-  --apoyo: #004751;
-  --apoyo-rgb: 0, 71, 81;
-
-  /* Arena: tercer color, en el papel que el amarillo cumple en Linex Trip.
-     Solo sobre la base oscura — 10.23:1 sobre petróleo, 1.37:1 sobre el
-     blanco frío. Antetítulos, vigencias y letra chica; nunca títulos ni botones. */
-  --arena: #E6D5B8;
-  --arena-rgb: 230, 213, 184;
+  /* Azul: acento tecnológico, el mismo #5B5CFF de Linex Travel. Acompaña, no
+     actúa: nunca rellena un botón, porque la acción es del coral.
+     Texto secundario solo sobre blanco (4.75:1) o blanco frío (4.51:1, al
+     límite): sobre el cálido baja a 4.17:1 y sobre navy a 3.70:1.
+     Contenedores de ícono con blanco encima (4.75:1). */
+  --apoyo: #5B5CFF;
+  --apoyo-rgb: 91, 92, 255;
 
   /* Cromo del manual, no paleta de marca. */
   --green-c: #3CCEAB;
@@ -436,7 +432,7 @@ code {
 
 /* ---------- Navegación por teclado ---------- */
 
-/* Un solo anillo de foco para todo el manual. Va en Azul #004751, que es el
+/* Un solo anillo de foco para todo el manual. Va en Azul #5B5CFF, que es el
    acento tecnológico de Go y da 4.51:1 sobre el blanco frío; sobre el sidebar
    navy se refuerza con blanco más abajo, porque el azul sobre navy solo llega a
    3.70:1. Solo :focus-visible: no aparece al hacer clic con mouse. */

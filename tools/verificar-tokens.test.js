@@ -47,9 +47,9 @@ test('solo Loyalty y Rewards tienen genio nombrado', () => {
   assert.strictEqual(tokens.marcas['linex-rewards'].genio, 'Milton');
 });
 
-test('Trip y Go tienen siete colores cada una', () => {
+test('Trip tiene siete colores y Go seis (paleta Navy, 2026-09-25)', () => {
   assert.strictEqual(tokens.marcas['linex-trip'].color.length, 7);
-  assert.strictEqual(tokens.marcas['linex-go'].color.length, 7);
+  assert.strictEqual(tokens.marcas['linex-go'].color.length, 6);
 });
 
 test('las proporciones de cada marca documentada suman 100', () => {

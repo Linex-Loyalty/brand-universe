@@ -61,7 +61,7 @@ test('no pinta el cromo con ningún color de marca', () => {
   const desde = html.indexOf(':root {');
   const hasta = html.indexOf('}', desde);
   const raiz = html.slice(desde, hasta);
-  for (const hex of ['#FF725E', '#00B5F5', '#C5F04A', '#012D33', '#00145A', '#ECE200', '#E6D5B8', '#004751']) {
+  for (const hex of ['#FF725E', '#00B5F5', '#C5F04A', '#15172F', '#00145A', '#ECE200', '#5B5CFF']) {
     assert.ok(!raiz.includes(hex), `el cromo usa ${hex}, que es color de marca`);
   }
 });
@@ -73,7 +73,7 @@ test('todo color de marca que aparece viene del JSON', () => {
       delJson.add(c.hex.toUpperCase());
     }
   }
-  const marcaHex = /^#(FF725E|00B5F5|C5F04A|012D33|00145A|ECE200|004751|E6D5B8|FFE3DD|E6F8FE|DDE1FF|0090C2)$/;
+  const marcaHex = /^#(FF725E|00B5F5|C5F04A|15172F|00145A|ECE200|5B5CFF|FFE3DD|E6F8FE|DDE1FF|0090C2)$/;
   const enHtml = (html.match(/#[0-9A-Fa-f]{6}/g) || [])
     .map(h => h.toUpperCase()).filter(h => marcaHex.test(h));
   for (const h of enHtml) {
