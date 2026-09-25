@@ -10,7 +10,7 @@ Una familia, tres marcas, un solo design system:
 | Marca | id | Primario | Acción (CTA) | Texto sobre la acción |
 |---|---|---|---|---|
 | Linex Travel | `linex-travel` | Nomad DS (azulVioleta) | Nomad DS | Nomad DS |
-| Linex Go | `linex-go` | Petroleum `#012D33` | Coral `#FF725E` | Petroleum |
+| Linex Go | `linex-go` | Navy `#15172F` | Coral `#FF725E` | Navy |
 | Linex Trip | `linex-trip` | Trip Blue `#00145A` | Sky Blue `#00B5F5` | Trip Blue |
 
 Los hex están aquí para reconocer la marca, no para copiarlos: en la pieza salen del script.
@@ -51,12 +51,12 @@ python3 scripts/build_css_vars.py --brand linex-go -o vars.css     # o linex-tri
 Resuelve los ~1900 tokens y sus alias a custom properties **con la paleta de la marca ya
 aplicada**. Go y Trip pisan tokens semánticos (y los pocos de componente que lo requieren)
 antes de resolver alias, así que los componentes del DS heredan la marca en cascada: el
-`--c-button-primary-background-default` de Go ya es coral y su texto ya es petroleum. Sin
+`--c-button-primary-background-default` de Go ya es coral y su texto ya es navy. Sin
 `--brand` sale Linex Travel.
 
 Además del DS, cada submarca emite su paleta con nombre propio:
 
-- `--b-color-<nombre>` (ej. `--b-color-sand`, `--b-color-yellow`)
+- `--b-color-<nombre>` (ej. `--b-color-warm`, `--b-color-yellow`)
 - `--b-role-<rol>` (ej. `--b-role-action`, `--b-role-accent`)
 
 Usarlos solo para lo que el DS no cubre (eyebrows en el color de detalle, fondos editoriales).
@@ -118,7 +118,7 @@ disponible:
    DS, sus tokens ya resuelven estados, tamaños y variantes. Usarlos tal cual.
 2. **Semánticos** (`--s-color-text-neutral-default`, `--s-shadow-md`) — para todo lo que no
    sea un componente del DS: layout, secciones, piezas nuevas.
-3. **Marca** (`--b-color-sand`, `--b-role-accent`) — solo en Go/Trip y solo para roles que el
+3. **Marca** (`--b-color-warm`, `--b-role-accent`) — solo en Go/Trip y solo para roles que el
    DS no tiene (detalle, fondos editoriales). Nunca para reemplazar un semántico.
 4. **Primitivos** (`--p-color-azulVioleta-500`) — último recurso, y solo cuando no exista un
    semántico equivalente. Un primitivo en el código es señal de que falta un token semántico:

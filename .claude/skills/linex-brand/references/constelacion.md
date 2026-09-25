@@ -107,7 +107,7 @@ pesa:
 
 - **Linex Go tiene un bloqueo de producción.** De las quince piezas de
   logotipo que su manual define existe **una**, y no es vectorial. Sin la
-  versión negativa el logo no puede ir sobre petróleo, que es fondo permitido
+  versión negativa el logo no puede ir sobre navy, que es fondo permitido
   — y eso **bloquea toda la papelería**.
 - **Linex Loyalty no tiene base oscura**, y su acento Verde `#C5F04A` la
   necesita para existir: sobre blanco da 1.32:1.

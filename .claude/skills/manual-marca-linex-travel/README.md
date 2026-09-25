@@ -160,6 +160,10 @@ python3 scripts/build_css_vars.py --brand linex-go 2>/dev/null | grep -E -- '--(
 
 Sin salida = sin fugas.
 
+Excepción en Linex Go desde el 2026-09-25: su Azul es el mismo `#5B5CFF` de Nomad
+(azulVioleta-500), así que los tokens que la paleta mapea a `blue` aparecen en esa salida y
+son correctos. Fuga es cualquier otro tono de azulVioleta, o un `#5B5CFF` rellenando un botón.
+
 ## Pendientes conocidos
 
 - Hover/pressed de la acción en Go y Trip son derivados: validar con marca.

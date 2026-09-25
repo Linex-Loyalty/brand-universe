@@ -3,7 +3,8 @@
 Documento de contexto completo de **Linex Go**, compilado el 2026-09-16 desde
 `brand-system/brand-tokens.json` y el manual standalone `brand-system/manual-linex-go/`
 (15 secciones + portada), reconstruido a su vez desde
-`Manual de marca Linex Go oficial.pdf` (v1.0, 89 páginas).
+`Manual de marca Linex Go oficial.pdf` (v1.0, 89 páginas). Color, logotipo y accesibilidad
+actualizados el 2026-09-25 con la paleta Navy + Azul.
 
 No reemplaza al manual: es el resumen cargable de una sola vez, para briefing de un
 diseñador, de una agencia externa o de un agente de IA. Si algo de aquí contradice al
@@ -137,8 +138,10 @@ todavía dice *"sin espacio (LinexGo)"*. Está equivocada y hay que corregirla.
 
 ## 4 · Logotipo
 
-**Wordmark de dos palabras, sin símbolo.** "Linex" en Petróleo `#012D33` y "Go" en Coral
-`#FF725E`. El contraste de color entre las dos partes es lo que construye la marca; todo el
+**Wordmark de dos palabras, sin símbolo.** "Linex" en Índigo `#1A0E3E` y "Go" en Coral
+`#FF725E`. El Índigo es una excepción del logotipo (decisión 2026-09-17): no es el Navy
+`#15172F` de la paleta. Están a ΔE 18.3 (CIE76), dos oscuros azulados muy cercanos, y no se
+corrige el archivo del logotipo para igualarlos. El contraste de color entre las dos partes es lo que construye la marca; todo el
 peso de reconocimiento lo cargan el color y el espacio entre las dos palabras.
 
 - Archivo oficial: `brand-system/assets/logos-oficiales/linex-go/logo-LinexGo.svg`
@@ -149,10 +152,10 @@ peso de reconocimiento lo cargan el color y el espacio entre las dos palabras.
 |---|---|
 | Blanco frío `#F8F9FC` | ✓ Permitido — el fondo por defecto |
 | Blanco cálido `#F3F0E9` | ✓ Permitido — alternativa editorial |
-| Petróleo `#012D33` | ✓ Permitido — **pero solo con la versión negativa, que no existe todavía** |
+| Navy `#15172F` | ✓ Permitido — **pero solo con la versión negativa**: el logotipo a color da 1.02:1 y desaparece |
 | Coral | ✗ Es color de acción, no soporte. El "Go" coral desaparecería dentro de él |
-| Petróleo claro | ✗ Reservado para acentos e íconos. Coral sobre petróleo claro da 3.87:1 |
-| Fotografía sin base | ✗ Sobre foto va dentro de un contenedor petróleo o en zona limpia |
+| Azul `#5B5CFF` | ✗ Reservado para acentos e íconos. Coral sobre azul da 1.77:1: el "Go" se pierde |
+| Fotografía sin base | ✗ Sobre foto va dentro de un contenedor navy o en zona limpia |
 
 Tampoco patrones, degradados ni superficies de bajo contraste. *La prueba es simple: si el
 logotipo no se lee de un vistazo, el fondo está mal elegido.*
@@ -172,10 +175,12 @@ logotipo no se lee de un vistazo, el fondo está mal elegido.*
 
 1. **Fondo** — nunca sobre coral.
 2. **Nombre** — siempre "Linex Go". Nunca "Linexgo" ni "LinexGo".
-3. **Color del "Go"** — solo coral o petróleo claro. Ningún otro.
-4. **Color del "Linex"** — siempre petróleo. Nunca negro.
+3. **Color del "Go"** — solo coral. La alternativa en petróleo claro salió del sistema con
+   la paleta del 2026-09-25; una versión en azul no existe y no se improvisa.
+4. **Color del "Linex"** — en la versión a color, siempre Índigo `#1A0E3E`. Nunca negro y
+   tampoco navy.
 5. **Proporciones** — nunca se estiran ni se condensan.
-6. **Coral y petróleo claro juntos** — no se combinan sin un neutro entre ellos.
+6. **Coral y azul juntos** — no se combinan sin un neutro entre ellos.
 7. **Rotación** — el logo nunca se rota ni se curva.
 8. **Marcos** — no se encierra en cajas ni bordes añadidos.
 9. **Efectos** — sin sombras, degradados ni efectos.
@@ -188,14 +193,16 @@ logotipo no se lee de un vistazo, el fondo está mal elegido.*
 
 El manual oficial define tres versiones de color —principal (Go coral), secundaria (Go
 petróleo claro) y monocromática— cada una en positivo y negativo, horizontal y vertical.
-Más dos avatares de redes y la versión con eslogan.
+Más dos avatares de redes y la versión con eslogan. *La secundaria y el avatar en petróleo
+claro dependían de un color que salió del sistema con la paleta del 2026-09-25: el "Go" va
+solo en coral.*
 
 | Grupo | Piezas | Estado |
 |---|---|---|
 | Horizontal (uso por defecto) | Principal · Secundaria · Monocromática | **1 de 3** |
-| Horizontal en negativo (fondo petróleo) | Las mismas tres, "Linex" en blanco | ✗ falta |
+| Horizontal en negativo (fondo navy) | Las mismas tres, "Linex" en blanco | ✗ falta |
 | Vertical (formatos angostos) | Las mismas tres, apiladas | ✗ falta |
-| Vertical en negativo | Las mismas tres sobre petróleo | ✗ falta |
+| Vertical en negativo | Las mismas tres sobre navy | ✗ falta |
 | Avatar de redes (círculo blanco, lockup vertical) | Una con Go petróleo claro, otra con Go coral | ✗ falta |
 | Con eslogan | "Soluciones que impulsan tu agencia de viajes" | ✗ falta |
 
@@ -208,7 +215,7 @@ la marca, va el logo sin eslogan.
 > 300 dpi, pero **no para gran formato ni para generar las demás versiones recoloreando**.
 >
 > Hay que pedirle al diseñador el vector real y las catorce piezas restantes. **La más
-> urgente es la negativa:** sin ella el logotipo no se puede poner sobre petróleo, que es
+> urgente es la negativa:** sin ella el logotipo no se puede poner sobre navy, que es
 > uno de los tres fondos permitidos — y eso bloquea la papelería.
 
 ### Convivencia con las marcas que representamos
@@ -241,78 +248,80 @@ norma, pero siempre en la zona de aliados y en menor tamaño que Linex Go.
 
 ## 5 · Color
 
-Siete colores con rol fijo y una proporción que no se negocia.
+Seis colores con rol fijo y una proporción que no se negocia.
 
 | Color | HEX | RGB | CMYK | Rol | Uso |
 |---|---|---|---|---|---|
-| Petróleo | `#012D33` | 1, 45, 51 | 98, 12, 0, 80 | Principal | 32% |
-| Petróleo claro | `#004751` | 0, 71, 81 | 100, 12, 0, 68 | Apoyo | 18% |
+| Navy | `#15172F` | 21, 23, 47 | 55, 51, 0, 82 | Principal | 32% |
+| Azul | `#5B5CFF` | 91, 92, 255 | 64, 64, 0, 0 | Acento | 20% |
 | Blanco frío | `#F8F9FC` | 248, 249, 252 | 2, 1, 0, 1 | Respiro | 18% |
 | Coral | `#FF725E` | 255, 114, 94 | 0, 55, 63, 0 | **Acción** | 12% |
 | Blanco cálido | `#F3F0E9` | 243, 240, 233 | 0, 1, 4, 5 | Apoyo | 10% |
-| Coral claro | `#FFE3DD` | 255, 227, 221 | 0, 11, 13, 0 | Superficie | 6% |
-| Arena | `#E6D5B8` | 230, 213, 184 | 0, 7, 20, 10 | Detalle | 4% |
+| Coral claro | `#FFE3DD` | 255, 227, 221 | 0, 11, 13, 0 | Superficie | 8% |
 
-*Paleta revisada el 2026-09-15.*
+*Paleta decidida por el dueño de marca el 2026-09-25.* Reemplaza a la del 2026-09-15
+(confirmada el 17-09): **Petróleo `#012D33`, Petróleo claro `#004751` y Arena `#E6D5B8`
+salen del sistema**, y el coral claro sube de 6% a 8%. El navy y el azul son los mismos de
+Nomad DS / Linex Travel, así que Go ya no se distingue de su marca madre por el oscuro, sino
+por el coral y por su logotipo.
 
-**Dos de esos porcentajes son regla, no descripción.** El coral no pasa del 12%: por encima
+**Uno de esos porcentajes es regla, no descripción.** El coral no pasa del 12%: por encima
 deja de ser una señal y se vuelve decoración, y la pieza pierde el punto al que el ojo debe
-ir primero. Y la arena se queda en 4% — *un color que aparece poco es un color que se nota
-cuando aparece*.
+ir primero.
 
 ### Rol de cada color
 
-- **Petróleo** — base de la marca. Viste superficies oscuras, sostiene el texto sobre claro
-  (14.00:1) y es el color del texto que va encima del coral. **Nunca rellena un botón.**
-- **Petróleo claro** — el mismo matiz, más claro. Texto secundario sobre claro (9.87:1),
-  contenedores de ícono y superficies que se separan de la base sin salirse de la familia.
-  *Es el acento tecnológico transversal que Go comparte con Linex Travel, no un color
-  exclusivo de Go.*
+- **Navy** — base de la marca. Viste superficies oscuras, sostiene el texto sobre claro
+  (16.69:1) y es el color del texto que va encima del coral. **Nunca rellena un botón.**
+- **Azul** — acento: texto secundario y contenedores de ícono. Como tinta, **solo sobre
+  blanco (4.75:1) o blanco frío (4.51:1, al límite)**; nunca sobre blanco cálido (4.17:1)
+  ni sobre navy (3.70:1). Contenedor de ícono con blanco encima: 4.75:1. **Nunca rellena un
+  botón:** en Linex Travel ese `#5B5CFF` es el botón, y en Go la acción es del coral — un
+  botón azul leería como otra marca.
 - **Blanco frío** — aire y limpieza. Fondo por defecto de las piezas claras.
 - **Coral** — color de la acción, **y solo de la acción**: botones, CTA y enlaces. Va como
-  superficie con el texto en petróleo encima.
+  superficie con el texto en navy encima (6.54:1). **Nunca toca el azul** (1.77:1).
 - **Blanco cálido** — alternativa editorial, para piezas menos de interfaz y más de documento.
+  Sobre él el texto va en navy.
 - **Coral claro** — derivado tenue. **Solo como fondo** (avisos, tarjetas, realces de
   superficie). Como tinta sobre claro da 1.15:1.
-- **Arena** — **solo sobre el petróleo** (10.23:1); sobre blanco frío da 1.37:1 y es
-  ilegible. Antetítulos, vigencias y letra chica. Nunca títulos ni botones.
 
-### La regla de acción: el coral actúa, el petróleo habla
+### La regla de acción: el coral actúa, el navy habla
 
-> Si se puede tocar, es coral; si se lee, es petróleo.
+> Si se puede tocar, es coral; si se lee, es navy.
 
 Vale para todo lo que sale a nombre de Linex Go — plataforma, correo, cotizaciones,
 papelería, presentaciones y redes.
 
 | Elemento | Cómo se resuelve | Contraste |
 |---|---|---|
-| Botón / CTA | Relleno `#FF725E`, texto `#012D33` (peso 700–800, mayúscula inicial), filete interior `#012D33` de 1 px | 5.49:1 |
-| Enlace sobre fondo claro | Texto `#012D33` con subrayado coral | 14.00:1 |
-| Enlace sobre petróleo | Texto `#FF725E` | 5.49:1 |
-| Ícono sobre claro | Petróleo, o petróleo claro cuando acompaña. **Nunca coral** — un ícono no es una acción | — |
-| Ícono sobre petróleo | El círculo pasa a `#004751` y el ícono va en blanco | — |
-| Precio, porcentaje | `#012D33` en negrita. **El coral no destaca datos** — se destaca con peso, tamaño o una tarjeta | — |
+| Botón / CTA | Relleno `#FF725E`, texto `#15172F` (peso 700–800, mayúscula inicial), filete interior `#15172F` de 1 px | 6.54:1 |
+| Enlace sobre fondo claro | Texto `#15172F` con subrayado coral | 16.69:1 |
+| Enlace sobre navy | Texto `#FF725E` | 6.54:1 |
+| Ícono sobre claro | Navy, o azul cuando acompaña. **Nunca coral** — un ícono no es una acción | — |
+| Ícono sobre navy | El círculo pasa a `#5B5CFF` y el ícono va en blanco | 4.75:1 |
+| Precio, porcentaje | `#15172F` en negrita. **El coral no destaca datos** — se destaca con peso, tamaño o una tarjeta | — |
 | Énfasis en titular | Con **peso**, nunca con color | — |
-| Tercer color | Arena `#E6D5B8` solo sobre la base oscura | 10.23:1 |
 
-**Prohibido:** petróleo como relleno de un botón · blanco como texto sobre coral (2.69:1) ·
+**Prohibido:** navy o azul como relleno de un botón · blanco como texto sobre coral (2.69:1) ·
 coral como texto sobre fondo claro (2.55:1 sobre frío, 2.36:1 sobre cálido) · coral para
-destacar un dato que no se puede tocar · arena como tinta sobre fondo claro (1.37:1) ·
-coral claro como tinta (es superficie).
+destacar un dato que no se puede tocar · coral junto al azul (1.77:1) · azul como tinta sobre
+blanco cálido (4.17:1) o sobre navy (3.70:1) · coral claro como tinta (es superficie).
 
 **El filete de 1 px** (decidido 2026-09-15, antes era 2 px; Linex Trip usa el mismo) existe
 porque el coral contra el blanco frío da 2.55:1 y contra el cálido 2.36:1: por sí solo no
-define un contorno perceptible, y WCAG 1.4.11 pide 3:1. El petróleo contra el papel da
-14.00:1, así que 1 px basta.
+define un contorno perceptible, y WCAG 1.4.11 pide 3:1. El navy contra el papel da
+16.69:1, así que 1 px basta.
 
 ### Dos correcciones al manual v1.0
 
 1. **Los CTA usaban blanco sobre coral (2.69:1)** mientras la propia sección de color decía
    que "petróleo sobre coral es la única combinación accesible del coral". Las dos cosas no
    podían ser ciertas a la vez. **Se resolvió a favor de la regla escrita:** sobre coral, el
-   texto va en petróleo.
+   texto va en el oscuro de la marca — hoy el navy.
 2. **El manual v1.0 daba el coral para "CTA o dato clave".** El administrador de marca cerró
-   esa puerta el 2026-09-15: **el coral es solo de la acción.** Un color de acción funciona
+   esa puerta el 2026-09-15, y la lámina de la paleta navy del 2026-09-25 volvió a traer la
+   frase sin que se adoptara: **el coral es solo de la acción.** Un color de acción funciona
    por exclusividad — si el mismo coral pinta un botón en una pieza y un porcentaje en la
    siguiente, deja de responder la única pregunta que tiene que responder de un vistazo:
    ¿dónde toco?
@@ -359,15 +368,15 @@ Un set cerrado que no se amplía por gusto, y un dato que no se publica si no se
 sostener.
 
 **Estilo A · Íconos con círculo** — el principal. Sólidos y blancos dentro de un círculo
-petróleo lleno. Se usa en piezas, impresos y comunicaciones de marca.
+navy lleno. Se usa en piezas, impresos y comunicaciones de marca.
 
 - Uno por atributo, alineados en fila con etiqueta corta debajo. **Máximo cuatro por pieza.**
-- Sobre petróleo el círculo pasa a petróleo claro `#004751`. **Nunca coral** — el coral es
+- Sobre navy el círculo pasa a azul `#5B5CFF`. **Nunca coral** — el coral es
   acción, y un ícono no es una acción.
 
-**Estilo B · Íconos sin círculo** — el mismo set, sin contenedor: íconos sólidos petróleo.
+**Estilo B · Íconos sin círculo** — el mismo set, sin contenedor: íconos sólidos navy.
 Para comunicaciones y la plataforma Travel Compositor, donde el círculo no aplica o hay
-restricciones técnicas. Idéntico trazo, peso y familia. Sobre petróleo, el ícono va en blanco.
+restricciones técnicas. Idéntico trazo, peso y familia. Sobre navy, el ícono va en blanco.
 
 **No permitido** en ninguno de los dos: mezclar con otra librería, o dibujar un ícono nuevo
 sin aprobación.
@@ -411,8 +420,8 @@ elige la escala y se respeta de arriba abajo.
 | | |
 |---|---|
 | Relleno | Coral `#FF725E`. Ningún otro elemento de la pieza lleva ese fondo |
-| Texto | Petróleo `#012D33`, peso 700–800, mayúscula inicial. 5.49:1. **Nunca blanco** (2.69:1) |
-| Filete | Petróleo, 1 px por dentro |
+| Texto | Navy `#15172F`, peso 700–800, mayúscula inicial. 6.54:1. **Nunca blanco** (2.69:1) |
+| Filete | Navy, 1 px por dentro |
 | Forma | Esquinas de 12 px |
 | Flecha | A la derecha, siempre. Es parte del botón, no un adorno opcional |
 | Cuántos | Uno solo por pieza. Si hay una segunda acción, va en contorno |
@@ -432,7 +441,7 @@ no la estructura:
 
 1. **Logotipo** — arriba a la izquierda, alineado a la retícula.
 2. **Titular** — en dos pesos: el destino o el beneficio resalta sobre el resto.
-3. **Tarjeta petróleo** — con el dato clave dentro (el precio, la vigencia, lo que hace decidir).
+3. **Tarjeta navy** — con el dato clave dentro (el precio, la vigencia, lo que hace decidir).
 4. **CTA coral** — con su flecha. Uno.
 5. **Franja de respaldo** — abajo: los sellos que sostienen la promesa (pago seguro,
    soporte, expertos).
@@ -471,7 +480,7 @@ como metáfora de crecimiento (el cliché del sector) · falsos testimonios.
 - **Siempre:** etiqueta visible que lo indique. No es una nota legal escondida: se ve.
 
 **Etiqueta oficial:** "Imagen ilustrativa creada con IA" · Calibri Regular · 11–12 px en
-digital, 9 pt en impreso · gris medio sobre claro, blanco frío atenuado sobre petróleo ·
+digital, 9 pt en impreso · gris medio sobre claro, blanco frío atenuado sobre navy ·
 esquina o pie de la imagen.
 
 > **PENDIENTE:** Linex Go no tiene banco de imágenes propio. Mientras tanto se trabaja con
@@ -503,28 +512,29 @@ esquina o pie de la imagen.
 
 | Combinación | Contraste | Uso |
 |---|---|---|
-| Blanco / Petróleo | 14.74:1 | texto y titulares |
-| Petróleo / Blanco frío | 14.00:1 | la base de lectura del sistema |
-| Petróleo / Blanco cálido | 12.95:1 | texto y titulares |
-| Petróleo / Coral claro | 12.13:1 | avisos y tarjetas de realce |
-| Coral claro / Petróleo | 12.13:1 | legible, pero reservado: sobre oscuro se leería como acción |
-| Blanco / Petróleo claro | 10.40:1 | contenedores y barras de apoyo |
-| **Arena / Petróleo** | 10.23:1 | el tercer color, solo aquí |
-| Petróleo claro / Blanco frío | 9.87:1 | texto secundario y metadatos |
-| Arena / Petróleo claro | 7.21:1 | la misma letra chica, un tono más claro |
-| **Petróleo / Coral** | 5.49:1 | **el texto del botón** |
-| Coral / Petróleo | 5.49:1 | el enlace sobre fondo oscuro |
-| Coral / Petróleo claro | 3.87:1 | solo titulares y objetos gráficos |
+| Blanco / Navy | 17.57:1 | texto y titulares |
+| Navy / Blanco frío | 16.69:1 | la base de lectura del sistema |
+| Navy / Blanco cálido | 15.43:1 | texto y titulares |
+| Navy / Coral claro | 14.46:1 | avisos y tarjetas de realce |
+| Coral claro / Navy | 14.46:1 | legible, pero reservado: sobre oscuro se leería como acción |
+| **Navy / Coral** | 6.54:1 | **el texto del botón** |
+| Coral / Navy | 6.54:1 | el enlace sobre fondo oscuro |
+| Blanco / Azul | 4.75:1 | contenedores de ícono y barras de apoyo |
+| Azul / Blanco | 4.75:1 | texto secundario sobre tarjeta blanca |
+| Azul / Blanco frío | 4.51:1 | texto secundario y metadatos, al límite |
+| Azul / Blanco cálido | 4.17:1 | solo titulares y objetos gráficos |
+| Azul / Navy | 3.70:1 | solo titulares y objetos gráficos |
 | Blanco / Coral | 2.69:1 | ✗ no se usa nunca |
 | Coral / Blanco frío | 2.55:1 | ✗ no se usa nunca |
-| Arena / Blanco frío | 1.37:1 | ✗ sobre claro la arena es superficie |
+| Coral / Azul | 1.77:1 | ✗ no se usa nunca: coral y azul no se tocan |
 | Coral claro / Blanco frío | 1.15:1 | ✗ es fondo, no tinta |
 
 **Las tres consecuencias que más se olvidan**
 
 1. **El coral no es un color de texto** — 2.55:1 sobre fondo claro. Va como superficie, con
-   el petróleo encima.
-2. **La arena solo vive sobre el petróleo** — 10.23:1 ahí, 1.37:1 sobre blanco frío.
+   el navy encima.
+2. **El azul es tinta solo sobre blanco** — 4.75:1 sobre blanco y 4.51:1 sobre blanco frío.
+   Sobre el cálido baja a 4.17:1 y sobre navy a 3.70:1: ahí solo titulares grandes o forma.
 3. **El estado se escribe** — "Agotado" se escribe. Un punto rojo no es información para
    todo el mundo.
 
@@ -728,7 +738,7 @@ atención, no la marca.**
 Centro de operación digital de la marca: donde la agencia conoce la propuesta, genera
 confianza e inicia su operación comercial.
 
-- **Hero:** petróleo a sangre, con un solo titular.
+- **Hero:** navy a sangre, con un solo titular.
 - **Buscador:** en tarjeta blanca sobre el hero — es el punto focal de la pantalla.
 - **CTA:** uno solo, coral, por pantalla.
 
@@ -744,7 +754,7 @@ confianza e inicia su operación comercial.
 ### Impresos
 
 - **Ferias y pendones:** un mensaje visible a cinco metros, logo arriba, CTA abajo.
-- **Tarjetas:** fondo petróleo, logo en negativo, datos a 9 pt mínimo.
+- **Tarjetas:** fondo navy, logo en negativo, datos a 9 pt mínimo.
 - **Técnica:** sangrado de 3 mm y textos a 5 mm del borde.
 
 > **OJO:** las tarjetas piden el logo en negativo, y **esa versión todavía no existe**.
@@ -754,11 +764,11 @@ confianza e inicia su operación comercial.
 
 - **Firma:** logo a la izquierda, datos a la derecha, en orden fijo — nombre, cargo,
   teléfono, correo, sitio y aliados.
-- **Campaña:** un mensaje claro, CTA coral y franja petróleo de cierre.
+- **Campaña:** un mensaje claro, CTA coral y franja navy de cierre.
 
 ### Presentaciones y documentos
 
-- **Formato:** 16:9, portada petróleo, divisorias por sección y **una idea por lámina**.
+- **Formato:** 16:9, portada navy, divisorias por sección y **una idea por lámina**.
 - **Documentos comerciales:** encabezado con logo, pie con vigencia y contacto.
 - **Nunca:** capturas pixeladas, ni tablas sin encabezado.
 
@@ -768,7 +778,7 @@ confianza e inicia su operación comercial.
 - **Margen seguro:** 120 px arriba y abajo en stories.
 - **Primera lámina:** titular y beneficio. Nada más.
 - **Última lámina:** CTA único, con su flecha.
-- **El precio:** si aparece, va en tarjeta petróleo, nunca suelto sobre la foto.
+- **El precio:** si aparece, va en tarjeta navy, nunca suelto sobre la foto.
 
 > Hoy el manual solo documenta Instagram. **Para cualquier otra red no hay regla escrita
 > todavía**, y eso es un pendiente, no una licencia.
@@ -781,7 +791,7 @@ confianza e inicia su operación comercial.
 
 | Grupo | Contenido | Estado |
 |---|---|---|
-| **A · Marca** | Logos en SVG, PDF, PNG y editable · paletas HEX y RGB · tipografías y nota de sustitución · set de íconos petróleo y petróleo claro | ⚠ Hoy existe **un solo archivo de logo**, y no es vectorial |
+| **A · Marca** | Logos en SVG, PDF, PNG y editable · paletas HEX y RGB · tipografías y nota de sustitución · set de íconos navy y azul | ⚠ Hoy existe **un solo archivo de logo**, y no es vectorial |
 | **B · Plantillas** | Instagram y stories · WhatsApp · banners de ecommerce · presentación y documento comercial | ✗ Sin armar |
 | **C · Componentes** | Botones y CTA · tarjetas y badges · tablas de precio · indicadores de carrusel | ✗ Sin armar |
 | **D · Guías** | Guía rápida de 1 página · checklist de revisión · ejemplos correcto/incorrecto · este manual | ✓ |
@@ -793,7 +803,7 @@ confianza e inicia su operación comercial.
 - [ ] El nombre está escrito "Linex Go", con espacio y mayúsculas.
 - [ ] La pieza le habla a una agencia, no al viajero final.
 - [ ] No hay claims prohibidos ni superlativos sin evidencia.
-- [ ] Petróleo domina; el coral aparece solo donde se puede tocar.
+- [ ] Navy domina; el coral aparece solo donde se puede tocar.
 - [ ] Los once campos mínimos están completos y visibles.
 - [ ] Toda cifra lleva periodo y fuente.
 - [ ] Contraste y tamaños cumplen la sección de accesibilidad.
@@ -801,12 +811,12 @@ confianza e inicia su operación comercial.
 
 ### Aplicaciones producidas
 
-**Textil** — camisetas petróleo y polos blancos con vivo petróleo claro. Logo discreto al
+**Textil** — camisetas navy y polos blancos con vivo azul. Logo discreto al
 pecho; eslogan y aliados en la espalda, visibles de lejos. Los aliados en franja neutra y
 menor tamaño. *Lleva eslogan porque es la primera pieza que ve el cliente, y muchas veces
 la única: explica la marca cuando no hay más contexto alrededor.*
 
-**Merchandising** — bolsas, lapiceros y termos. Todos en petróleo o blanco, con el logotipo
+**Merchandising** — bolsas, lapiceros y termos. Todos en navy o blanco, con el logotipo
 en la versión correspondiente al fondo. **Ninguno en coral:** el coral no es soporte de marca.
 
 **Papelería** — la tarjeta es el primer punto de contacto físico con la agencia. Cara
@@ -815,8 +825,8 @@ contacto en orden fijo (nombre, cargo, teléfono, correo, handle y dirección). 
 mínimo, sangrado de 3 mm, textos a 5 mm del borde.
 
 > **OJO — dos criterios conviviendo.** La sección de diseño por canal pide para tarjetas
-> fondo petróleo con el logo en negativo, y las piezas producidas usan una cara clara y
-> otra petróleo claro. **Hay que decidir cuál rige antes de reimprimir** — y en cualquier
+> fondo navy con el logo en negativo, y las piezas producidas usan una cara clara y
+> otra azul. **Hay que decidir cuál rige antes de reimprimir** — y en cualquier
 > caso, la versión negativa del logotipo todavía no existe como archivo.
 
 ---

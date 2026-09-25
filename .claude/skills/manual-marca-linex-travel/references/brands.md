@@ -25,44 +25,53 @@ error sigue siendo el rojo del DS.
 
 | Color | Hex | Rol | % pieza | Variable |
 |---|---|---|---|---|
-| Petroleum | #012D33 | Primario | 32 | `--b-color-petroleum` |
-| Light petroleum | #004751 | Soporte | 18 | `--b-color-light-petroleum` |
+| Navy | #15172F | Primario | 32 | `--b-color-navy` |
+| Blue | #5B5CFF | Acento | 20 | `--b-color-blue` |
 | Cool white | #F8F9FC | Respiro | 18 | `--b-color-cool-white` |
 | Coral | #FF725E | Acción | 12 | `--b-color-coral` |
 | Warm | #F3F0E9 | Soporte | 10 | `--b-color-warm` |
-| Light coral | #FFE3DD | Superficie | 6 | `--b-color-light-coral` |
-| Sand | #E6D5B8 | Detalle | 4 | `--b-color-sand` |
+| Light coral | #FFE3DD | Superficie | 8 | `--b-color-light-coral` |
+
+Paleta decidida por el dueño de marca el 2026-09-25. Reemplaza a la anterior: Petroleum
+`#012D33`, Light petroleum `#004751` y Sand `#E6D5B8` salieron del sistema (ya no existen
+`--b-color-petroleum`, `--b-color-light-petroleum` ni `--b-color-sand`). El navy y el blue
+son los de Nomad DS / Linex Travel: Go se distingue de su marca madre por el coral y el logo,
+no por el oscuro.
 
 **Reglas que no se negocian**
 
-- **Petroleum nunca rellena un botón.** El CTA es coral con texto petroleum (5.49:1).
+- **Navy nunca rellena un botón.** El CTA es coral con texto navy (6.54:1).
+- **Blue nunca rellena un botón.** En Linex Travel `#5B5CFF` es el botón; en Go la acción es
+  coral, y un botón azul leería como Travel.
 - **Coral es acción, y solo acción:** botones, CTAs, links. Nunca como texto sobre claro
   (2.55:1) y nunca para resaltar un dato, un precio o un descuento.
+- **Coral y blue nunca se tocan** (1.77:1).
 - **Light coral solo como fondo** (alertas, cards, highlights). Como tinta sobre claro da
-  1.15:1, y sobre petroleum se confunde con la acción.
-- **Sand solo sobre petroleum** (10.23:1): eyebrows, fechas de vigencia, letra chica. Sobre
-  cool white da 1.37:1. Nunca en titulares ni botones.
-- Texto principal sobre claro: petroleum (14.00:1). Secundario: light petroleum (9.87:1).
+  1.15:1, y sobre navy se confunde con la acción.
+- Texto principal sobre claro: navy (16.69:1). Secundario: blue, **solo sobre blanco
+  (4.75:1) o cool white (4.51:1, al límite)**. Sobre warm (4.17:1) o navy (3.70:1) el blue
+  no es tinta.
 - Warm es la alternativa editorial a cool white: piezas que se sienten documento, no interfaz.
-- Fondos permitidos para el logo: cool white es uno de los tres; el logo sigue fuera de
-  alcance (ver `brand.md`).
+- Fondos permitidos para el logo: cool white, warm y navy (este último solo con la versión
+  negativa); nunca coral ni blue. El logo sigue fuera de alcance (ver `brand.md`).
 
 **Cómo queda el DS con `--brand linex-go`**
 
 | Token | Resuelve a |
 |---|---|
 | `--s-color-surface-primary-default` / `--c-button-primary-background-default` | Coral |
-| `--c-button-primary-text-default` | Petroleum |
+| `--c-button-primary-text-default` | Navy |
 | `--s-color-surface-primary-subtle(st)` | Light coral |
-| `--s-color-surface-secondary-default` | Petroleum (superficie oscura) |
+| `--s-color-surface-secondary-default` | Navy (superficie oscura) |
+| `--s-color-surface-secondary-strong` | Blue (contenedor de ícono, con blanco encima) |
 | `--s-color-background-default` / `--s-color-surface-base-default` | Cool white |
 | `--s-color-background-subtle` | Warm |
-| `--s-color-text-neutral-strong(er)`, `--s-color-text-primary-default` | Petroleum |
-| `--s-color-text-neutral-muted` | Light petroleum |
-| `--s-color-text-link-default` | Petroleum (subrayado; coral no pasa como texto) |
+| `--s-color-text-neutral-strong(er)`, `--s-color-text-primary-default` | Navy |
+| `--s-color-text-neutral-muted` | Blue (sobre warm, usar navy: 4.17:1 no alcanza) |
+| `--s-color-text-link-default` | Navy (subrayado; coral no pasa como texto) |
 
-Sobre superficie oscura (petroleum): titular en cool white, detalle en `--b-color-sand`,
-acción en coral con texto petroleum.
+Sobre superficie oscura (navy): titular en cool white, ícono en círculo blue con el ícono en
+blanco, acción en coral con texto navy. El blue no va como texto sobre navy (3.70:1).
 
 ---
 

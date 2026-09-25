@@ -1,5 +1,5 @@
 {
-  "$comment": "Submarca Linex Go. Paleta tomada del manual de marca (seccion 'The role of each colour'). Los overrides se aplican sobre tokens.json ANTES de resolver alias. Valores 'mix' son derivados (hover/pressed) que el manual no define: pendientes de validar con marca. Hover/pressed se aclaran (no se oscurecen) porque el texto sobre la accion es oscuro: oscurecer baja el contraste por debajo de 4.5:1.",
+  "$comment": "Submarca Linex Go. Paleta tomada del manual de marca (seccion 'The role of each colour'), la decidida por el dueno de marca el 2026-09-25: Navy + Azul reemplazan a Petroleum, Light petroleum y Sand, que salen del sistema. Los overrides se aplican sobre tokens.json ANTES de resolver alias. Valores 'mix' son derivados (hover/pressed) que el manual no define: pendientes de validar con marca. Hover/pressed se aclaran (no se oscurecen) porque el texto sobre la accion es oscuro: oscurecer baja el contraste por debajo de 4.5:1.",
   "id": "linex-go",
   "name": "Linex Go",
   "aliases": [
@@ -8,21 +8,21 @@
     "linexgo"
   ],
   "extends": "linex-travel",
-  "updated": "2026-09-24",
+  "updated": "2026-09-25",
   "palette": {
-    "petroleum": {
-      "hex": "#012D33",
-      "name": "Petroleum",
+    "navy": {
+      "hex": "#15172F",
+      "name": "Navy",
       "role": "Primario",
       "share": 32,
-      "usage": "Color base: superficies oscuras, texto sobre fondo claro (14.00:1) y texto sobre coral. Nunca rellena un boton."
+      "usage": "Color base: superficies oscuras, texto sobre fondo claro (16.69:1) y texto sobre coral (6.54:1). Nunca rellena un boton."
     },
-    "light-petroleum": {
-      "hex": "#004751",
-      "name": "Light petroleum",
-      "role": "Soporte",
-      "share": 18,
-      "usage": "Texto secundario sobre claro (9.87:1), contenedores de icono y superficies que se separan del base sin salir de la familia."
+    "blue": {
+      "hex": "#5B5CFF",
+      "name": "Blue",
+      "role": "Acento",
+      "share": 20,
+      "usage": "Texto secundario y contenedores de icono (blanco encima, 4.75:1). Como tinta SOLO sobre blanco (4.75:1) o cool white (4.51:1, al limite); nunca sobre warm (4.17:1) ni sobre navy (3.70:1). Nunca rellena un boton: en Linex Travel es el boton, en Go la accion es coral. Nunca toca el coral (1.77:1)."
     },
     "cool-white": {
       "hex": "#F8F9FC",
@@ -36,42 +36,34 @@
       "name": "Coral",
       "role": "Accion",
       "share": 12,
-      "usage": "El color de la accion, y solo de la accion: botones, CTAs, links. Superficie con texto Petroleum encima (5.49:1). Nunca texto sobre claro (2.55:1) ni para resaltar un dato."
+      "usage": "El color de la accion, y solo de la accion: botones, CTAs, links. Superficie con texto Navy encima (6.54:1). Nunca texto sobre claro (2.55:1), nunca junto al blue (1.77:1) ni para resaltar un dato."
     },
     "warm": {
       "hex": "#F3F0E9",
       "name": "Warm",
       "role": "Soporte",
       "share": 10,
-      "usage": "Alternativa editorial al cool white, para piezas que se sienten mas documento que interfaz."
+      "usage": "Alternativa editorial al cool white, para piezas que se sienten mas documento que interfaz. Encima, el texto va en navy: el blue baja a 4.17:1."
     },
     "light-coral": {
       "hex": "#FFE3DD",
       "name": "Light coral",
       "role": "Superficie",
-      "share": 6,
-      "usage": "SOLO como fondo: alertas, cards, highlights de superficie. Como tinta sobre claro da 1.15:1 y sobre petroleum se confunde con la accion."
-    },
-    "sand": {
-      "hex": "#E6D5B8",
-      "name": "Sand",
-      "role": "Detalle",
-      "share": 4,
-      "usage": "SOLO sobre Petroleum (10.23:1). Eyebrows, fechas de vigencia, letra chica. Nunca en titulares ni botones."
+      "share": 8,
+      "usage": "SOLO como fondo: alertas, cards, highlights de superficie. Como tinta sobre claro da 1.15:1 y sobre navy se confunde con la accion."
     }
   },
   "roles": {
-    "primary": "petroleum",
-    "secondary": "light-petroleum",
+    "primary": "navy",
+    "secondary": "blue",
     "action": "coral",
-    "on-action": "petroleum",
+    "on-action": "navy",
     "on-primary": "cool-white",
     "background": "cool-white",
     "background-soft": "warm",
     "surface-highlight": "light-coral",
-    "accent": "sand",
-    "accent-only-on": "petroleum",
-    "link-on-light": "petroleum"
+    "accent": "blue",
+    "link-on-light": "navy"
   },
   "overrides": {
     "semantics.color.surface.primary.default": "coral",
@@ -91,46 +83,48 @@
     },
     "semantics.color.surface.primary.subtlest": "light-coral",
     "semantics.color.surface.primary.subtle": "light-coral",
-    "semantics.color.surface.secondary.default": "petroleum",
-    "semantics.color.surface.secondary.strong": "light-petroleum",
+    "semantics.color.surface.secondary.default": "navy",
+    "semantics.color.surface.secondary.strong": "blue",
     "semantics.color.surface.secondary.subtle": "warm",
     "semantics.color.surface.secondary.subtlest": "warm",
     "semantics.color.surface.base.default": "cool-white",
     "semantics.color.background.default": "cool-white",
     "semantics.color.background.subtle": "warm",
-    "semantics.color.text.neutral.strong": "petroleum",
-    "semantics.color.text.neutral.stronger": "petroleum",
-    "semantics.color.text.neutral.muted": "light-petroleum",
-    "semantics.color.text.primary.default": "petroleum",
-    "semantics.color.text.primary.strong": "petroleum",
-    "semantics.color.text.link.default": "petroleum",
-    "semantics.color.text.link.visited": "light-petroleum",
-    "semantics.color.icon.primary.default": "petroleum",
-    "semantics.color.icon.primary.strong": "petroleum",
-    "semantics.color.icon.primary.subtle": "light-petroleum",
+    "semantics.color.text.neutral.strong": "navy",
+    "semantics.color.text.neutral.stronger": "navy",
+    "semantics.color.text.neutral.muted": "blue",
+    "semantics.color.text.primary.default": "navy",
+    "semantics.color.text.primary.strong": "navy",
+    "semantics.color.text.link.default": "navy",
+    "semantics.color.text.link.visited": "blue",
+    "semantics.color.icon.primary.default": "navy",
+    "semantics.color.icon.primary.strong": "navy",
+    "semantics.color.icon.primary.subtle": "blue",
     "semantics.color.focus.primary.default": "light-coral",
     "semantics.color.focus.primary.subtle": "light-coral",
-    "components.button.primary.text.default": "petroleum",
-    "components.button.primary.icon.default": "petroleum",
-    "components.button.primary.outline.text.default": "petroleum",
-    "components.button.primary.outline.icon.default": "petroleum",
-    "semantics.color.border.primary.default": "petroleum",
-    "semantics.color.border.primary.strong": "light-petroleum",
+    "components.button.primary.text.default": "navy",
+    "components.button.primary.icon.default": "navy",
+    "components.button.primary.outline.text.default": "navy",
+    "components.button.primary.outline.icon.default": "navy",
+    "semantics.color.border.primary.default": "navy",
+    "semantics.color.border.primary.strong": "blue",
     "semantics.color.border.primary.subtle": "light-coral",
     "semantics.color.surface.primary.muted": "light-coral",
-    "semantics.color.text.primary.muted": "light-petroleum",
-    "semantics.color.text.primary.subtle": "light-petroleum",
-    "semantics.color.text.primary.subtlest": "light-petroleum",
-    "semantics.color.icon.primary.muted": "light-petroleum",
+    "semantics.color.text.primary.muted": "blue",
+    "semantics.color.text.primary.subtle": "blue",
+    "semantics.color.text.primary.subtlest": "blue",
+    "semantics.color.icon.primary.muted": "blue",
     "semantics.color.dialog.closeButton.focusRing": "light-coral"
   },
   "rules": [
-    "Petroleum nunca rellena un boton: el CTA es Coral con texto Petroleum (5.49:1).",
+    "Navy nunca rellena un boton: el CTA es Coral con texto Navy (6.54:1).",
+    "Blue nunca rellena un boton: en Linex Travel #5B5CFF es el boton; en Go la accion es Coral y un boton azul leeria como Travel.",
     "Coral es solo accion: nunca texto sobre claro (2.55:1) y nunca para resaltar un dato o precio.",
+    "Coral y Blue nunca se tocan (1.77:1).",
     "Light coral solo como fondo (alertas, cards, highlights); nunca como tinta.",
-    "Sand solo sobre Petroleum, y solo en eyebrows, vigencias y letra chica. Nunca en titulares ni botones.",
-    "Texto secundario sobre claro: Light petroleum.",
+    "Texto secundario: Blue, solo sobre blanco (4.75:1) o cool white (4.51:1, al limite). Sobre warm (4.17:1) o navy (3.70:1) el blue no es tinta: el texto va en navy o blanco.",
+    "Icono sobre navy: circulo Blue con el icono en blanco (4.75:1). Nunca coral.",
     "Warm es la alternativa editorial al cool white (piezas tipo documento).",
-    "Proporcion guia de la pieza: Petroleum 32 · Light petroleum 18 · Cool white 18 · Coral 12 · Warm 10 · Light coral 6 · Sand 4."
+    "Proporcion guia de la pieza: Navy 32 · Blue 20 · Cool white 18 · Coral 12 · Warm 10 · Light coral 8."
   ]
 }

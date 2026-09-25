@@ -45,9 +45,13 @@ Sácalas de `regla` en `brand-tokens.json`, no de memoria. Las que más se rompe
 
 - **Linex Go** — el coral es **solo de la acción**: nunca destaca un dato,
   nunca es texto sobre claro (2.55:1), nunca lleva texto blanco encima
-  (2.69:1), nunca es fondo del logotipo. La arena solo vive sobre el petróleo
-  (10.23:1 ahí, 1.37:1 sobre blanco frío). El petróleo nunca rellena un botón.
-  El coral claro es superficie, no tinta (1.15:1).
+  (2.69:1), nunca es fondo del logotipo y nunca toca el azul (1.77:1). Ni el
+  navy ni el azul rellenan un botón (en Travel el `#5B5CFF` es el botón; en Go
+  la acción es coral). El azul es tinta solo sobre blanco (4.75:1) o blanco
+  frío (4.51:1, al límite); nunca sobre blanco cálido (4.17:1) ni navy (3.70:1).
+  El coral claro es superficie, no tinta (1.15:1). Paleta del 2026-09-25:
+  petróleo, petróleo claro y arena salieron del sistema — una pieza que los use
+  es ✗.
 - **Linex Trip** — *el Celeste actúa, el Azul Trip habla.* El Celeste nunca es
   texto sobre claro (2.35:1); el Azul nunca rellena un botón. El Amarillo vive
   **solo sobre el Azul Trip**: sobre blanco da 1.36:1. Sin excepción por
@@ -58,8 +62,8 @@ Sácalas de `regla` en `brand-tokens.json`, no de memoria. Las que más se rompe
 
 ### Proporción de uso
 
-Dos porcentajes de Go son regla, no descripción: **coral ≤ 12%** y **arena ≤
-4%**. Por encima, el coral deja de ser señal y se vuelve decoración.
+Un porcentaje de Go es regla, no descripción: **coral ≤ 12%**. Por encima, el
+coral deja de ser señal y se vuelve decoración.
 
 En Trip las proporciones son **propuesta de guía visual del manual**, no cifra
 aprobada por negocio: orientan, no se auditan como regla dura.
@@ -72,11 +76,12 @@ aprobada por negocio: orientan, no se auditan como regla dura.
   desde el trazo y no desde la caja tipográfica.
 - Tamaño mínimo: 120 px digital. Impreso: 30 mm (Trip) · 25 mm (Go).
 - **Fondos permitidos** en `logo_fondos` del JSON. Go: blanco frío, blanco
-  cálido y petróleo —este último **solo con la negativa, que no existe**.
+  cálido y navy —este último **solo con la negativa** (a color da 1.02:1);
+  nunca coral ni azul.
   Trip: blanco, lavanda y azul trip; nunca sobre celeste sólido.
-- **Go:** nunca el "Go" en otro color que coral o petróleo claro, nunca el
-  "Linex" en negro, nunca rotado, enmarcado ni con efectos, y **nunca la "G"
-  aislada ni "Go" solo** — *Go no es una marca por sí misma.*
+- **Go:** nunca el "Go" en otro color que coral, nunca el "Linex" en negro
+  ni en navy (va en Índigo `#1A0E3E`), nunca rotado, enmarcado ni con
+  efectos, y **nunca la "G" aislada ni "Go" solo** — *Go no es una marca por sí misma.*
 - **Trip:** el logotipo vigente es solo el wordmark. **No hay isotipo.** Las
   siete propuestas de símbolo son exploración abierta: si una pieza usa un
   símbolo, es ✗.
