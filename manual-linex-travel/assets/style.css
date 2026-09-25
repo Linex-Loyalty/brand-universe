@@ -1005,3 +1005,19 @@ tr[data-lang] { display: none; }
 }
 .dl:hover { background: rgba(var(--coral-rgb), 0.2); }
 .dl::before { content: "↓"; font-weight: 900; }
+
+/* ---------- Descarga de logos ---------- */
+
+/* Botón del menú lateral, en las 16 páginas: la pregunta "¿dónde bajo el
+   logo?" se responde a un clic desde cualquier sección. Lo pone y lo
+   mantiene tools/logos-descarga.js, en la raíz del repositorio.
+   Azul violeta #5B5CFF: es el color de acción de Travel. Blanco encima, 4.75:1;
+   contra el Azul Noche del menú el borde del botón da 3.66:1. */
+.descarga-logos {
+  display: flex; flex-direction: column; gap: 2px;
+  margin: 0 0 22px; padding: 10px 14px; border-radius: var(--radius-btn, 12px);
+  background: var(--azul-violeta); color: #fff;
+  font-size: 13px; font-weight: 700; line-height: 1.25; text-decoration: none;
+}
+.descarga-logos small { font-size: 11px; font-weight: 600; opacity: 0.8; }
+.descarga-logos:hover { opacity: 0.9; color: #fff; }

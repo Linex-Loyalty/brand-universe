@@ -49,7 +49,7 @@ you've created a second truth.
 | Linex Capital | 1 · The fund | — | — | — | — |
 | **Linex Loyalty** | 2 · Space port | — | 1 accent | — | **Ixar** |
 | **Linex Travel** | 3 · Star | ✅ 16 pages | ✅ 6 colours | ✅ | *unnamed* |
-| **Linex Go** | 3 · B2B sub-brand | ✅ 16 pages | ✅ 7 colours | ✅ | — |
+| **Linex Go** | 3 · B2B sub-brand | ✅ 16 pages | ✅ 6 colours | ✅ | — |
 | **Linex Trip** | 3 · B2C sub-brand | ✅ 16 pages | ✅ 7 colours | ✅ | — |
 | Linex Marketplace | 3 · Star | — | — | — | *unnamed* |
 | Linex Rewards | 3 · Star | — | — | — | **Milton** |

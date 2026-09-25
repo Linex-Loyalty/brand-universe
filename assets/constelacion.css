@@ -211,10 +211,30 @@ h1 {
 }
 .btn:hover { opacity: .88; }
 .btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
-/* Segundo tono, mismo neutro del grupo — nunca un color de marca sin
-   aprobar. Distingue "descargar" de "abrir manual" por valor, no por matiz. */
-.btn-alt { background: var(--ink-2); }
-.btn-alt:focus-visible { outline-color: var(--ink-2); }
+
+/* ---------- descargas ----------
+   Aparte del botón del manual y sin relleno: abrir el manual es la acción
+   de la tarjeta, una descarga es un archivo. Mismo neutro del grupo —
+   nunca un color de marca sin aprobar. El ícono y el tipo de archivo dicen
+   qué pasa al hacer clic antes de hacerlo. */
+.descargas { margin-top: 14px; }
+.descargas-t {
+  margin: 0 0 7px; font-size: 11px; font-weight: 700; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--ink-3);
+}
+.descargas-l { display: flex; flex-wrap: wrap; gap: 8px; }
+.dl {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 7px 13px 7px 10px; border-radius: var(--radius-btn);
+  border: 1px solid var(--line-2); background: var(--surface); color: var(--ink);
+  text-decoration: none;
+}
+.dl:hover { border-color: var(--ink-3); background: var(--sunk); }
+.dl:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.dl-ico { width: 16px; height: 16px; flex: none; color: var(--ink-2); }
+.dl-txt { display: flex; flex-direction: column; line-height: 1.2; }
+.dl-txt b { font-size: 13px; font-weight: 600; }
+.dl-txt small { font-size: 11px; color: var(--ink-3); font-family: var(--mono); }
 .acceso.sin span { font-size: 13px; color: var(--ink-3); font-style: italic; }
 
 /* ---------- pendientes ----------

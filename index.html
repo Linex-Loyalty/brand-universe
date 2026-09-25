@@ -222,10 +222,30 @@ h1 {
 }
 .btn:hover { opacity: .88; }
 .btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
-/* Segundo tono, mismo neutro del grupo — nunca un color de marca sin
-   aprobar. Distingue "descargar" de "abrir manual" por valor, no por matiz. */
-.btn-alt { background: var(--ink-2); }
-.btn-alt:focus-visible { outline-color: var(--ink-2); }
+
+/* ---------- descargas ----------
+   Aparte del botón del manual y sin relleno: abrir el manual es la acción
+   de la tarjeta, una descarga es un archivo. Mismo neutro del grupo —
+   nunca un color de marca sin aprobar. El ícono y el tipo de archivo dicen
+   qué pasa al hacer clic antes de hacerlo. */
+.descargas { margin-top: 14px; }
+.descargas-t {
+  margin: 0 0 7px; font-size: 11px; font-weight: 700; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--ink-3);
+}
+.descargas-l { display: flex; flex-wrap: wrap; gap: 8px; }
+.dl {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 7px 13px 7px 10px; border-radius: var(--radius-btn);
+  border: 1px solid var(--line-2); background: var(--surface); color: var(--ink);
+  text-decoration: none;
+}
+.dl:hover { border-color: var(--ink-3); background: var(--sunk); }
+.dl:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.dl-ico { width: 16px; height: 16px; flex: none; color: var(--ink-2); }
+.dl-txt { display: flex; flex-direction: column; line-height: 1.2; }
+.dl-txt b { font-size: 13px; font-weight: 600; }
+.dl-txt small { font-size: 11px; color: var(--ink-3); font-family: var(--mono); }
 .acceso.sin span { font-size: 13px; color: var(--ink-3); font-style: italic; }
 
 /* ---------- pendientes ----------
@@ -509,7 +529,13 @@ span[data-lang] { display: none; }
         <span class="sw"><i style="background:#080808"></i>Negro Linex <code>#080808</code> <em>10%</em></span>
       </div>
       <p class="acceso"><a class="btn" href="manual-linex-travel/index.html"><span data-lang="es">Abrir el manual de Linex Travel</span><span data-lang="en">Open the Linex Travel manual</span></a></p>
-      <p class="acceso"><a class="btn btn-alt" href="manual-marca-linex-travel.skill" download><span data-lang="es">Descargar la skill de diseño (Travel · Go · Trip)</span><span data-lang="en">Download the design skill (Travel · Go · Trip)</span></a></p>
+      <div class="descargas">
+        <p class="descargas-t"><span data-lang="es">Descargas</span><span data-lang="en">Downloads</span></p>
+        <div class="descargas-l">
+          <a class="dl" href="manual-linex-travel/assets/descargas/LinexTravel-logos.zip" download><svg class="dl-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 2v8m0 0L4.5 6.5M8 10l3.5-3.5M2.5 13.5h11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="dl-txt"><b><span data-lang="es">Logos</span><span data-lang="en">Logos</span></b><small>SVG + PNG · .zip</small></span></a>
+          <a class="dl" href="manual-marca-linex-travel.skill" download><svg class="dl-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 2v8m0 0L4.5 6.5M8 10l3.5-3.5M2.5 13.5h11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="dl-txt"><b><span data-lang="es">Skill de diseño</span><span data-lang="en">Design skill</span></b><small>Travel · Go · Trip · .skill</small></span></a>
+        </div>
+      </div>
       <details class="gaps">
         <summary><b>17</b> <span data-lang="es">pendientes</span><span data-lang="en">pending items</span></summary>
         <ul class="gap-list">
@@ -559,6 +585,12 @@ span[data-lang] { display: none; }
         <span class="sw"><i style="background:#FFE3DD"></i>Coral claro <code>#FFE3DD</code> <em>8%</em></span>
       </div>
       <p class="acceso"><a class="btn" href="manual-linex-go/index.html"><span data-lang="es">Abrir el manual de Linex Go</span><span data-lang="en">Open the Linex Go manual</span></a></p>
+      <div class="descargas">
+        <p class="descargas-t"><span data-lang="es">Descargas</span><span data-lang="en">Downloads</span></p>
+        <div class="descargas-l">
+          <a class="dl" href="manual-linex-go/assets/descargas/LinexGo-logos.zip" download><svg class="dl-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 2v8m0 0L4.5 6.5M8 10l3.5-3.5M2.5 13.5h11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="dl-txt"><b><span data-lang="es">Logos</span><span data-lang="en">Logos</span></b><small>SVG + PNG · .zip</small></span></a>
+        </div>
+      </div>
       <details class="gaps">
         <summary><b>11</b> <span data-lang="es">pendientes</span><span data-lang="en">pending items</span></summary>
         <ul class="gap-list">
@@ -601,6 +633,12 @@ span[data-lang] { display: none; }
         <span class="sw"><i style="background:#ECE200"></i>Amarillo <code>#ECE200</code> <em>4%</em></span>
       </div>
       <p class="acceso"><a class="btn" href="manual-linex-trip/index.html"><span data-lang="es">Abrir el manual de Linex Trip</span><span data-lang="en">Open the Linex Trip manual</span></a></p>
+      <div class="descargas">
+        <p class="descargas-t"><span data-lang="es">Descargas</span><span data-lang="en">Downloads</span></p>
+        <div class="descargas-l">
+          <a class="dl" href="manual-linex-trip/assets/descargas/LinexTrip-logos.zip" download><svg class="dl-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 2v8m0 0L4.5 6.5M8 10l3.5-3.5M2.5 13.5h11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="dl-txt"><b><span data-lang="es">Logos</span><span data-lang="en">Logos</span></b><small>SVG + PNG · .zip</small></span></a>
+        </div>
+      </div>
       <details class="gaps">
         <summary><b>6</b> <span data-lang="es">pendientes</span><span data-lang="en">pending items</span></summary>
         <ul class="gap-list">

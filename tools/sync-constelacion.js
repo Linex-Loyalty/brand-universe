@@ -33,6 +33,7 @@ const fs = require('fs');
 const path = require('path');
 
 const RAIZ = path.resolve(__dirname, '..');
+const { rutaZip } = require('./logos-descarga.js');
 
 const esc = s => String(s == null ? '' : s)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;')
@@ -126,12 +127,42 @@ function pausa(m) {
       </div>`;
 }
 
-/* La skill de diseño cubre Travel, Go y Trip, pero vive una sola vez —
- * en la tarjeta de Travel, la estrella que las agrupa como familia. */
-function skillDescarga(m) {
-  if (m.id !== 'linex-travel') return '';
-  return `\n      <p class="acceso"><a class="btn btn-alt" href="manual-marca-linex-travel.skill" download>` +
-         `${bi('Descargar la skill de diseño (Travel · Go · Trip)', 'Download the design skill (Travel · Go · Trip)')}</a></p>`;
+/* Descargas de la tarjeta: los logos de la marca (el mismo .zip que baja el
+ * botón del menú lateral de su manual, ver tools/logos-descarga.js) y, solo
+ * en Travel, la skill de diseño — cubre Travel, Go y Trip pero vive una sola
+ * vez, en la estrella que las agrupa como familia.
+ *
+ * Van aparte del botón del manual y con otro peso a propósito: tres botones
+ * rellenos apilados se leían como tres caminos iguales. Abrir el manual es
+ * LA acción de la tarjeta; lo que se descarga es un archivo, y se rotula como
+ * tal — ícono de descarga y tipo de archivo a la vista. */
+const ICONO_DESCARGA = '<svg class="dl-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false">' +
+  '<path d="M8 2v8m0 0L4.5 6.5M8 10l3.5-3.5M2.5 13.5h11" fill="none" stroke="currentColor" ' +
+  'stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+function enlaceDescarga(href, es, en, formato) {
+  return `
+          <a class="dl" href="${esc(href)}" download>${ICONO_DESCARGA}` +
+         `<span class="dl-txt"><b>${bi(es, en)}</b><small>${esc(formato)}</small></span></a>`;
+}
+
+function descargas(m) {
+  const items = [];
+  const zip = rutaZip(m);
+  if (zip && fs.existsSync(path.join(RAIZ, zip))) {
+    items.push(enlaceDescarga(zip, 'Logos', 'Logos', 'SVG + PNG · .zip'));
+  }
+  if (m.id === 'linex-travel') {
+    items.push(enlaceDescarga('manual-marca-linex-travel.skill',
+      'Skill de diseño', 'Design skill', 'Travel · Go · Trip · .skill'));
+  }
+  if (!items.length) return '';
+  return `
+      <div class="descargas">
+        <p class="descargas-t">${bi('Descargas', 'Downloads')}</p>
+        <div class="descargas-l">${items.join('')}
+        </div>
+      </div>`;
 }
 
 /* Un manual que no existe no lleva enlace. Nunca href="#". */
@@ -194,7 +225,7 @@ function tarjeta(m) {
       <div class="af">
         <div><h4>${bi('Atrae', 'Attracts')}</h4><p>${bi(m.atrae, m.atrae_en)}</p></div>
         <div><h4>${bi('Filtra', 'Filters out')}</h4><p>${bi(m.filtra, m.filtra_en)}</p></div>
-      </div>${swatches(m)}${acceso(m)}${skillDescarga(m)}${pendientes(m)}
+      </div>${swatches(m)}${acceso(m)}${descargas(m)}${pendientes(m)}
     </article>`;
 }
 

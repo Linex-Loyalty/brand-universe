@@ -914,3 +914,19 @@ tr[data-lang] { display: none; }
   span[data-lang="en"] { display: inline !important; }
   span[data-lang="es"] { display: none !important; }
 }
+
+/* ---------- Descarga de logos ---------- */
+
+/* Botón del menú lateral, en las 16 páginas: la pregunta "¿dónde bajo el
+   logo?" se responde a un clic desde cualquier sección. Lo pone y lo
+   mantiene tools/logos-descarga.js, en la raíz del repositorio.
+   Coral #FF725E: el color de acción de Go. Texto en navy encima (6.54:1),
+   nunca blanco (2.69:1). */
+.descarga-logos {
+  display: flex; flex-direction: column; gap: 2px;
+  margin: 0 0 22px; padding: 10px 14px; border-radius: var(--radius-btn, 12px);
+  background: var(--coral); color: var(--base);
+  font-size: 13px; font-weight: 700; line-height: 1.25; text-decoration: none;
+}
+.descarga-logos small { font-size: 11px; font-weight: 600; opacity: 0.8; }
+.descarga-logos:hover { opacity: 0.9; color: var(--base); }
